@@ -48,7 +48,8 @@
         "drupal/contact_block": "~1.2",
         "drupal/entity_embed": "~1.0",
         "drupal/addtoany": "^1.7",
-        "drupal/content_entity_language_switcher": "dev-8.x-1.x"
+        "drupal/content_entity_language_switcher": "dev-8.x-1.x",
+        "drupal/color_field": "2.0.0-rc1"
     },
     "require-dev": {
         "behat/mink": "~1.7",

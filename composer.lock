@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a1053a54f855d491f299f6cdde98790",
-    "content-hash": "d4900d0efdcb54c90ccebbd0cfafbccf",
+    "hash": "8090d7ce1d834f13f0ad173b4b932da2",
+    "content-hash": "1f25d9918d6e7ee1d178317e63551885",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -1354,6 +1354,49 @@
                 "issues": "http://drupal.org/project/issues/cloudfront_purger"
             },
             "time": "2016-09-27 03:12:02"
+        },
+        {
+            "name": "drupal/color_field",
+            "version": "2.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/color_field",
+                "reference": "8.x-2.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/color_field-8.x-2.0-rc1.zip",
+                "reference": null,
+                "shasum": "92d0963e59d6b735dc1cc78df34e6c00ab8f4ffa"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-rc1",
+                    "datestamp": "1447537139"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "targoo",
+                    "homepage": "https://www.drupal.org/user/431910"
+                }
+            ],
+            "description": "Provides a color field type to store the color value and opacity",
+            "homepage": "https://www.drupal.org/project/color_field",
+            "support": {
+                "source": "http://cgit.drupalcode.org/color_field"
+            }
         },
         {
             "name": "drupal/console",
