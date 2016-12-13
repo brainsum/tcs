@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.marketo_form.field_anchor
+    - field.field.paragraph.marketo_form.field_color_scheme
     - field.field.paragraph.marketo_form.field_enable_confirm_message
     - field.field.paragraph.marketo_form.field_image
     - field.field.paragraph.marketo_form.field_lead_text
@@ -14,6 +15,7 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.marketo_form
   module:
+    - content_moderation
     - image
     - marketo_form
     - text
@@ -23,51 +25,56 @@ bundle: marketo_form
 mode: default
 content:
   field_anchor:
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_color_scheme:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_enable_confirm_message:
-    weight: 6
+    weight: 7
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
   field_image:
-    weight: 2
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
   field_lead_text:
-    weight: 4
+    weight: 5
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
   field_marketo_form:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: marketo_form
   field_marketo_form_layout:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
   field_text:
-    weight: 7
+    weight: 8
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_title:
-    weight: 3
+    weight: 4
     settings:
       size: 60
       placeholder: ''

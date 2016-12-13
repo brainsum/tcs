@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.locations.field_anchor
+    - field.field.paragraph.locations.field_color_scheme
     - field.field.paragraph.locations.field_geofield
     - field.field.paragraph.locations.field_location
     - field.field.paragraph.locations.field_text
@@ -62,5 +63,6 @@ content:
 hidden:
   created: true
   field_anchor: true
+  field_color_scheme: true
   field_location: true
   uid: true

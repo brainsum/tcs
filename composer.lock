@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a1053a54f855d491f299f6cdde98790",
-    "content-hash": "d4900d0efdcb54c90ccebbd0cfafbccf",
+    "hash": "85a0eb04298c47a517cb12d234756976",
+    "content-hash": "2bfde6ac74836ed6f14ab312d2983f3e",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -1304,6 +1304,54 @@
             "homepage": "https://www.drupal.org/project/parade",
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
+            }
+        },
+        {
+            "name": "drupal/classy_paragraphs",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/classy_paragraphs",
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/classy_paragraphs-8.x-1.0-beta1.zip",
+                "reference": null,
+                "shasum": "ff611516e6b9fbe539284bbb620f1844c6eb5fb3"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/paragraphs": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1477459140"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Zugec",
+                    "homepage": "https://www.drupal.org/user/86970"
+                },
+                {
+                    "name": "murrayw",
+                    "homepage": "https://www.drupal.org/user/595658"
+                }
+            ],
+            "description": "Allows an editor to apply a class to paragraphs.",
+            "homepage": "https://www.drupal.org/project/classy_paragraphs",
+            "support": {
+                "source": "http://cgit.drupalcode.org/classy_paragraphs"
             }
         },
         {
@@ -8273,6 +8321,7 @@
         "drupal/cloudfront_purger": 20,
         "drupal/metatag": 10,
         "drupal/content_entity_language_switcher": 20,
+        "drupal/classy_paragraphs": 10,
         "drupal/devel": 20,
         "drupal/examples": 20
     },
