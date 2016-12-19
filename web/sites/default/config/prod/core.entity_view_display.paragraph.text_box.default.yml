@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.text_box.field_text
     - field.field.paragraph.text_box.field_text_box_layout
     - field.field.paragraph.text_box.field_title
+    - image.style.parade_full_hd_width
     - paragraphs.paragraphs_type.text_box
   module:
     - image
@@ -33,7 +34,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: ''
+      image_style: parade_full_hd_width
       image_link: ''
     third_party_settings: {  }
     type: image
