@@ -1267,7 +1267,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1478118841"
+                    "datestamp": "1481162584"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1276,7 +1276,7 @@
             ],
             "authors": [
                 {
-                    "name": "decsidaniel",
+                    "name": "danieldecsi",
                     "homepage": "https://www.drupal.org/user/3498661"
                 },
                 {
@@ -1294,6 +1294,10 @@
                 {
                     "name": "rteijeiro",
                     "homepage": "https://www.drupal.org/user/780508"
+                },
+                {
+                    "name": "szamee",
+                    "homepage": "https://www.drupal.org/user/3070377"
                 },
                 {
                     "name": "szato",
@@ -2131,8 +2135,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha4+9-dev",
-                    "datestamp": "1476680346"
+                    "version": "8.x-2.0-alpha4+22-dev",
+                    "datestamp": "1481059983"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2198,8 +2202,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha4+9-dev",
-                    "datestamp": "1476680346"
+                    "version": "8.x-2.0-alpha4+22-dev",
+                    "datestamp": "1481059983"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2507,7 +2511,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "11e5717b697ce1b1eec8fb1ed4cfc261db885b30"
+                "reference": "9caf74f4f8d96a7645fe18984d95eb6f23866716"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2522,11 +2526,13 @@
                 "drupal/paragraphs": "1.0",
                 "drupal/php_ffmpeg": "1.0"
             },
-            "suggest": {
-                "drupal/core": "Required by drupal/parade_demo",
-                "drupal/leaflet": "Required by drupal/aggregated_leaflet_map",
-                "drupal/marketo_form": "Required by drupal/linkedin_autofill",
-                "drupal/marketo_poll": "Required by drupal/parade_demo"
+            "require-dev": {
+                "drupal/core": "*",
+                "drupal/imageapi_optimize": "*",
+                "drupal/imagemagick": "*",
+                "drupal/leaflet": "*",
+                "drupal/marketo_form": "*",
+                "drupal/marketo_poll": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -2535,7 +2541,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1481162584"
+                    "datestamp": "1482156783"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2577,7 +2583,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2016-12-08 02:02:33"
+            "time": "2016-12-19 14:05:20"
         },
         {
             "name": "drupal/paragraphs",
@@ -2619,6 +2625,10 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
                 {
                     "name": "Frans",
                     "homepage": "https://www.drupal.org/user/514222"
