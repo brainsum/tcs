@@ -52,19 +52,33 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
  */
 function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'])) {
+    // Menu: Change wording of Add more button.
     $form['field_menu']['widget']['add_more']['#value'] = t('New menu link');
 
-    // Modify the Paragraphs field.
-    if (isset($form['field_paragraphs'])) {
-      $form['#attached']['library'][] = 'parade/buttons';
+    // Removes the "Add" word from the button values.
+    // @todo get actual display mode instead of default
+    $settings = entity_get_form_display('node', 'campaign', 'default')->getComponent('field_paragraphs')['settings'];
+    if ($settings['add_mode'] === 'button') {
+      // Add title to the section
+      $field_label = $form['field_paragraphs']['widget']['title']['#value'] ?? $form['field_paragraphs']['widget']['#title'];
+      $form['field_paragraphs']['widget']['add_more']['title'] = [
+        '#type' => 'table',
+        '#header' => [t('Add @type', ['@type' => $field_label])],
+        '#attributes' => [
+          'class' => ['paragraphs-add-sections-title'],
+        ],
+        '#weight' => -1,
+      ];
 
-      foreach ($form['field_paragraphs']['widget']['add_more'] as $key => $item) {
-        if (strpos($key, 'add_more') === FALSE) {
-          continue;
+      if (isset($form['field_paragraphs']['widget']['add_more'])) {
+        foreach ($form['field_paragraphs']['widget']['add_more'] as $key => &$item) {
+          if (strpos($key, 'add_more_button_') === 0) {
+            $arguments = $item['#value']->getArguments();
+            // Adding a context, so it's translatable separatly.
+            $options = ['context' => 'add_paragraph_type'];
+            $item['#value'] = t('@type', $arguments, $options);
+          }
         }
-        $type = Html::getClass($item['#bundle_machine_name']);
-        $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'parade-button';
-        $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'parade-button-' . $type;
       }
     }
 
