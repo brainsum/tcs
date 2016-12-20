@@ -31,7 +31,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_with_selected_attribute
+    type: highlighted_link
   field_simple_layout:
     weight: 1
     settings: {  }
