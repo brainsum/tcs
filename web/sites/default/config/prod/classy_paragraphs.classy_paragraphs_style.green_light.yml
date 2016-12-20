@@ -1,0 +1,7 @@
+uuid: 49db3483-34d3-454d-a93e-109c10fd7230
+langcode: en
+status: true
+dependencies: {  }
+id: green_light
+label: 'Green Light'
+classes: scheme-green-light

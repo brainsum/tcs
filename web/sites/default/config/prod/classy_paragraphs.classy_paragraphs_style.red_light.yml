@@ -1,0 +1,7 @@
+uuid: 2f6c1875-9e77-4168-ac8c-ae9c98850954
+langcode: en
+status: true
+dependencies: {  }
+id: red_light
+label: 'Red Light'
+classes: scheme-red-light

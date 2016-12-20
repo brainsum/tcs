@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.header.field_anchor
     - field.field.paragraph.header.field_background
     - field.field.paragraph.header.field_call_to_action
+    - field.field.paragraph.header.field_color_scheme
     - field.field.paragraph.header.field_enable_parallax
     - field.field.paragraph.header.field_lead_text
     - field.field.paragraph.header.field_secondary_title
@@ -53,5 +54,6 @@ hidden:
   created: true
   field_anchor: true
   field_background: true
+  field_color_scheme: true
   field_enable_parallax: true
   uid: true

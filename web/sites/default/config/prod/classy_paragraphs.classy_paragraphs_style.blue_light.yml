@@ -1,0 +1,7 @@
+uuid: 1be1bef4-2ee2-4166-9a64-b8995c2e5666
+langcode: en
+status: true
+dependencies: {  }
+id: blue_light
+label: 'Blue Light'
+classes: scheme-blue-light

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.marketo_poll.field_anchor
+    - field.field.paragraph.marketo_poll.field_color_scheme
     - field.field.paragraph.marketo_poll.field_marketo_poll
     - field.field.paragraph.marketo_poll.field_title
     - paragraphs.paragraphs_type.marketo_poll
@@ -32,4 +33,5 @@ content:
 hidden:
   created: true
   field_anchor: true
+  field_color_scheme: true
   uid: true
