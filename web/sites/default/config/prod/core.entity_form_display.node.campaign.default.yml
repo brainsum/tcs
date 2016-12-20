@@ -30,7 +30,7 @@ content:
       placeholder_url: 'Anchor or URL'
       placeholder_title: 'Link text'
     third_party_settings: {  }
-    type: highlighted_link
+    type: link_with_selected_attribute
   field_meta_tags:
     weight: 8
     settings: {  }

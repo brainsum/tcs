@@ -8,7 +8,7 @@ use Drupal\link\Plugin\Field\FieldWidget\LinkWidget;
 
 /**
  * @FieldWidget(
- *   id = "highlighted_link",
+ *   id = "link_with_selected_attribute",
  *   label = @Translation("Link (Highlighted)"),
  *   description = @Translation("Adds a checkbox which gives the link a [data-selected] attribute."),
  *   field_types = {
@@ -16,7 +16,7 @@ use Drupal\link\Plugin\Field\FieldWidget\LinkWidget;
  *   }
  * )
  */
-class HighlightedLinkWidget extends LinkWidget {
+class LinkWithSelectedAttributeWidget extends LinkWidget {
 
   /**
    * {@inheritdoc}
