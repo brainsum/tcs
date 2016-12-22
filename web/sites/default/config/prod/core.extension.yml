@@ -50,7 +50,6 @@ module:
   paragraphs: 0
   paragraphs_type_permissions: 0
   path: 0
-  php_ffmpeg: 0
   purge: 0
   purge_drush: 0
   purge_processor_cron: 0
