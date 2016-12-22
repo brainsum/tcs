@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Database\Database;
+
 /**
  * Delete non-existing files from database.
  */
@@ -52,4 +54,11 @@ function campaign_pages_update_8002() {
 
     $node->save();
   }
+}
+
+/**
+ * Removes system.schema of deprecated language_switcher module.
+ */
+function campaign_pages_update_8003() {
+  Database::getConnection()->query("DELETE FROM key_value WHERE collection='system.schema' AND name='language_switcher';");
 }
