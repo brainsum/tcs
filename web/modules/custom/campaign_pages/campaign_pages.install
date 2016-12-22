@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Code for campaign_pages module's install hooks.
+ */
+
 use Drupal\Core\Database\Database;
 
 /**

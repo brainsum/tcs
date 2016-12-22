@@ -2,13 +2,12 @@
 
 /**
  * @file
- * Contains campaign_pages.module
+ * Code for campaign_pages module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_help().
@@ -56,10 +55,10 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
     $form['field_menu']['widget']['add_more']['#value'] = t('New menu link');
 
     // Removes the "Add" word from the button values.
-    // @todo get actual display mode instead of default
+    // @todo Get actual display mode instead of default.
     $settings = entity_get_form_display('node', 'campaign', 'default')->getComponent('field_paragraphs')['settings'];
     if ($settings['add_mode'] === 'button') {
-      // Add title to the section
+      // Add title to the section.
       $field_label = $form['field_paragraphs']['widget']['title']['#value'] ?? $form['field_paragraphs']['widget']['#title'];
       $form['field_paragraphs']['widget']['add_more']['title'] = [
         '#type' => 'table',
@@ -98,10 +97,6 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
  *   The form build array.
  * @param FormStateInterface $form_state
  *   The form state interface.
- * @param string $form_id
- *   Unique ID of the form.
- *
- * @return void
  */
 function _campaign_pages_disable_form_redirect(&$form, FormStateInterface &$form_state) {
   // Sadly $form_state->disableRedirect() not works as expected, so we also

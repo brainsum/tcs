@@ -7,6 +7,11 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\link\Plugin\Field\FieldWidget\LinkWidget;
 
 /**
+ * Definition of Highlighted Link widget.
+ *
+ * Provides a "Highlighted" checkbox for Link type Field Widgets,
+ * which allows custom frontend theming.
+ *
  * @FieldWidget(
  *   id = "link_with_selected_attribute",
  *   label = @Translation("Link (Highlighted)"),
@@ -25,7 +30,6 @@ class LinkWithSelectedAttributeWidget extends LinkWidget {
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
     // Add each of the enabled attributes.
     // @todo move this to plugins that nominate form and label.
-
     $attribute = 'data-selected';
 
     $options = $items[$delta]->get('options')->getValue();
