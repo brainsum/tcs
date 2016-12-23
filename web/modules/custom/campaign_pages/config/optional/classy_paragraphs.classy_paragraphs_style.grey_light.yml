@@ -1,0 +1,7 @@
+uuid: 6f9d5935-69f0-42c1-85b3-2bc38c424115
+langcode: en
+status: true
+dependencies: {  }
+id: grey_light
+label: 'Grey Light'
+classes: scheme-grey-light
