@@ -1351,12 +1351,12 @@
             "version": "1.0.0-rc11",
             "source": {
                 "type": "git",
-                "url": "https://github.com/hechoendrupal/DrupalConsole.git",
+                "url": "https://github.com/hechoendrupal/drupal-console.git",
                 "reference": "7eb98a13458da1a63f87435ced4128cd15f34d9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hechoendrupal/DrupalConsole/zipball/7eb98a13458da1a63f87435ced4128cd15f34d9e",
+                "url": "https://api.github.com/repos/hechoendrupal/drupal-console/zipball/7eb98a13458da1a63f87435ced4128cd15f34d9e",
                 "reference": "7eb98a13458da1a63f87435ced4128cd15f34d9e",
                 "shasum": ""
             },
@@ -6823,7 +6823,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/devel",
-                "reference": "065551bf817bef832aabe4bec02b667a658e9841"
+                "reference": "dab7bc02aa4a8f5d840164b9c5969c94aad40892"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -6837,8 +6837,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1+9-dev",
-                    "datestamp": "1481983688"
+                    "version": "8.x-1.0-beta1+17-dev",
+                    "datestamp": "1483370943"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6853,20 +6853,24 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "catch",
-                    "homepage": "https://www.drupal.org/user/35733"
+                    "name": "Hans Salvisberg",
+                    "homepage": "https://www.drupal.org/u/salvis",
+                    "email": "drupal@salvisberg.com",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "effulgentsia",
-                    "homepage": "https://www.drupal.org/user/78040"
+                    "name": "Luca Lusso",
+                    "homepage": "https://www.drupal.org/u/lussoluca",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "juampynr",
-                    "homepage": "https://www.drupal.org/user/682736"
+                    "name": "Marco (willzyx)",
+                    "homepage": "https://www.drupal.org/u/willzyx",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "lussoluca",
-                    "homepage": "https://www.drupal.org/user/138068"
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/3236/committers"
                 },
                 {
                     "name": "moshe weitzman",
@@ -6895,8 +6899,7 @@
                 "source": "http://cgit.drupalcode.org/devel",
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            },
-            "time": "2016-12-17 14:02:59"
+            }
         },
         {
             "name": "drupal/examples",
@@ -6904,13 +6907,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/examples",
-                "reference": "cd6017ca3bb3842d9e8251e9e90be18bfea0d08e"
+                "reference": "8763ca4228e60de459d94ace381a9c64f47c03c3"
             },
             "require": {
                 "drupal/core": "*"
             },
             "require-dev": {
-                "drupal/core": "*",
                 "drupal/simpletest_example": "*"
             },
             "type": "drupal-module",
@@ -6920,7 +6922,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1480732384"
+                    "datestamp": "1483426142"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6999,8 +7001,7 @@
                 "source": "http://cgit.drupalcode.org/examples",
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
-            },
-            "time": "2016-12-03 02:28:49"
+            }
         },
         {
             "name": "fabpot/goutte",
