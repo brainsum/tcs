@@ -116,3 +116,11 @@ tieto_admin.drupal.dialog:
   css:
     theme:
       dist/css/dialog.css: {}
+
+# Savings calculator
+savings-calculator:
+  version: VERSION
+  js:
+    dist/js/savings-calculator.js: {}
+  dependencies:
+    - core/jquery

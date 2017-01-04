@@ -56,6 +56,7 @@ Elixir(mix => {
         .rollup('mobile.install.js')
         .rollup('nav-tabs.js')
         .rollup('tabledrag.js')
+        .rollup('savings-calculator.js')
 
     // Live reload the browser on file updates.
     Elixir.isWatching() && mix.browserSync()

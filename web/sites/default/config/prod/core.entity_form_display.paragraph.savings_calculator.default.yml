@@ -1,0 +1,50 @@
+uuid: d5d9fa01-914f-44ff-b1f5-836c87fb66fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.savings_calculator.field_anchor
+    - field.field.paragraph.savings_calculator.field_input_label
+    - field.field.paragraph.savings_calculator.field_result_label
+    - field.field.paragraph.savings_calculator.field_title
+    - paragraphs.paragraphs_type.savings_calculator
+  module:
+    - content_moderation
+id: paragraph.savings_calculator.default
+targetEntityType: paragraph
+bundle: savings_calculator
+mode: default
+content:
+  field_anchor:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_input_label:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_result_label:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  translation: true
+  uid: true

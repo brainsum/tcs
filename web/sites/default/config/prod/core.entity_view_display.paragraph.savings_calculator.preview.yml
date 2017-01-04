@@ -1,0 +1,35 @@
+uuid: fc4c036c-9084-4b19-abe7-27f4c5a50abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.savings_calculator.field_anchor
+    - field.field.paragraph.savings_calculator.field_input_label
+    - field.field.paragraph.savings_calculator.field_result_label
+    - field.field.paragraph.savings_calculator.field_title
+    - paragraphs.paragraphs_type.savings_calculator
+id: paragraph.savings_calculator.preview
+targetEntityType: paragraph
+bundle: savings_calculator
+mode: preview
+content:
+  field_anchor:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  field_input_label: true
+  field_result_label: true
+  uid: true

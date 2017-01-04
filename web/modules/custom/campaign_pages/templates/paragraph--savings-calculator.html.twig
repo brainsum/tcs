@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * SAVINGS CALCULATOR paragraph template.
+ */
+#}
+{%
+set classes = [
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+    <div class="paragraph-inner">
+        {{ content.field_title }}
+
+        <form class="savings-calculator">
+            <div class="savings-calculator__input-container">
+                {{ content.field_input_label }}
+
+                <div class="savings-calculator__inputs">
+                    <input class="form-number" type="number" name="number">
+                    <button class="button button--primary">{{ 'Calculate'|t }}</button>
+                </div>
+            </div>
+
+            <div class="savings-calculator__result-container">
+                {{ content.field_result_label }}
+                <span class="result">0</span> €
+            </div>
+        </form>
+    </div>
+</div>

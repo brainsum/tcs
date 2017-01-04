@@ -121,3 +121,15 @@ function campaign_pages_entity_operation_alter(array &$operations, EntityInterfa
     }
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function campaign_pages_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__savings_calculator' => [
+      'template' => 'paragraph--savings-calculator',
+      'base hook' => 'paragraph'
+    ]
+  ];
+}

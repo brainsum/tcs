@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.marketo_form
     - paragraphs.paragraphs_type.marketo_poll
     - paragraphs.paragraphs_type.parallax
+    - paragraphs.paragraphs_type.savings_calculator
     - paragraphs.paragraphs_type.simple
     - paragraphs.paragraphs_type.social_links
     - paragraphs.paragraphs_type.text_box
@@ -43,44 +44,48 @@ settings:
       locations: locations
       marketo_poll: marketo_poll
       social_links: social_links
+      savings_calculator: savings_calculator
     target_bundles_drag_drop:
       header:
         enabled: true
-        weight: -21
+        weight: -29
       simple:
         enabled: true
-        weight: -20
+        weight: -28
       image_text:
         enabled: true
-        weight: -19
+        weight: -27
       text_box:
         enabled: true
-        weight: -18
+        weight: -26
       text_boxes:
         enabled: true
-        weight: -17
+        weight: -25
       marketo_form:
         enabled: true
-        weight: -16
+        weight: -24
       images:
         enabled: true
-        weight: -15
+        weight: -23
       tabs:
-        weight: -14
+        weight: -22
         enabled: false
       highlighted:
-        weight: -13
+        weight: -21
         enabled: false
       parallax:
         enabled: true
-        weight: -12
+        weight: -20
       locations:
         enabled: true
-        weight: 16
+        weight: -19
       marketo_poll:
         enabled: true
-        weight: 19
+        weight: -18
       social_links:
         enabled: true
-        weight: 23
+        weight: -17
+      savings_calculator:
+        enabled: true
+        weight: -16
 field_type: entity_reference_revisions
