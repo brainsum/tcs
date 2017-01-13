@@ -1,5 +1,7 @@
 module:
   addtoany: 0
+  admin_toolbar: 0
+  adminimal_admin_toolbar: 0
   aggregated_leaflet_map: 0
   automated_cron: 0
   block: 0
@@ -31,6 +33,7 @@ module:
   geofield: 0
   image: 0
   imageapi_optimize: 0
+  imagemagick: 0
   language: 0
   leaflet: 0
   leaflet_views: 0
@@ -65,17 +68,17 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  toolbar_anti_flicker: 0
   tour: 0
   update: 0
   user: 0
   video_embed_field: 0
   video_embed_wysiwyg: 0
   views_ui: 0
+  image_optimalization: 1
   menu_link_content: 1
   views: 10
   standard: 1000
-  imagemagick: 0
-  image_optimalization: 1
 theme:
   stable: 0
   classy: 0
