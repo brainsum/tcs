@@ -49,7 +49,8 @@
         "drupal/entity_embed": "~1.0",
         "drupal/addtoany": "^1.7",
         "drupal/content_entity_language_switcher": "dev-8.x-1.x",
-        "drupal/classy_paragraphs": "^1.0@beta"
+        "drupal/classy_paragraphs": "^1.0@beta",
+        "drupal/node_clone": "1.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -98,6 +99,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/node_clone": {
+                "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
+            }
         }
     }
 }
