@@ -4,18 +4,11 @@
  * Default theme implementation to display a 404 error page.
  */
 #}
-{% include directory ~ '/templates/inc/logo.html.twig' %}
-<div id="page-403" class="tieto-campaign-page">
-    <div class="paragraph paragraph--type--header paragraph--view-mode--default">
-        <div class="background">
-            <div class="background-wrapper">
-                <div class="background-image" style="background-image: url(/themes/tieto_admin/images/403.jpg)"></div>
-            </div>
-            <div class="paragraph-inner">
-                <div class="field field--name-field-title field--type-string field--label-hidden field__item">Access Denied. 403</div>
-                <div class="field field--name-field-secondary-title field--type-string field--label-hidden field__item">You are not authorized to access this page.</div>
-            </div>
-        </div>
-    </div>
+<div class="error-page error-page--403">
+  {% include directory ~ '/templates/inc/logo.html.twig' %}
+  <div class="error-page__content">
+    <h1>{{ 'Access Denied. 403'|t }}</h1>
+    <p>{{ 'You are not authorized to access this page.'|t }}</p>
+  </div>
+  {% include directory ~ '/templates/inc/footer.html.twig' %}
 </div>
-{% include directory ~ '/templates/inc/footer.html.twig' %}
