@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e7f9d8186d07e0a21fd36a5f79793e1",
+    "content-hash": "4ab940b72cd7773579fe245d2098b913",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1192,60 +1192,6 @@
             "homepage": "https://www.drupal.org/project/addtoany",
             "support": {
                 "source": "http://cgit.drupalcode.org/addtoany"
-            }
-        },
-        {
-            "name": "drupal/aggregated_leaflet_map",
-            "version": "dev-1.x",
-            "require": {
-                "drupal/core": "~8.0",
-                "drupal/leaflet": "*",
-                "drupal/parade": "self.version"
-            },
-            "type": "metapackage",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1478118841"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "decsidaniel",
-                    "homepage": "https://www.drupal.org/user/3498661"
-                },
-                {
-                    "name": "gpap",
-                    "homepage": "https://www.drupal.org/user/2878517"
-                },
-                {
-                    "name": "mhavelant",
-                    "homepage": "https://www.drupal.org/user/3331139"
-                },
-                {
-                    "name": "pedrop",
-                    "homepage": "https://www.drupal.org/user/1043368"
-                },
-                {
-                    "name": "rteijeiro",
-                    "homepage": "https://www.drupal.org/user/780508"
-                },
-                {
-                    "name": "szato",
-                    "homepage": "https://www.drupal.org/user/389677"
-                }
-            ],
-            "description": "Leaflet module formatter extension.",
-            "homepage": "https://www.drupal.org/project/parade",
-            "support": {
-                "source": "http://cgit.drupalcode.org/parade"
             }
         },
         {
@@ -2643,6 +2589,9 @@
                 "drupal": {
                     "version": "8.x-1.x-dev",
                     "datestamp": "1477009139"
+                },
+                "patches_applied": {
+                    "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2668,29 +2617,27 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "88a0dce8d2c108f3a82687d6f030a7557178d405"
+                "reference": "58a5742ffff65e5c894ac31d15da1bab086b9b6c"
             },
             "require": {
-                "drupal/aggregated_leaflet_map": "*",
-                "drupal/classy_paragraphs": "^1.0@beta",
+                "drupal/classy_paragraphs": "~1.0",
                 "drupal/core": "*",
-                "drupal/geocoder": "2.x-dev",
-                "drupal/geocoder_autocomplete": "1.x-dev",
+                "drupal/geocoder": "~2.0",
+                "drupal/geocoder_autocomplete": "~1.0",
                 "drupal/geocoder_field": "*",
                 "drupal/geocoder_geofield": "*",
-                "drupal/geofield": "1.x-dev",
-                "drupal/imageapi_optimize": "2.0.0-alpha1",
-                "drupal/imagemagick": "1.0-alpha5",
-                "drupal/leaflet": "1.x-dev",
-                "drupal/machine_name": "1.x-dev",
-                "drupal/paragraphs": "1.0"
+                "drupal/geofield": "~1.0",
+                "drupal/imageapi_optimize": "~2.0",
+                "drupal/imagemagick": "~1.0",
+                "drupal/leaflet": "~1.0",
+                "drupal/machine_name": "~1.0",
+                "drupal/paragraphs": "~1.0"
             },
             "require-dev": {
                 "drupal/imageapi_optimize": "*",
                 "drupal/imagemagick": "*",
                 "drupal/leaflet": "*",
-                "drupal/marketo_form": "*",
-                "drupal/marketo_poll": "*"
+                "drupal/marketo_form": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -2699,7 +2646,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1483453142"
+                    "datestamp": "1484687284"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2708,12 +2655,20 @@
             ],
             "authors": [
                 {
+                    "name": "balagan",
+                    "homepage": "https://www.drupal.org/user/1230072"
+                },
+                {
                     "name": "danieldecsi",
                     "homepage": "https://www.drupal.org/user/3498661"
                 },
                 {
                     "name": "gpap",
                     "homepage": "https://www.drupal.org/user/2878517"
+                },
+                {
+                    "name": "malatenszki",
+                    "homepage": "https://www.drupal.org/user/3452551"
                 },
                 {
                     "name": "mhavelant",
@@ -2741,7 +2696,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-01-03 14:15:02"
+            "time": "2017-01-17 21:25:30"
         },
         {
             "name": "drupal/paragraphs",
@@ -6869,7 +6824,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.18.zip",
-                "reference": null,
+                "reference": "8.x-1.18",
                 "shasum": "ea5b6b5eb20757fda12e7220819a750e2575359b"
             },
             "require": {
@@ -6929,7 +6884,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/adminimal_admin_toolbar-8.x-1.3.zip",
-                "reference": null,
+                "reference": "8.x-1.3",
                 "shasum": "6e2b1fc80fece1f68895269713d5aa7e1cb220a5"
             },
             "require": {
@@ -6961,6 +6916,60 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/adminimal_admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/adminimal_admin_toolbar"
+            }
+        },
+        {
+            "name": "drupal/aggregated_leaflet_map",
+            "version": "dev-1.x",
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/leaflet": "*",
+                "drupal/parade": "self.version"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1478118841"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "decsidaniel",
+                    "homepage": "https://www.drupal.org/user/3498661"
+                },
+                {
+                    "name": "gpap",
+                    "homepage": "https://www.drupal.org/user/2878517"
+                },
+                {
+                    "name": "mhavelant",
+                    "homepage": "https://www.drupal.org/user/3331139"
+                },
+                {
+                    "name": "pedrop",
+                    "homepage": "https://www.drupal.org/user/1043368"
+                },
+                {
+                    "name": "rteijeiro",
+                    "homepage": "https://www.drupal.org/user/780508"
+                },
+                {
+                    "name": "szato",
+                    "homepage": "https://www.drupal.org/user/389677"
+                }
+            ],
+            "description": "Leaflet module formatter extension.",
+            "homepage": "https://www.drupal.org/project/parade",
+            "support": {
+                "source": "http://cgit.drupalcode.org/parade"
             }
         },
         {
@@ -7163,7 +7172,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/toolbar_anti_flicker-8.x-2.5.zip",
-                "reference": null,
+                "reference": "8.x-2.5",
                 "shasum": "995a7d23d259e8895f9245ef12fb255beb35689e"
             },
             "require": {
