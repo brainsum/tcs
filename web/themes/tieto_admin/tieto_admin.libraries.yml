@@ -89,12 +89,12 @@ install-page:
 #     - core/drupal.debounce
 
 # Tabledrag
-tabledrag:
-  version: VERSION
-  js:
-    dist/js/tabledrag.js: {}
-  dependencies:
-    - core/misc/tabledrag
+# tabledrag:
+#   version: VERSION
+#   js:
+#     dist/js/tabledrag.js: {}
+#   dependencies:
+#     - core/misc/tabledrag
 
 # Vertical tabs
 vertical-tabs:

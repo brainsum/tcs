@@ -195,9 +195,9 @@ function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state
   $form['revision_information']['#group'] = 'meta';
 
   // Custom tabledrag library
-  if ($form['form_id']['#id'] === 'edit-node-campaign-edit-form') {
-   $form['#attached']['library'][] = 'tieto_admin/tabledrag';
-  }
+  // if ($form['form_id']['#id'] === 'edit-node-campaign-edit-form') {
+  //  $form['#attached']['library'][] = 'tieto_admin/tabledrag';
+  // }
 }
 
 /**
