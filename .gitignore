@@ -21,6 +21,7 @@ web/sites/*/private
 # Ignore configuration files that may contain sensitive information.
 web/sites/*/*settings*.php
 web/sites/*/*services*.yml
+!web/sites/*/default.settings.php
 !web/sites/*/amazeeio.settings.php
 
 # Other
