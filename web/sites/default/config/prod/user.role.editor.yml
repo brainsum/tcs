@@ -53,7 +53,6 @@ permissions:
   43: 'translate paragraph'
   46: 'use published_draft transition'
   47: 'view campaign revisions'
-  48: 'edit any campaign content'
   49: 'create paragraph content locations'
   50: 'delete paragraph content locations'
   51: 'update paragraph content locations'
