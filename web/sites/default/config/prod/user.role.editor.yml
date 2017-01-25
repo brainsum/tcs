@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: editor
 label: Editor
-weight: 3
+weight: -8
 is_admin: null
 permissions:
   0: 'create campaign content'
@@ -62,3 +62,4 @@ permissions:
   55: 'create paragraph content social_links'
   56: 'delete paragraph content social_links'
   57: 'update paragraph content social_links'
+  58: 'revert campaign revisions'
