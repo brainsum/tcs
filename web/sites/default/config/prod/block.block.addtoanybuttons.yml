@@ -10,7 +10,7 @@ dependencies:
 id: addtoanybuttons
 theme: tieto_admin
 region: footer
-weight: 0
+weight: -5
 provider: null
 plugin: addtoany_block
 settings:

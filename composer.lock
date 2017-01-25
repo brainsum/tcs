@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ab940b72cd7773579fe245d2098b913",
+    "content-hash": "ea0a9501d898425cf6d842978e8264cf",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2393,6 +2393,60 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/imagemagick"
             }
+        },
+        {
+            "name": "drupal/lang_dropdown",
+            "version": "dev-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/lang_dropdown",
+                "reference": "5b96063ada428847d245055af0c79e28477c643b"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.x-dev",
+                    "datestamp": "1482663183"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mohammed J. Razem",
+                    "homepage": "https://www.drupal.org/user/255384"
+                },
+                {
+                    "name": "RajabNatshah",
+                    "homepage": "https://www.drupal.org/user/1414312"
+                },
+                {
+                    "name": "borisson_",
+                    "homepage": "https://www.drupal.org/user/2393360"
+                },
+                {
+                    "name": "kala4ek",
+                    "homepage": "https://www.drupal.org/user/1945174"
+                },
+                {
+                    "name": "manfer",
+                    "homepage": "https://www.drupal.org/user/506264"
+                }
+            ],
+            "description": "Provides a dropdown select to switch between available languages.",
+            "homepage": "https://www.drupal.org/project/lang_dropdown",
+            "support": {
+                "source": "http://cgit.drupalcode.org/lang_dropdown"
+            },
+            "time": "2016-12-25 10:50:23"
         },
         {
             "name": "drupal/leaflet",
@@ -8334,6 +8388,7 @@
         "drupal/content_entity_language_switcher": 20,
         "drupal/classy_paragraphs": 10,
         "drupal/node_clone": 20,
+        "drupal/lang_dropdown": 20,
         "drupal/devel": 20,
         "drupal/examples": 20
     },
