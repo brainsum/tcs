@@ -20,7 +20,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                 {{ content.field_input_label }}
 
                 <div class="savings-calculator__inputs">
-                    <input class="form-number" type="number" name="number">
+                    <input class="form-number" type="number" name="number" min="0">
                     <button class="button button--primary">{{ 'Calculate'|t }}</button>
                 </div>
             </div>

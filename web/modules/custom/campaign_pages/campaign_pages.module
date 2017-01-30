@@ -44,6 +44,10 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
     $element['uri']['#title_display'] = 'none';
     $element['title']['#title_display'] = 'none';
   }
+
+  if ($field_name === 'call_to_action' || $field_name === 'field_call_to_action') {
+    $element['title']['#maxlength'] = 32;
+  }
 }
 
 /**

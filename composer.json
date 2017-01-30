@@ -51,7 +51,8 @@
         "drupal/content_entity_language_switcher": "dev-8.x-1.x",
         "drupal/classy_paragraphs": "^1.0@beta",
         "drupal/node_clone": "1.x-dev",
-        "drupal/lang_dropdown": "2.x-dev"
+        "drupal/lang_dropdown": "2.x-dev",
+        "drupal/diff": "^1.0@RC"
     },
     "require-dev": {
         "behat/mink": "~1.7",
