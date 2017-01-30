@@ -3689,6 +3689,12 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   font-weight: 700;
 }
 
+.paragraphs-dropbutton-wrapper .button.parade-button-savings-calculator {
+  background-image: url("../../images/savings-calculator.png");
+  font-size: .85em;
+  line-height: 1.62;
+}
+
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
  *
