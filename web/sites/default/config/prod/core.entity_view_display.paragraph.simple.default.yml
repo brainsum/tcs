@@ -11,7 +11,7 @@ dependencies:
     - field.field.paragraph.simple.field_title
     - paragraphs.paragraphs_type.simple
   module:
-    - link
+    - parade
     - text
 id: paragraph.simple.default
 targetEntityType: paragraph
@@ -28,7 +28,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link
+    type: link_call_to_action
   field_text:
     weight: 1
     label: hidden

@@ -13,7 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.text_box
   module:
     - image
-    - link
+    - parade
     - text
 id: paragraph.text_box.default
 targetEntityType: paragraph
@@ -30,7 +30,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    type: link_call_to_action
   field_image:
     weight: 1
     label: hidden

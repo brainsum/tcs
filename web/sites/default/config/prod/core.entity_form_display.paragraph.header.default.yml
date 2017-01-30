@@ -15,7 +15,7 @@ dependencies:
   module:
     - content_moderation
     - file
-    - link
+    - parade
 id: paragraph.header.default
 targetEntityType: paragraph
 bundle: header
@@ -39,8 +39,9 @@ content:
     settings:
       placeholder_url: 'Button URL'
       placeholder_title: 'Button text'
+      open_on_new_tab: false
     third_party_settings: {  }
-    type: link_default
+    type: link_cta
   field_color_scheme:
     weight: 0
     settings: {  }
