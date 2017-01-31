@@ -74,11 +74,24 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
   .field--name-field-call-to-action {
     margin: 0;
     text-align: left;
+    position: relative;
+    min-height: 46px;
 
     // @see TCS-157
     // @todo
-    &.fly {
-
+    @-webkit-keyframes flyToRight {
+      0%   {right: 100%;}
+      100% {right: 0; position:fixed;}
+    }
+    @keyframes flyToRight {
+      0%   {right: 100%;}
+      100% {right: 0; position:fixed;}
+    }
+    &.fly a {
+      right: 0;
+      position:fixed;
+      -webkit-animation: flyToRight 2s;
+      animation: flyToRight 2s;
     }
 
     .field__item {
