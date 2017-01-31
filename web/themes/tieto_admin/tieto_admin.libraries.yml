@@ -124,3 +124,10 @@ savings-calculator:
     js/savings-calculator.js: {}
   dependencies:
     - core/jquery
+
+flying_cta:
+  js:
+    js/TCS-157.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
