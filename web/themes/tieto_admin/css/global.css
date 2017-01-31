@@ -3007,6 +3007,35 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action {
   margin: 0;
   text-align: left;
+  position: relative;
+  min-height: 46px;
+}
+
+@-webkit-keyframes flyToRight {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0;
+    position: fixed;
+  }
+}
+
+@keyframes flyToRight {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0;
+    position: fixed;
+  }
+}
+
+.paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action.fly a {
+  right: 0;
+  position: fixed;
+  -webkit-animation: flyToRight 2s;
+  animation: flyToRight 2s;
 }
 
 .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action .field__item {
