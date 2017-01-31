@@ -8,7 +8,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 .paragraph--type--header.paragraph--view-mode--default {
   padding: 0;
   position: relative;
-  min-height: 82vh;
+  height: 80vh;
 
   // Background overlay
   .bg-wrapper::before {
@@ -19,12 +19,19 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     background-color: $paragraph-header-overlay-bg;
   }
 
-  // Diagonal edge for the next paragraph.
-  + .paragraph {
-    @include slope(before, 3.5deg, false);
-    ~ .paragraph {
-      position: relative;
-      z-index: 1;
+  @supports (clip-path: polygon(0 0)) {
+    .bg-wrapper {
+      clip-path: polygon(0 0, 100% 0, calc(100% + 80vh) 100%, 0 90%);
+    }
+  }
+
+  @supports not (clip-path: polygon(0 0)) {
+    + .paragraph {
+      @include slope(before, 2.7deg, false);
+      ~ .paragraph {
+        position: relative;
+        z-index: 1;
+      }
     }
   }
 

@@ -138,6 +138,14 @@
 
 .campaign-footer {
   text-align: center;
+
+  // These are needed because of CSS slope.
+  // @see header.scss
+  @supports not (clip-path: polygon(0 0)) {
+    position: relative;
+    z-index: 1;
+  }
+
   .block {
     display: block;
     margin: 1em 0;

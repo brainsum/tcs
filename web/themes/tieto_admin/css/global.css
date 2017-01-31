@@ -1938,6 +1938,13 @@ li.tabs__tab a {
   text-align: center;
 }
 
+@supports not ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) {
+  .campaign-footer {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 .campaign-footer .block {
   display: block;
   margin: 1em 0;
@@ -2172,59 +2179,6 @@ li.tabs__tab a {
     background: white;
     color: #67afe1;
   }
-}
-
-/**
- * Paragraph blocks
- */
-.diagonal-after {
-  position: relative;
-  z-index: 1;
-}
-
-.diagonal-after::after {
-  background: inherit;
-  content: ' ';
-  display: block;
-  height: 1000px;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  -webkit-transform: skewY(-3.5deg) translateZ(0);
-  transform: skewY(-3.5deg) translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  outline: 1px solid transparent;
-  bottom: 0;
-  -webkit-transform-origin: 100%;
-  transform-origin: 100%;
-}
-
-.diagonal-before {
-  position: relative;
-  z-index: 1;
-}
-
-.diagonal-before::before {
-  background: inherit;
-  content: ' ';
-  display: block;
-  height: 1000px;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  -webkit-transform: skewY(-3.5deg) translateZ(0);
-  transform: skewY(-3.5deg) translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  outline: 1px solid transparent;
-  top: 0;
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
 }
 
 body.page-node-type-campaign .region-pre-content {
@@ -2915,7 +2869,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--header.paragraph--view-mode--default {
   padding: 0;
   position: relative;
-  min-height: 82vh;
+  height: 80vh;
 }
 
 .paragraph--type--header.paragraph--view-mode--default .bg-wrapper::before {
@@ -2929,34 +2883,40 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   background-color: rgba(103, 175, 225, 0.5);
 }
 
-.paragraph--type--header.paragraph--view-mode--default + .paragraph {
-  position: relative;
-  z-index: 1;
+@supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) {
+  .paragraph--type--header.paragraph--view-mode--default .bg-wrapper {
+    -webkit-clip-path: polygon(0 0, 100% 0, calc(100% + 80vh) 100%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, calc(100% + 80vh) 100%, 0 90%);
+  }
 }
 
-.paragraph--type--header.paragraph--view-mode--default + .paragraph::before {
-  background: inherit;
-  content: ' ';
-  display: block;
-  height: 1000px;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  -webkit-transform: skewY(3.5deg) translateZ(0);
-  transform: skewY(3.5deg) translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  outline: 1px solid transparent;
-  top: 0;
-  -webkit-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-}
-
-.paragraph--type--header.paragraph--view-mode--default + .paragraph ~ .paragraph {
-  position: relative;
-  z-index: 1;
+@supports not ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) {
+  .paragraph--type--header.paragraph--view-mode--default + .paragraph {
+    position: relative;
+    z-index: 1;
+  }
+  .paragraph--type--header.paragraph--view-mode--default + .paragraph::before {
+    background: inherit;
+    content: ' ';
+    display: block;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    -webkit-transform: skewY(2.7deg) translateZ(0);
+    transform: skewY(2.7deg) translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+    top: 0;
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+  .paragraph--type--header.paragraph--view-mode--default + .paragraph ~ .paragraph {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .paragraph--type--header.paragraph--view-mode--default .field--name-field-title {
@@ -3200,6 +3160,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   min-height: 340px;
   display: table;
   width: 100%;
+  position: relative;
 }
 
 .paragraph--type--parallax.paragraph--view-mode--default .paragraph-inner {

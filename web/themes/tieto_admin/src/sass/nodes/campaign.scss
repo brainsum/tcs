@@ -176,18 +176,6 @@
   }
 }
 
-
-/**
- * Paragraph blocks
- */
-.diagonal-after {
-  @include slope(after)
-}
-
-.diagonal-before {
-  @include slope(before)
-}
-
 body.page-node-type-campaign {
 
   .region-pre-content {
