@@ -91,7 +91,7 @@ label[for] {
   background-color: #fcf4f2;
 }
 .form-required:after {
-  background-image: url(../../images/required.svg);
+  background-image: url(../images/required.svg);
   background-size: 7px 7px;
   width: 7px;
   height: 7px;
@@ -232,7 +232,7 @@ select {
   border: 1px solid #a6a6a6;
   border-radius: 0.143em;
   background:
-    url(../../../../core/misc/icons/333333/caret-down.svg) no-repeat 99% 63%, #fcfcfa; /* LTR */
+    url(/core/misc/icons/333333/caret-down.svg) no-repeat 99% 63%, #fcfcfa; /* LTR */
   text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
   font-size: 0.875rem;
   -webkit-transition: all 0.1s;

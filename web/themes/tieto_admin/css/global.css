@@ -10,8 +10,8 @@
  */
 @font-face {
   font-family: 'HelveticaNeue';
-  src: url("../../fonts/HelveticaNeueLTCom-Th.eot");
-  src: url("../../fonts/HelveticaNeueLTCom-Th.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Th.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTCom-Th.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Th.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Th.svg#HelveticaNeueLTCom-Th") format("svg");
+  src: url("../fonts/HelveticaNeueLTCom-Th.eot");
+  src: url("../fonts/HelveticaNeueLTCom-Th.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueLTCom-Th.woff2") format("woff2"), url("../fonts/HelveticaNeueLTCom-Th.woff") format("woff"), url("../fonts/HelveticaNeueLTCom-Th.ttf") format("truetype"), url("../fonts/HelveticaNeueLTCom-Th.svg#HelveticaNeueLTCom-Th") format("svg");
   font-weight: 100;
   font-style: normal;
   font-stretch: normal;
@@ -20,8 +20,8 @@
 
 @font-face {
   font-family: 'HelveticaNeue';
-  src: url("../../fonts/HelveticaNeueLTCom-Lt.eot");
-  src: url("../../fonts/HelveticaNeueLTCom-Lt.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Lt.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTCom-Lt.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Lt.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Lt.svg#HelveticaNeueLTCom-Lt") format("svg");
+  src: url("../fonts/HelveticaNeueLTCom-Lt.eot");
+  src: url("../fonts/HelveticaNeueLTCom-Lt.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueLTCom-Lt.woff2") format("woff2"), url("../fonts/HelveticaNeueLTCom-Lt.woff") format("woff"), url("../fonts/HelveticaNeueLTCom-Lt.ttf") format("truetype"), url("../fonts/HelveticaNeueLTCom-Lt.svg#HelveticaNeueLTCom-Lt") format("svg");
   font-weight: 300;
   font-style: normal;
   font-stretch: normal;
@@ -30,8 +30,8 @@
 
 @font-face {
   font-family: 'HelveticaNeue';
-  src: url("../../fonts/HelveticaNeueLTCom-Roman.eot");
-  src: url("../../fonts/HelveticaNeueLTCom-Roman.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Roman.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTCom-Roman.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Roman.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Roman.svg#HelveticaNeueLTCom-Roman") format("svg");
+  src: url("../fonts/HelveticaNeueLTCom-Roman.eot");
+  src: url("../fonts/HelveticaNeueLTCom-Roman.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueLTCom-Roman.woff2") format("woff2"), url("../fonts/HelveticaNeueLTCom-Roman.woff") format("woff"), url("../fonts/HelveticaNeueLTCom-Roman.ttf") format("truetype"), url("../fonts/HelveticaNeueLTCom-Roman.svg#HelveticaNeueLTCom-Roman") format("svg");
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -40,8 +40,8 @@
 
 @font-face {
   font-family: 'HelveticaNeue';
-  src: url("../../fonts/HelveticaNeueLTCom-Hv.eot");
-  src: url("../../fonts/HelveticaNeueLTCom-Hv.eot?#iefix") format("embedded-opentype"), url("../../fonts/HelveticaNeueLTCom-Hv.woff2") format("woff2"), url("../../fonts/HelveticaNeueLTCom-Hv.woff") format("woff"), url("../../fonts/HelveticaNeueLTCom-Hv.ttf") format("truetype"), url("../../fonts/HelveticaNeueLTCom-Hv.svg#HelveticaNeueLTCom-Hv") format("svg");
+  src: url("../fonts/HelveticaNeueLTCom-Hv.eot");
+  src: url("../fonts/HelveticaNeueLTCom-Hv.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeueLTCom-Hv.woff2") format("woff2"), url("../fonts/HelveticaNeueLTCom-Hv.woff") format("woff"), url("../fonts/HelveticaNeueLTCom-Hv.ttf") format("truetype"), url("../fonts/HelveticaNeueLTCom-Hv.svg#HelveticaNeueLTCom-Hv") format("svg");
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;
@@ -960,7 +960,7 @@ label[for] {
 }
 
 .form-required:after {
-  background-image: url(../../images/required.svg);
+  background-image: url(../images/required.svg);
   background-size: 7px 7px;
   width: 7px;
   height: 7px;
@@ -1115,7 +1115,7 @@ select {
   /* LTR */
   border: 1px solid #a6a6a6;
   border-radius: 0.143em;
-  background: url(../../../../core/misc/icons/333333/caret-down.svg) no-repeat 99% 63%, #fcfcfa;
+  background: url(/core/misc/icons/333333/caret-down.svg) no-repeat 99% 63%, #fcfcfa;
   /* LTR */
   text-shadow: 0 1px rgba(255, 255, 255, 0.6);
   font-size: 0.875rem;
@@ -2380,7 +2380,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 
 .node-campaign-form .parade-button-marketo-form,
 .node-campaign-edit-form .parade-button-marketo-form {
-  background-image: url("../../images/form.png");
+  background-image: url("../images/form.png");
 }
 
 .node-campaign-form .paragraph-actions,
@@ -3690,7 +3690,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 }
 
 .paragraphs-dropbutton-wrapper .button.parade-button-savings-calculator {
-  background-image: url("../../images/savings-calculator.png");
+  background-image: url("../images/savings-calculator.png");
   font-size: .85em;
   line-height: 1.62;
 }
@@ -4263,5 +4263,3 @@ h3.tieto-lead {
   background: #fff !important;
   color: #67afe1 !important;
 }
-
-/*# sourceMappingURL=global.css.map */

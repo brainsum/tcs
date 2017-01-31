@@ -3,10 +3,10 @@
 global:
   version: VERSION
   js:
-    dist/js/global.js: {}
+    js/global.js: {}
   css:
     base:
-      dist/css/global.css: {}
+      css/global.css: {}
   dependencies:
     - system/admin
     - core/jquery
@@ -16,14 +16,14 @@ global:
 parallax:
   version: VERSION
   js:
-    dist/js/parallax.js: {}
+    js/parallax.js: {}
 
 # Inline video
 # @see https://github.com/bfred-it/iphone-inline-video
 iphone-inline-video:
   version: VERSION
   js:
-    dist/js/iphone-inline-video.js: {}
+    js/iphone-inline-video.js: {}
 
 # Responsive Tabs.
 # @see https://github.com/jellekralt/Responsive-Tabs
@@ -31,9 +31,9 @@ responsive-tabs:
   version: VERSION
   css:
     base:
-      dist/css/responsive-tabs.css: {}
+      css/responsive-tabs.css: {}
   js:
-    dist/js/responsive-tabs.js: {}
+    js/responsive-tabs.js: {}
   dependencies:
     - core/jquery
 
@@ -41,7 +41,7 @@ responsive-tabs:
 smooth-scroll:
   version: VERSION
   js:
-    dist/js/smooth-scroll.js: {}
+    js/smooth-scroll.js: {}
   dependencies:
     - core/jquery
 
@@ -49,7 +49,7 @@ smooth-scroll:
 scrollspy:
   version: VERSION
   js:
-    dist/js/scrollspy.js: {}
+    js/scrollspy.js: {}
   dependencies:
     - core/jquery
 
@@ -57,10 +57,10 @@ scrollspy:
 maintenance-page:
   version: VERSION
   js:
-    dist/js/mobile.install.js: {}
+    js/mobile.install.js: {}
   css:
     theme:
-      dist/css/maintenance-page.css: {}
+      css/maintenance-page.css: {}
   dependencies:
     - system/maintenance
     - tieto_admin/global
@@ -69,10 +69,10 @@ maintenance-page:
 install-page:
   version: VERSION
   js:
-    dist/js/mobile.install.js: {}
+    js/mobile.install.js: {}
   css:
     theme:
-      dist/css/install-page.css: {}
+      css/install-page.css: {}
   dependencies:
     - tieto_admin/maintenance-page
 
@@ -80,7 +80,7 @@ install-page:
 # drupal.nav-tabs:
 #   version: VERSION
 #   js:
-#     dist/js/nav-tabs.js: {}
+#     js/nav-tabs.js: {}
 #   dependencies:
 #     - core/matchmedia
 #     - core/jquery
@@ -92,7 +92,7 @@ install-page:
 # tabledrag:
 #   version: VERSION
 #   js:
-#     dist/js/tabledrag.js: {}
+#     js/tabledrag.js: {}
 #   dependencies:
 #     - core/misc/tabledrag
 
@@ -101,26 +101,26 @@ vertical-tabs:
   version: VERSION
   css:
     component:
-      dist/css/vertical-tabs.css: {}
+      css/vertical-tabs.css: {}
 
 # jQuery UI theme
 tieto_admin.jquery.ui:
   version: VERSION
   css:
     component:
-      dist/css/jquery.ui.theme.css: { weight: -1 }
+      css/jquery.ui.theme.css: { weight: -1 }
 
 # Drupal Dialog
 tieto_admin.drupal.dialog:
   version: VERSION
   css:
     theme:
-      dist/css/dialog.css: {}
+      css/dialog.css: {}
 
 # Savings calculator
 savings-calculator:
   version: VERSION
   js:
-    dist/js/savings-calculator.js: {}
+    js/savings-calculator.js: {}
   dependencies:
     - core/jquery

@@ -36,7 +36,7 @@ libraries-extend:
     - tieto_admin/tieto_admin.jquery.ui
 
 ckeditor_stylesheets:
-  - dist/css/wysiwyg.css
+  - css/wysiwyg.css
 
 regions:
   header: 'Header'

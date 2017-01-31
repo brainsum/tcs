@@ -7,8 +7,8 @@
  */
 .install-page {
   background-color: #1275b2;
-  background-image: url(../../images/noise-low.png), -webkit-radial-gradient(#1788cf, #106193);
-  background-image: url(../../images/noise-low.png), radial-gradient(#1788cf, #106193);
+  background-image: url(../images/noise-low.png), -webkit-radial-gradient(#1788cf, #106193);
+  background-image: url(../images/noise-low.png), radial-gradient(#1788cf, #106193);
   background-repeat: repeat;
   background-position: left top, 50% 50%;
   /* LTR */
@@ -60,5 +60,3 @@
     max-width: 100%;
   }
 }
-
-/*# sourceMappingURL=install-page.css.map */
