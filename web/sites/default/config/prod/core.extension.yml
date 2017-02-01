@@ -5,6 +5,7 @@ module:
   block: 0
   breakpoint: 0
   campaign_pages: 0
+  captcha: 0
   ckeditor: 0
   classy_paragraphs: 0
   cloudfront_purger: 0
