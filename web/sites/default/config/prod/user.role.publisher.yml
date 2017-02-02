@@ -85,3 +85,5 @@ permissions:
   - 'create paragraph content social_links'
   - 'delete paragraph content social_links'
   - 'update paragraph content social_links'
+  - 'clone node'
+  - 'clone own nodes'
