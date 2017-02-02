@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -247,4 +249,29 @@ function tieto_admin_preprocess_paragraph__header(&$variables) {
  */
 function tieto_admin_preprocess_details(&$variables) {
   $variables['title'] = strip_tags($variables['title']);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__text_box().
+ * Applies an image style on the image if layout of the parent Text boxes one of the following:
+ * Rounded image (id: 5), Contacts (id: 6).
+ */
+function tieto_admin_preprocess_paragraph__text_box(&$variables) {
+  $paragraph = &$variables['paragraph'];
+  $parent = $paragraph->getParentEntity();
+
+  if ($parent->getType() === 'text_boxes' && in_array($parent->get('field_text_boxes_layout')->value, [5, 6])) {
+    $target_id = $paragraph->get('field_image')->target_id;
+
+    if (!$target_id) {
+      return;
+    }
+
+    $file = File::load($target_id);
+    $style = ImageStyle::load('square_350x350');
+    $file_uri = $file->getFileUri();
+    $new_file_uri = $style->buildUri($file_uri);
+
+    // @todo: I have no idea how to replace the new generated URI with the old.
+  }
 }
