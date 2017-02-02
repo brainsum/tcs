@@ -3170,16 +3170,28 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-title {
     float: right;
     text-align: right;
+    padding-left: 20px;
   }
-  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-text {
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-text,
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-call-to-action {
     float: left;
+    padding-right: 20px;
+  }
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-field-call-to-action {
+    width: 50%;
   }
   .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-title {
     float: left;
     text-align: left;
+    padding-right: 20px;
   }
-  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-text {
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-text,
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-call-to-action {
     float: right;
+    padding-left: 20px;
+  }
+  .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-field-call-to-action {
+    width: 50%;
   }
 }
 
