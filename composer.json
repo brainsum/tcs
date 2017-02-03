@@ -52,7 +52,8 @@
         "drupal/classy_paragraphs": "^1.0@beta",
         "drupal/node_clone": "1.x-dev",
         "drupal/lang_dropdown": "2.x-dev",
-        "drupal/diff": "^1.0@RC"
+        "drupal/diff": "^1.0@RC",
+        "drupal/recaptcha": "^2.2"
     },
     "require-dev": {
         "behat/mink": "~1.7",

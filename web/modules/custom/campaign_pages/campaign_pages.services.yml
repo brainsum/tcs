@@ -1,0 +1,5 @@
+services:
+  campaign_pages.redirect_subscriber:
+    class: Drupal\campaign_pages\EventSubscriber\RedirectSubscriber
+    tags:
+      - { name: event_subscriber }
