@@ -2870,6 +2870,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   padding: 0;
   position: relative;
   height: 80vh;
+  overflow: hidden;
 }
 
 .paragraph--type--header.paragraph--view-mode--default .bg-wrapper::before {
@@ -2969,33 +2970,71 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   text-align: left;
   position: relative;
   min-height: 46px;
+  z-index: 999;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
-@-webkit-keyframes flyToRight {
+@-webkit-keyframes flyToRightChild {
   0% {
-    right: 100%;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
   100% {
-    right: 0;
-    position: fixed;
+    -webkit-transform: translate(-100%, 250px);
+    transform: translate(-100%, 250px);
   }
 }
 
-@keyframes flyToRight {
+@keyframes flyToRightChild {
   0% {
-    right: 100%;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
   100% {
-    right: 0;
-    position: fixed;
+    -webkit-transform: translate(-100%, 250px);
+    transform: translate(-100%, 250px);
   }
+}
+
+@-webkit-keyframes flyToRightParent {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+}
+
+@keyframes flyToRightParent {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+}
+
+.paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action.fly {
+  -webkit-animation: flyToRightParent 2s;
+  animation: flyToRightParent 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action.fly a {
-  right: 0;
-  position: fixed;
-  -webkit-animation: flyToRight 2s;
-  animation: flyToRight 2s;
+  -webkit-animation: flyToRightChild 2s;
+  animation: flyToRightChild 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 .paragraph--type--header.paragraph--view-mode--default .field--name-field-call-to-action .field__item {

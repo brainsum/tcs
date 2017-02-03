@@ -9,6 +9,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
   padding: 0;
   position: relative;
   height: 80vh;
+  overflow: hidden;
 
   // Background overlay
   .bg-wrapper::before {
@@ -76,22 +77,40 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     text-align: left;
     position: relative;
     min-height: 46px;
+    z-index: 999;
+    transition: all 1s;
 
     // @see TCS-157
     // @todo
-    @-webkit-keyframes flyToRight {
-      0%   {right: 100%;}
-      100% {right: 0; position:fixed;}
+    @keyframes flyToRightChild {
+      0%   {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(-100%, 250px);
+      }
     }
-    @keyframes flyToRight {
-      0%   {right: 100%;}
-      100% {right: 0; position:fixed;}
+    @keyframes flyToRightParent {
+      0%   {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(100%, 0);
+      }
     }
-    &.fly a {
-      right: 0;
-      position:fixed;
-      -webkit-animation: flyToRight 2s;
-      animation: flyToRight 2s;
+    &.fly {
+      //transform: translate(100%, 0);
+      animation: flyToRightParent 2s;
+      animation-fill-mode: both;
+      animation-direction: alternate;
+      a {
+        animation: flyToRightChild 2s;
+        animation-fill-mode: both;
+        animation-direction: alternate;
+        //position: absolute;
+        //transform: translate(-100%, 250px);
+        //top: 250px;
+      }
     }
 
     .field__item {
