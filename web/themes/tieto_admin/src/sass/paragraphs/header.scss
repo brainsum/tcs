@@ -76,42 +76,6 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     margin: 0;
     text-align: left;
     position: relative;
-    min-height: 46px;
-    z-index: 999;
-    transition: all 1s;
-
-    // @see TCS-157
-    // @todo
-    @keyframes flyToRightChild {
-      0%   {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(-100%, 250px);
-      }
-    }
-    @keyframes flyToRightParent {
-      0%   {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(100%, 0);
-      }
-    }
-    &.fly {
-      //transform: translate(100%, 0);
-      animation: flyToRightParent 2s;
-      animation-fill-mode: both;
-      animation-direction: alternate;
-      a {
-        animation: flyToRightChild 2s;
-        animation-fill-mode: both;
-        animation-direction: alternate;
-        //position: absolute;
-        //transform: translate(-100%, 250px);
-        //top: 250px;
-      }
-    }
 
     .field__item {
       display: inline-block;
@@ -135,4 +99,39 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     }
   }
 
+}
+
+.fly {
+  z-index: 1000;
+  border-radius: 2px;
+
+  .button {
+    margin: 0;
+  }
+
+  &.in {
+    transform: translateX(0) translateY(-50%);
+    transition: transform .5s;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, .15);
+
+    @include breakpoint-max(md) {
+      width: 100%;
+      padding: 0 1em;
+      box-shadow: none;
+
+      .button {
+        width: 100%;
+      }
+    }
+  }
+
+  &.out {
+    transform: translate(0) translateY(0);
+    transition: transform .5s;
+
+    @include breakpoint-max(md) {
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      transition: transform .5s, box-shadow .5s;
+    }
+  }
 }
