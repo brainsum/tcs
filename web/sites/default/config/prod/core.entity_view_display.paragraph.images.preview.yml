@@ -31,6 +31,5 @@ content:
     type: string
 hidden:
   created: true
-  field_color_scheme: true
   field_images: true
   uid: true

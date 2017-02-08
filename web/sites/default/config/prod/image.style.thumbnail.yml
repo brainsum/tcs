@@ -15,4 +15,3 @@ effects:
       width: null
       height: 150
       upscale: false
-pipeline: __default__
