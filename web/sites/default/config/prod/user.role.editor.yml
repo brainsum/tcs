@@ -63,3 +63,7 @@ permissions:
   56: 'delete paragraph content social_links'
   57: 'update paragraph content social_links'
   58: 'revert campaign revisions'
+  59: 'create paragraph content savings_calculator'
+  60: 'delete paragraph content savings_calculator'
+  61: 'update paragraph content savings_calculator'
+  62: 'view paragraph content savings_calculator'

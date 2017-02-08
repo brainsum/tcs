@@ -42,7 +42,6 @@ content:
     type: string
 hidden:
   created: true
-  field_color_scheme: true
   field_enable_confirm_message: true
   field_image: true
   field_lead_text: true
