@@ -14,6 +14,7 @@
       var $fixed = null;
       var isFixed = false;
       var classAfterScroll = 'fly';
+      var animatingOut = false;
 
       function update() {
         // reset the tick so we can
@@ -37,7 +38,7 @@
               position: 'fixed',
               top: isMobile ? 'auto' : '50%',
               right: isMobile ? 'auto' : '20px',
-              bottom: isMobile ? '10px' : 'auto',
+              bottom: isMobile ? '0' : 'auto',
               left: isMobile ? 0 : 'auto',
             });
 
@@ -55,8 +56,9 @@
           });
         }
         // Go back to normal.
-        else if(isFixed && !shouldBeFixed) {
+        else if(isFixed && !shouldBeFixed && !animatingOut) {
           var fixedBoundingClientRect = getFixedBoundingClientRect();
+          animatingOut = true;
 
           $fixed
             .removeClass('in')
@@ -75,6 +77,9 @@
 
             $fixed.one('transitionend', function() {
               isFixed = false;
+              animatingOut = false;
+              boundingClientRect = $cta[0].getBoundingClientRect();
+
               $fixed
                 .removeClass('out')
                 .css({
@@ -82,7 +87,7 @@
                   top: boundingClientRect.top + window.scrollY + 'px',
                   right: 'auto',
                   left: boundingClientRect.left + 'px',
-                })
+                });
             })
           });
         }
@@ -91,7 +96,12 @@
       function createFixed() {
         var $clone = $cta
           .clone()
-            .css('padding', $cta.css('padding'));
+            .css({
+              'padding-top': $cta.css('padding-top'),
+              'padding-right': $cta.css('padding-right'),
+              'padding-bottom': $cta.css('padding-bottom'),
+              'padding-left': $cta.css('padding-left'),
+            })
 
         $cta.css('transition', 'none');
         $cta.css('visibility', 'hidden');
