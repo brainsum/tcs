@@ -5,7 +5,6 @@ module:
   block: 0
   breakpoint: 0
   campaign_pages: 0
-  captcha: 0
   ckeditor: 0
   classy_paragraphs: 0
   cloudfront_purger: 0
@@ -48,6 +47,7 @@ module:
   metatag_open_graph: 0
   metatag_twitter_cards: 0
   node: 0
+  node_clone: 0
   options: 0
   page_cache: 0
   parade: 0

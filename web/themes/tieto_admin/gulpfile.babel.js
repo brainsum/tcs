@@ -23,7 +23,7 @@ Elixir.config.publicPath = __dirname
 Elixir.config.viewPath = 'templates'
 Elixir.config.js.folder = 'scripts'
 Elixir.config.browserSync = {
-    proxy: 'http://public360.local',
+    proxy: 'http://tcs.local',
     open: false,
     reloadOnRestart: true,
     notify: false

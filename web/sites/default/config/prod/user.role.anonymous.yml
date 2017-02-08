@@ -38,4 +38,3 @@ permissions:
   - 'view paragraph content locations'
   - 'view paragraph content marketo_poll'
   - 'view paragraph content social_links'
-  - 'view paragraph content savings_calculator'
