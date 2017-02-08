@@ -31,6 +31,7 @@ content:
     type: string
 hidden:
   created: true
+  field_color_scheme: true
   field_geofield: true
   field_location: true
   field_text: true
