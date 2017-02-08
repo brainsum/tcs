@@ -3306,13 +3306,13 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .paragraph--type--text-box .field--name-field-image {
   float: left;
-  max-width: 30%;
+  width: 30%;
   max-height: 100%;
 }
 
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .paragraph--type--text-box .field--name-field-image img {
   max-height: 100%;
-  width: auto;
+  width: 100%;
   border-radius: 50%;
 }
 
