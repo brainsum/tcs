@@ -84,6 +84,14 @@
 		}
 	}
 
+  &.layout--rounded_image {
+    .field--name-field-call-to-action {
+      clear: both;
+      text-align: left;
+      padding: 20px 15px 0;
+    }
+  }
+
 }
 
 // Text Boxes -> Text Box
