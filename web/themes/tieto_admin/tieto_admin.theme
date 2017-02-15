@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -247,4 +249,20 @@ function tieto_admin_preprocess_paragraph__header(&$variables) {
  */
 function tieto_admin_preprocess_details(&$variables) {
   $variables['title'] = strip_tags($variables['title']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Switch link block image style based on the row's block size setting
+ */
+function tieto_admin_preprocess_field__paragraph__field_image__text_box(&$variables) {
+  // Get paragraph object field is attached to
+  $paragraph = $variables['element']['#object'];
+
+  // Get parent link blocks item
+  $parent = $paragraph->getParentEntity();
+  if ($parent->getType() === 'text_boxes' && in_array($parent->get('field_text_boxes_layout')->value, [5, 6])) {
+    $variables['items'][0]['content']['#image_style'] = 'square_350x350';
+  }
 }
