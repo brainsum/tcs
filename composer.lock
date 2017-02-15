@@ -2408,7 +2408,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "44f7f3875ee32c95e28bbf08285758d6f385cab1"
+                "reference": "a6af6bbfeb9f0f501ab5fc44f6f9c2bad1c101b0"
             },
             "require": {
                 "drupal/classy_paragraphs": "~1.0",
@@ -2437,7 +2437,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1485876183"
+                    "datestamp": "1487159582"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2445,6 +2445,10 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "Kosa Ilma",
+                    "homepage": "https://www.drupal.org/user/3435475"
+                },
                 {
                     "name": "balagan",
                     "homepage": "https://www.drupal.org/user/1230072"
@@ -2487,7 +2491,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-02-02 16:53:35"
+            "time": "2017-02-15 14:34:28"
         },
         {
             "name": "drupal/paragraphs",
@@ -6888,7 +6892,8 @@
                 "source": "http://cgit.drupalcode.org/devel",
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
+            },
+            "time": "2017-02-08 07:16:17"
         },
         {
             "name": "drupal/examples",
@@ -6991,7 +6996,8 @@
                 "source": "http://cgit.drupalcode.org/examples",
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
-            }
+            },
+            "time": "2017-01-15 20:54:32"
         },
         {
             "name": "drupal/toolbar_anti_flicker",
