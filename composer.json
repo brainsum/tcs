@@ -105,6 +105,9 @@
         "patches": {
             "drupal/node_clone": {
                 "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
+            },
+            "drupal/entity_reference_revisions": {
+                "Deletion of referenced entities on host delete, without checking usage/another reference.": "https://www.drupal.org/files/issues/deletion_of_used_referenced_entity-2852522-4.patch"
             }
         }
     }
