@@ -49,6 +49,7 @@
         "drupal/addtoany": "^1.7",
         "drupal/content_entity_language_switcher": "dev-8.x-1.x",
         "drupal/classy_paragraphs": "^1.0",
+        "drupal/node_clone": "1.x-dev",
         "drupal/lang_dropdown": "2.x-dev",
         "drupal/diff": "^1.0",
         "drupal/recaptcha": "^2.2",
