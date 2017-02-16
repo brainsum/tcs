@@ -370,6 +370,57 @@ details summary:hover {
   }
 }
 
+.a2a_svg {
+  -webkit-transition: all ease .2s;
+  transition: all ease .2s;
+}
+
+.a2a_svg:hover {
+  -webkit-transform: scale(1.1) translateZ(0);
+  transform: scale(1.1) translateZ(0);
+}
+
+.a2a_svg svg {
+  display: none !important;
+}
+
+.addtoany_list a:hover:hover img,
+.addtoany_list a:hover span {
+  opacity: 1;
+}
+
+.a2a_s_facebook {
+  background: url("../images/facebook-tr.svg") no-repeat center center;
+}
+
+.a2a_s_facebook:hover {
+  background-color: #4267b2 !important;
+}
+
+.a2a_s_twitter {
+  background: url("../images/twitter-tr.svg") no-repeat center center;
+}
+
+.a2a_s_twitter:hover {
+  background-color: #1da1f3 !important;
+}
+
+.a2a_s_linkedin {
+  background: url("../images/linkedin-tr.svg") no-repeat center center;
+}
+
+.a2a_s_linkedin:hover {
+  background-color: #1884bb !important;
+}
+
+.a2a_s_google_plus {
+  background: url("../images/gplus-tr.svg") no-repeat center center;
+}
+
+.a2a_s_google_plus:hover {
+  background-color: #db4437 !important;
+}
+
 /**
  * @file
  * Structural styles for Seven’s UI buttons
