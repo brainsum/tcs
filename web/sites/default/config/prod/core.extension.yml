@@ -10,6 +10,7 @@ module:
   classy_paragraphs: 0
   cloudfront_purger: 0
   config: 0
+  config_readonly: 0
   content_entity_language_switcher: 0
   content_moderation: 0
   content_translation: 0
@@ -48,6 +49,7 @@ module:
   metatag_open_graph: 0
   metatag_twitter_cards: 0
   node: 0
+  node_clone: 0
   options: 0
   page_cache: 0
   parade: 0
