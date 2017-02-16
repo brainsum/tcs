@@ -68,3 +68,4 @@ permissions:
   61: 'update paragraph content savings_calculator'
   62: 'view paragraph content savings_calculator'
   63: 'edit any campaign content'
+  64: 'clone own nodes'
