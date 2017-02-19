@@ -26,5 +26,3 @@ web/sites/*/*services*.yml
 
 # Other
 nbproject
-shutdown.sh
-startup.sh

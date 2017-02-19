@@ -19,9 +19,9 @@ else
 fi
 
 # Start amazee dependencies.
-pygmy up || exit 1
+#pygmy up || exit 1
 # Start our drupal instance, ps to check if it started and open it.
 # docker-compose tart and up -d behave differently only initially. Every additional use is basically equivalent.
 docker-compose up -d || exit 1
 docker-compose ps || exit 1
-docker-compose exec --user drupal drupal bash || exit 1
+docker-compose exec --user 82 php sh || exit 1
