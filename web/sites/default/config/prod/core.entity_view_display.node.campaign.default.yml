@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.campaign.field_file
     - field.field.node.campaign.field_machine_name
     - field.field.node.campaign.field_menu
     - field.field.node.campaign.field_meta_tags
@@ -49,6 +50,7 @@ content:
     type: entity_reference_revisions_entity_view
 hidden:
   addtoany: true
+  field_file: true
   field_machine_name: true
   langcode: true
   links: true
