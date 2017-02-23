@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "59102e7f77a2cce589c01332309607cd",
+    "content-hash": "2b97b813ca57326a6ea785fed4c41293",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1193,7 +1193,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/config_readonly-8.x-1.0-beta2.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta2",
                 "shasum": "d3309a69ee9950a3e696a407981673ce5b041a16"
             },
             "require": {
@@ -2515,7 +2515,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "a6af6bbfeb9f0f501ab5fc44f6f9c2bad1c101b0"
+                "reference": "14879b3a3bdd3bb2446d412c600c8541717c8e2a"
             },
             "require": {
                 "drupal/classy_paragraphs": "~1.0",
@@ -2544,7 +2544,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1487159582"
+                    "datestamp": "1487694783"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2598,7 +2598,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-02-15 14:34:28"
+            "time": "2017-02-21 17:01:31"
         },
         {
             "name": "drupal/paragraphs",
@@ -2824,7 +2824,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/recaptcha-8.x-2.2.zip",
-                "reference": null,
+                "reference": "8.x-2.2",
                 "shasum": "99a3bda62b34ad6dac1d497fcf578e25aad0a3e0"
             },
             "require": {
@@ -8656,13 +8656,9 @@
     "stability-flags": {
         "drupal/parade": 20,
         "drupal/cloudfront_purger": 20,
-        "drupal/metatag": 10,
         "drupal/content_entity_language_switcher": 20,
-        "drupal/classy_paragraphs": 10,
         "drupal/node_clone": 20,
         "drupal/lang_dropdown": 20,
-        "drupal/diff": 5,
-        "drupal/config_readonly": 10,
         "drupal/devel": 20,
         "drupal/examples": 20
     },
