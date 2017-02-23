@@ -20,6 +20,7 @@ content:
     weight: -20
 hidden:
   addtoany: true
+  field_file: true
   field_machine_name: true
   field_menu: true
   field_meta_tags: true
