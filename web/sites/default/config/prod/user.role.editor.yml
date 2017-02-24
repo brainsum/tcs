@@ -70,3 +70,4 @@ permissions:
   63: 'edit any campaign content'
   64: 'clone own nodes'
   65: 'clone node'
+  66: 'use archived_draft transition'
