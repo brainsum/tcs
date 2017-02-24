@@ -53,7 +53,6 @@ module:
   options: 0
   page_cache: 0
   parade: 0
-  paragraphs: 0
   paragraphs_type_permissions: 0
   path: 0
   purge: 0
@@ -80,6 +79,7 @@ module:
   image_optimalization: 1
   menu_link_content: 1
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   stable: 0
