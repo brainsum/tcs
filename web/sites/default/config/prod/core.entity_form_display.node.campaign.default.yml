@@ -8,10 +8,13 @@ dependencies:
     - field.field.node.campaign.field_menu
     - field.field.node.campaign.field_meta_tags
     - field.field.node.campaign.field_paragraphs
+    - field.field.node.campaign.scheduled_archive_date
+    - field.field.node.campaign.scheduled_publish_date
     - node.type.campaign
   module:
     - content_moderation
     - file
+    - inline_entity_form
     - metatag
     - parade
     - path
@@ -22,7 +25,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 8
     settings: {  }
     third_party_settings: {  }
   field_file:
@@ -39,7 +42,7 @@ content:
     third_party_settings: {  }
     type: link_with_selected_attribute
   field_meta_tags:
-    weight: 9
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -51,6 +54,7 @@ content:
       edit_mode: preview
       add_mode: button
       form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
     type: entity_reference_paragraphs_preview
   langcode:
@@ -60,8 +64,32 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 10
     settings: {  }
+    third_party_settings: {  }
+  scheduled_archive_date:
+    type: inline_entity_form_complex
+    weight: 6
+    settings:
+      override_labels: true
+      label_singular: 'Scheduled archive date'
+      label_plural: 'Scheduled archive dates'
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
+      form_mode: default
+    third_party_settings: {  }
+  scheduled_publish_date:
+    type: inline_entity_form_complex
+    weight: 5
+    settings:
+      override_labels: true
+      label_singular: 'Scheduled publish date'
+      label_plural: 'Scheduled publish dates'
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
+      form_mode: default
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -71,12 +99,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 7
+    weight: 9
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60

@@ -53,7 +53,8 @@
         "drupal/lang_dropdown": "2.x-dev",
         "drupal/diff": "^1.0",
         "drupal/recaptcha": "^2.2",
-        "drupal/config_readonly": "^1.0"
+        "drupal/config_readonly": "^1.0",
+        "drupal/scheduled_updates": "1.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -110,6 +111,9 @@
             },
             "drupal/entity_reference_revisions": {
                 "Deletion of referenced entities on host delete, without checking usage/another reference.": "https://www.drupal.org/files/issues/deletion_of_used_referenced_entity-2852522-4.patch"
+            },
+            "drupal/scheduled_updates": {
+                "Scheduled Updates does not work with Content Moderation.": "https://www.drupal.org/files/issues/scheduled_updates_does-2821916-7.patch"
             }
         }
     }
