@@ -48,6 +48,11 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
   if ($field_name === 'call_to_action' || $field_name === 'field_call_to_action') {
     $element['title']['#maxlength'] = 32;
   }
+
+  // Remove scheduled date description.
+  if ($field_name === 'update_timestamp' && $context['form']['#entity_type'] === 'scheduled_update') {
+    unset($element['value']['#description']);
+  }
 }
 
 /**
