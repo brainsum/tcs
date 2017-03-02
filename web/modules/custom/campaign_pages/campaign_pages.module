@@ -49,9 +49,15 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
     $element['title']['#maxlength'] = 32;
   }
 
-  // Remove scheduled date description.
+  // Remove scheduled updates date description.
   if ($field_name === 'update_timestamp' && $context['form']['#entity_type'] === 'scheduled_update') {
     unset($element['value']['#description']);
+  }
+
+  // Hide empty scheduled updates field if user doesn't have create permission.
+  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state scheduled updates'))
+  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state_1 scheduled updates'))) {
+    $element['#access'] = FALSE;
   }
 }
 
