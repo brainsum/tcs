@@ -72,3 +72,8 @@ permissions:
   65: 'clone node'
   66: 'use archived_draft transition'
   67: 'view scheduled update entities'
+  68: 'create node__moderation_state_1 scheduled updates'
+  69: 'delete any node__moderation_state_1 scheduled updates'
+  70: 'delete own node__moderation_state_1 scheduled updates'
+  71: 'edit any node__moderation_state_1 scheduled updates'
+  72: 'edit own node__moderation_state_1 scheduled updates'
