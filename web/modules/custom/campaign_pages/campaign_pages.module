@@ -8,6 +8,7 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Datetime\Element\Datetime;
 
 /**
  * Implements hook_help().
@@ -51,7 +52,7 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
 
   // Remove scheduled updates date description.
   if ($field_name === 'update_timestamp' && $context['form']['#entity_type'] === 'scheduled_update') {
-    unset($element['value']['#description']);
+    $element['value']['#description'] = t('Format: %format.', array('%format' => Datetime::formatExample('Y.m.d. - H:i:s')));
   }
 
   // Hide empty scheduled updates field if user doesn't have create permission.
