@@ -114,6 +114,9 @@
             },
             "drupal/scheduled_updates": {
                 "Scheduled Updates does not work with Content Moderation.": "https://www.drupal.org/files/issues/scheduled_updates_does-2821916-7.patch"
+            },
+            "drupal/geocoder": {
+                "Fix config schema.": "https://www.drupal.org/files/issues/2824802-geocoder-schema-fix-2.patch"
             }
         }
     }
