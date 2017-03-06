@@ -77,8 +77,3 @@ permissions:
   70: 'delete own node__moderation_state_1 scheduled updates'
   71: 'edit any node__moderation_state_1 scheduled updates'
   72: 'edit own node__moderation_state_1 scheduled updates'
-  73: 'create node__moderation_state scheduled updates'
-  74: 'delete any node__moderation_state scheduled updates'
-  75: 'delete own node__moderation_state scheduled updates'
-  76: 'edit any node__moderation_state scheduled updates'
-  77: 'edit own node__moderation_state scheduled updates'
