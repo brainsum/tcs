@@ -131,7 +131,10 @@
         ticking = true;
       }
 
-      window.addEventListener('scroll', onScroll, false);
+      if ($cta[0]) {
+        // Listen scroll event only if there's button which we need to move.
+        window.addEventListener('scroll', onScroll, false);
+      }
     }
   };
 
