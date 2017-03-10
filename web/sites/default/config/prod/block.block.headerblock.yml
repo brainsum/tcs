@@ -8,8 +8,8 @@ dependencies:
     - tieto_admin
 id: headerblock
 theme: tieto_admin
-region: header
-weight: 0
+region: pre_content
+weight: -7
 provider: null
 plugin: header_block
 settings:

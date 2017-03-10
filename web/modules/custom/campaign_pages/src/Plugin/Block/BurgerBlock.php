@@ -5,14 +5,14 @@ namespace Drupal\campaign_pages\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides a Header Block.
+ * Provides a Burger Block.
  *
  * @Block(
- *   id = "header_block",
- *   admin_label = @Translation("Header block"),
+ *   id = "burger_block",
+ *   admin_label = @Translation("Burger block"),
  * )
  */
-class HeaderBlock extends BlockBase {
+class BurgerBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
