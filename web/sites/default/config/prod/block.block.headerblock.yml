@@ -1,0 +1,20 @@
+uuid: d10b8aec-58de-4b7e-9090-6525dd195639
+langcode: en
+status: true
+dependencies:
+  module:
+    - campaign_pages
+  theme:
+    - tieto_admin
+id: headerblock
+theme: tieto_admin
+region: header
+weight: 0
+provider: null
+plugin: header_block
+settings:
+  id: header_block
+  label: 'Header block'
+  provider: campaign_pages
+  label_display: '0'
+visibility: {  }
