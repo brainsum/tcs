@@ -77,3 +77,4 @@ permissions:
   70: 'delete own node__moderation_state_1 scheduled updates'
   71: 'edit any node__moderation_state_1 scheduled updates'
   72: 'edit own node__moderation_state_1 scheduled updates'
+  73: 'access geocoder autocomplete'

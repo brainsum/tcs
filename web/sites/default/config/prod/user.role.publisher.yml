@@ -98,3 +98,4 @@ permissions:
   - 'delete own node__moderation_state scheduled updates'
   - 'edit any node__moderation_state scheduled updates'
   - 'edit own node__moderation_state scheduled updates'
+  - 'access geocoder autocomplete'
