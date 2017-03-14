@@ -43,6 +43,7 @@ content:
         popup_anchor:
           x: '0'
           'y': '0'
+      source_field: field_location
       minPossibleZoom: 0
       maxPossibleZoom: 18
     third_party_settings: {  }
