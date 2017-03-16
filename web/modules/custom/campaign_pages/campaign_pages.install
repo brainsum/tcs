@@ -90,9 +90,8 @@ function campaign_pages_update_8005() {
     'php_ffmpeg',
   ];
 
-  $moduleHandler = \Drupal::service('module_handler');
   foreach ($modules_to_delete as $module_name) {
-    if (!$moduleHandler->moduleExists($module_name)) {
+    if (!file_exists('./modules/contrib/' . $module_name)) {
       $query = \Drupal::database()->delete('key_value')
         ->condition('collection', 'system.schema')
         ->condition('name', 'devel')
