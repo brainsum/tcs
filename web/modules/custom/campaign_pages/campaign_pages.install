@@ -79,3 +79,24 @@ function campaign_pages_update_8004() {
   $config->set('processors', $processors);
   $config->save(TRUE);
 }
+
+/**
+ * Delete removed modules (devel, kint, php_ffmpeg).
+ */
+function campaign_pages_update_8005() {
+  $modules_to_delete = [
+    'devel',
+    'kint',
+    'php_ffmpeg',
+  ];
+
+  $moduleHandler = \Drupal::service('module_handler');
+  foreach ($modules_to_delete as $module_name) {
+    if (!$moduleHandler->moduleExists($module_name)) {
+      $query = \Drupal::database()->delete('key_value')
+        ->condition('collection', 'system.schema')
+        ->condition('name', 'devel')
+        ->execute();
+    }
+  }
+}
