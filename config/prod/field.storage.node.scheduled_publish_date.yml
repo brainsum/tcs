@@ -1,0 +1,20 @@
+uuid: 292228da-e160-426e-8d2e-15d100ff2ecb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - scheduled_updates
+id: node.scheduled_publish_date
+field_name: scheduled_publish_date
+entity_type: node
+type: entity_reference
+settings:
+  target_type: scheduled_update
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

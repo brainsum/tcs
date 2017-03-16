@@ -1,0 +1,60 @@
+uuid: dcbd6bf0-9d40-47ca-a85a-ef240bae81fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.campaign.field_file
+    - field.field.node.campaign.field_machine_name
+    - field.field.node.campaign.field_menu
+    - field.field.node.campaign.field_meta_tags
+    - field.field.node.campaign.field_paragraphs
+    - field.field.node.campaign.scheduled_archive_date
+    - field.field.node.campaign.scheduled_publish_date
+    - node.type.campaign
+  module:
+    - entity_reference_revisions
+    - link
+    - metatag
+    - user
+id: node.campaign.default
+targetEntityType: node
+bundle: campaign
+mode: default
+content:
+  content_moderation_control:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_menu:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_meta_tags:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+  field_paragraphs:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+hidden:
+  addtoany: true
+  field_file: true
+  field_machine_name: true
+  langcode: true
+  links: true
+  scheduled_archive_date: true
+  scheduled_publish_date: true
