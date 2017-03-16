@@ -132,3 +132,13 @@ flying_cta:
     - core/drupal
     - core/jquery
     - core/jquery.once
+
+# Tieto.com proof-of-concept
+tieto-poc:
+  version: 1.x
+  css:
+    theme:
+      css/header.css: {}
+  js:
+    js/header.js: {}
+
