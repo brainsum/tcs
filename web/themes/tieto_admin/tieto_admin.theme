@@ -70,6 +70,7 @@ function tieto_admin_preprocess_node_add_list(&$variables) {
     /** @var Drupal\node\NodeTypeInterface $type */
     foreach ($variables['content'] as $type) {
       $variables['types'][$type->id()]['label'] = $type->label();
+      // @todo: Drupal::url() is deprecated.
       $variables['types'][$type->id()]['url'] = Drupal::url('node.add', array('node_type' => $type->id()));
     }
   }
@@ -254,15 +255,18 @@ function tieto_admin_preprocess_details(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  *
- * Switch link block image style based on the row's block size setting
+ * Switch link block image style based on the row's block size setting.
  */
 function tieto_admin_preprocess_field__paragraph__field_image__text_box(&$variables) {
-  // Get paragraph object field is attached to
+  // Get paragraph object field is attached to.
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['element']['#object'];
 
-  // Get parent link blocks item
+  // Get parent link blocks item.
+  /** @var \Drupal\paragraphs\Entity\Paragraph $parent */
+
   $parent = $paragraph->getParentEntity();
-  if ($parent->getType() === 'text_boxes' && in_array($parent->get('field_text_boxes_layout')->value, [5, 6])) {
+  if (method_exists($parent, 'getType') && $parent->getType() === 'text_boxes' && in_array($parent->get('field_text_boxes_layout')->value, [5, 6])) {
     $variables['items'][0]['content']['#image_style'] = 'square_350x350';
   }
 }
