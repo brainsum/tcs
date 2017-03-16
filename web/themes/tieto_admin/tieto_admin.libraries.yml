@@ -134,7 +134,7 @@ flying_cta:
     - core/jquery.once
 
 # Tieto.com proof-of-concept
-tieto-poc:
+tieto_off_canvas_menu:
   version: 1.x
   css:
     theme:
