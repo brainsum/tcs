@@ -9,7 +9,7 @@ dependencies:
 id: burgerblock
 theme: tieto_admin
 region: pre_content
-weight: -7
+weight: 0
 provider: null
 plugin: burger_block
 settings:
