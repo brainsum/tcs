@@ -1,4 +1,4 @@
-uuid: f7405bf9-ece1-481c-99c5-d5d733421392
+uuid: d10b8aec-58de-4b7e-9090-6525dd195639
 langcode: en
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - campaign_pages
   theme:
     - tieto_admin
-id: burgerblock
+id: headerblock
 theme: tieto_admin
 region: pre_content
-weight: 0
+weight: -7
 provider: null
-plugin: burger_block
+plugin: header_block
 settings:
-  id: burger_block
-  label: 'Burger block'
+  id: header_block
+  label: 'Header block'
   provider: campaign_pages
   label_display: '0'
 visibility: {  }
