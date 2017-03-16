@@ -94,7 +94,7 @@ function campaign_pages_update_8005() {
     if (!file_exists('./modules/contrib/' . $module_name)) {
       $query = \Drupal::database()->delete('key_value')
         ->condition('collection', 'system.schema')
-        ->condition('name', 'devel')
+        ->condition('name', $module_name)
         ->execute();
     }
   }
