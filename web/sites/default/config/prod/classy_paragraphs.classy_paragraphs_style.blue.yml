@@ -1,7 +1,0 @@
-uuid: c3c68596-1d44-4a0a-927a-eaadd0b49472
-langcode: en
-status: true
-dependencies: {  }
-id: blue
-label: Blue
-classes: scheme-blue
