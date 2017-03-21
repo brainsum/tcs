@@ -23,9 +23,16 @@
 
   var megamenuParent = $('#megamenu-parent');
   var megamenuChild = $('.tieto-submenu-megamenu-container');
+  var megamenuExit = $('.megamenu-exit');
 
   megamenuParent.on('click', function(){
-    megamenuChild.toggleClass('is-active')
+    megamenuChild.toggleClass('is-active');
+    megamenuParent.toggleClass('is-active');
+  });
+
+  megamenuExit.on('click', function(){
+    megamenuChild.removeClass('is-active');
+    megamenuParent.removeClass('is-active');
   });
 
 
