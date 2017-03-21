@@ -62,10 +62,6 @@
             toggleClass(document.body, "pushed");
         };
 
-        document.getElementById("megamenu-parent").onclick = function() {
-            document.getElementById("tieto-submenu-megamenu-container").toggleClass("is-open");
-        };
-
         var preLoaderOverlay = document.getElementById("pre-loader-overlay");
         removeClass(preLoaderOverlay, "is-active");
 

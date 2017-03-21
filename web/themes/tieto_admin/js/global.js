@@ -21,6 +21,14 @@
 		$header.height($header.height());
 	}
 
+  var megamenuParent = $('#megamenu-parent');
+  var megamenuChild = $('.tieto-submenu-megamenu-container');
+
+  megamenuParent.on('click', function(){
+    megamenuChild.toggleClass('is-active')
+  });
+
+
 })(jQuery);
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
