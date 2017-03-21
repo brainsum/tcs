@@ -6,7 +6,8 @@ display: block;
   transition: opacity 0.5s;
   z-index: -999999;
   pointer-events: none;
-
+  left: 0;
+  right: 0;
 }
 
 .tieto-submenu-megamnu-container-inner {
@@ -21,14 +22,10 @@ z-index: -999999999;
 .tieto-submenu-megamenu-container.is-active {
   opacity: 1;
   z-index: inherit;
-  left: 0;
-  right: 0;
   pointer-events: auto;
 }
 
-.tieto-submenu-megamenu-container.is-active .tieto-submenu-megamnu-container-inner {
 
-}
 
 .tieto-submenu-megamenu-container .tieto-submenu-megamenu {
   width: 30%;
@@ -58,8 +55,6 @@ z-index: -999999999;
   margin-left: 0;
 }
 
-.tieto-submenu-megamenu-container .tieto-submenu-megamenu ul li {}
-
 .tieto-submenu-megamenu-container .tieto-submenu-megamenu ul li a {
   text-align: left;
   padding: 1.5px;
@@ -85,6 +80,7 @@ z-index: -999999999;
   display: block;
   width: 40px;
   height: 32px;
+  cursor: pointer;
 }
 
 .megamenu-exit span {
