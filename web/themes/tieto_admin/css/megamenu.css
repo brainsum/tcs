@@ -1,13 +1,17 @@
 .tieto-submenu-megamenu-container {
-  display: none;
+display: block;
   position: absolute;
-  left: 0;
-  right: 0;
   background: rgba(103, 175, 225, 0.95);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -999999;
+  pointer-events: none;
+
 }
 
 .tieto-submenu-megamnu-container-inner {
-  padding: 40px 0 50px;
+z-index: -999999999;
+  padding: 45px 0 50px;
   max-width: 800px;
   margin: 0 auto;
   display: block;
@@ -15,22 +19,36 @@
 }
 
 .tieto-submenu-megamenu-container.is-active {
-  display: block;
+  opacity: 1;
+  z-index: inherit;
+  left: 0;
+  right: 0;
+  pointer-events: auto;
+}
+
+.tieto-submenu-megamenu-container.is-active .tieto-submenu-megamnu-container-inner {
+
 }
 
 .tieto-submenu-megamenu-container .tieto-submenu-megamenu {
   width: 30%;
   display: inline-block;
   float: left;
+  margin-right: 2.9%;
 }
 
 .tieto-submenu-megamenu-container .tieto-submenu-megamenu strong {
-  padding-bottom: 30px;
   display: block;
+  padding-bottom: 5px;
 }
 
 .tieto-submenu-megamenu-container .tieto-submenu-megamenu strong a {
   text-align: left;
+  transition: all 0.35s;
+}
+.tieto-submenu-megamenu-container .tieto-submenu-megamenu strong a:hover {
+  color: white;
+  background-color: rgba(255,255,255,0.2);
 }
 
 .tieto-submenu-megamenu-container .tieto-submenu-megamenu ul {
@@ -44,7 +62,13 @@
 
 .tieto-submenu-megamenu-container .tieto-submenu-megamenu ul li a {
   text-align: left;
-  padding: 5px;
+  padding: 1.5px;
+  font-size: 14px;
+}
+.tieto-submenu-megamenu-container .tieto-submenu-megamenu ul li a:hover{
+    background: transparent;
+    text-decoration: underline;
+    color: white;
 }
 
 #megamenu-parent.is-active {
