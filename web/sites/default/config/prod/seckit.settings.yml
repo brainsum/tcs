@@ -29,7 +29,7 @@ seckit_clickjacking:
   js_css_noscript: false
   noscript_message: 'Sorry, you need to enable JavaScript to visit this website.'
   x_frame: '3'
-  x_frame_allow_from: "tieto.com\r\n*.tieto.com"
+  x_frame_allow_from: "*.tieto.com"
 seckit_ssl:
   hsts: false
   hsts_subdomains: false
