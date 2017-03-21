@@ -54,7 +54,7 @@ z-index: -999999999;
 .tieto-submenu-megamenu-container .tieto-submenu-megamenu ul {
   list-style-type: none;
   text-align: left;
-  padding-left: 0;
+  padding-left: 5px;
   margin-left: 0;
 }
 
