@@ -1,52 +1,84 @@
-.tieto-submenu-megamenu-container{
-    display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-   background: rgba(103, 175, 225, 0.95);
+.tieto-submenu-megamenu-container {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: rgba(103, 175, 225, 0.95);
 }
-.tieto-submenu-megamnu-container-inner{
-  padding: 30px 0;
+
+.tieto-submenu-megamnu-container-inner {
+  padding: 40px 0 50px;
   max-width: 800px;
   margin: 0 auto;
   display: block;
   text-align: center;
 }
-.tieto-submenu-megamenu-container.is-active{
-    display: block;
+
+.tieto-submenu-megamenu-container.is-active {
+  display: block;
 }
 
-.tieto-submenu-megamenu-container .tieto-submenu-megamenu{
-    width: 30%;
-    display: inline-block;
-    float: left;
+.tieto-submenu-megamenu-container .tieto-submenu-megamenu {
+  width: 30%;
+  display: inline-block;
+  float: left;
 }
 
-.tieto-submenu-megamenu-container .tieto-submenu-megamenu strong{
-    padding-top: 30px;
+.tieto-submenu-megamenu-container .tieto-submenu-megamenu strong {
+  padding-bottom: 30px;
+  display: block;
 }
 
-
-.tieto-submenu-megamenu-container .tieto-submenu-megamenu strong a{
-    text-align: left;
-}
-.tieto-submenu-megamenu-container .tieto-submenu-megamenu ul{
-    list-style-type: none;
-    text-align: left;
-    padding-left: 0;
-    margin-left: 0;
+.tieto-submenu-megamenu-container .tieto-submenu-megamenu strong a {
+  text-align: left;
 }
 
-.tieto-submenu-megamenu-container .tieto-submenu-megamenu ul li{
-
+.tieto-submenu-megamenu-container .tieto-submenu-megamenu ul {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0;
 }
 
-.tieto-submenu-megamenu-container .tieto-submenu-megamenu ul li a{
-    text-align: left;
+.tieto-submenu-megamenu-container .tieto-submenu-megamenu ul li {}
+
+.tieto-submenu-megamenu-container .tieto-submenu-megamenu ul li a {
+  text-align: left;
+  padding: 5px;
 }
 
-#megamenu-parent.is-active{
+#megamenu-parent.is-active {
   background: 0;
-  color: rgb(255,255,255);
-  border-color: rgb(255,255,255);
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+}
+
+.megamenu-exit {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 999999;
+  display: block;
+  width: 40px;
+  height: 32px;
+}
+
+.megamenu-exit span {
+  backface-visibility: hidden;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  height: 4px;
+  right: 9px;
+  position: absolute;
+  top: 48%;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  width: 32px;
+  transform: rotate(45deg);
+}
+
+.megamenu-exit span:last-child {
+  transform: rotate(-45deg);
 }
