@@ -20,16 +20,24 @@ class RedirectController extends ControllerBase {
    * @throws \InvalidArgumentException
    *
    * @return array|\Drupal\Core\Routing\TrustedRedirectResponse
-   *   Redirection to tieto.com or a simple markup depending on the environment.
+   *   Redirection to tieto.com or a simple markup depending on the environment
+   *   and user.
    */
   public function redirectToTietoCom(Request $request) {
     global $base_url;
 
-    if ('127.0.0.1' === $request->getClientIp()
-      || strpos($base_url, 'brainsum') !== FALSE
-      || strpos($base_url, 'localhost') !== FALSE
+    // @todo: Dependency injection.
+    $currentUser = \Drupal::currentUser();
+
+    if (((int) $currentUser->id() === 1) || in_array('administrator', $currentUser->getRoles(), FALSE)) {
+      return ['#markup' => 'Redirecting to tieto.com has been disabled for administrator users.'];
+    }
+
+    if (('127.0.0.1' === $request->getClientIp())
+      || (strpos($base_url, 'brainsum') !== FALSE)
+      || (strpos($base_url, 'localhost') !== FALSE)
     ) {
-      return ['#markup' => 'This seems to be a development environment. Redirecting to tieto.com has been disabled.'];
+      return ['#markup' => 'Redirecting to tieto.com has been disabled for development environments.'];
     }
 
     return new TrustedRedirectResponse('https://www.tieto.com');
