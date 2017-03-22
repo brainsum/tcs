@@ -29,15 +29,13 @@ class RedirectController extends ControllerBase {
     // @todo: Dependency injection.
     $currentUser = \Drupal::currentUser();
 
-    if (((int) $currentUser->id() === 1) || in_array('administrator', $currentUser->getRoles(), FALSE)) {
-      return ['#markup' => 'Redirecting to tieto.com has been disabled for administrator users.'];
-    }
-
-    if (('127.0.0.1' === $request->getClientIp())
+    $userIsAdministrator = ((int) $currentUser->id() === 1) || in_array('administrator', $currentUser->getRoles(), FALSE);
+    $envIsDevelopment = ('127.0.0.1' === $request->getClientIp())
       || (strpos($base_url, 'brainsum') !== FALSE)
-      || (strpos($base_url, 'localhost') !== FALSE)
-    ) {
-      return ['#markup' => 'Redirecting to tieto.com has been disabled for development environments.'];
+      || (strpos($base_url, 'localhost') !== FALSE);
+
+    if ($userIsAdministrator || $envIsDevelopment || $currentUser->isAuthenticated()) {
+      return new TrustedRedirectResponse('/admin/content');
     }
 
     return new TrustedRedirectResponse('https://www.tieto.com');
