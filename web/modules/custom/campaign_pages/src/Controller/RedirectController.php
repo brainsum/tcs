@@ -34,7 +34,7 @@ class RedirectController extends ControllerBase {
       || (strpos($base_url, 'brainsum') !== FALSE)
       || (strpos($base_url, 'localhost') !== FALSE);
 
-    if ($userIsAdministrator || $envIsDevelopment || $currentUser->isAuthenticated()) {
+    if ($userIsAdministrator || $envIsDevelopment || $currentUser->hasPermission('access content overview')) {
       return new TrustedRedirectResponse('/admin/content');
     }
 
