@@ -121,6 +121,9 @@
             },
             "drupal/geocoder_autocomplete": {
                 "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
+            },
+            "drupal/purge_queuer_url": {
+                "only queue anonymous requests": "https://www.drupal.org/files/issues/purge_queuer_url-prevent-queueing_maxage_less_than_0-2847828-1.patch"
             }
         }
     }
