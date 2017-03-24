@@ -23,7 +23,7 @@ content:
     label: hidden
     settings:
       leaflet_map: 'OSM Mapnik'
-      zoom: '5'
+      zoom: '0'
       minZoom: '0'
       maxZoom: '18'
       height: '400'

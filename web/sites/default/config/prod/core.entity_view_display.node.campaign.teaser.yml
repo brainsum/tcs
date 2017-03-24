@@ -27,3 +27,5 @@ hidden:
   field_paragraphs: true
   langcode: true
   links: true
+  scheduled_archive_date: true
+  scheduled_publish_date: true
