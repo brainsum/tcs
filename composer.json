@@ -124,6 +124,9 @@
             },
             "drupal/purge_queuer_url": {
                 "only queue anonymous requests": "https://www.drupal.org/files/issues/purge_queuer_url-prevent-queueing_maxage_less_than_0-2847828-1.patch"
+            },
+            "drupal/cloudfront_purger": {
+                "watchdog placeholder syntax fix": "https://www.drupal.org/files/issues/cloudfront_purger-watchdog_placeholder_syntax_fix-2863548-1.patch"
             }
         }
     }
