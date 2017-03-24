@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "11b5ad4e710a97c24b20c1338993bf9a",
+    "content-hash": "aacd72a032ae294daeb81de5c7a9dfab",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1159,6 +1159,9 @@
                 "drupal": {
                     "version": "8.x-1.x-dev",
                     "datestamp": "1474951440"
+                },
+                "patches_applied": {
+                    "watchdog placeholder syntax fix": "https://www.drupal.org/files/issues/cloudfront_purger-watchdog_placeholder_syntax_fix-2863548-1.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1463,6 +1466,11 @@
                 "symfony/css-selector": "~2.8"
             },
             "type": "drupal-core",
+            "extra": {
+                "patches_applied": {
+                    "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Drupal\\Core\\": "lib/Drupal/Core",
@@ -2583,7 +2591,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "3fe20c4ceaed4f3fca817182a6b38042d37278d5"
+                "reference": "577d9e4e3c9372b5733fe6803ff1efc052ed59af"
             },
             "require": {
                 "drupal/classy_paragraphs": "~1.0",
@@ -2612,7 +2620,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1488813184"
+                    "datestamp": "1489759383"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2666,7 +2674,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-03-14 16:48:29"
+            "time": "2017-03-24 13:16:32"
         },
         {
             "name": "drupal/paragraphs",
@@ -2872,6 +2880,9 @@
                 "drupal": {
                     "version": "8.x-1.0-beta5",
                     "datestamp": "1473245939"
+                },
+                "patches_applied": {
+                    "only queue anonymous requests": "https://www.drupal.org/files/issues/purge_queuer_url-prevent-queueing_maxage_less_than_0-2847828-1.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7213,7 +7224,7 @@
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2017-02-08T07:16:17+00:00"
+            "time": "2017-02-08 07:16:17"
         },
         {
             "name": "drupal/examples",
@@ -7317,7 +7328,7 @@
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
             },
-            "time": "2017-01-15T20:54:32+00:00"
+            "time": "2017-01-15 20:54:32"
         },
         {
             "name": "drupal/toolbar_anti_flicker",
@@ -7343,7 +7354,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.5",
-                    "datestamp": "1488932283"
+                    "datestamp": "1474584378"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
