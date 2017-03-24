@@ -127,6 +127,9 @@
             },
             "drupal/cloudfront_purger": {
                 "watchdog placeholder syntax fix": "https://www.drupal.org/files/issues/cloudfront_purger-watchdog_placeholder_syntax_fix-2863548-1.patch"
+            },
+            "drupal/core": {
+                "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch" 
             }
         }
     }
