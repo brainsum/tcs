@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aacd72a032ae294daeb81de5c7a9dfab",
+    "content-hash": "1dc49cc0962fb6d790f58a71da68c25d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1139,7 +1139,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/cloudfront_purger",
-                "reference": "93a419338f76215f3f32e15025595196181ea097"
+                "reference": "1344a876f53ea7727d8faaf091826df073187815"
             },
             "require": {
                 "aws/aws-sdk-php": "~3.0",
@@ -1158,10 +1158,10 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1474951440"
+                    "datestamp": "1487121785"
                 },
                 "patches_applied": {
-                    "watchdog placeholder syntax fix": "https://www.drupal.org/files/issues/cloudfront_purger-watchdog_placeholder_syntax_fix-2863548-1.patch"
+                    "htmlentities patch from drupal.org/node/2829905": "https://www.drupal.org/files/issues/htmlentities_0.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1183,7 +1183,7 @@
                 "source": "http://github.com/previousnext/cloudfront_purger",
                 "issues": "http://drupal.org/project/issues/cloudfront_purger"
             },
-            "time": "2016-09-27 03:12:02"
+            "time": "2017-03-24 08:43:08"
         },
         {
             "name": "drupal/config_readonly",
@@ -6793,7 +6793,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.18.zip",
-                "reference": "8.x-1.18",
+                "reference": null,
                 "shasum": "ea5b6b5eb20757fda12e7220819a750e2575359b"
             },
             "require": {
@@ -6853,7 +6853,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/adminimal_admin_toolbar-8.x-1.3.zip",
-                "reference": "8.x-1.3",
+                "reference": null,
                 "shasum": "6e2b1fc80fece1f68895269713d5aa7e1cb220a5"
             },
             "require": {
@@ -7224,7 +7224,7 @@
                 "issues": "http://drupal.org/project/devel",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2017-02-08 07:16:17"
+            "time": "2017-02-08T07:16:17+00:00"
         },
         {
             "name": "drupal/examples",
@@ -7328,7 +7328,7 @@
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
             },
-            "time": "2017-01-15 20:54:32"
+            "time": "2017-01-15T20:54:32+00:00"
         },
         {
             "name": "drupal/toolbar_anti_flicker",
@@ -7341,7 +7341,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/toolbar_anti_flicker-8.x-2.5.zip",
-                "reference": "8.x-2.5",
+                "reference": null,
                 "shasum": "995a7d23d259e8895f9245ef12fb255beb35689e"
             },
             "require": {
@@ -7354,7 +7354,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.5",
-                    "datestamp": "1474584378"
+                    "datestamp": "1488932283"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
