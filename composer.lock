@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "11b5ad4e710a97c24b20c1338993bf9a",
+    "content-hash": "1dc49cc0962fb6d790f58a71da68c25d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1139,7 +1139,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/cloudfront_purger",
-                "reference": "93a419338f76215f3f32e15025595196181ea097"
+                "reference": "1344a876f53ea7727d8faaf091826df073187815"
             },
             "require": {
                 "aws/aws-sdk-php": "~3.0",
@@ -1158,7 +1158,10 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1474951440"
+                    "datestamp": "1487121785"
+                },
+                "patches_applied": {
+                    "htmlentities patch from drupal.org/node/2829905": "https://www.drupal.org/files/issues/htmlentities_0.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1180,7 +1183,7 @@
                 "source": "http://github.com/previousnext/cloudfront_purger",
                 "issues": "http://drupal.org/project/issues/cloudfront_purger"
             },
-            "time": "2016-09-27 03:12:02"
+            "time": "2017-03-24 08:43:08"
         },
         {
             "name": "drupal/config_readonly",
@@ -1463,6 +1466,11 @@
                 "symfony/css-selector": "~2.8"
             },
             "type": "drupal-core",
+            "extra": {
+                "patches_applied": {
+                    "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Drupal\\Core\\": "lib/Drupal/Core",
@@ -2583,7 +2591,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "3fe20c4ceaed4f3fca817182a6b38042d37278d5"
+                "reference": "577d9e4e3c9372b5733fe6803ff1efc052ed59af"
             },
             "require": {
                 "drupal/classy_paragraphs": "~1.0",
@@ -2612,7 +2620,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1488813184"
+                    "datestamp": "1489759383"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2666,7 +2674,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-03-14 16:48:29"
+            "time": "2017-03-24 13:16:32"
         },
         {
             "name": "drupal/paragraphs",
@@ -2872,6 +2880,9 @@
                 "drupal": {
                     "version": "8.x-1.0-beta5",
                     "datestamp": "1473245939"
+                },
+                "patches_applied": {
+                    "only queue anonymous requests": "https://www.drupal.org/files/issues/purge_queuer_url-prevent-queueing_maxage_less_than_0-2847828-1.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6782,7 +6793,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.18.zip",
-                "reference": "8.x-1.18",
+                "reference": null,
                 "shasum": "ea5b6b5eb20757fda12e7220819a750e2575359b"
             },
             "require": {
@@ -6842,7 +6853,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/adminimal_admin_toolbar-8.x-1.3.zip",
-                "reference": "8.x-1.3",
+                "reference": null,
                 "shasum": "6e2b1fc80fece1f68895269713d5aa7e1cb220a5"
             },
             "require": {
@@ -7330,7 +7341,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/toolbar_anti_flicker-8.x-2.5.zip",
-                "reference": "8.x-2.5",
+                "reference": null,
                 "shasum": "995a7d23d259e8895f9245ef12fb255beb35689e"
             },
             "require": {
