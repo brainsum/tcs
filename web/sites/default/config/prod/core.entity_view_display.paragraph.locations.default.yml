@@ -43,7 +43,7 @@ content:
         popup_anchor:
           x: '0'
           'y': '0'
-      auto_zoom: '1'
+      auto_zoom: true
       source_field: field_location
       minPossibleZoom: 0
       maxPossibleZoom: 18
