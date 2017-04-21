@@ -4,12 +4,12 @@
     @include campaign-title-center;
   }
 
+	&.scheme-red-light {
+		background: #f0b3ca;
+		color: white;
+	}
 	&.layout--one-column-clean {
 		text-align: center;
-		&.scheme-red-light {
-			background: #f0b3ca;
-			color: white;
-		}
 	}
 
 	&.layout--one-column-shaded {
