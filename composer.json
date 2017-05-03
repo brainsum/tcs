@@ -126,9 +126,6 @@
             "drupal/purge_queuer_url": {
                 "only queue anonymous requests": "https://www.drupal.org/files/issues/purge_queuer_url-prevent-queueing_maxage_less_than_0-2847828-1.patch"
             },
-            "drupal/cloudfront_purger": {
-                "htmlentities patch from drupal.org/node/2829905": "https://www.drupal.org/files/issues/htmlentities_0.patch"
-            },
             "drupal/core": {
                 "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch" 
             }
