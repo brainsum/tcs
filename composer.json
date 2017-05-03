@@ -67,7 +67,7 @@
         "phpunit/phpunit": "~4.8",
         "symfony/css-selector": "~2.8",
         "drupal/console": "~1.0",
-        "drupal/devel": "1.x-dev",
+        "drupal/devel": "~1.0",
         "drupal/examples": "1.x-dev",
         "drupal/admin_toolbar": "^1.18",
         "drupal/adminimal_admin_toolbar": "^1.3",
