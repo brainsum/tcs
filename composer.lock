@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb3a1f7337bf18e9b541c3f81d739574",
+    "content-hash": "657a82beed5f5c967bcdf70cc4c89edc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2315,11 +2315,17 @@
         },
         {
             "name": "drupal/lang_dropdown",
-            "version": "dev-2.x",
+            "version": "2.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/lang_dropdown",
-                "reference": "5b96063ada428847d245055af0c79e28477c643b"
+                "reference": "8.x-2.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/lang_dropdown-8.x-2.0-beta1.zip",
+                "reference": null,
+                "shasum": "5b38fc4f090112f2e0360453faa782f3ed26749e"
             },
             "require": {
                 "drupal/core": "*"
@@ -2330,8 +2336,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.x-dev",
-                    "datestamp": "1482663183"
+                    "version": "8.x-2.0-beta1",
+                    "datestamp": "1488355386"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2364,8 +2370,7 @@
             "homepage": "https://www.drupal.org/project/lang_dropdown",
             "support": {
                 "source": "http://cgit.drupalcode.org/lang_dropdown"
-            },
-            "time": "2016-12-25 10:50:23"
+            }
         },
         {
             "name": "drupal/leaflet",
@@ -3177,7 +3182,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/video_embed_field-8.x-1.5.zip",
-                "reference": null,
+                "reference": "8.x-1.5",
                 "shasum": "f54d470ef7f863604e51e6ae98cd40ef25de5f79"
             },
             "require": {
@@ -8885,7 +8890,6 @@
         "drupal/cloudfront_purger": 20,
         "drupal/content_entity_language_switcher": 20,
         "drupal/node_clone": 20,
-        "drupal/lang_dropdown": 20,
         "drupal/scheduled_updates": 20,
         "drupal/seckit": 15,
         "drupal/redirect": 15,
