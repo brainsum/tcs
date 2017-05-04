@@ -1,24 +1,26 @@
 // Text Boxes
 .paragraph--type--text-boxes.paragraph--view-mode--default {
 
-	// Main Title
-	.field--name-field-title {
-		@include campaign-title;
-		color: $text-color-strong;
-	}
+  // Main Title
+  .field--name-field-title {
+    @include campaign-title;
+    color: $text-color-strong;
+    height: 3.5em;
+    overflow: hidden;
+  }
 
-	// Layouts
-	&.layout--smallinfo,
-	&.layout--lot_infos,
-	&.layout--text_icon {
-		.paragraph--type--text-box {
-			text-align: center;
-		}
-	}
+  // Layouts
+  &.layout--smallinfo,
+  &.layout--lot_infos,
+  &.layout--text_icon {
+    .paragraph--type--text-box {
+      text-align: center;
+    }
+  }
 
-	&.layout--lot_infos-grey {
-		background-color: $tieto-lightgrey;
-	}
+  &.layout--lot_infos-grey {
+    background-color: $tieto-lightgrey;
+  }
 
   &.layout--contacts {
     // @fixme this is mess but was quick
@@ -68,21 +70,21 @@
     }
   }
 
-	@include md {
-		&.layout--lot_infos .paragraph--type--text-box {
-			text-align: left;
-		}
+  @include md {
+    &.layout--lot_infos .paragraph--type--text-box {
+      text-align: left;
+    }
 
-		// Equal height columns
-		&[class*="columns-"] > .paragraph-inner > .field--name-field-paragraphs {
-			display: flex;
-			flex-wrap: wrap;
+    // Equal height columns
+    &[class*="columns-"] > .paragraph-inner > .field--name-field-paragraphs {
+      display: flex;
+      flex-wrap: wrap;
 
-			> .col > .paragraph-inner {
-				height: 100%;
-			}
-		}
-	}
+      > .col > .paragraph-inner {
+        height: 100%;
+      }
+    }
+  }
 
   &.layout--rounded_image {
     .field--name-field-call-to-action {
@@ -96,7 +98,7 @@
 
 // Text Boxes -> Text Box
 .paragraph--type--text-box.paragraph--view-mode--default {
-	background: inherit;
+  background: inherit;
 
   // Some padding trickery.
   // @fixme Remove after merging tieto_base
@@ -114,7 +116,7 @@
   }
 
   .paragraph-inner {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     padding: 3em;
   }
 
