@@ -7,6 +7,9 @@
     color: $text-color-strong;
     height: 3.5em;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
   // Layouts

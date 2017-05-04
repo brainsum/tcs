@@ -3323,6 +3323,13 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   color: #333;
   height: 3.5em;
   overflow: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
 }
 
 @media (min-width: 767px) {
