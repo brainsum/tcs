@@ -3321,15 +3321,6 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   line-height: 1.2;
   word-break: break-word;
   color: #333;
-  height: 3.5em;
-  overflow: hidden;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  justify-content: flex-end;
 }
 
 @media (min-width: 767px) {
@@ -3341,6 +3332,26 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--smallinfo .paragraph--type--text-box, .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos .paragraph--type--text-box, .paragraph--type--text-boxes.paragraph--view-mode--default.layout--text_icon .paragraph--type--text-box {
   text-align: center;
+}
+
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph-inner {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .field--name-field-title {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
 }
 
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos-grey {
