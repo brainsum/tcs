@@ -16,16 +16,26 @@
     }
   }
   &.layout--none {
-    .paragraph-inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+    .paragraph--type--text-box {
+      .paragraph-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .field--name-field-title {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          //flex: 2 auto;
+        }
+        .field--name-field-image {
+          //flex: 1 auto;
+        }
+        .text-formatted {
+          flex: 2 auto;
+        }
+      }
     }
-    .field--name-field-title {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
+
   }
 
   &.layout--lot_infos-grey {

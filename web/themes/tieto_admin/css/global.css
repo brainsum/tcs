@@ -3334,7 +3334,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   text-align: center;
 }
 
-.paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph-inner {
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph--type--text-box .paragraph-inner {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -3344,7 +3344,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   justify-content: flex-end;
 }
 
-.paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .field--name-field-title {
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph--type--text-box .paragraph-inner .field--name-field-title {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -3352,6 +3352,11 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   flex-direction: column;
   -webkit-box-pack: end;
   justify-content: flex-end;
+}
+
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph--type--text-box .paragraph-inner .text-formatted {
+  -webkit-box-flex: 2;
+  flex: 2 auto;
 }
 
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos-grey {
