@@ -10,20 +10,18 @@ dependencies:
     - field.field.paragraph.parallax.field_text
     - field.field.paragraph.parallax.field_title
     - paragraphs.paragraphs_type.parallax
-  module:
-    - text
 id: paragraph.parallax.preview
 targetEntityType: paragraph
 bundle: parallax
 mode: preview
 content:
-  field_text:
+  field_anchor:
+    type: string
     weight: 1
     label: inline
     settings:
-      trim_length: 600
+      link_to_entity: false
     third_party_settings: {  }
-    type: text_trimmed
   field_title:
     weight: 0
     label: inline
@@ -33,7 +31,7 @@ content:
     type: string
 hidden:
   created: true
-  field_anchor: true
   field_background: true
   field_enable_parallax: true
+  field_text: true
   uid: true
