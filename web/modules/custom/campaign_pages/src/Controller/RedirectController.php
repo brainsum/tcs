@@ -12,7 +12,9 @@ use Symfony\Component\HttpFoundation\Request;
 class RedirectController extends ControllerBase {
 
   /**
-   * Redirect to tieto.com if it is non local or dev site (brainsum domain).
+   * Redirect from front page to tieto.com for anonymous users.
+   *
+   * Redirect to /admin/content for others.
    *
    * @param \Symfony\Component\HttpFoundation\Request $request
    *   The request.
@@ -24,21 +26,13 @@ class RedirectController extends ControllerBase {
    *   and user.
    */
   public function redirectToTietoCom(Request $request) {
-    global $base_url;
-
     // @todo: Dependency injection.
     $currentUser = \Drupal::currentUser();
-
-    $userIsAdministrator = ((int) $currentUser->id() === 1) || in_array('administrator', $currentUser->getRoles(), FALSE);
-    $envIsDevelopment = ('127.0.0.1' === $request->getClientIp())
-      || (strpos($base_url, 'brainsum') !== FALSE)
-      || (strpos($base_url, 'localhost') !== FALSE);
-
-    if ($userIsAdministrator || $envIsDevelopment || $currentUser->hasPermission('access content overview')) {
-      return new TrustedRedirectResponse('/admin/content');
+    if ($currentUser->isAnonymous()) {
+      return new TrustedRedirectResponse('https://www.tieto.com');
     }
 
-    return new TrustedRedirectResponse('https://www.tieto.com');
+    return new TrustedRedirectResponse('/admin/content');
   }
 
 }
