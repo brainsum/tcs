@@ -26,4 +26,95 @@
       <li{{ item.attributes.addClass('campaign-menu-link') }}>{{ item.content }}</li>
     {% endfor %}
   </ul>
+
+  <div id="hamburger" class="hamburger-menu-toggler">
+    <span class="animated-hamburger-menu"></span>
+  </div>
+
+  <ul class="slide-in-menu">
+    {% for item in items %}
+      <li class="nav-menu-link-container slide-in-menu-link visible-mobile">{{ item.content }}</li>
+    {% endfor %}
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <a class="nav-menu-sub-link" href="https://www.tieto.com/industries/energy">
+          <strong>About us</strong>
+        </a>
+        <span class="color-slider"></span>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <span class="color-slider"></span>
+        <strong>What we do</strong>
+      </div>
+      <div class="sub-links-slider">
+        <div class="nav-menu-sub-link-container">
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/energy">
+            Energy Utilities
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/financial-services">
+            Financial Services
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/forestry-wood-pulp-paper">
+            Forest
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/healthcare-and-welfare">
+            Healthcare and Welfare
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/logistics">
+            Logistics
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/manufacturing">
+            Manufacturing
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/media">
+            Media
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/oil-and-gas">
+            Oil and Gas
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/public">
+            Public
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/retail-and-wholesale">
+            Retail and Wholesale
+          </a>
+          <a class="nav-menu-sub-link" data-selected="0" href="https://www.tieto.com/industries/telecom">
+            Telecom
+          </a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <span class="color-slider"></span>
+        <strong>Customer stories</strong>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <span class="color-slider"></span>
+        <strong>Newsroom</strong>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <span class="color-slider"></span>
+        <strong>Careers</strong>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <span class="color-slider"></span>
+        <strong>Investors</strong>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <span class="color-slider"></span>
+        <strong>Customer portal</strong>
+      </div>
+    </li>
+  </ul>
 </nav>

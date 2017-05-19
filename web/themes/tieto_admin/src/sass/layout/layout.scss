@@ -2,10 +2,6 @@
  * Add spacing to bottom of pages
  */
 
-.page-content {
-  margin-bottom: 80px;
-}
-
 .region-pre-content {
   margin-bottom: 1em;
 }
@@ -87,10 +83,13 @@
     margin-top: 0;
   }
 }
-
+body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block {
+  margin: 0;
+}
 .block-local-tasks-block {
   @include clearfix;
-  margin-top: 1em;
+  background-color: white;
+  padding: 1em;
 
   .tabs {
     padding: 0;
@@ -138,6 +137,8 @@
 
 .campaign-footer {
   text-align: center;
+  background-color: white;
+  padding-top: 80px;
 
   // These are needed because of CSS slope.
   // @see header.scss
