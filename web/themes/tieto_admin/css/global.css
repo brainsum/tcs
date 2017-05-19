@@ -2470,7 +2470,6 @@ footer {
 }
 
 .nav-menu-sub-link-container {
-  background-color: #0065a0;
   margin-bottom: 10px;
   margin-left: 20px;
   opacity: 1;
@@ -2857,7 +2856,6 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
   display: block;
   font-size: 1em;
   letter-spacing: .5px;
-  padding: .5em;
 }
 
 @media (min-width: 767px) {
