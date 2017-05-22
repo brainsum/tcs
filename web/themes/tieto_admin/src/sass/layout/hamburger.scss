@@ -6,458 +6,6 @@ $white: rgb(255, 255, 255);
 $color_cornflower_blue_approx: rgb(103, 175, 225);
 $color_cornflower_approx: #9acaeb;
 
-body {
-  background-color: $color_bahama_blue_approx;
-  &.pushed {
-    .nav-menu-link-list {
-      margin: 0 294px 0 0;
-      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-      transition: all .5s ease-in-out;
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: 0s;
-    }
-    .to-be-pushed {
-      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-      transform: translate3d(-300px, 0, 0);
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: 0s;
-    }
-    footer {
-      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-      transform: translate3d(-300px, 0, 0);
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: 0s;
-    }
-    .slide-in-menu {
-      opacity: 1;
-      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-      transition: opacity .3s;
-      visibility: visible;
-      .nav-menu-link-container {
-        opacity: 1;
-        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-        transform: translate3d(0, 0, 0);
-        &:first-child {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .2s;
-        }
-        &:nth-child(2) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .25s;
-        }
-        &:nth-child(3) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .3s;
-        }
-        &:nth-child(4) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .35s;
-        }
-        &:nth-child(5) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .4s;
-        }
-        &:nth-child(6) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .45s;
-        }
-        &:nth-child(7) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .5s;
-        }
-        &:nth-child(8) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .55s;
-        }
-        &:nth-child(9) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .6s;
-        }
-        &:nth-child(10) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .65s;
-        }
-        &:nth-child(11) {
-          //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-          transition-delay: .7s;
-        }
-      }
-    }
-    nav.navigation-menu span.nav-logo.fixed::after {
-      //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-      transition: transform .2s, width .2s ease .2s, left .5s ease-in-out 20ms;
-      left: -360px;
-    }
-  }
-}
-.campaign-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  &.navigation-menu {
-    opacity: 1;
-    span {
-      &.nav-logo {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding-left: 14px;
-        text-align: left;
-        visibility: visible;
-        width: 100%;
-        z-index: -3;
-        img {
-          left: 0;
-          margin: auto 0;
-          position: relative;
-          top: 0;
-        }
-        &.not-fixed::after {
-          //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-          transition: width .2s, transform .2s ease .2s;
-          //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-          transform: rotate(16.5deg) skew(-29deg);
-        }
-        &.fixed::after {
-          //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-          transition: transform .2s, width .2s ease .2s, left .5s ease-in-out .2s;
-          //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-          transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
-          width: 100%;
-        }
-      }
-      &.nav-logo::after {
-        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-        transform: rotate(16.5deg) skew(-29deg);
-        will-change: transform, width;
-        background: $color_cornflower_blue_approx;
-        content: " ";
-        position: absolute;
-        display: block;
-        z-index: -1;
-        top: -84px;
-        left: -60px;
-        width: 200px;
-        height: 200px;
-      }
-    }
-  }
-}
-.nav-menu-link-list {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: 60px;
-  list-style: none;
-  margin: 0 74px 0 0;
-  overflow: hidden;
-  padding: 0;
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-  transition: all .5s ease-in-out;
-  //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-  transition-delay: .5s;
-}
-@media screen and(min-width: 992px) {
-  .nav-menu-link-list {
-    font-size: 1rem;
-    max-width: calc(100vw - 160px);
-  }
-  .color-slider {
-    background-color: $color_viking_approx;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-    transition: all .4s ease-in-out;
-    width: 0;
-    z-index: -1;
-  }
-  .slide-in-menu-link {
-    &:hover .nav-menu-link .color-slider {
-      width: calc(100% + 40px);
-    }
-    &.selected .nav-menu-link .color-slider {
-      width: calc(100% + 40px);
-    }
-  }
-  .nav-menu-sub-link {
-    &:hover .color-slider {
-      width: calc(100% + 40px);
-    }
-    &.selected .color-slider {
-      width: calc(100% + 40px);
-    }
-  }
-  body.pushed .nav-menu-link-list {
-    max-width: calc(100vw - 160px);
-  }
-  .nav-menu-sub-link-container .color-slider {
-    margin-left: -20px;
-  }
-}
-.to-be-pushed {
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-  transition: all .5s ease-in-out;
-  //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-  transition-delay: .5s;
-  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-  box-shadow: 1px 3px 1px 2px $color_black_10_approx;
-  .campaign-menu & {
-    box-shadow: none;
-  }
-}
-footer {
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-  transition: all .5s ease-in-out;
-  //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-  transition-delay: .5s;
-}
-.nav-menu-link-container {
-  display: inline-block;
-  padding: .5em;
-  a[data-selected="0"] {
-    border-bottom: 2px solid transparent;
-    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-    transition: border-color .2s;
-    &:hover {
-      background: 0;
-      color: $white;
-      border-color: $white;
-    }
-  }
-  a[data-selected="1"] {
-    display: block;
-    padding: .5em 1.5em;
-    border: 2px solid $white;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-    border-radius: 3px;
-    &:hover {
-      background-color: $white;
-      color: $color_cornflower_blue_approx;
-    }
-  }
-}
-@media screen and (min-width: 768px) {
-  .nav-menu-link-list {
-    font-size: .5rem;
-    max-width: calc(100vw - 40px);
-  }
-  .to-be-pushed {
-    //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-    transition-delay: .2s;
-  }
-  footer {
-    //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-    transition-delay: .2s;
-  }
-  .nav-menu-link-container {
-    margin-left: 0;
-  }
-  .hamburger-menu-toggler {
-    height: 77px;
-    margin: 0 1.5em;
-  }
-  .invisible-mobile {
-    display: flex;
-  }
-  .visible-mobile {
-    display: none;
-  }
-  body.pushed {
-    .nav-menu-link-list {
-      max-width: calc(100vw - 470px);
-    }
-    .slide-in-menu .nav-menu-link-container {
-      &:nth-child(6) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .2s;
-      }
-      &:nth-child(7) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .25s;
-      }
-      &:nth-child(8) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .3s;
-      }
-      &:nth-child(9) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .35s;
-      }
-      &:nth-child(10) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .4s;
-      }
-      &:nth-child(11) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .45s;
-      }
-      &:nth-child(12) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .5s;
-      }
-      &:nth-child(13) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .55s;
-      }
-      &:nth-child(14) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .6s;
-      }
-      &:nth-child(15) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .65s;
-      }
-      &:nth-child(16) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .7s;
-      }
-      &:nth-child(17) {
-        //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-        transition-delay: .75s;
-      }
-    }
-  }
-  .slide-in-menu .nav-menu-link-container {
-    &:nth-child(17) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: 0s;
-    }
-    &:nth-child(16) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: 0.05s;
-    }
-    &:nth-child(15) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .1s;
-    }
-    &:nth-child(14) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .15s;
-    }
-    &:nth-child(13) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .2s;
-    }
-    &:nth-child(12) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .25s;
-    }
-    &:nth-child(11) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .3s;
-    }
-    &:nth-child(10) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .35s;
-    }
-    &:nth-child(9) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .4s;
-    }
-    &:nth-child(8) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .45s;
-    }
-    &:nth-child(7) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .5s;
-    }
-    &:nth-child(6) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
-      transition-delay: .55s;
-    }
-  }
-}
-.fly {
-  display: none;
-  &.in {
-    display: none;
-  }
-}
-.pre-loader-overlay {
-  align-items: center;
-  background-color: $color_cornflower_blue_approx;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  left: 0;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-  transition: all .5s ease-in-out;
-  visibility: hidden;
-  width: 100vw;
-  z-index: 200;
-  &.is-active {
-    opacity: 1;
-    overflow: hidden;
-    pointer-events: none;
-    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-    transition: all .5s ease-in-out;
-    visibility: visible;
-  }
-}
-.pre-loader-overlay-logo {
-  max-width: 180px;
-  width: 43%;
-}
-.pre-loader-spinner {
-  color: $color_cornflower_approx;
-  font-size: 12px;
-  margin: 100px auto;
-  width: 1em;
-  height: 1em;
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-  border-radius: 50%;
-  position: relative;
-  animation: spinner-animation 1.0s infinite linear;
-  //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-  transform: translateZ(0);
-}
-@-webkit-keyframes spinner-animation {
-  0% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-  }
-  100% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-  }
-  25% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  50% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  75% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0 0 0.2em, -2em -2em 0 0;
-  }
-  0.5% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  1.5% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 0, 2em 2em 0 0.2em, 0 3em 0 0, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-  2.5% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-  }
-  3.5% {
-    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0 0 0, -2em -2em 0 0.2em;
-  }
-}
 @keyframes spinner-animation {
   0% {
     //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
@@ -496,6 +44,172 @@ footer {
     box-shadow: 0 -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0 0 0, -2em -2em 0 0.2em;
   }
 }
+
+.pre-loader-overlay {
+  align-items: center;
+  background-color: $color_cornflower_blue_approx;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: all .5s ease-in-out;
+  visibility: hidden;
+  width: 100vw;
+  z-index: 200;
+  &.is-active {
+    opacity: 1;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all .5s ease-in-out;
+    visibility: visible;
+  }
+}
+.pre-loader-overlay-logo {
+  max-width: 180px;
+  width: 43%;
+}
+.pre-loader-spinner {
+  color: $color_cornflower_approx;
+  font-size: 12px;
+  margin: 100px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  animation: spinner-animation 1.0s infinite linear;
+  transform: translateZ(0);
+}
+
+body {
+  background-color: $color_bahama_blue_approx;
+}
+
+.campaign-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  &.navigation-menu {
+    .node--type-campaign & {
+      @include breakpoint-max(md) {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    span {
+      &.nav-logo {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-left: 14px;
+        text-align: left;
+        visibility: visible;
+        width: 100%;
+        z-index: -3;
+        &::after {
+          @include breakpoint-max(md) {
+            top: -105px;
+          }
+        }
+        img {
+          left: 0;
+          margin: auto 0;
+          position: relative;
+          top: 0;
+          @include breakpoint-max(md) {
+            width: 80px;
+            height: 53px;
+            margin: 0;
+          }
+        }
+        &.not-fixed::after {
+          transition: width .2s, transform .2s ease .2s;
+          transform: rotate(16.5deg) skew(-29deg);
+        }
+        &.fixed::after {
+          transition: transform .2s, width .2s ease .2s, left .5s ease-in-out .2s;
+          transform: rotate(0) skew(0) translate3d(60px, -40px, 0);
+          width: 100%;
+          .pushed & {
+            transition: transform .2s, width .2s ease .2s, left .5s ease-in-out 20ms;
+            left: -360px;
+          }
+        }
+      }
+      &.nav-logo::after {
+        transform: rotate(16.5deg) skew(-29deg);
+        will-change: transform, width;
+        background: $color_cornflower_blue_approx;
+        content: " ";
+        position: absolute;
+        display: block;
+        z-index: -1;
+        top: -84px;
+        left: -60px;
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+  .node--type-campaign & {
+    a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      font-size: 1em;
+      letter-spacing: .5px;
+      padding: .5em;
+    }
+  }
+}
+.nav-menu-link-list {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 60px;
+  list-style: none;
+  margin: 0 74px 0 0;
+  overflow: hidden;
+  padding: 0;
+  transition: all .5s ease-in-out;
+  transition-delay: .5s;
+  @include breakpoint(md) {
+    font-size: .5rem;
+    max-width: calc(100vw - 40px);
+  }
+  @include breakpoint(mlg) {
+    font-size: 1rem;
+    max-width: calc(100vw - 160px);
+  }
+  .pushed & {
+    margin: 0 294px 0 0;
+    transition: all .5s ease-in-out;
+    transition-delay: 0s;
+    @include breakpoint(md) {
+      max-width: calc(100vw - 470px);
+    }
+    @include breakpoint(mlg) {
+      max-width: calc(100vw - 160px);
+    }
+  }
+}
+.invisible-mobile {
+  display: none !important;
+  @include breakpoint(md) {
+    display: flex !important;
+  }
+}
+.visible-mobile {
+  @include breakpoint(md) {
+    display: none !important;
+  }
+}
 .hamburger-menu-toggler {
   cursor: pointer;
   height: 53px;
@@ -503,54 +217,40 @@ footer {
   visibility: visible;
   width: 50px;
   z-index: 1;
+  position: fixed;
+  right: 0;
+  top: 0;
+  .toolbar-fixed & {
+    position: absolute;
+  }
   &:focus {
     outline: none;
   }
-  &.is-active .animated-hamburger-menu {
-    background-color: transparent;
-    &:before {
-      top: 0;
-      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-      transform: rotate(-135deg);
-    }
-    &:after {
-      top: 0;
-      //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-      transform: rotate(135deg);
-    }
-  }
-}
-@media screen and(max-width: 321px) {
-  .hamburger-menu-toggler {
-    right: 30px;
+  @include breakpoint(md) {
+    height: 77px;
+    margin: 0 1.5em;
   }
 }
 .animated-hamburger-menu {
-  //Instead of the line below you could use @include backface-visibility($visibility)
   backface-visibility: hidden;
   background-color: $white;
-  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   border-radius: 2px;
   cursor: pointer;
   display: block;
   height: 4px;
-  right: 33px;
+  right: 9px;
   position: absolute;
   top: 48%;
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
   transition: all .3s ease-in-out;
   width: 32px;
   &:before {
-    //Instead of the line below you could use @include backface-visibility($visibility)
     backface-visibility: hidden;
     background-color: $white;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
     border-radius: 2px;
     cursor: pointer;
     display: block;
     height: 4px;
     position: absolute;
-    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
     transition: all .3s ease-in-out;
     width: 32px;
     content: '';
@@ -558,21 +258,29 @@ footer {
     top: -10px;
   }
   &:after {
-    //Instead of the line below you could use @include backface-visibility($visibility)
     backface-visibility: hidden;
     background-color: $white;
-    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
     border-radius: 2px;
     cursor: pointer;
     display: block;
     height: 4px;
     position: absolute;
-    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
     transition: all .3s ease-in-out;
     width: 32px;
     content: '';
     right: 0;
     top: 10px;
+  }
+  .hamburger-menu-toggler.is-active & {
+    background-color: transparent;
+    &:before {
+      top: 0;
+      transform: rotate(-135deg);
+    }
+    &:after {
+      top: 0;
+      transform: rotate(135deg);
+    }
   }
 }
 .slide-in-menu {
@@ -589,7 +297,6 @@ footer {
   position: fixed;
   right: -30px;
   top: 76px;
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
   transition: opacity .3s .4s, visibility 0s .7s;
   width: 330px;
   .nav-menu-link-container {
@@ -598,9 +305,7 @@ footer {
     opacity: 0;
     padding: 0;
     position: relative;
-    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
     transform: translate3d(100%, 0, 0);
-    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
     transition: opacity .3s, transform .3s, border .2s;
     width: 100%;
     .nav-menu-link {
@@ -613,74 +318,179 @@ footer {
         border: none;
         color: $white;
       }
+      > a {
+        text-align: inherit;
+        padding: 0;
+      }
     }
     &:nth-child(17) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: 0s;
     }
     &:nth-child(16) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: 0.05s;
     }
     &:nth-child(15) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .1s;
     }
     &:nth-child(14) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .15s;
     }
     &:nth-child(13) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .2s;
     }
     &:nth-child(12) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .25s;
     }
     &:nth-child(11) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .3s;
     }
     &:nth-child(10) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .35s;
     }
     &:nth-child(9) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .4s;
     }
     &:nth-child(8) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .45s;
     }
     &:nth-child(7) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .5s;
     }
     &:nth-child(6) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .55s;
     }
     &:nth-child(5) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .6s;
     }
     &:nth-child(4) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .65s;
     }
     &:nth-child(3) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .7s;
     }
     &:nth-child(2) {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .75s;
     }
     &:first-child {
-      //Instead of the line below you could use @include transition-delay($delay-1, $delay-2, $delay-3, $delay-4, $delay-5, $delay-6, $delay-7, $delay-8, $delay-9, $delay-10)
       transition-delay: .8s;
+    }
+    @include breakpoint(md) {
+      &:nth-child(17) {
+        transition-delay: 0s;
+      }
+      &:nth-child(16) {
+        transition-delay: 0.05s;
+      }
+      &:nth-child(15) {
+        transition-delay: .1s;
+      }
+      &:nth-child(14) {
+        transition-delay: .15s;
+      }
+      &:nth-child(13) {
+        transition-delay: .2s;
+      }
+      &:nth-child(12) {
+        transition-delay: .25s;
+      }
+      &:nth-child(11) {
+        transition-delay: .3s;
+      }
+      &:nth-child(10) {
+        transition-delay: .35s;
+      }
+      &:nth-child(9) {
+        transition-delay: .4s;
+      }
+      &:nth-child(8) {
+        transition-delay: .45s;
+      }
+      &:nth-child(7) {
+        transition-delay: .5s;
+      }
+      &:nth-child(6) {
+        transition-delay: .55s;
+      }
+    }
+  }
+  .pushed & {
+    opacity: 1;
+    transition: opacity .3s;
+    visibility: visible;
+    .nav-menu-link-container {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      &:first-child {
+        transition-delay: .2s;
+      }
+      &:nth-child(2) {
+        transition-delay: .25s;
+      }
+      &:nth-child(3) {
+        transition-delay: .3s;
+      }
+      &:nth-child(4) {
+        transition-delay: .35s;
+      }
+      &:nth-child(5) {
+        transition-delay: .4s;
+      }
+      &:nth-child(6) {
+        transition-delay: .45s;
+      }
+      &:nth-child(7) {
+        transition-delay: .5s;
+      }
+      &:nth-child(8) {
+        transition-delay: .55s;
+      }
+      &:nth-child(9) {
+        transition-delay: .6s;
+      }
+      &:nth-child(10) {
+        transition-delay: .65s;
+      }
+      &:nth-child(11) {
+        transition-delay: .7s;
+      }
+      @include breakpoint(md) {
+        &:nth-child(6) {
+          transition-delay: .2s;
+        }
+        &:nth-child(7) {
+          transition-delay: .25s;
+        }
+        &:nth-child(8) {
+          transition-delay: .3s;
+        }
+        &:nth-child(9) {
+          transition-delay: .35s;
+        }
+        &:nth-child(10) {
+          transition-delay: .4s;
+        }
+        &:nth-child(11) {
+          transition-delay: .45s;
+        }
+        &:nth-child(12) {
+          transition-delay: .5s;
+        }
+        &:nth-child(13) {
+          transition-delay: .55s;
+        }
+        &:nth-child(14) {
+          transition-delay: .6s;
+        }
+        &:nth-child(15) {
+          transition-delay: .65s;
+        }
+        &:nth-child(16) {
+          transition-delay: .7s;
+        }
+        &:nth-child(17) {
+          transition-delay: .75s;
+        }
+      }
     }
   }
 }
@@ -695,28 +505,8 @@ footer {
   overflow-y: auto;
   padding-left: 0;
   position: relative;
-  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
   transition: max-height .8s ease-in-out;
   width: 330px;
-  .nav-menu-sub-link-container .nav-menu-sub-link {
-    border-bottom: none;
-    color: $white;
-    font-size: 14px;
-    line-height: 18px;
-    opacity: 0.6;
-    padding: 7px 10px 7px 25px;
-    position: relative;
-    text-align: left;
-    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-    transition: opacity .3s;
-    width: calc(100% - 30px);
-    &:hover {
-      background-color: transparent;
-      border-bottom: none;
-      color: $white;
-      opacity: 1;
-    }
-  }
 }
 .nav-menu-sub-link-container {
   margin-bottom: 10px;
@@ -724,22 +514,113 @@ footer {
   opacity: 1;
   width: 300px;
   z-index: 0;
-}
-@media(max-width:766px) {
-  nav.navigation-menu span {
-    &.nav-logo::after {
-      top: -105px;
-    }
-    &.nav-logo img {
-      width: 80px;
-      height: 53px;
-      margin: 0;
+  .sub-links-slider & {
+    .nav-menu-sub-link {
+      border-bottom: none;
+      color: $white;
+      font-size: 14px;
+      line-height: 18px;
+      opacity: 0.6;
+      padding: 7px 10px 7px 25px;
+      position: relative;
+      text-align: left;
+      transition: opacity .3s;
+      width: calc(100% - 30px);
+      &:hover {
+        background-color: transparent;
+        border-bottom: none;
+        color: $white;
+        opacity: 1;
+      }
     }
   }
 }
-.node--type-campaign nav.campaign-menu.navigation-menu {
-  opacity: 1;
+.slide-in-menu-link {
+  &.selected {
+    .sub-links-slider {
+      max-height: 1000px;
+    }
+  }
 }
-.slide-in-menu-link.selected .sub-links-slider {
-  max-height: 1000px;
+.color-slider {
+  @include breakpoint(mlg) {
+    background-color: $color_viking_approx;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .4s ease-in-out;
+    width: 0;
+    z-index: -1;
+  }
+  .slide-in-menu-link:hover .nav-menu-link &,
+  .slide-in-menu-link.selected .nav-menu-link &,
+  .nav-menu-sub-link.hover &,
+  .nav-menu-sub-link.selected & {
+    @include breakpoint(mlg) {
+      width: calc(100% + 40px);
+    }
+  }
+  .nav-menu-sub-link-container & {
+    @include breakpoint(mlg) {
+      margin-left: -20px;
+    }
+  }
+}
+.to-be-pushed {
+  transition: all .5s ease-in-out;
+  transition-delay: .5s;
+  box-shadow: 1px 3px 1px 2px $color_black_10_approx;
+  @include breakpoint(md) {
+    transition-delay: .2s;
+  }
+  .pushed & {
+    transform: translate3d(-300px, 0, 0);
+    transition-delay: 0s;
+  }
+}
+.nav-menu-link-container {
+  display: inline-block;
+  padding: .5em;
+  @include breakpoint(md) {
+    margin-left: 0;
+  }
+  a[data-selected="0"] {
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+    &:hover {
+      background: 0;
+      color: $white;
+      border-color: $white;
+    }
+  }
+  a[data-selected="1"] {
+    display: block;
+    padding: .5em 1.5em;
+    border: 2px solid $white;
+    border-radius: 3px;
+    &:hover {
+      background-color: $white;
+      color: $color_cornflower_blue_approx;
+    }
+  }
+}
+.fly {
+  display: none;
+  &.in {
+    display: none;
+  }
+}
+
+
+footer {
+  transition: all .5s ease-in-out;
+  transition-delay: .5s;
+  @include breakpoint(md) {
+    transition-delay: .2s;
+  }
+  .pushed & {
+    transform: translate3d(-300px, 0, 0);
+    transition-delay: 0s;
+  }
 }

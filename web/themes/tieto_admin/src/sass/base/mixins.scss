@@ -3,8 +3,18 @@
 // Breakpoints
 
 @mixin breakpoint($class) {
-  @if $class == md {
+  @if $class == sm {
+    @media (min-width: 322px) {
+      @content;
+    }
+  }
+  @else if $class == md {
     @media (min-width: 767px) {
+      @content;
+    }
+  }
+  @else if $class == mlg {
+    @media (min-width: 992px) {
       @content;
     }
   }
@@ -15,15 +25,37 @@
   }
 }
 
+@mixin sm() {
+  @include breakpoint(sm) {
+    @content;
+  }
+}
+
 @mixin md() {
   @include breakpoint(md) {
     @content;
   }
 }
 
+@mixin mlg() {
+  @include breakpoint(mlg) {
+    @content;
+  }
+}
+
 @mixin breakpoint-max($class) {
-  @if $class == md {
+  @if $class == sm {
+    @media (max-width: 321px) {
+      @content;
+    }
+  }
+  @else if $class == md {
     @media (max-width: 766px) {
+      @content;
+    }
+  }
+  @else if $class == mlg {
+    @media (max-width: 991px) {
       @content;
     }
   }
