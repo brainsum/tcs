@@ -2801,7 +2801,6 @@ body.offcanvas {
 .sub-links-slider .nav-menu-sub-link-container .nav-menu-sub-link {
   border-bottom: none;
   color: white;
-  font-size: 14px;
   line-height: 18px;
   opacity: 0.6;
   padding: 7px 10px 7px 25px;
@@ -2810,6 +2809,10 @@ body.offcanvas {
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
   width: calc(100% - 30px);
+  text-decoration: none;
+  display: block;
+  font-size: 1em;
+  letter-spacing: .5px;
 }
 
 .sub-links-slider .nav-menu-sub-link-container .nav-menu-sub-link:hover {
@@ -2819,13 +2822,16 @@ body.offcanvas {
   opacity: 1;
 }
 
-.slide-in-menu-link.selected .sub-links-slider {
+.slide-in-menu-link.selected > .sub-links-slider,
+.slide-in-menu-link.selected + .sub-links-slider,
+.slide-in-menu-link .nav-menu-sub-link.selected > .sub-links-slider,
+.slide-in-menu-link .nav-menu-sub-link.selected + .sub-links-slider {
   max-height: 1000px;
 }
 
 @media (min-width: 992px) {
   .color-slider {
-    background-color: #62b3e5;
+    background-color: #67afe1;
     height: 100%;
     left: 0;
     position: absolute;

@@ -1,5 +1,4 @@
-//colors
-$color_viking_approx: rgb(98, 179, 229);
+//additional colors
 $color_black_10_approx: rgba(0, 0, 2, .1);
 $white: rgb(255, 255, 255);
 
@@ -689,7 +688,6 @@ body.offcanvas {
     .nav-menu-sub-link {
       border-bottom: none;
       color: $white;
-      font-size: 14px;
       line-height: 18px;
       opacity: 0.6;
       padding: 7px 10px 7px 25px;
@@ -697,6 +695,10 @@ body.offcanvas {
       text-align: left;
       transition: opacity .3s;
       width: calc(100% - 30px);
+      text-decoration: none;
+      display: block;
+      font-size: 1em;
+      letter-spacing: .5px;
       &:hover {
         background-color: transparent;
         border-bottom: none;
@@ -707,15 +709,17 @@ body.offcanvas {
   }
 }
 .slide-in-menu-link {
-  &.selected {
-    .sub-links-slider {
+  &.selected,
+  .nav-menu-sub-link.selected {
+    > .sub-links-slider,
+    + .sub-links-slider {
       max-height: 1000px;
     }
   }
 }
 .color-slider {
   @include breakpoint(mlg) {
-    background-color: $color_viking_approx;
+    background-color: $tieto-blue;
     height: 100%;
     left: 0;
     position: absolute;
