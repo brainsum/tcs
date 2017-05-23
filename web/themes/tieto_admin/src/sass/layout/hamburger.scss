@@ -99,7 +99,7 @@ body {
         background: none;
         padding: inherit;
         transition: none;
-        min-width: inherit;
+        width: 100%;
         box-shadow: none;
         will-change: none;
       }
@@ -168,21 +168,22 @@ body {
       color: white;
       text-decoration: none;
       display: block;
-      text-align: center;
-      font-size: 1em;
+      text-align: left;
+      font-size: .9em;
       letter-spacing: .5px;
       padding: .5em;
+      @include breakpoint(md) {
+        text-align: center;
+      }
     }
   }
 }
 .nav-menu-link-list {
-  align-items: center;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: 60px;
+  flex-direction: column;
+  justify-content: flex-start;
   list-style: none;
-  margin: 0;
+  margin: 0 8px 0 0;
   overflow: hidden;
   padding: 0;
   transition: all .5s ease-in-out;
@@ -194,11 +195,14 @@ body {
     background: $tieto-blue;
     padding: 1em;
     transition: opacity .2s, visibility .2s;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
-    min-width: 50%;
-    font-size: 1.2em;
+    //box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    width: 60%;
   }
   @include breakpoint(md) {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
     font-size: .5rem;
     max-width: calc(100vw - 40px);
     margin: 0 74px 0 0;
@@ -212,7 +216,7 @@ body {
     display: none;
     position: absolute;
     top: 0;
-    right: 4px;
+    right: 12px;
     border: 10px solid;
     margin-top: -20px;
     border-color: transparent transparent $tieto-blue transparent;
@@ -337,6 +341,10 @@ body {
   top: 76px;
   transition: opacity .3s .4s, visibility 0s .7s;
   width: 330px;
+  pointer-events: none;
+  @include breakpoint(md) {
+    pointer-events: auto;
+  }
   .nav-menu-link-container {
     cursor: pointer;
     margin: 0;
