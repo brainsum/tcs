@@ -1,9 +1,7 @@
 //colors
 $color_viking_approx: rgb(98, 179, 229);
-$color_bahama_blue_approx: rgb(0, 101, 160);
 $color_black_10_approx: rgba(0, 0, 2, .1);
 $white: rgb(255, 255, 255);
-$color_cornflower_approx: #9acaeb;
 
 @keyframes spinner-animation {
   0% {
@@ -72,7 +70,7 @@ $color_cornflower_approx: #9acaeb;
   width: 43%;
 }
 .pre-loader-spinner {
-  color: $color_cornflower_approx;
+  color: $tieto-light-blue;
   font-size: 12px;
   margin: 100px auto;
   width: 1em;
@@ -84,7 +82,7 @@ $color_cornflower_approx: #9acaeb;
 }
 
 body {
-  background-color: $color_bahama_blue_approx;
+  background-color: $tieto-dark-blue;
 }
 
 .campaign-menu {
@@ -172,6 +170,9 @@ body {
       font-size: .9em;
       letter-spacing: .5px;
       padding: .5em;
+      @include breakpoint-max(md) {
+        padding: .5em 1.5em;
+      }
       @include breakpoint(md) {
         text-align: center;
       }
@@ -192,11 +193,9 @@ body {
     will-change: opacity;
     opacity: 0;
     visibility: hidden;
-    background: $tieto-blue;
-    padding: 1em;
     transition: opacity .2s, visibility .2s;
     //box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
-    width: 60%;
+    width: 62%;
   }
   @include breakpoint(md) {
     flex-direction: row;
@@ -238,6 +237,61 @@ body {
     }
     @include breakpoint(mlg) {
       max-width: calc(100vw - 160px);
+    }
+  }
+}
+.campaign-menu-link {
+  @include breakpoint-max(md) {
+    background: $tieto-blue;
+  }
+}
+.nav-menu-link {
+  @include breakpoint-max(md) {
+    &:first-child {
+      padding-top: 1em;
+    }
+    &.last-item {
+      padding-bottom: 1em;
+    }
+  }
+}
+.tieto-com-link {
+  .node--type-campaign .campaign-menu &.campaign-menu-link {
+    margin-top: 6px;
+    position: relative;
+    @include breakpoint-max(md) {
+      display: list-item;
+    }
+    @include breakpoint(md) {
+      display: none;
+    }
+    &:hover {
+      &::before {
+        display: none;
+      }
+    }
+    &::before {
+      display: none;
+      content: " ";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 30px 45px 0 0;
+      border-color: $tieto-light-blue transparent transparent transparent;
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include breakpoint-max(md) {
+        display: block;
+      }
+    }
+    > a {
+      text-align: center;
+      padding: 1em 1.5em;
+      &:Hover,
+      &:active {
+        background: $tieto-dark-blue;
+      }
     }
   }
 }
