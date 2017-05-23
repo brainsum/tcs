@@ -1951,7 +1951,7 @@ li.tabs__tab a {
   transform: translateZ(0);
 }
 
-body {
+body.offcanvas {
   background-color: #0065a0;
 }
 

@@ -17,6 +17,10 @@
     //last child for normal nav items in mobile menu
     $("li.nav-menu-link:last").addClass("last-item");
 
+    if ( $(".slide-in-menu").length ) {
+      $("body").addClass("offcanvas");
+    }
+
     /*** HAMBURGER START ***/
     function hasClass( element, className ) {
       return new RegExp( " " + className + " " ).test( " " + element.className + " " );
