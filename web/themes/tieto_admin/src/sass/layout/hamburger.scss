@@ -3,7 +3,6 @@ $color_viking_approx: rgb(98, 179, 229);
 $color_bahama_blue_approx: rgb(0, 101, 160);
 $color_black_10_approx: rgba(0, 0, 2, .1);
 $white: rgb(255, 255, 255);
-$color_cornflower_blue_approx: rgb(103, 175, 225);
 $color_cornflower_approx: #9acaeb;
 
 @keyframes spinner-animation {
@@ -47,7 +46,7 @@ $color_cornflower_approx: #9acaeb;
 
 .pre-loader-overlay {
   align-items: center;
-  background-color: $color_cornflower_blue_approx;
+  background-color: $tieto-blue;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -97,6 +96,15 @@ body {
       @include breakpoint-max(md) {
         opacity: 1;
         visibility: visible;
+        background: none;
+        padding: inherit;
+        transition: none;
+        min-width: inherit;
+        box-shadow: none;
+        will-change: none;
+      }
+      &::before {
+        display: none;
       }
     }
     span {
@@ -143,7 +151,7 @@ body {
       &.nav-logo::after {
         transform: rotate(16.5deg) skew(-29deg);
         will-change: transform, width;
-        background: $color_cornflower_blue_approx;
+        background: $tieto-blue;
         content: " ";
         position: absolute;
         display: block;
@@ -174,25 +182,55 @@ body {
   justify-content: flex-end;
   height: 60px;
   list-style: none;
-  margin: 0 74px 0 0;
+  margin: 0;
   overflow: hidden;
   padding: 0;
   transition: all .5s ease-in-out;
   transition-delay: .5s;
+  @include breakpoint-max(md) {
+    will-change: opacity;
+    opacity: 0;
+    visibility: hidden;
+    background: $tieto-blue;
+    padding: 1em;
+    transition: opacity .2s, visibility .2s;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    min-width: 50%;
+    font-size: 1.2em;
+  }
   @include breakpoint(md) {
     font-size: .5rem;
     max-width: calc(100vw - 40px);
+    margin: 0 74px 0 0;
   }
   @include breakpoint(mlg) {
     font-size: 1rem;
     max-width: calc(100vw - 160px);
   }
+  &::before {
+    content: " ";
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    border: 10px solid;
+    margin-top: -20px;
+    border-color: transparent transparent $tieto-blue transparent;
+    box-sizing: content-box;
+  }
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    &::before {
+      display: block;
+    }
+  }
   .pushed & {
-    margin: 0 294px 0 0;
-    transition: all .5s ease-in-out;
-    transition-delay: 0s;
     @include breakpoint(md) {
       max-width: calc(100vw - 470px);
+      margin: 0 294px 0 0;
+      transition: all .5s ease-in-out;
+      transition-delay: 0s;
     }
     @include breakpoint(mlg) {
       max-width: calc(100vw - 160px);
@@ -414,9 +452,11 @@ body {
     }
   }
   .pushed & {
-    opacity: 1;
-    transition: opacity .3s;
-    visibility: visible;
+    @include breakpoint(md) {
+      opacity: 1;
+      transition: opacity .3s;
+      visibility: visible;
+    }
     .nav-menu-link-container {
       opacity: 1;
       transform: translate3d(0, 0, 0);
@@ -575,8 +615,10 @@ body {
     transition-delay: .2s;
   }
   .pushed & {
-    transform: translate3d(-300px, 0, 0);
-    transition-delay: 0s;
+    @include breakpoint(md) {
+      transform: translate3d(-300px, 0, 0);
+      transition-delay: 0s;
+    }
   }
 }
 .nav-menu-link-container {
@@ -601,7 +643,7 @@ body {
     border-radius: 3px;
     &:hover {
       background-color: $white;
-      color: $color_cornflower_blue_approx;
+      color: $tieto-blue;
     }
   }
 }
@@ -620,7 +662,9 @@ footer {
     transition-delay: .2s;
   }
   .pushed & {
-    transform: translate3d(-300px, 0, 0);
-    transition-delay: 0s;
+    @include breakpoint(md) {
+      transform: translate3d(-300px, 0, 0);
+      transition-delay: 0s;
+    }
   }
 }
