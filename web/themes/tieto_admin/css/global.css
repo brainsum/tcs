@@ -2106,6 +2106,7 @@ body.offcanvas {
     -webkit-transition: opacity .2s, visibility .2s;
     transition: opacity .2s, visibility .2s;
     width: 62%;
+    overflow: visible;
   }
 }
 
