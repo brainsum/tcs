@@ -4646,6 +4646,10 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   padding: 0.25rem 1rem;
 }
 
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--rounded_image .field--name-field-paragraphs .field--name-field-image {
+  width: 34%;
+}
+
 .paragraph--type--marketo-form.paragraph--view-mode--default {
   background: #efefef;
 }
