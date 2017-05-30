@@ -1975,7 +1975,8 @@ body.offcanvas {
     transition: none;
     width: 100%;
     box-shadow: none;
-    will-change: none;
+    will-change: initial;
+    z-index: 2000;
   }
 }
 
@@ -2911,11 +2912,25 @@ body.offcanvas {
 }
 
 .fly {
-  display: none;
+  opacity: 1;
+  -webkit-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
 }
 
-.fly.in {
-  display: none;
+@media (min-width: 767px) {
+  .pushed .fly {
+    opacity: 0;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+}
+
+@media (min-width: 767px) {
+  .pushed .fly.in {
+    -webkit-transform: translate(-300px) translateY(0);
+    transform: translate(-300px) translateY(0);
+    opacity: 0;
+  }
 }
 
 footer {

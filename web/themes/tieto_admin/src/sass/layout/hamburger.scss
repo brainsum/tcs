@@ -98,7 +98,8 @@ body.offcanvas {
         transition: none;
         width: 100%;
         box-shadow: none;
-        will-change: none;
+        will-change: initial;
+        z-index: 2000;
       }
       &::before {
         display: none;
@@ -800,9 +801,21 @@ body.offcanvas {
   }
 }
 .fly {
-  display: none;
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+  .pushed & {
+    @include breakpoint(md) {
+      opacity: 0;
+      transition-delay: 0s;
+    }
+  }
   &.in {
-    display: none;
+    .pushed & {
+      @include breakpoint(md) {
+        transform: translate(-300px) translateY(0);
+        opacity: 0;
+      }
+    }
   }
 }
 
