@@ -1,21 +1,70 @@
 // @todo move this to text-boxes.scss!
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default {
+
+  &.scheme-green,
+  &.scheme-green-light {
+    color: white;
+    background: $tieto-green;
+    .field,
+    .field--name-field-paragraphs .field {
+      color: white;
+    }
+  }
+  &.scheme-blue {
+    color: white;
+    background: $tieto-blue;
+    .field,
+    .field--name-field-paragraphs .field {
+      color: white;
+    }
+  }
+  &.scheme-blue-light {
     background: $tieto-lightblue;
+  }
+  &.scheme-grey,
+  &.scheme-grey-light{
+    background: $tieto-lightgrey;
+  }
+  &.scheme-grey-dark {
+    color: white;
+    background: #999999;
+    .field,
+    .field--name-field-paragraphs .field {
+      color: white;
+    }
+  }
+  &.scheme-orange,
+  &.scheme-orange-light {
+    color: white;
+    background: $tieto-orange;
+    .field,
+    .field--name-field-paragraphs .field {
+      color: white;
+    }
+  }
+  &.scheme-red {
+  color: white;
+  background: $tieto-red;
+  .field,
+  .field--name-field-paragraphs .field {
+    color: white;
+  }
+}
 
-    .field--name-field-paragraphs {
-        margin: 0 -15px;
+  .field--name-field-paragraphs {
+    margin: 0 -15px;
+  }
+
+  .field--name-field-paragraphs {
+
+    .field--name-field-title {
+      font-weight: bold;
+      margin: 0 0 .5em;
+      line-height: 27px;
+      font-size: 20px;
+      letter-spacing: -.5px;
+      color: $text-color;
     }
 
-    .field--name-field-paragraphs {
-
-        .field--name-field-title {
-            font-weight: bold;
-            margin: 0 0 .5em;
-            line-height: 27px;
-            font-size: 20px;
-            letter-spacing: -.5px;
-            color: $text-color;
-        }
-
-    }
+  }
 }

@@ -4839,8 +4839,64 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
   }
 }
 
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-green, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-green-light {
+  color: white;
+  background: #b2eb95;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-green .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-green .field--name-field-paragraphs .field, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-green-light .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-green-light .field--name-field-paragraphs .field {
+  color: white;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-blue {
+  color: white;
+  background: #67afe1;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-blue .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-blue .field--name-field-paragraphs .field {
+  color: white;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-blue-light {
   background: #cde6f5;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-grey, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-grey-light {
+  background: #efefef;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-grey-dark {
+  color: white;
+  background: #999999;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-grey-dark .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-grey-dark .field--name-field-paragraphs .field {
+  color: white;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-orange, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-orange-light {
+  color: white;
+  background: #F78D2D;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-orange .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-orange .field--name-field-paragraphs .field, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-orange-light .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-orange-light .field--name-field-paragraphs .field {
+  color: white;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-red {
+  color: white;
+  background: #d51067;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-red .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.scheme-red .field--name-field-paragraphs .field {
+  color: white;
 }
 
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default .field--name-field-paragraphs {
