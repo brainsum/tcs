@@ -83,7 +83,8 @@
       // Somewhy we need "dynamic listening".
       $( document ).on( 'click', "#hamburger", function () {
         removeFromAll( navLinkContainers, "selected" );
-        toggleClass( document.body, "pushed" );
+        //toggleClass( document.body, "pushed" );
+        $('body').toggleClass('pushed');
         navMenu.toggleClass("is-active");
         $( this ).toggleClass( 'is-active' );
       } );
