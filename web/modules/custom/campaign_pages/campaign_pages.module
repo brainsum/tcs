@@ -157,5 +157,26 @@ function campaign_pages_leaflet_map_info_alter(array &$map_info) {
   // Alter default leaflet map so it displays in black and white.
   if (isset($map_info['OSM Mapnik'])) {
     $map_info['OSM Mapnik']['layers']['earth']['urlTemplate'] = 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png';
+    $map_info['OSM Mapnik']['icon'] = [
+      // Marker has 25 : 41 aspect ratio.
+      'iconUrl' => '/' . drupal_get_path('module', 'campaign_pages') . '/images/marker-icon-2x_new.png',
+      'iconSize' => [
+        // Width.
+        'x' => '25',
+        // Height.
+        'y' => '41',
+      ],
+      // This is inverted, meaning 12 translates to -12, -12 to 12.
+      'iconAnchor' => [
+        // Margin left.
+        'x' => '12',
+        // Margin right.
+        'y' => '41',
+      ],
+      'popupAnchor' => [
+        'x' => '0',
+        'y' => '-30',
+      ],
+    ];
   }
 }

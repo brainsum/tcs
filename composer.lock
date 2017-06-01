@@ -1024,6 +1024,80 @@
             }
         },
         {
+            "name": "drupal/aggregated_leaflet_map",
+            "version": "dev-1.x",
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/leaflet": "*",
+                "drupal/parade": "self.version"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1496314443"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kosa Ilma",
+                    "homepage": "https://www.drupal.org/user/3435475"
+                },
+                {
+                    "name": "balagan",
+                    "homepage": "https://www.drupal.org/user/1230072"
+                },
+                {
+                    "name": "danieldecsi",
+                    "homepage": "https://www.drupal.org/user/3498661"
+                },
+                {
+                    "name": "golddragon007",
+                    "homepage": "https://www.drupal.org/user/2723471"
+                },
+                {
+                    "name": "gpap",
+                    "homepage": "https://www.drupal.org/user/2878517"
+                },
+                {
+                    "name": "malatenszki",
+                    "homepage": "https://www.drupal.org/user/3452551"
+                },
+                {
+                    "name": "mhavelant",
+                    "homepage": "https://www.drupal.org/user/3331139"
+                },
+                {
+                    "name": "pedrop",
+                    "homepage": "https://www.drupal.org/user/1043368"
+                },
+                {
+                    "name": "rteijeiro",
+                    "homepage": "https://www.drupal.org/user/780508"
+                },
+                {
+                    "name": "szamee",
+                    "homepage": "https://www.drupal.org/user/3070377"
+                },
+                {
+                    "name": "szato",
+                    "homepage": "https://www.drupal.org/user/389677"
+                }
+            ],
+            "description": "Leaflet module formatter extension.",
+            "homepage": "https://www.drupal.org/project/parade",
+            "support": {
+                "source": "http://cgit.drupalcode.org/parade"
+            }
+        },
+        {
             "name": "drupal/captcha",
             "version": "1.0.0-beta1",
             "source": {
@@ -1316,12 +1390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "373da78477b659102afa56cb6fba4247c7c395ed"
+                "reference": "c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/373da78477b659102afa56cb6fba4247c7c395ed",
-                "reference": "373da78477b659102afa56cb6fba4247c7c395ed",
+                "url": "https://api.github.com/repos/drupal/core/zipball/c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8",
+                "reference": "c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8",
                 "shasum": ""
             },
             "require": {
@@ -1490,7 +1564,7 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2017-04-19T16:47:05+00:00"
+            "time": "2017-04-19T16:45:52+00:00"
         },
         {
             "name": "drupal/diff",
@@ -2594,9 +2668,10 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "4592b2dce1d2abe55324428c5a5fb9dc2c3067e8"
+                "reference": "7554ff46ad38c2a7987225cfef5a9ffae2f9cea5"
             },
             "require": {
+                "drupal/aggregated_leaflet_map": "*",
                 "drupal/classy_paragraphs": "~1.0",
                 "drupal/core": "*",
                 "drupal/geocoder": "~2.0",
@@ -2614,7 +2689,8 @@
                 "drupal/imageapi_optimize": "*",
                 "drupal/imagemagick": "*",
                 "drupal/leaflet": "*",
-                "drupal/marketo_form": "*"
+                "drupal/marketo_form": "*",
+                "drupal/marketo_poll": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -2623,7 +2699,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1493380444"
+                    "datestamp": "1496314443"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2681,7 +2757,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-05-03 11:25:48"
+            "time": "2017-06-01 10:56:05"
         },
         {
             "name": "drupal/paragraphs",
