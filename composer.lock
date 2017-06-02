@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "57596d3d4d0cea76078d046b935dad36",
+    "content-hash": "24ca8e2664f6cd350f4183f74fd316a4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -187,16 +187,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d78064c68299743e0161004f2de3a0204e33b804"
+                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d78064c68299743e0161004f2de3a0204e33b804",
-                "reference": "d78064c68299743e0161004f2de3a0204e33b804",
+                "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
                 "shasum": ""
             },
             "require": {
@@ -238,12 +238,16 @@
             "keywords": [
                 "Craft",
                 "Dolibarr",
+                "Eliasis",
                 "Hurad",
                 "ImageCMS",
+                "Kanboard",
                 "MODX Evo",
                 "Mautic",
+                "Maya",
                 "OXID",
                 "Plentymarkets",
+                "Porto",
                 "RadPHP",
                 "SMF",
                 "Thelia",
@@ -266,9 +270,11 @@
                 "fuelphp",
                 "grav",
                 "installer",
+                "itop",
                 "joomla",
                 "kohana",
                 "laravel",
+                "lavalite",
                 "lithium",
                 "magento",
                 "mako",
@@ -283,6 +289,7 @@
                 "roundcube",
                 "shopware",
                 "silverstripe",
+                "sydes",
                 "symfony",
                 "typo3",
                 "wordpress",
@@ -290,7 +297,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13T20:53:52+00:00"
+            "time": "2017-04-24T06:37:16+00:00"
         },
         {
             "name": "composer/semver",
@@ -457,16 +464,16 @@
         },
         {
             "name": "cweagans/composer-patches",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cweagans/composer-patches.git",
-                "reference": "7cd5c6eb7e68b8f7436ce1a7b9fffa4418bf59c6"
+                "reference": "b3036f23b73570ab5d869e345277786c8eb248a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/7cd5c6eb7e68b8f7436ce1a7b9fffa4418bf59c6",
-                "reference": "7cd5c6eb7e68b8f7436ce1a7b9fffa4418bf59c6",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/b3036f23b73570ab5d869e345277786c8eb248a9",
+                "reference": "b3036f23b73570ab5d869e345277786c8eb248a9",
                 "shasum": ""
             },
             "require": {
@@ -497,7 +504,7 @@
                 }
             ],
             "description": "Provides a way to patch Composer packages.",
-            "time": "2016-12-01T01:19:32+00:00"
+            "time": "2017-03-19T18:18:52+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -933,16 +940,16 @@
         },
         {
             "name": "drupal-composer/drupal-scaffold",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-scaffold.git",
-                "reference": "3ad465ac853c2e52e6a808f5529859917662c256"
+                "reference": "1374e1031b98beb502abea3854f361304965c628"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/3ad465ac853c2e52e6a808f5529859917662c256",
-                "reference": "3ad465ac853c2e52e6a808f5529859917662c256",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/1374e1031b98beb502abea3854f361304965c628",
+                "reference": "1374e1031b98beb502abea3854f361304965c628",
                 "shasum": ""
             },
             "require": {
@@ -970,7 +977,7 @@
                 "GPL-2.0+"
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
-            "time": "2016-11-05T10:46:44+00:00"
+            "time": "2017-05-05T21:26:28+00:00"
         },
         {
             "name": "drupal/addtoany",
@@ -1390,12 +1397,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8"
+                "reference": "7ccc248f4058dd5985ad0c61c129243d0d2b58b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8",
-                "reference": "c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8",
+                "url": "https://api.github.com/repos/drupal/core/zipball/7ccc248f4058dd5985ad0c61c129243d0d2b58b8",
+                "reference": "7ccc248f4058dd5985ad0c61c129243d0d2b58b8",
                 "shasum": ""
             },
             "require": {
@@ -1776,17 +1783,17 @@
         },
         {
             "name": "drupal/entity_reference_revisions",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_revisions",
-                "reference": "8.x-1.2"
+                "reference": "8.x-1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.2.zip",
-                "reference": "8.x-1.2",
-                "shasum": "15261a4237cc2a743522a7bd81e9f34e01d12843"
+                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "78aebb58efbbfcbb2faa40a1afc0830312b32631"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1800,8 +1807,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.2",
-                    "datestamp": "1485790085"
+                    "version": "8.x-1.3",
+                    "datestamp": "1495814284"
                 },
                 "patches_applied": {
                     "Deletion of referenced entities on host delete, without checking usage/another reference.": "https://www.drupal.org/files/issues/deletion_of_used_referenced_entity-2852522-4.patch"
@@ -2565,17 +2572,17 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/metatag",
-                "reference": "8.x-1.0"
+                "reference": "8.x-1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "604e45e89c19f5a8960b6a8ae3d80500d4328e6b"
+                "url": "https://ftp.drupal.org/files/projects/metatag-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "bb9b608879e2f7d8086a0e6606286086f5009d71"
             },
             "require": {
                 "drupal/core": "*",
@@ -2591,8 +2598,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1485901983"
+                    "version": "8.x-1.1",
+                    "datestamp": "1496286243"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2939,17 +2946,17 @@
         },
         {
             "name": "drupal/purge_queuer_url",
-            "version": "1.0.0-beta5",
+            "version": "1.0.0-beta6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/purge_queuer_url",
-                "reference": "8.x-1.0-beta5"
+                "reference": "8.x-1.0-beta6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/purge_queuer_url-8.x-1.0-beta5.zip",
-                "reference": "8.x-1.0-beta5",
-                "shasum": "6ba894aafc8d12aa668ff77820ef5b736ea8377f"
+                "url": "https://ftp.drupal.org/files/projects/purge_queuer_url-8.x-1.0-beta6.zip",
+                "reference": "8.x-1.0-beta6",
+                "shasum": "360b48c01a30a9933a30720a113cf1a5792497b5"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2961,11 +2968,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta5",
-                    "datestamp": "1473245939"
-                },
-                "patches_applied": {
-                    "only queue anonymous requests": "https://www.drupal.org/files/issues/purge_queuer_url-prevent-queueing_maxage_less_than_0-2847828-1.patch"
+                    "version": "8.x-1.0-beta6",
+                    "datestamp": "1495548784"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6149,16 +6153,16 @@
         },
         {
             "name": "wikimedia/composer-merge-plugin",
-            "version": "v1.3.1",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wikimedia/composer-merge-plugin.git",
-                "reference": "0bdf8543d445ee067c9ba7d5d4a5dde70b9785f4"
+                "reference": "ca453f9f13d8b05f86f20ea10be992a782e6f78c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/0bdf8543d445ee067c9ba7d5d4a5dde70b9785f4",
-                "reference": "0bdf8543d445ee067c9ba7d5d4a5dde70b9785f4",
+                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/ca453f9f13d8b05f86f20ea10be992a782e6f78c",
+                "reference": "ca453f9f13d8b05f86f20ea10be992a782e6f78c",
                 "shasum": ""
             },
             "require": {
@@ -6166,7 +6170,7 @@
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "composer/composer": "1.0.*@dev",
+                "composer/composer": "~1.0.0",
                 "jakub-onderka/php-parallel-lint": "~0.8",
                 "phpunit/phpunit": "~4.8|~5.0",
                 "squizlabs/php_codesniffer": "~2.1.0"
@@ -6194,7 +6198,7 @@
                 }
             ],
             "description": "Composer plugin to merge multiple composer.json files",
-            "time": "2016-03-08T17:11:37+00:00"
+            "time": "2017-03-13T16:52:55+00:00"
         },
         {
             "name": "willdurand/geocoder",
