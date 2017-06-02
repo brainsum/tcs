@@ -154,6 +154,7 @@ function campaign_pages_theme($existing, $type, $theme, $path) {
  * Implements hook_leaflet_map_info_alter().
  */
 function campaign_pages_leaflet_map_info_alter(array &$map_info) {
+  // @todo: Maybe use map_info hook and add it as a custom one, not altering the existing.
   // Alter default leaflet map so it displays in black and white.
   if (isset($map_info['OSM Mapnik'])) {
     $map_info['OSM Mapnik']['layers']['earth']['urlTemplate'] = 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png';
