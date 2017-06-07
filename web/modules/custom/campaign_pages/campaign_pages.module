@@ -204,3 +204,29 @@ function campaign_pages_leaflet_map_info_alter(array &$map_info) {
     ];
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function campaign_pages_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormState $form_state) {
+  $form['#submit'][] = 'campaign_pages_user_login_submit';
+}
+
+/**
+ * Form submission handler for user_login_form().
+ *
+ * Redirects the user to the dashboard after logging in.
+ */
+function campaign_pages_user_login_submit(&$form, \Drupal\Core\Form\FormState $form_state) {
+  $url = \Drupal\Core\Url::fromUri('internal:/admin/content');
+
+  // Check if a destination was set, probably on an exception controller.
+  // @see \Drupal\user\Form\UserLoginForm::submitForm()
+  $request = \Drupal::service('request_stack')->getCurrentRequest();
+  if (!$request->request->has('destination')) {
+    $form_state->setRedirectUrl($url);
+  }
+  else {
+    $request->query->set('destination', $request->request->get('destination'));
+  }
+}
