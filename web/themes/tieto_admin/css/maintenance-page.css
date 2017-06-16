@@ -4,7 +4,6 @@
  */
 .maintenance-page {
   background-color: #e0e0d8;
-  background-image: -webkit-radial-gradient(#e5e6e6, #f2f2f3);
   background-image: radial-gradient(#e5e6e6, #f2f2f3);
   background-repeat: repeat;
   background-position: left top, 50% 50%;

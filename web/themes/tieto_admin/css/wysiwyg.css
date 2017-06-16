@@ -94,7 +94,6 @@ h3.tieto-lead {
   padding: 0.25rem 1rem;
   font-size: 1rem;
   border-radius: 2px;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #5e5e5e;
   background-color: #eeeeee;

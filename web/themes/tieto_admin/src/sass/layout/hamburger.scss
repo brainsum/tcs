@@ -398,9 +398,6 @@ body.offcanvas {
     transition: opacity .3s .4s, visibility 0s .7s;
     width: 330px;
     pointer-events: none;
-    @include breakpoint(md) {
-      pointer-events: auto;
-    }
     .nav-menu-link-container {
       cursor: pointer;
       margin: 0;
@@ -564,6 +561,7 @@ body.offcanvas {
     }
     .pushed & {
       @include breakpoint(md) {
+        pointer-events: auto;
         opacity: 1;
         transition: opacity .3s;
         visibility: visible;
