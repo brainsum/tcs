@@ -1767,6 +1767,13 @@ li.tabs__tab a {
   border-bottom-color: #008ee6;
 }
 
+.scroll-to-top {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  cursor: pointer;
+}
+
 /**
  * Tieto logo.
  */
