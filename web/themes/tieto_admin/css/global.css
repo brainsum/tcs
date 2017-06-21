@@ -1964,10 +1964,11 @@ body.offcanvas {
     background: none;
     padding: inherit;
     transition: none;
-    width: 100%;
+    width: calc(100% - 115px);
     box-shadow: none;
     will-change: initial;
     z-index: 2000;
+    top: 0;
   }
 }
 
@@ -2091,8 +2092,9 @@ body.offcanvas {
     opacity: 0;
     visibility: hidden;
     transition: opacity .2s, visibility .2s;
-    width: 62%;
+    width: 82%;
     overflow: visible;
+    margin-top: 70px;
   }
 }
 
@@ -2126,7 +2128,7 @@ body.offcanvas {
   top: 0;
   right: 12px;
   border: 10px solid;
-  margin-top: -20px;
+  margin-top: 50px;
   border-color: transparent transparent #67afe1 transparent;
   box-sizing: content-box;
 }
@@ -3205,10 +3207,11 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
   .node--type-campaign .campaign-menu {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 115px;
     right: 0;
     text-align: right;
     transition: background .2s;
+    width: calc(100% - 115px);
   }
   .node--type-campaign .campaign-menu a {
     font-size: 15px;

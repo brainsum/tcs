@@ -96,10 +96,11 @@ body.offcanvas {
         background: none;
         padding: inherit;
         transition: none;
-        width: 100%;
+        width: calc(100% - 115px);
         box-shadow: none;
         will-change: initial;
         z-index: 2000;
+        top: 0;
       }
       &::before {
         display: none;
@@ -195,8 +196,9 @@ body.offcanvas {
     visibility: hidden;
     transition: opacity .2s, visibility .2s;
     //box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
-    width: 62%;
+    width: 82%;
     overflow: visible;
+    margin-top: 70px;
   }
   @include breakpoint(md) {
     flex-direction: row;
@@ -218,7 +220,7 @@ body.offcanvas {
     top: 0;
     right: 12px;
     border: 10px solid;
-    margin-top: -20px;
+    margin-top: 50px;
     border-color: transparent transparent $tieto-blue transparent;
     box-sizing: content-box;
   }
