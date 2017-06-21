@@ -80,7 +80,7 @@
     $(document).on('click', "#hamburger", function() {
       removeFromAll(navLinkContainers, "selected");
       toggleClass(document.body, "pushed");
-      $(this).toggleClass('is-active');
+      $(this).toggleClass('is-active').parent().find("> ul.nav-menu-link-list").toggleClass('is-active');
     });
 
 		/*var preLoaderOverlay = document.getElementById("pre-loader-overlay");
