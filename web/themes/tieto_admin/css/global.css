@@ -1770,7 +1770,7 @@ li.tabs__tab a {
 .scroll-to-top {
   position: fixed;
   right: 1em;
-  bottom: 1em;
+  bottom: 5em;
   cursor: pointer;
 }
 
