@@ -2096,6 +2096,17 @@ body.offcanvas {
     overflow: visible;
     margin-top: 70px;
   }
+  .nav-menu-link-list::before {
+    content: " ";
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 12px;
+    border: 10px solid;
+    margin-top: 50px;
+    border-color: transparent transparent #67afe1 transparent;
+    box-sizing: content-box;
+  }
 }
 
 @media (min-width: 767px) {
@@ -2119,18 +2130,6 @@ body.offcanvas {
     font-size: 1rem;
     max-width: calc(100vw - 160px);
   }
-}
-
-.nav-menu-link-list::before {
-  content: " ";
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 12px;
-  border: 10px solid;
-  margin-top: 50px;
-  border-color: transparent transparent #67afe1 transparent;
-  box-sizing: content-box;
 }
 
 .nav-menu-link-list.is-active {

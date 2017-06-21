@@ -199,6 +199,17 @@ body.offcanvas {
     width: 82%;
     overflow: visible;
     margin-top: 70px;
+    &::before {
+      content: " ";
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 12px;
+      border: 10px solid;
+      margin-top: 50px;
+      border-color: transparent transparent $tieto-blue transparent;
+      box-sizing: content-box;
+    }
   }
   @include breakpoint(md) {
     flex-direction: row;
@@ -212,17 +223,6 @@ body.offcanvas {
   @include breakpoint(mlg) {
     font-size: 1rem;
     max-width: calc(100vw - 160px);
-  }
-  &::before {
-    content: " ";
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 12px;
-    border: 10px solid;
-    margin-top: 50px;
-    border-color: transparent transparent $tieto-blue transparent;
-    box-sizing: content-box;
   }
   &.is-active {
     opacity: 1;
