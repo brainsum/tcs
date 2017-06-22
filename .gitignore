@@ -26,3 +26,6 @@ web/sites/*/*services*.yml
 
 # Other
 nbproject
+
+web/sites/*.dd/**
+data/*

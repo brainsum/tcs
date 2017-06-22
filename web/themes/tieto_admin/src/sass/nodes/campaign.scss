@@ -139,10 +139,11 @@
     @include md {
       position: fixed;
       top: 0;
-      left: 0;
+      left: 115px;
       right: 0;
       text-align: right;
       transition: background .2s;
+      width: calc(100% - 115px);
 
       a {
         font-size: 15px;
