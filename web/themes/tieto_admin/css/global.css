@@ -4361,6 +4361,11 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph--type--text-box .paragraph-inner .text-formatted {
   -webkit-box-flex: 2;
   flex: 2 auto;
+  padding: 1em 0;
+}
+
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph--type--text-box .paragraph-inner .text-formatted p:first-child {
+  margin: 0 0 1em;
 }
 
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos-grey {

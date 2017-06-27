@@ -32,6 +32,10 @@
         }
         .text-formatted {
           flex: 2 auto;
+          padding: 1em 0;
+          p:first-child {
+            margin: 0 0 1em;
+          }
         }
       }
     }
