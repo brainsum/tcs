@@ -4425,6 +4425,7 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -16px;
   }
   .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner > .field--name-field-paragraphs > .col > .paragraph-inner {
     height: 100%;
@@ -4439,15 +4440,6 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 
 .paragraph--type--text-box.paragraph--view-mode--default {
   background: inherit;
-}
-
-@media (min-width: 767px) {
-  .paragraph--type--text-box.paragraph--view-mode--default.col-2:nth-child(2n+1), .paragraph--type--text-box.paragraph--view-mode--default.col-3:nth-child(3n+1), .paragraph--type--text-box.paragraph--view-mode--default.col-4:nth-child(4n+1) {
-    padding-left: 0;
-  }
-  .paragraph--type--text-box.paragraph--view-mode--default.col-2:nth-child(2n+2), .paragraph--type--text-box.paragraph--view-mode--default.col-3:nth-child(3n+3), .paragraph--type--text-box.paragraph--view-mode--default.col-4:nth-child(4n+4) {
-    padding-right: 0;
-  }
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default .paragraph-inner {
