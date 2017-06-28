@@ -54,9 +54,9 @@
         "drupal/diff": "^1.0",
         "drupal/recaptcha": "^2.2",
         "drupal/config_readonly": "^1.0",
-        "drupal/scheduled_updates": "1.x-dev",
-        "drupal/seckit": "^1.0@alpha",
-        "drupal/redirect": "^1.0@alpha"
+        "drupal/scheduled_updates": "^1.0",
+        "drupal/seckit": "^1.0",
+        "drupal/redirect": "^1.0"
     },
     "require-dev": {
         "behat/mink": "~1.7",
