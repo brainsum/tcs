@@ -122,7 +122,7 @@
       }
 
       function requestTick() {
-        if (!ticking) {
+        if (!ticking && $cta.length > 0) {
           window.requestAnimationFrame(update);
         }
         ticking = true;
