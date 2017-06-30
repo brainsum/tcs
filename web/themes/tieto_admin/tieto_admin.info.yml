@@ -8,9 +8,6 @@ core: 8.x
 libraries:
  - tieto_admin/global
 
-ckeditor_stylesheets:
-  - dist/css/wysiwyg.css
-
 libraries-override:
 
   core/drupal.vertical-tabs:
@@ -28,8 +25,7 @@ libraries-override:
       component:
         assets/vendor/jquery.ui/themes/base/dialog.css: false
 
-  classy/dialog:
-    tieto_admin/tieto_admin.drupal.dialog
+  classy/dialog: tieto_admin/tieto_admin.drupal.dialog
 
 libraries-extend:
 
@@ -39,8 +35,8 @@ libraries-extend:
   core/jquery.ui:
     - tieto_admin/tieto_admin.jquery.ui
 
-# quickedit_stylesheets:
-#   - dist/css/components/quickedit.css
+ckeditor_stylesheets:
+  - css/wysiwyg.css
 
 regions:
   header: 'Header'

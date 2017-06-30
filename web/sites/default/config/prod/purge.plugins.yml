@@ -3,3 +3,16 @@ purgers:
     order_index: 2
     instance_id: 5651801ce8
     plugin_id: cloudfront
+queuers:
+  -
+    plugin_id: drush_purge_queue_add
+    status: true
+  -
+    plugin_id: coretags
+    status: false
+  -
+    plugin_id: urlpath
+    status: true
+  -
+    plugin_id: purge_ui_block_queuer
+    status: true

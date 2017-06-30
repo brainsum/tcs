@@ -8,7 +8,8 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
 .paragraph--type--header.paragraph--view-mode--default {
   padding: 0;
   position: relative;
-  min-height: 82vh;
+  height: 80vh;
+  overflow: hidden;
 
   // Background overlay
   .bg-wrapper::before {
@@ -19,12 +20,19 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     background-color: $paragraph-header-overlay-bg;
   }
 
-  // Diagonal edge for the next paragraph.
-  + .paragraph {
-    @include slope(before, 3.5deg, false);
-    ~ .paragraph {
-      position: relative;
-      z-index: 1;
+  @supports (clip-path: polygon(0 0)) {
+    .bg-wrapper {
+      clip-path: polygon(0 0, 100% 0, calc(100% + 80vh) 100%, 0 90%);
+    }
+  }
+
+  @supports not (clip-path: polygon(0 0)) {
+    + .paragraph {
+      @include slope(before, 2.7deg, false);
+      ~ .paragraph {
+        position: relative;
+        z-index: 1;
+      }
     }
   }
 
@@ -67,6 +75,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
   .field--name-field-call-to-action {
     margin: 0;
     text-align: left;
+    position: relative;
 
     .field__item {
       display: inline-block;
@@ -90,4 +99,39 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     }
   }
 
+}
+
+.fly {
+  z-index: 1000;
+  border-radius: 2px;
+
+  .button {
+    margin: 0;
+  }
+
+  &.in {
+    transform: translateX(0) translateY(-50%);
+    transition: transform .5s;
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, .15);
+
+    @include breakpoint-max(md) {
+      width: 100%;
+      padding: 0 1em;
+      box-shadow: none;
+
+      .button {
+        width: 100%;
+      }
+    }
+  }
+
+  &.out {
+    transform: translate(0) translateY(0);
+    transition: transform .5s;
+
+    @include breakpoint-max(md) {
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      transition: transform .5s, box-shadow .5s;
+    }
+  }
 }

@@ -26,5 +26,6 @@ channels:
     id: purger_cloudfront_5651801ce8
     grants:
       - 0
+      - 1
       - 2
       - 3

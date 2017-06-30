@@ -1,0 +1,42 @@
+.a2a_svg {
+  transition: all ease .2s;
+  &:hover {
+    transform: scale(1.1) translateZ(0);
+  }
+  svg {
+    display: none !important;
+  }
+}
+
+.addtoany_list a:hover:hover img,
+.addtoany_list a:hover span {
+  opacity: 1;
+}
+
+.a2a_s_facebook {
+  background: url('../images/facebook-tr.svg') no-repeat center center;
+  &:hover {
+    background-color: #4267b2 !important;
+  }
+}
+
+.a2a_s_twitter {
+  background: url('../images/twitter-tr.svg') no-repeat center center;
+  &:hover {
+    background-color: #1da1f3 !important;
+  }
+}
+
+.a2a_s_linkedin {
+  background: url('../images/linkedin-tr.svg') no-repeat center center;
+  &:hover {
+    background-color: #1884bb !important;
+  }
+}
+
+.a2a_s_google_plus {
+  background: url('../images/gplus-tr.svg') no-repeat center center;
+  &:hover {
+    background-color: #db4437 !important;
+  }
+}

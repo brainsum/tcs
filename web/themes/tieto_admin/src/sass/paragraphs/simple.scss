@@ -4,8 +4,12 @@
     @include campaign-title-center;
   }
 
+	&.scheme-red-light {
+		background: #f0b3ca;
+		color: white;
+	}
 	&.layout--one-column-clean {
-    text-align: center;
+		text-align: center;
 	}
 
 	&.layout--one-column-shaded {
@@ -46,20 +50,33 @@
 			.field--name-field-title {
 				float: right;
 				text-align: right;
+        padding-left: 20px;
 			}
-			.field--name-field-text {
+			.field--name-field-text,
+      .field--name-field-call-to-action
+       {
 				float: left;
+        padding-right: 20px;
 			}
+      .field--name-field-call-to-action {
+        width: 50%;
+      }
 		}
 
 		&.layout--two-column-title-1st-inverse {
 			.field--name-field-title {
 				float: left;
 				text-align: left;
+        padding-right: 20px;
 			}
-			.field--name-field-text {
+			.field--name-field-text,
+      .field--name-field-call-to-action {
 				float: right;
+        padding-left: 20px;
 			}
+      .field--name-field-call-to-action {
+        width: 50%;
+      }
 		}
 	}
 }

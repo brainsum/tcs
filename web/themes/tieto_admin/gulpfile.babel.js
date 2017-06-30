@@ -16,10 +16,10 @@ import Elixir from 'laravel-elixir'
 /**
  * Configuration
  */
-Elixir.config.sourcemaps = true
+Elixir.config.sourcemaps = false
 Elixir.config.notifications = false
 Elixir.config.assetsPath = 'src'
-Elixir.config.publicPath = 'dist'
+Elixir.config.publicPath = __dirname
 Elixir.config.viewPath = 'templates'
 Elixir.config.js.folder = 'scripts'
 Elixir.config.browserSync = {
@@ -56,6 +56,8 @@ Elixir(mix => {
         .rollup('mobile.install.js')
         .rollup('nav-tabs.js')
         .rollup('tabledrag.js')
+        .rollup('savings-calculator.js')
+        .rollup('TCS-157.js')
 
     // Live reload the browser on file updates.
     Elixir.isWatching() && mix.browserSync()

@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: blue
+label: Blue
+classes: scheme-blue

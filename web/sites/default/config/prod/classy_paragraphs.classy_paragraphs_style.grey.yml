@@ -1,0 +1,7 @@
+uuid: 89372b06-1d0f-4014-b8c1-56be6f062c84
+langcode: en
+status: true
+dependencies: {  }
+id: grey
+label: Grey
+classes: scheme-grey

@@ -35,20 +35,28 @@
         "composer/installers": "^1.0.20",
         "drupal-composer/drupal-scaffold": "^2.0.1",
         "cweagans/composer-patches": "~1.0",
-        "drupal/core": "~8.0",
+        "drupal/core": "~8.2",
         "drush/drush": "~8.0",
-        "drupal/console": "~1.0",
         "wikimedia/composer-merge-plugin": "~1.3",
         "aws/aws-sdk-php": "~3.0",
         "drupal/parade": "1.x-dev",
         "drupal/cloudfront_purger": "1.x-dev",
-        "drupal/metatag": "^1.0@beta",
+        "drupal/metatag": "^1.0",
         "drupal/publishcontent": "~1.0",
         "drupal/video_embed_field": "~1.3",
         "drupal/contact_block": "~1.2",
         "drupal/entity_embed": "~1.0",
         "drupal/addtoany": "^1.7",
-        "drupal/content_entity_language_switcher": "dev-8.x-1.x"
+        "drupal/content_entity_language_switcher": "dev-8.x-1.x",
+        "drupal/classy_paragraphs": "^1.0",
+        "drupal/node_clone": "1.x-dev",
+        "drupal/lang_dropdown": "~2.0",
+        "drupal/diff": "^1.0",
+        "drupal/recaptcha": "^2.2",
+        "drupal/config_readonly": "^1.0",
+        "drupal/scheduled_updates": "^1.0",
+        "drupal/seckit": "^1.0",
+        "drupal/redirect": "^1.0"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -58,8 +66,12 @@
         "mikey179/vfsStream": "~1.2",
         "phpunit/phpunit": "~4.8",
         "symfony/css-selector": "~2.8",
-        "drupal/devel": "1.x-dev",
-        "drupal/examples": "1.x-dev"
+        "drupal/console": "~1.0",
+        "drupal/devel": "~1.0",
+        "drupal/examples": "1.x-dev",
+        "drupal/admin_toolbar": "^1.18",
+        "drupal/adminimal_admin_toolbar": "^1.3",
+        "drupal/toolbar_anti_flicker": "^2.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -94,6 +106,26 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/node_clone": {
+                "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
+            },
+            "drupal/entity_reference_revisions": {
+                "Deletion of referenced entities on host delete, without checking usage/another reference.": "https://www.drupal.org/files/issues/deletion_of_used_referenced_entity-2852522-4.patch"
+            },
+            "drupal/scheduled_updates": {
+                "Scheduled Updates does not work with Content Moderation.": "https://www.drupal.org/files/issues/scheduled_updates_does-2821916-7.patch"
+            },
+            "drupal/geocoder": {
+                "Fix config schema.": "https://www.drupal.org/files/issues/2824802-geocoder-schema-fix-2.patch"
+            },
+            "drupal/geocoder_autocomplete": {
+                "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
+            },
+            "drupal/core": {
+                "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch" 
+            }
         }
     }
 }

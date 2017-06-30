@@ -14,16 +14,169 @@
   ]
 %}
 
-<button id="hamburger" class="hamburger hamburger--collapse" type="button">
-  <span class="hamburger-box">
-    <span class="hamburger-inner"></span>
-  </span>
-</button>
+{#original parade/campaign sites hamurger icon#}
+{#<button id="hamburger" class="hamburger hamburger--collapse" type="button">#}
+  {#<span class="hamburger-box">#}
+    {#<span class="hamburger-inner"></span>#}
+  {#</span>#}
+{#</button>#}
 
-<nav{{ attributes.addClass(classes, 'campaign-menu') }}>
-  <ul class="list-reset">
+<nav{{ attributes.addClass(classes, 'campaign-menu navigation-menu') }}>
+  <ul class="nav-menu-link-list">
     {% for item in items %}
-      <li{{ item.attributes.addClass('campaign-menu-link') }}>{{ item.content }}</li>
+      <li{{ item.attributes.addClass('campaign-menu-link nav-menu-link') }}>{{ item.content }}</li>
     {% endfor %}
+    <li class="campaign-menu-link tieto-com-link"><a href="//www.tieto.com">www.tieto.com</a></li>
+  </ul>
+
+  <div id="hamburger" class="hamburger-menu-toggler">
+    <span class="animated-hamburger-menu"></span>
+  </div>
+
+  <ul class="slide-in-menu">
+    {% for item in items %}
+      <li class="nav-menu-link-container slide-in-menu-link visible-mobile">{{ item.content }}</li>
+    {% endfor %}
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <a class="nav-menu-sub-link" href="//www.tieto.com/about-us">
+          <strong>About us</strong>
+        </a>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <strong>What we do</strong>
+      </div>
+      <div class="sub-links-slider">
+        <div class="nav-menu-sub-link-container slide-in-menu-link">
+          <span class="nav-menu-sub-link">Industries</span>
+          <div class="sub-links-slider">
+            <div class="nav-menu-sub-link-container">
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/energy">
+                Energy Utilities
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/financial-services">
+                Financial Services
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/forestry-wood-pulp-paper">
+                Forest
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/healthcare-and-welfare">
+                Healthcare and Welfare
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/logistics">
+                Logistics
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/manufacturing">
+                Manufacturing
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/media">
+                Media
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/oil-and-gas">
+                Oil and Gas
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/public">
+                Public
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/retail-and-wholesale">
+                Retail and Wholesale
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/industries/telecom">
+                Telecom
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-menu-sub-link-container slide-in-menu-link">
+          <span class="nav-menu-sub-link">Services</span>
+          <div class="sub-links-slider">
+            <div class="nav-menu-sub-link-container">
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/services/application-services">
+                Application services
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/services/business-application-platforms">
+                Business application platforms
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/services/business-process-services">
+                Business process services
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/services/consulting-services">
+                Consulting services
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/product-development/product-development-solutions">
+                DevOps
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/services/end-user-services">
+                End user services
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/services/infrastructure-services">
+                Infrastructure services
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/services/outsourcing">
+                Outsourcing
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/product-development/overview">
+                Product development
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-menu-sub-link-container slide-in-menu-link">
+          <span class="nav-menu-sub-link">Focus areas</span>
+          <div class="sub-links-slider">
+            <div class="nav-menu-sub-link-container">
+              <a class="nav-menu-sub-link" data-selected="0" href="//perspectives.tieto.com/blog/2016/03/artificial-intelligence-are-we-there-yet">
+                Artificial Intelligence
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/key-topics/cloud">
+                Cloud
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/key-topics/customer-experience-management">
+                Customer Experience Management
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//campaigns.tieto.com/digitalizing-your-business">
+                Digitalization
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/key-topics/gdpr">
+                General Data Protection Regulation
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/key-topics/data-driven">
+                Internet of Things
+              </a>
+              <a class="nav-menu-sub-link" data-selected="0" href="//www.tieto.com/key-topics/security-services">
+                Security
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <a href="https://www.tieto.com/customer-cases" title="" rel="nofollow" class="menu__link"><strong>Customer stories</strong></a>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <a href="https://www.tieto.com/newsroom" title="" rel="nofollow" class="menu__link"><strong>Newsroom</strong></a>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <a href="https://www.tieto.com/careers" class="menu__link"><strong>Careers</strong></a>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <a href="https://www.tieto.com/investors" class="menu__link"><strong>Investors</strong></a>
+      </div>
+    </li>
+    <li class="nav-menu-link-container slide-in-menu-link">
+      <div class="nav-menu-link" data-selected="0">
+        <a href="https://www.tieto.com/customer-portal" class="menu__link"><strong>Customer portal</strong></a>
+      </div>
+    </li>
   </ul>
 </nav>

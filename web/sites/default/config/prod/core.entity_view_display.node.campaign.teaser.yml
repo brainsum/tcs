@@ -20,9 +20,12 @@ content:
     weight: -20
 hidden:
   addtoany: true
+  field_file: true
   field_machine_name: true
   field_menu: true
   field_meta_tags: true
   field_paragraphs: true
   langcode: true
   links: true
+  scheduled_archive_date: true
+  scheduled_publish_date: true

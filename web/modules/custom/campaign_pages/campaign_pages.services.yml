@@ -1,0 +1,10 @@
+services:
+  campaign_pages.redirect_subscriber:
+    class: Drupal\campaign_pages\EventSubscriber\RedirectSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  theme.negotiator.tieto_mp_enduser:
+    class: Drupal\campaign_pages\Theme\RevisionDiffNegotiator
+    tags:
+      - { name: theme_negotiator, priority: 10 }

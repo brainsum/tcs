@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -68,6 +70,7 @@ function tieto_admin_preprocess_node_add_list(&$variables) {
     /** @var Drupal\node\NodeTypeInterface $type */
     foreach ($variables['content'] as $type) {
       $variables['types'][$type->id()]['label'] = $type->label();
+      // @todo: Drupal::url() is deprecated.
       $variables['types'][$type->id()]['url'] = Drupal::url('node.add', array('node_type' => $type->id()));
     }
   }
@@ -195,9 +198,9 @@ function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state
   $form['revision_information']['#group'] = 'meta';
 
   // Custom tabledrag library
-  if ($form['form_id']['#id'] === 'edit-node-campaign-edit-form') {
-   $form['#attached']['library'][] = 'tieto_admin/tabledrag';
-  }
+  // if ($form['form_id']['#id'] === 'edit-node-campaign-edit-form') {
+  //  $form['#attached']['library'][] = 'tieto_admin/tabledrag';
+  // }
 }
 
 /**
@@ -223,5 +226,49 @@ function tieto_admin_preprocess_field__field_call_to_action(&$variables) {
       $classes = ['button', 'button--primary'];
     }
     $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__savings_calculator().
+ * Load saving calculator's script.
+ */
+function tieto_admin_preprocess_paragraph__savings_calculator(&$variables) {
+  if ('preview' !== $variables['view_mode']) {
+    $variables['#attached']['library'][] = 'tieto_admin/savings-calculator';
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__savings_calculator().
+ * Load saving calculator's script.
+ */
+function tieto_admin_preprocess_paragraph__header(&$variables) {
+  $variables['#attached']['library'][] = 'tieto_admin/flying_cta';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tieto_admin_preprocess_details(&$variables) {
+  $variables['title'] = strip_tags($variables['title']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Switch link block image style based on the row's block size setting.
+ */
+function tieto_admin_preprocess_field__paragraph__field_image__text_box(&$variables) {
+  // Get paragraph object field is attached to.
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['element']['#object'];
+
+  // Get parent link blocks item.
+  /** @var \Drupal\paragraphs\Entity\Paragraph $parent */
+
+  $parent = $paragraph->getParentEntity();
+  if (method_exists($parent, 'getType') && $parent->getType() === 'text_boxes' && in_array($parent->get('field_text_boxes_layout')->value, [5, 6])) {
+    $variables['items'][0]['content']['#image_style'] = 'square_350x350';
   }
 }

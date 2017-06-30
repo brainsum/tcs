@@ -5,14 +5,16 @@ dependencies:
   config:
     - field.field.paragraph.image_text.field_anchor
     - field.field.paragraph.image_text.field_call_to_action
+    - field.field.paragraph.image_text.field_color_scheme
     - field.field.paragraph.image_text.field_image
     - field.field.paragraph.image_text.field_image_text_layout
     - field.field.paragraph.image_text.field_text
     - field.field.paragraph.image_text.field_title
+    - image.style.parade_text_and_image
     - paragraphs.paragraphs_type.image_text
   module:
     - image
-    - link
+    - parade
     - text
 _core:
   default_config_hash: AtqI7gAU0cJR1kM7IDEnUqWjEbryjkni-c5EU_BwWtA
@@ -25,18 +27,18 @@ content:
     weight: 5
     label: hidden
     settings:
-      trim_length: 80
-      rel: nofollow
+      trim_length: '80'
       url_only: false
       url_plain: false
-      target: '0'
+      rel: 0
+      target: 0
     third_party_settings: {  }
-    type: link
+    type: link_call_to_action
   field_image:
     weight: 3
     label: hidden
     settings:
-      image_style: ''
+      image_style: parade_text_and_image
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -56,5 +58,6 @@ content:
 hidden:
   created: true
   field_anchor: true
+  field_color_scheme: true
   field_image_text_layout: true
   uid: true

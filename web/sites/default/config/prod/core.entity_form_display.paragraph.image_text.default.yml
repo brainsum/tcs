@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.image_text.field_anchor
     - field.field.paragraph.image_text.field_call_to_action
+    - field.field.paragraph.image_text.field_color_scheme
     - field.field.paragraph.image_text.field_image
     - field.field.paragraph.image_text.field_image_text_layout
     - field.field.paragraph.image_text.field_text
@@ -12,8 +13,9 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.image_text
   module:
+    - content_moderation
     - image
-    - link
+    - parade
     - text
 _core:
   default_config_hash: 7G47whEBa8S9ncln-3j_l2DnPrSKIw5gIKVNZeCnZTg
@@ -23,21 +25,27 @@ bundle: image_text
 mode: default
 content:
   field_anchor:
-    weight: 0
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_call_to_action:
-    weight: 5
+    weight: 6
     settings:
       placeholder_url: 'Button URL'
       placeholder_title: 'Button text'
+      open_on_new_tab: false
     third_party_settings: {  }
-    type: link_default
+    type: link_cta
+  field_color_scheme:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_image:
-    weight: 3
+    weight: 4
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -49,7 +57,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_text:
-    weight: 4
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
@@ -57,13 +65,13 @@ content:
     type: text_textarea
   field_title:
     type: string_textfield
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
 hidden:
