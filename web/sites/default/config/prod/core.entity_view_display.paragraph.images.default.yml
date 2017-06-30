@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.images.field_anchor
+    - field.field.paragraph.images.field_color_scheme
     - field.field.paragraph.images.field_images
     - field.field.paragraph.images.field_title
     - image.style.thumbnail
@@ -35,4 +36,5 @@ content:
 hidden:
   created: true
   field_anchor: true
+  field_color_scheme: true
   uid: true

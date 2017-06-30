@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.marketo_form.field_anchor
+    - field.field.paragraph.marketo_form.field_color_scheme
     - field.field.paragraph.marketo_form.field_enable_confirm_message
     - field.field.paragraph.marketo_form.field_image
     - field.field.paragraph.marketo_form.field_lead_text
@@ -11,7 +12,7 @@ dependencies:
     - field.field.paragraph.marketo_form.field_marketo_form_layout
     - field.field.paragraph.marketo_form.field_text
     - field.field.paragraph.marketo_form.field_title
-    - image.style.whitepaper_a4
+    - image.style.parade_text_and_image
     - paragraphs.paragraphs_type.marketo_form
   module:
     - image
@@ -26,7 +27,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: whitepaper_a4
+      image_style: parade_text_and_image
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -58,6 +59,7 @@ content:
 hidden:
   created: true
   field_anchor: true
+  field_color_scheme: true
   field_enable_confirm_message: true
   field_marketo_form_layout: true
   uid: true

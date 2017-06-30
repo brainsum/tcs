@@ -31,5 +31,6 @@ content:
     type: string
 hidden:
   created: true
+  field_color_scheme: true
   field_marketo_poll: true
   uid: true

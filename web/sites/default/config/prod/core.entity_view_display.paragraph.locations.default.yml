@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.locations.field_anchor
+    - field.field.paragraph.locations.field_color_scheme
     - field.field.paragraph.locations.field_geofield
     - field.field.paragraph.locations.field_location
     - field.field.paragraph.locations.field_text
@@ -22,7 +23,7 @@ content:
     label: hidden
     settings:
       leaflet_map: 'OSM Mapnik'
-      zoom: '5'
+      zoom: '0'
       minZoom: '0'
       maxZoom: '18'
       height: '400'
@@ -42,6 +43,8 @@ content:
         popup_anchor:
           x: '0'
           'y': '0'
+      auto_zoom: true
+      source_field: field_location
       minPossibleZoom: 0
       maxPossibleZoom: 18
     third_party_settings: {  }
@@ -62,5 +65,6 @@ content:
 hidden:
   created: true
   field_anchor: true
+  field_color_scheme: true
   field_location: true
   uid: true

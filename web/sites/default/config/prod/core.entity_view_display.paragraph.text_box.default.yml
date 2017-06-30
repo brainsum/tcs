@@ -4,14 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.text_box.field_call_to_action
+    - field.field.paragraph.text_box.field_color_scheme
     - field.field.paragraph.text_box.field_image
     - field.field.paragraph.text_box.field_text
     - field.field.paragraph.text_box.field_text_box_layout
     - field.field.paragraph.text_box.field_title
+    - image.style.parade_full_hd_width
     - paragraphs.paragraphs_type.text_box
   module:
     - image
-    - link
+    - parade
     - text
 id: paragraph.text_box.default
 targetEntityType: paragraph
@@ -22,18 +24,18 @@ content:
     weight: 3
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: 32
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
-    type: link
+    type: link_call_to_action
   field_image:
     weight: 1
     label: hidden
     settings:
-      image_style: ''
+      image_style: parade_full_hd_width
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -52,5 +54,6 @@ content:
     type: string
 hidden:
   created: true
+  field_color_scheme: true
   field_text_box_layout: true
   uid: true

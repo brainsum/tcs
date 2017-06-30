@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Contains campaign_pages.module
+ * Code for campaign_pages module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Component\Utility\Html;
+use Drupal\Core\Datetime\Element\Datetime;
 
 /**
  * Implements hook_help().
@@ -45,6 +45,26 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
     $element['uri']['#title_display'] = 'none';
     $element['title']['#title_display'] = 'none';
   }
+
+  if ($field_name === 'call_to_action' || $field_name === 'field_call_to_action') {
+    $element['title']['#maxlength'] = 32;
+  }
+
+  // Remove scheduled updates date description.
+  if ($field_name === 'update_timestamp' && $context['form']['#entity_type'] === 'scheduled_update') {
+    $element['value']['#description'] = t('Format: %format.', array('%format' => Datetime::formatExample('Y.m.d. - H:i:s')));
+  }
+
+  // Hide empty scheduled updates field if user doesn't have create permission.
+  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state scheduled updates'))
+  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state_1 scheduled updates'))) {
+    $element['#access'] = FALSE;
+  }
+
+  // For editors it's required to set an archive date.
+  if ($field_name === 'scheduled_archive_date' && in_array('editor', \Drupal::currentUser()->getRoles())) {
+    $element['#required'] = TRUE;
+  }
 }
 
 /**
@@ -52,19 +72,33 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
  */
 function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'])) {
+    // Menu: Change wording of Add more button.
     $form['field_menu']['widget']['add_more']['#value'] = t('New menu link');
 
-    // Modify the Paragraphs field.
-    if (isset($form['field_paragraphs'])) {
-      $form['#attached']['library'][] = 'parade/buttons';
+    // Removes the "Add" word from the button values.
+    // @todo Get actual display mode instead of default.
+    $settings = entity_get_form_display('node', 'campaign', 'default')->getComponent('field_paragraphs')['settings'];
+    if ($settings['add_mode'] === 'button') {
+      // Add title to the section.
+      $field_label = $form['field_paragraphs']['widget']['title']['#value'] ?? $form['field_paragraphs']['widget']['#title'];
+      $form['field_paragraphs']['widget']['add_more']['title'] = [
+        '#type' => 'table',
+        '#header' => [t('Add @type', ['@type' => $field_label])],
+        '#attributes' => [
+          'class' => ['paragraphs-add-sections-title'],
+        ],
+        '#weight' => -1,
+      ];
 
-      foreach ($form['field_paragraphs']['widget']['add_more'] as $key => $item) {
-        if (strpos($key, 'add_more') === FALSE) {
-          continue;
+      if (isset($form['field_paragraphs']['widget']['add_more'])) {
+        foreach ($form['field_paragraphs']['widget']['add_more'] as $key => &$item) {
+          if (strpos($key, 'add_more_button_') === 0) {
+            $arguments = $item['#value']->getArguments();
+            // Adding a context, so it's translatable separatly.
+            $options = ['context' => 'add_paragraph_type'];
+            $item['#value'] = t('@type', $arguments, $options);
+          }
         }
-        $type = Html::getClass($item['#bundle_machine_name']);
-        $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'parade-button';
-        $form['field_paragraphs']['widget']['add_more'][$key]['#attributes']['class'][] = 'parade-button-' . $type;
       }
     }
 
@@ -74,6 +108,24 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
         $form['actions'][$action]['#submit'][] = '_campaign_pages_disable_form_redirect';
       }
     }
+
+    // Create custom validation handler.
+    $form['#validate'][] = 'node_campaign_edit_form_custom_validation';
+  }
+}
+
+/**
+ * Custom validation for campaign node edit form.
+ */
+function node_campaign_edit_form_custom_validation(&$form, FormStateInterface $form_state) {
+  // Custom validation for scheduled archive date, some why required field does
+  // not work.
+  $scheduled_archive_date = $form_state->getValue('scheduled_archive_date');
+
+  // If the user is an editor and there's no saved or saveable entity, set an
+  // error.
+  if (in_array('editor', \Drupal::currentUser()->getRoles()) && !empty($scheduled_archive_date) && !isset($scheduled_archive_date['entities']) && !isset($scheduled_archive_date['form'])) {
+    $form_state->setErrorByName('scheduled_archive_date', 'Scheduled Archive Date field is required!');
   }
 }
 
@@ -84,10 +136,6 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
  *   The form build array.
  * @param FormStateInterface $form_state
  *   The form state interface.
- * @param string $form_id
- *   Unique ID of the form.
- *
- * @return void
  */
 function _campaign_pages_disable_form_redirect(&$form, FormStateInterface &$form_state) {
   // Sadly $form_state->disableRedirect() not works as expected, so we also
@@ -110,5 +158,75 @@ function campaign_pages_entity_operation_alter(array &$operations, EntityInterfa
         unset($operations[$operation]['query']['destination']);
       }
     }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function campaign_pages_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__savings_calculator' => [
+      'template' => 'paragraph--savings-calculator',
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_leaflet_map_info_alter().
+ */
+function campaign_pages_leaflet_map_info_alter(array &$map_info) {
+  // @todo: Maybe use map_info hook and add it as a custom one, not altering the existing.
+  // Alter default leaflet map so it displays in black and white.
+  if (isset($map_info['OSM Mapnik'])) {
+    $map_info['OSM Mapnik']['layers']['earth']['urlTemplate'] = 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png';
+    $map_info['OSM Mapnik']['icon'] = [
+      // Marker has 25 : 41 aspect ratio.
+      'iconUrl' => '/' . drupal_get_path('module', 'campaign_pages') . '/images/marker-icon-2x_new.png',
+      'iconSize' => [
+        // Width.
+        'x' => '25',
+        // Height.
+        'y' => '41',
+      ],
+      // This is inverted, meaning 12 translates to -12, -12 to 12.
+      'iconAnchor' => [
+        // Margin left.
+        'x' => '12',
+        // Margin right.
+        'y' => '41',
+      ],
+      'popupAnchor' => [
+        'x' => '0',
+        'y' => '-30',
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function campaign_pages_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormState $form_state) {
+  $form['#submit'][] = 'campaign_pages_user_login_submit';
+}
+
+/**
+ * Form submission handler for user_login_form().
+ *
+ * Redirects the user to the dashboard after logging in.
+ */
+function campaign_pages_user_login_submit(&$form, \Drupal\Core\Form\FormState $form_state) {
+  $url = \Drupal\Core\Url::fromUri('internal:/admin/content');
+
+  // Check if a destination was set, probably on an exception controller.
+  // @see \Drupal\user\Form\UserLoginForm::submitForm()
+  $request = \Drupal::service('request_stack')->getCurrentRequest();
+  if (!$request->request->has('destination')) {
+    $form_state->setRedirectUrl($url);
+  }
+  else {
+    $request->query->set('destination', $request->request->get('destination'));
   }
 }

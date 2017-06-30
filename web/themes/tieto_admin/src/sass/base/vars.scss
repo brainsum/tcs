@@ -1,5 +1,7 @@
 // Colors
 $tieto-blue: #67afe1;
+$tieto-light-blue: #9acaeb;
+$tieto-dark-blue: #0065a0;
 $brand-primary: $tieto-blue;
 $brand-danger: #E62600;
 
@@ -14,14 +16,16 @@ $button-bg-hover: darken($brand-primary, 20%);
 $button-border: darken($brand-primary, 30%);
 $button-box-shadow: 0 2px 2px hsla(0, 0%, 0%, 0.125);
 
+$breakpoint-sm: 322px;
 $breakpoint-md: 767px;
+$breakpoint-mlg: 992px;
 $breakpoint-lg: 1200px;
 
 // Typography (from Bootstrap 4)
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$fonts-directory: '../../fonts';
+$fonts-directory: '../fonts';
 $font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
 $font-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;

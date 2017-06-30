@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: publisher
 label: Publisher
-weight: 4
+weight: -7
 is_admin: null
 permissions:
   - 'create campaign content'
@@ -70,3 +70,32 @@ permissions:
   - 'create url aliases'
   - 'translate paragraph'
   - 'view campaign revisions'
+  - 'delete campaign revisions'
+  - 'revert campaign revisions'
+  - 'create paragraph content locations'
+  - 'delete paragraph content locations'
+  - 'update paragraph content locations'
+  - 'create paragraph content marketo_poll'
+  - 'delete paragraph content marketo_poll'
+  - 'update paragraph content marketo_poll'
+  - 'create paragraph content savings_calculator'
+  - 'delete paragraph content savings_calculator'
+  - 'update paragraph content savings_calculator'
+  - 'view paragraph content savings_calculator'
+  - 'create paragraph content social_links'
+  - 'delete paragraph content social_links'
+  - 'update paragraph content social_links'
+  - 'clone node'
+  - 'clone own nodes'
+  - 'view scheduled update entities'
+  - 'create node__moderation_state_1 scheduled updates'
+  - 'delete any node__moderation_state_1 scheduled updates'
+  - 'delete own node__moderation_state_1 scheduled updates'
+  - 'edit any node__moderation_state_1 scheduled updates'
+  - 'edit own node__moderation_state_1 scheduled updates'
+  - 'create node__moderation_state scheduled updates'
+  - 'delete any node__moderation_state scheduled updates'
+  - 'delete own node__moderation_state scheduled updates'
+  - 'edit any node__moderation_state scheduled updates'
+  - 'edit own node__moderation_state scheduled updates'
+  - 'access geocoder autocomplete'

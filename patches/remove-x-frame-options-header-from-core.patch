@@ -1,0 +1,12 @@
+diff --git a/core/lib/Drupal/Core/EventSubscriber/FinishResponseSubscriber.php b/core/lib/Drupal/Core/EventSubscriber/FinishResponseSubscriber.php
+index 3db181a..3a9a16f 100644
+--- a/core/lib/Drupal/Core/EventSubscriber/FinishResponseSubscriber.php
++++ b/core/lib/Drupal/Core/EventSubscriber/FinishResponseSubscriber.php
+@@ -114,7 +114,6 @@ public function onRespond(FilterResponseEvent $event) {
+     // XSS and other vulnerabilities.
+     // https://www.owasp.org/index.php/List_of_useful_HTTP_headers
+     $response->headers->set('X-Content-Type-Options', 'nosniff', FALSE);
+-    $response->headers->set('X-Frame-Options', 'SAMEORIGIN', FALSE);
+ 
+     // If the current response isn't an implementation of the
+     // CacheableResponseInterface, we assume that a Response is either

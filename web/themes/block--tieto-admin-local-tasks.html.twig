@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override for tabs.
+ */
+#}
+{% if content %}
+  <div{{ attributes.addClass(['block', 'block-core', attributes.id,'to-be-pushed']) }}>
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
+      {{ content }}
+    </nav>
+  </div>
+{% endif %}

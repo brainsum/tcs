@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: red_light
+label: 'Red Light'
+classes: scheme-red-light

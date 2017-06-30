@@ -1,0 +1,8 @@
+uuid: f53b5572-fadf-4d06-9e04-751637d1d324
+langcode: en
+status: true
+dependencies: {  }
+name: optimize
+label: Optimize
+effects: {  }
+pipeline: __default__

@@ -16,6 +16,17 @@ targetEntityType: paragraph
 bundle: text_box
 mode: custom
 content:
+  field_call_to_action:
+    type: link_call_to_action
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: '32'
+      url_only: ''
+      url_plain: ''
+      rel: 0
+      target: 0
+    third_party_settings: {  }
   field_image:
     weight: 0
     label: hidden
@@ -39,4 +50,6 @@ content:
     type: string
 hidden:
   created: true
+  field_color_scheme: true
+  field_text_box_layout: true
   uid: true

@@ -42,5 +42,6 @@ hidden:
   created: true
   field_boxes_per_row: true
   field_call_to_action: true
+  field_color_scheme: true
   field_paragraphs: true
   uid: true
