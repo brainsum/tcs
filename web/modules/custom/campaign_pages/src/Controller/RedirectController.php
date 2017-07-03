@@ -39,7 +39,7 @@ class RedirectController extends ControllerBase {
     }
 
     // Logged in users are redirected to /admin/content.
-    if (!$this->currentUser()->isAnonymous()) {
+    if ($this->currentUser()->isAuthenticated()) {
       return new TrustedRedirectResponse('/admin/content');
     }
 
