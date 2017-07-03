@@ -26,23 +26,20 @@ class RedirectController extends ControllerBase {
    *   and user.
    */
   public function redirectToTietoCom(Request $request) {
-    // @todo: Dependency injection.
-
     $url = $request->getUri();
-    $currentUser = \Drupal::currentUser();
 
     // If it's a dev instance, redirect to the login page.
     if (
       strpos($url, 'localhost') !== FALSE
       || strpos($url, 'brainsum') !== FALSE
     ) {
-      if ($currentUser->isAnonymous()) {
+      if ($this->currentUser()->isAnonymous()) {
         return new TrustedRedirectResponse('/user/login');
       }
     }
 
     // Logged in users are redirected to /admin/content.
-    if (!$currentUser->isAnonymous()) {
+    if (!$this->currentUser()->isAnonymous()) {
       return new TrustedRedirectResponse('/admin/content');
     }
 
