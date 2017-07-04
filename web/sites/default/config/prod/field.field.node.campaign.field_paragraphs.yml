@@ -17,6 +17,7 @@ dependencies:
     - paragraphs.paragraphs_type.social_links
     - paragraphs.paragraphs_type.text_box
     - paragraphs.paragraphs_type.text_boxes
+    - paragraphs.paragraphs_type.twitter_feed
   module:
     - entity_reference_revisions
 id: node.campaign.field_paragraphs
@@ -45,6 +46,7 @@ settings:
       marketo_poll: marketo_poll
       social_links: social_links
       savings_calculator: savings_calculator
+      twitter_feed: twitter_feed
     target_bundles_drag_drop:
       header:
         enabled: true
@@ -83,6 +85,6 @@ settings:
         enabled: true
         weight: -16
       twitter_feed:
+        enabled: true
         weight: 26
-        enabled: false
 field_type: entity_reference_revisions
