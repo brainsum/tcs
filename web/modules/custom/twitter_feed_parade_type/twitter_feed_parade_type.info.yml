@@ -1,0 +1,8 @@
+name: Twitter Feed
+type: module
+description: Contains the Twitter feed paragraphs type for parade 1.x.
+core: 8.x
+package: Paragraphs
+
+dependencies:
+  - parade

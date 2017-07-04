@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function twitter_feed_parade_type_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'twitter_feed_parade_type.page.link':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>Twitter Feed Paragraph Type</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function twitter_feed_parade_type_theme() {
+  return [
+    'paragraph__twitter_feed' => [
+      'template' => 'paragraph',
+      'base hook' => 'paragraph',
+      'path' => drupal_get_path('module', 'parade') . '/templates',
+    ],
+    'twitter_feed_field' => [
+      'variables' => [
+        'feeds' => NULL,
+        'rendered_feeds' => NULL,
+        'entity' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function twitter_feed_parade_type_page_attachments(array &$attachments) {
+  $twitterScript = [
+    '#tag' => 'script',
+    // Use Markup::create(), so the code won't get escaped.
+    '#value' => Markup::create(file_get_contents(drupal_get_path('module', 'twitter_feed_parade_type') . '/js/twitter_embed.js')),
+    '#attributes' => [
+      'type' => 'application/javascript',
+    ],
+  ];
+
+  // Init the attachments, like the metatags module.
+  if (empty($attachments['#attached'])) {
+    $attachments['#attached'] = [];
+  }
+  if (empty($attachments['#attached']['html_head'])) {
+    $attachments['#attached']['html_head'] = [];
+  }
+  $attachments['#attached']['html_head'][] = [
+    $twitterScript,
+    'twitter_embed_script',
+  ];
+}

@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.twitter_feed.field_anchor
+    - field.field.paragraph.twitter_feed.field_text
+    - field.field.paragraph.twitter_feed.field_title
+    - field.field.paragraph.twitter_feed.field_twitter_feed
+    - paragraphs.paragraphs_type.twitter_feed
+  module:
+    - text
+    - twitter_feed_parade_type
+_core:
+  default_config_hash: WPg2JRneBjrLJvnbfs_SNu5_C-7zu1NO5BJdweWM6GM
+id: paragraph.twitter_feed.default
+targetEntityType: paragraph
+bundle: twitter_feed
+mode: default
+content:
+  field_anchor:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_twitter_feed:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: twitter_feed
+hidden:
+  created: true
+  status: true
+  uid: true
