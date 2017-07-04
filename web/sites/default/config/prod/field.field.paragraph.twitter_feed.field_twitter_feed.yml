@@ -1,0 +1,23 @@
+uuid: 9dcbf68b-19ff-4b45-b804-7f527078cd01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_twitter_feed
+    - paragraphs.paragraphs_type.twitter_feed
+  module:
+    - twitter_feed_parade_type
+_core:
+  default_config_hash: flyOD4-XHZE7iAkP0X0h2KbJyP7yvw3za8VPsROLm6w
+id: paragraph.twitter_feed.field_twitter_feed
+field_name: field_twitter_feed
+entity_type: paragraph
+bundle: twitter_feed
+label: 'Twitter feed'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: twitter_feed
