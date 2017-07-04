@@ -71,8 +71,8 @@ class TwitterFeedWidget extends WidgetBase {
     $element['widget_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Widget ID'),
-      '#description' => $this->t('The ID of a widget created at @url', [
-        '@url' => Link::fromTextAndUrl('twitter widget settings', Url::fromUri('https://twitter.com/settings/widgets')),
+      '#description' => $this->t('The ID of a widget created at the @url', [
+        '@url' => Link::fromTextAndUrl('twitter widget settings', Url::fromUri('https://twitter.com/settings/widgets'))->toString(),
       ]),
       '#default_value' => $item->widget_id,
       '#maxlength' => 255,
