@@ -28,4 +28,5 @@ foreach ($nids as $key => $nid) {
   }
 }
 
-echo $missing . " missing our of " . $nodecount . " nodes\n";
+$count = db_query('SELECT count(*) FROM purge_queuer_url')->fetchCol();
+echo $missing . " missing out of " . $nodecount . " nodes. " . $count[0] . " rows in purge_queuer_url.\n";
