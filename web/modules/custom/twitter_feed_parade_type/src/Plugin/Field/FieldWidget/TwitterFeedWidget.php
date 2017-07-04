@@ -2,6 +2,7 @@
 
 namespace Drupal\twitter_feed_parade_type\Plugin\Field\FieldWidget;
 
+use Drupal\Component\Utility\Random;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -31,6 +32,8 @@ class TwitterFeedWidget extends WidgetBase {
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
     $item = $items[$delta];
 
+    // Generate a unique ID to be used with states.
+    $itemTypeId = 'twitter-feed-type-' . $delta . '-' . (new Random())->name(8, TRUE);
     $element['type'] = [
       '#type' => 'radios',
       '#title' => $this->t('Type'),
@@ -42,6 +45,9 @@ class TwitterFeedWidget extends WidgetBase {
       ],
       '#maxlength' => 64,
       '#required' => TRUE,
+      '#attributes' => [
+        'id' => $itemTypeId,
+      ],
     ];
     $element['width'] = [
       '#type' => 'number',
@@ -61,13 +67,19 @@ class TwitterFeedWidget extends WidgetBase {
       '#min' => 100,
       '#required' => TRUE,
     ];
+    $usernameStates = [':input[id="' . $itemTypeId . '"]' => ['value' => static::FEED_TYPE_USER]];
     $element['username'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Username'),
       '#description' => $this->t('The twitter username'),
       '#default_value' => $item->username,
       '#maxlength' => 255,
+      '#states' => [
+        'visible' => $usernameStates,
+        'required' => $usernameStates,
+      ],
     ];
+    $widgetIdStates = [':input[id="' . $itemTypeId . '"]' => ['value' => static::FEED_TYPE_WIDGET]];
     $element['widget_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Widget ID'),
@@ -76,7 +88,12 @@ class TwitterFeedWidget extends WidgetBase {
       ]),
       '#default_value' => $item->widget_id,
       '#maxlength' => 255,
+      '#states' => [
+        'visible' => $widgetIdStates,
+        'required' => $widgetIdStates,
+      ],
     ];
+
     return $element;
   }
 
