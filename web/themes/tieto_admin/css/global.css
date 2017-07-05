@@ -2980,7 +2980,11 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
   color: #67afe1;
 }
 
-.container {
+.container,
+.diff-header,
+.diff-controls,
+.diff-list,
+.diff-responsive-table-wrapper .paragraph-inner {
   max-width: 1000px;
   margin: 0 auto;
 }
