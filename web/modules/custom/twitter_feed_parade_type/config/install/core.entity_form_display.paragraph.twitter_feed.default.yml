@@ -11,7 +11,7 @@ dependencies:
     - text
     - twitter_feed_parade_type
 _core:
-  default_config_hash: WPg2JRneBjrLJvnbfs_SNu5_C-7zu1NO5BJdweWM6GM
+  default_config_hash: 2jtSe-gAJv7mEkF2DOILHs5s6riBYcmoCLi-Ddt77Y8
 id: paragraph.twitter_feed.default
 targetEntityType: paragraph
 bundle: twitter_feed
@@ -27,7 +27,7 @@ content:
   field_text:
     weight: 2
     settings:
-      rows: 5
+      rows: 3
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea

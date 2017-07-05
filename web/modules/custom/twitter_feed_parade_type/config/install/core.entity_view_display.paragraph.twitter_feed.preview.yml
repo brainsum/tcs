@@ -8,8 +8,10 @@ dependencies:
     - field.field.paragraph.twitter_feed.field_title
     - field.field.paragraph.twitter_feed.field_twitter_feed
     - paragraphs.paragraphs_type.twitter_feed
+  module:
+    - twitter_feed_parade_type
 _core:
-  default_config_hash: 9mifF_M0j8AiV5nbjfsonBwQ2eMnKW452tqCLXrW3Io
+  default_config_hash: JHrQwvcZ3GeRPW3s8j0f341Kbp9yILNAM5zHZeQblMI
 id: paragraph.twitter_feed.preview
 targetEntityType: paragraph
 bundle: twitter_feed
@@ -18,13 +20,13 @@ content:
   field_anchor:
     type: string
     weight: 0
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
   field_title:
     weight: 1
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }

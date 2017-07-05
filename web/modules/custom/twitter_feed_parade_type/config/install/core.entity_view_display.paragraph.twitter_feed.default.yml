@@ -11,7 +11,7 @@ dependencies:
     - text
     - twitter_feed_parade_type
 _core:
-  default_config_hash: 9mifF_M0j8AiV5nbjfsonBwQ2eMnKW452tqCLXrW3Io
+  default_config_hash: MR3FzQ4ETH-r8utCUZI9xnIPtD-MexZkNV1UCr6-InU
 id: paragraph.twitter_feed.default
 targetEntityType: paragraph
 bundle: twitter_feed
@@ -19,20 +19,20 @@ mode: default
 content:
   field_text:
     weight: 1
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_twitter_feed:
     weight: 2
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: twitter_feed
