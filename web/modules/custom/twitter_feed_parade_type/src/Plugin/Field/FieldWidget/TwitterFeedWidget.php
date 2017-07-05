@@ -32,8 +32,6 @@ class TwitterFeedWidget extends WidgetBase {
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
     $item = $items[$delta];
 
-    // Generate a unique ID to be used with states.
-    $itemTypeId = 'twitter-feed-type-' . $delta . '-' . (new Random())->name(8, TRUE);
     $element['type'] = [
       '#type' => 'radios',
       '#title' => $this->t('Type'),
@@ -45,9 +43,6 @@ class TwitterFeedWidget extends WidgetBase {
       ],
       '#maxlength' => 64,
       '#required' => TRUE,
-      '#attributes' => [
-        'id' => $itemTypeId,
-      ],
     ];
     $element['width'] = [
       '#type' => 'number',
@@ -67,34 +62,52 @@ class TwitterFeedWidget extends WidgetBase {
       '#min' => 100,
       '#required' => TRUE,
     ];
-    $usernameStates = [':input[id="' . $itemTypeId . '"]' => ['value' => static::FEED_TYPE_USER]];
     $element['username'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Username'),
       '#description' => $this->t('The twitter username'),
       '#default_value' => $item->username,
       '#maxlength' => 255,
-      '#states' => [
-        'visible' => $usernameStates,
-        'required' => $usernameStates,
-      ],
     ];
-    $widgetIdStates = [':input[id="' . $itemTypeId . '"]' => ['value' => static::FEED_TYPE_WIDGET]];
+
     $element['widget_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Widget ID'),
       '#description' => $this->t('The ID of a widget created at the @url', [
-        '@url' => Link::fromTextAndUrl('twitter widget settings', Url::fromUri('https://twitter.com/settings/widgets'))->toString(),
+        '@url' => Link::fromTextAndUrl('twitter widget settings', Url::fromUri('https://twitter.com/settings/widgets', [
+          'attributes' => ['target' => '_blank', 'rel' => 'noopener'],
+        ]))->toString(),
       ]),
       '#default_value' => $item->widget_id,
       '#maxlength' => 255,
-      '#states' => [
-        'visible' => $widgetIdStates,
-        'required' => $widgetIdStates,
-      ],
     ];
 
     return $element;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function afterBuild(array $element, FormStateInterface $form_state): array {
+    // Hide+optional/Show+required the username and widget_id fields
+    // based on the type field value.
+    $usernameOn = [':input[name="' . $element[0]['type']['#name'] . '"]' => ['value' => static::FEED_TYPE_USER]];
+    $widgetOn = [':input[name="' . $element[0]['type']['#name'] . '"]' => ['value' => static::FEED_TYPE_WIDGET]];
+    $element[0]['username']['#states'] = [
+      'visible' => $usernameOn,
+      'required' => $usernameOn,
+      'invisible' => $widgetOn,
+      'optional' => $widgetOn,
+    ];
+
+    $element[0]['widget_id']['#states'] = [
+      'visible' => $widgetOn,
+      'required' => $widgetOn,
+      'invisible' => $usernameOn,
+      'optional' => $usernameOn,
+    ];
+
+    return parent::afterBuild($element, $form_state);
   }
 
 }
