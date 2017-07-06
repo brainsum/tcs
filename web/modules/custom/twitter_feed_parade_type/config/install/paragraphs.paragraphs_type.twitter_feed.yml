@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - twitter_feed_parade_type
+_core:
+  default_config_hash: UEEAQNorgCneaFkFAmx9xNkpDXafpUGFsiRDcPK_YfE
+id: twitter_feed
+label: 'Twitter feed'
+behavior_plugins: {  }

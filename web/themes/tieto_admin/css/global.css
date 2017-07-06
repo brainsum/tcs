@@ -2980,7 +2980,11 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
   color: #67afe1;
 }
 
-.container {
+.container,
+.diff-header,
+.diff-controls,
+.diff-list,
+.diff-responsive-table-wrapper .paragraph-inner {
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -3240,20 +3244,26 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
   }
 }
 
-body.page-node-type-campaign .region-pre-content {
+body.page-node-type-campaign .region-pre-content,
+body.offcanvas .region-pre-content {
   margin: 0;
 }
 
-body.page-node-type-campaign .region-pre-content .block {
+body.page-node-type-campaign .region-pre-content .block,
+body.offcanvas .region-pre-content .block {
   margin: 1em;
 }
 
-body.page-node-type-campaign.toolbar-fixed .tieto-campaign-page {
+body.page-node-type-campaign.toolbar-fixed .tieto-campaign-page,
+body.offcanvas.toolbar-fixed .tieto-campaign-page {
   position: relative;
   overflow-y: hidden;
 }
 
-body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.toolbar-fixed .hamburger, body.page-node-type-campaign.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
+body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.toolbar-fixed .hamburger, body.page-node-type-campaign.toolbar-fixed .field--name-field-menu:not(.form-wrapper),
+body.offcanvas.toolbar-fixed .logo,
+body.offcanvas.toolbar-fixed .hamburger,
+body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   position: absolute;
   top: 0;
 }
@@ -4863,6 +4873,12 @@ body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.t
 
 .paragraphs-dropbutton-wrapper .button.parade-button-savings-calculator {
   background-image: url("../images/savings-calculator.png");
+  font-size: .85em;
+  line-height: 1.62;
+}
+
+.paragraphs-dropbutton-wrapper .button.parade-button-twitter-feed {
+  background-image: url("../../../modules/custom/twitter_feed_parade_type/images/twitter-feed.png");
   font-size: .85em;
   line-height: 1.62;
 }

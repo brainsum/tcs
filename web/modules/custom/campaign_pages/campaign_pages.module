@@ -5,6 +5,7 @@
  * Code for campaign_pages module.
  */
 
+use Drupal\campaign_pages\Handler\ScheduledUpdateListBuilder;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
@@ -229,4 +230,11 @@ function campaign_pages_user_login_submit(&$form, \Drupal\Core\Form\FormState $f
   else {
     $request->query->set('destination', $request->request->get('destination'));
   }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function campaign_pages_entity_type_alter(array &$entity_types) {
+  $entity_types['scheduled_update']->setListBuilderClass(ScheduledUpdateListBuilder::class);
 }

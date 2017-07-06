@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a marketo_poll field.
+ *
+ * Available variables:
+ * - rendered_feeds: rendered feeds
+ * - feeds: The raw element values.
+ *      - type
+ *      - height
+ *      - width
+ *      - username
+ *      - widget_id
+ * - entity: items getEntity
+ *
+ * @ingroup themeable
+ */
+#}
+{% for rendered_feed in rendered_feeds %}
+  {{ rendered_feed }}
+{% endfor %}

@@ -17,6 +17,7 @@ dependencies:
     - paragraphs.paragraphs_type.social_links
     - paragraphs.paragraphs_type.text_box
     - paragraphs.paragraphs_type.text_boxes
+    - paragraphs.paragraphs_type.twitter_feed
   module:
     - entity_reference_revisions
 id: node.campaign.field_paragraphs
@@ -34,8 +35,8 @@ settings:
   handler_settings:
     target_bundles:
       header: header
-      simple: simple
       image_text: image_text
+      simple: simple
       text_box: text_box
       text_boxes: text_boxes
       marketo_form: marketo_form
@@ -45,14 +46,15 @@ settings:
       marketo_poll: marketo_poll
       social_links: social_links
       savings_calculator: savings_calculator
+      twitter_feed: twitter_feed
     target_bundles_drag_drop:
       header:
         enabled: true
-        weight: -29
-      simple:
-        enabled: true
-        weight: -28
+        weight: -27
       image_text:
+        enabled: true
+        weight: -27
+      simple:
         enabled: true
         weight: -27
       text_box:
@@ -67,12 +69,6 @@ settings:
       images:
         enabled: true
         weight: -23
-      tabs:
-        weight: -22
-        enabled: false
-      highlighted:
-        weight: -21
-        enabled: false
       parallax:
         enabled: true
         weight: -20
@@ -88,4 +84,7 @@ settings:
       savings_calculator:
         enabled: true
         weight: -16
+      twitter_feed:
+        enabled: true
+        weight: 26
 field_type: entity_reference_revisions

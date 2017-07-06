@@ -1,0 +1,51 @@
+uuid: a53d0cc7-77cb-4678-a516-8a7954a76672
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.twitter_feed.field_anchor
+    - field.field.paragraph.twitter_feed.field_text
+    - field.field.paragraph.twitter_feed.field_title
+    - field.field.paragraph.twitter_feed.field_twitter_feed
+    - paragraphs.paragraphs_type.twitter_feed
+  module:
+    - content_moderation
+    - text
+    - twitter_feed_parade_type
+_core:
+  default_config_hash: 2jtSe-gAJv7mEkF2DOILHs5s6riBYcmoCLi-Ddt77Y8
+id: paragraph.twitter_feed.default
+targetEntityType: paragraph
+bundle: twitter_feed
+mode: default
+content:
+  field_anchor:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_text:
+    weight: 2
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_twitter_feed:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: twitter_feed
+hidden:
+  created: true
+  status: true
+  uid: true
