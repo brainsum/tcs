@@ -10,7 +10,7 @@
 	if ($header.length) {
 		$header.height($header.height());
 	}
-	if ( $(".slide-in-menu").length ) {
+	if ( ($('.slide-in-menu').length) && ($('.diff-revision').length < 1)) {
 		$("body").addClass("offcanvas");
 	}
 
