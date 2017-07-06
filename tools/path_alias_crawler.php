@@ -4,6 +4,7 @@
  * run this script to populate purge_queuer_url for missing path aliases
  **/
 
+$purge_queuer_url_count = db_query('SELECT count(*) FROM purge_queuer_url')->fetchCol();
 $nids = db_query('SELECT nid FROM {node}')->fetchCol();
 $langcodes = db_query('SELECT langcode FROM {node}')->fetchCol();
 foreach ($nids as $key => $nid) {
@@ -29,4 +30,4 @@ foreach ($nids as $key => $nid) {
 }
 
 $count = db_query('SELECT count(*) FROM purge_queuer_url')->fetchCol();
-echo $missing . " missing out of " . $nodecount . " nodes. " . $count[0] . " rows in purge_queuer_url.\n";
+echo $purge_queuer_url_count[0] . " urls originally in purge_queuer_url. Found " . $missing . " missing out of " . $nodecount . " nodes. " . $count[0] . " rows in purge_queuer_url.\n";
