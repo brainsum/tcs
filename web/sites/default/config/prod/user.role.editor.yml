@@ -78,3 +78,6 @@ permissions:
   71: 'edit any node__moderation_state_1 scheduled updates'
   72: 'edit own node__moderation_state_1 scheduled updates'
   73: 'access geocoder autocomplete'
+  74: 'create paragraph content twitter_feed'
+  75: 'delete paragraph content twitter_feed'
+  76: 'update paragraph content twitter_feed'
