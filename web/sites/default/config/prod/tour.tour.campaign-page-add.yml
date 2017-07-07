@@ -1,0 +1,39 @@
+uuid: 2b923d21-3698-4cbb-89ca-9887651d5d69
+langcode: en
+status: true
+dependencies:
+  module:
+    - campaign_pages_tour
+_core:
+  default_config_hash: V6ajzoMP9T5JlOESEjJ6DGMrTtpyTF6c9DHTRzN8Lf4
+id: campaign-page-add
+label: 'Create campaign page'
+module: campaign_pages_tour
+routes:
+  -
+    route_name: node.add
+    route_params:
+      node_type: campaign
+tips:
+  introduction:
+    id: introduction
+    plugin: text
+    label: 'Creating new content'
+    body: 'Tour about creating content.'
+    weight: 1
+  title:
+    id: title
+    plugin: text
+    label: Title
+    body: 'Input a title here.'
+    weight: 2
+    attributes:
+      data-id: edit-title-0-value
+  revision-msg:
+    id: revision-msg
+    plugin: text
+    label: 'Revision message'
+    body: 'You can write a comment about the changes here.'
+    weight: 3
+    attributes:
+      data-id: edit-revision-log-0-value
