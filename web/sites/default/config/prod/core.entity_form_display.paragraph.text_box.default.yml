@@ -14,6 +14,7 @@ dependencies:
   module:
     - content_moderation
     - image
+    - maxlength
     - parade
     - text
 id: paragraph.text_box.default
@@ -58,7 +59,10 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 60
+        maxlength_js_label: 'To reach audience attenttion better, compact your message. Max. length is @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
   translation:
     weight: 6
