@@ -61,11 +61,6 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
   || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state_1 scheduled updates'))) {
     $element['#access'] = FALSE;
   }
-
-  // For editors it's required to set an archive date.
-  if ($field_name === 'scheduled_archive_date' && in_array('editor', \Drupal::currentUser()->getRoles())) {
-    $element['#required'] = TRUE;
-  }
 }
 
 /**
@@ -109,24 +104,6 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
         $form['actions'][$action]['#submit'][] = '_campaign_pages_disable_form_redirect';
       }
     }
-
-    // Create custom validation handler.
-    $form['#validate'][] = 'node_campaign_edit_form_custom_validation';
-  }
-}
-
-/**
- * Custom validation for campaign node edit form.
- */
-function node_campaign_edit_form_custom_validation(&$form, FormStateInterface $form_state) {
-  // Custom validation for scheduled archive date, some why required field does
-  // not work.
-  $scheduled_archive_date = $form_state->getValue('scheduled_archive_date');
-
-  // If the user is an editor and there's no saved or saveable entity, set an
-  // error.
-  if (in_array('editor', \Drupal::currentUser()->getRoles()) && !empty($scheduled_archive_date) && !isset($scheduled_archive_date['entities']) && !isset($scheduled_archive_date['form'])) {
-    $form_state->setErrorByName('scheduled_archive_date', 'Scheduled Archive Date field is required!');
   }
 }
 

@@ -44,3 +44,4 @@ permissions:
   33: 'view paragraph content marketo_poll'
   34: 'view paragraph content social_links'
   35: 'view paragraph content savings_calculator'
+  36: 'view paragraph content twitter_feed'

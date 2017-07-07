@@ -39,3 +39,4 @@ permissions:
   - 'view paragraph content marketo_poll'
   - 'view paragraph content social_links'
   - 'view paragraph content savings_calculator'
+  - 'view paragraph content twitter_feed'
