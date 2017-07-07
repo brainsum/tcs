@@ -4693,6 +4693,7 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   word-break: break-word;
   margin-bottom: 0;
   color: #333;
+  margin-bottom: 1em;
 }
 
 @media (min-width: 767px) {
