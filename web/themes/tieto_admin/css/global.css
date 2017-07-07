@@ -4358,6 +4358,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   justify-content: flex-end;
 }
 
+.ie .paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph--type--text-box .paragraph-inner {
+  display: block;
+}
+
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph--type--text-box .paragraph-inner .field--name-field-title {
   display: -webkit-box;
   display: flex;
