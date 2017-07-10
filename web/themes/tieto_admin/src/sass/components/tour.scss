@@ -1,0 +1,21 @@
+.joyride-tip-guide {
+  background: black;
+  background: rgba(black, .8);
+  color: white;
+  border-radius: 5px;
+  h2 {
+    line-height: 1.3;
+  }
+  a {
+    color: white;
+  }
+}
+.joyride-close-tip {
+  color: rgba(white, .4);
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+.joyride-modal-bg {
+  background: rgba(black, .5);
+}

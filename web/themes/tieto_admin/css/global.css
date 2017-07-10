@@ -1767,6 +1767,32 @@ li.tabs__tab a {
   border-bottom-color: #008ee6;
 }
 
+.joyride-tip-guide {
+  background: black;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 5px;
+}
+
+.joyride-tip-guide h2 {
+  line-height: 1.3;
+}
+
+.joyride-tip-guide a {
+  color: white;
+}
+
+.joyride-close-tip {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.joyride-modal-bg {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .scroll-to-top {
   position: fixed;
   right: 1em;
