@@ -1,11 +1,11 @@
-uuid: 8811b619-9298-4388-8a4c-05a0ec6d2ceb
+uuid: 0a9a9641-e550-46ad-9622-c7f024604d51
 langcode: en
 status: true
 dependencies:
   module:
     - campaign_pages_tour
 _core:
-  default_config_hash: cK2I7pnfVZqU_h_d5vZOsisyru4ufXStmsySb_E9knQ
+  default_config_hash: n5H9k9SfKGWcjbCjwnX2H9qrC8Q8v6JV5hajwWPuBjU
 id: campaign-page-add
 label: 'Create campaign page'
 module: campaign_pages_tour
@@ -32,8 +32,8 @@ tips:
   langcode:
     id: langcode
     plugin: text
-    label: 'Choosing original language'
-    body: 'Every campaign site should have their language defined: this will be important for adding translations too.'
+    label: 'Choosing language'
+    body: 'Every campaign site should have their original language defined: this will be important for adding translations too.'
     weight: 3
     attributes:
       data-id: edit-langcode-0-value
@@ -49,7 +49,7 @@ tips:
     id: menu-uri
     plugin: text
     label: 'Building menu'
-    body: 'Although not mandatory, one important thing to define some menu items to help Visitors navigate vertically through the campaign site. Here comes the target.'
+    body: 'Although not mandatory, one important thing is to define some menu items to help Visitors navigate vertically through the campaign site. Here comes the target.'
     weight: 5
     attributes:
       data-id: edit-field-menu-0-uri
@@ -85,20 +85,28 @@ tips:
     weight: 9
     attributes:
       data-id: edit-scheduled-archive-date-actions
+  metatags:
+    id: metatags
+    plugin: text
+    label: 'Content for machines too'
+    body: 'To continue, click on "Metatags" section title on the sidebar and open up "Twitter Cards" frame, then do the same with "Open Graph" frame below.'
+    weight: 10
+    attributes:
+      data-id: edit-field-meta-tags-0
   og-description:
     id: og-description
     plugin: text
     label: 'Summary for social networks'
-    body: 'Open "Metatags" section on the sidebar, scroll down to "Open Graph" frame and here you can specify what text social networks should use when this page is being shared.'
-    weight: 10
+    body: 'Here under the "Open Graph" frame you can specify what text social networks should use when this page is being shared on them.'
+    weight: 11
     attributes:
       data-id: edit-field-meta-tags-0-open-graph-og-description
   twitter-cards-type:
     id: twitter-cards-type
     plugin: text
-    label: 'Type of sharing by Twitter'
-    body: 'If you open the next "Twitter Cards" frame, then here you can specify how Twitter should display this link when the page is being tweeted.'
-    weight: 11
+    label: 'How to share on Twitter'
+    body: 'In this next "Twitter Cards" frame here you can specify how Twitter should display this link when the page is being tweeted.'
+    weight: 12
     attributes:
       data-id: edit-field-meta-tags-0-twitter-cards-twitter-cards-type
   twitter-cards-description:
@@ -106,15 +114,15 @@ tips:
     plugin: text
     label: 'Sumary for Twitter'
     body: 'In case if you want for Twitter different summary text to be used than for Facebook, then here you can overwrite in max. 200 characters.'
-    weight: 12
+    weight: 13
     attributes:
       data-id: edit-field-meta-tags-0-twitter-cards-twitter-cards-description
   revision-msg:
     id: revision-msg
     plugin: text
-    label: 'Summarizing your changes'
+    label: 'Sum up your changes'
     body: 'You can leave a comment summarizing the changes you made. This can serve as a memo for yourself and others to understand the modifications.'
-    weight: 13
+    weight: 14
     attributes:
       data-id: edit-revision-log-0-value
   submit:
@@ -122,7 +130,7 @@ tips:
     plugin: text
     label: 'Saving new content'
     body: 'Depending on the permissions your user account has granted, you have multiple options on how to submit the changes: keep as Draft or Publish immediately.'
-    weight: 14
+    weight: 15
     attributes:
       data-id: 'dropbutton-action input[value="Save and Create New Draft"]'
   closing:
@@ -130,4 +138,4 @@ tips:
     plugin: text
     label: 'Thatʼs all!'
     body: 'This user interface tour has ended. If you still have questions, please feel free to ask your Administrator for further assistance. Happy publishing!'
-    weight: 15
+    weight: 16
