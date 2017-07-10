@@ -10,6 +10,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Datetime\Element\Datetime;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -186,7 +187,7 @@ function campaign_pages_leaflet_map_info_alter(array &$map_info) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function campaign_pages_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormState $form_state) {
+function campaign_pages_form_user_login_form_alter(&$form, FormStateInterface $form_state) {
   $form['#submit'][] = 'campaign_pages_user_login_submit';
 }
 
@@ -195,8 +196,8 @@ function campaign_pages_form_user_login_form_alter(&$form, \Drupal\Core\Form\For
  *
  * Redirects the user to the dashboard after logging in.
  */
-function campaign_pages_user_login_submit(&$form, \Drupal\Core\Form\FormState $form_state) {
-  $url = \Drupal\Core\Url::fromUri('internal:/admin/content');
+function campaign_pages_user_login_submit(&$form, FormStateInterface $form_state) {
+  $url = Url::fromUri('internal:/admin/content');
 
   // Check if a destination was set, probably on an exception controller.
   // @see \Drupal\user\Form\UserLoginForm::submitForm()
