@@ -1,11 +1,11 @@
-uuid: 2b923d21-3698-4cbb-89ca-9887651d5d69
+uuid: 8811b619-9298-4388-8a4c-05a0ec6d2ceb
 langcode: en
 status: true
 dependencies:
   module:
     - campaign_pages_tour
 _core:
-  default_config_hash: V6ajzoMP9T5JlOESEjJ6DGMrTtpyTF6c9DHTRzN8Lf4
+  default_config_hash: cK2I7pnfVZqU_h_d5vZOsisyru4ufXStmsySb_E9knQ
 id: campaign-page-add
 label: 'Create campaign page'
 module: campaign_pages_tour
@@ -19,21 +19,115 @@ tips:
     id: introduction
     plugin: text
     label: 'Creating new content'
-    body: 'Tour about creating content.'
+    body: 'This tour will guide you through the necessary fields on this campaign site creating a page'
     weight: 1
   title:
     id: title
     plugin: text
-    label: Title
-    body: 'Input a title here.'
+    label: 'Adding a title'
+    body: 'First of all, itʼs mandatory to name your campaign site being created: keep title concise and short.'
     weight: 2
     attributes:
       data-id: edit-title-0-value
+  langcode:
+    id: langcode
+    plugin: text
+    label: 'Choosing original language'
+    body: 'Every campaign site should have their language defined: this will be important for adding translations too.'
+    weight: 3
+    attributes:
+      data-id: edit-langcode-0-value
+  file:
+    id: file
+    plugin: text
+    label: 'Attaching files'
+    body: 'If needed, optionally you are able to upload some files to this campaign site. For example, they can be used as the target of CTA buttons.'
+    weight: 4
+    attributes:
+      data-id: edit-field-file
+  menu-uri:
+    id: menu-uri
+    plugin: text
+    label: 'Building menu'
+    body: 'Although not mandatory, one important thing to define some menu items to help Visitors navigate vertically through the campaign site. Here comes the target.'
+    weight: 5
+    attributes:
+      data-id: edit-field-menu-0-uri
+  menu-title:
+    id: menu-title
+    plugin: text
+    label: 'Naming menu items'
+    body: 'Type here the 1-2 words that you want this menu item should show. Keep them short. Click "New menu link" for adding more options below.'
+    weight: 6
+    attributes:
+      data-id: edit-field-menu-0-title
+  paragraphs-add-more:
+    id: paragraphs-add-more
+    plugin: text
+    label: 'Adding sections'
+    body: 'Now you can start building up the campaign site by choosing one or more from the available section types. Each has different purpose and fields.'
+    weight: 7
+    attributes:
+      data-id: edit-field-paragraphs-add-more-title
+  scheduled-publish:
+    id: scheduled-publish
+    plugin: text
+    label: 'Planning start of lifecycle'
+    body: 'You can specify a future date when your campaign should activate. When this time comes, the page will be automatically published.'
+    weight: 8
+    attributes:
+      data-id: edit-scheduled-publish-date-actions
+  scheduled-archive:
+    id: scheduled-archive
+    plugin: text
+    label: 'Planning end of lifecycle'
+    body: 'To avoid leaving too old content still published without notice, please set an end date while your content will be relevant (eg. when your event is over).'
+    weight: 9
+    attributes:
+      data-id: edit-scheduled-archive-date-actions
+  og-description:
+    id: og-description
+    plugin: text
+    label: 'Summary for social networks'
+    body: 'Open "Metatags" section on the sidebar, scroll down to "Open Graph" frame and here you can specify what text social networks should use when this page is being shared.'
+    weight: 10
+    attributes:
+      data-id: edit-field-meta-tags-0-open-graph-og-description
+  twitter-cards-type:
+    id: twitter-cards-type
+    plugin: text
+    label: 'Type of sharing by Twitter'
+    body: 'If you open the next "Twitter Cards" frame, then here you can specify how Twitter should display this link when the page is being tweeted.'
+    weight: 11
+    attributes:
+      data-id: edit-field-meta-tags-0-twitter-cards-twitter-cards-type
+  twitter-cards-description:
+    id: twitter-cards-description
+    plugin: text
+    label: 'Sumary for Twitter'
+    body: 'In case if you want for Twitter different summary text to be used than for Facebook, then here you can overwrite in max. 200 characters.'
+    weight: 12
+    attributes:
+      data-id: edit-field-meta-tags-0-twitter-cards-twitter-cards-description
   revision-msg:
     id: revision-msg
     plugin: text
-    label: 'Revision message'
-    body: 'You can write a comment about the changes here.'
-    weight: 3
+    label: 'Summarizing your changes'
+    body: 'You can leave a comment summarizing the changes you made. This can serve as a memo for yourself and others to understand the modifications.'
+    weight: 13
     attributes:
       data-id: edit-revision-log-0-value
+  submit:
+    id: submit
+    plugin: text
+    label: 'Saving new content'
+    body: 'Depending on the permissions your user account has granted, you have multiple options on how to submit the changes: keep as Draft or Publish immediately.'
+    weight: 14
+    attributes:
+      data-id: 'dropbutton-action input[value="Save and Create New Draft"]'
+  closing:
+    id: closing
+    plugin: text
+    label: 'Thatʼs all!'
+    body: 'This user interface tour has ended. If you still have questions, please feel free to ask your Administrator for further assistance. Happy publishing!'
+    weight: 15
