@@ -102,3 +102,4 @@ permissions:
   - 'create paragraph content twitter_feed'
   - 'delete paragraph content twitter_feed'
   - 'update paragraph content twitter_feed'
+  - 'access tour'

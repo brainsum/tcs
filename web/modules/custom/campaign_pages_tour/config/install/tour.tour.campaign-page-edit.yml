@@ -1,19 +1,13 @@
-uuid: a11aea76-9180-4c30-b47e-b71461d63213
+id: campaign-page-edit
+module: campaign_pages_tour
+label: 'Edit campaign page'
 langcode: en
 status: true
 dependencies:
   module:
     - campaign_pages_tour
-_core:
-  default_config_hash: LcmKzy690D0oRs4Drir6CXUPHaGvCNyzLkuYagGK1s8
-id: campaign-page-add
-label: 'Create campaign page'
-module: campaign_pages_tour
 routes:
-  -
-    route_name: node.add
-    route_params:
-      node_type: campaign
+  - route_name: entity.node.edit_form
 tips:
   introduction:
     id: introduction
@@ -21,6 +15,7 @@ tips:
     label: 'Creating new content'
     body: 'This tour will guide you through the necessary fields on this campaign site creating a page'
     weight: 1
+
   title:
     id: title
     plugin: text
@@ -29,6 +24,7 @@ tips:
     weight: 2
     attributes:
       data-id: edit-title-0-value
+
   langcode:
     id: langcode
     plugin: text
@@ -37,6 +33,7 @@ tips:
     weight: 3
     attributes:
       data-id: edit-langcode-0-value
+
   file:
     id: file
     plugin: text
@@ -45,6 +42,7 @@ tips:
     weight: 4
     attributes:
       data-id: edit-field-file
+
   menu-uri:
     id: menu-uri
     plugin: text
@@ -53,6 +51,7 @@ tips:
     weight: 5
     attributes:
       data-id: edit-field-menu-0-uri
+
   menu-title:
     id: menu-title
     plugin: text
@@ -61,6 +60,7 @@ tips:
     weight: 6
     attributes:
       data-id: edit-field-menu-0-title
+
   paragraphs-add-more:
     id: paragraphs-add-more
     plugin: text
@@ -69,6 +69,7 @@ tips:
     weight: 7
     attributes:
       data-id: edit-field-paragraphs-add-more-title
+
   scheduled-publish:
     id: scheduled-publish
     plugin: text
@@ -77,6 +78,7 @@ tips:
     weight: 8
     attributes:
       data-id: edit-scheduled-publish-date-actions
+
   scheduled-archive:
     id: scheduled-archive
     plugin: text
@@ -85,6 +87,7 @@ tips:
     weight: 9
     attributes:
       data-id: edit-scheduled-archive-date-actions
+
   metatags:
     id: metatags
     plugin: text
@@ -93,6 +96,7 @@ tips:
     weight: 10
     attributes:
       data-id: edit-field-meta-tags-0
+
   og-description:
     id: og-description
     plugin: text
@@ -101,6 +105,7 @@ tips:
     weight: 11
     attributes:
       data-id: edit-field-meta-tags-0-open-graph-og-description
+
   twitter-cards-type:
     id: twitter-cards-type
     plugin: text
@@ -109,6 +114,7 @@ tips:
     weight: 12
     attributes:
       data-id: edit-field-meta-tags-0-twitter-cards-twitter-cards-type
+
   twitter-cards-description:
     id: twitter-cards-description
     plugin: text
@@ -117,6 +123,7 @@ tips:
     weight: 13
     attributes:
       data-id: edit-field-meta-tags-0-twitter-cards-twitter-cards-description
+
   revision-msg:
     id: revision-msg
     plugin: text
@@ -125,6 +132,7 @@ tips:
     weight: 14
     attributes:
       data-id: edit-revision-log-0-value
+
   submit:
     id: submit
     plugin: text
@@ -132,7 +140,8 @@ tips:
     body: 'Depending on the permissions your user account has granted, you have multiple options on how to submit the changes: keep as Draft or Publish immediately.'
     weight: 15
     attributes:
-      data-id: 'dropbutton-action input[value="Save and Create New Draft"]'
+      data-id: dropbutton-action input[value="Save and Create New Draft"]
+
   closing:
     id: closing
     plugin: text

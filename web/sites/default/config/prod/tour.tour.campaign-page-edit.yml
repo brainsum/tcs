@@ -1,19 +1,17 @@
-uuid: a11aea76-9180-4c30-b47e-b71461d63213
+uuid: 21639fac-54d7-4bcd-938a-f3eea4d31afd
 langcode: en
 status: true
 dependencies:
   module:
     - campaign_pages_tour
 _core:
-  default_config_hash: LcmKzy690D0oRs4Drir6CXUPHaGvCNyzLkuYagGK1s8
-id: campaign-page-add
-label: 'Create campaign page'
+  default_config_hash: 8l5rQnf3aW_hZq3QboxMt3XYrN_Ay5FM9_-WUZ1i2V0
+id: campaign-page-edit
+label: 'Edit campaign page'
 module: campaign_pages_tour
 routes:
   -
-    route_name: node.add
-    route_params:
-      node_type: campaign
+    route_name: entity.node.edit_form
 tips:
   introduction:
     id: introduction

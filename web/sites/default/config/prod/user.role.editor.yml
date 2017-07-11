@@ -81,3 +81,4 @@ permissions:
   74: 'create paragraph content twitter_feed'
   75: 'delete paragraph content twitter_feed'
   76: 'update paragraph content twitter_feed'
+  77: 'access tour'
