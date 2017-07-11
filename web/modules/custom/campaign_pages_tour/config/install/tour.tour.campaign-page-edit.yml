@@ -12,15 +12,15 @@ tips:
   introduction:
     id: introduction
     plugin: text
-    label: 'Creating new content'
-    body: 'This tour will guide you through the necessary fields on this campaign site creating a page'
+    label: 'Editing new content'
+    body: 'This tour will guide you through the necessary fields on this campaign site editing a page'
     weight: 1
 
   title:
     id: title
     plugin: text
     label: 'Adding a title'
-    body: 'First of all, itʼs mandatory to name your campaign site being created: keep title concise and short.'
+    body: 'First of all, itʼs mandatory to name your campaign site being edited: keep title concise and short.'
     weight: 2
     attributes:
       data-id: edit-title-0-value

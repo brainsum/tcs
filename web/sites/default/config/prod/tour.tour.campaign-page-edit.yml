@@ -1,11 +1,11 @@
-uuid: 21639fac-54d7-4bcd-938a-f3eea4d31afd
+uuid: 5578b287-be3d-47bb-8425-832fdae987bf
 langcode: en
 status: true
 dependencies:
   module:
     - campaign_pages_tour
 _core:
-  default_config_hash: 8l5rQnf3aW_hZq3QboxMt3XYrN_Ay5FM9_-WUZ1i2V0
+  default_config_hash: qqdz58PBHLe8_hylZ-VdB8PQLhO8KO1SjpKNvcepsoU
 id: campaign-page-edit
 label: 'Edit campaign page'
 module: campaign_pages_tour
@@ -16,14 +16,14 @@ tips:
   introduction:
     id: introduction
     plugin: text
-    label: 'Creating new content'
-    body: 'This tour will guide you through the necessary fields on this campaign site creating a page'
+    label: 'Editing new content'
+    body: 'This tour will guide you through the necessary fields on this campaign site editing a page'
     weight: 1
   title:
     id: title
     plugin: text
     label: 'Adding a title'
-    body: 'First of all, itʼs mandatory to name your campaign site being created: keep title concise and short.'
+    body: 'First of all, itʼs mandatory to name your campaign site being edited: keep title concise and short.'
     weight: 2
     attributes:
       data-id: edit-title-0-value
