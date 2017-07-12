@@ -57,7 +57,8 @@
         "drupal/scheduled_updates": "^1.0",
         "drupal/seckit": "^1.0",
         "drupal/redirect": "^1.0",
-        "drupal/maxlength": "^1.0@beta"
+        "drupal/maxlength": "^1.0",
+        "drupal/abtestui": "^1.0"
     },
     "require-dev": {
         "behat/mink": "~1.7",
