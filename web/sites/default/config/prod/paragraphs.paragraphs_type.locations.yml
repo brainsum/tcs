@@ -1,6 +1,9 @@
-uuid: a9784e62-2bf4-496e-b720-745d83c17dd7
+uuid: 176ec9b2-9332-4594-acdb-b1cc683c486e
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Uv6iRNIfV3yg0WITdy1Exe_Z6kabjIuTYMFN5OPMp0o
 id: locations
 label: Locations
+behavior_plugins: {  }

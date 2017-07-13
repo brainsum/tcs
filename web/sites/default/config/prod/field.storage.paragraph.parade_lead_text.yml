@@ -1,0 +1,21 @@
+uuid: 8f197c67-52bf-4cc8-b8ab-a0ebe7d3bc63
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: tByznudUp9EQuIBBdXoa4db6xZXC19s975BtHxjpPoQ
+id: paragraph.parade_lead_text
+field_name: parade_lead_text
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

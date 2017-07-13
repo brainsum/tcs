@@ -1,0 +1,25 @@
+uuid: 23e8eb00-f6a1-412a-b5ab-e8551795b3f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_layout
+    - paragraphs.paragraphs_type.chart_box
+_core:
+  default_config_hash: szO0DSBHgTu1julDgrjWGV57F9N46aK92MX6fJrAaH0
+id: paragraph.chart_box.parade_layout
+field_name: parade_layout
+entity_type: paragraph
+bundle: chart_box
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

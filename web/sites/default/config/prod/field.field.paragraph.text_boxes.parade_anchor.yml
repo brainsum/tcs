@@ -1,0 +1,21 @@
+uuid: fa84e58f-36c5-46cc-9c29-8f4461d3431b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_anchor
+    - paragraphs.paragraphs_type.text_boxes
+_core:
+  default_config_hash: ooeMsxSInRMyA7gdNsafdkLkFrgMfPVUnnnatIdmy7M
+id: paragraph.text_boxes.parade_anchor
+field_name: parade_anchor
+entity_type: paragraph
+bundle: text_boxes
+label: Anchor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

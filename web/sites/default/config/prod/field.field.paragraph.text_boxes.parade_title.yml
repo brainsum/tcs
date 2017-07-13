@@ -1,0 +1,21 @@
+uuid: 342981da-88e2-48e1-90df-7cf551b2b23a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.text_boxes
+_core:
+  default_config_hash: SoKsWVQbr6GD7tJvaKKSaTa1a1SReRlTrq5gXOAwcXk
+id: paragraph.text_boxes.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: text_boxes
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.twitter_feed
+  module:
+    - twitter_feed_parade_type
+third_party_settings: {  }
+_core:
+  default_config_hash: LQ-b9xddOWynCln9pDdzU1oFXJWvf6ww1iEd_cu3uds
+id: paragraph.twitter_feed.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: twitter_feed
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

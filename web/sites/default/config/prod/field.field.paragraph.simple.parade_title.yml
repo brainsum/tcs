@@ -1,0 +1,21 @@
+uuid: 32f36398-ceda-4f32-bf72-7118b624a8ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.simple
+_core:
+  default_config_hash: NFlicF-bIRwZj4LPoeFw1_vPKTwZhk_1Frj-ZPqgRss
+id: paragraph.simple.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: simple
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

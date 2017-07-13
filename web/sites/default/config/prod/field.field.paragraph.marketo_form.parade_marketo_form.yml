@@ -1,0 +1,26 @@
+uuid: 304456c1-f9ef-4a46-b365-f9da0c4b03de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_marketo_form
+    - paragraphs.paragraphs_type.marketo_form
+  enforced:
+    module:
+      - marketo_form
+  module:
+    - marketo_form
+_core:
+  default_config_hash: Gtzt1gFsnwXbSjKE_9zX5J53iocVirmtjd12kYxaHSA
+id: paragraph.marketo_form.parade_marketo_form
+field_name: parade_marketo_form
+entity_type: paragraph
+bundle: marketo_form
+label: 'Marketo form'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: marketo_form

@@ -1,30 +1,26 @@
-uuid: 6f0e223d-40f7-41fa-80ba-53468e22fc99
+uuid: 65e7606d-1b78-499c-9470-461052b4cf33
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.header.field_anchor
-    - field.field.paragraph.header.field_background
-    - field.field.paragraph.header.field_call_to_action
-    - field.field.paragraph.header.field_enable_parallax
-    - field.field.paragraph.header.field_lead_text
-    - field.field.paragraph.header.field_secondary_title
-    - field.field.paragraph.header.field_title
+    - field.field.paragraph.header.parade_anchor
+    - field.field.paragraph.header.parade_background
+    - field.field.paragraph.header.parade_call_to_action
+    - field.field.paragraph.header.parade_color_scheme
+    - field.field.paragraph.header.parade_enable_parallax
+    - field.field.paragraph.header.parade_lead_text
+    - field.field.paragraph.header.parade_secondary_title
+    - field.field.paragraph.header.parade_title
     - paragraphs.paragraphs_type.header
+_core:
+  default_config_hash: YhU-LpCiTrysYEkYxW6j6ZOAc8TYnh7GMpXWJpSsy6c
 id: paragraph.header.preview
 targetEntityType: paragraph
 bundle: header
 mode: preview
 content:
-  field_anchor:
-    type: string
-    weight: 1
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_title:
+  parade_title:
     weight: 0
     label: inline
     settings:
@@ -33,10 +29,11 @@ content:
     type: string
 hidden:
   created: true
-  field_background: true
-  field_call_to_action: true
-  field_color_scheme: true
-  field_enable_parallax: true
-  field_lead_text: true
-  field_secondary_title: true
+  parade_anchor: true
+  parade_background: true
+  parade_call_to_action: true
+  parade_color_scheme: true
+  parade_enable_parallax: true
+  parade_lead_text: true
+  parade_secondary_title: true
   uid: true

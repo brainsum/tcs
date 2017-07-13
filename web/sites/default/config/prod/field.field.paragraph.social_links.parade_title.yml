@@ -1,0 +1,21 @@
+uuid: ff2a7890-d900-40c0-8c9f-67fb4e30bdda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.social_links
+_core:
+  default_config_hash: Isv-3riULD7WfOyuEWv-spa1NsM5QI_X9ZHrVllBORI
+id: paragraph.social_links.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: social_links
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

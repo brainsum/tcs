@@ -1,61 +1,55 @@
-uuid: 0b306d8f-aefa-4794-832f-9e98a9ebcc48
+uuid: 5f7d309d-0af5-4bf1-8877-2fb492c101e5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.text_boxes.field_anchor
-    - field.field.paragraph.text_boxes.field_boxes_per_row
-    - field.field.paragraph.text_boxes.field_call_to_action
-    - field.field.paragraph.text_boxes.field_color_scheme
-    - field.field.paragraph.text_boxes.field_paragraphs
-    - field.field.paragraph.text_boxes.field_text_boxes_layout
-    - field.field.paragraph.text_boxes.field_title
+    - field.field.paragraph.text_boxes.parade_anchor
+    - field.field.paragraph.text_boxes.parade_boxes_per_row
+    - field.field.paragraph.text_boxes.parade_color_scheme
+    - field.field.paragraph.text_boxes.parade_layout
+    - field.field.paragraph.text_boxes.parade_paragraphs
+    - field.field.paragraph.text_boxes.parade_text
+    - field.field.paragraph.text_boxes.parade_title
+    - field.field.paragraph.text_boxes.parade_view_mode
     - paragraphs.paragraphs_type.text_boxes
-    - field.field.paragraph.text_boxes.field_text
   module:
-    - parade
+    - entity_reference_revisions
+    - text
+_core:
+  default_config_hash: cU_EEl_OnMMXYzgmtFdQbYzJo9jTAmrIsF3Qm-L2ZS4
 id: paragraph.text_boxes.default
 targetEntityType: paragraph
 bundle: text_boxes
 mode: default
 content:
-  field_call_to_action:
-    weight: 5
+  parade_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 1
     label: hidden
     settings:
-      trim_length: 32
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: link_call_to_action
-  field_paragraphs:
-    type: parade_entity_reference_revisions_entity_view
-    weight: 4
-    label: hidden
-    settings:
-      view_mode: default_custom
-      link: false
-    third_party_settings: {  }
-  field_title:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  field_text:
+  parade_text:
     type: text_default
     weight: 1
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  parade_title:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
 hidden:
   created: true
-  field_anchor: true
-  field_boxes_per_row: true
-  field_color_scheme: true
-  field_text_boxes_layout: true
+  parade_anchor: true
+  parade_boxes_per_row: true
+  parade_color_scheme: true
+  parade_layout: true
+  parade_view_mode: true
   uid: true

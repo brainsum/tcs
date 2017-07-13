@@ -1,6 +1,9 @@
-uuid: 2055e93f-5c50-4e77-aa17-e748ce20e2fe
+uuid: c1db5a81-d6ea-4301-a0ba-0f5ef1368868
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: mXSljBtaRzU_ly1KI-7NvAN9vZDZZBkgIFkAEV83LdQ
 id: social_links
-label: 'Social Links'
+label: 'Social links'
+behavior_plugins: {  }

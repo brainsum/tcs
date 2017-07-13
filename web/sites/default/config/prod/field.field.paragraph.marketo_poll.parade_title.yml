@@ -1,0 +1,24 @@
+uuid: bcd9ddc9-5432-4ea4-a30f-35bac938f98a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.marketo_poll
+  enforced:
+    module:
+      - marketo_poll
+_core:
+  default_config_hash: 0MW08gGEJtdfTcfR-1QEQbISw9tJfvA7IIGFwYIcIQE
+id: paragraph.marketo_poll.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: marketo_poll
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

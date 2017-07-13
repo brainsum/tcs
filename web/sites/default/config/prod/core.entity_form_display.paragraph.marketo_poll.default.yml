@@ -1,42 +1,40 @@
-uuid: 1aff406c-24b4-43d2-8f88-297a2838952d
+uuid: b1e534ff-a6be-49df-bdbd-810674fc47b0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.marketo_poll.field_anchor
-    - field.field.paragraph.marketo_poll.field_color_scheme
-    - field.field.paragraph.marketo_poll.field_marketo_poll
-    - field.field.paragraph.marketo_poll.field_title
+    - field.field.paragraph.marketo_poll.parade_anchor
+    - field.field.paragraph.marketo_poll.parade_color_scheme
+    - field.field.paragraph.marketo_poll.parade_marketo_poll
+    - field.field.paragraph.marketo_poll.parade_title
     - paragraphs.paragraphs_type.marketo_poll
+  enforced:
+    module:
+      - marketo_poll
   module:
     - content_moderation
     - marketo_poll
 _core:
-  default_config_hash: TsjKpUgvOmqOXCWzUrMKFyhHROk_UbEDjJ-gDWsizDg
+  default_config_hash: w5p1ytdlFD6z1WjFG4UYmKaQbXBlvs_d1rGZNUMVt4c
 id: paragraph.marketo_poll.default
 targetEntityType: paragraph
 bundle: marketo_poll
 mode: default
 content:
-  field_anchor:
-    weight: 1
+  parade_anchor:
+    weight: 6
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_color_scheme:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-  field_marketo_poll:
-    weight: 3
+  parade_marketo_poll:
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: marketo_poll
-  field_title:
-    weight: 2
+  parade_title:
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -44,5 +42,6 @@ content:
     type: string_textfield
 hidden:
   created: true
+  parade_color_scheme: true
   status: true
   uid: true

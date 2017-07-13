@@ -1,50 +1,57 @@
-uuid: 7176fb9a-27b9-475a-a8c8-f43c2e21ee58
+uuid: 560ac5b1-abeb-421c-ad09-27ac63d480b0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.images.field_anchor
-    - field.field.paragraph.images.field_color_scheme
-    - field.field.paragraph.images.field_images
-    - field.field.paragraph.images.field_title
+    - field.field.paragraph.images.parade_anchor
+    - field.field.paragraph.images.parade_color_scheme
+    - field.field.paragraph.images.parade_images
+    - field.field.paragraph.images.parade_title
     - image.style.thumbnail
     - paragraphs.paragraphs_type.images
   module:
     - content_moderation
     - image
 _core:
-  default_config_hash: TA7u8Bk8lE1ziJY1nxAwbr-W66WoS8s0k0bLSMKCZfc
+  default_config_hash: iPn8WxyL5-Xq37hpE97nYCzXHu0_zyj3GeXCLPxOeNg
 id: paragraph.images.default
 targetEntityType: paragraph
 bundle: images
 mode: default
 content:
-  field_anchor:
+  parade_anchor:
     weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_color_scheme:
+    region: content
+  parade_color_scheme:
+    type: entity_reference_autocomplete
     weight: 0
-    settings: {  }
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
-  field_images:
+  parade_images:
     weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
-  field_title:
+    region: content
+  parade_title:
     weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

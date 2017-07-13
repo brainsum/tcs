@@ -1,29 +1,31 @@
-uuid: 95c8bf1d-39b0-46d4-a07d-f75b03280134
+uuid: ca40d5bb-b4ea-43bd-8227-2d438f4e4fd4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.locations.field_anchor
-    - field.field.paragraph.locations.field_color_scheme
-    - field.field.paragraph.locations.field_geofield
-    - field.field.paragraph.locations.field_location
-    - field.field.paragraph.locations.field_text
-    - field.field.paragraph.locations.field_title
+    - field.field.paragraph.locations.parade_anchor
+    - field.field.paragraph.locations.parade_color_scheme
+    - field.field.paragraph.locations.parade_geofield
+    - field.field.paragraph.locations.parade_location
+    - field.field.paragraph.locations.parade_text
+    - field.field.paragraph.locations.parade_title
     - paragraphs.paragraphs_type.locations
   module:
     - aggregated_leaflet_map
     - text
+_core:
+  default_config_hash: l63DyW8CStymQaG2eB_vP8zTvLrhhOtgGMe-onSjyGs
 id: paragraph.locations.default
 targetEntityType: paragraph
 bundle: locations
 mode: default
 content:
-  field_geofield:
+  parade_geofield:
     weight: 1
     label: hidden
     settings:
       leaflet_map: 'OSM Mapnik'
-      zoom: '0'
+      zoom: '5'
       minZoom: '0'
       maxZoom: '18'
       height: '400'
@@ -43,28 +45,31 @@ content:
         popup_anchor:
           x: '0'
           'y': '0'
-      auto_zoom: true
-      source_field: field_location
+      auto_zoom: false
+      source_field: parade_location
       minPossibleZoom: 0
       maxPossibleZoom: 18
     third_party_settings: {  }
     type: leaflet_formatter_aggregated
-  field_text:
+    region: content
+  parade_text:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_title:
+    region: content
+  parade_title:
     weight: 0
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
-  field_anchor: true
-  field_color_scheme: true
-  field_location: true
+  parade_anchor: true
+  parade_color_scheme: true
+  parade_location: true
   uid: true

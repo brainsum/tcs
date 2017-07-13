@@ -1,0 +1,25 @@
+uuid: 58915171-d0e3-4d83-a581-79443bb158c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_boxes_per_row
+    - paragraphs.paragraphs_type.text_boxes
+_core:
+  default_config_hash: ogN3ACTRLxtIjxWIZlgjyx9acJ87gXD5ccQ42OyoW-c
+id: paragraph.text_boxes.parade_boxes_per_row
+field_name: parade_boxes_per_row
+entity_type: paragraph
+bundle: text_boxes
+label: 'Boxes per row'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: 5
+  prefix: ''
+  suffix: ''
+field_type: integer

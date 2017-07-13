@@ -1,0 +1,9 @@
+uuid: 41b40cbb-c303-4ec3-8714-fd8349e2ada8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mSzO0TmIg7Kyhhx-5Q-ilCYIE5Xo7cNh4EG0o89vY74
+id: chart_box
+label: 'Chart box'
+behavior_plugins: {  }

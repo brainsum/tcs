@@ -1,6 +1,9 @@
-uuid: c488cec8-4f25-4c68-8412-0b1f10b33aa0
+uuid: f5e4070c-0016-4e74-9ec0-c9c481eaeeb3
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: PFuWO2NZJE3M9O1DG8pPNmKt7dW58V50zuJ084kd7M4
 id: simple
 label: Simple
+behavior_plugins: {  }

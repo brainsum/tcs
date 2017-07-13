@@ -1,6 +1,12 @@
-uuid: 08e499e9-e6a4-4bac-8269-086449668a9a
+uuid: ca197c31-e79d-4541-b88b-c297550ca9ca
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - marketo_form
+_core:
+  default_config_hash: LnkA12lmXjPe0ZTBpzo-PGpbu8K2f_ilIbmR_ep3MMo
 id: marketo_form
 label: Form
+behavior_plugins: {  }

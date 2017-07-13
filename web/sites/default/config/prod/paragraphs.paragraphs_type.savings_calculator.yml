@@ -1,6 +1,0 @@
-uuid: ee2c693f-7eef-4d08-8579-87eb38adb4f1
-langcode: en
-status: true
-dependencies: {  }
-id: savings_calculator
-label: 'Savings calculator'

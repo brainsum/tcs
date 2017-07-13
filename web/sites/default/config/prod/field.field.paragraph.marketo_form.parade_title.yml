@@ -1,0 +1,24 @@
+uuid: fd6a5aa6-92ca-4933-b0c1-90d2a6241d61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.marketo_form
+  enforced:
+    module:
+      - marketo_form
+_core:
+  default_config_hash: jX4ywhGROXedFdr7SAk2H9wQjcr-44pGA-QNNzXzTf4
+id: paragraph.marketo_form.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: marketo_form
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

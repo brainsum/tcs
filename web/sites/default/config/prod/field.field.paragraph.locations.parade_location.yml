@@ -1,0 +1,21 @@
+uuid: 2fd0d2ab-b2c0-43d6-9dd9-726a3711098a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_location
+    - paragraphs.paragraphs_type.locations
+_core:
+  default_config_hash: E3nPVO2B-t4QAsJGrZSO41YZfRC1ZuQ2GvQD1qe1Yac
+id: paragraph.locations.parade_location
+field_name: parade_location
+entity_type: paragraph
+bundle: locations
+label: 'Map markers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

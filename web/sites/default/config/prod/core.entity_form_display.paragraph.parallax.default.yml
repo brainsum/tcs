@@ -1,58 +1,76 @@
-uuid: 18e0a4ce-9470-4f4e-942e-7130ab017dab
+uuid: 2b9038aa-9072-4b1a-84e1-5312f8a13869
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.parallax.field_anchor
-    - field.field.paragraph.parallax.field_background
-    - field.field.paragraph.parallax.field_enable_parallax
-    - field.field.paragraph.parallax.field_text
-    - field.field.paragraph.parallax.field_title
+    - field.field.paragraph.parallax.parade_anchor
+    - field.field.paragraph.parallax.parade_background
+    - field.field.paragraph.parallax.parade_color_scheme
+    - field.field.paragraph.parallax.parade_enable_parallax
+    - field.field.paragraph.parallax.parade_image
+    - field.field.paragraph.parallax.parade_minimum_height
+    - field.field.paragraph.parallax.parade_text
     - paragraphs.paragraphs_type.parallax
   module:
     - content_moderation
     - file
     - text
+_core:
+  default_config_hash: 0Y1arR4l02WJsrQb_H7cpzsa6Qavr3X1v6dly3e38bM
 id: paragraph.parallax.default
 targetEntityType: paragraph
 bundle: parallax
 mode: default
 content:
-  field_anchor:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-  field_background:
-    weight: 3
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-    type: file_generic
-  field_enable_parallax:
-    weight: 6
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-  field_text:
-    weight: 2
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-  field_title:
+  parade_anchor:
     weight: 1
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  parade_background:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  parade_color_scheme:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  parade_enable_parallax:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  parade_minimum_height:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  parade_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
 hidden:
   created: true
+  parade_image: true
   status: true
   translation: true
   uid: true

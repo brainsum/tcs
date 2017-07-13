@@ -1,0 +1,21 @@
+uuid: b2e2e018-c977-4895-8934-c16f75201250
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_anchor
+    - paragraphs.paragraphs_type.twitter_feed
+_core:
+  default_config_hash: or41Hr0s_3qaXOHlczedeCeT_L06RcmOCCh3WJt3bPc
+id: paragraph.twitter_feed.parade_anchor
+field_name: parade_anchor
+entity_type: paragraph
+bundle: twitter_feed
+label: Anchor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

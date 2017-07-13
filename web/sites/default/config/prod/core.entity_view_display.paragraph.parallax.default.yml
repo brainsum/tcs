@@ -1,37 +1,37 @@
-uuid: e9f7c52e-d478-4cf2-8043-75de88876729
+uuid: affc4ce1-1ed3-4ad2-bc94-5dfc9c344bcb
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.parallax.field_anchor
-    - field.field.paragraph.parallax.field_background
-    - field.field.paragraph.parallax.field_enable_parallax
-    - field.field.paragraph.parallax.field_text
-    - field.field.paragraph.parallax.field_title
+    - field.field.paragraph.parallax.parade_anchor
+    - field.field.paragraph.parallax.parade_background
+    - field.field.paragraph.parallax.parade_color_scheme
+    - field.field.paragraph.parallax.parade_enable_parallax
+    - field.field.paragraph.parallax.parade_image
+    - field.field.paragraph.parallax.parade_minimum_height
+    - field.field.paragraph.parallax.parade_text
     - paragraphs.paragraphs_type.parallax
   module:
     - text
+_core:
+  default_config_hash: T9GL0hzLdGpfp8L445u7kN0-GQPFTe12T5RGuuAWZTo
 id: paragraph.parallax.default
 targetEntityType: paragraph
 bundle: parallax
 mode: default
 content:
-  field_text:
-    weight: 1
+  parade_text:
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_title:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
 hidden:
   created: true
-  field_anchor: true
-  field_background: true
-  field_enable_parallax: true
+  parade_anchor: true
+  parade_background: true
+  parade_color_scheme: true
+  parade_enable_parallax: true
+  parade_image: true
+  parade_minimum_height: true
   uid: true

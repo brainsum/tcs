@@ -1,0 +1,39 @@
+uuid: 4fef4710-84df-4548-b751-df6befc468ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_geofield
+    - paragraphs.paragraphs_type.locations
+  module:
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: source
+    field: parade_location
+    plugins:
+      - googlemaps
+      - bingmaps
+      - geoplugin
+      - geoip
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+_core:
+  default_config_hash: nl0DZz-9erSEVAYzBCExnVrEVkgTSpa1W_7mn8tCoPY
+id: paragraph.locations.parade_geofield
+field_name: parade_geofield
+entity_type: paragraph
+bundle: locations
+label: Geofield
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

@@ -1,29 +1,32 @@
-uuid: e1d4363e-6bdc-4942-8131-e505a285d651
+uuid: dadccf43-9e9b-41bf-8d24-51b6e12f9987
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.marketo_poll.field_anchor
-    - field.field.paragraph.marketo_poll.field_color_scheme
-    - field.field.paragraph.marketo_poll.field_marketo_poll
-    - field.field.paragraph.marketo_poll.field_title
+    - field.field.paragraph.marketo_poll.parade_anchor
+    - field.field.paragraph.marketo_poll.parade_color_scheme
+    - field.field.paragraph.marketo_poll.parade_marketo_poll
+    - field.field.paragraph.marketo_poll.parade_title
     - paragraphs.paragraphs_type.marketo_poll
+  enforced:
+    module:
+      - marketo_poll
   module:
     - marketo_poll
 _core:
-  default_config_hash: '-Ra_-7r2m1wOWu8RMwYTWv7TZNyZGa0r6fO35yzl8E8'
+  default_config_hash: 7nfCEQybNGIet4zJXmE3gqoQ3ghi7hX7Og65Y5U3WJ8
 id: paragraph.marketo_poll.default
 targetEntityType: paragraph
 bundle: marketo_poll
 mode: default
 content:
-  field_marketo_poll:
+  parade_marketo_poll:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: marketo_poll
-  field_title:
+  parade_title:
     weight: 0
     label: hidden
     settings:
@@ -32,6 +35,6 @@ content:
     type: string
 hidden:
   created: true
-  field_anchor: true
-  field_color_scheme: true
+  parade_anchor: true
+  parade_color_scheme: true
   uid: true

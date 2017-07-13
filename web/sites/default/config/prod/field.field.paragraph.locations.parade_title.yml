@@ -1,0 +1,21 @@
+uuid: 721ecb63-a522-4eb7-a7a4-63ec7223a87f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.locations
+_core:
+  default_config_hash: INXW0Z0m37-yFkBxqx6M_jfcbBLwGpDd_Gv2BYiSxeM
+id: paragraph.locations.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: locations
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

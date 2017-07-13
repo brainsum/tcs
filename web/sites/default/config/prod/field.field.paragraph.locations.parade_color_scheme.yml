@@ -1,0 +1,25 @@
+uuid: b2467928-c009-4b34-8452-dea1407b206a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_color_scheme
+    - paragraphs.paragraphs_type.locations
+_core:
+  default_config_hash: z7dAgO4i0HJf0v6FU9TRNygGkonVPR_NfDEPrDbuvtE
+id: paragraph.locations.parade_color_scheme
+field_name: parade_color_scheme
+entity_type: paragraph
+bundle: locations
+label: 'Color scheme'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

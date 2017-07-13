@@ -1,0 +1,21 @@
+uuid: f37286e7-0591-458a-be0d-15fde23c0e71
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+_core:
+  default_config_hash: aZuntLbj3uovTKWmsF8FfDuw9vWX-2M4rbsTrwqHsVI
+id: paragraph.parade_call_to_action
+field_name: parade_call_to_action
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

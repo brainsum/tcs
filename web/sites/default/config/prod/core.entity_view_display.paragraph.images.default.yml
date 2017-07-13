@@ -1,40 +1,42 @@
-uuid: 607a28b7-b7eb-4547-b64d-f2db6ceedaf8
+uuid: d6650cd3-1fdf-43ea-aa1b-a139f5d8121d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.images.field_anchor
-    - field.field.paragraph.images.field_color_scheme
-    - field.field.paragraph.images.field_images
-    - field.field.paragraph.images.field_title
-    - image.style.thumbnail
+    - field.field.paragraph.images.parade_anchor
+    - field.field.paragraph.images.parade_color_scheme
+    - field.field.paragraph.images.parade_images
+    - field.field.paragraph.images.parade_title
+    - image.style.medium
     - paragraphs.paragraphs_type.images
   module:
     - image
 _core:
-  default_config_hash: SrcUVnFWa_fwHjrESiGfJISl0JVktNYE7j3YSPRGybY
+  default_config_hash: TUi-O3slrMy0WqO7ZBSH_M6sOiEdE9l760hi-LAdKMs
 id: paragraph.images.default
 targetEntityType: paragraph
 bundle: images
 mode: default
 content:
-  field_images:
+  parade_images:
     weight: 1
     label: hidden
     settings:
-      image_style: thumbnail
+      image_style: medium
       image_link: ''
     third_party_settings: {  }
     type: image
-  field_title:
+    region: content
+  parade_title:
     weight: 0
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
-  field_anchor: true
-  field_color_scheme: true
+  parade_anchor: true
+  parade_color_scheme: true
   uid: true

@@ -1,0 +1,21 @@
+uuid: 68284df3-c3e8-4602-bcbe-80cc18678a85
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+_core:
+  default_config_hash: X33HNuQUkUi6shi6yQhxfch0tetOZpP2_zKRStAw-iA
+id: paragraph.parade_social_link
+field_name: parade_social_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,44 +1,36 @@
-uuid: fed044eb-60e2-42ff-a53c-6dca85e5eaea
+uuid: a37ae63b-da00-4976-ad50-2b4f9046ce5e
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.simple.field_anchor
-    - field.field.paragraph.simple.field_simple_layout
-    - field.field.paragraph.simple.field_text
-    - field.field.paragraph.simple.field_title
+    - field.field.paragraph.simple.parade_anchor
+    - field.field.paragraph.simple.parade_color_scheme
+    - field.field.paragraph.simple.parade_layout
+    - field.field.paragraph.simple.parade_text
+    - field.field.paragraph.simple.parade_title
+    - field.field.paragraph.simple.parade_view_mode
     - paragraphs.paragraphs_type.simple
-  module:
-    - options
+_core:
+  default_config_hash: rZ0Rlh9tIDjY2TJfXhyRHR3AUrWlZMjb9l1LM-vBEAI
 id: paragraph.simple.preview
 targetEntityType: paragraph
 bundle: simple
 mode: preview
 content:
-  field_anchor:
-    type: string
-    weight: 2
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_simple_layout:
-    type: list_default
-    weight: 1
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-  field_title:
+  parade_title:
     weight: 0
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
-  field_call_to_action: true
-  field_color_scheme: true
-  field_text: true
+  parade_anchor: true
+  parade_color_scheme: true
+  parade_layout: true
+  parade_text: true
+  parade_view_mode: true
   uid: true

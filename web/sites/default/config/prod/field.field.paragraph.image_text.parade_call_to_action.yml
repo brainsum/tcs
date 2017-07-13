@@ -1,0 +1,25 @@
+uuid: 3ce3fc0d-f6ed-4b68-a65a-dd958bef725e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_call_to_action
+    - paragraphs.paragraphs_type.image_text
+  module:
+    - link
+_core:
+  default_config_hash: 32soasqKN52YrLh2brd7aiBwXOl8ipGbIhk4w-VwneE
+id: paragraph.image_text.parade_call_to_action
+field_name: parade_call_to_action
+entity_type: paragraph
+bundle: image_text
+label: 'Call to action'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

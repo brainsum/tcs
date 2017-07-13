@@ -1,0 +1,38 @@
+uuid: 0357bda8-7746-41a9-ba01-09e736b44ce3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_view_mode
+    - paragraphs.paragraphs_type.simple
+  module:
+    - view_mode_selector
+_core:
+  default_config_hash: PGCc5RlrG0n3Xr94yeQXMNW8zUNXmA6MST_BF7DribE
+id: paragraph.simple.parade_view_mode
+field_name: parade_view_mode
+entity_type: paragraph
+bundle: simple
+label: 'View mode'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings:
+  view_modes:
+    default:
+      enable: 1
+      hide_title: 0
+      icon: {  }
+    inverse:
+      enable: 1
+      hide_title: 0
+      icon: {  }
+    preview:
+      enable: 0
+      hide_title: 0
+      icon: {  }
+field_type: view_mode_selector

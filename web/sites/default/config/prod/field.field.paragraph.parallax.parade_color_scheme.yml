@@ -1,0 +1,25 @@
+uuid: 773c0a4e-a800-4147-ab42-8d3fac6f33ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_color_scheme
+    - paragraphs.paragraphs_type.parallax
+_core:
+  default_config_hash: i58BSlv0_GPZfcrh9ppky8HoEN32GKbwZA4Sicg83I4
+id: paragraph.parallax.parade_color_scheme
+field_name: parade_color_scheme
+entity_type: paragraph
+bundle: parallax
+label: 'Color scheme'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

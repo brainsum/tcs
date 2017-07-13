@@ -1,0 +1,38 @@
+uuid: 1e102722-12a7-49e2-a5ea-51990f6326be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_view_mode
+    - paragraphs.paragraphs_type.text_boxes
+  module:
+    - view_mode_selector
+_core:
+  default_config_hash: _vj8zKXid-q3lO4m39vaZkEtiuB1IAW4jzgKLmHxXuM
+id: paragraph.text_boxes.parade_view_mode
+field_name: parade_view_mode
+entity_type: paragraph
+bundle: text_boxes
+label: 'View mode'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings:
+  view_modes:
+    default:
+      enable: 1
+      hide_title: 0
+      icon: {  }
+    custom:
+      enable: 1
+      hide_title: 0
+      icon: {  }
+    preview:
+      enable: 0
+      hide_title: 0
+      icon: {  }
+field_type: view_mode_selector

@@ -1,0 +1,23 @@
+uuid: 2a3fff7a-4c9d-43a7-bacc-fbf37df602d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: mqRxj53aI69yo4G7fH5hPX6QvSrt5l16yOUYF3o-GJc
+id: paragraph.parade_title
+field_name: parade_title
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

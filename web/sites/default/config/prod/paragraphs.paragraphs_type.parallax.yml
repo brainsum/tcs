@@ -1,6 +1,9 @@
-uuid: e85c9ba4-0015-4823-9535-1a6fa9d56b96
+uuid: ea98d240-54d7-4693-8d9a-3d50b18d5d2a
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: YrDlfdKMt-HARH6aQdOh42yOz5RUjS-FpnRD-AGAKLs
 id: parallax
-label: Background
+label: Parallax
+behavior_plugins: {  }

@@ -1,33 +1,26 @@
-uuid: 94b72053-fd34-4843-aa4a-c691a9ad73de
+uuid: 16a785ce-f833-4813-a5d7-a575d22d9c11
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.custom
-    - field.field.paragraph.text_box.field_image
-    - field.field.paragraph.text_box.field_text
-    - field.field.paragraph.text_box.field_title
+    - field.field.paragraph.text_box.parade_color_scheme
+    - field.field.paragraph.text_box.parade_image
+    - field.field.paragraph.text_box.parade_layout
+    - field.field.paragraph.text_box.parade_text
+    - field.field.paragraph.text_box.parade_title
     - paragraphs.paragraphs_type.text_box
   module:
     - image
     - text
+_core:
+  default_config_hash: Rqfn8loifbiUcUStaWzPBXZpPJXbh_J4iGBCLB47o0g
 id: paragraph.text_box.custom
 targetEntityType: paragraph
 bundle: text_box
 mode: custom
 content:
-  field_call_to_action:
-    type: link_call_to_action
-    weight: 3
-    label: hidden
-    settings:
-      trim_length: '32'
-      url_only: ''
-      url_plain: ''
-      rel: 0
-      target: 0
-    third_party_settings: {  }
-  field_image:
+  parade_image:
     weight: 0
     label: hidden
     settings:
@@ -35,21 +28,24 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
-  field_text:
+    region: content
+  parade_text:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_title:
+    region: content
+  parade_title:
     weight: 1
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
-  field_color_scheme: true
-  field_text_box_layout: true
+  parade_color_scheme: true
+  parade_layout: true
   uid: true

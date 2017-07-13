@@ -1,33 +1,35 @@
-uuid: 59a19200-9b21-471e-871f-f954dc623651
+uuid: 779ec993-39af-4e78-a165-07e68ff55ffd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.social_links.field_color_scheme
-    - field.field.paragraph.social_links.field_social_link
-    - field.field.paragraph.social_links.field_title
+    - field.field.paragraph.social_links.parade_color_scheme
+    - field.field.paragraph.social_links.parade_social_link
+    - field.field.paragraph.social_links.parade_title
     - paragraphs.paragraphs_type.social_links
   module:
     - content_moderation
     - link
+_core:
+  default_config_hash: 41lPgOwqPqy5WYlgENsgRJBG1pdzPHb7Mg14ZPKUQaM
 id: paragraph.social_links.default
 targetEntityType: paragraph
 bundle: social_links
 mode: default
 content:
-  field_color_scheme:
+  parade_color_scheme:
     weight: 0
     settings: {  }
     third_party_settings: {  }
     type: options_select
-  field_social_link:
+  parade_social_link:
     weight: 2
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-  field_title:
+  parade_title:
     weight: 1
     settings:
       size: 60

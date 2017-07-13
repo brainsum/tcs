@@ -1,0 +1,12 @@
+uuid: a872d4b8-86a5-424c-a083-3ab6ffb5f0c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: cbZoAddbcjwioS7qRf12Hai6EeuIxC3FFU0hXjNKMCY
+id: paragraph.inverse
+label: Inverse
+targetEntityType: paragraph
+cache: true

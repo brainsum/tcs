@@ -1,20 +1,22 @@
-uuid: 9a19722f-741f-4cf1-9777-9f10bdef1126
+uuid: 1c77acde-1b21-488f-8925-f9d7bb50a65a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.social_links.field_color_scheme
-    - field.field.paragraph.social_links.field_social_link
-    - field.field.paragraph.social_links.field_title
+    - field.field.paragraph.social_links.parade_color_scheme
+    - field.field.paragraph.social_links.parade_social_link
+    - field.field.paragraph.social_links.parade_title
     - paragraphs.paragraphs_type.social_links
   module:
     - link
+_core:
+  default_config_hash: NuwiUb_Bdj1-XSqfI7zQw7Oqv93N6bgttl3aznl7j8Y
 id: paragraph.social_links.default
 targetEntityType: paragraph
 bundle: social_links
 mode: default
 content:
-  field_social_link:
+  parade_social_link:
     weight: 1
     label: visually_hidden
     settings:
@@ -25,7 +27,7 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-  field_title:
+  parade_title:
     weight: 0
     label: hidden
     settings:
@@ -34,5 +36,5 @@ content:
     type: string
 hidden:
   created: true
-  field_color_scheme: true
+  parade_color_scheme: true
   uid: true

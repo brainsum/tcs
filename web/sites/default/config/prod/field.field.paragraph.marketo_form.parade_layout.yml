@@ -1,0 +1,25 @@
+uuid: 4413159b-ca0b-4953-832f-a4fa0c2c9fd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_layout
+    - paragraphs.paragraphs_type.marketo_form
+_core:
+  default_config_hash: a5efWZqLIoye3uumsXtn5yp-PiPJ45GheVGTiT1QLQE
+id: paragraph.marketo_form.parade_layout
+field_name: parade_layout
+entity_type: paragraph
+bundle: marketo_form
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_twitter_feed
+    - paragraphs.paragraphs_type.twitter_feed
+  module:
+    - twitter_feed_parade_type
+id: paragraph.twitter_feed.parade_twitter_feed
+field_name: parade_twitter_feed
+entity_type: paragraph
+bundle: twitter_feed
+label: 'Twitter feed'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: twitter_feed

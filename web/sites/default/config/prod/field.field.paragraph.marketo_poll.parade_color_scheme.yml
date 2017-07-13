@@ -1,0 +1,25 @@
+uuid: b0da9b20-a50d-40c4-9d4e-81234279ed10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_color_scheme
+    - paragraphs.paragraphs_type.marketo_poll
+_core:
+  default_config_hash: 9J_RNGsZe_rCn6LOylib2PqNhEjqW4JLwld9THjhujg
+id: paragraph.marketo_poll.parade_color_scheme
+field_name: parade_color_scheme
+entity_type: paragraph
+bundle: marketo_poll
+label: 'Color scheme'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

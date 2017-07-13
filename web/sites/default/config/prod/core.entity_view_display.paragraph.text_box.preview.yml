@@ -1,30 +1,34 @@
-uuid: 2f790e27-0509-416d-ac02-0b44d3dcb77b
+uuid: 224574e1-d677-4256-8c0a-cfbc4a39d388
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.text_box.field_image
-    - field.field.paragraph.text_box.field_text
-    - field.field.paragraph.text_box.field_title
+    - field.field.paragraph.text_box.parade_color_scheme
+    - field.field.paragraph.text_box.parade_image
+    - field.field.paragraph.text_box.parade_layout
+    - field.field.paragraph.text_box.parade_text
+    - field.field.paragraph.text_box.parade_title
     - paragraphs.paragraphs_type.text_box
+_core:
+  default_config_hash: BSgt1j_kGKQk-saX9dzzU17YVAMjItreH1nTy2HsEMs
 id: paragraph.text_box.preview
 targetEntityType: paragraph
 bundle: text_box
 mode: preview
 content:
-  field_title:
+  parade_title:
     weight: 0
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
-  field_call_to_action: true
-  field_color_scheme: true
-  field_image: true
-  field_text: true
-  field_text_box_layout: true
+  parade_color_scheme: true
+  parade_image: true
+  parade_layout: true
+  parade_text: true
   uid: true

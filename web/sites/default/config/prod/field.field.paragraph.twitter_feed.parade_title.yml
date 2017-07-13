@@ -1,0 +1,21 @@
+uuid: f57c4dd5-1af5-4271-9c12-f38c77b71d24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.twitter_feed
+_core:
+  default_config_hash: RFrWpWj5AGWc6pdac6Xnwv8c6dQ-Sl3PVFZNW2zwXTQ
+id: paragraph.twitter_feed.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: twitter_feed
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

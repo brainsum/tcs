@@ -1,47 +1,40 @@
-uuid: f0e515aa-1bda-4045-9bff-76f911a391d1
+uuid: 953b593c-63b7-45a8-9831-b772f5c96d01
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.text_boxes.field_anchor
-    - field.field.paragraph.text_boxes.field_boxes_per_row
-    - field.field.paragraph.text_boxes.field_call_to_action
-    - field.field.paragraph.text_boxes.field_paragraphs
-    - field.field.paragraph.text_boxes.field_text_boxes_layout
-    - field.field.paragraph.text_boxes.field_title
+    - field.field.paragraph.text_boxes.parade_anchor
+    - field.field.paragraph.text_boxes.parade_boxes_per_row
+    - field.field.paragraph.text_boxes.parade_color_scheme
+    - field.field.paragraph.text_boxes.parade_layout
+    - field.field.paragraph.text_boxes.parade_paragraphs
+    - field.field.paragraph.text_boxes.parade_text
+    - field.field.paragraph.text_boxes.parade_title
+    - field.field.paragraph.text_boxes.parade_view_mode
     - paragraphs.paragraphs_type.text_boxes
-  module:
-    - options
+_core:
+  default_config_hash: 4vMc5a1f3_9ESvHW6z6fHdjVXA2vdf6CggtTdzSYGno
 id: paragraph.text_boxes.preview
 targetEntityType: paragraph
 bundle: text_boxes
 mode: preview
 content:
-  field_anchor:
-    type: string
-    weight: 3
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  field_text_boxes_layout:
-    type: list_default
-    weight: 1
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-  field_title:
+  parade_title:
     weight: 0
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
-  field_boxes_per_row: true
-  field_call_to_action: true
-  field_color_scheme: true
-  field_paragraphs: true
+  parade_anchor: true
+  parade_boxes_per_row: true
+  parade_color_scheme: true
+  parade_layout: true
+  parade_paragraphs: true
+  parade_text: true
+  parade_view_mode: true
   uid: true

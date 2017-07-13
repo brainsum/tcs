@@ -1,0 +1,35 @@
+uuid: bffa269d-bf30-49ea-b615-3a4273774e00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_text
+    - paragraphs.paragraphs_type.text_boxes
+  module:
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: parent_id
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+_core:
+  default_config_hash: 9-nCGQCf3dMPdeusdrDxaJrw_Fx3b6c4k_MM9Sw0seg
+id: paragraph.text_boxes.parade_text
+field_name: parade_text
+entity_type: paragraph
+bundle: text_boxes
+label: Description
+description: 'This text will show up above the text boxes.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

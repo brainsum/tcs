@@ -1,0 +1,26 @@
+uuid: 6807a8c8-42bd-4cba-b912-ddba7c343dd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_text
+    - paragraphs.paragraphs_type.marketo_form
+  enforced:
+    module:
+      - marketo_form
+  module:
+    - text
+_core:
+  default_config_hash: 8Lj4OnOKrRqgDlXW4RL51hn1hG4gaHJenugxeAAirt0
+id: paragraph.marketo_form.parade_text
+field_name: parade_text
+entity_type: paragraph
+bundle: marketo_form
+label: 'Confirmation message'
+description: 'After the user submits the form, this text will replace the form.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

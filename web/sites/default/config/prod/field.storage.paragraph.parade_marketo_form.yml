@@ -1,0 +1,24 @@
+uuid: 70f64872-06f3-4c04-a4e5-aec966a9a6bb
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - marketo_form
+  module:
+    - marketo_form
+    - paragraphs
+_core:
+  default_config_hash: 6pfK-kqqTATpJD3ovbLqQL_OoC33uFOu35gO9wTzpC4
+id: paragraph.parade_marketo_form
+field_name: parade_marketo_form
+entity_type: paragraph
+type: marketo_form
+settings: {  }
+module: marketo_form
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

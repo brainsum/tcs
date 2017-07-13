@@ -1,0 +1,23 @@
+uuid: 7f82ce7f-e0b6-45bd-b8ed-1a801a106550
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: oYad4uPjF62LYmhiYA8OjWTlxa5PzSdsSgRyn7pGcLw
+id: paragraph.parade_anchor
+field_name: parade_anchor
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

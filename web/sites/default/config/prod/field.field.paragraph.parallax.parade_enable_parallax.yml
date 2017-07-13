@@ -1,0 +1,25 @@
+uuid: 85dc4c2f-7bcf-4f16-8810-d78687e39184
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_enable_parallax
+    - paragraphs.paragraphs_type.parallax
+_core:
+  default_config_hash: '-B4C_K7HxMcUhkv_ltyqfNVsDE_D1rIQxkBwu3NAVdM'
+id: paragraph.parallax.parade_enable_parallax
+field_name: parade_enable_parallax
+entity_type: paragraph
+bundle: parallax
+label: 'Enable parallax'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

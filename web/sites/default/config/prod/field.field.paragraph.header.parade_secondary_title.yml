@@ -1,0 +1,21 @@
+uuid: af3b9794-599c-40d4-888d-9d1f436d6428
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_secondary_title
+    - paragraphs.paragraphs_type.header
+_core:
+  default_config_hash: TdmjF6hAKxz58xeCawiKhgM-wC_gYkxXTI6MVGkTyQw
+id: paragraph.header.parade_secondary_title
+field_name: parade_secondary_title
+entity_type: paragraph
+bundle: header
+label: 'Secondary title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

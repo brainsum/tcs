@@ -1,0 +1,25 @@
+uuid: 77bfb8f7-1fe3-4bc6-ac54-cb174e8dc7f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_layout
+    - paragraphs.paragraphs_type.text_box
+_core:
+  default_config_hash: gm9ps2rrnrGgIEXSTlSiwgG1DDwMoQkyvcb1_hX6CzE
+id: paragraph.text_box.parade_layout
+field_name: parade_layout
+entity_type: paragraph
+bundle: text_box
+label: Layout
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

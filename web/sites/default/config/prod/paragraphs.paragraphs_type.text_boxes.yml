@@ -1,6 +1,9 @@
-uuid: b35d1421-1809-421c-a52e-7764caba4f01
+uuid: 4e4a35c7-d55b-48ad-976a-500a407187ff
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: DySqxBuJnwU_6TlqwXiEVsWnUqmUlf2Rum8L8hG7UTo
 id: text_boxes
 label: 'Text boxes'
+behavior_plugins: {  }

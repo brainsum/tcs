@@ -1,0 +1,23 @@
+uuid: f39dbc7e-1a9c-4c9d-a643-156c0d0f62d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_text
+    - paragraphs.paragraphs_type.simple
+  module:
+    - text
+_core:
+  default_config_hash: cTkQvEyOE7ikb0_0mZ-kRJ4Uac3FdxeUlkGRXBddvvo
+id: paragraph.simple.parade_text
+field_name: parade_text
+entity_type: paragraph
+bundle: simple
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

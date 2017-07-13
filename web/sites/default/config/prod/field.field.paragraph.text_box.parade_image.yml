@@ -1,0 +1,40 @@
+uuid: b04ba6ce-1964-4149-91dd-55da5604f45c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_image
+    - paragraphs.paragraphs_type.text_box
+  module:
+    - image
+_core:
+  default_config_hash: MhJb-19C2sPO-EOEzxBdacjkID8VSGgrlL0sorTGYLc
+id: paragraph.text_box.parade_image
+field_name: parade_image
+entity_type: paragraph
+bundle: text_box
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'image/box/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

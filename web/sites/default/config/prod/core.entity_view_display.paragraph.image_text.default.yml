@@ -1,63 +1,68 @@
-uuid: 56d92348-8fe2-4bc8-8bb2-4dbd7ca15c45
+uuid: e87ce3c4-26f8-45de-b408-7c1bc6cd9285
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.image_text.field_anchor
-    - field.field.paragraph.image_text.field_call_to_action
-    - field.field.paragraph.image_text.field_color_scheme
-    - field.field.paragraph.image_text.field_image
-    - field.field.paragraph.image_text.field_image_text_layout
-    - field.field.paragraph.image_text.field_text
-    - field.field.paragraph.image_text.field_title
-    - image.style.parade_text_and_image
+    - field.field.paragraph.image_text.parade_anchor
+    - field.field.paragraph.image_text.parade_call_to_action
+    - field.field.paragraph.image_text.parade_color_scheme
+    - field.field.paragraph.image_text.parade_image
+    - field.field.paragraph.image_text.parade_layout
+    - field.field.paragraph.image_text.parade_text
+    - field.field.paragraph.image_text.parade_title
+    - field.field.paragraph.image_text.parade_view_mode
     - paragraphs.paragraphs_type.image_text
   module:
     - image
-    - parade
+    - link
     - text
 _core:
-  default_config_hash: AtqI7gAU0cJR1kM7IDEnUqWjEbryjkni-c5EU_BwWtA
+  default_config_hash: FEGRENNV4PV56U8zLZ0tHe9LUcw2Ta3z606pXiXZEY8
 id: paragraph.image_text.default
 targetEntityType: paragraph
 bundle: image_text
 mode: default
 content:
-  field_call_to_action:
-    weight: 5
-    label: hidden
-    settings:
-      trim_length: '80'
-      url_only: false
-      url_plain: false
-      rel: 0
-      target: 0
-    third_party_settings: {  }
-    type: link_call_to_action
-  field_image:
+  parade_call_to_action:
     weight: 3
     label: hidden
     settings:
-      image_style: parade_text_and_image
+      trim_length: 80
+      rel: nofollow
+      url_only: false
+      url_plain: false
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  parade_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
-  field_text:
-    weight: 4
+    region: content
+  parade_text:
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_title:
+    region: content
+  parade_title:
     type: string
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
-  field_anchor: true
-  field_color_scheme: true
-  field_image_text_layout: true
+  parade_anchor: true
+  parade_color_scheme: true
+  parade_layout: true
+  parade_view_mode: true
   uid: true

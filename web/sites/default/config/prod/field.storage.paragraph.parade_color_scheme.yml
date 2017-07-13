@@ -1,0 +1,22 @@
+uuid: c15faa42-785b-4f6e-8cc3-f410ab89d284
+langcode: en
+status: true
+dependencies:
+  module:
+    - classy_paragraphs
+    - paragraphs
+_core:
+  default_config_hash: KrbupiNQjQ-GWzldFq8Bn7gO5Yb7ufo3fFvW9c_jOhw
+id: paragraph.parade_color_scheme
+field_name: parade_color_scheme
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: classy_paragraphs_style
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

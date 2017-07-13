@@ -1,0 +1,23 @@
+uuid: 383c9987-4045-40e5-b85a-e5b1eff9f85c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_text
+    - paragraphs.paragraphs_type.text_box
+  module:
+    - text
+_core:
+  default_config_hash: sfnOpn3zxKWELX3Hg_CG1iKq4p0uoHvxAvZ6AWSA51Y
+id: paragraph.text_box.parade_text
+field_name: parade_text
+entity_type: paragraph
+bundle: text_box
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,9 +1,14 @@
-uuid: 0b339ec8-a651-4b55-bffc-025a6a908b22
+uuid: 08351147-3a55-431e-bca8-9b90b4b72ab1
 langcode: en
 status: true
 dependencies:
   config:
     - paragraphs.paragraphs_type.marketo_form
+  enforced:
+    module:
+      - marketo_form
+_core:
+  default_config_hash: MnCEoBOvFzxIXrw8jvnAGLwnscDAOeJ5TtO76RYNB8Q
 id: paragraph.marketo_form.uid
 field_name: uid
 entity_type: paragraph

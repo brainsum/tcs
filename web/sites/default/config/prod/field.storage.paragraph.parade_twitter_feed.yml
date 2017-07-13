@@ -1,0 +1,21 @@
+uuid: b4715c34-eb8f-4c73-9c1e-a444f4ea8182
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - twitter_feed_parade_type
+_core:
+  default_config_hash: lin6EREfFE1BpKJe3_b60lzVLfWm3AP7kukBfwR8Hc0
+id: paragraph.parade_twitter_feed
+field_name: parade_twitter_feed
+entity_type: paragraph
+type: twitter_feed
+settings: {  }
+module: twitter_feed_parade_type
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
