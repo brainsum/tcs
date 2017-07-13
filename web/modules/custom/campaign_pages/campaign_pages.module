@@ -141,18 +141,6 @@ function campaign_pages_entity_operation_alter(array &$operations, EntityInterfa
 }
 
 /**
- * Implements hook_theme().
- */
-function campaign_pages_theme($existing, $type, $theme, $path) {
-  return [
-    'paragraph__savings_calculator' => [
-      'template' => 'paragraph--savings-calculator',
-      'base hook' => 'paragraph',
-    ],
-  ];
-}
-
-/**
  * Implements hook_leaflet_map_info_alter().
  */
 function campaign_pages_leaflet_map_info_alter(array &$map_info) {

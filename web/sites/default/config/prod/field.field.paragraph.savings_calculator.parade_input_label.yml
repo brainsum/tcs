@@ -1,0 +1,34 @@
+uuid: 2b84d836-2367-4142-bda5-d0f3177547cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_input_label
+    - paragraphs.paragraphs_type.savings_calculator
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: parent_id
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+_core:
+  default_config_hash: wufJDc1tCj-nyDGtfKWLDs7tTSGgxCHe4WHx555EvGY
+id: paragraph.savings_calculator.parade_input_label
+field_name: parade_input_label
+entity_type: paragraph
+bundle: savings_calculator
+label: 'Input label'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

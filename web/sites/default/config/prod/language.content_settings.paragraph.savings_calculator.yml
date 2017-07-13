@@ -1,0 +1,18 @@
+uuid: bce348c5-baef-49f3-8957-af59b073dd44
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.savings_calculator
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+_core:
+  default_config_hash: T5Gq2OgcF7gBjrbBlzselP9Uf58ZEFCnJS-ZtIXKnB4
+id: paragraph.savings_calculator
+target_entity_type_id: paragraph
+target_bundle: savings_calculator
+default_langcode: site_default
+language_alterable: true

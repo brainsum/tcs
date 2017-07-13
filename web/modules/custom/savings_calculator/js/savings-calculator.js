@@ -1,7 +1,7 @@
 (function (exports) {
 'use strict';
 
-(function ($) {
+  (function ($) {
     $.fn.savingsCalculator = function(settings) {
       /**
         * Default result calculation.
@@ -13,7 +13,7 @@
         var result = x * 1.12 * 12 - x * .23 * 12;
         return Math.round(result);
       }
-      
+
       /**
         * Default result formatting. Separate every group of thousands by a comma.
         *
@@ -27,39 +27,39 @@
         for (var i = x.length; i > 0; i-= 3) {
           parts.push(x.substring(i - 3, i));
         }
-            
+
         return parts.reverse().join(',');
       }
-      
+
       settings = $.extend({
         calculate: calculate,
         format: format,
         numberInput: 'input[name="number"]',
         resultContainer: '.result'
       }, settings);
-      
+
       return this.each(function() {
         // Cache DOM elements
         var $el = $(this);
         var $number = $el.find(settings.numberInput);
         var $result = $el.find(settings.resultContainer);
-        
+
         /**
          * Update result on form submission.
          */
         $el.on('submit', function(e) {
           e.preventDefault();
-          
+
           var value = parseInt($number.val()) || 0;
           var result = settings.format(settings.calculate(value));
-          
+
           $result.text(result);
         });
       });
     };
 
     $('form.savings-calculator').savingsCalculator();
-})(jQuery);
+  })(jQuery);
 
 }((this.LaravelElixirBundle = this.LaravelElixirBundle || {})));
 

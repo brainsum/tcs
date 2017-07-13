@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.savings_calculator.parade_anchor
+    - field.field.paragraph.savings_calculator.parade_input_label
+    - field.field.paragraph.savings_calculator.parade_result_label
+    - field.field.paragraph.savings_calculator.parade_title
+    - paragraphs.paragraphs_type.savings_calculator
+  module:
+    - savings_calculator
+    - maxlength
+id: paragraph.savings_calculator.default
+targetEntityType: paragraph
+bundle: savings_calculator
+mode: default
+content:
+  parade_anchor:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  parade_input_label:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: 'Please insert the amount of payslips delivered monthly'
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
+  parade_result_label:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: 'Annual Savings with E-Salary'
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
+  parade_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: 'Annual savings calculator'
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  translation: true
+  uid: true

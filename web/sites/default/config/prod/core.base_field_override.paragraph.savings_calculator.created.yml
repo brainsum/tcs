@@ -1,0 +1,20 @@
+uuid: c8c9d5b6-359d-439d-93f8-3df7de4a210e
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.savings_calculator
+_core:
+  default_config_hash: Pi2ZPg4l9jNNhq2gNRZvtTmJZNco4cGVQfe_4gLL9iE
+id: paragraph.savings_calculator.created
+field_name: created
+entity_type: paragraph
+bundle: savings_calculator
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

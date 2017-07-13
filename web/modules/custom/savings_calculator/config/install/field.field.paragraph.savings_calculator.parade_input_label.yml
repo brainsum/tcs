@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_input_label
+    - paragraphs.paragraphs_type.savings_calculator
+  module:
+    - savings_calculator
+third_party_settings: {  }
+id: paragraph.savings_calculator.parade_input_label
+field_name: parade_input_label
+entity_type: paragraph
+bundle: savings_calculator
+label: 'Input label'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

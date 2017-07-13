@@ -1,0 +1,22 @@
+uuid: 51aae0d5-61e5-46bb-a295-213089ddda77
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.savings_calculator
+_core:
+  default_config_hash: G16xOkWfCPjEK7KCsguOiIU4PLrwDNhCNOkTVywVgN0
+id: paragraph.savings_calculator.uid
+field_name: uid
+entity_type: paragraph
+bundle: savings_calculator
+label: 'Authored by'
+description: 'The user ID of the paragraphs author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\paragraphs\Entity\Paragraph::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

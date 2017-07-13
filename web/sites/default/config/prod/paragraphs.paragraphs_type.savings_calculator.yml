@@ -1,0 +1,9 @@
+uuid: f668925e-8012-4425-822d-6b3f4391e16f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EJePecM4CfXznVZmml9QOxESYa4-jyLQ0gF45rfDYUY
+id: savings_calculator
+label: 'Savings calculator'
+behavior_plugins: {  }

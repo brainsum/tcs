@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_result_label
+    - paragraphs.paragraphs_type.savings_calculator
+  module:
+    - savings_calculator
+third_party_settings: {  }
+id: paragraph.savings_calculator.parade_result_label
+field_name: parade_result_label
+entity_type: paragraph
+bundle: savings_calculator
+label: 'Result label'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

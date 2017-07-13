@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.marketo_form
     - paragraphs.paragraphs_type.marketo_poll
     - paragraphs.paragraphs_type.parallax
+    - paragraphs.paragraphs_type.savings_calculator
     - paragraphs.paragraphs_type.simple
     - paragraphs.paragraphs_type.social_links
     - paragraphs.paragraphs_type.text_box
@@ -46,6 +47,7 @@ settings:
       marketo_poll: marketo_poll
       social_links: social_links
       chart_box: chart_box
+      savings_calculator: savings_calculator
       twitter_feed: twitter_feed
     target_bundles_drag_drop:
       header:
@@ -84,6 +86,9 @@ settings:
       chart_box:
         enabled: true
         weight: 14
+      savings_calculator:
+        enabled: true
+        weight: 23
       twitter_feed:
         enabled: true
         weight: 26

@@ -1,0 +1,9 @@
+name: Savings calculator
+type: module
+description: Savings calculator paragraph type
+core: 8.x
+package: Custom
+
+dependencies:
+  - parade
+  - campaign_pages

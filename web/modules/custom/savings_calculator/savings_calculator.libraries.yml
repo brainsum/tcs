@@ -1,0 +1,7 @@
+# Savings calculator
+savings-calculator:
+  version: VERSION
+  js:
+    js/savings-calculator.js: {}
+  dependencies:
+    - core/jquery

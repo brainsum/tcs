@@ -117,14 +117,6 @@ tieto_admin.drupal.dialog:
     theme:
       css/dialog.css: {}
 
-# Savings calculator
-savings-calculator:
-  version: VERSION
-  js:
-    js/savings-calculator.js: {}
-  dependencies:
-    - core/jquery
-
 flying_cta:
   js:
     js/TCS-157.js: {}

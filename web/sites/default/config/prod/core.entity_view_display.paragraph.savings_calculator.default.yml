@@ -1,0 +1,42 @@
+uuid: 4450ae63-45ed-4d85-8f22-a94d8ef76186
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.savings_calculator.parade_anchor
+    - field.field.paragraph.savings_calculator.parade_input_label
+    - field.field.paragraph.savings_calculator.parade_result_label
+    - field.field.paragraph.savings_calculator.parade_title
+    - paragraphs.paragraphs_type.savings_calculator
+_core:
+  default_config_hash: ashwuUAFen5oUXcpInspbO_tevSWQ6yhMPxN64bUonA
+id: paragraph.savings_calculator.default
+targetEntityType: paragraph
+bundle: savings_calculator
+mode: default
+content:
+  parade_input_label:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  parade_result_label:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  parade_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  parade_anchor: true
+  uid: true

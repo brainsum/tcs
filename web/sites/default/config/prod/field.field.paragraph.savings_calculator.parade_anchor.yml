@@ -1,0 +1,21 @@
+uuid: 8d15350d-b933-42ea-a6e1-7356f26d4486
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_anchor
+    - paragraphs.paragraphs_type.savings_calculator
+_core:
+  default_config_hash: BLcsE6m9b9FP8Oy2xC_xpVmMdV6d7Rd1ByUEg4G3BM0
+id: paragraph.savings_calculator.parade_anchor
+field_name: parade_anchor
+entity_type: paragraph
+bundle: savings_calculator
+label: Anchor
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

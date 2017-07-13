@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Savings Calculator module file.
+ */
+
+// @todo: Move CSS to this module as well.
+
+/**
+ * Implements hook_theme().
+ */
+function savings_calculator_theme() {
+  return [
+    'paragraph__savings_calculator' => [
+      'template' => 'paragraph--savings-calculator',
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function savings_calculator_preprocess_paragraph__savings_calculator(&$variables) {
+  if ('preview' !== $variables['view_mode']) {
+    $variables['#attached']['library'][] = 'savings_calculator/savings-calculator';
+  }
+}
