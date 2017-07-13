@@ -13,11 +13,10 @@ dependencies:
     - node.type.campaign
   module:
     - content_moderation
-    - entity_reference_revisions
     - file
     - inline_entity_form
-    - link
     - metatag
+    - parade
     - path
 id: node.campaign.default
 targetEntityType: node
@@ -36,25 +35,28 @@ content:
     third_party_settings: {  }
     type: file_generic
   field_menu:
-    weight: 26
+    weight: 3
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      placeholder_url: 'Anchor or URL'
+      placeholder_title: 'Link text'
     third_party_settings: {  }
-    type: link_default
+    type: link_with_selected_attribute
   field_meta_tags:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
   field_paragraphs:
-    weight: 27
+    weight: 4
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      title: Section
+      title_plural: Sections
+      edit_mode: preview
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
     third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
+    type: entity_reference_paragraphs_preview
   langcode:
     type: language_select
     weight: 1
