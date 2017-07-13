@@ -28,7 +28,9 @@ label: 'Result label'
 description: ''
 required: true
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: 'Annual Savings with E-Salary'
 default_value_callback: ''
 settings: {  }
 field_type: string

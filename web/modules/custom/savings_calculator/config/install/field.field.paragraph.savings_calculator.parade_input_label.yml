@@ -7,6 +7,8 @@ dependencies:
   module:
     - savings_calculator
 third_party_settings: {  }
+_core:
+  default_config_hash: wufJDc1tCj-nyDGtfKWLDs7tTSGgxCHe4WHx555EvGY
 id: paragraph.savings_calculator.parade_input_label
 field_name: parade_input_label
 entity_type: paragraph
@@ -15,7 +17,9 @@ label: 'Input label'
 description: ''
 required: true
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: 'Please insert the amount of payslips delivered monthly'
 default_value_callback: ''
 settings: {  }
 field_type: string

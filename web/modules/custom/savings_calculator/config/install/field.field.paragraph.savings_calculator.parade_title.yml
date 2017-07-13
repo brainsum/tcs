@@ -7,6 +7,8 @@ dependencies:
   module:
     - savings_calculator
 third_party_settings: {  }
+_core:
+  default_config_hash: roofLSH0mYCO_wF6X3_v9HsJSpOcnZmAAyBg9LSFiwI
 id: paragraph.savings_calculator.parade_title
 field_name: parade_title
 entity_type: paragraph
@@ -15,7 +17,9 @@ label: Title
 description: ''
 required: false
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: 'Annual savings calculator'
 default_value_callback: ''
 settings: {  }
 field_type: string

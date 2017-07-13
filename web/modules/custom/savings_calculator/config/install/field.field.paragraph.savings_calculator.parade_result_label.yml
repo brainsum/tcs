@@ -7,6 +7,8 @@ dependencies:
   module:
     - savings_calculator
 third_party_settings: {  }
+_core:
+  default_config_hash: mwlaBvt97f3St-qrtL5icK4fe6svhfxb9rWFlvd4QYo
 id: paragraph.savings_calculator.parade_result_label
 field_name: parade_result_label
 entity_type: paragraph
@@ -15,7 +17,9 @@ label: 'Result label'
 description: ''
 required: true
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: 'Annual Savings with E-Salary'
 default_value_callback: ''
 settings: {  }
 field_type: string
