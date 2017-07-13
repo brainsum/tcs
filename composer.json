@@ -37,7 +37,6 @@
         "cweagans/composer-patches": "~1.0",
         "drupal/core": "~8.2",
         "drush/drush": "~8.0",
-        "wikimedia/composer-merge-plugin": "~1.3",
         "aws/aws-sdk-php": "~3.0",
         "drupal/parade": "1.x-dev",
         "drupal/cloudfront_purger": "1.x-dev",
