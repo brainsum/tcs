@@ -1,0 +1,74 @@
+uuid: 191e5ed6-9d9d-4ec1-b25a-a5e04f369228
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_paragraphs
+    - paragraphs.paragraphs_type.chart_box
+    - paragraphs.paragraphs_type.chart_boxes
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 39_a5cQ2meGute6L7uW_uplgry461ZT1KE_6JDmV0v8
+id: paragraph.chart_boxes.parade_paragraphs
+field_name: parade_paragraphs
+entity_type: paragraph
+bundle: chart_boxes
+label: Boxes
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      chart_box: chart_box
+    target_bundles_drag_drop:
+      chart_boxes:
+        weight: 16
+        enabled: false
+      chart_box:
+        enabled: true
+        weight: 17
+      header:
+        weight: 18
+        enabled: false
+      image_text:
+        weight: 19
+        enabled: false
+      images:
+        weight: 20
+        enabled: false
+      locations:
+        weight: 21
+        enabled: false
+      marketo_form:
+        weight: 22
+        enabled: false
+      marketo_poll:
+        weight: 23
+        enabled: false
+      parallax:
+        weight: 24
+        enabled: false
+      savings_calculator:
+        weight: 25
+        enabled: false
+      simple:
+        weight: 26
+        enabled: false
+      social_links:
+        weight: 27
+        enabled: false
+      text_box:
+        weight: 28
+        enabled: false
+      text_boxes:
+        weight: 29
+        enabled: false
+      twitter_feed:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

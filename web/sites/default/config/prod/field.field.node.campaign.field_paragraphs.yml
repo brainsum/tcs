@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.campaign
+    - paragraphs.paragraphs_type.chart_boxes
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.image_text
     - paragraphs.paragraphs_type.images
@@ -43,49 +44,53 @@ settings:
       locations: locations
       marketo_poll: marketo_poll
       social_links: social_links
+      chart_boxes: chart_boxes
       savings_calculator: savings_calculator
       twitter_feed: twitter_feed
     target_bundles_drag_drop:
       header:
         enabled: true
-        weight: -27
+        weight: -31
       image_text:
         enabled: true
-        weight: -27
+        weight: -30
       simple:
         enabled: true
-        weight: -27
+        weight: -29
       text_box:
-        weight: -26
+        weight: -28
         enabled: false
       text_boxes:
         enabled: true
-        weight: -25
+        weight: -27
       marketo_form:
         enabled: true
-        weight: -24
+        weight: -26
       images:
         enabled: true
-        weight: -23
+        weight: -25
       parallax:
         enabled: true
-        weight: -20
+        weight: -24
       locations:
         enabled: true
-        weight: -19
+        weight: -23
       marketo_poll:
         enabled: true
-        weight: -18
+        weight: -22
       social_links:
         enabled: true
-        weight: -17
+        weight: -21
       chart_box:
-        weight: 14
+        weight: -20
         enabled: false
+      chart_boxes:
+        enabled: true
+        weight: -19
       savings_calculator:
         enabled: true
-        weight: 23
+        weight: -18
       twitter_feed:
         enabled: true
-        weight: 26
+        weight: -17
 field_type: entity_reference_revisions

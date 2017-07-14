@@ -54,7 +54,7 @@ function chart_boxes_preprocess_paragraph__chart_boxes(&$variables) {
 /**
  * Implements hook_preprocess_paragraph().
  */
-function parade_preprocess_paragraph(&$variables) {
+function chart_boxes_preprocess_paragraph(&$variables) {
   /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = &$variables['paragraph'];
 

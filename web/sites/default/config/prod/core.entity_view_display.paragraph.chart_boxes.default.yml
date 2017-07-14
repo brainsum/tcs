@@ -1,0 +1,51 @@
+uuid: c485bd9e-b3b5-4c29-861d-4778f55c5553
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.chart_boxes.parade_anchor
+    - field.field.paragraph.chart_boxes.parade_boxes_per_row
+    - field.field.paragraph.chart_boxes.parade_color_scheme
+    - field.field.paragraph.chart_boxes.parade_layout
+    - field.field.paragraph.chart_boxes.parade_paragraphs
+    - field.field.paragraph.chart_boxes.parade_text
+    - field.field.paragraph.chart_boxes.parade_title
+    - field.field.paragraph.chart_boxes.parade_view_mode
+    - paragraphs.paragraphs_type.chart_boxes
+  module:
+    - entity_reference_revisions
+    - text
+_core:
+  default_config_hash: 3J4tgtxri4hi3TfxuwIj8QG0TQCfK6C1IUN9uPRL-qI
+id: paragraph.chart_boxes.default
+targetEntityType: paragraph
+bundle: chart_boxes
+mode: default
+content:
+  parade_paragraphs:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+  parade_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  parade_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  parade_anchor: true
+  parade_boxes_per_row: true
+  parade_color_scheme: true
+  parade_layout: true
+  parade_view_mode: true

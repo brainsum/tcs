@@ -1,0 +1,25 @@
+uuid: 2537258f-beaf-49f5-855d-4f7ffa7a427c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_boxes_per_row
+    - paragraphs.paragraphs_type.chart_boxes
+_core:
+  default_config_hash: gdUP_z3kEraUZXt-h5YTKRF4dxDfTtIVRJ3YaRvysGU
+id: paragraph.chart_boxes.parade_boxes_per_row
+field_name: parade_boxes_per_row
+entity_type: paragraph
+bundle: chart_boxes
+label: 'Boxes per row'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: 5
+  prefix: ''
+  suffix: ''
+field_type: integer

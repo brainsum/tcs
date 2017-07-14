@@ -1,0 +1,25 @@
+uuid: c906b589-789f-4fe2-93ce-b1c1c3426edc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_color_scheme
+    - paragraphs.paragraphs_type.chart_boxes
+_core:
+  default_config_hash: YBs3E3Ubp63NVC0cWwWakxRUPBf9gMamSnoZ8MR7BT4
+id: paragraph.chart_boxes.parade_color_scheme
+field_name: parade_color_scheme
+entity_type: paragraph
+bundle: chart_boxes
+label: 'Color scheme'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
