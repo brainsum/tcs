@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.campaign
-    - paragraphs.paragraphs_type.chart_box
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.image_text
     - paragraphs.paragraphs_type.images
@@ -16,7 +15,6 @@ dependencies:
     - paragraphs.paragraphs_type.savings_calculator
     - paragraphs.paragraphs_type.simple
     - paragraphs.paragraphs_type.social_links
-    - paragraphs.paragraphs_type.text_box
     - paragraphs.paragraphs_type.text_boxes
     - paragraphs.paragraphs_type.twitter_feed
   module:
@@ -38,7 +36,6 @@ settings:
       header: header
       image_text: image_text
       simple: simple
-      text_box: text_box
       text_boxes: text_boxes
       marketo_form: marketo_form
       images: images
@@ -46,7 +43,6 @@ settings:
       locations: locations
       marketo_poll: marketo_poll
       social_links: social_links
-      chart_box: chart_box
       savings_calculator: savings_calculator
       twitter_feed: twitter_feed
     target_bundles_drag_drop:
@@ -60,8 +56,8 @@ settings:
         enabled: true
         weight: -27
       text_box:
-        enabled: true
         weight: -26
+        enabled: false
       text_boxes:
         enabled: true
         weight: -25
@@ -84,8 +80,8 @@ settings:
         enabled: true
         weight: -17
       chart_box:
-        enabled: true
         weight: 14
+        enabled: false
       savings_calculator:
         enabled: true
         weight: 23
