@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_anchor
+    - paragraphs.paragraphs_type.chart_boxes
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: parent_id
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: paragraph.chart_boxes.parade_anchor
+field_name: parade_anchor
+entity_type: paragraph
+bundle: chart_boxes
+label: Anchor
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

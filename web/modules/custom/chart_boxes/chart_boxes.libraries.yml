@@ -1,0 +1,7 @@
+paragraphs.chart_boxes:
+  version: VERSION
+  css:
+    component:
+      css/paragraphs.chart-boxes.css: {}
+  dependencies:
+    - parade/paragraphs

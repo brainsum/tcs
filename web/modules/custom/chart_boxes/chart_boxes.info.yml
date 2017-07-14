@@ -1,0 +1,8 @@
+name: Chart boxes
+type: module
+description: Chart boxes paragraph type
+core: 8.x
+package: Custom
+
+dependencies:
+  - parade

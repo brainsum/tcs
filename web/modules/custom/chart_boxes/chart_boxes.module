@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Chart boxes module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function chart_boxes_theme() {
+  return [
+    'paragraph__chart_box' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__chart_boxes' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function chart_boxes_preprocess_paragraph__chart_box(&$variables) {
+  /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = &$variables['paragraph'];
+  /** @var Drupal\paragraphs\Entity\Paragraph $parent */
+  $parent = $paragraph->getParentEntity();
+
+  // Pass the number of Columns field value.
+  if (method_exists($parent, 'hasField') && $parent->hasField('parade_boxes_per_row') && ($columns = $parent->get('parade_boxes_per_row')->value)) {
+    _parade_add_template_variable($variables, [
+      'columns' => $columns,
+    ]);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function chart_boxes_preprocess_paragraph__chart_boxes(&$variables) {
+  /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = &$variables['paragraph'];
+
+  // Pass the number of Columns field value.
+  if ($columns = $paragraph->get('parade_boxes_per_row')->value) {
+    _parade_add_template_variable($variables, [
+      'columns' => $columns,
+    ]);
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function parade_preprocess_paragraph(&$variables) {
+  /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = &$variables['paragraph'];
+
+  if (!method_exists($paragraph, 'getType')) {
+    return;
+  }
+  if ('chart_boxes' !== $paragraph->getType()) {
+    return;
+  }
+
+  // Attach libraries for each paragraph type.
+  $variables['#attached']['library'][] = 'chart_boxes/paragraphs.' . $paragraph->getType();
+}

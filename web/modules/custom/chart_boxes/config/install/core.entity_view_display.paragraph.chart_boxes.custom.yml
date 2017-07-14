@@ -1,0 +1,80 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.custom
+    - field.field.paragraph.chart_boxes.parade_anchor
+    - field.field.paragraph.chart_boxes.parade_boxes_per_row
+    - field.field.paragraph.chart_boxes.parade_color_scheme
+    - field.field.paragraph.chart_boxes.parade_layout
+    - field.field.paragraph.chart_boxes.parade_paragraphs
+    - field.field.paragraph.chart_boxes.parade_text
+    - field.field.paragraph.chart_boxes.parade_title
+    - field.field.paragraph.chart_boxes.parade_view_mode
+    - paragraphs.paragraphs_type.chart_boxes
+  module:
+    - entity_reference_revisions
+    - text
+    - view_mode_selector
+id: paragraph.chart_boxes.custom
+targetEntityType: paragraph
+bundle: chart_boxes
+mode: custom
+content:
+  parade_anchor:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  parade_boxes_per_row:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  parade_color_scheme:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  parade_layout:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  parade_paragraphs:
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+  parade_text:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  parade_title:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  parade_view_mode:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: view_mode_selector
+hidden: {  }
