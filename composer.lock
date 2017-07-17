@@ -2926,7 +2926,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "8cdd4506679b5e2c94cfa3d6a30ea46f28221d99"
+                "reference": "2330fbf86a0064e1284e5b53526976650887cd0a"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2957,8 +2957,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta1+16-dev",
-                    "datestamp": "1500067142"
+                    "version": "8.x-2.0-beta1+17-dev",
+                    "datestamp": "1500115742"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3016,7 +3016,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-07-15 10:48:11"
+            "time": "2017-07-17 12:51:07"
         },
         {
             "name": "drupal/paragraphs",
@@ -7745,7 +7745,8 @@
                 "source": "http://cgit.drupalcode.org/examples",
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
-            }
+            },
+            "time": "2017-07-15 18:04:19"
         },
         {
             "name": "drupal/toolbar_anti_flicker",
