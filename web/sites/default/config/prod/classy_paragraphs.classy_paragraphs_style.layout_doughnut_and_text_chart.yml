@@ -1,0 +1,7 @@
+uuid: 66a433a7-a7fa-41a5-8174-d35f7419303c
+langcode: en
+status: true
+dependencies: {  }
+id: layout_doughnut_and_text_chart
+label: 'Doughnut and text'
+classes: layout--chart-type--doughnut-and-text

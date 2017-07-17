@@ -1,0 +1,7 @@
+uuid: 8c2586d8-84c4-4c03-846f-7869b575765f
+langcode: en
+status: true
+dependencies: {  }
+id: layout_bar_chart
+label: 'Bar chart'
+classes: layout--chart-type--bar
