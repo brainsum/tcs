@@ -2,7 +2,7 @@
 savings-calculator:
   version: VERSION
   css:
-    base:
+    component:
       css/savings-calculator.css: {}
   js:
     js/savings-calculator.js: {}
