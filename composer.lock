@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "daf11f03f67e5aa4e0eceeb35a3d2002",
+    "content-hash": "3e94456329d963089a533c85ee6811e1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2959,6 +2959,9 @@
                 "drupal": {
                     "version": "8.x-2.0-beta1+17-dev",
                     "datestamp": "1500115742"
+                },
+                "patches_applied": {
+                    "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
