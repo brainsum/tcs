@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e94456329d963089a533c85ee6811e1",
+    "content-hash": "2a5c1d5c6f944d2ba2074d590d4e5c88",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1289,6 +1289,9 @@
                 "drupal": {
                     "version": "8.x-1.0-beta1",
                     "datestamp": "1477459140"
+                },
+                "patches_applied": {
+                    "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

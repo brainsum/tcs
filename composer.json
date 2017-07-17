@@ -128,6 +128,9 @@
             },
             "drupal/parade": {
                 "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
+            },
+            "drupal/classy_paragraphs": {
+                "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
             }
         }
     }
