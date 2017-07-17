@@ -1,0 +1,9 @@
+.button {
+  &.parade-button-twitter-feed {
+    .paragraphs-dropbutton-wrapper & {
+      background-image: url('../images/twitter-feed.png');
+      font-size: .85em;
+      line-height: 1.62;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+# Savings calculator
+savings-calculator:
+  version: VERSION
+  css:
+    component:
+      css/twitter_feed_parade_type.css: {}
+#  js:
+#    js/twitter_embed.js: {}
+#  dependencies:
+#    - core/jquery

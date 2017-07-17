@@ -1,6 +1,9 @@
 # Savings calculator
 savings-calculator:
   version: VERSION
+  css:
+    component:
+      css/savings-calculator.css: {}
   js:
     js/savings-calculator.js: {}
   dependencies:
