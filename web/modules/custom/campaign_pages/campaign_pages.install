@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Database\Database;
+use Drupal\Core\Config\FileStorage;
 
 /**
  * Delete non-existing files from database.
@@ -97,5 +98,373 @@ function campaign_pages_update_8005() {
         ->condition('name', $module_name)
         ->execute();
     }
+  }
+}
+
+/**
+ * Enable 'view_mode_selector' module.
+ */
+function campaign_pages_update_8006() {
+  $modules = ['view_mode_selector'];
+  \Drupal::service('module_installer')->install($modules, TRUE);
+}
+
+/**
+ * Upgrade from parade-1.x to parade-2.x.
+ */
+function campaign_pages_update_8007() {
+  // Import new parade fields from sync directory.
+  _campaign_pages_import_parade_fields();
+
+  // Copy old field values to new ones.
+  _campaign_pages_copy_old_field_values_to_parade_fields();
+}
+
+/**
+ * Import new parade fields from sync directory.
+ */
+function _campaign_pages_import_parade_fields() {
+  $projectConfigPath = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
+  $source = new FileStorage($projectConfigPath);
+  $configStorage = \Drupal::service('config.storage');
+
+  $configs = [
+    'field.storage.paragraph.parade_anchor',
+    'field.storage.paragraph.parade_background',
+    'field.storage.paragraph.parade_boxes_per_row',
+    'field.storage.paragraph.parade_call_to_action',
+    'field.storage.paragraph.parade_color_scheme',
+    'field.storage.paragraph.parade_enable_confirm_message',
+    'field.storage.paragraph.parade_enable_linkedin_autofill',
+    'field.storage.paragraph.parade_enable_parallax',
+    'field.storage.paragraph.parade_geofield',
+    'field.storage.paragraph.parade_image',
+    'field.storage.paragraph.parade_images',
+    'field.storage.paragraph.parade_input_label',
+    'field.storage.paragraph.parade_layout',
+    'field.storage.paragraph.parade_lead_text',
+    'field.storage.paragraph.parade_location',
+    'field.storage.paragraph.parade_marketo_form',
+    'field.storage.paragraph.parade_marketo_poll',
+    'field.storage.paragraph.parade_minimum_height',
+    'field.storage.paragraph.parade_paragraphs',
+    'field.storage.paragraph.parade_result_label',
+    'field.storage.paragraph.parade_secondary_title',
+    'field.storage.paragraph.parade_social_link',
+    'field.storage.paragraph.parade_text',
+    'field.storage.paragraph.parade_title',
+    'field.storage.paragraph.parade_twitter_feed',
+    'field.storage.paragraph.parade_value',
+    'field.storage.paragraph.parade_view_mode',
+
+    'field.field.paragraph.header.parade_anchor',
+    'field.field.paragraph.header.parade_background',
+    'field.field.paragraph.header.parade_call_to_action',
+    'field.field.paragraph.header.parade_color_scheme',
+    'field.field.paragraph.header.parade_enable_parallax',
+    'field.field.paragraph.header.parade_lead_text',
+    'field.field.paragraph.header.parade_secondary_title',
+    'field.field.paragraph.header.parade_title',
+    'field.field.paragraph.image_text.parade_anchor',
+    'field.field.paragraph.image_text.parade_call_to_action',
+    'field.field.paragraph.image_text.parade_color_scheme',
+    'field.field.paragraph.image_text.parade_image',
+    'field.field.paragraph.image_text.parade_layout',
+    'field.field.paragraph.image_text.parade_text',
+    'field.field.paragraph.image_text.parade_title',
+    'field.field.paragraph.image_text.parade_view_mode',
+    'field.field.paragraph.images.parade_anchor',
+    'field.field.paragraph.images.parade_color_scheme',
+    'field.field.paragraph.images.parade_images',
+    'field.field.paragraph.images.parade_title',
+    'field.field.paragraph.locations.parade_anchor',
+    'field.field.paragraph.locations.parade_color_scheme',
+    'field.field.paragraph.locations.parade_geofield',
+    'field.field.paragraph.locations.parade_location',
+    'field.field.paragraph.locations.parade_text',
+    'field.field.paragraph.locations.parade_title',
+    'field.field.paragraph.marketo_form.parade_anchor',
+    'field.field.paragraph.marketo_form.parade_color_scheme',
+    'field.field.paragraph.marketo_form.parade_enable_confirm_message',
+    'field.field.paragraph.marketo_form.parade_enable_linkedin_autofill',
+    'field.field.paragraph.marketo_form.parade_image',
+    'field.field.paragraph.marketo_form.parade_layout',
+    'field.field.paragraph.marketo_form.parade_lead_text',
+    'field.field.paragraph.marketo_form.parade_marketo_form',
+    'field.field.paragraph.marketo_form.parade_text',
+    'field.field.paragraph.marketo_form.parade_title',
+    'field.field.paragraph.marketo_poll.parade_anchor',
+    'field.field.paragraph.marketo_poll.parade_color_scheme',
+    'field.field.paragraph.marketo_poll.parade_marketo_poll',
+    'field.field.paragraph.marketo_poll.parade_title',
+    'field.field.paragraph.parallax.parade_anchor',
+    'field.field.paragraph.parallax.parade_background',
+    'field.field.paragraph.parallax.parade_color_scheme',
+    'field.field.paragraph.parallax.parade_enable_parallax',
+    'field.field.paragraph.parallax.parade_image',
+    'field.field.paragraph.parallax.parade_minimum_height',
+    'field.field.paragraph.parallax.parade_text',
+    'field.field.paragraph.savings_calculator.parade_anchor',
+    'field.field.paragraph.savings_calculator.parade_input_label',
+    'field.field.paragraph.savings_calculator.parade_result_label',
+    'field.field.paragraph.savings_calculator.parade_title',
+    'field.field.paragraph.simple.parade_anchor',
+    'field.field.paragraph.simple.parade_color_scheme',
+    'field.field.paragraph.simple.parade_layout',
+    'field.field.paragraph.simple.parade_text',
+    'field.field.paragraph.simple.parade_title',
+    'field.field.paragraph.simple.parade_view_mode',
+    'field.field.paragraph.social_links.parade_color_scheme',
+    'field.field.paragraph.social_links.parade_social_link',
+    'field.field.paragraph.social_links.parade_title',
+    'field.field.paragraph.text_box.parade_color_scheme',
+    'field.field.paragraph.text_box.parade_image',
+    'field.field.paragraph.text_box.parade_layout',
+    'field.field.paragraph.text_box.parade_text',
+    'field.field.paragraph.text_box.parade_title',
+    'field.field.paragraph.text_boxes.parade_anchor',
+    'field.field.paragraph.text_boxes.parade_boxes_per_row',
+    'field.field.paragraph.text_boxes.parade_color_scheme',
+    'field.field.paragraph.text_boxes.parade_layout',
+    'field.field.paragraph.text_boxes.parade_paragraphs',
+    'field.field.paragraph.text_boxes.parade_text',
+    'field.field.paragraph.text_boxes.parade_title',
+    'field.field.paragraph.text_boxes.parade_view_mode',
+    'field.field.paragraph.twitter_feed.parade_anchor',
+    'field.field.paragraph.twitter_feed.parade_text',
+    'field.field.paragraph.twitter_feed.parade_title',
+    'field.field.paragraph.twitter_feed.parade_twitter_feed',
+
+//    'core.entity_form_display.paragraph.header.default',
+//    'core.entity_form_display.paragraph.image_text.default',
+//    'core.entity_form_display.paragraph.images.default',
+//
+//    'core.entity_view_display.paragraph.image_text.default',
+//    'core.entity_view_display.paragraph.image_text.inverse',
+//    'core.entity_view_display.paragraph.header.default',
+//    'core.entity_view_display.paragraph.header.preview',
+//    'core.entity_view_display.paragraph.images.default',
+  ];
+
+  foreach ($configs as $config) {
+    $configStorage->write($config, $source->read($config));
+  }
+}
+
+/**
+ * Copy old field values to new ones.
+ */
+function _campaign_pages_copy_old_field_values_to_parade_fields() {
+  /*
+  // Load all campaign pages entities.
+  $entity_type = 'node';
+  $storage_handler = \Drupal::entityTypeManager()->getStorage($entity_type);
+  $nodes = $storage_handler->loadByProperties(['bundle' => 'campaign']);
+  $fields = [
+    'field_machine_name' => 'parade_machine_name',
+    'field_paragraphs' => 'parade_paragraphs',
+  ];
+  foreach ($nodes as $node) {
+    foreach ($fields as $old_field => $new_field) {
+      if (isset($node->{$old_field})) {
+        $node->{$new_field} = $node->{$old_field};
+      }
+    }
+    $node->save();
+  }*/
+
+  // Load all paragraph entities.
+  $entity_type = 'paragraph';
+  $storage_handler = \Drupal::entityTypeManager()->getStorage($entity_type);
+//  $entities = $storage_handler->loadMultiple();
+  $paragraphs_type = 'simple';
+  $entities = $storage_handler->loadByProperties(['type' => $paragraphs_type]);
+
+  // Old fields with same type as new field.
+  $fields = [
+    'field_anchor' => 'parade_anchor',
+    'field_background' => 'parade_background',
+    'field_boxes_per_row' => 'parade_boxes_per_row',
+    'field_call_to_action' => 'parade_call_to_action',
+    'field_color_scheme' => 'parade_color_scheme',
+    'field_enable_confirm_message' => 'parade_enable_confirm_message',
+    'field_enable_linkedin_autofill' => 'parade_enable_linkedin_autofill',
+    'field_enable_parallax' => 'parade_enable_parallax',
+    'field_geofield' => 'parade_geofield',
+    'field_image' => 'parade_image',
+    'field_images' => 'parade_images',
+    'field_input_label' => 'parade_input_label',
+//    'field_layout' => 'parade_layout',
+    'field_lead_text' => 'parade_lead_text',
+    'field_location' => 'parade_location',
+    'field_marketo_form' => 'parade_marketo_form',
+    'field_marketo_poll' => 'parade_marketo_poll',
+    'field_minimum_height' => 'parade_minimum_height',
+    'field_paragraphs' => 'parade_paragraphs',
+    'field_result_label' => 'parade_result_label',
+    'field_secondary_title' => 'parade_secondary_title',
+    'field_social_link' => 'parade_social_link',
+    'field_text' => 'parade_text',
+    'field_title' => 'parade_title',
+    'field_twitter_feed' => 'parade_twitter_feed',
+    'field_value' => 'parade_value',
+    'field_view_mode' => 'parade_view_mode',
+  ];
+
+  // Old layout fields goes to layout + view mode fields.
+  $layouts = [
+    // @todo - layouts - no css definitions.
+    'marketo_form' => [
+      'field_marketo_form_layout' => [
+        // Clean.
+        0 => [
+          'layout' => 'clean css class NOT EXISTS',
+        ],
+        // Download.
+        1 => [
+          'layout' => 'download css class NOT EXISTS',
+        ],
+      ],
+    ],
+    'simple' => [
+      'field_simple_layout' => [
+        // One column - Clean.
+        0 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_one_column',
+        ],
+        // One column - Light Grey.
+        1 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_one_column',
+        ],
+        // One column - Shaded.
+        2 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_one_column',
+        ],
+        // Two column (Title first) - Inverse.
+        3 => [
+          'view_mode' => 'inverse',
+          'layout' => 'layout_two_column_title_1st',
+        ],
+        // Two column (Content first) - Inverse.
+        4 => [
+          'view_mode' => 'inverse',
+          'layout' => '	layout_two_column_content_1st',
+        ],
+        // Separator (Title only) - Clean.
+        5 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_separator_clean',
+        ],
+      ],
+    ],
+    'image_text' => [
+      'field_image_text_layout' => [
+        // Image first - Clean.
+        0 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_image_1st',
+        ],
+        // Text first - Clean.
+        1 => [
+          'view_mode' => 'inverse',
+          'layout' => 'layout_text_1st',
+        ],
+        // Text first - Enhanced.
+        2 => [
+          'view_mode' => 'inverse',
+          'layout' => 'layout_text_1st_enhanced',
+        ],
+      ],
+    ],
+    // @todo - layouts
+    'text_box' => [
+      'field_text_box_layout' => [
+        // Normal.
+        0 => [
+          'layout' => 'layout_image_1st',
+        ],
+        // Blue.
+        1 => [
+          'layout' => 'layout_image_1st',
+        ],
+        // Red.
+        2 => [
+          'layout' => 'layout_image_1st',
+        ],
+        // Orange.
+        3 => [
+          'layout' => 'layout_image_1st',
+        ],
+        // Green.
+        4 => [
+          'layout' => 'layout_image_1st',
+        ],
+      ],
+    ],
+    // @todo - layouts
+    'text_boxes' => [
+      'field_text_boxes_layout' => [
+        // None.
+        0 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_image_1st',
+        ],
+        // Smallinfo.
+        1 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_image_1st',
+        ],
+        // Lot of infos.
+        2 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_image_1st',
+        ],
+        // Lot of infos - Light Grey.
+        3 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_image_1st',
+        ],
+        // Text with an icon.
+        4 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_image_1st',
+        ],
+        // Rounded image.
+        5 => [
+          'view_mode' => 'custom',
+          'layout' => 'layout_image_1st',
+        ],
+        // Contacts.
+        6 => [
+          'view_mode' => 'default',
+          'layout' => 'layout_image_1st',
+        ],
+      ],
+    ],
+  ];
+
+  foreach ($entities as $entity) {
+    foreach ($fields as $old_field => $new_field) {
+      if (isset($entity->{$old_field})) {
+        $entity->{$new_field} = $entity->{$old_field};
+      }
+    }
+    // Layout field.
+    if (isset($layouts[$entity->getType()])) {
+      foreach ($layouts[$entity->getType()] as $old_layout_field => $layout_mappings) {
+        if (isset($entity->{$old_layout_field})) {
+          $layout_settings = $layout_mappings[$entity->{$old_layout_field}->value];
+          if (isset($entity->parade_view_mode)) {
+            $entity->parade_view_mode->value = $layout_settings['view_mode'];
+          }
+          $entity->parade_layout->target_id = $layout_settings['layout'];
+        }
+      }
+    }
+
+    $entity->save();
   }
 }
