@@ -18,8 +18,26 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:classy_paragraphs_style'
+  handler: classy_paragraphs
   handler_settings:
-    target_bundles: null
-    auto_create: false
+    filter:
+      type: target_bundles
+      target_bundles:
+        layout_bar_chart: layout_bar_chart
+        layout_doughnut_and_text_chart: layout_doughnut_and_text_chart
+        layout_doughnut_chart: layout_doughnut_chart
+        blue: 0
+        blue_light: 0
+        green: 0
+        green_light: 0
+        grey: 0
+        grey_dark: 0
+        grey_light: 0
+        orange: 0
+        orange_light: 0
+        red: 0
+        red_light: 0
+      negate: 0
+    sort:
+      field: _none
 field_type: entity_reference
