@@ -58,13 +58,8 @@ function chart_boxes_preprocess_paragraph(&$variables) {
   /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = &$variables['paragraph'];
 
-  if (!method_exists($paragraph, 'getType')) {
-    return;
+  if (method_exists($paragraph, 'getType') && 'chart_boxes' === $paragraph->getType()) {
+    // Attach libraries for each paragraph type.
+    $variables['#attached']['library'][] = 'chart_boxes/paragraphs.' . $paragraph->getType();
   }
-  if ('chart_boxes' !== $paragraph->getType()) {
-    return;
-  }
-
-  // Attach libraries for each paragraph type.
-  $variables['#attached']['library'][] = 'chart_boxes/paragraphs.' . $paragraph->getType();
 }
