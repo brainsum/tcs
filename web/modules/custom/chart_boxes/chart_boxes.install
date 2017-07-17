@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Chart boxes install file.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function chart_boxes_install() {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $classyStorage = $entityTypeManager->getStorage('classy_paragraphs_style');
+
+  $layouts = [
+    [
+      'label' => 'Doughnut and text',
+      'id' => 'layout_doughnut_and_text_chart',
+      'classes' => 'layout--chart-type--doughnut-and-text',
+    ],
+    [
+      'label' => 'Doughnut chart',
+      'id' => 'layout_doughnut_chart',
+      'classes' => 'layout--chart-type--doughnut',
+    ],
+    [
+      'label' => 'Bar chart',
+      'id' => 'layout_bar_chart',
+      'classes' => 'layout--chart-type--bar',
+    ],
+  ];
+
+  foreach ($layouts as $layout) {
+    $classyStyle = $classyStorage->create($layout);
+    $classyStyle->save();
+  }
+}
+
+/**
+ * Add layouts.
+ */
+function chart_boxes_update_8201() {
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $classyStorage = $entityTypeManager->getStorage('classy_paragraphs_style');
+
+  $layouts = [
+    [
+      'label' => 'Doughnut and text',
+      'id' => 'layout_doughnut_and_text_chart',
+      'classes' => 'layout--chart-type--doughnut-and-text',
+    ],
+    [
+      'label' => 'Doughnut chart',
+      'id' => 'layout_doughnut_chart',
+      'classes' => 'layout--chart-type--doughnut',
+    ],
+    [
+      'label' => 'Bar chart',
+      'id' => 'layout_bar_chart',
+      'classes' => 'layout--chart-type--bar',
+    ],
+  ];
+
+  foreach ($layouts as $layout) {
+    $classyStyle = $classyStorage->create($layout);
+    $classyStyle->save();
+  }
+}
