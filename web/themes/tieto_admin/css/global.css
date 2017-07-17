@@ -4829,12 +4829,6 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   color: #777;
 }
 
-.paragraphs-dropbutton-wrapper .button.parade-button-twitter-feed {
-  background-image: url("../../../modules/custom/twitter_feed_parade_type/images/twitter-feed.png");
-  font-size: .85em;
-  line-height: 1.62;
-}
-
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
  *
