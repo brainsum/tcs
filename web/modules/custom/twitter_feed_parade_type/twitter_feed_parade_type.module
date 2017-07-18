@@ -73,6 +73,6 @@ function twitter_feed_parade_type_page_attachments(array &$attachments) {
  */
 function twitter_feed_parade_type_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (isset($form['field_paragraphs'])) {
-    $form['#attached']['library'][] = 'twitter_feed/buttons';
+    $form['#attached']['library'][] = 'twitter_feed_parade_type/twitter-feed-parade-type';
   }
 }
