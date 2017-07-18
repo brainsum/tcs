@@ -71,7 +71,7 @@ function twitter_feed_parade_type_page_attachments(array &$attachments) {
 /**
  * Implements hook_form_alter().
  */
-function savings_calculator_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function twitter_feed_parade_type_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (isset($form['field_paragraphs'])) {
     $form['#attached']['library'][] = 'twitter_feed/buttons';
   }
