@@ -6,6 +6,7 @@
  */
 
 // @todo: Move CSS to this module as well.
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_theme().
@@ -25,5 +26,14 @@ function savings_calculator_theme() {
 function savings_calculator_preprocess_paragraph__savings_calculator(&$variables) {
   if ('preview' !== $variables['view_mode']) {
     $variables['#attached']['library'][] = 'savings_calculator/savings-calculator';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function savings_calculator_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['field_paragraphs'])) {
+    $form['#attached']['library'][] = 'savings_calculator/buttons';
   }
 }

@@ -4,6 +4,7 @@ savings-calculator:
   css:
     component:
       css/savings-calculator.css: {}
+      css/buttons.css: {}
   js:
     js/savings-calculator.js: {}
   dependencies:
