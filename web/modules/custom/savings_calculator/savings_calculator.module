@@ -34,6 +34,6 @@ function savings_calculator_preprocess_paragraph__savings_calculator(&$variables
  */
 function savings_calculator_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (isset($form['field_paragraphs'])) {
-    $form['#attached']['library'][] = 'savings_calculator/buttons';
+    $form['#attached']['library'][] = 'savings_calculator/savings-calculator';
   }
 }
