@@ -244,6 +244,22 @@ function _campaign_pages_import_parade_fields() {
     'field.field.paragraph.twitter_feed.parade_title',
     'field.field.paragraph.twitter_feed.parade_twitter_feed',
 
+    'classy_paragraphs.classy_paragraphs_style.color_blue',
+    'classy_paragraphs.classy_paragraphs_style.color_clean',
+    'classy_paragraphs.classy_paragraphs_style.color_light_blue',
+    'classy_paragraphs.classy_paragraphs_style.color_light_grey',
+    'classy_paragraphs.classy_paragraphs_style.color_shaded',
+    'classy_paragraphs.classy_paragraphs_style.layout_image_1st',
+    'classy_paragraphs.classy_paragraphs_style.layout_none',
+    'classy_paragraphs.classy_paragraphs_style.layout_one_column',
+    'classy_paragraphs.classy_paragraphs_style.layout_rounded_image',
+    'classy_paragraphs.classy_paragraphs_style.layout_separator_clean',
+    'classy_paragraphs.classy_paragraphs_style.layout_text_1st',
+    'classy_paragraphs.classy_paragraphs_style.layout_text_1st_enhanced',
+    'classy_paragraphs.classy_paragraphs_style.layout_text_with_an_icon',
+    'classy_paragraphs.classy_paragraphs_style.layout_two_column_content_1st',
+    'classy_paragraphs.classy_paragraphs_style.layout_two_column_title_1st',
+
 //    'core.entity_form_display.paragraph.header.default',
 //    'core.entity_form_display.paragraph.image_text.default',
 //    'core.entity_form_display.paragraph.images.default',
@@ -301,7 +317,7 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
     'field_background' => 'parade_background',
     'field_boxes_per_row' => 'parade_boxes_per_row',
     'field_call_to_action' => 'parade_call_to_action',
-    'field_color_scheme' => 'parade_color_scheme',
+//    'field_color_scheme' => 'parade_color_scheme',
     'field_enable_confirm_message' => 'parade_enable_confirm_message',
     'field_enable_linkedin_autofill' => 'parade_enable_linkedin_autofill',
     'field_enable_parallax' => 'parade_enable_parallax',
@@ -461,6 +477,34 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
     ],
   ];
 
+  $colors = [
+    'header' => [
+      'red' => '',
+      'grey_dark' => '',
+      'blue' => 'color_blue',
+    ],
+    'image_text' => [
+      'grey_light' => 'color_light_grey',
+    ],
+    'locations' => [
+      'orange_light' => '',
+    ],
+    'marketo_form' => [
+      'orange' => '',
+    ],
+    'simple' => [
+      'grey' => '',
+    ],
+    'text_box' => [
+      'green_light' => '',
+      'red_light' => '',
+    ],
+    'text_boxes' => [
+      'green' => '',
+      'blue_light' => 'color_light_blue',
+    ],
+  ];
+
   /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
   foreach ($entities as $entity) {
     foreach ($fields as $old_field => $new_field) {
@@ -479,6 +523,14 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
           $entity->parade_layout->target_id = $layout_settings['layout'];
         }
       }
+    }
+    // Color scheme field.
+    if (isset(
+      $colors[$entity->getType()],
+      $entity->field_color_scheme,
+      $colors[$entity->getType()][$entity->field_color_scheme->target_id]
+    )) {
+      $entity->parade_color_scheme->target_id = $colors[$entity->getType()][$entity->field_color_scheme->target_id];
     }
 
     $entity->save();
