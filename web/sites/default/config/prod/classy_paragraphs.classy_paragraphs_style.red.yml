@@ -1,7 +1,0 @@
-uuid: 609bc82c-e4eb-4fc6-be2c-48791a9a90b8
-langcode: en
-status: true
-dependencies: {  }
-id: red
-label: Red
-classes: scheme-red
