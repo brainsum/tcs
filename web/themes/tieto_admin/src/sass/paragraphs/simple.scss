@@ -1,82 +1,81 @@
 .paragraph--type--simple.paragraph--view-mode--default {
 
-  .field--name-field-title {
+  .field--name-parade-title {
     @include campaign-title-center;
   }
 
-	&.scheme-red-light {
-		background: #f0b3ca;
-		color: white;
-	}
-	&.layout--one-column-clean {
-		text-align: center;
-	}
+  &.scheme-red-light {
+    background: #f0b3ca;
+    color: white;
+  }
+  &.layout--one-column-clean {
+    text-align: center;
+  }
 
-	&.layout--one-column-shaded {
-		background-color: $tieto-lightblue;
-	}
+  &.layout--one-column-shaded {
+    background-color: $tieto-lightblue;
+  }
 
-	&.layout--one-column-grey {
-		background-color: $tieto-lightgrey;
-	}
+  &.layout--one-column-grey {
+    background-color: $tieto-lightgrey;
+  }
 
-	&.layout--separator-clean {
-		.field--name-field-title {
-			@include campaign-title-separator;
-		}
-	}
+  &.layout--separator-clean {
+    .field--name-parade-title {
+      @include campaign-title-separator;
+    }
+  }
 
-	// Inverse layout
-	&.layout--two-column-content-1st-inverse,
-	&.layout--two-column-title-1st-inverse {
-		background: $tieto-blue;
+  // Inverse layout
+  &.layout--two-column-content-1st-inverse,
+  &.layout--two-column-title-1st-inverse {
+    background: $tieto-blue;
 
-		.field--name-field-title,
-		.field--name-field-text {
-			color: white;
-			@include md {
-				width: 50%;
-			}
-		}
-
-		.field--name-field-title {
-			@include campaign-headline;
-			color: white;
-		}
-	}
-
-	@include md {
-		&.layout--two-column-content-1st-inverse {
-			.field--name-field-title {
-				float: right;
-				text-align: right;
-        padding-left: 20px;
-			}
-			.field--name-field-text,
-      .field--name-field-call-to-action
-       {
-				float: left;
-        padding-right: 20px;
-			}
-      .field--name-field-call-to-action {
+    .field--name-parade-title,
+    .field--name-parade-text {
+      color: white;
+      @include md {
         width: 50%;
       }
-		}
+    }
 
-		&.layout--two-column-title-1st-inverse {
-			.field--name-field-title {
-				float: left;
-				text-align: left;
-        padding-right: 20px;
-			}
-			.field--name-field-text,
-      .field--name-field-call-to-action {
-				float: right;
+    .field--name-parade-title {
+      @include campaign-headline;
+      color: white;
+    }
+  }
+
+  @include md {
+    &.layout--two-column-content-1st-inverse {
+      .field--name-parade-title {
+        float: right;
+        text-align: right;
         padding-left: 20px;
-			}
-      .field--name-field-call-to-action {
+      }
+      .field--name-parade-text,
+      .field--name-parade-call-to-action {
+        float: left;
+        padding-right: 20px;
+      }
+      .field--name-parade-call-to-action {
         width: 50%;
       }
-		}
-	}
+    }
+
+    &.layout--two-column-title-1st-inverse {
+      .field--name-parade-title {
+        float: left;
+        text-align: left;
+        padding-right: 20px;
+      }
+      .field--name-parade-text,
+      .field--name-parade-call-to-action {
+        float: right;
+        padding-left: 20px;
+      }
+      .field--name-parade-call-to-action {
+        width: 50%;
+      }
+    }
+  }
 }

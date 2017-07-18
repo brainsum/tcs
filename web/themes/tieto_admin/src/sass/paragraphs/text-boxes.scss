@@ -25,13 +25,13 @@
         (-ms-high-contrast: none) {
           display: block;
         }
-        .field--name-field-title {
+        .field--name-parade-title {
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
           //flex: 2 auto;
         }
-        .field--name-field-image {
+        .field--name-parade-image {
           //flex: 1 auto;
         }
         .text-formatted {
@@ -53,11 +53,11 @@
   &.layout--contacts {
     // @fixme this is mess but was quick
     @media screen and (min-width: 768px) {
-      > .paragraph-inner > .field--name-field-title {
+      > .paragraph-inner > .field--name-parade-title {
         width: 33%;
         float: left;
       }
-      .field--name-field-paragraphs {
+      .field--name-parade-paragraphs {
         width: 66%;
         float: left;
       }
@@ -70,7 +70,7 @@
         margin: 0;
         overflow: hidden;
       }
-      .field--name-field-image {
+      .field--name-parade-image {
         float: left;
         // position: relative;
         // left: 0;
@@ -86,12 +86,12 @@
           border-radius: 50%;
         }
       }
-      .field--name-field-title {
+      .field--name-parade-title {
         margin-bottom: 0;
       }
-      .field--name-field-title,
-      .field--name-field-text,
-      .field--name-field-call-to-action {
+      .field--name-parade-title,
+      .field--name-parade-text,
+      .field--name-parade-call-to-action {
         width: 66%;
         float: right;
       }
@@ -104,7 +104,7 @@
     }
 
     // Equal height columns
-    &[class*="columns-"] > .paragraph-inner > .field--name-field-paragraphs {
+    &[class*="columns-"] > .paragraph-inner > .field--name-parade-paragraphs {
       display: flex;
       flex-wrap: wrap;
       // added for TIET-276, instead of "Some padding trickery" section below
@@ -117,7 +117,7 @@
   }
 
   &.layout--rounded_image {
-    .field--name-field-call-to-action {
+    .field--name-parade-call-to-action {
       clear: both;
       text-align: left;
       padding: 20px 15px 0;
@@ -165,7 +165,7 @@
   }
 
   // Text Box item title
-  .field--name-field-title {
+  .field--name-parade-title {
     @include campaign-title-item;
   }
 
@@ -176,7 +176,7 @@
   &.layout--blue .paragraph-inner {
     color: white;
     background-color: $tieto-blue;
-    .field--name-field-title {
+    .field--name-parade-title {
       color: white;
     }
   }
@@ -184,7 +184,7 @@
   &.layout--red .paragraph-inner {
     color: white;
     background-color: $tieto-red;
-    .field--name-field-title {
+    .field--name-parade-title {
       color: white;
     }
   }
@@ -192,7 +192,7 @@
   &.layout--orange .paragraph-inner {
     color: white;
     background-color: $tieto-orange;
-    .field--name-field-title {
+    .field--name-parade-title {
       color: white;
     }
   }
@@ -200,12 +200,12 @@
   &.layout--green .paragraph-inner {
     color: white;
     background: $tieto-green;
-    .field--name-field-title {
+    .field--name-parade-title {
       color: white;
     }
   }
 
-  .field--name-field-call-to-action {
+  .field--name-parade-call-to-action {
     // @fixme after tieto_base merge.
     margin: 0;
     text-align: left;
@@ -217,8 +217,8 @@
 
 .paragraph--type--text-boxes.paragraph--view-mode--default {
   &.layout--rounded_image {
-    .field--name-field-paragraphs {
-      .field--name-field-image {
+    .field--name-parade-paragraphs {
+      .field--name-parade-image {
         width: 34%;
       }
     }
