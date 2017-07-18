@@ -113,11 +113,16 @@ function campaign_pages_update_8006() {
  * Upgrade from parade-1.x to parade-2.x.
  */
 function campaign_pages_update_8007() {
+  field_purge_batch(100);
+
   // Import new parade fields from sync directory.
   _campaign_pages_import_parade_fields();
 
+  field_purge_batch(100);
+
   // Copy old field values to new ones.
   _campaign_pages_copy_old_field_values_to_parade_fields();
+  field_purge_batch(100);
 }
 
 /**
@@ -204,11 +209,13 @@ function _campaign_pages_import_parade_fields() {
     'field.field.paragraph.parallax.parade_image',
     'field.field.paragraph.parallax.parade_minimum_height',
     'field.field.paragraph.parallax.parade_text',
+    'field.field.paragraph.parallax.parade_title',
     'field.field.paragraph.savings_calculator.parade_anchor',
     'field.field.paragraph.savings_calculator.parade_input_label',
     'field.field.paragraph.savings_calculator.parade_result_label',
     'field.field.paragraph.savings_calculator.parade_title',
     'field.field.paragraph.simple.parade_anchor',
+    'field.field.paragraph.simple.parade_call_to_action',
     'field.field.paragraph.simple.parade_color_scheme',
     'field.field.paragraph.simple.parade_layout',
     'field.field.paragraph.simple.parade_text',
@@ -217,6 +224,7 @@ function _campaign_pages_import_parade_fields() {
     'field.field.paragraph.social_links.parade_color_scheme',
     'field.field.paragraph.social_links.parade_social_link',
     'field.field.paragraph.social_links.parade_title',
+    'field.field.paragraph.text_box.parade_call_to_action',
     'field.field.paragraph.text_box.parade_color_scheme',
     'field.field.paragraph.text_box.parade_image',
     'field.field.paragraph.text_box.parade_layout',
@@ -224,6 +232,7 @@ function _campaign_pages_import_parade_fields() {
     'field.field.paragraph.text_box.parade_title',
     'field.field.paragraph.text_boxes.parade_anchor',
     'field.field.paragraph.text_boxes.parade_boxes_per_row',
+    'field.field.paragraph.text_boxes.parade_call_to_action',
     'field.field.paragraph.text_boxes.parade_color_scheme',
     'field.field.paragraph.text_boxes.parade_layout',
     'field.field.paragraph.text_boxes.parade_paragraphs',
@@ -248,6 +257,12 @@ function _campaign_pages_import_parade_fields() {
 
   foreach ($configs as $config) {
     $configStorage->write($config, $source->read($config));
+  }
+
+  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $updateManager */
+  $updateManager = \Drupal::entityDefinitionUpdateManager();
+  if ($updateManager->needsUpdates()) {
+    $updateManager->applyUpdates();
   }
 }
 
@@ -276,9 +291,9 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
   // Load all paragraph entities.
   $entity_type = 'paragraph';
   $storage_handler = \Drupal::entityTypeManager()->getStorage($entity_type);
-//  $entities = $storage_handler->loadMultiple();
-  $paragraphs_type = 'simple';
-  $entities = $storage_handler->loadByProperties(['type' => $paragraphs_type]);
+  $entities = $storage_handler->loadMultiple();
+//  $paragraphs_type = 'simple';
+//  $entities = $storage_handler->loadByProperties(['type' => $paragraphs_type]);
 
   // Old fields with same type as new field.
   $fields = [
@@ -446,10 +461,11 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
     ],
   ];
 
+  /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
   foreach ($entities as $entity) {
     foreach ($fields as $old_field => $new_field) {
-      if (isset($entity->{$old_field})) {
-        $entity->{$new_field} = $entity->{$old_field};
+      if ($entity->hasField($old_field)) {
+        $entity->set($new_field, $entity->get($old_field)->getValue());
       }
     }
     // Layout field.
