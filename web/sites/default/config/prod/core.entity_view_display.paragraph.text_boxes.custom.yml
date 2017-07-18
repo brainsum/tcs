@@ -43,6 +43,7 @@ hidden:
   created: true
   parade_anchor: true
   parade_boxes_per_row: true
+  parade_call_to_action: true
   parade_color_scheme: true
   parade_layout: true
   parade_text: true
