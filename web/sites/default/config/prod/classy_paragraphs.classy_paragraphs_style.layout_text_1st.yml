@@ -1,0 +1,7 @@
+uuid: 6b843955-247f-4c66-9405-44a7a4773462
+langcode: en
+status: true
+dependencies: {  }
+id: layout_text_1st
+label: 'Layout text first'
+classes: layout--text_1st

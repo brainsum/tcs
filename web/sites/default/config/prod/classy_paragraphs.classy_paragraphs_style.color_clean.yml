@@ -1,0 +1,7 @@
+uuid: 0ce6116e-8bd9-4c7a-888f-f1234dd222f4
+langcode: en
+status: true
+dependencies: {  }
+id: color_clean
+label: 'Color clean'
+classes: color-clean

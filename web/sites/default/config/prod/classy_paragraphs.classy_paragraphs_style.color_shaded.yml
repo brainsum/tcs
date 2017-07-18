@@ -1,0 +1,7 @@
+uuid: bf0ad0dd-43f8-483a-ac66-f8be71f5141b
+langcode: en
+status: true
+dependencies: {  }
+id: color_shaded
+label: 'Color shaded'
+classes: color-shaded

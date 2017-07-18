@@ -1,0 +1,7 @@
+uuid: 0143633f-a25e-4b1f-a0cd-51f2c4b93cde
+langcode: en
+status: true
+dependencies: {  }
+id: layout_none
+label: 'Layout none'
+classes: layout--none

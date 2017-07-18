@@ -1,0 +1,7 @@
+uuid: 84924921-fe9c-4dd9-bc99-64b0cedcadbb
+langcode: en
+status: true
+dependencies: {  }
+id: layout_text_with_an_icon
+label: 'Layout text with an icon'
+classes: layout--text_icon

@@ -27,6 +27,7 @@ content:
     region: content
 hidden:
   created: true
+  parade_call_to_action: true
   parade_color_scheme: true
   parade_image: true
   parade_layout: true

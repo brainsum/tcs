@@ -1,0 +1,7 @@
+uuid: e29bdcbe-8b67-4714-af8e-8600d4b52e9f
+langcode: en
+status: true
+dependencies: {  }
+id: layout_rounded_image
+label: 'Layout rounded image'
+classes: layout--rounded_image

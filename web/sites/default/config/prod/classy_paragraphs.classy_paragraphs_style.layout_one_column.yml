@@ -1,0 +1,7 @@
+uuid: 09f4ba17-121f-4438-ae1d-eb921f81e042
+langcode: en
+status: true
+dependencies: {  }
+id: layout_one_column
+label: 'Layout one column'
+classes: layout--one-column

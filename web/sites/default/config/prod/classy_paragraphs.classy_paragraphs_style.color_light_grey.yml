@@ -1,0 +1,7 @@
+uuid: 1575e047-0ab1-48df-95ca-4533d7b74333
+langcode: en
+status: true
+dependencies: {  }
+id: color_light_grey
+label: 'Color light grey'
+classes: color-light-grey

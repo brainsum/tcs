@@ -1,0 +1,7 @@
+uuid: 0a052aa4-6b42-48b9-9f24-48071bfffc73
+langcode: en
+status: true
+dependencies: {  }
+id: color_blue
+label: 'Color blue'
+classes: color-blue

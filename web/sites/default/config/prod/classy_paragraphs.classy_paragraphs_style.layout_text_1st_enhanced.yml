@@ -1,0 +1,7 @@
+uuid: d726383b-6553-40f3-a7ea-1b8aa6a1d8d9
+langcode: en
+status: true
+dependencies: {  }
+id: layout_text_1st_enhanced
+label: 'Layout text first - enhanced'
+classes: layout--text_1st_enhanced

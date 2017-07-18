@@ -1,0 +1,7 @@
+uuid: d1304726-0af2-4fbc-a27b-cdb70d70872a
+langcode: en
+status: true
+dependencies: {  }
+id: layout_image_1st
+label: 'Layout image first'
+classes: layout--image_1st

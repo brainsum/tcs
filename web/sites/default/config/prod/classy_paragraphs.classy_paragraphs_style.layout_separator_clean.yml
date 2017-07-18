@@ -1,0 +1,7 @@
+uuid: 2b00160b-830d-4cdb-a29e-b2244fd07209
+langcode: en
+status: true
+dependencies: {  }
+id: layout_separator_clean
+label: 'Layout separator title only'
+classes: layout--separator-clean

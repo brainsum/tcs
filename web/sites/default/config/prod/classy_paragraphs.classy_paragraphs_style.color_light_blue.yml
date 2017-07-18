@@ -1,0 +1,7 @@
+uuid: fc4a9391-97b0-43e3-8e95-6e9d0509c710
+langcode: en
+status: true
+dependencies: {  }
+id: color_light_blue
+label: 'Color light blue'
+classes: color-light-blue

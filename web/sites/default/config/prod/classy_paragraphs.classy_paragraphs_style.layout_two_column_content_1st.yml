@@ -1,0 +1,7 @@
+uuid: 59afdc2d-c678-4dab-8f83-a7f14686fd83
+langcode: en
+status: true
+dependencies: {  }
+id: layout_two_column_content_1st
+label: 'Layout two column content first'
+classes: layout--two-column-content-1st-inverse
