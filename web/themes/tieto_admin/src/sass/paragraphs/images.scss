@@ -1,10 +1,10 @@
 .paragraph--type--images.paragraph--view-mode--default {
 
-	.field--name-field-title {
+	.field--name-parade-title {
 		@include campaign-title-center;
 	}
 
-	.field--name-field-images {
+	.field--name-parade-images {
 		//text-align: center;
 		text-align: left;
 		.field__item {

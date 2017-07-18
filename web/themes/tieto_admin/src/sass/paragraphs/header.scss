@@ -37,7 +37,7 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
   }
 
   // Title, Secondary title.
-  .field--name-field-title {
+  .field--name-parade-title {
     font-size: 1.8em;
     margin-bottom: .5rem;
     display: inline-block;
@@ -53,8 +53,8 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     }
   }
 
-  .field--name-field-secondary-title,
-  .field--name-field-lead-text {
+  .field--name-parade-secondary-title,
+  .field--name-parade-lead-text {
     font-size: 1em;
     margin-bottom: .5em;
 
@@ -66,13 +66,13 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     }
   }
 
-  .field--name-field-title,
-  .field--name-field-secondary-title {
+  .field--name-parade-title,
+  .field--name-parade-secondary-title {
     line-height: normal;
   }
 
   // Call to action buttons.
-  .field--name-field-call-to-action {
+  .field--name-parade-call-to-action {
     margin: 0;
     text-align: left;
     position: relative;

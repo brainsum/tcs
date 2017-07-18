@@ -1,12 +1,12 @@
 .paragraph--type--image-text.paragraph--view-mode--default {
 
-    .field--name-field-title {
+    .field--name-parade-title {
         @include campaign-headline;
         color: $text-color-strong;
     }
 
     // Call to action buttons.
-    .field--name-field-call-to-action {
+    .field--name-parade-call-to-action {
         clear: both;
         .field__item {
             display: inline-block;
@@ -31,21 +31,21 @@
     &.layout--text_1st {
 
 
-      .field--name-field-image {
+      .field--name-parade-image {
           @include md {
               width: 33.333%;
           }
       }
 
-      .field--name-field-title,
-      .field--name-field-text{
+      .field--name-parade-title,
+      .field--name-parade-text {
           @include md {
               width: 60.666%;
           }
       }
 
 
-      .field--name-field-image {
+      .field--name-parade-image {
           text-align: center;
           margin: 1em 0 0;
           @include md {
@@ -53,12 +53,12 @@
           }
       }
 
-      .field--name-field-text {
+      .field--name-parade-text {
         text-align: justify;
       }
 
       @include md {
-          .field--name-field-title {
+          .field--name-parade-title {
               text-align: left;
           }
       }
@@ -70,17 +70,17 @@
 
         @include md {
             // Title and Text
-            .field--name-field-title,
-            .field--name-field-text {
+            .field--name-parade-title,
+            .field--name-parade-text {
                 float: left;
             }
             // Image
-            .field--name-field-image {
+            .field--name-parade-image {
                 float: right;
                 // padding-left: 1.5em;
                 text-align: left;
             }
-            .field--name-field-call-to-action {
+            .field--name-parade-call-to-action {
                 text-align: left;
                 clear: left;
             }
@@ -92,18 +92,18 @@
 
         @include md {
             // Title and Text
-            .field--name-field-title,
-            .field--name-field-text {
+            .field--name-parade-title,
+            .field--name-parade-text {
                 float: right;
             }
             // Image
-            .field--name-field-image {
+            .field--name-parade-image {
                 float: left;
                 // padding-right: 1.5em;
                 text-align: right;
             }
             // Call to action buttons.
-            .field--name-field-call-to-action {
+            .field--name-parade-call-to-action {
                 text-align: right;
                 clear: right;
             }
@@ -115,13 +115,13 @@
     &.layout--image_1st_enhanced {
 
         // Title
-        .field--name-field-title {
+        .field--name-parade-title {
             @include campaign-title-center;
             width: 100%;
         }
 
         // Text
-        .field--name-field-text {
+        .field--name-parade-text {
             padding: 2em;
             background: $tieto-lightblue;
 
@@ -132,7 +132,7 @@
         }
 
         // Image
-        .field--name-field-image {
+        .field--name-parade-image {
             text-align: center;
             background: $tieto-lightblue;
             padding: 2em 0 0;
@@ -152,7 +152,7 @@
             }
         }
         // Call to action buttons.
-        .field--name-field-call-to-action {
+        .field--name-parade-call-to-action {
             text-align: center;
             width: 40%;
             float: right;

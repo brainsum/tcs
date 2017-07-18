@@ -17,12 +17,12 @@
     background-color: $text-color-strong;
   }
 
-  .field--name-field-title {
+  .field--name-parade-title {
     @include campaign-title;
     margin-bottom: .5em;
   }
 
-  .field--name-field-text {
+  .field--name-parade-text {
     font-size: 1.2em;
   }
 }
