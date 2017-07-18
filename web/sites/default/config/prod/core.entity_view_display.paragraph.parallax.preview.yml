@@ -1,8 +1,9 @@
-uuid: affc4ce1-1ed3-4ad2-bc94-5dfc9c344bcb
+uuid: ab72a15f-b00f-495c-b4ea-06798afcfa18
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.parallax.parade_anchor
     - field.field.paragraph.parallax.parade_background
     - field.field.paragraph.parallax.parade_color_scheme
@@ -12,34 +13,33 @@ dependencies:
     - field.field.paragraph.parallax.parade_text
     - field.field.paragraph.parallax.parade_title
     - paragraphs.paragraphs_type.parallax
-  module:
-    - text
 _core:
   default_config_hash: T9GL0hzLdGpfp8L445u7kN0-GQPFTe12T5RGuuAWZTo
-id: paragraph.parallax.default
+id: paragraph.parallax.preview
 targetEntityType: paragraph
 bundle: parallax
-mode: default
+mode: preview
 content:
-  parade_text:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-  parade_title:
+  parade_anchor:
+    type: string
     weight: 0
-    label: hidden
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  parade_title:
+    weight: 1
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
 hidden:
   created: true
-  parade_anchor: true
   parade_background: true
   parade_color_scheme: true
   parade_enable_parallax: true
   parade_image: true
   parade_minimum_height: true
+  parade_text: true
   uid: true

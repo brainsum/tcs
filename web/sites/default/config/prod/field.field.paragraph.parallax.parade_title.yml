@@ -1,0 +1,32 @@
+uuid: ff78571e-26e7-4166-91ae-450b2d2e5903
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_title
+    - paragraphs.paragraphs_type.parallax
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: parent_id
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: paragraph.parallax.parade_title
+field_name: parade_title
+entity_type: paragraph
+bundle: parallax
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
