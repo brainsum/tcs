@@ -115,14 +115,27 @@ function campaign_pages_update_8006() {
 function campaign_pages_update_8007() {
   field_purge_batch(100);
 
+  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $updateManager */
+  $updateManager = \Drupal::entityDefinitionUpdateManager();
+  if ($updateManager->needsUpdates()) {
+    $updateManager->applyUpdates();
+  }
+
   // Import new parade fields from sync directory.
   _campaign_pages_import_parade_fields();
 
   field_purge_batch(100);
 
+  if ($updateManager->needsUpdates()) {
+    $updateManager->applyUpdates();
+  }
+
   // Copy old field values to new ones.
   _campaign_pages_copy_old_field_values_to_parade_fields();
   field_purge_batch(100);
+  if ($updateManager->needsUpdates()) {
+    $updateManager->applyUpdates();
+  }
 }
 
 /**
@@ -250,7 +263,7 @@ function _campaign_pages_import_parade_fields() {
     'classy_paragraphs.classy_paragraphs_style.color_light_grey',
     'classy_paragraphs.classy_paragraphs_style.color_shaded',
     'classy_paragraphs.classy_paragraphs_style.color_dark_grey',
-    'classy_paragraphs.classy_paragraphs_style.color_dark_green',
+    'classy_paragraphs.classy_paragraphs_style.color_green',
     'classy_paragraphs.classy_paragraphs_style.color_grey',
     'classy_paragraphs.classy_paragraphs_style.color_light_green',
     'classy_paragraphs.classy_paragraphs_style.color_light_orange',
@@ -284,12 +297,6 @@ function _campaign_pages_import_parade_fields() {
 
   foreach ($configs as $config) {
     $configStorage->write($config, $source->read($config));
-  }
-
-  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $updateManager */
-  $updateManager = \Drupal::entityDefinitionUpdateManager();
-  if ($updateManager->needsUpdates()) {
-    $updateManager->applyUpdates();
   }
 }
 
