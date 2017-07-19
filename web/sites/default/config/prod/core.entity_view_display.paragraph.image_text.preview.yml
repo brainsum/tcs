@@ -20,6 +20,13 @@ targetEntityType: paragraph
 bundle: image_text
 mode: preview
 content:
+  parade_anchor:
+    type: string
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   parade_title:
     type: string
     weight: 0
@@ -30,7 +37,6 @@ content:
     region: content
 hidden:
   created: true
-  parade_anchor: true
   parade_call_to_action: true
   parade_color_scheme: true
   parade_image: true
