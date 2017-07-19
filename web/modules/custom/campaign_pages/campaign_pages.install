@@ -522,11 +522,36 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
     ],
   ];
 
+  /** @var \Drupal\file\FileUsage\FileUsageInterface $fileUsage */
+  $fileUsage = \Drupal::service('file.usage');
+  $fileStorage = \Drupal::entityTypeManager()->getStorage('file');
+  $fileFields = [
+    'field_background',
+    'parade_image',
+    'parade_images',
+  ];
   /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
   foreach ($entities as $entity) {
     foreach ($fields as $old_field => $new_field) {
       if ($entity->hasField($old_field)) {
-        $entity->set($new_field, $entity->get($old_field)->getValue());
+        if (in_array($new_field, $fileFields, TRUE)) {
+          foreach ($entity->get($old_field)->getValue() as $value) {
+            /** @var \Drupal\file\Entity\File $file */
+            $file = $fileStorage->load($value['target_id']);
+            if (NULL !== $file) {
+              $file->setPermanent();
+              $file->save();
+              $entity->set($new_field, $file);
+              $fileUsage->add($file, 'file', 'paragraph', (NULL === $file->getOwnerId()) ? 1 : $file->getOwnerId());
+            }
+            else {
+              echo 'File target ID is ' . $value['target_id'] . " ; but file is NULL\n";
+            }
+          }
+        }
+        else {
+          $entity->set($new_field, $entity->get($old_field)->getValue());
+        }
       }
     }
     // Layout field.
