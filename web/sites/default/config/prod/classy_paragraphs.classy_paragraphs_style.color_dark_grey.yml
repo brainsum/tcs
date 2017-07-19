@@ -1,0 +1,7 @@
+uuid: 555118fb-b6d7-41f8-a6c3-8576b541ec18
+langcode: en
+status: true
+dependencies: {  }
+id: color_dark_grey
+label: 'Color dark grey'
+classes: color-dark-grey

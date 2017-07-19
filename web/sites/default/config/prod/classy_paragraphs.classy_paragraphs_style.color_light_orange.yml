@@ -1,0 +1,7 @@
+uuid: c618257f-362c-4236-bc54-9e7a0fcd1e9b
+langcode: en
+status: true
+dependencies: {  }
+id: color_light_orange
+label: 'Color light orange'
+classes: color-light-orange

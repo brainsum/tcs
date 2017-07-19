@@ -1,0 +1,7 @@
+uuid: c2b64dc5-8c81-4a57-8dbc-2aeba0fd607d
+langcode: en
+status: true
+dependencies: {  }
+id: layout_download
+label: 'Layout download'
+classes: layout--download

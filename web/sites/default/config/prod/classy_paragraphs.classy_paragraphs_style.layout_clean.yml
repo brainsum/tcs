@@ -1,0 +1,7 @@
+uuid: ef95238c-59b5-45f9-98dc-d0b8839c38c4
+langcode: en
+status: true
+dependencies: {  }
+id: layout_clean
+label: 'Layout clean'
+classes: layout--clean

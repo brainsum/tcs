@@ -1,0 +1,7 @@
+uuid: ee4cda8f-01d7-4a5f-bd00-564feeab699f
+langcode: en
+status: true
+dependencies: {  }
+id: color_green
+label: 'Color green'
+classes: color-green
