@@ -392,7 +392,7 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
         // Two column (Content first) - Inverse.
         4 => [
           'view_mode' => 'inverse',
-          'layout' => '	layout_two_column_content_1st',
+          'layout' => 'layout_two_column_content_1st',
         ],
         // Separator (Title only) - Clean.
         5 => [
