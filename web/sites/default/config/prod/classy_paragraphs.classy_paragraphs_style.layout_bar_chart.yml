@@ -3,5 +3,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: layout_bar_chart
-label: 'Bar chart'
+label: 'Layout bar chart'
 classes: layout--chart-type--bar
