@@ -3,5 +3,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: layout_doughnut_chart
-label: 'Doughnut chart'
+label: 'Layout doughnut chart'
 classes: layout--chart-type--doughnut
