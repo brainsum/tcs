@@ -4,19 +4,20 @@
     @include campaign-title-center;
   }
 
-  &.scheme-red-light {
-    background: #f0b3ca;
-    color: white;
-  }
-  &.layout--one-column-clean {
+  &.layout-clean {
     text-align: center;
   }
 
-  &.layout--one-column-shaded {
+  &.color-red-light {
+    background: $tieto-lightred;
+    color: white;
+  }
+
+  &.color-shaded {
     background-color: $tieto-lightblue;
   }
 
-  &.layout--one-column-grey {
+  &.color-light-grey {
     background-color: $tieto-lightgrey;
   }
 
