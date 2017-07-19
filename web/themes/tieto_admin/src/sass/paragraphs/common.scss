@@ -136,19 +136,19 @@
 }
 
 .paragraph.paragraph--view-mode--default {
-	@include clearfix;
-	padding: 40px 1em;
-	background-color: #fff;
+  @include clearfix;
+  padding: 40px 1em;
+  background-color: #fff;
 
-	// Some fixes for WYSIWYG fields.
-	.field.text-formatted {
-		.align-right {
-			margin-left: 1.5em;
-		}
-		.align-left {
-			margin-right: 1.5em;
-		}
-	}
+  // Some fixes for WYSIWYG fields.
+  .field.text-formatted {
+    .align-right {
+      margin-left: 1.5em;
+    }
+    .align-left {
+      margin-right: 1.5em;
+    }
+  }
 
   .paragraph-inner {
     max-width: $page-max-width;
@@ -197,9 +197,9 @@
     vertical-align: middle;
     cursor: pointer;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     border: 1px solid transparent;
     padding: 0.25rem 1rem;
     font-size: 1rem;
@@ -450,6 +450,5 @@
     background-color: #e56385;
     border-color: #e56385;
   }
-
 
 }
