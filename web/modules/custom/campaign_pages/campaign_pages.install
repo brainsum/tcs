@@ -344,16 +344,15 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
 
   // Old layout fields goes to layout + view mode fields.
   $layouts = [
-    // @todo - layouts - no css definitions.
     'marketo_form' => [
       'field_marketo_form_layout' => [
         // Clean.
         0 => [
-          'layout' => 'clean css class NOT EXISTS',
+          'layout' => 'layout_clean',
         ],
         // Download.
         1 => [
-          'layout' => 'download css class NOT EXISTS',
+          'layout' => 'layout_download',
         ],
       ],
     ],
@@ -479,28 +478,28 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
 
   $colors = [
     'header' => [
-      'red' => '',
-      'grey_dark' => '',
+      'red' => 'color_red',
+      'grey_dark' => 'color_dark_grey',
       'blue' => 'color_blue',
     ],
     'image_text' => [
       'grey_light' => 'color_light_grey',
     ],
     'locations' => [
-      'orange_light' => '',
+      'orange_light' => 'color_light_orange',
     ],
     'marketo_form' => [
-      'orange' => '',
+      'orange' => 'color_orange',
     ],
     'simple' => [
-      'grey' => '',
+      'grey' => 'color_grey',
     ],
     'text_box' => [
-      'green_light' => '',
-      'red_light' => '',
+      'green_light' => 'color_light_green',
+      'red_light' => 'color_light_red',
     ],
     'text_boxes' => [
-      'green' => '',
+      'green' => 'color_green',
       'blue_light' => 'color_light_blue',
     ],
   ];
