@@ -171,11 +171,11 @@
     @include campaign-title-item;
   }
 
-  &.layout--normal .paragraph-inner {
+  &.color-normal .paragraph-inner {
     background-color: #f8f8f8; // @fixme Replace with variable.
   }
 
-  &.layout--blue .paragraph-inner {
+  &.color-blue .paragraph-inner {
     color: white;
     background-color: $tieto-blue;
     .field--name-parade-title {
@@ -183,7 +183,7 @@
     }
   }
 
-  &.layout--red .paragraph-inner {
+  &.color-red .paragraph-inner {
     color: white;
     background-color: $tieto-red;
     .field--name-parade-title {
@@ -191,7 +191,7 @@
     }
   }
 
-  &.layout--orange .paragraph-inner {
+  &.color-orange .paragraph-inner {
     color: white;
     background-color: $tieto-orange;
     .field--name-parade-title {
@@ -199,7 +199,7 @@
     }
   }
 
-  &.layout--green .paragraph-inner {
+  &.color-green .paragraph-inner {
     color: white;
     background: $tieto-green;
     .field--name-parade-title {
