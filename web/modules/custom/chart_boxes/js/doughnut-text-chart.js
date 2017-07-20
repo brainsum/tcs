@@ -1,20 +1,19 @@
-
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
+var ctx = document.getElementById('textChart').getContext('2d');
+var textChart = new Chart(ctx, {
 	type: 'doughnut',
 	data: {
 		labels: ["January", "February", "March", "April", "May", "June", "July"],
 		datasets: [{
 			label: "some label",
-			backgroundColor: ['#67afe1','#e56385','#6cc04a', '#878787'],
+			backgroundColor: ['#67afe1', 'rgba(103,175,225,.34)'],
 			borderWidth: 0,
-			data: [32, 36, 12]
+			data: [35, 65]
 		}]
 	},
 
 	// Configuration options go here
 	options: {
-		cutoutPercentage: 55,
+		cutoutPercentage: 78,
 		responsive: false,
 		legend: {
 			display: false,

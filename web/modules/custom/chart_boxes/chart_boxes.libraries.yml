@@ -6,13 +6,16 @@ paragraphs.chart_boxes:
       css/paragraphs.chart-boxes.css: {}
   js:
     js/chart.js: {}
-    header: true
   dependencies:
     - core/jquery
     - parade/paragraphs
 
-
-paragraphs.chart_box:
+paragraphs.doughnut_chart:
   version: VERSION
   js:
     js/doughnut-chart.js: {}
+
+paragraphs.doughnut_text_chart:
+  version: VERSION
+  js:
+    js/doughnut-text-chart.js: {}

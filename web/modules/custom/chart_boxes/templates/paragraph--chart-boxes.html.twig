@@ -17,7 +17,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes) }}>
 	<div class="paragraph-inner">
 
-		{# Dougnut chart layout#}
+		{# Doughnut chart layout#}
 		{% if attributes.class[1] == "layout--chart-type--doughnut" %}
 			<div class="doughnut-chart--left">
 				{{ content }}
@@ -27,7 +27,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 			</div>
     {% endif %}
 
-		{# Dougnut & text chart layout #}
+		{# Doughnut & text chart layout #}
     {% if attributes.class[1] == "layout--chart-type--doughnut-and-text" %}
 
         {{ content }}
