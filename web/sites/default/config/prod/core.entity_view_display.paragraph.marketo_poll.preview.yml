@@ -26,6 +26,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  parade_color_scheme:
+    type: entity_reference_label
+    weight: 2
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
   parade_title:
     weight: 0
     label: inline
@@ -35,6 +42,5 @@ content:
     type: string
 hidden:
   created: true
-  parade_color_scheme: true
   parade_marketo_poll: true
   uid: true

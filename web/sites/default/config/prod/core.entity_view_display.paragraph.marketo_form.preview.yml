@@ -27,12 +27,26 @@ mode: preview
 content:
   parade_anchor:
     type: string
-    weight: 2
+    weight: 1
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     region: content
+  parade_color_scheme:
+    type: entity_reference_label
+    weight: 3
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+  parade_layout:
+    type: entity_reference_label
+    weight: 2
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
   parade_title:
     weight: 0
     label: inline
@@ -43,11 +57,9 @@ content:
     region: content
 hidden:
   created: true
-  parade_color_scheme: true
   parade_enable_confirm_message: true
   parade_enable_linkedin_autofill: true
   parade_image: true
-  parade_layout: true
   parade_lead_text: true
   parade_marketo_form: true
   parade_text: true

@@ -27,6 +27,13 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  parade_color_scheme:
+    type: entity_reference_label
+    weight: 2
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
   parade_title:
     weight: 0
     label: inline
@@ -38,7 +45,6 @@ hidden:
   created: true
   parade_background: true
   parade_call_to_action: true
-  parade_color_scheme: true
   parade_enable_parallax: true
   parade_lead_text: true
   parade_secondary_title: true

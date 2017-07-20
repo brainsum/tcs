@@ -15,6 +15,13 @@ targetEntityType: paragraph
 bundle: social_links
 mode: preview
 content:
+  parade_color_scheme:
+    type: entity_reference_label
+    weight: 1
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
   parade_title:
     weight: 0
     label: inline
@@ -24,6 +31,5 @@ content:
     type: string
 hidden:
   created: true
-  parade_color_scheme: true
   parade_social_link: true
   uid: true
