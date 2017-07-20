@@ -137,6 +137,7 @@
 
 .paragraph.paragraph--view-mode--default {
   @include clearfix;
+  padding: 40px 1em;
   background-color: #fff;
 
   // Some fixes for WYSIWYG fields.
