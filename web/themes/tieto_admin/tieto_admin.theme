@@ -257,8 +257,10 @@ function tieto_admin_preprocess_field__paragraph__parade_image__text_box(&$varia
   if (
     method_exists($parent, 'getType') &&
     $parent->getType() === 'text_boxes' &&
-    // @todo: 6 (Contacts) needs to be added.
-    in_array($parent->get('parade_layout')->target_id, ['layout_rounded_image', 6])
+    in_array($parent->get('parade_layout')->target_id, [
+      'layout_rounded_image',
+      'layout_contacts',
+    ], TRUE)
   ) {
     $variables['items'][0]['content']['#image_style'] = 'square_350x350';
   }

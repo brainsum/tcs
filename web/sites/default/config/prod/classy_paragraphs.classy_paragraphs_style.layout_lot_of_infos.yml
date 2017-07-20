@@ -1,0 +1,7 @@
+uuid: 1e97fe50-bff5-4be1-b739-0ede26ff8dd1
+langcode: en
+status: true
+dependencies: {  }
+id: layout_lot_of_infos
+label: 'Layout lot of infos'
+classes: layout--lot_infos

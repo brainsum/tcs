@@ -283,6 +283,9 @@ function _campaign_pages_import_parade_fields() {
     'classy_paragraphs.classy_paragraphs_style.layout_two_column_title_1st',
     'classy_paragraphs.classy_paragraphs_style.layout_clean',
     'classy_paragraphs.classy_paragraphs_style.layout_download',
+    'classy_paragraphs.classy_paragraphs_style.layout_lot_of_infos',
+    'classy_paragraphs.classy_paragraphs_style.layout_smallinfo',
+    'classy_paragraphs.classy_paragraphs_style.layout_contacts',
 
 //    'core.entity_form_display.paragraph.header.default',
 //    'core.entity_form_display.paragraph.image_text.default',
@@ -376,32 +379,29 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
     ],
     'simple' => [
       'field_simple_layout' => [
-        // One column - Clean.
         0 => [
           'view_mode' => 'default',
           'layout' => 'layout_one_column',
+          'color' => 'color_default',
         ],
-        // One column - Light Grey.
         1 => [
           'view_mode' => 'default',
           'layout' => 'layout_one_column',
+          'color' => 'color_light_grey',
         ],
-        // One column - Shaded.
         2 => [
           'view_mode' => 'default',
           'layout' => 'layout_one_column',
+          'color' => 'color_shaded',
         ],
-        // Two column (Title first) - Inverse.
         3 => [
           'view_mode' => 'inverse',
           'layout' => 'layout_two_column_title_1st',
         ],
-        // Two column (Content first) - Inverse.
         4 => [
           'view_mode' => 'inverse',
           'layout' => 'layout_two_column_content_1st',
         ],
-        // Separator (Title only) - Clean.
         5 => [
           'view_mode' => 'default',
           'layout' => 'layout_separator_clean',
@@ -410,85 +410,74 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
     ],
     'image_text' => [
       'field_image_text_layout' => [
-        // Image first - Clean.
         0 => [
           'view_mode' => 'default',
           'layout' => 'layout_image_1st',
         ],
-        // Text first - Clean.
         1 => [
           'view_mode' => 'inverse',
           'layout' => 'layout_text_1st',
         ],
-        // Text first - Enhanced.
         2 => [
           'view_mode' => 'inverse',
           'layout' => 'layout_text_1st_enhanced',
         ],
       ],
     ],
-    // @todo - layouts
     'text_box' => [
       'field_text_box_layout' => [
-        // Normal.
         0 => [
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_none',
+          'color' => 'color_default',
         ],
-        // Blue.
         1 => [
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_none',
+          'color' => 'color_blue',
         ],
-        // Red.
         2 => [
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_none',
+          'color' => 'color_red',
         ],
-        // Orange.
         3 => [
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_none',
+          'color' => 'color_orange',
         ],
-        // Green.
         4 => [
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_none',
+          'color' => 'color_green',
         ],
       ],
     ],
-    // @todo - layouts
     'text_boxes' => [
       'field_text_boxes_layout' => [
-        // None.
         0 => [
           'view_mode' => 'default',
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_none',
         ],
-        // Smallinfo.
         1 => [
           'view_mode' => 'default',
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_smallinfo',
         ],
-        // Lot of infos.
         2 => [
           'view_mode' => 'default',
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_lot_of_infos',
         ],
-        // Lot of infos - Light Grey.
         3 => [
           'view_mode' => 'default',
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_lot_of_infos',
+          'color' => 'color_light_grey',
         ],
-        // Text with an icon.
         4 => [
           'view_mode' => 'default',
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_text_with_an_icon',
         ],
-        // Rounded image.
         5 => [
           'view_mode' => 'custom',
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_rounded_image',
         ],
-        // Contacts.
         6 => [
           'view_mode' => 'default',
-          'layout' => 'layout_image_1st',
+          'layout' => 'layout_contacts',
         ],
       ],
     ],
@@ -562,6 +551,11 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
           $layout_settings = $layout_mappings[$entity->{$old_layout_field}->value];
           if (isset($entity->parade_view_mode)) {
             $entity->parade_view_mode->value = $layout_settings['view_mode'];
+          }
+          // Set colors according to the settings. If it was specifically
+          // Overwritten in field_color_scheme, we set the overwrite later.
+          if (isset($entity->parade_color_scheme, $layout_settings['color'])) {
+            $entity->parade_color_scheme->target_id = $layout_settings['color'];
           }
           $entity->parade_layout->target_id = $layout_settings['layout'];
         }

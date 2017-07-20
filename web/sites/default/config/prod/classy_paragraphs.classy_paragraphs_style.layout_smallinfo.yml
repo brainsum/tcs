@@ -1,0 +1,7 @@
+uuid: 00010bc5-bd73-4e98-b58f-d5b6a23d1cc9
+langcode: en
+status: true
+dependencies: {  }
+id: layout_smallinfo
+label: 'Layout smallinfo'
+classes: layout--smallinfo

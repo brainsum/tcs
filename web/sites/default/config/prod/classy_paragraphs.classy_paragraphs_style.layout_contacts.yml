@@ -1,0 +1,7 @@
+uuid: 3315bc21-5d0b-4fff-9bcd-f084c1fe08fe
+langcode: en
+status: true
+dependencies: {  }
+id: layout_contacts
+label: 'Layout contacts'
+classes: layout--contacts
