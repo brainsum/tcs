@@ -34,6 +34,7 @@ function chart_boxes_preprocess_paragraph__chart_box(&$variables) {
       'columns' => $columns,
     ]);
   }
+
 }
 
 /**
