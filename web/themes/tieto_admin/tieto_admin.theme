@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
 
@@ -40,18 +41,18 @@ function tieto_admin_preprocess_page(&$vars) {
  */
 function tieto_admin_preprocess_menu_local_tasks(&$variables) {
   if (!empty($variables['primary'])) {
-    $variables['primary']['#attached'] = array(
-      'library' => array(
+    $variables['primary']['#attached'] = [
+      'library' => [
         'tieto_admin/drupal.nav-tabs',
-      ),
-    );
+      ],
+    ];
   }
   elseif (!empty($variables['secondary'])) {
-    $variables['secondary']['#attached'] = array(
-      'library' => array(
+    $variables['secondary']['#attached'] = [
+      'library' => [
         'tieto_admin/drupal.nav-tabs',
-      ),
-    );
+      ],
+    ];
   }
 }
 
@@ -69,9 +70,10 @@ function tieto_admin_preprocess_node_add_list(&$variables) {
   if (!empty($variables['content'])) {
     /** @var Drupal\node\NodeTypeInterface $type */
     foreach ($variables['content'] as $type) {
-      $variables['types'][$type->id()]['label'] = $type->label();
+      $typeId = $type->id();
+      $variables['types'][$typeId]['label'] = $type->label();
       // @todo: Drupal::url() is deprecated.
-      $variables['types'][$type->id()]['url'] = Drupal::url('node.add', array('node_type' => $type->id()));
+      $variables['types'][$typeId]['url'] = Url::fromRoute('node.add', ['node_type' => $typeId]);
     }
   }
 }
@@ -84,10 +86,12 @@ function tieto_admin_preprocess_node_add_list(&$variables) {
  */
 function tieto_admin_preprocess_block_content_add_list(&$variables) {
   if (!empty($variables['content'])) {
+    /** @var \Drupal\node\NodeTypeInterface $type */
     foreach ($variables['content'] as $type) {
-      $variables['types'][$type->id()]['label'] = $type->label();
-      $options = array('query' => Drupal::request()->query->all());
-      $variables['types'][$type->id()]['url'] = Drupal::url('block_content.add_form', array('block_content_type' => $type->id()), $options);
+      $typeId = $type->id();
+      $variables['types'][$typeId]['label'] = $type->label();
+      $options = ['query' => Drupal::request()->query->all()];
+      $variables['types'][$typeId]['url'] = Url::fromRoute('block_content.add_form', ['block_content_type' => $typeId], $options);
     }
   }
 }
@@ -99,9 +103,7 @@ function tieto_admin_preprocess_block_content_add_list(&$variables) {
  */
 function tieto_admin_preprocess_block(&$variables) {
   if (isset($variables['title_suffix']['contextual_links'])) {
-    unset($variables['title_suffix']['contextual_links']);
-    unset($variables['elements']['#contextual_links']);
-
+    unset($variables['title_suffix']['contextual_links'], $variables['elements']['#contextual_links']);
     $variables['attributes']['class'] = array_diff($variables['attributes']['class'], ['contextual-region']);
   }
 }
@@ -158,42 +160,42 @@ function tieto_admin_preprocess_maintenance_page(&$variables) {
  * Implements hook_form_alter().
  *
  * Changes vertical tabs to container and adds meta information
- * and attach custom tabledrag library on campaign edit forms
+ * and attach custom tabledrag library on campaign edit forms.
  */
 function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state) {
   /** @var Drupal\node\NodeInterface $node */
   $node = $form_state->getFormObject()->getEntity();
 
-  $form['#theme'] = array('node_edit_form');
+  $form['#theme'] = ['node_edit_form'];
   $form['#attached']['library'][] = 'tieto_admin/node-form';
 
   $form['advanced']['#type'] = 'container';
-  $is_new = !$node->isNew() ? format_date($node->getChangedTime(), 'short') : t('Not saved yet');
-  $form['meta'] = array(
-    '#attributes' => array('class' => array('entity-meta__header')),
+  $is_new = !$node->isNew() ? \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short') : t('Not saved yet');
+  $form['meta'] = [
+    '#attributes' => ['class' => ['entity-meta__header']],
     '#type' => 'container',
     '#group' => 'advanced',
     '#weight' => -100,
-    'published' => array(
+    'published' => [
       '#type' => 'html_tag',
       '#tag' => 'h3',
       '#value' => $node->isPublished() ? t('Published') : t('Not published'),
       '#access' => !$node->isNew(),
-      '#attributes' => array(
+      '#attributes' => [
         'class' => 'entity-meta__title',
-      ),
-    ),
-    'changed' => array(
+      ],
+    ],
+    'changed' => [
       '#type' => 'item',
-      '#wrapper_attributes' => array('class' => array('entity-meta__last-saved', 'container-inline')),
+      '#wrapper_attributes' => ['class' => ['entity-meta__last-saved', 'container-inline']],
       '#markup' => '<h4 class="label inline">' . t('Last saved') . '</h4> ' . $is_new,
-    ),
-    'author' => array(
+    ],
+    'author' => [
       '#type' => 'item',
-      '#wrapper_attributes' => array('class' => array('author', 'container-inline')),
-      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $node->getOwner()->getUsername(),
-    ),
-  );
+      '#wrapper_attributes' => ['class' => ['author', 'container-inline']],
+      '#markup' => '<h4 class="label inline">' . t('Author') . '</h4> ' . $node->getOwner()->getDisplayName(),
+    ],
+  ];
   $form['revision_information']['#type'] = 'container';
   $form['revision_information']['#group'] = 'meta';
 
@@ -217,13 +219,11 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
 /**
  * Implements hook_preprocess_HOOK().
  */
-function tieto_admin_preprocess_field__field_call_to_action(&$variables) {
+function tieto_admin_preprocess_field__parade_call_to_action(&$variables) {
   foreach ($variables['items'] as $key => $link) {
-    if ($variables['element']['#entity_type'] == 'paragraph' && $variables['element']['#bundle'] == 'text_box') {
+    $classes = ['button', 'button--primary'];
+    if ($variables['element']['#entity_type'] === 'paragraph' && $variables['element']['#bundle'] === 'text_box') {
       $classes = ['button', 'button--green'];
-    }
-    else {
-      $classes = ['button', 'button--primary'];
     }
     $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
   }
@@ -248,7 +248,8 @@ function tieto_admin_preprocess_details(&$variables) {
  *
  * Switch link block image style based on the row's block size setting.
  */
-function tieto_admin_preprocess_field__paragraph__field_image__text_box(&$variables) {
+function tieto_admin_preprocess_field__paragraph__parade_image__text_box(&$variables) {
+  // @todo: Refactor needed for the new layout.
   // Get paragraph object field is attached to.
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['element']['#object'];
@@ -257,7 +258,12 @@ function tieto_admin_preprocess_field__paragraph__field_image__text_box(&$variab
   /** @var \Drupal\paragraphs\Entity\Paragraph $parent */
 
   $parent = $paragraph->getParentEntity();
-  if (method_exists($parent, 'getType') && $parent->getType() === 'text_boxes' && in_array($parent->get('field_text_boxes_layout')->value, [5, 6])) {
+  if (
+    method_exists($parent, 'getType') &&
+    $parent->getType() === 'text_boxes' &&
+    // @todo: '' is was 6 (Contacts)
+    in_array($parent->get('parade_layout')->target_id, ['layout_rounded_image', 6])
+  ) {
     $variables['items'][0]['content']['#image_style'] = 'square_350x350';
   }
 }

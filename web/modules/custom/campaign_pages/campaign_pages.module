@@ -220,18 +220,3 @@ function campaign_pages_entity_type_alter(array &$entity_types) {
     $entity_types['scheduled_update']->setListBuilderClass(ScheduledUpdateListBuilder::class);
   }
 }
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function campaign_pages_entity_preprocess_field__parade_call_to_action(&$variables) {
-  foreach ($variables['items'] as $key => $link) {
-    if ($variables['element']['#entity_type'] === 'paragraph' && $variables['element']['#bundle'] === 'text_box') {
-      $classes = ['button', 'button--green'];
-    }
-    else {
-      $classes = ['button', 'button--primary'];
-    }
-    $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
-  }
-}
