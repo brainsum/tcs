@@ -1,0 +1,7 @@
+uuid: 85d4a5d1-b4eb-40a8-b246-f2cfd06329aa
+langcode: en
+status: true
+dependencies: {  }
+id: color_default
+label: 'Color default'
+classes: color-default
