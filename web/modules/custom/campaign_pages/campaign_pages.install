@@ -258,7 +258,7 @@ function _campaign_pages_import_parade_fields() {
     'field.field.paragraph.twitter_feed.parade_twitter_feed',
 
     'classy_paragraphs.classy_paragraphs_style.color_blue',
-    'classy_paragraphs.classy_paragraphs_style.color_clean',
+    'classy_paragraphs.classy_paragraphs_style.color_default',
     'classy_paragraphs.classy_paragraphs_style.color_light_blue',
     'classy_paragraphs.classy_paragraphs_style.color_light_grey',
     'classy_paragraphs.classy_paragraphs_style.color_shaded',
@@ -551,6 +551,7 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
         }
         else {
           $entity->set($new_field, $entity->get($old_field)->getValue());
+          $entity->get($new_field)->setLangcode($entity->get($old_field)->getLangcode());
         }
       }
     }
