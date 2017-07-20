@@ -32,13 +32,10 @@ content:
     third_party_settings: {  }
     type: link_cta
   parade_color_scheme:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 0
     region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   parade_image:
     weight: 3
@@ -50,12 +47,9 @@ content:
     region: content
   parade_layout:
     weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   parade_text:
     weight: 4

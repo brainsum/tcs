@@ -40,12 +40,9 @@ content:
     region: content
   parade_color_scheme:
     weight: 2
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   parade_enable_confirm_message:
     weight: 8
@@ -71,12 +68,9 @@ content:
     region: content
   parade_layout:
     weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   parade_lead_text:
     weight: 5

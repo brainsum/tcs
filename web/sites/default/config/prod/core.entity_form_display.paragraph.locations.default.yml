@@ -30,13 +30,10 @@ content:
     type: string_textfield
     region: content
   parade_color_scheme:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 0
     region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   parade_location:
     weight: 4
