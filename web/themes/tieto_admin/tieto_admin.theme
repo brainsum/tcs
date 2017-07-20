@@ -72,7 +72,6 @@ function tieto_admin_preprocess_node_add_list(&$variables) {
     foreach ($variables['content'] as $type) {
       $typeId = $type->id();
       $variables['types'][$typeId]['label'] = $type->label();
-      // @todo: Drupal::url() is deprecated.
       $variables['types'][$typeId]['url'] = Url::fromRoute('node.add', ['node_type' => $typeId]);
     }
   }
