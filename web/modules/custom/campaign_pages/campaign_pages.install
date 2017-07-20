@@ -142,10 +142,6 @@ function campaign_pages_update_8007() {
  * Import new parade fields from sync directory.
  */
 function _campaign_pages_import_parade_fields() {
-  $projectConfigPath = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
-  $source = new FileStorage($projectConfigPath);
-  $configStorage = \Drupal::service('config.storage');
-
   $configs = [
     'field.storage.paragraph.parade_anchor',
     'field.storage.paragraph.parade_background',
@@ -286,17 +282,12 @@ function _campaign_pages_import_parade_fields() {
     'classy_paragraphs.classy_paragraphs_style.layout_lot_of_infos',
     'classy_paragraphs.classy_paragraphs_style.layout_smallinfo',
     'classy_paragraphs.classy_paragraphs_style.layout_contacts',
-
-//    'core.entity_form_display.paragraph.header.default',
-//    'core.entity_form_display.paragraph.image_text.default',
-//    'core.entity_form_display.paragraph.images.default',
-//
-//    'core.entity_view_display.paragraph.image_text.default',
-//    'core.entity_view_display.paragraph.image_text.inverse',
-//    'core.entity_view_display.paragraph.header.default',
-//    'core.entity_view_display.paragraph.header.preview',
-//    'core.entity_view_display.paragraph.images.default',
   ];
+
+  $projectConfigPath = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
+  $source = new FileStorage($projectConfigPath);
+  /** @var \Drupal\Core\Config\CachedStorage $configStorage */
+  $configStorage = \Drupal::service('config.storage');
 
   foreach ($configs as $config) {
     $configStorage->write($config, $source->read($config));
