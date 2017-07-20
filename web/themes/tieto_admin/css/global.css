@@ -4254,10 +4254,6 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   }
 }
 
-.paragraph--type--simple.paragraph--view-mode--default.layout--one-column {
-  text-align: center;
-}
-
 .paragraph--type--simple.paragraph--view-mode--default.color-red-light {
   background: #f0b3ca;
   color: white;
@@ -4623,6 +4619,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   }
 }
 
+.paragraph--type--text-box.paragraph--view-mode--default.color-default {
+  padding: 40px 1em;
+}
+
 .paragraph--type--text-box.paragraph--view-mode--default.color-default .paragraph-inner {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 3em;
@@ -4630,6 +4630,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 
 .paragraph--type--text-box.paragraph--view-mode--default.color-default .paragraph-inner {
   background-color: #f8f8f8;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-blue {
+  padding: 40px 1em;
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default.color-blue .paragraph-inner {
@@ -4646,6 +4650,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   color: white;
 }
 
+.paragraph--type--text-box.paragraph--view-mode--default.color-red {
+  padding: 40px 1em;
+}
+
 .paragraph--type--text-box.paragraph--view-mode--default.color-red .paragraph-inner {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 3em;
@@ -4660,6 +4668,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   color: white;
 }
 
+.paragraph--type--text-box.paragraph--view-mode--default.color-orange {
+  padding: 40px 1em;
+}
+
 .paragraph--type--text-box.paragraph--view-mode--default.color-orange .paragraph-inner {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 3em;
@@ -4672,6 +4684,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 
 .paragraph--type--text-box.paragraph--view-mode--default.color-orange .paragraph-inner .field--name-parade-title {
   color: white;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-green {
+  padding: 40px 1em;
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default.color-green .paragraph-inner {
