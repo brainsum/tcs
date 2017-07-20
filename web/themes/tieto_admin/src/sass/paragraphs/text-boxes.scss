@@ -149,16 +149,8 @@
   //}
 
   .paragraph-inner {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    padding: 3em;
-  }
-
-  &.layout--none {
-    padding: 0;
-    .paragraph-inner {
-      box-shadow: none;
-      padding: 1em;
-    }
+    box-shadow: none;
+    padding: 1em;
   }
 
   ul, ol {
@@ -171,39 +163,54 @@
     @include campaign-title-item;
   }
 
-  &.color-normal .paragraph-inner {
-    background-color: #f8f8f8; // @fixme Replace with variable.
-  }
-
-  &.color-blue .paragraph-inner {
-    color: white;
-    background-color: $tieto-blue;
-    .field--name-parade-title {
-      color: white;
+  &.color-normal {
+    @include campaign-shadowed-textbox;
+    .paragraph-inner {
+      background-color: #f8f8f8; // @fixme Replace with variable.
     }
   }
 
-  &.color-red .paragraph-inner {
-    color: white;
-    background-color: $tieto-red;
-    .field--name-parade-title {
+  &.color-blue {
+    @include campaign-shadowed-textbox;
+    .paragraph-inner {
       color: white;
+      background-color: $tieto-blue;
+      .field--name-parade-title {
+        color: white;
+      }
     }
   }
 
-  &.color-orange .paragraph-inner {
-    color: white;
-    background-color: $tieto-orange;
-    .field--name-parade-title {
+  &.color-red {
+    @include campaign-shadowed-textbox;
+    .paragraph-inner {
       color: white;
+      background-color: $tieto-red;
+      .field--name-parade-title {
+        color: white;
+      }
     }
   }
 
-  &.color-green .paragraph-inner {
-    color: white;
-    background: $tieto-green;
-    .field--name-parade-title {
+  &.color-orange {
+    @include campaign-shadowed-textbox;
+    .paragraph-inner {
       color: white;
+      background-color: $tieto-orange;
+      .field--name-parade-title {
+        color: white;
+      }
+    }
+  }
+
+  &.color-green {
+    @include campaign-shadowed-textbox;
+    .paragraph-inner {
+      color: white;
+      background: $tieto-green;
+      .field--name-parade-title {
+        color: white;
+      }
     }
   }
 

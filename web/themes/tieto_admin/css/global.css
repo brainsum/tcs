@@ -3468,7 +3468,6 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 }
 
 .paragraph.paragraph--view-mode--default {
-  padding: 40px 1em;
   background-color: #fff;
 }
 
@@ -4588,15 +4587,6 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default .paragraph-inner {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  padding: 3em;
-}
-
-.paragraph--type--text-box.paragraph--view-mode--default.layout--none {
-  padding: 0;
-}
-
-.paragraph--type--text-box.paragraph--view-mode--default.layout--none .paragraph-inner {
   box-shadow: none;
   padding: 1em;
 }
@@ -4631,8 +4621,26 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   }
 }
 
+.paragraph--type--text-box.paragraph--view-mode--default.color-normal {
+  padding: 40px 1em;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-normal .paragraph-inner {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 3em;
+}
+
 .paragraph--type--text-box.paragraph--view-mode--default.color-normal .paragraph-inner {
   background-color: #f8f8f8;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-blue {
+  padding: 40px 1em;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-blue .paragraph-inner {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 3em;
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default.color-blue .paragraph-inner {
@@ -4644,6 +4652,15 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   color: white;
 }
 
+.paragraph--type--text-box.paragraph--view-mode--default.color-red {
+  padding: 40px 1em;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-red .paragraph-inner {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 3em;
+}
+
 .paragraph--type--text-box.paragraph--view-mode--default.color-red .paragraph-inner {
   color: white;
   background-color: #d51067;
@@ -4653,6 +4670,15 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   color: white;
 }
 
+.paragraph--type--text-box.paragraph--view-mode--default.color-orange {
+  padding: 40px 1em;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-orange .paragraph-inner {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 3em;
+}
+
 .paragraph--type--text-box.paragraph--view-mode--default.color-orange .paragraph-inner {
   color: white;
   background-color: #F78D2D;
@@ -4660,6 +4686,15 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 
 .paragraph--type--text-box.paragraph--view-mode--default.color-orange .paragraph-inner .field--name-parade-title {
   color: white;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-green {
+  padding: 40px 1em;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default.color-green .paragraph-inner {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 3em;
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default.color-green .paragraph-inner {
