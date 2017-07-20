@@ -4621,16 +4621,16 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   }
 }
 
-.paragraph--type--text-box.paragraph--view-mode--default.color-normal {
+.paragraph--type--text-box.paragraph--view-mode--default.color-default {
   padding: 40px 1em;
 }
 
-.paragraph--type--text-box.paragraph--view-mode--default.color-normal .paragraph-inner {
+.paragraph--type--text-box.paragraph--view-mode--default.color-default .paragraph-inner {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 3em;
 }
 
-.paragraph--type--text-box.paragraph--view-mode--default.color-normal .paragraph-inner {
+.paragraph--type--text-box.paragraph--view-mode--default.color-default .paragraph-inner {
   background-color: #f8f8f8;
 }
 

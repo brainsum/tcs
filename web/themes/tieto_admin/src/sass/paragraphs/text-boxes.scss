@@ -163,7 +163,7 @@
     @include campaign-title-item;
   }
 
-  &.color-normal {
+  &.color-default {
     @include campaign-shadowed-textbox;
     .paragraph-inner {
       background-color: #f8f8f8; // @fixme Replace with variable.
