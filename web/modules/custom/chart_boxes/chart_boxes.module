@@ -34,7 +34,6 @@ function chart_boxes_preprocess_paragraph__chart_box(&$variables) {
       'columns' => $columns,
     ]);
   }
-
 }
 
 /**
@@ -62,5 +61,7 @@ function chart_boxes_preprocess_paragraph(&$variables) {
   if (method_exists($paragraph, 'getType') && 'chart_boxes' === $paragraph->getType()) {
     // Attach libraries for each paragraph type.
     $variables['#attached']['library'][] = 'chart_boxes/paragraphs.' . $paragraph->getType();
+    $variables['#attached']['library'][] = 'chart_boxes/paragraphs.doughnut_chart';
+    $variables['#attached']['library'][] = 'chart_boxes/paragraphs.doughnut_text_chart';
   }
 }
