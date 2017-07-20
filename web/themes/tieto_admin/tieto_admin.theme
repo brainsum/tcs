@@ -222,9 +222,6 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
 function tieto_admin_preprocess_field__parade_call_to_action(&$variables) {
   foreach ($variables['items'] as $key => $link) {
     $classes = ['button', 'button--primary'];
-    if ($variables['element']['#entity_type'] === 'paragraph' && $variables['element']['#bundle'] === 'text_box') {
-      $classes = ['button', 'button--green'];
-    }
     $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
   }
 }
@@ -249,7 +246,7 @@ function tieto_admin_preprocess_details(&$variables) {
  * Switch link block image style based on the row's block size setting.
  */
 function tieto_admin_preprocess_field__paragraph__parade_image__text_box(&$variables) {
-  // @todo: Refactor needed for the new layout.
+  // @todo: Refactor needed for the new layout (determine hook name).
   // Get paragraph object field is attached to.
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['element']['#object'];
@@ -261,7 +258,7 @@ function tieto_admin_preprocess_field__paragraph__parade_image__text_box(&$varia
   if (
     method_exists($parent, 'getType') &&
     $parent->getType() === 'text_boxes' &&
-    // @todo: '' is was 6 (Contacts)
+    // @todo: 6 (Contacts) needs to be added.
     in_array($parent->get('parade_layout')->target_id, ['layout_rounded_image', 6])
   ) {
     $variables['items'][0]['content']['#image_style'] = 'square_350x350';
