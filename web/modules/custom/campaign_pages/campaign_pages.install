@@ -115,14 +115,27 @@ function campaign_pages_update_8006() {
 function campaign_pages_update_8007() {
   field_purge_batch(100);
 
+  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $updateManager */
+  $updateManager = \Drupal::entityDefinitionUpdateManager();
+  if ($updateManager->needsUpdates()) {
+    $updateManager->applyUpdates();
+  }
+
   // Import new parade fields from sync directory.
   _campaign_pages_import_parade_fields();
 
   field_purge_batch(100);
 
+  if ($updateManager->needsUpdates()) {
+    $updateManager->applyUpdates();
+  }
+
   // Copy old field values to new ones.
   _campaign_pages_copy_old_field_values_to_parade_fields();
   field_purge_batch(100);
+  if ($updateManager->needsUpdates()) {
+    $updateManager->applyUpdates();
+  }
 }
 
 /**
@@ -250,7 +263,7 @@ function _campaign_pages_import_parade_fields() {
     'classy_paragraphs.classy_paragraphs_style.color_light_grey',
     'classy_paragraphs.classy_paragraphs_style.color_shaded',
     'classy_paragraphs.classy_paragraphs_style.color_dark_grey',
-    'classy_paragraphs.classy_paragraphs_style.color_dark_green',
+    'classy_paragraphs.classy_paragraphs_style.color_green',
     'classy_paragraphs.classy_paragraphs_style.color_grey',
     'classy_paragraphs.classy_paragraphs_style.color_light_green',
     'classy_paragraphs.classy_paragraphs_style.color_light_orange',
@@ -284,12 +297,6 @@ function _campaign_pages_import_parade_fields() {
 
   foreach ($configs as $config) {
     $configStorage->write($config, $source->read($config));
-  }
-
-  /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $updateManager */
-  $updateManager = \Drupal::entityDefinitionUpdateManager();
-  if ($updateManager->needsUpdates()) {
-    $updateManager->applyUpdates();
   }
 }
 
@@ -392,7 +399,7 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
         // Two column (Content first) - Inverse.
         4 => [
           'view_mode' => 'inverse',
-          'layout' => '	layout_two_column_content_1st',
+          'layout' => 'layout_two_column_content_1st',
         ],
         // Separator (Title only) - Clean.
         5 => [
@@ -515,11 +522,36 @@ function _campaign_pages_copy_old_field_values_to_parade_fields() {
     ],
   ];
 
+  /** @var \Drupal\file\FileUsage\FileUsageInterface $fileUsage */
+  $fileUsage = \Drupal::service('file.usage');
+  $fileStorage = \Drupal::entityTypeManager()->getStorage('file');
+  $fileFields = [
+    'field_background',
+    'parade_image',
+    'parade_images',
+  ];
   /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
   foreach ($entities as $entity) {
     foreach ($fields as $old_field => $new_field) {
       if ($entity->hasField($old_field)) {
-        $entity->set($new_field, $entity->get($old_field)->getValue());
+        if (in_array($new_field, $fileFields, TRUE)) {
+          foreach ($entity->get($old_field)->getValue() as $value) {
+            /** @var \Drupal\file\Entity\File $file */
+            $file = $fileStorage->load($value['target_id']);
+            if (NULL !== $file) {
+              $file->setPermanent();
+              $file->save();
+              $entity->set($new_field, $file);
+              $fileUsage->add($file, 'file', 'paragraph', (NULL === $file->getOwnerId()) ? 1 : $file->getOwnerId());
+            }
+            else {
+              echo 'File target ID is ' . $value['target_id'] . " ; but file is NULL\n";
+            }
+          }
+        }
+        else {
+          $entity->set($new_field, $entity->get($old_field)->getValue());
+        }
       }
     }
     // Layout field.

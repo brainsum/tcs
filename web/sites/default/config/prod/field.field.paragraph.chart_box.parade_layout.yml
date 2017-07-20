@@ -18,8 +18,40 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:classy_paragraphs_style'
+  handler: classy_paragraphs
   handler_settings:
-    target_bundles: null
-    auto_create: false
+    filter:
+      type: target_bundles
+      target_bundles:
+        layout_bar_chart: layout_bar_chart
+        layout_doughnut_and_text_chart: layout_doughnut_and_text_chart
+        layout_doughnut_chart: layout_doughnut_chart
+        color_blue: 0
+        color_clean: 0
+        color_dark_grey: 0
+        color_green: 0
+        color_grey: 0
+        color_light_blue: 0
+        color_light_green: 0
+        color_light_grey: 0
+        color_light_orange: 0
+        color_light_red: 0
+        color_orange: 0
+        color_red: 0
+        color_shaded: 0
+        layout_clean: 0
+        layout_download: 0
+        layout_image_1st: 0
+        layout_none: 0
+        layout_one_column: 0
+        layout_rounded_image: 0
+        layout_separator_clean: 0
+        layout_text_1st: 0
+        layout_text_1st_enhanced: 0
+        layout_text_with_an_icon: 0
+        layout_two_column_content_1st: 0
+        layout_two_column_title_1st: 0
+      negate: 0
+    sort:
+      field: _none
 field_type: entity_reference

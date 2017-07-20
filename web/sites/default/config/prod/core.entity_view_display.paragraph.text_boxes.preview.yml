@@ -23,17 +23,10 @@ mode: preview
 content:
   parade_anchor:
     type: string
-    weight: 2
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  parade_layout:
-    type: entity_reference_label
     weight: 1
     label: inline
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
   parade_title:
     weight: 0
@@ -48,6 +41,7 @@ hidden:
   parade_boxes_per_row: true
   parade_call_to_action: true
   parade_color_scheme: true
+  parade_layout: true
   parade_paragraphs: true
   parade_text: true
   parade_view_mode: true

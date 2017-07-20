@@ -1,8 +1,8 @@
 // @todo move this to text-boxes.scss!
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default {
 
-  &.scheme-green,
-  &.scheme-green-light {
+  &.color-green,
+  &.color-green-light {
     color: white;
     background: $tieto-green;
     .field,
@@ -10,7 +10,7 @@
       color: white;
     }
   }
-  &.scheme-blue {
+  &.color-blue {
     color: white;
     background: $tieto-blue;
     .field,
@@ -18,23 +18,23 @@
       color: white;
     }
   }
-  &.scheme-blue-light {
+  &.color-blue-light {
     background: $tieto-lightblue;
   }
-  &.scheme-grey,
-  &.scheme-grey-light{
+  &.color-grey,
+  &.color-grey-light{
     background: $tieto-lightgrey;
   }
-  &.scheme-grey-dark {
+  &.color-grey-dark {
     color: white;
-    background: #999999;
+    background: $tieto-mediumgrey;
     .field,
     .field--name-parade-paragraphs .field {
       color: white;
     }
   }
-  &.scheme-orange,
-  &.scheme-orange-light {
+  &.color-orange,
+  &.color-orange-light {
     color: white;
     background: $tieto-orange;
     .field,
@@ -42,7 +42,7 @@
       color: white;
     }
   }
-  &.scheme-red {
+  &.color-red {
   color: white;
   background: $tieto-red;
   .field,
