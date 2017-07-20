@@ -2,6 +2,17 @@ paragraphs.chart_boxes:
   version: VERSION
   css:
     component:
+      css/style.css: {}
       css/paragraphs.chart-boxes.css: {}
+  js:
+    js/chart.js: {}
+    header: true
   dependencies:
+    - core/jquery
     - parade/paragraphs
+
+
+paragraphs.chart_box:
+  version: VERSION
+  js:
+    js/doughnut-chart.js: {}
