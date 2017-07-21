@@ -1024,17 +1024,17 @@
         },
         {
             "name": "drupal/abtestui",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/abtestui",
-                "reference": "8.x-1.0-beta3"
+                "reference": "8.x-1.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/abtestui-8.x-1.0-beta3.zip",
-                "reference": "8.x-1.0-beta3",
-                "shasum": "4fe8aa4c7195659836454c0c90c403012d7a09af"
+                "url": "https://ftp.drupal.org/files/projects/abtestui-8.x-1.0-beta4.zip",
+                "reference": null,
+                "shasum": "55088442890e977cb4d402563bfc35c20b020c68"
             },
             "require": {
                 "drupal/abjs": "^1.0",
@@ -1047,8 +1047,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta3",
-                    "datestamp": "1499871242"
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1500047942"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2929,7 +2929,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "2330fbf86a0064e1284e5b53526976650887cd0a"
+                "reference": "b9ae6cd4e352220dfa7f0225f57f580221f6ae3b"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2960,8 +2960,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta1+17-dev",
-                    "datestamp": "1500115742"
+                    "version": "8.x-2.0-beta1+18-dev",
+                    "datestamp": "1500296042"
                 },
                 "patches_applied": {
                     "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
@@ -3022,7 +3022,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-07-17 12:51:07"
+            "time": "2017-07-21 10:24:01"
         },
         {
             "name": "drupal/paragraphs",
@@ -7656,7 +7656,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/examples",
-                "reference": "29ad59561b3ab96d8cf607c4821d0b071e7aaaef"
+                "reference": "7d3e4f173a3cb09cf11a57a1e90bb635a5bb0f33"
             },
             "require": {
                 "drupal/core": "*"
@@ -7672,7 +7672,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1500141243"
+                    "datestamp": "1500142141"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7752,7 +7752,7 @@
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
             },
-            "time": "2017-07-15 18:04:19"
+            "time": "2017-07-18 17:32:36"
         },
         {
             "name": "drupal/toolbar_anti_flicker",
