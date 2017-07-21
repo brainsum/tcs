@@ -60,6 +60,7 @@ module:
   options: 0
   page_cache: 0
   parade: 0
+  parade_conditional_field: 0
   paragraphs_type_permissions: 0
   path: 0
   purge: 0
