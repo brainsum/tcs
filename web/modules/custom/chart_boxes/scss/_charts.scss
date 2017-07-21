@@ -8,11 +8,23 @@
     padding: 70px 0;
   }
 
-  .doughnut-chart--left ,
+  .doughnut-chart--left,
   .doughnut-chart--right {
     width: 50%;
     display: inline-block;
     float: left;
+    @media (max-width: 1024px) {
+      width: 100%;
+      display: block;
+      float: none;
+    }
+  }
+
+  .doughnut-chart--right canvas {
+    @media (max-width: 1024px) {
+      margin: 0 auto;
+      max-width: 500px;
+    }
   }
 
   > .paragraph-inner > .doughnut-chart--left > .field--name-parade-title {
@@ -21,6 +33,14 @@
     line-height: 48px;
     color: $doughnut-text-dark;
     max-width: 400px;
+    @media (max-width: 1024px) {
+      max-width: none;
+      text-align: center;
+      padding: 0 50px;
+    }
+    @media (max-width:  768px) {
+      padding: 0 20px;
+    }
   }
 
   > .paragraph-inner > .doughnut-chart--left > .field--name-parade-text {
@@ -31,12 +51,20 @@
     max-width: 400px;
     margin-bottom: 20px;
     margin-top: 30px;
+    @media (max-width: 1024px) {
+      max-width: none;
+      text-align: center;
+      padding: 0 50px;
+    }
+    @media (max-width:  768px) {
+      padding: 0 20px;
+    }
   }
 
   .paragraph--type--chart-box.paragraph--view-mode--default {
     background-color: transparent;
     padding: 0;
-    @media (min-width: 767px) {
+    @media (min-width: 1023px) {
       &.col {
         width: 50%;
       }

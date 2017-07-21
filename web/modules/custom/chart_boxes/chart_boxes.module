@@ -34,6 +34,8 @@ function chart_boxes_preprocess_paragraph__chart_box(&$variables) {
       'columns' => $columns,
     ]);
   }
+  $variables['paragraph_id'] = $paragraph->id();
+  $variables['#attached']['drupalSettings']['chart_boxes']['paragraph_id'] = $paragraph->id();
 }
 
 /**

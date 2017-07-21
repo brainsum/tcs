@@ -12750,8 +12750,10 @@ module.exports = function(Chart) {
 		}
 	});
 	Chart.scaleService.registerScaleType('time', TimeScale, defaultConfig);
+
 };
 
 },{"1":1}]},{},[7])(7)
 });
+
 

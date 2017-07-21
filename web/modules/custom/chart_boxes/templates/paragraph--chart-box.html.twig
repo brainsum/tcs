@@ -19,7 +19,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     {{ content }}
 
     {% if attributes.class[0] == "layout--chart-type--doughnut" %}
-      <canvas id="textChart" width="220" height="220"></canvas>
+      <canvas id="{{ "textChart_" ~ paragraph_id }}" width="220" height="220"></canvas>
     {% endif %}
   </div>
 </div>
