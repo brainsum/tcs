@@ -4526,6 +4526,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   border-color: white;
 }
 
+.paragraph--type--text-box.paragraph--view-mode--default.color-blue .button--primary:hover, .paragraph--type--text-box.paragraph--view-mode--default.color-blue .button--primary:focus, .paragraph--type--text-box.paragraph--view-mode--default.color-blue .button--primary:active {
+  color: black;
+}
+
 .paragraph--type--text-box.paragraph--view-mode--default.color-red {
   padding: 40px 1em;
 }
