@@ -197,6 +197,9 @@
         color: white;
       }
     }
+    .button--primary {
+      @include campaign-button-white;
+    }
   }
 
   &.color-orange {
@@ -208,6 +211,9 @@
         color: white;
       }
     }
+    .button--primary {
+      @include campaign-button-white;
+    }
   }
 
   &.color-green {
@@ -218,6 +224,9 @@
       .field--name-parade-title {
         color: white;
       }
+    }
+    .button--primary {
+      @include campaign-button-white;
     }
   }
 
