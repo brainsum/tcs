@@ -183,6 +183,9 @@
         color: white;
       }
     }
+    .button {
+      @include campaign-button-white;
+    }
   }
 
   &.color-red {
