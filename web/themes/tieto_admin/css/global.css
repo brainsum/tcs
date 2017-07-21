@@ -3468,6 +3468,7 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 }
 
 .paragraph.paragraph--view-mode--default {
+  padding: 40px 1em;
   background-color: #fff;
 }
 
@@ -4253,10 +4254,6 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   }
 }
 
-.paragraph--type--simple.paragraph--view-mode--default.layout-clean {
-  text-align: center;
-}
-
 .paragraph--type--simple.paragraph--view-mode--default.color-red-light {
   background: #f0b3ca;
   color: white;
@@ -4583,6 +4580,7 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default {
+  padding: 0;
   background: inherit;
 }
 

@@ -130,6 +130,7 @@
 
 // Text Boxes -> Text Box
 .paragraph--type--text-box.paragraph--view-mode--default {
+  padding: 0;
   background: inherit;
 
   // removed these rules because of TIET-276
