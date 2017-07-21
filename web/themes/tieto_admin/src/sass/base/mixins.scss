@@ -214,3 +214,52 @@
     padding: 3em;
   }
 }
+
+@mixin campaign-button($background, $border, $background-hover, $border-hover, $background-focus, $border-focus) {
+  color: white;
+  background: $background;
+  border-color: $border;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  &:hover,
+  &:focus,
+  &:active {
+    background: $background-hover;
+    border-color: $border-hover;
+  }
+  &:active {
+    box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    &:hover,
+    &:focus {
+      background: $background-focus;
+      border-color: $border-focus;
+    }
+  }
+  &.disabled,
+  &:disabled {
+    &:hover,
+    &:focus {
+      background: $background;
+      border-color: $border;
+    }
+  }
+}
+
+@mixin campaign-button-blue {
+  @include campaign-button(#62b3e5, #2c89c3, #369ede, #216691, #228dce, #15405b);
+}
+
+@mixin campaign-button-green {
+  @include campaign-button(#6cc04a, #6cc04a, #559f38, #519835, #47852e, #376724);
+}
+
+@mixin campaign-button-orange {
+  @include campaign-button(#f78d2d, #f78d2d, #e87309, #de6e08, #c66208, #9e4e06);
+}
+
+@mixin campaign-button-red {
+  @include campaign-button(#e56385, #e56385, #de3763, #dc2f5c, #cf2250, #ac1d42);
+}
+
+@mixin campaign-button-primary {
+  @include campaign-button-blue;
+}
