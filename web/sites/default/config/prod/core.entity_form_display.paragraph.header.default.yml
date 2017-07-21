@@ -68,7 +68,7 @@ content:
     type: string_textarea
     region: content
   parade_secondary_title:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -76,7 +76,7 @@ content:
     type: string_textfield
     region: content
   parade_title:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
