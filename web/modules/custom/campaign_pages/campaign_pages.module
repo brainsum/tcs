@@ -31,13 +31,15 @@ function campaign_pages_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function campaign_pages_theme() {
+function campaign_pages_theme($existing, $type, $theme, $path) {
   return [
     'paragraph__text_box' => [
       'base hook' => 'paragraph',
+      'path' => drupal_get_path('module', 'campaign_pages') . '/templates',
     ],
     'paragraph__text_boxes' => [
       'base hook' => 'paragraph',
+      'path' => drupal_get_path('module', 'campaign_pages') . '/templates',
     ],
   ];
 }
