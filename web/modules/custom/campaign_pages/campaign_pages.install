@@ -304,3 +304,10 @@ function _campaign_pages_import_parade_fields() {
     $configStorage->write($config, $source->read($config));
   }
 }
+
+/**
+ * Set module weight higher than parade.
+ */
+function campaign_pages_update_8008() {
+  module_set_weight('campaign_pages', 1);
+}
