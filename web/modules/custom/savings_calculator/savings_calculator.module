@@ -5,7 +5,6 @@
  * Savings Calculator module file.
  */
 
-// @todo: Move CSS to this module as well.
 use Drupal\Core\Form\FormStateInterface;
 
 /**
