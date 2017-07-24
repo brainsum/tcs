@@ -117,6 +117,7 @@ function campaign_pages_update_8007() {
 
   /** @var \Drupal\Core\Entity\EntityDefinitionUpdateManagerInterface $updateManager */
   $updateManager = \Drupal::entityDefinitionUpdateManager();
+  // Apply pending updates..
   if ($updateManager->needsUpdates()) {
     $updateManager->applyUpdates();
   }
@@ -126,6 +127,7 @@ function campaign_pages_update_8007() {
 
   field_purge_batch(100);
 
+  // Install new fields..
   if ($updateManager->needsUpdates()) {
     $updateManager->applyUpdates();
   }
@@ -140,6 +142,13 @@ function _campaign_pages_import_parade_fields() {
   $configStorage = \Drupal::service('config.storage');
 
   $configs = [
+//    'field.storage.node.parade_machine_name',
+//    'field.storage.node.parade_onepage_sections',
+//
+//    'field.field.node.campaign.parade_machine_name',
+//    'field.field.node.campaign.parade_onepage_sections',
+
+
     'field.storage.paragraph.parade_anchor',
     'field.storage.paragraph.parade_background',
     'field.storage.paragraph.parade_boxes_per_row',

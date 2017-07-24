@@ -9,30 +9,23 @@
  * Copy old data to parade 2.x fields.
  */
 function campaign_pages_post_update_parade_value_migration() {
-  /*
-  // Load all campaign pages entities.
-  $entity_type = 'node';
-  $storage_handler = \Drupal::entityTypeManager()->getStorage($entity_type);
-  $nodes = $storage_handler->loadByProperties(['bundle' => 'campaign']);
-  $fields = [
-    'field_machine_name' => 'parade_machine_name',
-    'field_paragraphs' => 'parade_paragraphs',
-  ];
-  foreach ($nodes as $node) {
-    foreach ($fields as $old_field => $new_field) {
-      if (isset($node->{$old_field})) {
-        $node->{$new_field} = $node->{$old_field};
-      }
-    }
-    $node->save();
-  }*/
 
-  // Load all paragraph entities.
-  $entity_type = 'paragraph';
-  $storage_handler = \Drupal::entityTypeManager()->getStorage($entity_type);
-  $entities = $storage_handler->loadMultiple();
-  //  $paragraphs_type = 'simple';
-  //  $entities = $storage_handler->loadByProperties(['type' => $paragraphs_type]);
+//  // Load all campaign pages entities.
+//  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+//  $nodes = $nodeStorage->loadByProperties(['type' => 'campaign']);
+//  $fields = [
+//    'field_machine_name' => 'parade_machine_name',
+//    'field_paragraphs' => 'parade_onepage_sections',
+//  ];
+//  foreach ($nodes as $node) {
+//    foreach ($fields as $old_field => $new_field) {
+//      if (isset($node->{$old_field})) {
+//        $node->{$new_field} = $node->{$old_field};
+//      }
+//    }
+//  $node->setNewRevision(FALSE);
+//  $node->save();
+//  }
 
   // Old fields with same type as new field.
   $fields = [
@@ -221,58 +214,74 @@ function campaign_pages_post_update_parade_value_migration() {
     'parade_image',
     'parade_images',
   ];
-  /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
-  foreach ($entities as $entity) {
-    foreach ($fields as $old_field => $new_field) {
-      if ($entity->hasField($old_field)) {
-        if (in_array($new_field, $fileFields, TRUE)) {
-          foreach ($entity->get($old_field)->getValue() as $value) {
-            /** @var \Drupal\file\Entity\File $file */
-            $file = $fileStorage->load($value['target_id']);
-            if (NULL !== $file) {
-              $file->setPermanent();
-              $file->save();
-              $entity->set($new_field, $file);
-              $fileUsage->add($file, 'file', 'paragraph', (NULL === $file->getOwnerId()) ? 1 : $file->getOwnerId());
-            }
-            else {
-              echo 'File target ID is ' . $value['target_id'] . " ; but file is NULL\n";
-            }
-          }
-        }
-        else {
-          $entity->set($new_field, $entity->get($old_field)->getValue());
-          $entity->get($new_field)->setLangcode($entity->get($old_field)->getLangcode());
-        }
-      }
-    }
-    // Layout field.
-    if (isset($layouts[$entity->getType()])) {
-      foreach ($layouts[$entity->getType()] as $old_layout_field => $layout_mappings) {
-        if (isset($entity->{$old_layout_field})) {
-          $layout_settings = $layout_mappings[$entity->{$old_layout_field}->value];
-          if (isset($entity->parade_view_mode)) {
-            $entity->parade_view_mode->value = $layout_settings['view_mode'];
-          }
-          // Set colors according to the settings. If it was specifically
-          // Overwritten in field_color_scheme, we set the overwrite later.
-          if (isset($entity->parade_color_scheme, $layout_settings['color'])) {
-            $entity->parade_color_scheme->target_id = $layout_settings['color'];
-          }
-          $entity->parade_layout->target_id = $layout_settings['layout'];
-        }
-      }
-    }
-    // Color scheme field.
-    if (isset(
-      $colors[$entity->getType()],
-      $entity->field_color_scheme,
-      $colors[$entity->getType()][$entity->field_color_scheme->target_id]
-    )) {
-      $entity->parade_color_scheme->target_id = $colors[$entity->getType()][$entity->field_color_scheme->target_id];
+
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  $typeStorage = \Drupal::entityTypeManager()->getStorage('paragraphs_type');
+  // Load the paragraph types.
+  $paragraphTypes = $typeStorage->loadMultiple();
+
+  foreach ($paragraphTypes as $type) {
+    // Load every paragraph for each type separately.
+    $entities = $paragraphStorage->loadByProperties(['type' => $type->id()]);
+
+    if ($type->id() === 'text_boxes') {
+      echo 'Text boxes: ' . count($entities);
     }
 
-    $entity->setNewRevision(FALSE);
-    $entity->save();
+    /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+    foreach ($entities as $entity) {
+      foreach ($fields as $old_field => $new_field) {
+        if ($entity->hasField($old_field)) {
+          if (in_array($new_field, $fileFields, TRUE)) {
+            foreach ($entity->get($old_field)->getValue() as $value) {
+              /** @var \Drupal\file\Entity\File $file */
+              $file = $fileStorage->load($value['target_id']);
+              if (NULL !== $file) {
+                $file->setPermanent();
+                $file->save();
+                $entity->set($new_field, $file);
+                $fileUsage->add($file, 'file', 'paragraph', (NULL === $file->getOwnerId()) ? 1 : $file->getOwnerId());
+              }
+              else {
+                echo 'File target ID is ' . $value['target_id'] . " ; but file is NULL\n";
+              }
+            }
+          }
+          else {
+            $entity->set($new_field, $entity->get($old_field)->getValue());
+            $entity->get($new_field)->setLangcode($entity->get($old_field)
+              ->getLangcode());
+          }
+        }
+      }
+      // Layout field.
+      if (isset($layouts[$entity->getType()])) {
+        foreach ($layouts[$entity->getType()] as $old_layout_field => $layout_mappings) {
+          if (isset($entity->{$old_layout_field})) {
+            $layout_settings = $layout_mappings[$entity->{$old_layout_field}->value];
+            if (isset($entity->parade_view_mode)) {
+              $entity->parade_view_mode->value = $layout_settings['view_mode'];
+            }
+            // Set colors according to the settings. If it was specifically
+            // Overwritten in field_color_scheme, we set the overwrite later.
+            if (isset($entity->parade_color_scheme, $layout_settings['color'])) {
+              $entity->parade_color_scheme->target_id = $layout_settings['color'];
+            }
+            $entity->parade_layout->target_id = $layout_settings['layout'];
+          }
+        }
+      }
+      // Color scheme field.
+      if (isset(
+        $colors[$entity->getType()],
+        $entity->field_color_scheme,
+        $colors[$entity->getType()][$entity->field_color_scheme->target_id]
+      )) {
+        $entity->parade_color_scheme->target_id = $colors[$entity->getType()][$entity->field_color_scheme->target_id];
+      }
+
+      $entity->setNewRevision(FALSE);
+      $entity->save();
+    }
   }
 }
