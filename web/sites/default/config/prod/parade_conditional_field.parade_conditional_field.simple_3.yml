@@ -1,0 +1,11 @@
+uuid: 445cf2d7-1c44-4525-a9a9-a13b7da31993
+langcode: en
+status: true
+dependencies: {  }
+id: simple_3
+bundle: simple
+layouts:
+  layout_separator_clean: layout_separator_clean
+view_mode: default
+classes:
+  color_default: color_default

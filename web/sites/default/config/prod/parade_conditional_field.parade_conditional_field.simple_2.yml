@@ -1,0 +1,12 @@
+uuid: 6d9f5380-9fb5-4952-95ee-937949bb3861
+langcode: en
+status: true
+dependencies: {  }
+id: simple_2
+bundle: simple
+layouts:
+  layout_two_column_content_1st: layout_two_column_content_1st
+  layout_two_column_title_1st: layout_two_column_title_1st
+view_mode: inverse
+classes:
+  color_blue: color_blue
