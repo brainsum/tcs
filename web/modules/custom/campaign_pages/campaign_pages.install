@@ -288,6 +288,7 @@ function _campaign_pages_import_parade_fields() {
     'classy_paragraphs.classy_paragraphs_style.layout_lot_of_infos',
     'classy_paragraphs.classy_paragraphs_style.layout_smallinfo',
     'classy_paragraphs.classy_paragraphs_style.layout_contacts',
+    'classy_paragraphs.classy_paragraphs_style.layout_one_column_centered',
 
 //    'core.entity_form_display.paragraph.header.default',
 //    'core.entity_form_display.paragraph.image_text.default',
