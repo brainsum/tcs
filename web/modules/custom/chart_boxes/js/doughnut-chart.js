@@ -12,7 +12,7 @@
     series: series, labels: labels
   }, {
     donut: true,
-    donutWidth: 100,
+    donutWidth: 115,
     donutSolid: true,
     startAngle: 0,
     showLabel: true
