@@ -36,6 +36,7 @@ function chart_boxes_preprocess_paragraph__chart_box(&$variables) {
   }
   $variables['paragraph_id'] = $paragraph->id();
   $variables['#attached']['drupalSettings']['chart_boxes']['paragraph_id'] = $paragraph->id();
+  $variables['add_pie'] = $paragraph->get('parade_with_pie')->value;
 }
 
 /**

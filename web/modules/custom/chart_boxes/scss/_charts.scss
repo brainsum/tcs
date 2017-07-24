@@ -179,6 +179,19 @@
 .layout--chart-type--doughnut-and-text {
   background-image: url('../img/chart-txt-bgr.jpg');
   background-size: cover;
+  .paragraph-inner .field--name-parade-paragraphs .field__item .paragraph-inner{
+    width: 140px;
+    position: relative;
+    height: 220px;
+    padding-top: 55px;
+    .ct-chart {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 220px;
+    }
+  }
 
   .field.field__items {
     @include flexbox;

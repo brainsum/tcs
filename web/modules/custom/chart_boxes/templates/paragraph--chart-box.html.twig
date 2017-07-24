@@ -18,7 +18,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   <div class="paragraph-inner clearfix">
     {{ content }}
 
-    {% if attributes.class[0] == "layout--chart-type--doughnut" %}
+    {% if add_pie == 1 %}
       <div class="ct-chart ct-square" id="{{ "textChart_" ~ paragraph_id }}"></div>
     {% endif %}
   </div>
