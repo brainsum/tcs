@@ -2929,7 +2929,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "3cf290cfe55014c1b8cb61441adf4e586b83225f"
+                "reference": "3c328b01c36b395de7cfecbf5f5a2758f0af721d"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
