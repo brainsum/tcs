@@ -4,8 +4,15 @@
 
 .layout--chart-type--doughnut {
   &.paragraph.paragraph--view-mode--default {
-    background-color: $doughnut-bgr;
+    background-color: transparent;
     padding: 70px 0;
+    &.color-grey {
+      background-color: darken($doughnut-bgr, 5%);
+    }
+
+    &.color-light-grey {
+      background-color: $doughnut-bgr;
+    }
   }
 
   .doughnut-chart--left,
@@ -109,6 +116,7 @@
   .paragraph--type--chart-box {
     .paragraph-inner {
       width: 155px;
+      height: 120px;
       border-top: 2px solid;
       margin: 0 !important
     }
@@ -133,7 +141,6 @@
     .field--name-parade-text {
       font-size: 16px;
       line-height: 16px;
-      margin-bottom: 40px;
       p {
         margin: 0 !important;
       }
