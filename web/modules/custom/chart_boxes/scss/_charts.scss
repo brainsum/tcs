@@ -42,10 +42,13 @@
   }
 
   .doughnut-chart--right {
-    .ct-chart .ct-label:after {
+    .ct-chart .ct-label {
+      font-weight: 300;
+      &:after {
         content: '%';
         font-size: 16px;
         vertical-align: middle;
+      }
     }
   }
 
@@ -121,6 +124,7 @@
     }
     .field--name-parade-title {
       margin-bottom: 60px;
+      width: 155px;
     }
   }
 
