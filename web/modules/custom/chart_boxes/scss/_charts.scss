@@ -192,17 +192,27 @@
     height: 220px;
     padding-top: 55px;
     .ct-chart {
+      @include translate(-50%, 0);
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
       width: 220px;
       height: 220px;
+      margin-left: 50%;
+      .ct-series-b .ct-slice-donut-solid {
+        fill: rgba(103, 175, 225, .36) !important;
+      }
     }
   }
 
   .field.field__items {
     @include flexbox;
     @include justify-content(space-around);
+    @include flex-wrap(wrap);
+    >.field__item {
+      margin: 0 20px;
+    }
   }
 
   .paragraph--type--chart-box.paragraph--view-mode--default {
@@ -219,22 +229,23 @@
     }
   }
 
-  > .paragraph-inner > .field--name-parade-title {
-    font-weight: 800;
-    font-size: 48px;
-    line-height: 48px;
-    text-align: center;
-    color: $white;
-    margin-bottom: 30px;
-  }
-
-  > .paragraph-inner > .field--name-parade-text {
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: $white;
-    text-align: center;
-    margin-bottom: 10px;
+  > .paragraph-inner {
+    > .field--name-parade-title {
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 48px;
+      text-align: center;
+      color: $white;
+      margin-bottom: 30px;
+    }
+    > .field--name-parade-text {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: $white;
+      text-align: center;
+      margin-bottom: 10px;
+    }
   }
 
   .paragraph--type--chart-box {
@@ -242,31 +253,20 @@
     @include align-content(center);
     @include align-items(center);
     height: 220px;
-    .field--name-parade-value {
+    .field--name-parade-value,
+    .field--name-parade-title {
       font-size: 48px;
       font-weight: 800;
       line-height: 48px;
       vertical-align: middle;
       color: $doughnut-chart-blue;
-      margin-bottom: 15px;
+      display: inline-block;
     }
-    .field--name-parade-title {
+    .field--name-parade-text {
       color: $doughnut-chart-blue;
       max-width: 140px;
       font-size: 16px;
       line-height: 24px;
-    }
-  }
-
-  .layout--chart-type--doughnut {
-    position: relative;
-      .field--name-parade-value:after {
-        content: '%';
-      }
-    canvas {
-      position: absolute;
-      top: 0;
-      left: -40px;
     }
   }
 }
