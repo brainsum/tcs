@@ -45,3 +45,5 @@ permissions:
   34: 'view paragraph content social_links'
   35: 'view paragraph content savings_calculator'
   36: 'view paragraph content twitter_feed'
+  37: 'view paragraph content chart_box'
+  38: 'view paragraph content chart_boxes'
