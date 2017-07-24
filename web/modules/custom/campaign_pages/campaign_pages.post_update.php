@@ -243,7 +243,7 @@ function campaign_pages_post_update_parade_value_migration() {
                 $fileUsage->add($file, 'file', 'paragraph', (NULL === $file->getOwnerId()) ? 1 : $file->getOwnerId());
               }
               else {
-                echo 'File target ID is ' . $value['target_id'] . " ; but file is NULL\n";
+                echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
               }
             }
           }
