@@ -21,9 +21,10 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 		{% if attributes.class[1] == "layout--chart-type--doughnut" %}
 			<div class="doughnut-chart--left">
 				{{ content }}
+				<div class="clearfix"></div>
 			</div>
 			<div class="doughnut-chart--right">
-				<canvas id="myChart" width="490" height="490"></canvas>
+				<div class="ct-chart ct-square"></div>
 			</div>
     {% endif %}
 
