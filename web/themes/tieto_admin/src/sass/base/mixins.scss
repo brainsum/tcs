@@ -244,6 +244,16 @@
   }
 }
 
+@mixin campaign-button-white {
+  @include campaign-button(white, white, #eee, #999, #d5d5d5, #7a7a7a);
+  color: black;
+  &:hover,
+  &:focus,
+  &:active {
+    color: black;
+  }
+}
+
 @mixin campaign-button-blue {
   @include campaign-button(#62b3e5, #2c89c3, #369ede, #216691, #228dce, #15405b);
 }

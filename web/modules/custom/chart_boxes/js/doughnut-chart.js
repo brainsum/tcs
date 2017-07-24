@@ -1,26 +1,28 @@
 
+
+$ = jQuery; //todo del this line if normal drupal jquery is working
+
+
+// get data from chartbox value field
+var doughnutChartData = $('.layout--chart-type--doughnut .doughnut-chart--left .field--type-integer').map(function () {
+	return $(this).text();
+}).get();
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
 	type: 'doughnut',
 	data: {
-		labels: ["January", "February", "March", "April", "May", "June", "July"],
 		datasets: [{
-			label: "some label",
-			backgroundColor: ['#67afe1','#e56385','#6cc04a', '#878787'],
+			label: 'label: ',
+			backgroundColor: ['#67afe1', '#e56385', '#6cc04a', '#878787'],
 			borderWidth: 0,
-			data: [32, 36, 12]
+			data: doughnutChartData
 		}]
 	},
-
-	// Configuration options go here
 	options: {
 		cutoutPercentage: 55,
-		responsive: false,
+		responsive: true,
 		legend: {
-			display: false,
-			labels: {
-				fontColor: 'rgb(255, 99, 132)'
-			}
+			display: false
 		},
 		tooltips: {
 			enabled: false
@@ -35,3 +37,6 @@ var myChart = new Chart(ctx, {
 		}
 	}
 });
+
+
+

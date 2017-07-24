@@ -54,7 +54,7 @@
 
   &.layout--contacts {
     // @fixme this is mess but was quick
-    @media screen and (min-width: 768px) {
+    @include md {
       > .paragraph-inner > .field--name-parade-title {
         width: 33%;
         float: left;
@@ -96,6 +96,9 @@
       .field--name-parade-call-to-action {
         width: 66%;
         float: right;
+      }
+      .button--primary {
+        @include campaign-button-green;
       }
     }
   }
@@ -169,7 +172,7 @@
     .paragraph-inner {
       background-color: #f8f8f8; // @fixme Replace with variable.
     }
-    .button {
+    .button--primary {
       @include campaign-button-green;
     }
   }
@@ -183,6 +186,9 @@
         color: white;
       }
     }
+    .button--primary {
+      @include campaign-button-white;
+    }
   }
 
   &.color-red {
@@ -193,6 +199,9 @@
       .field--name-parade-title {
         color: white;
       }
+    }
+    .button--primary {
+      @include campaign-button-white;
     }
   }
 
@@ -205,6 +214,9 @@
         color: white;
       }
     }
+    .button--primary {
+      @include campaign-button-white;
+    }
   }
 
   &.color-green {
@@ -215,6 +227,9 @@
       .field--name-parade-title {
         color: white;
       }
+    }
+    .button--primary {
+      @include campaign-button-white;
     }
   }
 
