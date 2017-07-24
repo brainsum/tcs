@@ -23,7 +23,7 @@ bundle: chart_boxes
 mode: default
 content:
   parade_paragraphs:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       view_mode: default
@@ -31,7 +31,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
   parade_text:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
