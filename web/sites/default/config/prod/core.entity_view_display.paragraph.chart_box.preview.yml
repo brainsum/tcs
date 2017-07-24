@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.chart_box.parade_text
     - field.field.paragraph.chart_box.parade_title
     - field.field.paragraph.chart_box.parade_value
+    - field.field.paragraph.chart_box.parade_with_pie
     - paragraphs.paragraphs_type.chart_box
 _core:
   default_config_hash: vlyNaPsc6npHBm2AMkXt_CjIvI4MXmsK5wvREXSk02k
@@ -26,3 +27,4 @@ content:
 hidden:
   parade_text: true
   parade_value: true
+  parade_with_pie: true

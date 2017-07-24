@@ -1,0 +1,21 @@
+uuid: d3a0c677-f6e7-4408-a8b8-22fa361a07c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.parade_with_pie
+    - paragraphs.paragraphs_type.chart_box
+id: paragraph.chart_box.parade_with_pie
+field_name: parade_with_pie
+entity_type: paragraph
+bundle: chart_box
+label: 'With pie'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.chart_box.parade_text
     - field.field.paragraph.chart_box.parade_title
     - field.field.paragraph.chart_box.parade_value
+    - field.field.paragraph.chart_box.parade_with_pie
     - paragraphs.paragraphs_type.chart_box
   module:
     - text
@@ -40,4 +41,5 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
-hidden: {  }
+hidden:
+  parade_with_pie: true

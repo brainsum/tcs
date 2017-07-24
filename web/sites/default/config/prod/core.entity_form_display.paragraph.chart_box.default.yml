@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.chart_box.parade_text
     - field.field.paragraph.chart_box.parade_title
     - field.field.paragraph.chart_box.parade_value
+    - field.field.paragraph.chart_box.parade_with_pie
     - paragraphs.paragraphs_type.chart_box
   module:
     - content_moderation
@@ -40,6 +41,12 @@ content:
     third_party_settings: {  }
     type: number
     region: content
+  parade_with_pie:
+    type: boolean_checkbox
+    weight: 3
+    settings:
+      display_label: false
+    third_party_settings: {  }
 hidden:
   created: true
   status: true
