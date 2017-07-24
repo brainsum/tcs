@@ -1033,7 +1033,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/abtestui-8.x-1.0-beta4.zip",
-                "reference": null,
+                "reference": "8.x-1.0-beta4",
                 "shasum": "55088442890e977cb4d402563bfc35c20b020c68"
             },
             "require": {
@@ -2929,7 +2929,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "b9ae6cd4e352220dfa7f0225f57f580221f6ae3b"
+                "reference": "208fd9cace00df108e41d1e7c173225e51e04057"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2960,8 +2960,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta1+18-dev",
-                    "datestamp": "1500296042"
+                    "version": "8.x-2.0-beta1+20-dev",
+                    "datestamp": "1500632943"
                 },
                 "patches_applied": {
                     "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
@@ -3022,7 +3022,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-07-21 10:24:01"
+            "time": "2017-07-21 11:24:52"
         },
         {
             "name": "drupal/paragraphs",
