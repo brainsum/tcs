@@ -2929,7 +2929,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "208fd9cace00df108e41d1e7c173225e51e04057"
+                "reference": "3cf290cfe55014c1b8cb61441adf4e586b83225f"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2960,8 +2960,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta1+20-dev",
-                    "datestamp": "1500632943"
+                    "version": "8.x-2.0-beta1+21-dev",
+                    "datestamp": "1500636543"
                 },
                 "patches_applied": {
                     "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
@@ -3022,7 +3022,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-07-21 11:24:52"
+            "time": "2017-07-24 09:16:05"
         },
         {
             "name": "drupal/paragraphs",
@@ -3356,11 +3356,17 @@
         },
         {
             "name": "drupal/scheduled_updates",
-            "version": "dev-1.x",
+            "version": "1.0.0-alpha6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/scheduled_updates",
-                "reference": "b442ff79b380993ea168e251427d8904daebec31"
+                "reference": "8.x-1.0-alpha6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/scheduled_updates-8.x-1.0-alpha6.zip",
+                "reference": null,
+                "shasum": "3746c71d480fb62c5c55db7e08be41370edb4d03"
             },
             "require": {
                 "drupal/core": "*",
@@ -3372,8 +3378,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha5+14-dev",
-                    "datestamp": "1482247383"
+                    "version": "8.x-1.0-alpha6",
+                    "datestamp": "1489190883"
                 },
                 "patches_applied": {
                     "Scheduled Updates does not work with Content Moderation.": "https://www.drupal.org/files/issues/scheduled_updates_does-2821916-7.patch"
@@ -3393,8 +3399,7 @@
             "homepage": "https://www.drupal.org/project/scheduled_updates",
             "support": {
                 "source": "http://cgit.drupalcode.org/scheduled_updates"
-            },
-            "time": "2016-12-20 15:20:21"
+            }
         },
         {
             "name": "drupal/seckit",
@@ -7656,7 +7661,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/examples",
-                "reference": "7d3e4f173a3cb09cf11a57a1e90bb635a5bb0f33"
+                "reference": "9ba0e3b12d6bb89e89fbd3e69c708d62afa3b68d"
             },
             "require": {
                 "drupal/core": "*"
@@ -7672,7 +7677,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1500142141"
+                    "datestamp": "1500862143"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7751,8 +7756,7 @@
                 "source": "http://cgit.drupalcode.org/examples",
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
-            },
-            "time": "2017-07-18 17:32:36"
+            }
         },
         {
             "name": "drupal/toolbar_anti_flicker",
