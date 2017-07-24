@@ -5,7 +5,7 @@ paragraphs.chart_boxes:
       css/style.css: {}
       css/paragraphs.chart-boxes.css: {}
   js:
-    js/chart.js: {}
+    js/chartist.js: {}
   dependencies:
     - core/jquery
     - parade/paragraphs
