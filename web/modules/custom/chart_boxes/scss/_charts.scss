@@ -107,58 +107,71 @@
   }
 
   .paragraph--type--chart-box {
+    .paragraph-inner {
+      width: 155px;
+      border-top: 2px solid;
+      margin: 0 !important
+    }
     .field--name-parade-value {
       font-size: 48px;
       font-weight: 800;
       line-height: 48px;
-      width: 155px;
-      border-top: 2px solid;
       vertical-align: top;
       padding-top: 12px;
-      &:after {
-        content: '%';
-        font-size: 30px;
-        vertical-align: top;
-        line-height: 30px;
-      }
+      display: inline-block;
+      margin-bottom: 2px;
     }
     .field--name-parade-title {
-      margin-bottom: 60px;
-      width: 155px;
+      content: '%';
+      font-size: 30px;
+      vertical-align: top;
+      line-height: 30px;
+      display: inline-block;
+      padding-top: 12px;
+      font-weight: 800;
+    }
+    .field--name-parade-text {
+      font-size: 16px;
+      line-height: 16px;
+      margin-bottom: 40px;
+      p {
+        margin: 0 !important;
+      }
     }
   }
 
-  .field--name-parade-paragraphs {
-    .field__item:nth-child(1) {
-      .field--name-parade-value {
-        color: $doughnut-chart-blue;
-        border-color: $doughnut-chart-blue;
+  $ct-series-colors: (
+      #67afe1,
+      #e56385,
+      #6cc04a,
+      #878787,
+      #9acaeb,
+      #f0b3ca,
+      #bde093,
+      #999999,
+      #0065a0,
+      #d51067,
+      #00833e,
+      #d2d2d2,
+      #f78d2d,
+      #ffbe85,
+      #d75f00
+  ) !default;
+
+  @for $i from 0 to length($ct-series-colors) {
+    $item: $i+1;
+    .field--name-parade-paragraphs > .field__item:nth-child(#{$item}) {
+      .paragraph-inner {
+        border-color: nth($ct-series-colors, $item);
       }
-      .field--name-parade-title {
-        color: $doughnut-chart-blue;
-      }
-    }
-    .field__item:nth-child(2) {
-      .field--name-parade-value {
-        color: $doughnut-chart-pink;
-        border-color: $doughnut-chart-pink;
-      }
-      .field--name-parade-title {
-        color: $doughnut-chart-pink;
-      }
-    }
-    .field__item:nth-child(3) {
-      .field--name-parade-value {
-        color: $doughnut-chart-green;
-        border-color: $doughnut-chart-green;
-      }
-      .field--name-parade-title {
-        color: $doughnut-chart-green;
+      .field--name-parade-value,
+      .field--name-parade-title,
+      .field--name-parade-text {
+        color: nth($ct-series-colors, $item);
       }
     }
   }
 }
-
 
 // Doughnut & text chart
 ////////////////////////
