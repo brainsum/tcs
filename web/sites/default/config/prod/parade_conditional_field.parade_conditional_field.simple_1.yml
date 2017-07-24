@@ -1,0 +1,13 @@
+uuid: ec88e5c4-73ac-4a85-915d-ac2ad695789e
+langcode: en
+status: true
+dependencies: {  }
+id: simple_1
+bundle: simple
+layouts:
+  layout_one_column: layout_one_column
+view_mode: default
+classes:
+  color_default: color_default
+  color_light_blue: color_light_blue
+  color_light_grey: color_light_grey

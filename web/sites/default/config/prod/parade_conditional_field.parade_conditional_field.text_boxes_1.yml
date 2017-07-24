@@ -1,0 +1,15 @@
+uuid: 5f46d7e7-222c-4f4f-82a3-2e4305bd1f72
+langcode: en
+status: true
+dependencies: {  }
+id: text_boxes_1
+bundle: text_boxes
+layouts:
+  layout_none: layout_none
+view_mode: default
+classes:
+  color_blue: color_blue
+  color_default: color_default
+  color_light_green: color_light_green
+  color_orange: color_orange
+  color_red: color_red

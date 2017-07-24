@@ -76,7 +76,7 @@ function campaign_pages_post_update_parade_value_migration() {
       'field_simple_layout' => [
         0 => [
           'view_mode' => 'default',
-          'layout' => 'layout_one_column',
+          'layout' => 'layout_one_column_centered',
           'color' => 'color_default',
         ],
         1 => [

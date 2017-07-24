@@ -1,0 +1,11 @@
+uuid: baa016cd-9e64-447f-a632-b6fee3646ace
+langcode: en
+status: true
+dependencies: {  }
+id: image_text_3
+bundle: image_text
+layouts:
+  layout_text_1st_enhanced: layout_text_1st_enhanced
+view_mode: inverse
+classes:
+  color_light_blue: color_light_blue

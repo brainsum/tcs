@@ -1,0 +1,11 @@
+uuid: a906185b-af88-4ba4-a6a3-eab818f8f44d
+langcode: en
+status: true
+dependencies: {  }
+id: image_text_2
+bundle: image_text
+layouts:
+  layout_text_1st: layout_text_1st
+view_mode: default
+classes:
+  color_default: color_default
