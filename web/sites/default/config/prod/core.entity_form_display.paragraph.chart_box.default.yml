@@ -45,7 +45,7 @@ content:
     type: boolean_checkbox
     weight: 3
     settings:
-      display_label: false
+      display_label: true
     third_party_settings: {  }
 hidden:
   created: true
