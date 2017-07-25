@@ -9,7 +9,7 @@
         var chartFill = parseInt($(('#' + chartId)).siblings('.field--name-parade-value')[0].textContent);
         var chartData = [chartFill, (100 - chartFill)];
 
-        new Chartist.Pie(('#'+ chartId), {
+        var chart = new Chartist.Pie(('#' + chartId), {
           series: chartData
         }, {
           donut: true,
