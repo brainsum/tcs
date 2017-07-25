@@ -133,7 +133,7 @@ function campaign_pages_post_update_parade_value_migration() {
     'text_box' => [
       'field_text_box_layout' => [
         0 => [
-          'color' => 'color_default',
+          'color' => 'color_light_grey',
         ],
         1 => [
           'color' => 'color_blue',
