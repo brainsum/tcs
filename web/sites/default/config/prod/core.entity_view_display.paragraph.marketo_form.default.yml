@@ -13,7 +13,7 @@ dependencies:
     - field.field.paragraph.marketo_form.parade_marketo_form
     - field.field.paragraph.marketo_form.parade_text
     - field.field.paragraph.marketo_form.parade_title
-    - image.style.whitepaper_a4
+    - image.style.parade_text_and_image
     - paragraphs.paragraphs_type.marketo_form
   enforced:
     module:
@@ -33,7 +33,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: whitepaper_a4
+      image_style: parade_text_and_image
       image_link: ''
     third_party_settings: {  }
     type: image
