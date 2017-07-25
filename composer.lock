@@ -2929,7 +2929,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "3c328b01c36b395de7cfecbf5f5a2758f0af721d"
+                "reference": "5aad1463efb88897149b1557587640de1f8293bb"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2960,8 +2960,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta1+21-dev",
-                    "datestamp": "1500636543"
+                    "version": "8.x-2.0-beta1+23-dev",
+                    "datestamp": "1500901442"
                 },
                 "patches_applied": {
                     "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
@@ -3022,7 +3022,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-07-24 09:16:05"
+            "time": "2017-07-25 08:28:46"
         },
         {
             "name": "drupal/paragraphs",
@@ -3365,7 +3365,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/scheduled_updates-8.x-1.0-alpha6.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha6",
                 "shasum": "3746c71d480fb62c5c55db7e08be41370edb4d03"
             },
             "require": {
@@ -7756,7 +7756,8 @@
                 "source": "http://cgit.drupalcode.org/examples",
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
-            }
+            },
+            "time": "2017-07-24 02:58:53"
         },
         {
             "name": "drupal/toolbar_anti_flicker",

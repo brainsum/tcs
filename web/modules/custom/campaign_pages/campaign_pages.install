@@ -242,7 +242,6 @@ function _campaign_pages_import_parade_fields() {
     'field.field.paragraph.text_box.parade_call_to_action',
     'field.field.paragraph.text_box.parade_color_scheme',
     'field.field.paragraph.text_box.parade_image',
-    'field.field.paragraph.text_box.parade_layout',
     'field.field.paragraph.text_box.parade_text',
     'field.field.paragraph.text_box.parade_title',
     'field.field.paragraph.text_boxes.parade_anchor',
@@ -289,16 +288,6 @@ function _campaign_pages_import_parade_fields() {
     'classy_paragraphs.classy_paragraphs_style.layout_smallinfo',
     'classy_paragraphs.classy_paragraphs_style.layout_contacts',
     'classy_paragraphs.classy_paragraphs_style.layout_one_column_centered',
-
-//    'core.entity_form_display.paragraph.header.default',
-//    'core.entity_form_display.paragraph.image_text.default',
-//    'core.entity_form_display.paragraph.images.default',
-//
-//    'core.entity_view_display.paragraph.image_text.default',
-//    'core.entity_view_display.paragraph.image_text.inverse',
-//    'core.entity_view_display.paragraph.header.default',
-//    'core.entity_view_display.paragraph.header.preview',
-//    'core.entity_view_display.paragraph.images.default',
   ];
 
   foreach ($configs as $config) {

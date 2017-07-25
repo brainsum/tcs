@@ -48,10 +48,6 @@
 
   }
 
-  &.layout--lot_infos-grey {
-    background-color: $tieto-lightgrey;
-  }
-
   &.layout--contacts {
     // @fixme this is mess but was quick
     @include md {
@@ -129,6 +125,11 @@
     }
   }
 
+  // COLORS
+  &.color-light-grey {
+    background-color: $tieto-lightgrey;
+  }
+
 }
 
 // Text Boxes -> Text Box
@@ -167,7 +168,7 @@
     @include campaign-title-item;
   }
 
-  &.color-default {
+  &.color-light-grey {
     @include campaign-shadowed-textbox;
     .paragraph-inner {
       background-color: #f8f8f8; // @fixme Replace with variable.

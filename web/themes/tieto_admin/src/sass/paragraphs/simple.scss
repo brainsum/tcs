@@ -4,9 +4,9 @@
     @include campaign-title-center;
   }
 
-  //&.layout--one-column {
-  //  text-align: center;
-  //}
+  &.layout--one-column-centered {
+    text-align: center;
+  }
 
   &.color-red-light {
     background: $tieto-lightred;

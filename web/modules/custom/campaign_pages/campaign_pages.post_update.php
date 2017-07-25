@@ -6,6 +6,17 @@
  */
 
 /**
+ * Re-save classy paragraphs.
+ */
+function campaign_pages_post_update_resave_classy_paragraphs() {
+  $entityStorage = \Drupal::entityTypeManager()->getStorage('classy_paragraphs_style');
+  $classes = $entityStorage->loadMultiple();
+  foreach ($classes as $class) {
+    $class->save();
+  }
+}
+
+/**
  * Copy old data to parade 2.x fields.
  */
 function campaign_pages_post_update_parade_value_migration() {
@@ -122,23 +133,18 @@ function campaign_pages_post_update_parade_value_migration() {
     'text_box' => [
       'field_text_box_layout' => [
         0 => [
-          'layout' => 'layout_none',
           'color' => 'color_default',
         ],
         1 => [
-          'layout' => 'layout_none',
           'color' => 'color_blue',
         ],
         2 => [
-          'layout' => 'layout_none',
           'color' => 'color_red',
         ],
         3 => [
-          'layout' => 'layout_none',
           'color' => 'color_orange',
         ],
         4 => [
-          'layout' => 'layout_none',
           'color' => 'color_green',
         ],
       ],
@@ -151,7 +157,7 @@ function campaign_pages_post_update_parade_value_migration() {
         ],
         1 => [
           'view_mode' => 'default',
-          'layout' => 'layout_smallinfo',
+          'layout' => 'layout_text_with_an_icon',
         ],
         2 => [
           'view_mode' => 'default',
@@ -224,12 +230,10 @@ function campaign_pages_post_update_parade_value_migration() {
     // Load every paragraph for each type separately.
     $entities = $paragraphStorage->loadByProperties(['type' => $type->id()]);
 
-    if ($type->id() === 'text_boxes') {
-      echo 'Text boxes: ' . count($entities);
-    }
-
     /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
     foreach ($entities as $entity) {
+      $entityType = $entity->getType();
+
       foreach ($fields as $old_field => $new_field) {
         if ($entity->hasField($old_field)) {
           if (in_array($new_field, $fileFields, TRUE)) {
@@ -237,10 +241,13 @@ function campaign_pages_post_update_parade_value_migration() {
               /** @var \Drupal\file\Entity\File $file */
               $file = $fileStorage->load($value['target_id']);
               if (NULL !== $file) {
+                // @todo: Image alts.
                 $file->setPermanent();
                 $file->save();
-                $entity->set($new_field, $file);
-                $fileUsage->add($file, 'file', 'paragraph', (NULL === $file->getOwnerId()) ? 1 : $file->getOwnerId());
+                $value = $entity->get($old_field)->getValue();
+                $value['target_id'] = $file->id();
+                $entity->set($new_field, $value);
+                $fileUsage->add($file, 'file', 'paragraph', $entity->id());
               }
               else {
                 echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
@@ -255,8 +262,8 @@ function campaign_pages_post_update_parade_value_migration() {
         }
       }
       // Layout field.
-      if (isset($layouts[$entity->getType()])) {
-        foreach ($layouts[$entity->getType()] as $old_layout_field => $layout_mappings) {
+      if (isset($layouts[$entityType])) {
+        foreach ($layouts[$entityType] as $old_layout_field => $layout_mappings) {
           if (isset($entity->{$old_layout_field})) {
             $layout_settings = $layout_mappings[$entity->{$old_layout_field}->value];
             if (isset($entity->parade_view_mode)) {
@@ -267,32 +274,27 @@ function campaign_pages_post_update_parade_value_migration() {
             if (isset($entity->parade_color_scheme, $layout_settings['color'])) {
               $entity->parade_color_scheme->target_id = $layout_settings['color'];
             }
-            $entity->parade_layout->target_id = $layout_settings['layout'];
+            // Layouts were removed for text_box types, so we need to check
+            // fields and settings.
+            if (isset($entity->parade_layout, $layout_settings['layout'])) {
+              $entity->parade_layout->target_id = $layout_settings['layout'];
+            }
           }
         }
       }
       // Color scheme field.
-      if (isset(
-        $colors[$entity->getType()],
+      // @see: https://brainsum.atlassian.net/browse/TCS-307,
+      // 'text_box old colors can be ignored'
+      if ('text_box' !== $entityType && isset(
+        $colors[$entityType],
         $entity->field_color_scheme,
-        $colors[$entity->getType()][$entity->field_color_scheme->target_id]
+        $colors[$entityType][$entity->field_color_scheme->target_id]
       )) {
-        $entity->parade_color_scheme->target_id = $colors[$entity->getType()][$entity->field_color_scheme->target_id];
+        $entity->parade_color_scheme->target_id = $colors[$entityType][$entity->field_color_scheme->target_id];
       }
 
       $entity->setNewRevision(FALSE);
       $entity->save();
     }
-  }
-}
-
-/**
- * Re-save classy paragraphs.
- */
-function campaign_pages_post_update_resave_classy_paragraphs() {
-  $entityStorage = \Drupal::entityTypeManager()->getStorage('classy_paragraphs_style');
-  $classes = $entityStorage->loadMultiple();
-  foreach ($classes as $class) {
-    $class->save();
   }
 }
