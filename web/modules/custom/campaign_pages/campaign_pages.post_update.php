@@ -122,23 +122,18 @@ function campaign_pages_post_update_parade_value_migration() {
     'text_box' => [
       'field_text_box_layout' => [
         0 => [
-          'layout' => 'layout_none',
           'color' => 'color_default',
         ],
         1 => [
-          'layout' => 'layout_none',
           'color' => 'color_blue',
         ],
         2 => [
-          'layout' => 'layout_none',
           'color' => 'color_red',
         ],
         3 => [
-          'layout' => 'layout_none',
           'color' => 'color_orange',
         ],
         4 => [
-          'layout' => 'layout_none',
           'color' => 'color_green',
         ],
       ],
@@ -267,7 +262,11 @@ function campaign_pages_post_update_parade_value_migration() {
             if (isset($entity->parade_color_scheme, $layout_settings['color'])) {
               $entity->parade_color_scheme->target_id = $layout_settings['color'];
             }
-            $entity->parade_layout->target_id = $layout_settings['layout'];
+            // Layouts were removed for text_box types, so we need to check
+            // fields and settings.
+            if (isset($entity->parade_layout, $layout_settings['layout'])) {
+              $entity->parade_layout->target_id = $layout_settings['layout'];
+            }
           }
         }
       }
