@@ -4077,6 +4077,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   }
 }
 
+.paragraph--type--simple.paragraph--view-mode--default.layout--one-column-centered {
+  text-align: center;
+}
+
 .paragraph--type--simple.paragraph--view-mode--default.color-red-light {
   background: #f0b3ca;
   color: white;
