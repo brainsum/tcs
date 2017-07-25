@@ -3727,6 +3727,7 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-parade-image,
   .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-parade-image {
     float: right;
+    padding-left: 1.5em;
     text-align: left;
   }
   .paragraph--type--image-text.paragraph--view-mode--inverse.layout--none .field--name-parade-call-to-action, .paragraph--type--image-text.paragraph--view-mode--inverse.layout--text_1st .field--name-parade-call-to-action,
@@ -3747,6 +3748,7 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   .paragraph--type--image-text.paragraph--view-mode--inverse.layout--image_1st .field--name-parade-image,
   .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-parade-image {
     float: left;
+    padding-right: 1.5em;
     text-align: right;
   }
   .paragraph--type--image-text.paragraph--view-mode--inverse.layout--image_1st .field--name-parade-call-to-action,
