@@ -144,6 +144,7 @@ function campaign_pages_post_update_parade_value_migration() {
           'view_mode' => 'default',
           'layout' => 'layout_none',
         ],
+        // @todo? - Layout: Smallinfo == Layout: Text with an icon | TBD
         1 => [
           'view_mode' => 'default',
           'layout' => 'layout_smallinfo',
