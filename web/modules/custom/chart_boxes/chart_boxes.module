@@ -5,6 +5,8 @@
  * Chart boxes module file.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -69,5 +71,14 @@ function chart_boxes_preprocess_paragraph(&$variables) {
     $variables['#attached']['library'][] = 'chart_boxes/paragraphs.doughnut_chart';
     $variables['#attached']['library'][] = 'chart_boxes/paragraphs.doughnut_text_chart';
     $variables['#attached']['library'][] = 'chart_boxes/paragraphs.horizontal_bar_chart';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function chart_boxes_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['field_paragraphs'])) {
+    $form['#attached']['library'][] = 'chart_boxes/paragraphs.chart_boxes_admin';
   }
 }
