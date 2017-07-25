@@ -23,7 +23,8 @@
         }).get();
 
         var fullLabels = series.map(function(value, index) {
-          return value + labels[index];
+          // return value + labels[index];
+          return value + "%";
         });
 
         var barS = chartValue.length;

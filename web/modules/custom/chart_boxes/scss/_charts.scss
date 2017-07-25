@@ -128,15 +128,25 @@
       padding-top: 12px;
       display: inline-block;
       margin-bottom: 2px;
+      &:after {
+        content: '%';
+        font-size: 30px;
+        vertical-align: top;
+        line-height: 30px;
+        padding-top: 12px;
+        font-weight: 800;
+      }
     }
     .field--name-parade-title {
-      content: '%';
+      display: none;
+      // Hardcoded label
+/*      content: '%';
       font-size: 30px;
       vertical-align: top;
       line-height: 30px;
       display: inline-block;
       padding-top: 12px;
-      font-weight: 800;
+      font-weight: 800;*/
     }
     .field--name-parade-text {
       font-size: 16px;
@@ -191,6 +201,7 @@
     position: relative;
     height: 220px;
     padding-top: 55px;
+    text-align: center;
     .ct-chart {
       @include translate(-50%, 0);
       position: absolute;
@@ -253,14 +264,22 @@
     @include align-content(center);
     @include align-items(center);
     height: 220px;
-    .field--name-parade-value,
-    .field--name-parade-title {
+    .field--name-parade-value {
       font-size: 48px;
       font-weight: 800;
       line-height: 48px;
       vertical-align: middle;
       color: $doughnut-chart-blue;
       display: inline-block;
+    }
+    .field--name-parade-value {
+      &:after {
+        content: '%';
+      }
+    }
+    .field--name-parade-title {
+      // hardcoded label
+      display: none;
     }
     .field--name-parade-text {
       color: $doughnut-chart-blue;
@@ -300,6 +319,46 @@
       font-size: 20px;
       font-weight: 700;
       letter-spacing: -0.01;
+    }
+  }
+
+  .horizontal-bar-chart--right {
+    position: relative;
+    .text_fields {
+      position: absolute;
+      top: 0;
+      left: 60px;
+      list-style-type: none;
+      list-style-image: none;
+      margin: 0;
+      display: block;
+      -webkit-margin-before: 0 !important;
+      -webkit-margin-after: 0 !important;
+      -webkit-margin-start: 0 !important;
+      -webkit-margin-end: 0 !important;
+      -webkit-padding-start: 0 !important;
+      @media (max-width: 1024px) {
+        left: 110px;
+        overflow: hidden;
+      }
+      li {
+        list-style: none;
+        line-height: 32px;
+        color: $white;
+        padding-left: 14px;
+        p {
+          display: block;
+          margin: 0 !important;
+          -webkit-margin-before: 0 !important;
+          -webkit-margin-after: 0 !important;
+          -webkit-margin-start: 0 !important;
+          -webkit-margin-end: 0 !important;
+          line-height: 32px;
+          color: $white;
+          font-size: 16px;
+          letter-spacing: -0.01;
+        }
+      }
     }
   }
 
