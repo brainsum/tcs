@@ -6,6 +6,17 @@
  */
 
 /**
+ * Re-save classy paragraphs.
+ */
+function campaign_pages_post_update_resave_classy_paragraphs() {
+  $entityStorage = \Drupal::entityTypeManager()->getStorage('classy_paragraphs_style');
+  $classes = $entityStorage->loadMultiple();
+  foreach ($classes as $class) {
+    $class->save();
+  }
+}
+
+/**
  * Copy old data to parade 2.x fields.
  */
 function campaign_pages_post_update_parade_value_migration() {
@@ -144,10 +155,9 @@ function campaign_pages_post_update_parade_value_migration() {
           'view_mode' => 'default',
           'layout' => 'layout_none',
         ],
-        // @todo? - Layout: Smallinfo == Layout: Text with an icon | TBD
         1 => [
           'view_mode' => 'default',
-          'layout' => 'layout_smallinfo',
+          'layout' => 'layout_text_with_an_icon',
         ],
         2 => [
           'view_mode' => 'default',
@@ -220,10 +230,6 @@ function campaign_pages_post_update_parade_value_migration() {
     // Load every paragraph for each type separately.
     $entities = $paragraphStorage->loadByProperties(['type' => $type->id()]);
 
-    if ($type->id() === 'text_boxes') {
-      echo 'Text boxes: ' . count($entities);
-    }
-
     /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
     foreach ($entities as $entity) {
       $entityType = $entity->getType();
@@ -238,8 +244,10 @@ function campaign_pages_post_update_parade_value_migration() {
                 // @todo: Image alts.
                 $file->setPermanent();
                 $file->save();
-                $entity->set($new_field, $file);
-                $fileUsage->add($file, 'file', 'paragraph', (NULL === $file->getOwnerId()) ? 1 : $file->getOwnerId());
+                $value = $entity->get($old_field)->getValue();
+                $value['target_id'] = $file->id();
+                $entity->set($new_field, $value);
+                $fileUsage->add($file, 'file', 'paragraph', $entity->id());
               }
               else {
                 echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
@@ -288,16 +296,5 @@ function campaign_pages_post_update_parade_value_migration() {
       $entity->setNewRevision(FALSE);
       $entity->save();
     }
-  }
-}
-
-/**
- * Re-save classy paragraphs.
- */
-function campaign_pages_post_update_resave_classy_paragraphs() {
-  $entityStorage = \Drupal::entityTypeManager()->getStorage('classy_paragraphs_style');
-  $classes = $entityStorage->loadMultiple();
-  foreach ($classes as $class) {
-    $class->save();
   }
 }
