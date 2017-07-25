@@ -26,6 +26,9 @@
           return value + labels[index];
         });
 
+        var barS = chartValue.length;
+        chartBox.css('height', (32 * barS) + "px");
+
         new Chartist.Bar(('#'+ chartId), {
           labels: fullLabels,
           series: [series]
