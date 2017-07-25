@@ -48,10 +48,6 @@
 
   }
 
-  &.layout--lot_infos-grey {
-    background-color: $tieto-lightgrey;
-  }
-
   &.layout--contacts {
     // @fixme this is mess but was quick
     @include md {
@@ -127,6 +123,11 @@
       text-align: left;
       padding: 20px 15px 0;
     }
+  }
+
+  // COLORS
+  &.color-light-grey {
+    background-color: $tieto-lightgrey;
   }
 
 }

@@ -4302,12 +4302,6 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   margin: 0 0 1em;
 }
 
-.paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--lot_infos-grey,
-.paragraph--type--text-boxes.paragraph--view-mode--custom.layout--lot_infos-grey,
-.paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos-grey {
-  background-color: #efefef;
-}
-
 @media (min-width: 767px) {
   .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner > .field--name-parade-title,
   .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts > .paragraph-inner > .field--name-parade-title,
@@ -4448,6 +4442,12 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   clear: both;
   text-align: left;
   padding: 20px 15px 0;
+}
+
+.paragraph--type--text-boxes.paragraph--view-mode--inverse.color-light-grey,
+.paragraph--type--text-boxes.paragraph--view-mode--custom.color-light-grey,
+.paragraph--type--text-boxes.paragraph--view-mode--default.color-light-grey {
+  background-color: #efefef;
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default {
