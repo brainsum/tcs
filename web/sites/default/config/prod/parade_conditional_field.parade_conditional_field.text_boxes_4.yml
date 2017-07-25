@@ -1,0 +1,11 @@
+uuid: 5618ade9-c213-48cf-90a4-b7b4458b7086
+langcode: en
+status: true
+dependencies: {  }
+id: text_boxes_4
+bundle: text_boxes
+layouts:
+  layout_contacts: layout_contacts
+view_mode: default
+classes:
+  color_default: color_default

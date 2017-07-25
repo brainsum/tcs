@@ -1,9 +1,9 @@
-uuid: 5f46d7e7-222c-4f4f-82a3-2e4305bd1f72
+uuid: cbba799d-0fb9-4570-996c-aa8f75fa8645
 langcode: en
 status: true
 dependencies: {  }
-id: text_boxes_1
-bundle: text_boxes
+id: text_box_1
+bundle: text_box
 layouts:
   layout_none: layout_none
 view_mode: default
