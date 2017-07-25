@@ -10,6 +10,6 @@ view_mode: default
 classes:
   color_blue: color_blue
   color_default: color_default
-  color_light_green: color_light_green
+  color_green: color_green
   color_orange: color_orange
   color_red: color_red

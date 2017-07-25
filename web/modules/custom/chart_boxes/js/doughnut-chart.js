@@ -24,7 +24,7 @@
     var labels = series.map(function(value, index) {
       return value + chartLabels[index];
     });
-    var showLabel = false;
+
     // draw the chart
     /////////////////
     var chart = new Chartist.Pie(('#'+ chartId), {
@@ -35,7 +35,8 @@
       donutWidth: 115,
       //donutSolid: true,
       //startAngle: 0,
-      showLabel: true
+      showLabel: true,
+      responsive: false
     });
     // animate chart
     ////////////////
@@ -43,7 +44,12 @@
 /*      var allLabels = $('.ct-chart .ct-label');
       console.log(allLabels);
       allLabels.css('display', "none");*/
+      //console.log(data);
 
+/*      if(data.type === "label") {
+        var textS = data.element._node.innerHTML;
+        console.log(textS);
+      }*/
       if(data.type === 'slice') {
         // Get the total path length in order to use for dash array animation
         var pathLength = data.element._node.getTotalLength();

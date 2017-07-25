@@ -20,6 +20,11 @@ paragraphs.doughnut_text_chart:
   js:
     js/doughnut-text-chart.js: {}
 
+paragraphs.horizontal_bar_chart:
+  version: VERSION
+  js:
+    js/horizontal-bar-chart.js: {}
+
 paragraphs.chart_boxes_admin:
   version: VERSION
   css:
