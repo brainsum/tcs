@@ -56,6 +56,14 @@ function chart_boxes_preprocess_paragraph__chart_boxes(&$variables) {
   }
   $variables['paragraph_id'] = $paragraph->id();
   $variables['#attached']['drupalSettings']['chart_boxes']['paragraph_id'] = $paragraph->id();
+  $variables['descriptions'] = [];
+  foreach ($variables['content']['parade_paragraphs'] as $delta => $data) {
+    if (is_numeric($delta)) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $box */
+      $box = $data['#paragraph'];
+      $variables['descriptions'][] = $box->get('parade_text')->value;
+    }
+  }
 }
 
 /**

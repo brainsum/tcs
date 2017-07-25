@@ -37,11 +37,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     {% if attributes.class[1] == "layout--chart-type--bar" %}
 			<div class="horizontal-bar-chart--left">
 				{{ elements.parade_title }}
-        {#{{ content }}#}
 			</div>
 			<div class="horizontal-bar-chart--right">
 				<div class="ct-chart" id="{{ "bar-chart_" ~ paragraph_id }}"></div>
 				<div class="hidden-content">{{ content }}</div>
+				<ul class="text_fields">
+					{% for item in descriptions %}
+						<li>{{ item | raw }}</li>
+					{% endfor %}
+				</ul>
 			</div>
     {% endif %}
 

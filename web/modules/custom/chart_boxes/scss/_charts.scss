@@ -303,6 +303,46 @@
     }
   }
 
+  .horizontal-bar-chart--right {
+    position: relative;
+    .text_fields {
+      position: absolute;
+      top: 0;
+      left: 60px;
+      list-style-type: none;
+      list-style-image: none;
+      margin: 0;
+      display: block;
+      -webkit-margin-before: 0 !important;
+      -webkit-margin-after: 0 !important;
+      -webkit-margin-start: 0 !important;
+      -webkit-margin-end: 0 !important;
+      -webkit-padding-start: 0 !important;
+      @media (max-width: 1024px) {
+        left: 110px;
+        overflow: hidden;
+      }
+      li {
+        list-style: none;
+        line-height: 32px;
+        color: $white;
+        padding-left: 14px;
+        p {
+          display: block;
+          margin: 0 !important;
+          -webkit-margin-before: 0 !important;
+          -webkit-margin-after: 0 !important;
+          -webkit-margin-start: 0 !important;
+          -webkit-margin-end: 0 !important;
+          line-height: 32px;
+          color: $white;
+          font-size: 16px;
+          letter-spacing: -0.01;
+        }
+      }
+    }
+  }
+
   >.paragraph-inner >.horizontal-bar-chart--left >.field--name-parade-title {
     font-weight: 800;
     font-size: 48px;
