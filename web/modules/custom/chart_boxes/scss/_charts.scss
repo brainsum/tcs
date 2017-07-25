@@ -33,6 +33,9 @@
         @include flexbox;
         @include justify-content(space-around);
         @include flex-wrap(wrap);
+        .field__item {
+          margin: 0 8px;
+        }
       }
       @media (max-width: 768px) {
         max-width: 460px;
@@ -157,24 +160,6 @@
     }
   }
 
-  $ct-series-colors: (
-      #67afe1,
-      #e56385,
-      #6cc04a,
-      #878787,
-      #9acaeb,
-      #f0b3ca,
-      #bde093,
-      #999999,
-      #0065a0,
-      #d51067,
-      #00833e,
-      #d2d2d2,
-      #f78d2d,
-      #ffbe85,
-      #d75f00
-  ) !default;
-
   @for $i from 0 to length($ct-series-colors) {
     $item: $i+1;
     .field--name-parade-paragraphs > .field__item:nth-child(#{$item}) {
@@ -272,9 +257,11 @@
       color: $doughnut-chart-blue;
       display: inline-block;
     }
-    .field--name-parade-value {
-      &:after {
-        content: '%';
+    .add_pie {
+      .field--name-parade-value {
+        &:after {
+          content: '%';
+        }
       }
     }
     .field--name-parade-title {
@@ -326,7 +313,7 @@
     position: relative;
     .text_fields {
       position: absolute;
-      top: 0;
+      top: 1px;
       left: 60px;
       list-style-type: none;
       list-style-image: none;
@@ -343,7 +330,8 @@
       }
       li {
         list-style: none;
-        line-height: 32px;
+        line-height: 30px;
+        margin-bottom: 2px;
         color: $white;
         padding-left: 14px;
         p {
@@ -353,7 +341,7 @@
           -webkit-margin-after: 0 !important;
           -webkit-margin-start: 0 !important;
           -webkit-margin-end: 0 !important;
-          line-height: 32px;
+          line-height: 30px;
           color: $white;
           font-size: 16px;
           letter-spacing: -0.01;

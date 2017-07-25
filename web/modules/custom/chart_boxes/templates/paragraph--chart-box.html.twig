@@ -15,7 +15,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  <div class="paragraph-inner clearfix">
+  <div class="paragraph-inner clearfix {% if add_pie == 1 %}add_pie{% endif %}">
     {{ content }}
 
     {% if add_pie == 1 %}
