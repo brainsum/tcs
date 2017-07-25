@@ -4732,35 +4732,35 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action {
-  color: white;
-  background: #6cc04a;
-  border-color: #6cc04a;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   margin: 0;
   text-align: left;
 }
 
-.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:focus, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:active {
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button {
+  color: white;
+  background: #6cc04a;
+  border-color: #6cc04a;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  padding: 0.25rem 1rem;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button:focus, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button:active {
   background: #559f38;
   border-color: #519835;
 }
 
-.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:active {
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button:active {
   box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:active:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:active:focus {
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button:active:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button:active:focus {
   background: #47852e;
   border-color: #376724;
 }
 
-.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action.disabled:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action.disabled:focus, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:disabled:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:disabled:focus {
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button.disabled:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button.disabled:focus, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button:disabled:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button:disabled:focus {
   background: #6cc04a;
   border-color: #6cc04a;
-}
-
-.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button {
-  padding: 0.25rem 1rem;
 }
 
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--rounded_image .field--name-parade-paragraphs .field--name-parade-image {

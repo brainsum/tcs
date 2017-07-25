@@ -235,11 +235,11 @@
   }
 
   .field--name-parade-call-to-action {
-    // @fixme after tieto_base merge.
-    @include campaign-button-green;
+    // @fixme after tieto_base merge.ó
     margin: 0;
     text-align: left;
     .button {
+      @include campaign-button-green;
       padding: 0.25rem 1rem;
     }
   }
