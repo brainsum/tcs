@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.text_box.parade_call_to_action
     - field.field.paragraph.text_box.parade_color_scheme
     - field.field.paragraph.text_box.parade_image
-    - field.field.paragraph.text_box.parade_layout
     - field.field.paragraph.text_box.parade_text
     - field.field.paragraph.text_box.parade_title
     - paragraphs.paragraphs_type.text_box
@@ -21,13 +20,6 @@ content:
   parade_color_scheme:
     type: entity_reference_label
     weight: 2
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-  parade_layout:
-    type: entity_reference_label
-    weight: 1
     label: inline
     settings:
       link: false

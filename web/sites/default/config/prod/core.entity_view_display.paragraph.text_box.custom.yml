@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.text_box.parade_call_to_action
     - field.field.paragraph.text_box.parade_color_scheme
     - field.field.paragraph.text_box.parade_image
-    - field.field.paragraph.text_box.parade_layout
     - field.field.paragraph.text_box.parade_text
     - field.field.paragraph.text_box.parade_title
     - paragraphs.paragraphs_type.text_box
@@ -60,5 +59,4 @@ content:
 hidden:
   created: true
   parade_color_scheme: true
-  parade_layout: true
   uid: true
