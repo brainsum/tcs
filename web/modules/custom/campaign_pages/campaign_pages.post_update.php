@@ -285,3 +285,14 @@ function campaign_pages_post_update_parade_value_migration() {
     }
   }
 }
+
+/**
+ * Re-save classy paragraphs.
+ */
+function campaign_pages_post_update_resave_classy_paragraphs() {
+  $entityStorage = \Drupal::entityTypeManager()->getStorage('classy_paragraphs_style');
+  $classes = $entityStorage->loadMultiple();
+  foreach ($classes as $class) {
+    $class->save();
+  }
+}
