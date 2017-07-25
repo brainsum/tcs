@@ -1,0 +1,12 @@
+uuid: 8b2d0c6c-a115-4daf-82ba-dace0474452e
+langcode: en
+status: true
+dependencies: {  }
+id: marketo_form_1
+bundle: marketo_form
+layouts:
+  layout_clean: layout_clean
+  layout_none: layout_none
+view_mode: default
+classes:
+  color_default: color_default
