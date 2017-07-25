@@ -135,120 +135,122 @@
   }
 }
 
-.paragraph.paragraph--view-mode--default {
-  @include clearfix;
-  padding: 40px 1em;
-  background-color: #fff;
+.paragraph {
+  &.paragraph--view-mode--default {
+    @include clearfix;
+    padding: 40px 1em;
+    background-color: #fff;
 
-  // Some fixes for WYSIWYG fields.
-  .field.text-formatted {
-    .align-right {
-      margin-left: 1.5em;
+    // Some fixes for WYSIWYG fields.
+    .field.text-formatted {
+      .align-right {
+        margin-left: 1.5em;
+      }
+      .align-left {
+        margin-right: 1.5em;
+      }
     }
-    .align-left {
-      margin-right: 1.5em;
+
+    .paragraph-inner {
+      max-width: $page-max-width;
+      margin: 0 auto;
     }
-  }
 
-  .paragraph-inner {
-    max-width: $page-max-width;
-    margin: 0 auto;
-  }
+    .field--name-parade-call-to-action {
+      text-align: center;
+      margin: 2em 0;
 
-  .field--name-parade-call-to-action {
-    text-align: center;
-    margin: 2em 0;
+      // @fixme After tieto_base merge, remove this.
+      .button {
+        padding: .75em 1.4em;
+        &:hover, &:active, &:focus {
+          color: #fff;
+        }
+        + .button {
+          margin-left: 1em;
+        }
+      }
+    }
 
-    // @fixme After tieto_base merge, remove this.
+    //             __ _
+    //    ____    / _(_)
+    //   / __ \  | |_ ___  ___ __ ___   ___
+    //  / / _` | |  _| \ \/ / '_ ` _ \ / _ \
+    // | | (_| | | | | |>  <| | | | | |  __/
+    //  \ \__,_| |_| |_/_/\_\_| |_| |_|\___|
+    //   \____/
+
+    //                  _          _    __                       _   _      _          _                    _ _ _
+    //                 (_)        | |  / _|                     | | (_)    | |        | |                  | | | |
+    //   ___ ___  _ __  _  ___  __| | | |_ _ __ ___  _ __ ___   | |_ _  ___| |_ ___   | |__   __ _ ___  ___| | | |
+    //  / __/ _ \| '_ \| |/ _ \/ _` | |  _| '__/ _ \| '_ ` _ \  | __| |/ _ \ __/ _ \  | '_ \ / _` / __|/ _ \ | | |
+    // | (_| (_) | |_) | |  __/ (_| | | | | | | (_) | | | | | | | |_| |  __/ || (_) | | |_) | (_| \__ \  __/_|_|_|
+    //  \___\___/| .__/|_|\___|\__,_| |_| |_|  \___/|_| |_| |_|  \__|_|\___|\__\___/  |_.__/ \__,_|___/\___(_|_|_)
+    //           | |
+    //           |_|
     .button {
-      padding: .75em 1.4em;
-      &:hover, &:active, &:focus {
-        color: #fff;
-      }
-      + .button {
-        margin-left: 1em;
-      }
-    }
-  }
-
-  //             __ _
-  //    ____    / _(_)
-  //   / __ \  | |_ ___  ___ __ ___   ___
-  //  / / _` | |  _| \ \/ / '_ ` _ \ / _ \
-  // | | (_| | | | | |>  <| | | | | |  __/
-  //  \ \__,_| |_| |_/_/\_\_| |_| |_|\___|
-  //   \____/
-
-  //                  _          _    __                       _   _      _          _                    _ _ _
-  //                 (_)        | |  / _|                     | | (_)    | |        | |                  | | | |
-  //   ___ ___  _ __  _  ___  __| | | |_ _ __ ___  _ __ ___   | |_ _  ___| |_ ___   | |__   __ _ ___  ___| | | |
-  //  / __/ _ \| '_ \| |/ _ \/ _` | |  _| '__/ _ \| '_ ` _ \  | __| |/ _ \ __/ _ \  | '_ \ / _` / __|/ _ \ | | |
-  // | (_| (_) | |_) | |  __/ (_| | | | | | | (_) | | | | | | | |_| |  __/ || (_) | | |_) | (_| \__ \  __/_|_|_|
-  //  \___\___/| .__/|_|\___|\__,_| |_| |_|  \___/|_| |_| |_|  \__|_|\___|\__\___/  |_.__/ \__,_|___/\___(_|_|_)
-  //           | |
-  //           |_|
-  .button {
-    display: inline-block;
-    font-weight: bold;
-    font-family: sans-serif;
-    line-height: 1.25;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid #999999;
-    padding: 0.25rem 1rem;
-    font-size: 1rem;
-    border-radius: 2px;
-    transition: all 0.2s ease-in-out;
-    color: #5e5e5e;
-    background: #eeeeee;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-    &:focus,
-    &:active:focus {
-      outline: 5px auto -webkit-focus-ring-color;
-      outline-offset: -2px;
-    }
-    &:hover,
-    &:focus,
-    &:active {
+      display: inline-block;
+      font-weight: bold;
+      font-family: sans-serif;
+      line-height: 1.25;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid #999999;
+      padding: 0.25rem 1rem;
+      font-size: 1rem;
+      border-radius: 2px;
+      transition: all 0.2s ease-in-out;
       color: #5e5e5e;
-      background: #d5d5d5;
-      border-color: #7a7a7a;
-    }
-    &:focus,
-    &:hover {
-      text-decoration: none;
-    }
-    &:active {
-      outline: 0;
-      box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
-      &:hover,
-      &:focus {
-        color: #5e5e5e;
-        background-color: #c3c3c3;
-        border-color: #595959;
-      }
-    }
-    &.disabled,
-    &:disabled {
       background: #eeeeee;
-      border-color: #eeeeee;
-      color: #c1c1c1;
-      cursor: not-allowed;
-      box-shadow: none;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+      &:focus,
+      &:active:focus {
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+      }
       &:hover,
-      &:focus {
+      &:focus,
+      &:active {
+        color: #5e5e5e;
+        background: #d5d5d5;
+        border-color: #7a7a7a;
+      }
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+      &:active {
+        outline: 0;
+        box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
+        &:hover,
+        &:focus {
+          color: #5e5e5e;
+          background-color: #c3c3c3;
+          border-color: #595959;
+        }
+      }
+      &.disabled,
+      &:disabled {
         background: #eeeeee;
-        border-color: #999999;
+        border-color: #eeeeee;
+        color: #c1c1c1;
+        cursor: not-allowed;
+        box-shadow: none;
+        &:hover,
+        &:focus {
+          background: #eeeeee;
+          border-color: #999999;
+        }
       }
     }
-  }
-  .button--primary {
-    @include campaign-button-primary;
+    .button--primary {
+      @include campaign-button-primary;
+    }
   }
 }
