@@ -1,8 +1,8 @@
 // @todo move this to text-boxes.scss!
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default {
 
-  &.color-green,
-  &.color-green-light {
+  &.color-light-green,
+  &.color-green {
     color: white;
     background: $tieto-green;
     .field,
@@ -18,14 +18,14 @@
       color: white;
     }
   }
-  &.color-blue-light {
+  &.color-light-blue {
     background: $tieto-lightblue;
   }
   &.color-grey,
-  &.color-grey-light{
+  &.color-light-grey {
     background: $tieto-lightgrey;
   }
-  &.color-grey-dark {
+  &.color-dark-grey {
     color: white;
     background: $tieto-mediumgrey;
     .field,
@@ -34,7 +34,7 @@
     }
   }
   &.color-orange,
-  &.color-orange-light {
+  &.color-light-orange {
     color: white;
     background: $tieto-orange;
     .field,

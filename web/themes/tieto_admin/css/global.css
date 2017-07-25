@@ -3727,6 +3727,7 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   .paragraph--type--image-text.paragraph--view-mode--default.layout--none .field--name-parade-image,
   .paragraph--type--image-text.paragraph--view-mode--default.layout--text_1st .field--name-parade-image {
     float: right;
+    padding-left: 1.5em;
     text-align: left;
   }
   .paragraph--type--image-text.paragraph--view-mode--inverse.layout--none .field--name-parade-call-to-action, .paragraph--type--image-text.paragraph--view-mode--inverse.layout--text_1st .field--name-parade-call-to-action,
@@ -3747,6 +3748,7 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   .paragraph--type--image-text.paragraph--view-mode--inverse.layout--image_1st .field--name-parade-image,
   .paragraph--type--image-text.paragraph--view-mode--default.layout--image_1st .field--name-parade-image {
     float: left;
+    padding-right: 1.5em;
     text-align: right;
   }
   .paragraph--type--image-text.paragraph--view-mode--inverse.layout--image_1st .field--name-parade-call-to-action,
@@ -4730,8 +4732,31 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action {
+  color: white;
+  background: #6cc04a;
+  border-color: #6cc04a;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   margin: 0;
   text-align: left;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:focus, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:active {
+  background: #559f38;
+  border-color: #519835;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:active {
+  box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:active:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:active:focus {
+  background: #47852e;
+  border-color: #376724;
+}
+
+.paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action.disabled:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action.disabled:focus, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:disabled:hover, .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action:disabled:focus {
+  background: #6cc04a;
+  border-color: #6cc04a;
 }
 
 .paragraph--type--text-box.paragraph--view-mode--default .field--name-parade-call-to-action .button {
@@ -4917,14 +4942,14 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   }
 }
 
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green-light {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-green, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green {
   color: white;
   background: #b2eb95;
 }
 
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green .field,
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green .field--name-parade-paragraphs .field, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green-light .field,
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green-light .field--name-parade-paragraphs .field {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-green .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-green .field--name-parade-paragraphs .field, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green .field--name-parade-paragraphs .field {
   color: white;
 }
 
@@ -4938,32 +4963,32 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   color: white;
 }
 
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-blue-light {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-blue {
   background: #cde6f5;
 }
 
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-grey, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-grey-light {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-grey, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-grey {
   background: #efefef;
 }
 
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-grey-dark {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-dark-grey {
   color: white;
   background: #999999;
 }
 
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-grey-dark .field,
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-grey-dark .field--name-parade-paragraphs .field {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-dark-grey .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-dark-grey .field--name-parade-paragraphs .field {
   color: white;
 }
 
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-orange, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-orange-light {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-orange, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-orange {
   color: white;
   background: #F78D2D;
 }
 
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-orange .field,
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-orange .field--name-parade-paragraphs .field, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-orange-light .field,
-.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-orange-light .field--name-parade-paragraphs .field {
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-orange .field--name-parade-paragraphs .field, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-orange .field,
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-orange .field--name-parade-paragraphs .field {
   color: white;
 }
 

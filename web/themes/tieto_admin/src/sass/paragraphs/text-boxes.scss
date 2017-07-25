@@ -236,6 +236,7 @@
 
   .field--name-parade-call-to-action {
     // @fixme after tieto_base merge.
+    @include campaign-button-green;
     margin: 0;
     text-align: left;
     .button {
