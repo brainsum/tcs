@@ -9,6 +9,7 @@
  * Re-save classy paragraphs.
  */
 function campaign_pages_post_update_resave_classy_paragraphs() {
+  echo "\nRunning: campaign_pages_post_update_resave_classy_paragraphs\n";
   $entityStorage = \Drupal::entityTypeManager()->getStorage('classy_paragraphs_style');
   $classes = $entityStorage->loadMultiple();
   foreach ($classes as $class) {
@@ -20,6 +21,8 @@ function campaign_pages_post_update_resave_classy_paragraphs() {
  * Copy old data to parade 2.x fields.
  */
 function campaign_pages_post_update_parade_value_migration() {
+  echo "\nRunning: campaign_pages_post_update_parade_value_migration\n";
+
   // Old fields with same type as new field.
   $fields = [
     'field_anchor' => 'parade_anchor',
@@ -209,6 +212,9 @@ function campaign_pages_post_update_parade_value_migration() {
   $paragraphTypes = $typeStorage->loadMultiple();
 
   foreach ($paragraphTypes as $type) {
+    if (in_array($type->id(), ['chart_box', 'chart_boxes'], FALSE)) {
+      continue;
+    }
     // Load every paragraph for each type separately.
     $entities = $paragraphStorage->loadByProperties(['type' => $type->id()]);
 
@@ -236,11 +242,34 @@ function campaign_pages_post_update_parade_value_migration() {
               }
             }
           }
+          // In case of text_boxes..
+          // Note: This only works if boxes are loaded before box ones.
+          // But that should be OK, loadMultiple gets them properly.
+          elseif ($old_field === 'field_paragraphs') {
+            // Get target_ids as an array..
+            $data = $entity->get($old_field)->getValue();
+            $data = array_map(function ($item) {
+              return $item['target_id'];
+            }, $data);
+            // Load them at once in hopes of a performance gain.
+            // Note: I seriously hope the order stays the same.
+            $references = $paragraphStorage->loadMultiple($data);
+            $newData = [];
+            /** @var \Drupal\paragraphs\Entity\Paragraph $reference */
+            foreach ($references as $reference) {
+              $newData[] = [
+                'target_id' => $reference->id(),
+                'target_revision_id' => $reference->getRevisionId(),
+              ];
+            }
+            $entity->set($new_field, $newData);
+          }
           else {
             $entity->set($new_field, $entity->get($old_field)->getValue());
-            $entity->get($new_field)->setLangcode($entity->get($old_field)
-              ->getLangcode());
           }
+
+          $entity->get($new_field)->setLangcode($entity->get($old_field)
+            ->getLangcode());
         }
       }
       // Layout field.
@@ -286,6 +315,7 @@ function campaign_pages_post_update_parade_value_migration() {
  * Set the paragraph revisions to the newest in the nodes.
  */
 function campaign_pages_post_update_set_revisions_to_newest() {
+  echo "\nRunning: campaign_pages_post_update_set_revisions_to_newest\n";
   // @todo: Maybe migrate fields to parade_ prefixed.
   //  // Load all campaign pages entities.
   //  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
