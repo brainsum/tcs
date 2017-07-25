@@ -225,6 +225,8 @@ function campaign_pages_post_update_parade_value_migration() {
 
     /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
     foreach ($entities as $entity) {
+      $entityType = $entity->getType();
+
       foreach ($fields as $old_field => $new_field) {
         if ($entity->hasField($old_field)) {
           if (in_array($new_field, $fileFields, TRUE)) {
@@ -232,6 +234,7 @@ function campaign_pages_post_update_parade_value_migration() {
               /** @var \Drupal\file\Entity\File $file */
               $file = $fileStorage->load($value['target_id']);
               if (NULL !== $file) {
+                // @todo: Image alts.
                 $file->setPermanent();
                 $file->save();
                 $entity->set($new_field, $file);
@@ -250,8 +253,8 @@ function campaign_pages_post_update_parade_value_migration() {
         }
       }
       // Layout field.
-      if (isset($layouts[$entity->getType()])) {
-        foreach ($layouts[$entity->getType()] as $old_layout_field => $layout_mappings) {
+      if (isset($layouts[$entityType])) {
+        foreach ($layouts[$entityType] as $old_layout_field => $layout_mappings) {
           if (isset($entity->{$old_layout_field})) {
             $layout_settings = $layout_mappings[$entity->{$old_layout_field}->value];
             if (isset($entity->parade_view_mode)) {
@@ -271,12 +274,14 @@ function campaign_pages_post_update_parade_value_migration() {
         }
       }
       // Color scheme field.
-      if (isset(
-        $colors[$entity->getType()],
+      // @see: https://brainsum.atlassian.net/browse/TCS-307,
+      // 'text_box old colors can be ignored'
+      if ('text_box' !== $entityType && isset(
+        $colors[$entityType],
         $entity->field_color_scheme,
-        $colors[$entity->getType()][$entity->field_color_scheme->target_id]
+        $colors[$entityType][$entity->field_color_scheme->target_id]
       )) {
-        $entity->parade_color_scheme->target_id = $colors[$entity->getType()][$entity->field_color_scheme->target_id];
+        $entity->parade_color_scheme->target_id = $colors[$entityType][$entity->field_color_scheme->target_id];
       }
 
       $entity->setNewRevision(FALSE);
