@@ -20,24 +20,6 @@ function campaign_pages_post_update_resave_classy_paragraphs() {
  * Copy old data to parade 2.x fields.
  */
 function campaign_pages_post_update_parade_value_migration() {
-
-//  // Load all campaign pages entities.
-//  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
-//  $nodes = $nodeStorage->loadByProperties(['type' => 'campaign']);
-//  $fields = [
-//    'field_machine_name' => 'parade_machine_name',
-//    'field_paragraphs' => 'parade_onepage_sections',
-//  ];
-//  foreach ($nodes as $node) {
-//    foreach ($fields as $old_field => $new_field) {
-//      if (isset($node->{$old_field})) {
-//        $node->{$new_field} = $node->{$old_field};
-//      }
-//    }
-//  $node->setNewRevision(FALSE);
-//  $node->save();
-//  }
-
   // Old fields with same type as new field.
   $fields = [
     'field_anchor' => 'parade_anchor',
@@ -294,7 +276,55 @@ function campaign_pages_post_update_parade_value_migration() {
       }
 
       $entity->setNewRevision(FALSE);
+      $entity->enforceIsNew(FALSE);
       $entity->save();
     }
+  }
+}
+
+/**
+ * Set the paragraph revisions to the newest in the nodes.
+ */
+function campaign_pages_post_update_set_revisions_to_newest() {
+  // @todo: Maybe migrate fields to parade_ prefixed.
+  //  // Load all campaign pages entities.
+  //  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+  //  $nodes = $nodeStorage->loadByProperties(['type' => 'campaign']);
+  //  $fields = [
+  //    'field_machine_name' => 'parade_machine_name',
+  //    'field_paragraphs' => 'parade_onepage_sections',
+  //  ];
+  //  foreach ($nodes as $node) {
+  //    foreach ($fields as $old_field => $new_field) {
+  //      if (isset($node->{$old_field})) {
+  //        $node->{$new_field} = $node->{$old_field};
+  //      }
+  //    }
+  //  $node->setNewRevision(FALSE);
+  //  $node->save();
+  //  }
+  $sectionsField = 'field_paragraphs';
+
+  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+
+  $nodes = $nodeStorage->loadByProperties(['type' => 'campaign']);
+  /** @var \Drupal\node\NodeInterface $node */
+  foreach ($nodes as $node) {
+    /** @var array $paragraphs */
+    $paragraphs = $node->get($sectionsField)->getValue();
+    $newValue = [];
+    foreach ($paragraphs as $paragraph) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $loaded */
+      $loaded = $paragraphStorage->load($paragraph['target_id']);
+      $newValue[] = [
+        'target_id' => $loaded->id(),
+        'target_revision_id' => $loaded->getRevisionId(),
+      ];
+    }
+    $node->set($sectionsField, $newValue);
+    $node->setNewRevision(FALSE);
+    $node->enforceIsNew(FALSE);
+    $node->save();
   }
 }
