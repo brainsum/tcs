@@ -271,6 +271,55 @@
   }
 }
 
+// Horizontal bar chart
+///////////////////////
+
+.layout--chart-type--bar {
+  &.paragraph.paragraph--view-mode--default {
+    background-color: transparent;
+    padding: 70px 0;
+    &.color-blue {
+      background-color: $doughnut-chart-blue;
+    }
+  }
+  .horizontal-bar-chart--left,
+  .horizontal-bar-chart--right {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    @media (max-width: 1024px) {
+      width: 100%;
+      display: block;
+      float: none;
+      padding: 0 50px;
+    }
+    .hidden-content {
+      display: none;
+    }
+    .ct-label {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01;
+    }
+  }
+
+  >.paragraph-inner >.horizontal-bar-chart--left >.field--name-parade-title {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -0.01em;
+    color: $white;
+    max-width: 300px;
+    @media (max-width: 1024px) {
+      max-width: none;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+  }
+}
+
+
+
 
 
 

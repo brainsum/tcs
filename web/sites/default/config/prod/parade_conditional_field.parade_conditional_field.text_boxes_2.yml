@@ -1,0 +1,14 @@
+uuid: f5b07c3b-ac56-4a63-b8a1-cefa091dc9f1
+langcode: en
+status: true
+dependencies: {  }
+id: text_boxes_2
+bundle: text_boxes
+layouts:
+  layout_lot_of_infos: layout_lot_of_infos
+  layout_none: layout_none
+  layout_smallinfo: layout_smallinfo
+  layout_text_with_an_icon: layout_text_with_an_icon
+view_mode: default
+classes:
+  color_default: color_default
