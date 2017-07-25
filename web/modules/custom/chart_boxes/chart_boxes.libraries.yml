@@ -19,3 +19,9 @@ paragraphs.doughnut_text_chart:
   version: VERSION
   js:
     js/doughnut-text-chart.js: {}
+
+paragraphs.chart_boxes_admin:
+  version: VERSION
+  css:
+    component:
+      css/paragraphs.chart-boxes_admin.css: {}
