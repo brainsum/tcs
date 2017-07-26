@@ -9,3 +9,4 @@ layouts:
 view_mode: default
 classes:
   color_default: color_default
+  color_light_blue: color_light_blue
