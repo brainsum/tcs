@@ -24,8 +24,8 @@ settings:
       type: target_bundles
       target_bundles:
         color_blue: color_blue
-        color_clean: color_clean
         color_dark_grey: color_dark_grey
+        color_default: color_default
         color_green: color_green
         color_grey: color_grey
         color_light_blue: color_light_blue
@@ -37,15 +37,19 @@ settings:
         color_red: color_red
         color_shaded: color_shaded
         layout_bar_chart: 0
+        layout_clean: 0
+        layout_contacts: 0
         layout_doughnut_and_text_chart: 0
         layout_doughnut_chart: 0
-        layout_clean: 0
         layout_download: 0
         layout_image_1st: 0
+        layout_lot_of_infos: 0
         layout_none: 0
         layout_one_column: 0
+        layout_one_column_centered: 0
         layout_rounded_image: 0
         layout_separator_clean: 0
+        layout_smallinfo: 0
         layout_text_1st: 0
         layout_text_1st_enhanced: 0
         layout_text_with_an_icon: 0

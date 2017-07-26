@@ -358,3 +358,35 @@ function campaign_pages_post_update_set_revisions_to_newest() {
     $node->save();
   }
 }
+
+/**
+ * Additional fixes for colors and layouts.
+ */
+function campaign_pages_post_update_8004() {
+  // Text boxes: light_blue color -> Text box: light_grey should be default.
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  $entities = $paragraphStorage->loadByProperties(['type' => 'text_boxes']);
+
+  /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+  foreach ($entities as $entity) {
+    if (isset($entity->parade_color_scheme) && 'color_light_blue' === $entity->parade_color_scheme->target_id) {
+      $data = $entity->get('parade_paragraphs')->getValue();
+      $data = array_map(function ($item) {
+        return $item['target_id'];
+      }, $data);
+      // Load them at once in hopes of a performance gain.
+      // Note: I seriously hope the order stays the same.
+      $references = $paragraphStorage->loadMultiple($data);
+      /** @var \Drupal\paragraphs\Entity\Paragraph $textBox */
+      foreach ($references as $textBox) {
+        $textBox->parade_color_scheme->target_id = 'color_default';
+        // @todo: This will likely screw up revisions again.
+        $textBox->setNewRevision(FALSE);
+        $textBox->enforceIsNew(FALSE);
+        $textBox->save();
+      }
+      // @todo: Re-save parade_paragraphs with new revisions?
+    }
+  }
+
+}
