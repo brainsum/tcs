@@ -8,10 +8,16 @@
     padding: 70px 0;
     &.color-grey {
       background-color: darken($doughnut-bgr, 5%);
+      .ct-chart .ct-label {
+        fill: darken($doughnut-bgr, 5%) !important;
+      }
     }
 
     &.color-light-grey {
       background-color: $doughnut-bgr;
+      .ct-chart .ct-label {
+        fill: $doughnut-bgr !important;
+      }
     }
   }
 
