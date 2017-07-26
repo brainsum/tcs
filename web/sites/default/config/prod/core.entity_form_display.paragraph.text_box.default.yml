@@ -13,6 +13,7 @@ dependencies:
   module:
     - content_moderation
     - image
+    - maxlength
     - parade
     - text
 _core:
@@ -57,7 +58,10 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 60
+        maxlength_js_label: 'To reach audience attention better, compact your message. Max. length: @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
     region: content
   translation:
