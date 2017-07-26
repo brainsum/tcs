@@ -1,0 +1,16 @@
+uuid: 64d2e903-1166-4eb7-8559-7bd49346a898
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.chart_boxes
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.chart_boxes
+target_entity_type_id: paragraph
+target_bundle: chart_boxes
+default_langcode: site_default
+language_alterable: false

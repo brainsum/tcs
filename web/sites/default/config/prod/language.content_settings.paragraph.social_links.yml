@@ -1,0 +1,16 @@
+uuid: fcca5c06-7ba3-4a62-b509-ce0d996de999
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.social_links
+target_entity_type_id: paragraph
+target_bundle: social_links
+default_langcode: site_default
+language_alterable: true

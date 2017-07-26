@@ -16,7 +16,7 @@ bundle: text_boxes
 label: 'View mode'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: default

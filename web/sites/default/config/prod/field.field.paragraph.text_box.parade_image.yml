@@ -6,7 +6,14 @@ dependencies:
     - field.storage.paragraph.parade_image
     - paragraphs.paragraphs_type.text_box
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: file
+      alt: '0'
+      title: '0'
 _core:
   default_config_hash: MhJb-19C2sPO-EOEzxBdacjkID8VSGgrlL0sorTGYLc
 id: paragraph.text_box.parade_image

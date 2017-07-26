@@ -12,6 +12,7 @@ dependencies:
     - field.field.paragraph.image_text.parade_text
     - field.field.paragraph.image_text.parade_title
     - field.field.paragraph.image_text.parade_view_mode
+    - image.style.parade_text_and_image
     - paragraphs.paragraphs_type.image_text
   module:
     - image
@@ -29,9 +30,9 @@ content:
     label: hidden
     settings:
       trim_length: 80
-      rel: nofollow
       url_only: false
       url_plain: false
+      rel: '0'
       target: '0'
     third_party_settings: {  }
     type: link
@@ -40,7 +41,7 @@ content:
     weight: 2
     label: hidden
     settings:
-      image_style: ''
+      image_style: parade_text_and_image
       image_link: ''
     third_party_settings: {  }
     type: image

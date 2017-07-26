@@ -1,0 +1,20 @@
+uuid: e47c81c9-66ee-436f-b06b-48b0b493146b
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.twitter_feed
+id: paragraph.twitter_feed.uid
+field_name: uid
+entity_type: paragraph
+bundle: twitter_feed
+label: 'Authored by'
+description: 'The user ID of the paragraphs author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\paragraphs\Entity\Paragraph::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: 4474c295-b365-4fd2-8e7f-28d46d51b0df
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.twitter_feed
+id: paragraph.twitter_feed.status
+field_name: status
+entity_type: paragraph
+bundle: twitter_feed
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

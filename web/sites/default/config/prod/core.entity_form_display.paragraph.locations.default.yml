@@ -64,4 +64,5 @@ hidden:
   created: true
   parade_geofield: true
   status: true
+  translation: true
   uid: true

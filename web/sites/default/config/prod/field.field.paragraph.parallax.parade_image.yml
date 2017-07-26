@@ -13,10 +13,10 @@ id: paragraph.parallax.parade_image
 field_name: parade_image
 entity_type: paragraph
 bundle: parallax
-label: Background
-description: ''
+label: 'Background image (invalid)'
+description: 'Invalid field'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

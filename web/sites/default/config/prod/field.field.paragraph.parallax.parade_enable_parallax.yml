@@ -12,9 +12,9 @@ field_name: parade_enable_parallax
 entity_type: paragraph
 bundle: parallax
 label: 'Enable parallax'
-description: ''
+description: '3D effect for the background when scrolling.'
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

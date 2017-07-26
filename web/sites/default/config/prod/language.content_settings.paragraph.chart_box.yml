@@ -1,0 +1,16 @@
+uuid: cf2e0646-05a2-4587-a6dc-f19645084fbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.chart_box
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.chart_box
+target_entity_type_id: paragraph
+target_bundle: chart_box
+default_langcode: site_default
+language_alterable: false

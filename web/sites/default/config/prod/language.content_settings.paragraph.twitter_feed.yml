@@ -1,0 +1,16 @@
+uuid: 3c90683e-4dc8-4557-9cb1-ccd31a31db13
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.twitter_feed
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.twitter_feed
+target_entity_type_id: paragraph
+target_bundle: twitter_feed
+default_langcode: site_default
+language_alterable: false

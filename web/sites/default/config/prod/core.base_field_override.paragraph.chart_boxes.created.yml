@@ -1,0 +1,18 @@
+uuid: 28994b47-e503-499d-a092-e7c15e4ab089
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.chart_boxes
+id: paragraph.chart_boxes.created
+field_name: created
+entity_type: paragraph
+bundle: chart_boxes
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

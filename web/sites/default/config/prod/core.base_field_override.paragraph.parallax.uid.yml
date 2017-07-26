@@ -1,0 +1,20 @@
+uuid: decc0aac-7886-42f8-9e6e-1b06736416be
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.parallax
+id: paragraph.parallax.uid
+field_name: uid
+entity_type: paragraph
+bundle: parallax
+label: 'Authored by'
+description: 'The user ID of the paragraphs author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\paragraphs\Entity\Paragraph::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference
