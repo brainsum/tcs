@@ -4262,6 +4262,12 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   text-align: center;
 }
 
+.paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--lot_infos.color-light-grey .paragraph--type--text-box,
+.paragraph--type--text-boxes.paragraph--view-mode--custom.layout--lot_infos.color-light-grey .paragraph--type--text-box,
+.paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos.color-light-grey .paragraph--type--text-box {
+  text-align: left;
+}
+
 .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--none .paragraph--type--text-box .paragraph-inner,
 .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--none .paragraph--type--text-box .paragraph-inner,
 .paragraph--type--text-boxes.paragraph--view-mode--default.layout--none .paragraph--type--text-box .paragraph-inner {
