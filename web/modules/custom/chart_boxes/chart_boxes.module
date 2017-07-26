@@ -5,6 +5,7 @@
  * Chart boxes module file.
  */
 
+use Drupal\Component\Utility\Random;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -90,5 +91,29 @@ function chart_boxes_preprocess_paragraph(&$variables) {
 function chart_boxes_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (isset($form['field_paragraphs'])) {
     $form['#attached']['library'][] = 'chart_boxes/paragraphs.chart_boxes_admin';
+    $form['#attached']['library'][] = 'chart_boxes/chart_boxes.hide_chart_form_fields';
+
+    foreach ($form['field_paragraphs']['widget'] as $delta => &$value) {
+      if (is_numeric($delta) && is_array($value) && isset($value['subform']['parade_paragraphs'])) {
+        $helperClass = 'parade-layout-states-help-' . (new Random())->name(10, TRUE);
+        $value['subform']['parade_layout']['#attributes']['class'][] = $helperClass;
+        // Only show this field when the 'layout_doughnut_and_text_chart' value is selected.
+        $visibleAccordingToLayout = [
+          'visible' => [
+            ".$helperClass select" => ['value' => 'layout_doughnut_and_text_chart']
+          ],
+        ];
+
+        $value['subform']['parade_boxes_per_row']['#states'] = $visibleAccordingToLayout;
+
+        foreach ($value['subform']['parade_paragraphs']['widget'] as $subDelta => &$subValue) {
+          if (is_numeric($subDelta) && is_array($subValue) && isset($subValue['subform']['parade_with_pie'])) {
+            $subValue['subform']['parade_with_pie']['#states'] = $visibleAccordingToLayout;
+          }
+        }
+        unset($subValue);
+      }
+    }
+    unset($value);
   }
 }
