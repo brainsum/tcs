@@ -27,7 +27,7 @@ bundle: image_text
 mode: default
 content:
   parade_anchor:
-    weight: 0
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -44,7 +44,7 @@ content:
     region: content
   parade_color_scheme:
     type: options_select
-    weight: 3
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -57,7 +57,7 @@ content:
     type: image_image
     region: content
   parade_layout:
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -79,16 +79,15 @@ content:
     third_party_settings: {  }
     region: content
   parade_view_mode:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: view_mode_selector_radios
     region: content
   translation:
-    weight: 6
+    weight: 8
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   created: true
   status: true

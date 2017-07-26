@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - classy_paragraphs.classy_paragraphs_style.layout_clean
     - field.storage.paragraph.parade_layout
     - paragraphs.paragraphs_type.marketo_form
 _core:
@@ -14,8 +15,10 @@ bundle: marketo_form
 label: Layout
 description: ''
 required: false
-translatable: true
-default_value: {  }
+translatable: false
+default_value:
+  -
+    target_uuid: ef95238c-59b5-45f9-98dc-d0b8839c38c4
 default_value_callback: ''
 settings:
   handler: classy_paragraphs

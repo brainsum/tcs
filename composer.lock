@@ -1496,12 +1496,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8"
+                "reference": "7ccc248f4058dd5985ad0c61c129243d0d2b58b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8",
-                "reference": "c63ef7a000bdfe2286cf2eeec6efdf4298dfc6a8",
+                "url": "https://api.github.com/repos/drupal/core/zipball/7ccc248f4058dd5985ad0c61c129243d0d2b58b8",
+                "reference": "7ccc248f4058dd5985ad0c61c129243d0d2b58b8",
                 "shasum": ""
             },
             "require": {
@@ -2929,7 +2929,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "ef4c9b14dbecd34e2d7b3db6e8e0bd2cb820e228"
+                "reference": "4983e25c8240de42938d7a1031916a03d14221f1"
             },
             "require": {
                 "drupal/aggregated_leaflet_map": "*",
@@ -2960,8 +2960,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta1+28-dev",
-                    "datestamp": "1500997142"
+                    "version": "8.x-2.0-beta1+29-dev",
+                    "datestamp": "1501009741"
                 },
                 "patches_applied": {
                     "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
@@ -3022,7 +3022,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-07-25 19:07:11"
+            "time": "2017-07-26 11:27:59"
         },
         {
             "name": "drupal/paragraphs",

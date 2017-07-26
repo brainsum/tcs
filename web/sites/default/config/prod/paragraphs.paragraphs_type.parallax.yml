@@ -5,5 +5,5 @@ dependencies: {  }
 _core:
   default_config_hash: YrDlfdKMt-HARH6aQdOh42yOz5RUjS-FpnRD-AGAKLs
 id: parallax
-label: Parallax
+label: Background
 behavior_plugins: {  }

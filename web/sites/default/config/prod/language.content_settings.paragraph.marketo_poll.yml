@@ -1,0 +1,16 @@
+uuid: 4ff59185-8373-4e8e-a4f5-dfc92aeb9b27
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.marketo_poll
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.marketo_poll
+target_entity_type_id: paragraph
+target_bundle: marketo_poll
+default_langcode: site_default
+language_alterable: false

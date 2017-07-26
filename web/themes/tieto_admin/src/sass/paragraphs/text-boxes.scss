@@ -17,6 +17,11 @@
       text-align: center;
     }
   }
+  &.layout--lot_infos.color-light-grey {
+    .paragraph--type--text-box {
+      text-align: left;
+    }
+  }
   &.layout--none {
     .paragraph--type--text-box {
       .paragraph-inner {
@@ -187,9 +192,6 @@
         color: white;
       }
     }
-    .button--primary {
-      @include campaign-button-white;
-    }
   }
 
   &.color-red {
@@ -200,9 +202,6 @@
       .field--name-parade-title {
         color: white;
       }
-    }
-    .button--primary {
-      @include campaign-button-white;
     }
   }
 
@@ -215,9 +214,6 @@
         color: white;
       }
     }
-    .button--primary {
-      @include campaign-button-white;
-    }
   }
 
   &.color-green {
@@ -229,13 +225,10 @@
         color: white;
       }
     }
-    .button--primary {
-      @include campaign-button-white;
-    }
   }
 
   .field--name-parade-call-to-action {
-    // @fixme after tieto_base merge.ó
+    // @fixme after tieto_base merge.
     margin: 0;
     text-align: left;
     .button {
@@ -247,6 +240,9 @@
 
 .paragraph--type--text-boxes.paragraph--view-mode--default {
   &.layout--rounded_image {
+    .paragraph-inner {
+      padding: 0;
+    }
     .field--name-parade-paragraphs {
       .field--name-parade-image {
         width: 34%;

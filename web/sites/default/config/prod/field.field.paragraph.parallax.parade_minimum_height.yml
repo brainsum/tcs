@@ -14,7 +14,7 @@ bundle: parallax
 label: 'Minimum height'
 description: 'If you wish to use a background image only, you must provide this value (in pixels) to ensure the correct display of the image.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

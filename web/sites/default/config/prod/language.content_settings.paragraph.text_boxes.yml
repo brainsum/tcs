@@ -1,0 +1,16 @@
+uuid: 74c9020f-1659-476c-803d-3989cbccc2d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.text_boxes
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.text_boxes
+target_entity_type_id: paragraph
+target_bundle: text_boxes
+default_langcode: site_default
+language_alterable: true

@@ -25,7 +25,7 @@ field_name: parade_secondary_title
 entity_type: paragraph
 bundle: header
 label: Slogan
-description: ''
+description: 'This text will appear above the main page title.'
 required: false
 translatable: true
 default_value: {  }

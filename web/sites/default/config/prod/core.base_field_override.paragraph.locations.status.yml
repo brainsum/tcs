@@ -1,0 +1,22 @@
+uuid: fed4b954-44d4-4fe1-aadc-aba139bb9eeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.locations
+id: paragraph.locations.status
+field_name: status
+entity_type: paragraph
+bundle: locations
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

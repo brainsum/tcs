@@ -32,7 +32,7 @@ content:
     type: string_textfield
     region: content
   parade_call_to_action:
-    weight: 6
+    weight: 7
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -74,8 +74,9 @@ content:
     type: view_mode_selector_select
     region: content
   translation:
-    weight: 10
-    region: content
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true
