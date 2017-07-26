@@ -8,4 +8,4 @@ else
   echo "Config import was not completely successful.";
   exit -1;
 fi
-drush entity-updates && echo "SUCCESS" || exit -1
+drush entity-updates -y && echo "SUCCESS" || exit -1
