@@ -5,6 +5,8 @@
  * Post update functions for Campaign Pages.
  */
 
+use Drupal\Core\Database\Database;
+
 /**
  * Re-save classy paragraphs.
  */
@@ -215,11 +217,18 @@ function campaign_pages_post_update_parade_value_migration() {
     if (in_array($type->id(), ['chart_box', 'chart_boxes'], FALSE)) {
       continue;
     }
-    // Load every paragraph for each type separately.
-    $entities = $paragraphStorage->loadByProperties(['type' => $type->id()]);
-
-    /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
-    foreach ($entities as $entity) {
+    // Load every paragraph active revisions for each type separately.
+    if ($type->id() == 'text_box') {
+      // @todo - re-save only active revisions.
+      $results = Database::getConnection()
+        ->query("SELECT DISTINCT field_paragraphs_target_revision_id FROM {paragraph_revision__field_paragraphs}");
+    }
+    else {
+      $results = Database::getConnection()
+        ->query("SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type = :type_id", [':type_id' => $type->id()]);
+    }
+    foreach ($results as $result) {
+      $entity = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
       $entityType = $entity->getType();
 
       foreach ($fields as $old_field => $new_field) {
@@ -241,28 +250,6 @@ function campaign_pages_post_update_parade_value_migration() {
                 echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
               }
             }
-          }
-          // In case of text_boxes..
-          // Note: This only works if boxes are loaded before box ones.
-          // But that should be OK, loadMultiple gets them properly.
-          elseif ($old_field === 'field_paragraphs') {
-            // Get target_ids as an array..
-            $data = $entity->get($old_field)->getValue();
-            $data = array_map(function ($item) {
-              return $item['target_id'];
-            }, $data);
-            // Load them at once in hopes of a performance gain.
-            // Note: I seriously hope the order stays the same.
-            $references = $paragraphStorage->loadMultiple($data);
-            $newData = [];
-            /** @var \Drupal\paragraphs\Entity\Paragraph $reference */
-            foreach ($references as $reference) {
-              $newData[] = [
-                'target_id' => $reference->id(),
-                'target_revision_id' => $reference->getRevisionId(),
-              ];
-            }
-            $entity->set($new_field, $newData);
           }
           else {
             $entity->set($new_field, $entity->get($old_field)->getValue());
@@ -311,53 +298,6 @@ function campaign_pages_post_update_parade_value_migration() {
   }
 }
 
-/**
- * Set the paragraph revisions to the newest in the nodes.
- */
-function campaign_pages_post_update_set_revisions_to_newest() {
-  echo "\nRunning: campaign_pages_post_update_set_revisions_to_newest\n";
-  // @todo: Maybe migrate fields to parade_ prefixed.
-  //  // Load all campaign pages entities.
-  //  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
-  //  $nodes = $nodeStorage->loadByProperties(['type' => 'campaign']);
-  //  $fields = [
-  //    'field_machine_name' => 'parade_machine_name',
-  //    'field_paragraphs' => 'parade_onepage_sections',
-  //  ];
-  //  foreach ($nodes as $node) {
-  //    foreach ($fields as $old_field => $new_field) {
-  //      if (isset($node->{$old_field})) {
-  //        $node->{$new_field} = $node->{$old_field};
-  //      }
-  //    }
-  //  $node->setNewRevision(FALSE);
-  //  $node->save();
-  //  }
-  $sectionsField = 'field_paragraphs';
-
-  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
-  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
-
-  $nodes = $nodeStorage->loadByProperties(['type' => 'campaign']);
-  /** @var \Drupal\node\NodeInterface $node */
-  foreach ($nodes as $node) {
-    /** @var array $paragraphs */
-    $paragraphs = $node->get($sectionsField)->getValue();
-    $newValue = [];
-    foreach ($paragraphs as $paragraph) {
-      /** @var \Drupal\paragraphs\Entity\Paragraph $loaded */
-      $loaded = $paragraphStorage->load($paragraph['target_id']);
-      $newValue[] = [
-        'target_id' => $loaded->id(),
-        'target_revision_id' => $loaded->getRevisionId(),
-      ];
-    }
-    $node->set($sectionsField, $newValue);
-    $node->setNewRevision(FALSE);
-    $node->enforceIsNew(FALSE);
-    $node->save();
-  }
-}
 
 /**
  * Additional fixes for colors and layouts.
