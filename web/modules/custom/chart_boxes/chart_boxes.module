@@ -57,11 +57,13 @@ function chart_boxes_preprocess_paragraph__chart_boxes(&$variables) {
   $variables['paragraph_id'] = $paragraph->id();
   $variables['#attached']['drupalSettings']['chart_boxes']['paragraph_id'] = $paragraph->id();
   $variables['descriptions'] = [];
-  foreach ($variables['content']['parade_paragraphs'] as $delta => $data) {
-    if (is_numeric($delta)) {
-      /** @var \Drupal\paragraphs\Entity\Paragraph $box */
-      $box = $data['#paragraph'];
-      $variables['descriptions'][] = $box->get('parade_text')->value;
+  if ($variables['view_mode'] !== 'preview') {
+    foreach ($variables['content']['parade_paragraphs'] as $delta => $data) {
+      if (is_numeric($delta)) {
+        /** @var \Drupal\paragraphs\Entity\Paragraph $box */
+        $box = $data['#paragraph'];
+        $variables['descriptions'][] = $box->get('parade_text')->value;
+      }
     }
   }
 }
@@ -73,9 +75,9 @@ function chart_boxes_preprocess_paragraph(&$variables) {
   /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = &$variables['paragraph'];
 
-  if (method_exists($paragraph, 'getType') && 'chart_boxes' === $paragraph->getType()) {
+  if ($variables['view_mode'] !== 'preview' && method_exists($paragraph, 'getType') && 'chart_boxes' === $paragraph->getType()) {
     // Attach libraries for each paragraph type.
-    $variables['#attached']['library'][] = 'chart_boxes/paragraphs.' . $paragraph->getType();
+    $variables['#attached']['library'][] = 'chart_boxes/paragraphs.chart_boxes';
     $variables['#attached']['library'][] = 'chart_boxes/paragraphs.doughnut_chart';
     $variables['#attached']['library'][] = 'chart_boxes/paragraphs.doughnut_text_chart';
     $variables['#attached']['library'][] = 'chart_boxes/paragraphs.horizontal_bar_chart';
