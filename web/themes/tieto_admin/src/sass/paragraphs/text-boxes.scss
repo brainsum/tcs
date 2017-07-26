@@ -240,6 +240,9 @@
 
 .paragraph--type--text-boxes.paragraph--view-mode--default {
   &.layout--rounded_image {
+    .paragraph-inner {
+      padding: 0;
+    }
     .field--name-parade-paragraphs {
       .field--name-parade-image {
         width: 34%;
