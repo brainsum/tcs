@@ -10,7 +10,7 @@ use Drupal\Core\Database\Database;
 /**
  * Re-save classy paragraphs.
  */
-function campaign_pages_post_update_resave_classy_paragraphs() {
+function campaign_pages_post_update_8001() {
   echo "\nRunning: campaign_pages_post_update_resave_classy_paragraphs\n";
   $entityStorage = \Drupal::entityTypeManager()->getStorage('classy_paragraphs_style');
   $classes = $entityStorage->loadMultiple();
@@ -22,7 +22,7 @@ function campaign_pages_post_update_resave_classy_paragraphs() {
 /**
  * Copy old data to parade 2.x fields.
  */
-function campaign_pages_post_update_parade_value_migration() {
+function campaign_pages_post_update_8002() {
   echo "\nRunning: campaign_pages_post_update_parade_value_migration\n";
 
   // Old fields with same type as new field.
@@ -214,95 +214,109 @@ function campaign_pages_post_update_parade_value_migration() {
   $paragraphTypes = $typeStorage->loadMultiple();
 
   foreach ($paragraphTypes as $type) {
+    // Chart box and boxes are new, no need for migrating them.
     if (in_array($type->id(), ['chart_box', 'chart_boxes'], FALSE)) {
       continue;
     }
+    $results = [];
     // Load every paragraph active revisions for each type separately.
-    if ($type->id() == 'text_box') {
+    if ($type->id() === 'text_box') {
       // @todo - re-save only active revisions.
-      $results = Database::getConnection()
-        ->query("SELECT DISTINCT field_paragraphs_target_revision_id FROM {paragraph_revision__field_paragraphs}");
+
+      if (Database::getConnection()->schema()->tableExists('paragraph_revision__field_paragraphs')) {
+        $results = Database::getConnection()
+          ->query("SELECT DISTINCT field_paragraphs_target_revision_id FROM {paragraph_revision__field_paragraphs}");
+      }
+      else {
+        drupal_set_message('paragraph_revision__field_paragraphs does not exists. If this is not a new migration, this warning can be ignored.', 'warning');
+      }
     }
     else {
       $results = Database::getConnection()
         ->query("SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type = :type_id", [':type_id' => $type->id()]);
     }
     foreach ($results as $result) {
-      $entity = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
-      $entityType = $entity->getType();
+      /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
+      $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
+      $translations = $entityRevision->getTranslationLanguages();
+      foreach ($translations as $langcode => $language) {
+        /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+        $entity = $entityRevision->getTranslation($langcode);
+        $entityType = $entity->getType();
 
-      foreach ($fields as $old_field => $new_field) {
-        if ($entity->hasField($old_field)) {
-          if (in_array($new_field, $fileFields, TRUE)) {
-            foreach ($entity->get($old_field)->getValue() as $value) {
-              /** @var \Drupal\file\Entity\File $file */
-              $file = $fileStorage->load($value['target_id']);
-              if (NULL !== $file) {
-                // @todo: Image alts.
-                $file->setPermanent();
-                $file->save();
-                $value = $entity->get($old_field)->getValue();
-                $value['target_id'] = $file->id();
-                $entity->set($new_field, $value);
-                $fileUsage->add($file, 'file', 'paragraph', $entity->id());
-              }
-              else {
-                echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
+        foreach ($fields as $old_field => $new_field) {
+          if ($entity->hasField($old_field)) {
+            if (in_array($new_field, $fileFields, TRUE)) {
+              foreach ($entity->get($old_field)->getValue() as $value) {
+                /** @var \Drupal\file\Entity\File $file */
+                $file = $fileStorage->load($value['target_id']);
+                if (NULL !== $file) {
+                  // @todo: Image alts.
+                  $file->setPermanent();
+                  $file->save();
+                  $value = $entity->get($old_field)->getValue();
+                  $value['target_id'] = $file->id();
+                  $entity->set($new_field, $value);
+                  $fileUsage->add($file, 'file', 'paragraph', $entity->id());
+                }
+                else {
+                  echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
+                }
               }
             }
-          }
-          else {
-            $entity->set($new_field, $entity->get($old_field)->getValue());
-          }
+            else {
+              $entity->set($new_field, $entity->get($old_field)->getValue());
+            }
 
-          $entity->get($new_field)->setLangcode($entity->get($old_field)
-            ->getLangcode());
-        }
-      }
-      // Layout field.
-      if (isset($layouts[$entityType])) {
-        foreach ($layouts[$entityType] as $old_layout_field => $layout_mappings) {
-          if (isset($entity->{$old_layout_field})) {
-            $layout_settings = $layout_mappings[$entity->{$old_layout_field}->value];
-            if (isset($entity->parade_view_mode)) {
-              $entity->parade_view_mode->value = $layout_settings['view_mode'];
-            }
-            // Set colors according to the settings. If it was specifically
-            // Overwritten in field_color_scheme, we set the overwrite later.
-            if (isset($entity->parade_color_scheme, $layout_settings['color'])) {
-              $entity->parade_color_scheme->target_id = $layout_settings['color'];
-            }
-            // Layouts were removed for text_box types, so we need to check
-            // fields and settings.
-            if (isset($entity->parade_layout, $layout_settings['layout'])) {
-              $entity->parade_layout->target_id = $layout_settings['layout'];
-            }
+            $entity->get($new_field)->setLangcode($entity->get($old_field)
+              ->getLangcode());
           }
         }
-      }
-      // Color scheme field.
-      // @see: https://brainsum.atlassian.net/browse/TCS-307,
-      // 'text_box old colors can be ignored'
-      if ('text_box' !== $entityType && isset(
-        $colors[$entityType],
-        $entity->field_color_scheme,
-        $colors[$entityType][$entity->field_color_scheme->target_id]
-      )) {
-        $entity->parade_color_scheme->target_id = $colors[$entityType][$entity->field_color_scheme->target_id];
-      }
+        // Layout field.
+        if (isset($layouts[$entityType])) {
+          foreach ($layouts[$entityType] as $old_layout_field => $layout_mappings) {
+            if (isset($entity->{$old_layout_field})) {
+              $layout_settings = $layout_mappings[$entity->{$old_layout_field}->value];
+              if (isset($entity->parade_view_mode)) {
+                $entity->parade_view_mode->value = $layout_settings['view_mode'];
+              }
+              // Set colors according to the settings. If it was specifically
+              // Overwritten in field_color_scheme, we set the overwrite later.
+              if (isset($entity->parade_color_scheme, $layout_settings['color'])) {
+                $entity->parade_color_scheme->target_id = $layout_settings['color'];
+              }
+              // Layouts were removed for text_box types, so we need to check
+              // fields and settings.
+              if (isset($entity->parade_layout, $layout_settings['layout'])) {
+                $entity->parade_layout->target_id = $layout_settings['layout'];
+              }
+            }
+          }
+        }
+        // Color scheme field.
+        // @see: https://brainsum.atlassian.net/browse/TCS-307,
+        // 'text_box old colors can be ignored'
+        if ('text_box' !== $entityType && isset(
+            $colors[$entityType],
+            $entity->field_color_scheme,
+            $colors[$entityType][$entity->field_color_scheme->target_id]
+          )
+        ) {
+          $entity->parade_color_scheme->target_id = $colors[$entityType][$entity->field_color_scheme->target_id];
+        }
 
-      $entity->setNewRevision(FALSE);
-      $entity->enforceIsNew(FALSE);
-      $entity->save();
+        $entity->setNewRevision(FALSE);
+        $entity->enforceIsNew(FALSE);
+        $entity->save();
+      }
     }
   }
 }
 
-
 /**
  * Additional fixes for colors and layouts.
  */
-function campaign_pages_post_update_8004() {
+function campaign_pages_post_update_8003() {
   // Text boxes: light_blue color -> Text box: light_grey should be default.
   $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
   $entities = $paragraphStorage->loadByProperties(['type' => 'text_boxes']);
