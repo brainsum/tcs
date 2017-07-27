@@ -10,7 +10,7 @@ use Drupal\Core\Database\Database;
 /**
  * Re-save classy paragraphs.
  */
-function campaign_pages_post_update_resave_classy_paragraphs() {
+function campaign_pages_post_update_8001() {
   echo "\nRunning: campaign_pages_post_update_resave_classy_paragraphs\n";
   $entityStorage = \Drupal::entityTypeManager()->getStorage('classy_paragraphs_style');
   $classes = $entityStorage->loadMultiple();
@@ -22,7 +22,7 @@ function campaign_pages_post_update_resave_classy_paragraphs() {
 /**
  * Copy old data to parade 2.x fields.
  */
-function campaign_pages_post_update_parade_value_migration() {
+function campaign_pages_post_update_8002() {
   echo "\nRunning: campaign_pages_post_update_parade_value_migration\n";
 
   // Old fields with same type as new field.
@@ -305,7 +305,7 @@ function campaign_pages_post_update_parade_value_migration() {
 /**
  * Additional fixes for colors and layouts.
  */
-function campaign_pages_post_update_8004() {
+function campaign_pages_post_update_8003() {
   // Text boxes: light_blue color -> Text box: light_grey should be default.
   $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
   $entities = $paragraphStorage->loadByProperties(['type' => 'text_boxes']);
