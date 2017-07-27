@@ -214,11 +214,12 @@ function campaign_pages_post_update_8002() {
   $paragraphTypes = $typeStorage->loadMultiple();
 
   foreach ($paragraphTypes as $type) {
+    // Chart box and boxes are new, no need for migrating them.
     if (in_array($type->id(), ['chart_box', 'chart_boxes'], FALSE)) {
       continue;
     }
     // Load every paragraph active revisions for each type separately.
-    if ($type->id() == 'text_box') {
+    if ($type->id() === 'text_box') {
       // @todo - re-save only active revisions.
       $results = Database::getConnection()
         ->query("SELECT DISTINCT field_paragraphs_target_revision_id FROM {paragraph_revision__field_paragraphs}");
@@ -228,9 +229,11 @@ function campaign_pages_post_update_8002() {
         ->query("SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type = :type_id", [':type_id' => $type->id()]);
     }
     foreach ($results as $result) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
       $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
-      $traslations = $entityRevision->getTranslationLanguages();
-      foreach ($traslations as $langcode => $language) {
+      $translations = $entityRevision->getTranslationLanguages();
+      foreach ($translations as $langcode => $language) {
+        /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
         $entity = $entityRevision->getTranslation($langcode);
         $entityType = $entity->getType();
 
@@ -294,10 +297,11 @@ function campaign_pages_post_update_8002() {
         ) {
           $entity->parade_color_scheme->target_id = $colors[$entityType][$entity->field_color_scheme->target_id];
         }
+
+        $entity->setNewRevision(FALSE);
+        $entity->enforceIsNew(FALSE);
+        $entity->save();
       }
-      $entity->setNewRevision(FALSE);
-      $entity->enforceIsNew(FALSE);
-      $entity->save();
     }
   }
 }
