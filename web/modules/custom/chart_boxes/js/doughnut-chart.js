@@ -48,7 +48,7 @@
     } else {
         // draw and animate the chart in other browsers
         ///////////////////////////////////////////////
-      console.log('this is NOT explorer');
+        console.log('this is NOT explorer');
         new Chartist.Pie(('#' + chartId), {
           series: series,
           labels: labels
@@ -72,7 +72,7 @@
             var animationDefinition = {
               'stroke-dashoffset': {
                 id: 'anim' + data.index,
-                dur: 1000,
+                dur: 400,
                 from: -pathLength + 'px',
                 to: '0px',
                 easing: Chartist.Svg.Easing.easeOutQuint,
