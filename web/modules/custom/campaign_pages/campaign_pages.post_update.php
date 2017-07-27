@@ -246,8 +246,7 @@ function campaign_pages_post_update_8002() {
 
         foreach ($fields as $old_field => $new_field) {
           if ($entity->hasField($old_field)) {
-              $entity->set($new_field, $entity->get($old_field)->getValue());
-            }
+            $entity->set($new_field, $entity->get($old_field)->getValue());
 
             $entity->get($new_field)->setLangcode($entity->get($old_field)
               ->getLangcode());
