@@ -27,7 +27,8 @@
       return value + "%";
     });
 
-    if (navigator.userLanguage !== "undefined" && navigator.systemLanguage !== "undefined") {
+    if (navigator.userLanguage !== "undefined" && navigator.systemLanguage !== "undefined" && (navigator.userAgent.match(/trident/i) || navigator.userAgent.match(/edge/i))) { // expolrer jelző
+
 
         console.log('this is explorer');
         // draw the chart in EXPLORER
@@ -43,10 +44,11 @@
           showLabel: true,
           responsive: false
         });
-      }
-      else {
+
+    } else {
         // draw and animate the chart in other browsers
         ///////////////////////////////////////////////
+      console.log('this is NOT explorer');
         new Chartist.Pie(('#' + chartId), {
           series: series,
           labels: labels
@@ -94,6 +96,7 @@
             data.element.animate(animationDefinition, false);
           }
         });
+
     }
   }
 })(jQuery);
