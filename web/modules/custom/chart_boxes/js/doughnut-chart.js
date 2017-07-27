@@ -115,8 +115,8 @@
         var scrollTop = $(window).scrollTop();
         var fireLine = offsetTop - window.innerHeight * 0.65;
 
-        if (fireLine <= scrollTop && !data.chartID.hasClass('animated')) {
-          data.chartID.addClass('animated');
+        if (fireLine <= scrollTop && !$(data.chartId).hasClass('animated')) {
+          $(data.chartId).addClass('animated');
           animateChart(data.chartId, data.series, data.labels);
         }
       }).trigger("scroll");
