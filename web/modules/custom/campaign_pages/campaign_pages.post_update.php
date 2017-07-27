@@ -218,11 +218,18 @@ function campaign_pages_post_update_8002() {
     if (in_array($type->id(), ['chart_box', 'chart_boxes'], FALSE)) {
       continue;
     }
+    $results = [];
     // Load every paragraph active revisions for each type separately.
     if ($type->id() === 'text_box') {
       // @todo - re-save only active revisions.
-      $results = Database::getConnection()
-        ->query("SELECT DISTINCT field_paragraphs_target_revision_id FROM {paragraph_revision__field_paragraphs}");
+
+      if (Database::getConnection()->schema()->tableExists('paragraph_revision__field_paragraphs')) {
+        $results = Database::getConnection()
+          ->query("SELECT DISTINCT field_paragraphs_target_revision_id FROM {paragraph_revision__field_paragraphs}");
+      }
+      else {
+        drupal_set_message('paragraph_revision__field_paragraphs does not exists. If this is not a new migration, this warning can be ignored.', 'warning');
+      }
     }
     else {
       $results = Database::getConnection()
