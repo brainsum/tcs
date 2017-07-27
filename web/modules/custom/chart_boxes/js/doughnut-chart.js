@@ -72,10 +72,10 @@
             var animationDefinition = {
               'stroke-dashoffset': {
                 id: 'anim' + data.index,
-                dur: 400,
+                dur: 300,
                 from: -pathLength + 'px',
                 to: '0px',
-                easing: Chartist.Svg.Easing.easeOutQuad,
+                easing: Chartist.Svg.Easing.easeInQuad,
                 // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
                 fill: 'freeze'
               }
