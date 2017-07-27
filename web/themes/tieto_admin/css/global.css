@@ -3599,6 +3599,32 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   border-color: #2c89c3;
 }
 
+.paragraph.paragraph--view-mode--default .button--green {
+  color: white;
+  background: #6cc04a;
+  border-color: #6cc04a;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.paragraph.paragraph--view-mode--default .button--green:hover, .paragraph.paragraph--view-mode--default .button--green:focus, .paragraph.paragraph--view-mode--default .button--green:active {
+  background: #559f38;
+  border-color: #519835;
+}
+
+.paragraph.paragraph--view-mode--default .button--green:active {
+  box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.paragraph.paragraph--view-mode--default .button--green:active:hover, .paragraph.paragraph--view-mode--default .button--green:active:focus {
+  background: #47852e;
+  border-color: #376724;
+}
+
+.paragraph.paragraph--view-mode--default .button--green.disabled:hover, .paragraph.paragraph--view-mode--default .button--green.disabled:focus, .paragraph.paragraph--view-mode--default .button--green:disabled:hover, .paragraph.paragraph--view-mode--default .button--green:disabled:focus {
+  background: #6cc04a;
+  border-color: #6cc04a;
+}
+
 .paragraph--type--images.paragraph--view-mode--default .field--name-parade-title {
   margin-bottom: 1em;
   font-weight: 800;

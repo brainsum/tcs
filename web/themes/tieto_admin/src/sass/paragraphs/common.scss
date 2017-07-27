@@ -252,5 +252,8 @@
     .button--primary {
       @include campaign-button-primary;
     }
+    .button--green {
+      @include campaign-button-green;
+    }
   }
 }
