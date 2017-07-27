@@ -1,0 +1,11 @@
+uuid: 115ff449-694c-4072-87b1-92f847628e37
+langcode: en
+status: true
+dependencies: {  }
+id: chart_boxes_2
+bundle: chart_boxes
+layouts:
+  layout_doughnut_and_text_chart: layout_doughnut_and_text_chart
+view_mode: default
+classes:
+  color_dark_grey: color_dark_grey

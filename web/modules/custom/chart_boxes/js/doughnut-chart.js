@@ -27,7 +27,8 @@
       return value + "%";
     });
 
-    if (navigator.userLanguage !== "undefined" && navigator.systemLanguage !== "undefined") {
+    if (navigator.userLanguage !== "undefined" && navigator.systemLanguage !== "undefined" && (navigator.userAgent.match(/trident/i) || navigator.userAgent.match(/edge/i))) { // expolrer jelző
+
 
         console.log('this is explorer');
         // draw the chart in EXPLORER
@@ -43,10 +44,11 @@
           showLabel: true,
           responsive: false
         });
-      }
-      else {
+
+    } else {
         // draw and animate the chart in other browsers
         ///////////////////////////////////////////////
+        console.log('this is NOT explorer');
         new Chartist.Pie(('#' + chartId), {
           series: series,
           labels: labels
@@ -70,10 +72,10 @@
             var animationDefinition = {
               'stroke-dashoffset': {
                 id: 'anim' + data.index,
-                dur: 1000,
+                dur: 300,
                 from: -pathLength + 'px',
                 to: '0px',
-                easing: Chartist.Svg.Easing.easeOutQuint,
+                easing: Chartist.Svg.Easing.easeInQuad,
                 // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
                 fill: 'freeze'
               }
@@ -94,6 +96,7 @@
             data.element.animate(animationDefinition, false);
           }
         });
+
     }
   }
 })(jQuery);

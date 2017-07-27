@@ -1,0 +1,11 @@
+uuid: 9a17df37-758b-4918-b9e5-d95ea37ba5ae
+langcode: en
+status: true
+dependencies: {  }
+id: chart_boxes_3
+bundle: chart_boxes
+layouts:
+  layout_bar_chart: layout_bar_chart
+view_mode: default
+classes:
+  color_blue: color_blue
