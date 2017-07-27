@@ -246,25 +246,6 @@ function campaign_pages_post_update_8002() {
 
         foreach ($fields as $old_field => $new_field) {
           if ($entity->hasField($old_field)) {
-            if (in_array($new_field, $fileFields, TRUE)) {
-              foreach ($entity->get($old_field)->getValue() as $value) {
-                /** @var \Drupal\file\Entity\File $file */
-                $file = $fileStorage->load($value['target_id']);
-                if (NULL !== $file) {
-                  // @todo: Image alts.
-                  $file->setPermanent();
-                  $file->save();
-                  $value = $entity->get($old_field)->getValue();
-                  $value['target_id'] = $file->id();
-                  $entity->set($new_field, $value);
-                  $fileUsage->add($file, 'file', 'paragraph', $entity->id());
-                }
-                else {
-                  echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
-                }
-              }
-            }
-            else {
               $entity->set($new_field, $entity->get($old_field)->getValue());
             }
 
