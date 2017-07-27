@@ -309,13 +309,14 @@ function campaign_pages_post_update_8004() {
 
   /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
   foreach ($entities as $entity) {
-    if (isset($entity->parade_color_scheme) && 'color_light_blue' === $entity->parade_color_scheme->target_id) {
+    if (isset($entity->parade_layout, $entity->parade_color_scheme) && 'layout_rounded_image' === $entity->parade_layout->target_id) {
       $data = $entity->get('parade_paragraphs')->getValue();
       $data = array_map(function ($item) {
         return $item['target_id'];
       }, $data);
       // Load them at once in hopes of a performance gain.
       // Note: I seriously hope the order stays the same.
+      // @todo: Load every revision, like above.
       $references = $paragraphStorage->loadMultiple($data);
       /** @var \Drupal\paragraphs\Entity\Paragraph $textBox */
       foreach ($references as $textBox) {
