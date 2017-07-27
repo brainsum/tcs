@@ -75,7 +75,7 @@
                 dur: 400,
                 from: -pathLength + 'px',
                 to: '0px',
-                easing: Chartist.Svg.Easing.easeOutQuint,
+                easing: Chartist.Svg.Easing.easeOutQuad,
                 // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
                 fill: 'freeze'
               }
