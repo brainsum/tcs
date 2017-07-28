@@ -87,4 +87,3 @@ permissions:
   81: 'create paragraph content chart_boxes'
   82: 'delete paragraph content chart_boxes'
   83: 'update paragraph content chart_boxes'
-  84: 'revert campaign revisions'
