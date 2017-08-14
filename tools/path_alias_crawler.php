@@ -25,7 +25,7 @@ foreach ($nids as $key => $nid) {
   if (count($urls) == 0) {
     echo 'MISSING: ' . $nid . "\t" . $langcodes[$key] . "\t" . $alias . "\t" . $langalias . "\n";
     $missing++;
-    file_get_contents('http://tietocampaigns.brainsum.com/' . $langalias);
+    file_get_contents('http://ec2-34-252-24-6.eu-west-1.compute.amazonaws.com/' . $langalias);
   }
 }
 
