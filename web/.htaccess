@@ -73,7 +73,7 @@ AddEncoding gzip svgz
   RewriteRule ^robots.txt$ /robots-dev.txt [L,NC]
 
   RewriteCond %{HTTP_HOST} ^www.tieto.dk [NC]
-  RewriteRule / https://campaigns.tieto.com/da/360  [L,NC]
+  RewriteRule (.*)$ https://campaigns.tieto.com/da/360 [R=301,L]
 
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
   # if you enable "www." stripping or enforcement, in order to ensure that
