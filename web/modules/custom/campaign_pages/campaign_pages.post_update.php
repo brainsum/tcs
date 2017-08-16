@@ -325,3 +325,30 @@ function campaign_pages_post_update_8003() {
   }
 
 }
+
+/**
+ * Update Header colors from None to Blue.
+ */
+function campaign_pages_post_update_8004() {
+  $results = Database::getConnection()
+    ->query("SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type = :type_id", [':type_id' => 'header']);
+
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+
+  foreach ($results as $result) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
+    $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
+    $translations = $entityRevision->getTranslationLanguages();
+    foreach ($translations as $langcode => $language) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+      $entity = $entityRevision->getTranslation($langcode);
+
+      if ($entity->parade_color_scheme->target_id === NULL) {
+        $entity->parade_color_scheme->target_id = 'color_blue';
+        $entity->setNewRevision(FALSE);
+        $entity->enforceIsNew(FALSE);
+        $entity->save();
+      }
+    }
+  }
+}
