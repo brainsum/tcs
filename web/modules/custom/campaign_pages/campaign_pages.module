@@ -11,6 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Datetime\Element\Datetime;
 use Drupal\Core\Url;
+use Drupal\Core\Utility\Error;
 
 /**
  * Implements hook_help().
@@ -247,5 +248,17 @@ function campaign_pages_user_login_submit(&$form, FormStateInterface $form_state
 function campaign_pages_entity_type_alter(array &$entity_types) {
   if (NULL !== $entity_types['scheduled_update'] && method_exists($entity_types['scheduled_update'], 'setListBuilderClass')) {
     $entity_types['scheduled_update']->setListBuilderClass(ScheduledUpdateListBuilder::class);
+  }
+}
+
+/**
+ * Implements hook_entity_delete().
+ *
+ * Log paragraph entity deletion.
+ */
+function campaign_pages_entity_delete($entity) {
+  if ($entity->getEntityTypeId() === 'paragraph') {
+    \Drupal::logger('campaign_pages')->info('Deleted paragraph ID: ' . $entity->id());
+    \Drupal::logger('campaign_pages')->debug('Deleted paragraph backtrace: ' . Error::formatBacktrace(debug_backtrace()));
   }
 }

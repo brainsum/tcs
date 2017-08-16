@@ -353,3 +353,26 @@ function _campaign_pages_import_parade_fields() {
 function campaign_pages_update_8008() {
   module_set_weight('campaign_pages', 1);
 }
+
+/**
+ * Truncate deleted fields data - leaded to data loss.
+ */
+function campaign_pages_update_8009() {
+  $properties = array(
+    'deleted' => TRUE,
+    'include_deleted' => TRUE,
+  );
+  $fields = entity_load_multiple_by_properties('field_config', $properties);
+
+  foreach ($fields as $field_definition) {
+    $storage_id = substr(hash('sha256', $field_definition->getFieldStorageDefinition()->getUniqueStorageIdentifier()), 0, 10);
+    $deleted_table_name = 'field_deleted_data_' . $storage_id;
+    $deleted_revision_table_name = 'field_deleted_revision_' . $storage_id;
+    if (db_table_exists($deleted_table_name)) {
+      db_truncate($deleted_table_name)->execute();
+    }
+    if (db_table_exists($deleted_revision_table_name)) {
+      db_truncate($deleted_revision_table_name)->execute();
+    }
+  }
+}
