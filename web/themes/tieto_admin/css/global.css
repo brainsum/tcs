@@ -3879,7 +3879,14 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   right: 0;
   bottom: 0;
   z-index: 1;
-  background-color: rgba(103, 175, 225, 0.5);
+}
+
+.paragraph--type--header.paragraph--view-mode--default.color-blue .bg-wrapper::before {
+  background-color: rgba(103, 175, 225, .5);
+}
+
+.paragraph--type--header.paragraph--view-mode--default.color-grey .bg-wrapper::before {
+  background-color: rgba(0, 0, 0, .5);
 }
 
 @supports ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) {
