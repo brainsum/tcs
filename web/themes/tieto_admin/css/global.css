@@ -4170,7 +4170,13 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-parade-title,
 .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse .field--name-parade-text, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-parade-title,
 .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-parade-text {
-  color: white;
+  color: #333333;
+}
+
+.paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse.color-blue .field--name-parade-title,
+.paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse.color-blue .field--name-parade-text, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-parade-title,
+.paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse.color-blue .field--name-parade-text {
+  color: #ffffff;
 }
 
 @media (min-width: 767px) {

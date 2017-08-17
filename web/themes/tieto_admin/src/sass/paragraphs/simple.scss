@@ -32,13 +32,9 @@
   &.layout--two-column-title-1st-inverse {
     background: $white;
 
-    &.color-blue {
-      background: $tieto-blue;
-    }
-
     .field--name-parade-title,
     .field--name-parade-text {
-      color: white;
+      color: #333333;
       @include md {
         width: 50%;
       }
@@ -46,7 +42,21 @@
 
     .field--name-parade-title {
       @include campaign-headline;
-      color: white;
+      color: #333333;
+    }
+
+    &.color-blue {
+      background: $tieto-blue;
+
+      .field--name-parade-title,
+      .field--name-parade-text {
+        color: white;
+      }
+
+      .field--name-parade-title {
+        @include campaign-headline;
+        color: white;
+      }
     }
   }
 
