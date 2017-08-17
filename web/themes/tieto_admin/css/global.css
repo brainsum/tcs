@@ -4160,6 +4160,10 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 }
 
 .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse {
+  background: #ffffff;
+}
+
+.paragraph--type--simple.paragraph--view-mode--default.layout--two-column-content-1st-inverse.color-blue, .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse.color-blue {
   background: #67afe1;
 }
 
