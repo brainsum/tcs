@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Database\Database;
+use Drupal\Core\Database\StatementInterface;
+use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
  * Re-save classy paragraphs.
@@ -376,10 +378,13 @@ function campaign_pages_post_update_8005() {
  * Helper function for updating the color_scheme field value.
  *
  * @param \Drupal\Core\Entity\EntityStorageInterface $paragraphStorage
+ *   Paragraph storage.
  * @param \Drupal\Core\Database\StatementInterface $results
+ *   Query results.
  * @param string $targetColor
+ *   The machine name of the target color (classy paragraph).
  */
-function _campaign_pages_color_update_helper($paragraphStorage, $results, $targetColor) {
+function _campaign_pages_color_update_helper(EntityStorageInterface $paragraphStorage, StatementInterface $results, $targetColor) {
   foreach ($results as $result) {
     /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
     $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
