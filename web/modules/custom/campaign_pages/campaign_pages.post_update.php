@@ -352,3 +352,48 @@ function campaign_pages_post_update_8004() {
     }
   }
 }
+
+/**
+ * Update remaining color fields.
+ */
+function campaign_pages_post_update_8005() {
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+
+  // Set light_grey for marketo_form and social_links.
+  $results = \Drupal::database()
+    ->query('SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type IN (:type_ids[]);',
+      [':type_ids[]' => ['marketo_form', 'social_links']]
+    );
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_grey');
+
+  // Set blue for other types.
+  $results = \Drupal::database()
+    ->query('SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id;');
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_blue');
+}
+
+/**
+ * Helper function for updating the color_scheme field value.
+ *
+ * @param \Drupal\Core\Entity\EntityStorageInterface $paragraphStorage
+ * @param \Drupal\Core\Database\StatementInterface $results
+ * @param string $targetColor
+ */
+function _campaign_pages_color_update_helper($paragraphStorage, $results, $targetColor) {
+  foreach ($results as $result) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
+    $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
+    $translations = $entityRevision->getTranslationLanguages();
+    foreach ($translations as $langcode => $language) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+      $entity = $entityRevision->getTranslation($langcode);
+
+      if ($entity->hasField('parade_color_scheme') && $entity->parade_color_scheme->target_id === NULL) {
+        $entity->parade_color_scheme->target_id = $targetColor;
+        $entity->setNewRevision(FALSE);
+        $entity->enforceIsNew(FALSE);
+        $entity->save();
+      }
+    }
+  }
+}
