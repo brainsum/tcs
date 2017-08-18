@@ -352,3 +352,30 @@ function campaign_pages_post_update_8004() {
     }
   }
 }
+
+/**
+ * Update remaining color fields from None to Blue.
+ */
+function campaign_pages_post_update_8005() {
+  $results = \Drupal::database()
+    ->query("SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id;");
+
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+
+  foreach ($results as $result) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
+    $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
+    $translations = $entityRevision->getTranslationLanguages();
+    foreach ($translations as $langcode => $language) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+      $entity = $entityRevision->getTranslation($langcode);
+
+      if ($entity->hasField('parade_color_scheme') && $entity->parade_color_scheme->target_id === NULL) {
+        $entity->parade_color_scheme->target_id = 'color_blue';
+        $entity->setNewRevision(FALSE);
+        $entity->enforceIsNew(FALSE);
+        $entity->save();
+      }
+    }
+  }
+}
