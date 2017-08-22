@@ -3869,6 +3869,15 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   position: relative;
   height: 80vh;
   overflow: hidden;
+  z-index: 50;
+  background: none;
+}
+
+.paragraph--type--header.paragraph--view-mode--default + * {
+  padding-top: calc(40px + 40%);
+  position: relative;
+  z-index: 0;
+  margin-top: -40%;
 }
 
 .paragraph--type--header.paragraph--view-mode--default .bg-wrapper::before {
