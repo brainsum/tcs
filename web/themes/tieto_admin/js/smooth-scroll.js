@@ -74,7 +74,7 @@
     }
   };
 
-  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"])').on('click', smoothScroll);
+  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"]):not([href*="/#/"])').on('click', smoothScroll);
 
 })(jQuery);
 
