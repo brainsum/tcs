@@ -132,9 +132,6 @@
             },
             "drupal/classy_paragraphs": {
                 "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
-            },
-            "drupal/better_formats": {
-                "Paragraphs support": "https://www.drupal.org/files/issues/better_formats_paragraphs-2754029-27.patch"
             }
         }
     },
