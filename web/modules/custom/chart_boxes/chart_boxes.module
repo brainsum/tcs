@@ -28,6 +28,7 @@ function chart_boxes_theme() {
 function chart_boxes_preprocess_paragraph__chart_box(&$variables) {
   /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = &$variables['paragraph'];
+
   /** @var Drupal\paragraphs\Entity\Paragraph $parent */
   $parent = $paragraph->getParentEntity();
 
@@ -91,7 +92,6 @@ function chart_boxes_preprocess_paragraph(&$variables) {
 function chart_boxes_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (isset($form['field_paragraphs'])) {
     $form['#attached']['library'][] = 'chart_boxes/paragraphs.chart_boxes_admin';
-    $form['#attached']['library'][] = 'chart_boxes/chart_boxes.hide_chart_form_fields';
 
     foreach ($form['field_paragraphs']['widget'] as $delta => &$value) {
       if (
@@ -102,7 +102,8 @@ function chart_boxes_form_alter(&$form, FormStateInterface $form_state, $form_id
       ) {
         $helperClass = 'parade-layout-states-help-' . (new Random())->name(10, TRUE);
         $value['subform']['parade_layout']['#attributes']['class'][] = $helperClass;
-        // Only show this field when the 'layout_doughnut_and_text_chart' value is selected.
+        // Only show this field when the
+        // 'layout_doughnut_and_text_chart' value is selected.
         $visibleAccordingToLayout = [
           'visible' => [
             ".$helperClass select" => ['value' => 'layout_doughnut_and_text_chart'],
