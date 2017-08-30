@@ -66,7 +66,7 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
   }
 
   // Remove scheduled updates date description.
-  if ($field_name === 'update_timestamp' && $context['form']['#entity_type'] === 'scheduled_update') {
+  if ($field_name === 'update_timestamp' && isset($context['form']['#entity_type']) && $context['form']['#entity_type'] === 'scheduled_update') {
     $element['value']['#description'] = t('Format: %format.', array('%format' => Datetime::formatExample('Y.m.d. - H:i:s')));
   }
 
