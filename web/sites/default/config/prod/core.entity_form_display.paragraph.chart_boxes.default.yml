@@ -54,7 +54,7 @@ content:
     settings:
       title: Chart
       title_plural: Charts
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: chart_box
