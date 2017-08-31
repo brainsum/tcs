@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Database\Database;
+use Drupal\Core\Database\StatementInterface;
+use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
  * Re-save classy paragraphs.
@@ -246,27 +248,7 @@ function campaign_pages_post_update_8002() {
 
         foreach ($fields as $old_field => $new_field) {
           if ($entity->hasField($old_field)) {
-            if (in_array($new_field, $fileFields, TRUE)) {
-              foreach ($entity->get($old_field)->getValue() as $value) {
-                /** @var \Drupal\file\Entity\File $file */
-                $file = $fileStorage->load($value['target_id']);
-                if (NULL !== $file) {
-                  // @todo: Image alts.
-                  $file->setPermanent();
-                  $file->save();
-                  $value = $entity->get($old_field)->getValue();
-                  $value['target_id'] = $file->id();
-                  $entity->set($new_field, $value);
-                  $fileUsage->add($file, 'file', 'paragraph', $entity->id());
-                }
-                else {
-                  echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
-                }
-              }
-            }
-            else {
-              $entity->set($new_field, $entity->get($old_field)->getValue());
-            }
+            $entity->set($new_field, $entity->get($old_field)->getValue());
 
             $entity->get($new_field)->setLangcode($entity->get($old_field)
               ->getLangcode());
@@ -344,4 +326,79 @@ function campaign_pages_post_update_8003() {
     }
   }
 
+}
+
+/**
+ * Update Header colors from None to Blue.
+ */
+function campaign_pages_post_update_8004() {
+  $results = Database::getConnection()
+    ->query("SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type = :type_id", [':type_id' => 'header']);
+
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+
+  foreach ($results as $result) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
+    $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
+    $translations = $entityRevision->getTranslationLanguages();
+    foreach ($translations as $langcode => $language) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+      $entity = $entityRevision->getTranslation($langcode);
+
+      if ($entity->parade_color_scheme->target_id === NULL) {
+        $entity->parade_color_scheme->target_id = 'color_blue';
+        $entity->setNewRevision(FALSE);
+        $entity->enforceIsNew(FALSE);
+        $entity->save();
+      }
+    }
+  }
+}
+
+/**
+ * Update remaining color fields.
+ */
+function campaign_pages_post_update_8005() {
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+
+  // Set light_grey for marketo_form and social_links.
+  $results = \Drupal::database()
+    ->query('SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type IN (:type_ids[]);',
+      [':type_ids[]' => ['marketo_form', 'social_links']]
+    );
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_grey');
+
+  // Set blue for other types.
+  $results = \Drupal::database()
+    ->query('SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id;');
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_blue');
+}
+
+/**
+ * Helper function for updating the color_scheme field value.
+ *
+ * @param \Drupal\Core\Entity\EntityStorageInterface $paragraphStorage
+ *   Paragraph storage.
+ * @param \Drupal\Core\Database\StatementInterface $results
+ *   Query results.
+ * @param string $targetColor
+ *   The machine name of the target color (classy paragraph).
+ */
+function _campaign_pages_color_update_helper(EntityStorageInterface $paragraphStorage, StatementInterface $results, $targetColor) {
+  foreach ($results as $result) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
+    $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
+    $translations = $entityRevision->getTranslationLanguages();
+    foreach ($translations as $langcode => $language) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+      $entity = $entityRevision->getTranslation($langcode);
+
+      if ($entity->hasField('parade_color_scheme') && $entity->parade_color_scheme->target_id === NULL) {
+        $entity->parade_color_scheme->target_id = $targetColor;
+        $entity->setNewRevision(FALSE);
+        $entity->enforceIsNew(FALSE);
+        $entity->save();
+      }
+    }
+  }
 }

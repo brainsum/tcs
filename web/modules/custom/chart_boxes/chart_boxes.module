@@ -28,6 +28,7 @@ function chart_boxes_theme() {
 function chart_boxes_preprocess_paragraph__chart_box(&$variables) {
   /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = &$variables['paragraph'];
+
   /** @var Drupal\paragraphs\Entity\Paragraph $parent */
   $parent = $paragraph->getParentEntity();
 
@@ -91,7 +92,6 @@ function chart_boxes_preprocess_paragraph(&$variables) {
 function chart_boxes_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (isset($form['field_paragraphs'])) {
     $form['#attached']['library'][] = 'chart_boxes/paragraphs.chart_boxes_admin';
-    $form['#attached']['library'][] = 'chart_boxes/chart_boxes.hide_chart_form_fields';
 
     foreach ($form['field_paragraphs']['widget'] as $delta => &$value) {
       if (
@@ -100,18 +100,26 @@ function chart_boxes_form_alter(&$form, FormStateInterface $form_state, $form_id
         && isset($value['subform']['parade_paragraphs'])
         && array_key_exists('layout_doughnut_and_text_chart', $value['subform']['parade_layout']['widget']['#options'])
       ) {
-        $helperClass = 'parade-layout-states-help-' . (new Random())->name(10, TRUE);
-        $value['subform']['parade_layout']['#attributes']['class'][] = $helperClass;
-        // Only show this field when the 'layout_doughnut_and_text_chart' value is selected.
+        $layoutHelperClass = 'parade-layout-states-help-' . (new Random())->name(10, TRUE);
+        $value['subform']['parade_layout']['#attributes']['class'][] = $layoutHelperClass;
+        // Only show this field when the
+        // 'layout_doughnut_and_text_chart' value is selected.
+        $layoutCondition = [".$layoutHelperClass select" => ['value' => 'layout_doughnut_and_text_chart']];
         $visibleAccordingToLayout = [
-          'visible' => [
-            ".$helperClass select" => ['value' => 'layout_doughnut_and_text_chart'],
-          ],
+          'visible' => $layoutCondition,
         ];
         $value['subform']['parade_boxes_per_row']['#states'] = $visibleAccordingToLayout;
         foreach ($value['subform']['parade_paragraphs']['widget'] as $subDelta => &$subValue) {
           if (is_numeric($subDelta) && is_array($subValue) && isset($subValue['subform']['parade_with_pie'])) {
             $subValue['subform']['parade_with_pie']['#states'] = $visibleAccordingToLayout;
+          }
+
+          // @see TCS-351: Hide parade_title of a chart_box if 'doughnut_and_text' is the layout.
+          if (is_numeric($subDelta) && is_array($subValue) && isset($subValue['subform']['parade_title'])) {
+            $invisibleAccordingToLayout = [
+              'invisible' => $layoutCondition,
+            ];
+            $subValue['subform']['parade_title']['#states'] = $invisibleAccordingToLayout;
           }
         }
         unset($subValue);

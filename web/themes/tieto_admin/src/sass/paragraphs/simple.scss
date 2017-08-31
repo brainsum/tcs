@@ -1,4 +1,10 @@
 .paragraph--type--simple.paragraph--view-mode--default {
+  background: $white;
+
+  .field--name-parade-title,
+  .field--name-parade-text {
+    color: #333333;
+  }
 
   .field--name-parade-title {
     @include campaign-title-center;
@@ -21,6 +27,15 @@
     background-color: $tieto-lightgrey;
   }
 
+  &.color-blue {
+    background: $tieto-blue;
+
+    .field--name-parade-title,
+    .field--name-parade-text {
+      color: white;
+    }
+  }
+
   &.layout--separator-clean {
     .field--name-parade-title {
       @include campaign-title-separator;
@@ -30,11 +45,9 @@
   // Inverse layout
   &.layout--two-column-content-1st-inverse,
   &.layout--two-column-title-1st-inverse {
-    background: $tieto-blue;
 
     .field--name-parade-title,
     .field--name-parade-text {
-      color: white;
       @include md {
         width: 50%;
       }
@@ -42,7 +55,6 @@
 
     .field--name-parade-title {
       @include campaign-headline;
-      color: white;
     }
   }
 

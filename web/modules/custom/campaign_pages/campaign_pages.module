@@ -6,6 +6,7 @@
  */
 
 use Drupal\campaign_pages\Handler\ScheduledUpdateListBuilder;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
@@ -66,7 +67,7 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
   }
 
   // Remove scheduled updates date description.
-  if ($field_name === 'update_timestamp' && $context['form']['#entity_type'] === 'scheduled_update') {
+  if ($field_name === 'update_timestamp' && isset($context['form']['#entity_type']) && $context['form']['#entity_type'] === 'scheduled_update') {
     $element['value']['#description'] = t('Format: %format.', array('%format' => Datetime::formatExample('Y.m.d. - H:i:s')));
   }
 
@@ -260,5 +261,38 @@ function campaign_pages_entity_delete($entity) {
   if ($entity->getEntityTypeId() === 'paragraph') {
     \Drupal::logger('campaign_pages')->info('Deleted paragraph ID: ' . $entity->id());
     \Drupal::logger('campaign_pages')->debug('Deleted paragraph backtrace: ' . Error::formatBacktrace(debug_backtrace()));
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function campaign_pages_preprocess_status_messages(&$variables) {
+  // @see TCS-310.
+  // Only execute this code for the scheduled update list route.
+  // @note: If we get redirected somewhere else, the str_replace won't work.
+  if (FALSE !== strpos(\Drupal::routeMatch()->getRouteName(), 'entity.scheduled_update.collection')) {
+    $type = 'status';
+    if (isset($variables['message_list'][$type])) {
+      $updateTypes = \Drupal::entityTypeManager()->getStorage('scheduled_update_type')->loadMultiple();
+      /** @var \Drupal\Core\Render\Markup $message */
+      foreach ($variables['message_list'][$type] as &$message) {
+        $text = $message->__toString();
+        /** @var \Drupal\scheduled_updates\ScheduledUpdateTypeInterface $updateType */
+        foreach ($updateTypes as $machineName => $updateType) {
+          // If node__moderation_state comes first, but the message contains
+          // node__moderation_state_1, then we'd get 'Scheduled update:_1'.
+          // So our strpos search includes the closing ':'.
+          $searchText = 'content ' . $machineName . ':';
+          if (FALSE !== strpos($text, $searchText)) {
+            $replacement = 'Scheduled update:';
+            $text = str_replace($searchText, $replacement, $text);
+            $message = Markup::create($text);
+            break;
+          }
+        }
+      }
+      unset($message);
+    }
   }
 }
