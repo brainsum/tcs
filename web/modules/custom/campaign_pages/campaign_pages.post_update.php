@@ -329,30 +329,16 @@ function campaign_pages_post_update_8003() {
 }
 
 /**
- * Update Header colors from None to Blue.
+ * Update Header colors to Blue.
  */
 function campaign_pages_post_update_8004() {
   $results = Database::getConnection()
-    ->query('SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type = :type_id', [':type_id' => 'header']);
+    ->query('SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type = :type_id', [
+      ':type_id' => 'header',
+    ]);
 
   $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
-
-  foreach ($results as $result) {
-    /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
-    $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
-    $translations = $entityRevision->getTranslationLanguages();
-    foreach ($translations as $langcode => $language) {
-      /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
-      $entity = $entityRevision->getTranslation($langcode);
-
-      if ($entity->parade_color_scheme->target_id === NULL) {
-        $entity->parade_color_scheme->target_id = 'color_blue';
-        $entity->setNewRevision(FALSE);
-        $entity->enforceIsNew(FALSE);
-        $entity->save();
-      }
-    }
-  }
+  _campaign_pages_color_update_helper($paragraphStorage, $results, NULL, 'color_blue', TRUE);
 }
 
 /**
@@ -368,7 +354,7 @@ function campaign_pages_post_update_8005() {
     ->query($baseQuery . ' AND pi.type IN (:type_ids[]);',
       [':type_ids[]' => ['marketo_form', 'social_links']]
     );
-  _campaign_pages_color_update_helper($paragraphStorage, $results, NULL, 'color_light_grey');
+  _campaign_pages_color_update_helper($paragraphStorage, $results, NULL, 'color_light_grey', TRUE);
 
   // Change 'Color default' to 'None'.
   $results = $database
@@ -394,8 +380,10 @@ function campaign_pages_post_update_8005() {
  *   The machine name of the original color (classy paragraph).
  * @param string $targetColor
  *   The machine name of the target color (classy paragraph).
+ * @param bool $skipColorCheck
+ *   Whether to skip the color condition or not.
  */
-function _campaign_pages_color_update_helper(EntityStorageInterface $paragraphStorage, StatementInterface $results, $originalColor, $targetColor) {
+function _campaign_pages_color_update_helper(EntityStorageInterface $paragraphStorage, StatementInterface $results, $originalColor, $targetColor, $skipColorCheck = FALSE) {
   foreach ($results as $result) {
     /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
     $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
@@ -404,7 +392,8 @@ function _campaign_pages_color_update_helper(EntityStorageInterface $paragraphSt
       /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
       $entity = $entityRevision->getTranslation($langcode);
 
-      if ($entity->hasField('parade_color_scheme') && $entity->parade_color_scheme->target_id === $originalColor) {
+      $colorCondition = (TRUE === $skipColorCheck) ? TRUE : ($entity->parade_color_scheme->target_id === $originalColor);
+      if ($entity->hasField('parade_color_scheme') && $colorCondition) {
         $entity->parade_color_scheme->target_id = $targetColor;
         $entity->setNewRevision(FALSE);
         $entity->enforceIsNew(FALSE);
