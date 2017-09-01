@@ -1,0 +1,16 @@
+#!/usr/bin/env drush
+
+$key_value = \Drupal::keyValue('post_update');
+$update_list = $key_value->get('existing_updates');
+
+$choice = drush_choice($update_list, dt('Which post_update hook do you want to reset?'));
+
+if ($choice) {
+  $removed_el = $update_list[$choice];
+  unset($update_list[$choice]);
+  $key_value->set('existing_updates', $update_list);
+  drush_print("$removed_el was reset");
+}
+else {
+  drush_print('Reset was cancelled');
+}
