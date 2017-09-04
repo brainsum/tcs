@@ -411,7 +411,7 @@ function _campaign_pages_color_update_helper(
       // We can only update colors for entities with the color field.
       if ($entity->hasField('parade_color_scheme')) {
         $colorCondition = (FALSE === $originalColor ? TRUE : $entity->parade_color_scheme->target_id === $originalColor);
-        $layoutCondition = (FALSE !== $layout && $entity->hasField('parade_layout') && $entity->parade_color_scheme->target_id === $layout);
+        $layoutCondition = (FALSE !== $layout && $entity->hasField('parade_layout') && $entity->parade_layout->target_id === $layout);
         if ($colorCondition || $layoutCondition) {
           $entity->parade_color_scheme->target_id = $targetColor;
           $entity->setNewRevision(FALSE);
