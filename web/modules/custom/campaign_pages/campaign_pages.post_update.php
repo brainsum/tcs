@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Database\Database;
+use Drupal\Core\Database\StatementInterface;
+use Drupal\Core\Entity\EntityStorageInterface;
 
 /**
  * Re-save classy paragraphs.
@@ -246,27 +248,7 @@ function campaign_pages_post_update_8002() {
 
         foreach ($fields as $old_field => $new_field) {
           if ($entity->hasField($old_field)) {
-            if (in_array($new_field, $fileFields, TRUE)) {
-              foreach ($entity->get($old_field)->getValue() as $value) {
-                /** @var \Drupal\file\Entity\File $file */
-                $file = $fileStorage->load($value['target_id']);
-                if (NULL !== $file) {
-                  // @todo: Image alts.
-                  $file->setPermanent();
-                  $file->save();
-                  $value = $entity->get($old_field)->getValue();
-                  $value['target_id'] = $file->id();
-                  $entity->set($new_field, $value);
-                  $fileUsage->add($file, 'file', 'paragraph', $entity->id());
-                }
-                else {
-                  echo 'File entity is NULL for file ID ' . $value['target_id'] . "\n";
-                }
-              }
-            }
-            else {
-              $entity->set($new_field, $entity->get($old_field)->getValue());
-            }
+            $entity->set($new_field, $entity->get($old_field)->getValue());
 
             $entity->get($new_field)->setLangcode($entity->get($old_field)
               ->getLangcode());
@@ -344,4 +326,104 @@ function campaign_pages_post_update_8003() {
     }
   }
 
+}
+
+/**
+ * Update Header colors to Blue.
+ */
+function campaign_pages_post_update_8004() {
+  $results = Database::getConnection()
+    ->query('SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id AND pi.type = :type_id', [
+      ':type_id' => 'header',
+    ]);
+
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_blue');
+}
+
+/**
+ * Update remaining color fields.
+ */
+function campaign_pages_post_update_8005() {
+  $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
+  $database = \Drupal::database();
+  $baseQuery = 'SELECT nfp.field_paragraphs_target_revision_id FROM {node__field_paragraphs} AS nfp, {paragraphs_item} AS pi WHERE nfp.field_paragraphs_target_id = pi.id';
+
+  // Set light_grey for marketo_form and social_links.
+  $results = $database
+    ->query($baseQuery . ' AND pi.type IN (:type_ids[]);',
+      [':type_ids[]' => ['marketo_form', 'social_links']]
+    );
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_grey');
+
+  // Change 'Color default' to 'None'.
+  $results = $database
+    ->query($baseQuery . ';');
+  _campaign_pages_color_update_helper($paragraphStorage, $results, NULL, 'color_default');
+
+  // Simple 'Color shaded' should be 'Color light blue'.
+  $results = $database
+    ->query($baseQuery . ' AND pi.type = :type_id;', [
+      ':type_id' => 'simple',
+    ]);
+  // Simple 'Color shaded' should be 'Color light blue'.
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_blue', 'color_shaded');
+  // Use the 'placeholder' string to disable to color check, so we only
+  // use the layout for the comparison.
+  $results = $database
+    ->query($baseQuery . ' AND pi.type = :type_id;', [
+      ':type_id' => 'simple',
+    ]);
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_blue', 'placeholder', 'layout_two_column_title_1st');
+}
+
+/**
+ * Helper function for updating the color_scheme field value.
+ *
+ * @param \Drupal\Core\Entity\EntityStorageInterface $paragraphStorage
+ *   Paragraph storage.
+ * @param \Drupal\Core\Database\StatementInterface $results
+ *   Query results.
+ * @param null|string $targetColor
+ *   NULL to set the field to 'None', or
+ *   The machine name of the target color (classy paragraph).
+ * @param null|bool|string $originalColor
+ *   FALSE if the update should happen for any value, or
+ *   NULL if the 'None' field is targeted, or
+ *   The machine name of the original color (classy paragraph).
+ *   Note: Use an invalid machine name (e.g 'placeholder') to disable the color
+ *   check. This makes the code rely on the layout only.
+ * @param null|bool|string $layout
+ *   FALSE to disable the check, or
+ *   NULL for the 'None' layout, or
+ *   The layout machine name.
+ */
+function _campaign_pages_color_update_helper(
+  EntityStorageInterface $paragraphStorage,
+  StatementInterface $results,
+  $targetColor,
+  $originalColor = FALSE,
+  $layout = FALSE
+) {
+  foreach ($results as $result) {
+    /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
+    $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
+    $translations = $entityRevision->getTranslationLanguages();
+    foreach ($translations as $langcode => $language) {
+      /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+      $entity = $entityRevision->getTranslation($langcode);
+      // We can only update colors for entities with the color field.
+      if ($entity->hasField('parade_color_scheme')) {
+        $colorCondition = (FALSE === $originalColor ? TRUE : $entity->parade_color_scheme->target_id === $originalColor);
+        $layoutCondition = (FALSE !== $layout && $entity->hasField('parade_layout') && $entity->parade_layout->target_id === $layout);
+
+        if ($colorCondition || $layoutCondition) {
+          $entity->parade_color_scheme->target_id = $targetColor;
+          $entity->setNewRevision(FALSE);
+          $entity->enforceIsNew(FALSE);
+          $entity->save();
+        }
+      }
+    }
+  }
 }

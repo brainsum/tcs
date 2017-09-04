@@ -4,12 +4,23 @@
  */
 $paragraph-header-height: 600px;
 $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variables (e.g. $tieto-lightblue)
+$paragraph-header-overlay-bg-grey: rgba(0, 0, 0, .5); // @todo move to variables (e.g. $tieto-grey)
 
 .paragraph--type--header.paragraph--view-mode--default {
   padding: 0;
   position: relative;
   height: 80vh;
   overflow: hidden;
+  z-index: 50;
+  background: none;
+
+  // any paragraph comes right after header
+  & + * {
+    padding-top: calc(40px + 40%) !important;
+    position: relative;
+    z-index: 0;
+    margin-top: -40%;
+  }
 
   // Background overlay
   .bg-wrapper::before {
@@ -17,7 +28,18 @@ $paragraph-header-overlay-bg: rgba(103, 175, 225, .5); // @todo move to variable
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 1;
-    background-color: $paragraph-header-overlay-bg;
+  }
+
+  &.color-blue {
+    .bg-wrapper::before {
+      background-color: $paragraph-header-overlay-bg;
+    }
+  }
+
+  &.color-grey {
+    .bg-wrapper::before {
+      background-color: $paragraph-header-overlay-bg-grey;
+    }
   }
 
   @supports (clip-path: polygon(0 0)) {

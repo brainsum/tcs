@@ -68,7 +68,7 @@ class ScheduledUpdateListBuilder extends EntityListBuilder {
    */
   public function buildHeader() {
     $header['parent_entity'] = $this->t('Parent Entity');
-    $header['name'] = $this->t('Update Time');
+    $header['time'] = $this->t('Update Time');
     $header['type'] = $this->t('Update Type');
     return $header + parent::buildHeader();
   }
@@ -77,7 +77,12 @@ class ScheduledUpdateListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var $entity \Drupal\scheduled_updates\Entity\ScheduledUpdate */
+    /* @var \Drupal\scheduled_updates\Entity\ScheduledUpdate $entity */
+
+    $updateTime = $entity->get('update_timestamp')->value;
+    if (isset($updateTime) && ((int) $updateTime < REQUEST_TIME)) {
+      return [];
+    }
 
     $updateType = str_replace('node__', '', $entity->get('type')->target_id);
     switch ($updateType) {
@@ -100,7 +105,7 @@ class ScheduledUpdateListBuilder extends EntityListBuilder {
       $row['parent_entity'] = $node->toLink(NULL, 'edit-form');
     }
 
-    $row['name'] = Link::fromTextAndUrl(
+    $row['time'] = Link::fromTextAndUrl(
       $entity->label(),
       new Url(
         'entity.scheduled_update.edit_form', array(
