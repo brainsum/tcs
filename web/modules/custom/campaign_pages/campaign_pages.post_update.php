@@ -338,7 +338,7 @@ function campaign_pages_post_update_8004() {
     ]);
 
   $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
-  _campaign_pages_color_update_helper($paragraphStorage, $results, NULL, 'color_blue', TRUE);
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_blue');
 }
 
 /**
@@ -354,19 +354,19 @@ function campaign_pages_post_update_8005() {
     ->query($baseQuery . ' AND pi.type IN (:type_ids[]);',
       [':type_ids[]' => ['marketo_form', 'social_links']]
     );
-  _campaign_pages_color_update_helper($paragraphStorage, $results, NULL, 'color_light_grey', TRUE);
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_grey');
 
   // Change 'Color default' to 'None'.
   $results = $database
     ->query($baseQuery . ';');
-  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_default', NULL);
+  _campaign_pages_color_update_helper($paragraphStorage, $results, NULL, 'color_default');
 
   // Simple 'Color shaded' should be 'Color light blue'.
   $results = $database
     ->query($baseQuery . ' AND pi.type = :type_id;', [
       ':type_id' => 'simple',
     ]);
-  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_shaded', 'color_light_blue');
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_blue', 'color_shaded', 'layout_two_column_title_1st');
 }
 
 /**
@@ -376,14 +376,25 @@ function campaign_pages_post_update_8005() {
  *   Paragraph storage.
  * @param \Drupal\Core\Database\StatementInterface $results
  *   Query results.
- * @param null|string $originalColor
- *   The machine name of the original color (classy paragraph).
- * @param string $targetColor
+ * @param null|string $targetColor
+ *   NULL to set the field to 'None', or
  *   The machine name of the target color (classy paragraph).
- * @param bool $skipColorCheck
- *   Whether to skip the color condition or not.
+ * @param null|bool|string $originalColor
+ *   FALSE if the update should happen for any value, or
+ *   NULL if the 'None' field is targeted, or
+ *   The machine name of the original color (classy paragraph).
+ * @param null|bool|string $layout
+ *   FALSE to disable the check, or
+ *   NULL for the 'None' layout, or
+ *   The layout machine name.
  */
-function _campaign_pages_color_update_helper(EntityStorageInterface $paragraphStorage, StatementInterface $results, $originalColor, $targetColor, $skipColorCheck = FALSE) {
+function _campaign_pages_color_update_helper(
+  EntityStorageInterface $paragraphStorage,
+  StatementInterface $results,
+  $targetColor,
+  $originalColor = FALSE,
+  $layout = FALSE
+) {
   foreach ($results as $result) {
     /** @var \Drupal\paragraphs\Entity\Paragraph $entityRevision */
     $entityRevision = $paragraphStorage->loadRevision($result->field_paragraphs_target_revision_id);
@@ -392,12 +403,16 @@ function _campaign_pages_color_update_helper(EntityStorageInterface $paragraphSt
       /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
       $entity = $entityRevision->getTranslation($langcode);
 
-      $colorCondition = (TRUE === $skipColorCheck) ? TRUE : ($entity->parade_color_scheme->target_id === $originalColor);
-      if ($entity->hasField('parade_color_scheme') && $colorCondition) {
-        $entity->parade_color_scheme->target_id = $targetColor;
-        $entity->setNewRevision(FALSE);
-        $entity->enforceIsNew(FALSE);
-        $entity->save();
+      // We can only update colors for entities with the color field.
+      if ($entity->hasField('parade_color_scheme')) {
+        $colorCondition = (FALSE === $originalColor ? TRUE : $entity->parade_color_scheme->target_id === $originalColor);
+        $layoutCondition = (FALSE !== $layout && $entity->hasField('parade_layout') && $entity->parade_color_scheme->target_id === $layout);
+        if ($colorCondition || $layoutCondition) {
+          $entity->parade_color_scheme->target_id = $targetColor;
+          $entity->setNewRevision(FALSE);
+          $entity->enforceIsNew(FALSE);
+          $entity->save();
+        }
       }
     }
   }
