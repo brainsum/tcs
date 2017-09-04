@@ -366,9 +366,14 @@ function campaign_pages_post_update_8005() {
     ->query($baseQuery . ' AND pi.type = :type_id;', [
       ':type_id' => 'simple',
     ]);
+  // Simple 'Color shaded' should be 'Color light blue'.
   _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_blue', 'color_shaded');
   // Use the 'placeholder' string to disable to color check, so we only
   // use the layout for the comparison.
+  $results = $database
+    ->query($baseQuery . ' AND pi.type = :type_id;', [
+      ':type_id' => 'simple',
+    ]);
   _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_blue', 'placeholder', 'layout_two_column_title_1st');
 }
 
@@ -407,11 +412,11 @@ function _campaign_pages_color_update_helper(
     foreach ($translations as $langcode => $language) {
       /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
       $entity = $entityRevision->getTranslation($langcode);
-
       // We can only update colors for entities with the color field.
       if ($entity->hasField('parade_color_scheme')) {
         $colorCondition = (FALSE === $originalColor ? TRUE : $entity->parade_color_scheme->target_id === $originalColor);
         $layoutCondition = (FALSE !== $layout && $entity->hasField('parade_layout') && $entity->parade_layout->target_id === $layout);
+
         if ($colorCondition || $layoutCondition) {
           $entity->parade_color_scheme->target_id = $targetColor;
           $entity->setNewRevision(FALSE);
