@@ -366,7 +366,10 @@ function campaign_pages_post_update_8005() {
     ->query($baseQuery . ' AND pi.type = :type_id;', [
       ':type_id' => 'simple',
     ]);
-  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_blue', 'color_shaded', 'layout_two_column_title_1st');
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_light_blue', 'color_shaded');
+  // Use the 'placeholder' string to disable to color check, so we only
+  // use the layout for the comparison.
+  _campaign_pages_color_update_helper($paragraphStorage, $results, 'color_blue', 'placeholder', 'layout_two_column_title_1st');
 }
 
 /**
@@ -383,6 +386,8 @@ function campaign_pages_post_update_8005() {
  *   FALSE if the update should happen for any value, or
  *   NULL if the 'None' field is targeted, or
  *   The machine name of the original color (classy paragraph).
+ *   Note: Use an invalid machine name (e.g 'placeholder') to disable the color
+ *   check. This makes the code rely on the layout only.
  * @param null|bool|string $layout
  *   FALSE to disable the check, or
  *   NULL for the 'None' layout, or
