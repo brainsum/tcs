@@ -2,7 +2,6 @@
 
 namespace Drupal\twitter_feed_parade_type\Plugin\Field\FieldWidget;
 
-use Drupal\Component\Utility\Random;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
