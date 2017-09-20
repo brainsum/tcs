@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2ca58700d68814ce34e03241a28aba4",
+    "content-hash": "725c96412c723df534754df08a5d36b2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1370,11 +1370,11 @@
         },
         {
             "name": "drupal/cloudfront_purger",
-            "version": "dev-1.x",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/cloudfront_purger",
-                "reference": "5c1d83a76e932a51fdb6ebd6eca05e4b7233d1bd"
+                "reference": "da553534e2e7d8e8f1c61e2339fbd94385d349af"
             },
             "require": {
                 "aws/aws-sdk-php": "~3.0",
@@ -1392,8 +1392,12 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1490345283"
+                    "version": "8.x-1.1+0-dev",
+                    "datestamp": "1502863144",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1415,7 +1419,7 @@
                 "source": "http://github.com/previousnext/cloudfront_purger",
                 "issues": "http://drupal.org/project/issues/cloudfront_purger"
             },
-            "time": "2017-03-29 00:42:01"
+            "time": "2017-08-16T05:54:48+00:00"
         },
         {
             "name": "drupal/config_readonly",
@@ -9653,7 +9657,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/cloudfront_purger": 20,
         "drupal/content_entity_language_switcher": 20,
         "drupal/node_clone": 20,
         "drupal/parade": 20,
