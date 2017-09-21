@@ -2,7 +2,6 @@
 
 namespace Drupal\twitter_feed_parade_type\Plugin\Field\FieldWidget;
 
-use Drupal\Component\Utility\Random;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -28,6 +27,8 @@ class TwitterFeedWidget extends WidgetBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @throws \InvalidArgumentException
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
     $item = $items[$delta];
@@ -73,13 +74,14 @@ class TwitterFeedWidget extends WidgetBase {
     $element['widget_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Widget ID'),
-      '#description' => $this->t('The ID of a widget created at the @url', [
+      '#description' => $this->t('The numerical ID of a widget created at the @url, e.g. @example', [
         '@url' => Link::fromTextAndUrl('twitter widget settings', Url::fromUri('https://twitter.com/settings/widgets', [
           'attributes' => ['target' => '_blank', 'rel' => 'noopener'],
         ]))->toString(),
+        '@example' => '012345678901234567',
       ]),
       '#default_value' => $item->widget_id,
-      '#maxlength' => 255,
+      '#maxlength' => 24,
     ];
 
     return $element;

@@ -23,19 +23,19 @@ settings:
     filter:
       type: target_bundles
       target_bundles:
-        color_blue: color_blue
-        color_dark_grey: color_dark_grey
-        color_default: color_default
         color_green: color_green
-        color_grey: color_grey
-        color_light_blue: color_light_blue
-        color_light_green: color_light_green
         color_light_grey: color_light_grey
-        color_light_orange: color_light_orange
-        color_light_red: color_light_red
         color_orange: color_orange
         color_red: color_red
-        color_shaded: color_shaded
+        color_blue: 0
+        color_dark_grey: 0
+        color_default: 0
+        color_grey: 0
+        color_light_blue: 0
+        color_light_green: 0
+        color_light_orange: 0
+        color_light_red: 0
+        color_shaded: 0
         layout_bar_chart: 0
         layout_clean: 0
         layout_contacts: 0
