@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Install file for the node_public_url module.
+ */
+
+use Drupal\node_public_url\Storage\PathStorage;
+
+/**
+ * Implements hook_schema().
+ */
+function node_public_url_schema() {
+  return [
+    'node_public_url' => PathStorage::schemaDefinition(),
+  ];
+}

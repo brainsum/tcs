@@ -1,0 +1,8 @@
+name: Node public URL
+type: module
+description: Enables generating a public URL for unpublished nodes.
+core: 8.x
+package: Custom
+
+dependencies:
+  - drupal:node

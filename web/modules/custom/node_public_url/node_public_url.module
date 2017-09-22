@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Module file for the node_public_url module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function node_public_url_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.node_public_url':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Enables generating a public url for nodes') . '</p>';
+      return $output;
+
+    default:
+  }
+}
