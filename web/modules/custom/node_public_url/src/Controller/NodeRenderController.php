@@ -17,6 +17,8 @@ class NodeRenderController extends ControllerBase {
    *
    * @param \Drupal\node\NodeInterface $node
    *   The node.
+   * @param string $langcode
+   *   The language code.
    *
    * @return array
    *   Node render array.
