@@ -2,12 +2,14 @@
 
 namespace Drupal\node_public_url\Form;
 
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Utility\Random;
 use Drupal\Core\Access\AccessResultAllowed;
 use Drupal\Core\Access\AccessResultForbidden;
 use Drupal\Core\Access\AccessResultInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
@@ -84,41 +86,22 @@ class PreviewLinksForm extends FormBase {
    *
    * @throws \InvalidArgumentException
    */
-  public function buildForm(array $form, FormStateInterface $form_state): array {
+  public function buildForm(array $form, FormStateInterface $form_state) {
     if (!$this->getRequest()->attributes->has('node') || NULL === $this->getRequest()->attributes->get('node')) {
       throw new \InvalidArgumentException($this->t('This does not seem to be a node route.'));
     }
 
     /** @var \Drupal\node\NodeInterface $node */
     $node = $this->getRequest()->attributes->get('node');
-    $translations = $node->getTranslationLanguages();
     $paths = $this->pathStorage->loadForNode($node->id());
+    // Add the original language separately.
+    $defaultLanguage = $node->getTranslation(LanguageInterface::LANGCODE_DEFAULT)->language();
+    $form['paths'][$defaultLanguage->getId()] = $this->createLanguageElement($defaultLanguage, $paths, TRUE);
 
-    // Go through each translation, and create the form element for it.
+    // Go through the other translations, and create the form element for them.
+    $translations = $node->getTranslationLanguages(FALSE);
     foreach ($translations as $language) {
-      $langId = $language->getId();
-      $element = [];
-      $element['checkbox'] = [
-        '#type' => 'checkbox',
-        '#title' => $language->getName(),
-      ];
-
-      if (isset($paths[$langId])) {
-        $path = $paths[$langId];
-
-        $url = Url::fromUserInput($path->path, ['absolute' => TRUE]);
-        $element['url'] = [
-          '#type' => 'url',
-          '#title' => $this->t('URL'),
-          '#disabled' => TRUE,
-          '#default_value' => $url->toString(TRUE)->getGeneratedUrl(),
-          '#size' => 70,
-        ];
-
-        // @todo: Maybe add this https://www.drupal.org/project/clipboardjs
-      }
-
-      $form['paths'][$langId] = $element;
+      $form['paths'][$language->getId()] = $this->createLanguageElement($language, $paths);
     }
 
     $form['nid'] = [
@@ -140,6 +123,56 @@ class PreviewLinksForm extends FormBase {
     $form['#tree'] = TRUE;
 
     return $form;
+  }
+
+  /**
+   * Create an element for a language.
+   *
+   * @param \Drupal\Core\Language\LanguageInterface $language
+   *   The language object.
+   * @param array $existingPaths
+   *   The existing paths for the node.
+   * @param bool $originalLanguage
+   *   TRUE, if it's the original node language, FALSE otherwise.
+   *
+   * @return array
+   *   The render array for the form element.
+   *
+   * @throws \InvalidArgumentException
+   */
+  protected function createLanguageElement(LanguageInterface $language, array $existingPaths, $originalLanguage = FALSE) {
+    $langId = $language->getId();
+    $element = [];
+
+    $checkboxTitle = $language->getName();
+
+    if (TRUE === $originalLanguage) {
+      $checkboxTitle = new FormattableMarkup('<strong>@lang (Original language)</strong>', [
+        '@lang' => $language->getName(),
+      ]);
+    }
+
+    $element['checkbox'] = [
+      '#type' => 'checkbox',
+      '#title' => $checkboxTitle,
+    ];
+
+    if (isset($existingPaths[$langId])) {
+      $path = $existingPaths[$langId];
+
+      $url = Url::fromUserInput($path->path, ['absolute' => TRUE]);
+      $element['url'] = [
+        '#type' => 'url',
+        '#title' => $this->t('URL'),
+        '#disabled' => TRUE,
+        '#default_value' => $url->toString(TRUE)->getGeneratedUrl(),
+        '#size' => 70,
+      ];
+
+      // @todo: Maybe add this https://www.drupal.org/project/clipboardjs
+    }
+
+    return $element;
   }
 
   /**
