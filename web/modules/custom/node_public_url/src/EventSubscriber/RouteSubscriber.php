@@ -14,6 +14,8 @@ use Symfony\Component\Routing\RouteCollection;
  */
 class RouteSubscriber extends RouteSubscriberBase {
 
+  const ROUTE_PREFIX = 'node_public_url.preview_link.';
+
   /**
    * The path storage.
    *
@@ -32,16 +34,15 @@ class RouteSubscriber extends RouteSubscriberBase {
   }
 
   /**
-   * Returns a set of route objects.
-   *
-   * @return \Symfony\Component\Routing\RouteCollection
-   *   A route collection.
+   * {@inheritdoc}
    *
    * @throws \Exception
    */
-  public function routes(): RouteCollection {
+  protected function alterRoutes(RouteCollection $collection) {
+    $this->clearCollection($collection);
+
     $publicUrls = $this->pathStorage->loadMultiple();
-    $collection = new RouteCollection();
+
     foreach ($publicUrls as $url) {
       $route = new Route($url->path);
       $route->addDefaults([
@@ -63,17 +64,22 @@ class RouteSubscriber extends RouteSubscriberBase {
         ],
       ]);
 
-      $collection->add('node_public_url.preview_link.' . $url->nid . '.' . $url->langcode, $route);
+      $collection->add(static::ROUTE_PREFIX . $url->nid . '.' . $url->langcode, $route);
     }
-
-    return $collection;
   }
 
   /**
-   * {@inheritdoc}
+   * Remove every dynamic route added by our module.
    *
-   * Not needed.
+   * @param \Symfony\Component\Routing\RouteCollection $collection
+   *   The route collection.
    */
-  protected function alterRoutes(RouteCollection $collection) {}
+  protected function clearCollection(RouteCollection $collection) {
+    foreach (array_keys($collection->all()) as $name) {
+      if (strpos($name, static::ROUTE_PREFIX) !== FALSE) {
+        $collection->remove($name);
+      }
+    }
+  }
 
 }

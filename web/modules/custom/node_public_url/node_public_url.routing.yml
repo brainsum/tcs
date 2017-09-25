@@ -1,6 +1,3 @@
-route_callbacks:
-  - 'node_public_url.route_subscriber:routes'
-
 node_public_url.preview_links_form:
   path: '/node/{node}/preview-links'
   defaults:

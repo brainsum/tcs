@@ -7,15 +7,21 @@ use Drupal\Component\Utility\Random;
 use Drupal\Core\Access\AccessResultAllowed;
 use Drupal\Core\Access\AccessResultForbidden;
 use Drupal\Core\Access\AccessResultInterface;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\Language;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
+use Drupal\Core\Routing\RouteBuildEvent;
+use Drupal\Core\Routing\RoutingEvents;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\StringTranslation\PluralTranslatableMarkup;
 use Drupal\Core\Url;
+use Drupal\locale\PluralFormula;
 use Drupal\node_public_url\Storage\PathStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Routing\RouteCollection;
 
 /**
  * Class PreviewLinksForm.
@@ -221,8 +227,8 @@ class PreviewLinksForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $triggerName = $form_state->getTriggeringElement()['#name'];
 
+    $operationCount = 0;
     $values = $form_state->getValues();
-    $rebuildNeeded = FALSE;
     if (isset($values['paths'])) {
       /** @var array $paths */
       $paths = $values['paths'];
@@ -250,14 +256,21 @@ class PreviewLinksForm extends FormBase {
             ]);
           }
 
-          $rebuildNeeded = TRUE;
+          ++$operationCount;
         }
       }
     }
 
-    if (TRUE === $rebuildNeeded) {
-      $this->routeBuilder->rebuild();
-    }
+    $operation = ('generate_button' === $triggerName) ? 'added' : 'removed';
+
+    $message = new PluralTranslatableMarkup(
+      $operationCount,
+      '1 link has been ' . $operation . '.',
+      '@count links have been ' . $operation . '.'
+    );
+
+    $this->routeBuilder->rebuild();
+    drupal_set_message($message->render());
   }
 
   /**
