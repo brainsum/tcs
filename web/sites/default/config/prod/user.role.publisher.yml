@@ -109,3 +109,4 @@ permissions:
   100: 'delete paragraph content chart_boxes'
   101: 'update paragraph content chart_boxes'
   102: 'administer redirects'
+  103: 'access generate form'
