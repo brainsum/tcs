@@ -23,11 +23,11 @@ class NodeRenderController extends ControllerBase {
    *
    * @throws \InvalidArgumentException
    */
-  public function render(NodeInterface $node) {
+  public function render(NodeInterface $node, $langcode) {
     // @todo: Maybe check the route and the node ID, and check
     // if they are the same.
     $viewBuilder = $this->entityTypeManager()->getViewBuilder($node->getEntityTypeId());
-    return $viewBuilder->view($node);
+    return $viewBuilder->view($node, 'full', $langcode);
   }
 
 }

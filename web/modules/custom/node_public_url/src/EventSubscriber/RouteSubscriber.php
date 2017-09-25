@@ -47,6 +47,7 @@ class RouteSubscriber extends RouteSubscriberBase {
       $route->addDefaults([
         '_controller' => '\Drupal\node_public_url\Controller\NodeRenderController::render',
         'node' => $url->nid,
+        'langcode' => $url->langcode,
       ]);
       $route->addRequirements([
         '_access' => 'TRUE',
@@ -55,6 +56,9 @@ class RouteSubscriber extends RouteSubscriberBase {
         'parameters' => [
           'node' => [
             'type' => 'entity:node',
+          ],
+          'langcode' => [
+            'type' => 'string',
           ],
         ],
       ]);
