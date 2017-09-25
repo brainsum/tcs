@@ -39,6 +39,13 @@ class PreviewLinksForm extends FormBase {
   protected $routeBuilder;
 
   /**
+   * An empty language object.
+   *
+   * @var \Drupal\Core\Language\Language
+   */
+  protected $emptyLanguage;
+
+  /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
@@ -62,6 +69,8 @@ class PreviewLinksForm extends FormBase {
   ) {
     $this->pathStorage = $pathStorage;
     $this->routeBuilder = $routeBuilder;
+
+    $this->emptyLanguage = new Language();
   }
 
   /**
@@ -180,7 +189,7 @@ class PreviewLinksForm extends FormBase {
 
       $url = Url::fromUserInput($path->path, [
         'absolute' => TRUE,
-        'language' => new Language(),
+        'language' => $this->emptyLanguage,
       ]);
       $element['url'] = [
         '#type' => 'url',
