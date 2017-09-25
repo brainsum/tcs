@@ -9,6 +9,7 @@ use Drupal\Core\Access\AccessResultForbidden;
 use Drupal\Core\Access\AccessResultInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\Language;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -109,15 +110,32 @@ class PreviewLinksForm extends FormBase {
       '#value' => $node->id(),
     ];
 
-    $form['generate'] = [
+    $form['actions']['generate'] = [
       '#type' => 'submit',
       '#name' => 'generate_button',
       '#value' => $this->t('Generate'),
+      '#attributes' => [
+        'class' => [
+          'button',
+          'button--primary',
+        ],
+      ],
+      '#title' => $this->t('Generate preview links for the selected languages.'),
+      '#title_display' => 'attribute',
     ];
-    $form['remove'] = [
+
+    $form['actions']['remove'] = [
       '#type' => 'submit',
       '#name' => 'remove_button',
       '#value' => $this->t('Remove'),
+      '#attributes' => [
+        'class' => [
+          'button',
+          'button--red',
+        ],
+      ],
+      '#title' => $this->t('Remove preview links from the selected languages.'),
+      '#title_display' => 'attribute',
     ];
 
     $form['#tree'] = TRUE;
@@ -160,7 +178,10 @@ class PreviewLinksForm extends FormBase {
     if (isset($existingPaths[$langId])) {
       $path = $existingPaths[$langId];
 
-      $url = Url::fromUserInput($path->path, ['absolute' => TRUE]);
+      $url = Url::fromUserInput($path->path, [
+        'absolute' => TRUE,
+        'language' => new Language(),
+      ]);
       $element['url'] = [
         '#type' => 'url',
         '#title' => $this->t('URL'),
@@ -192,6 +213,7 @@ class PreviewLinksForm extends FormBase {
     $triggerName = $form_state->getTriggeringElement()['#name'];
 
     $values = $form_state->getValues();
+    $rebuildNeeded = FALSE;
     if (isset($values['paths'])) {
       /** @var array $paths */
       $paths = $values['paths'];
@@ -218,11 +240,15 @@ class PreviewLinksForm extends FormBase {
               'langcode' => $langCode,
             ]);
           }
+
+          $rebuildNeeded = TRUE;
         }
       }
     }
 
-    $this->routeBuilder->rebuild();
+    if (TRUE === $rebuildNeeded) {
+      $this->routeBuilder->rebuild();
+    }
   }
 
   /**
