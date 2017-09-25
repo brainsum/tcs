@@ -159,6 +159,19 @@ class PathStorage implements PathStorageInterface {
   /**
    * {@inheritdoc}
    */
+  public function loadForNode($nid) {
+    // @todo: Clean up.
+    $select = $this->connection->select(static::TABLE);
+    $select->fields(static::TABLE);
+    $select->condition('nid', $nid);
+    $result = $select->execute();
+
+    return $result->fetchAllAssoc('langcode');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function delete(array $conditions) {
     $query = $this->connection->delete(static::TABLE);
     foreach ($conditions as $field => $value) {

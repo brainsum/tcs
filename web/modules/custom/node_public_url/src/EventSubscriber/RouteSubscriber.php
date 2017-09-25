@@ -40,19 +40,13 @@ class RouteSubscriber extends RouteSubscriberBase {
    * @throws \Exception
    */
   public function routes(): RouteCollection {
-//    $publicUrls = [
-//      [
-//        'nid' => 250,
-//        'path' => '/thisismysecureurlforservingunpublishednodes',
-//      ],
-//    ];
     $publicUrls = $this->pathStorage->loadMultiple();
     $collection = new RouteCollection();
     foreach ($publicUrls as $url) {
-      $route = new Route($url['path']);
+      $route = new Route($url->path);
       $route->addDefaults([
         '_controller' => '\Drupal\node_public_url\Controller\NodeRenderController::render',
-        'node' => $url['nid'],
+        'node' => $url->nid,
       ]);
       $route->addRequirements([
         '_access' => 'TRUE',
@@ -65,7 +59,7 @@ class RouteSubscriber extends RouteSubscriberBase {
         ],
       ]);
 
-      $collection->add('node_public_url.node_' . $url['nid'], $route);
+      $collection->add('node_public_url.' . $url->nid . '.' . $url->langcode, $route);
     }
 
     return $collection;

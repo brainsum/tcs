@@ -43,7 +43,7 @@ interface PathStorageInterface {
    * @param array $conditions
    *   An array of query conditions.
    *
-   * @return array|false
+   * @return \stdClass[]|false
    *   FALSE if no path was found or an associative array containing the
    *   following keys:
    *   - $nid (int): The node id.
@@ -61,13 +61,25 @@ interface PathStorageInterface {
    * @param array $ids
    *   (optional) An array of IDs.
    *
-   * @return array|bool
+   * @return \stdClass[]|bool
    *   FALSE, if there was a handled exception.
    *   An associative or empty array otherwise.
    *
    * @throws \Exception
    */
   public function loadMultiple(array $ids = []);
+
+  /**
+   * Load paths for a node keyed by the language code.
+   *
+   * @param int $nid
+   *   The node ID.
+   *
+   * @return \stdClass[]|bool
+   *   FALSE, if there was a handled exception.
+   *   An array of paths or an empty array.
+   */
+  public function loadForNode($nid);
 
   /**
    * Deletes a public path.

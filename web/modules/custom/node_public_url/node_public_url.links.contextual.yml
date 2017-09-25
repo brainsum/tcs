@@ -1,0 +1,4 @@
+node_public_url.generate_url_form:
+  route_name: node_public_url.generate_url_form
+  group: node
+  title: 'Generate Public URL'

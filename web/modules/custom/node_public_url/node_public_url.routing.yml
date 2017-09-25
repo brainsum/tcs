@@ -1,2 +1,15 @@
 route_callbacks:
   - 'node_public_url.route_subscriber:routes'
+
+node_public_url.generate_url_form:
+  path: '/node/{node}/generate_public_url'
+  defaults:
+    _form: Drupal\node_public_url\Form\GenerateUrlForm
+  requirements:
+    _custom_access: '\Drupal\node_public_url\Form\GenerateUrlForm:access'
+    node: '\d+'
+  options:
+    _node_operation_route: 'TRUE'
+    parameters:
+      node:
+        type: 'entity:node'

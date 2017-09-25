@@ -21,3 +21,15 @@ function node_public_url_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function node_public_url_theme($existing, $type, $theme, $path) {
+  return [
+    'page__node__generate_public_url' => [
+      'base hook' => 'page',
+      'path' => $path . '/templates',
+    ],
+  ];
+}
