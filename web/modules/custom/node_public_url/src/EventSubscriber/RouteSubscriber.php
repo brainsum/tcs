@@ -63,7 +63,7 @@ class RouteSubscriber extends RouteSubscriberBase {
         ],
       ]);
 
-      $collection->add('node_public_url.' . $url->nid . '.' . $url->langcode, $route);
+      $collection->add('node_public_url.preview_link.' . $url->nid . '.' . $url->langcode, $route);
     }
 
     return $collection;

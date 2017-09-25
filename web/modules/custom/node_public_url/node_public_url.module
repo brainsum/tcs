@@ -27,7 +27,7 @@ function node_public_url_help($route_name, RouteMatchInterface $route_match) {
  */
 function node_public_url_theme($existing, $type, $theme, $path) {
   return [
-    'page__node__generate_public_url' => [
+    'page__node__preview_links' => [
       'base hook' => 'page',
       'path' => $path . '/templates',
     ],

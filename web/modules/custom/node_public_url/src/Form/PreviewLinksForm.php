@@ -15,11 +15,11 @@ use Drupal\node_public_url\Storage\PathStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class GenerateUrlForm.
+ * Class PreviewLinksForm.
  *
  * @package Drupal\node_public_url\Form
  */
-class GenerateUrlForm extends FormBase {
+class PreviewLinksForm extends FormBase {
 
   /**
    * The path storage.
@@ -46,7 +46,7 @@ class GenerateUrlForm extends FormBase {
   }
 
   /**
-   * GenerateUrlForm constructor.
+   * PreviewLinksForm constructor.
    *
    * @param \Drupal\node_public_url\Storage\PathStorageInterface $pathStorage
    *   The path storage.
@@ -68,7 +68,7 @@ class GenerateUrlForm extends FormBase {
    *   The unique string identifying the form.
    */
   public function getFormId() {
-    return 'node_public_url_generate_form';
+    return 'node_public_url_preview_links_form';
   }
 
   /**
@@ -204,7 +204,7 @@ class GenerateUrlForm extends FormBase {
   public function access(AccountInterface $account): AccessResultInterface {
     $access = new AccessResultForbidden();
 
-    if ($account->hasPermission('access generate form')) {
+    if ($account->hasPermission('access preview links form')) {
       $access = new AccessResultAllowed();
     }
 

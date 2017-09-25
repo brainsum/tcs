@@ -1,12 +1,13 @@
 route_callbacks:
   - 'node_public_url.route_subscriber:routes'
 
-node_public_url.generate_url_form:
-  path: '/node/{node}/generate_public_url'
+node_public_url.preview_links_form:
+  path: '/node/{node}/preview-links'
   defaults:
-    _form: Drupal\node_public_url\Form\GenerateUrlForm
+    _form: Drupal\node_public_url\Form\PreviewLinksForm
+    _title: 'Preview links'
   requirements:
-    _custom_access: '\Drupal\node_public_url\Form\GenerateUrlForm:access'
+    _custom_access: '\Drupal\node_public_url\Form\PreviewLinksForm:access'
     node: '\d+'
   options:
     _node_operation_route: 'TRUE'
