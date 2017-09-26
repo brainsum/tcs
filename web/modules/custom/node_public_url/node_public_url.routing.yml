@@ -16,7 +16,7 @@ node_public_url.preview_link:
   path: '/node/{node}/preview-link/{hash}'
   defaults:
     _controller: 'Drupal\node_public_url\Controller\NodePreviewController::createPreview'
-    _title: 'Preview link'
+    _title_callback: 'Drupal\node_public_url\Controller\NodePreviewController::getTitle'
   requirements:
     hash: '[a-zA-Z0-9]+'
     node: \d+

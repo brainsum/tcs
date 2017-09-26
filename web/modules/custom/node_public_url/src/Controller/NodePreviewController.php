@@ -5,6 +5,7 @@ namespace Drupal\node_public_url\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\PageCache\ResponsePolicy\KillSwitch;
 use Drupal\node\NodeInterface;
+use Drupal\node_public_url\Storage\PathStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -23,13 +24,23 @@ class NodePreviewController extends ControllerBase {
   protected $cacheKillSwitch;
 
   /**
+   * The path storage.
+   *
+   * @var \Drupal\node_public_url\Storage\PathStorageInterface
+   */
+  protected $pathStorage;
+
+  /**
    * {@inheritdoc}
    *
    * @throws \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
    * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
    */
   public static function create(ContainerInterface $container) {
-    return new static($container->get('page_cache_kill_switch'));
+    return new static(
+      $container->get('page_cache_kill_switch'),
+      $container->get('node_public_url.path_storage')
+    );
   }
 
   /**
@@ -37,9 +48,15 @@ class NodePreviewController extends ControllerBase {
    *
    * @param \Drupal\Core\PageCache\ResponsePolicy\KillSwitch $cacheKillSwitch
    *   Service for disabling page cache.
+   * @param \Drupal\node_public_url\Storage\PathStorageInterface $pathStorage
+   *   The path storage.
    */
-  public function __construct(KillSwitch $cacheKillSwitch) {
+  public function __construct(
+    KillSwitch $cacheKillSwitch,
+    PathStorageInterface $pathStorage
+  ) {
     $this->cacheKillSwitch = $cacheKillSwitch;
+    $this->pathStorage = $pathStorage;
   }
 
   /**
@@ -60,15 +77,8 @@ class NodePreviewController extends ControllerBase {
    */
   public function createPreview(NodeInterface $node, $hash) {
     $this->cacheKillSwitch->trigger();
-    /** @var \Drupal\node_public_url\Storage\PathStorageInterface $pathStorage */
-    $pathStorage = \Drupal::service('node_public_url.path_storage');
-    $path = $pathStorage->load(['hash' => $hash]);
-
-    if (FALSE === $path) {
-      throw new NotFoundHttpException();
-    }
-
-    $langcode = $path['langcode'];
+    $langcode = $this->loadLangcode($hash);
+    $node = $node->getTranslation($langcode);
     $node->addCacheContexts(['languages:language_content']);
 
     $viewBuilder = $this->entityTypeManager()->getViewBuilder($node->getEntityTypeId());
@@ -76,6 +86,55 @@ class NodePreviewController extends ControllerBase {
     $build['#cache']['max-age'] = 0;
 
     return $build;
+  }
+
+  /**
+   * Generate page title.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node.
+   * @param string $hash
+   *   The hash.
+   *
+   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+   *   The title.
+   *
+   * @throws \InvalidArgumentException
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+   * @throws \Exception
+   */
+  public function getTitle(NodeInterface $node, $hash) {
+    $this->cacheKillSwitch->trigger();
+    $langcode = $this->loadLangcode($hash);
+    $node = $node->getTranslation($langcode);
+
+    return $this->t('Preview for the "@language" version of "@node_title"', [
+      '@node_title' => $node->getTitle(),
+      '@language' => $node->getTranslation($langcode)->language()->getName(),
+    ]);
+  }
+
+  /**
+   * Helper function for loading the language code.
+   *
+   * @param string $hash
+   *   The hash.
+   *
+   * @return string
+   *   The langcode.
+   *
+   * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+   * @throws \Exception
+   */
+  protected function loadLangcode($hash) {
+    $path = $this->pathStorage->load(['hash' => $hash]);
+
+    if (FALSE === $path) {
+      throw new NotFoundHttpException();
+    }
+
+    return $path['langcode'];
   }
 
 }
