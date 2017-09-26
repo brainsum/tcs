@@ -3,7 +3,9 @@
 namespace Drupal\node_public_url\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\PageCache\ResponsePolicy\KillSwitch;
 use Drupal\node\NodeInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
@@ -12,6 +14,33 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  * @package Drupal\node_public_url\Controller
  */
 class NodePreviewController extends ControllerBase {
+
+  /**
+   * Page cache kill switch service.
+   *
+   * @var \Drupal\Core\PageCache\ResponsePolicy\KillSwitch
+   */
+  protected $cacheKillSwitch;
+
+  /**
+   * {@inheritdoc}
+   *
+   * @throws \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
+   * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
+   */
+  public static function create(ContainerInterface $container) {
+    return new static($container->get('page_cache_kill_switch'));
+  }
+
+  /**
+   * NodePreviewController constructor.
+   *
+   * @param \Drupal\Core\PageCache\ResponsePolicy\KillSwitch $cacheKillSwitch
+   *   Service for disabling page cache.
+   */
+  public function __construct(KillSwitch $cacheKillSwitch) {
+    $this->cacheKillSwitch = $cacheKillSwitch;
+  }
 
   /**
    * Render a node according to the hash.
@@ -30,6 +59,7 @@ class NodePreviewController extends ControllerBase {
    * @throws \Exception
    */
   public function createPreview(NodeInterface $node, $hash) {
+    $this->cacheKillSwitch->trigger();
     /** @var \Drupal\node_public_url\Storage\PathStorageInterface $pathStorage */
     $pathStorage = \Drupal::service('node_public_url.path_storage');
     $path = $pathStorage->load(['hash' => $hash]);
@@ -42,8 +72,10 @@ class NodePreviewController extends ControllerBase {
     $node->addCacheContexts(['languages:language_content']);
 
     $viewBuilder = $this->entityTypeManager()->getViewBuilder($node->getEntityTypeId());
+    $build = $viewBuilder->view($node, 'full', $langcode);
+    $build['#cache'] = ['max-age' => 0];
 
-    return $viewBuilder->view($node, 'full', $langcode);
+    return $build;
   }
 
 }
