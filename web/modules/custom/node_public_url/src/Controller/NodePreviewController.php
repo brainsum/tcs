@@ -79,7 +79,6 @@ class NodePreviewController extends ControllerBase {
     $this->cacheKillSwitch->trigger();
     $langcode = $this->loadLangcode($hash);
     $node = $node->getTranslation($langcode);
-    $node->addCacheContexts(['languages:language_content']);
 
     $viewBuilder = $this->entityTypeManager()->getViewBuilder($node->getEntityTypeId());
     $build = $viewBuilder->view($node, 'full', $langcode);
