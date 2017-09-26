@@ -73,7 +73,7 @@ class NodePreviewController extends ControllerBase {
 
     $viewBuilder = $this->entityTypeManager()->getViewBuilder($node->getEntityTypeId());
     $build = $viewBuilder->view($node, 'full', $langcode);
-    $build['#cache'] = ['max-age' => 0];
+    $build['#cache']['max-age'] = 0;
 
     return $build;
   }
