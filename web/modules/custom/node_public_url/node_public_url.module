@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_help().
@@ -32,4 +33,13 @@ function node_public_url_theme($existing, $type, $theme, $path) {
       'path' => $path . '/templates',
     ],
   ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function node_public_url_node_delete(NodeInterface $node) {
+  /** @var \Drupal\node_public_url\Storage\PathStorageInterface $storage */
+  $storage = \Drupal::service('node_public_url.path_storage');
+  $storage->delete(['nid' => $node->id()]);
 }
