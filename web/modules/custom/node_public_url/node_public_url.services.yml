@@ -1,10 +1,4 @@
 services:
-  node_public_url.route_subscriber:
-    class: Drupal\node_public_url\EventSubscriber\RouteSubscriber
-    arguments: ['@node_public_url.path_storage']
-    tags:
-      - { name: 'event_subscriber' }
-
   node_public_url.path_storage:
     class: Drupal\node_public_url\Storage\PathStorage
     arguments: ['@database']

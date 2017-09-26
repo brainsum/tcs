@@ -42,10 +42,6 @@ class PathStorage implements PathStorageInterface {
    * {@inheritdoc}
    */
   public function save($nid, $path, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $id = NULL) {
-    if ($path[0] !== '/') {
-      throw new \InvalidArgumentException(sprintf('The path %s has to start with a forward slash.', $path));
-    }
-
     $fields = [
       'nid' => $nid,
       'path' => $path,

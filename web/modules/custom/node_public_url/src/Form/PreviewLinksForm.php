@@ -7,21 +7,15 @@ use Drupal\Component\Utility\Random;
 use Drupal\Core\Access\AccessResultAllowed;
 use Drupal\Core\Access\AccessResultForbidden;
 use Drupal\Core\Access\AccessResultInterface;
-use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\Language;
 use Drupal\Core\Language\LanguageInterface;
-use Drupal\Core\Routing\RouteBuilderInterface;
-use Drupal\Core\Routing\RouteBuildEvent;
-use Drupal\Core\Routing\RoutingEvents;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\PluralTranslatableMarkup;
 use Drupal\Core\Url;
-use Drupal\locale\PluralFormula;
 use Drupal\node_public_url\Storage\PathStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Routing\RouteCollection;
 
 /**
  * Class PreviewLinksForm.
@@ -38,13 +32,6 @@ class PreviewLinksForm extends FormBase {
   protected $pathStorage;
 
   /**
-   * The route builder.
-   *
-   * @var \Drupal\Core\Routing\RouteBuilderInterface
-   */
-  protected $routeBuilder;
-
-  /**
    * An empty language object.
    *
    * @var \Drupal\Core\Language\Language
@@ -52,12 +39,27 @@ class PreviewLinksForm extends FormBase {
   protected $emptyLanguage;
 
   /**
+   * The node.
+   *
+   * @var \Drupal\node\NodeInterface
+   */
+  protected $node;
+
+  /**
+   * An array of existing paths.
+   *
+   * @var bool|\stdClass[]
+   */
+  protected $existingPaths;
+
+  /**
    * {@inheritdoc}
+   *
+   * @throws \InvalidArgumentException
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('node_public_url.path_storage'),
-      $container->get('router.builder')
+      $container->get('node_public_url.path_storage')
     );
   }
 
@@ -66,17 +68,22 @@ class PreviewLinksForm extends FormBase {
    *
    * @param \Drupal\node_public_url\Storage\PathStorageInterface $pathStorage
    *   The path storage.
-   * @param \Drupal\Core\Routing\RouteBuilderInterface $routeBuilder
-   *   The route builder.
+   *
+   * @throws \InvalidArgumentException
    */
   public function __construct(
-    PathStorageInterface $pathStorage,
-    RouteBuilderInterface $routeBuilder
+    PathStorageInterface $pathStorage
   ) {
     $this->pathStorage = $pathStorage;
-    $this->routeBuilder = $routeBuilder;
 
     $this->emptyLanguage = new Language();
+
+    if (!$this->getRequest()->attributes->has('node') || NULL === $this->getRequest()->attributes->get('node')) {
+      throw new \InvalidArgumentException($this->t('This does not seem to be a node route.'));
+    }
+
+    $this->node = $this->getRequest()->attributes->get('node');
+    $this->existingPaths = $this->pathStorage->loadForNode($this->node->id());
   }
 
   /**
@@ -103,27 +110,16 @@ class PreviewLinksForm extends FormBase {
    * @throws \InvalidArgumentException
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    if (!$this->getRequest()->attributes->has('node') || NULL === $this->getRequest()->attributes->get('node')) {
-      throw new \InvalidArgumentException($this->t('This does not seem to be a node route.'));
-    }
-
-    /** @var \Drupal\node\NodeInterface $node */
-    $node = $this->getRequest()->attributes->get('node');
-    $paths = $this->pathStorage->loadForNode($node->id());
     // Add the original language separately.
-    $defaultLanguage = $node->getTranslation(LanguageInterface::LANGCODE_DEFAULT)->language();
-    $form['paths'][$defaultLanguage->getId()] = $this->createLanguageElement($defaultLanguage, $paths, TRUE);
+    $defaultLanguage = $this->node->getTranslation(LanguageInterface::LANGCODE_DEFAULT)->language();
+    $form['paths'][$defaultLanguage->getId()] = $this->createLanguageElement($defaultLanguage, TRUE);
 
-    // Go through the other translations, and create the form element for them.
-    $translations = $node->getTranslationLanguages(FALSE);
+    // Go through the rest of the translations,
+    // and create form elements for them.
+    $translations = $this->node->getTranslationLanguages(FALSE);
     foreach ($translations as $language) {
-      $form['paths'][$language->getId()] = $this->createLanguageElement($language, $paths);
+      $form['paths'][$language->getId()] = $this->createLanguageElement($language);
     }
-
-    $form['nid'] = [
-      '#type' => 'value',
-      '#value' => $node->id(),
-    ];
 
     $form['actions']['generate'] = [
       '#type' => 'submit',
@@ -163,17 +159,13 @@ class PreviewLinksForm extends FormBase {
    *
    * @param \Drupal\Core\Language\LanguageInterface $language
    *   The language object.
-   * @param array $existingPaths
-   *   The existing paths for the node.
    * @param bool $originalLanguage
    *   TRUE, if it's the original node language, FALSE otherwise.
    *
    * @return array
    *   The render array for the form element.
-   *
-   * @throws \InvalidArgumentException
    */
-  protected function createLanguageElement(LanguageInterface $language, array $existingPaths, $originalLanguage = FALSE) {
+  protected function createLanguageElement(LanguageInterface $language, $originalLanguage = FALSE) {
     $langId = $language->getId();
     $element = [];
 
@@ -190,13 +182,22 @@ class PreviewLinksForm extends FormBase {
       '#title' => $checkboxTitle,
     ];
 
-    if (isset($existingPaths[$langId])) {
-      $path = $existingPaths[$langId];
+    if (isset($this->existingPaths[$langId])) {
+      $path = $this->existingPaths[$langId];
 
-      $url = Url::fromUserInput($path->path, [
-        'absolute' => TRUE,
-        'language' => $this->emptyLanguage,
-      ]);
+      // Generate an absolute URL without language codes.
+      $url = Url::fromRoute(
+        'node_public_url.preview_link',
+        [
+          'hash' => $path->path,
+          'node' => $path->nid,
+        ],
+        [
+          'absolute' => TRUE,
+          'language' => $this->emptyLanguage,
+        ]
+      );
+
       $element['url'] = [
         '#type' => 'url',
         '#title' => $this->t('URL'),
@@ -240,10 +241,10 @@ class PreviewLinksForm extends FormBase {
             $rand = new Random();
             // @todo: It should be unique,
             // but we should make sure it doesn't exists in the table.
-            $publicPath = '/' . $rand->name(69, TRUE);
+            $publicPath = $rand->name(69, TRUE);
 
             $this->pathStorage->save(
-              (int) $values['nid'],
+              $this->node->id(),
               $publicPath,
               $langCode
             );
@@ -251,7 +252,7 @@ class PreviewLinksForm extends FormBase {
           // If the 'Remove' button was pressed, and there's an existing url..
           elseif ('remove_button' === $triggerName && isset($path['url'])) {
             $this->pathStorage->delete([
-              'nid' => (int) $values['nid'],
+              'nid' => $this->node->id(),
               'langcode' => $langCode,
             ]);
           }
@@ -269,7 +270,6 @@ class PreviewLinksForm extends FormBase {
       '@count links have been ' . $operation . '.'
     );
 
-    $this->routeBuilder->rebuild();
     drupal_set_message($message->render());
   }
 
