@@ -5,6 +5,7 @@
  * Module file for the node_public_url module.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\NodeInterface;
 
@@ -42,4 +43,18 @@ function node_public_url_node_delete(NodeInterface $node) {
   /** @var \Drupal\node_public_url\Storage\PathStorageInterface $storage */
   $storage = \Drupal::service('node_public_url.path_storage');
   $storage->delete(['nid' => $node->id()]);
+}
+
+/**
+ * Implements hook_entity_translation_delete().
+ */
+function node_public_url_entity_translation_delete(EntityInterface $translation) {
+  if ('node' === $translation->getEntityTypeId()) {
+    /** @var \Drupal\node_public_url\Storage\PathStorageInterface $storage */
+    $storage = \Drupal::service('node_public_url.path_storage');
+    $storage->delete([
+      'nid' => $translation->id(),
+      'langcode' => $translation->language()->getId(),
+    ]);
+  }
 }
