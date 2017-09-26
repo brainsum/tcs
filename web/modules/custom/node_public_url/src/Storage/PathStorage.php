@@ -32,7 +32,7 @@ class PathStorage implements PathStorageInterface {
    * Constructs a Path CRUD object.
    *
    * @param \Drupal\Core\Database\Connection $connection
-   *   A database connection for reading and writing path pathes.
+   *   A database connection for reading and writing paths.
    */
   public function __construct(Connection $connection) {
     $this->connection = $connection;
@@ -41,10 +41,10 @@ class PathStorage implements PathStorageInterface {
   /**
    * {@inheritdoc}
    */
-  public function save($nid, $path, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $id = NULL) {
+  public function save($nid, $hash, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $id = NULL) {
     $fields = [
       'nid' => $nid,
-      'path' => $path,
+      'hash' => $hash,
       'langcode' => $langcode,
     ];
 
@@ -79,7 +79,7 @@ class PathStorage implements PathStorageInterface {
       // exactly changed.
       try {
         $query = $this->connection->select(static::TABLE);
-        $query->fields(static::TABLE, ['nid', 'path', 'langcode']);
+        $query->fields(static::TABLE, ['nid', 'hash', 'langcode']);
         $query->condition('id', $id);
         $result = $query->execute();
         $original = $result->fetchAssoc();
@@ -108,7 +108,7 @@ class PathStorage implements PathStorageInterface {
   public function load(array $conditions) {
     $select = $this->connection->select(static::TABLE);
     foreach ($conditions as $field => $value) {
-      if ($field === 'path') {
+      if ($field === 'hash') {
         // Use LIKE for case-insensitive matching.
         $select->condition($field, $this->connection->escapeLike($value), 'LIKE');
       }
@@ -171,7 +171,7 @@ class PathStorage implements PathStorageInterface {
   public function delete(array $conditions) {
     $query = $this->connection->delete(static::TABLE);
     foreach ($conditions as $field => $value) {
-      if ($field === 'path') {
+      if ($field === 'hash') {
         // Use LIKE for case-insensitive matching.
         $query->condition($field, $this->connection->escapeLike($value), 'LIKE');
       }
@@ -249,8 +249,8 @@ class PathStorage implements PathStorageInterface {
           'unsigned' => TRUE,
           'not null' => TRUE,
         ],
-        'path' => [
-          'description' => 'The public path.',
+        'hash' => [
+          'description' => 'The public hash.',
           'type' => 'varchar',
           'length' => 255,
           'not null' => TRUE,
@@ -265,7 +265,7 @@ class PathStorage implements PathStorageInterface {
       ],
       'primary key' => ['id'],
       'indexes' => [
-        'path_langcode_id' => ['path', 'langcode', 'id'],
+        'hash_langcode_id' => ['hash', 'langcode', 'id'],
         'nid_langcode_id' => ['nid', 'langcode', 'id'],
       ],
       // Only for documentation.

@@ -14,7 +14,7 @@ interface PathStorageInterface {
    *
    * @param int $nid
    *   The node ID.
-   * @param string $path
+   * @param string $hash
    *   The public path.
    * @param string $langcode
    *   (optional) The language code.
@@ -25,20 +25,20 @@ interface PathStorageInterface {
    *   FALSE, if the save failed.
    *   An associative array with the following keys:
    *   - $nid (int): The node id.
-   *   - $path (string): The public path.
+   *   - $hash (string): The public path.
    *   - $id (int): Unique identifier.
    *   - $langcode (string): The language code of the path.
    *
    * @throws \InvalidArgumentException
    * @throws \Exception
    */
-  public function save($nid, $path, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $id = NULL);
+  public function save($nid, $hash, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $id = NULL);
 
   /**
    * Fetches a specific public path from the database.
    *
    * The default implementation performs case-insensitive matching on the
-   * '$path' string.
+   * '$hash' string.
    *
    * @param array $conditions
    *   An array of query conditions.
@@ -47,7 +47,7 @@ interface PathStorageInterface {
    *   FALSE if no path was found or an associative array containing the
    *   following keys:
    *   - $nid (int): The node id.
-   *   - $path (string): The public path.
+   *   - $hash (string): The public path.
    *   - $id (int): Unique identifier.
    *   - $langcode (string): The language code of the path.
    *

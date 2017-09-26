@@ -71,9 +71,7 @@ class PreviewLinksForm extends FormBase {
    *
    * @throws \InvalidArgumentException
    */
-  public function __construct(
-    PathStorageInterface $pathStorage
-  ) {
+  public function __construct(PathStorageInterface $pathStorage) {
     $this->pathStorage = $pathStorage;
 
     $this->emptyLanguage = new Language();
@@ -189,7 +187,7 @@ class PreviewLinksForm extends FormBase {
       $url = Url::fromRoute(
         'node_public_url.preview_link',
         [
-          'hash' => $path->path,
+          'hash' => $path->hash,
           'node' => $path->nid,
         ],
         [
@@ -239,13 +237,11 @@ class PreviewLinksForm extends FormBase {
           // If the 'Generate' button was pressed, and there's no existing url..
           if ('generate_button' === $triggerName && !isset($path['url'])) {
             $rand = new Random();
-            // @todo: It should be unique,
+            // @todo: The hash should be unique,
             // but we should make sure it doesn't exists in the table.
-            $publicPath = $rand->name(69, TRUE);
-
             $this->pathStorage->save(
               $this->node->id(),
-              $publicPath,
+              $rand->name(69, TRUE),
               $langCode
             );
           }

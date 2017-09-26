@@ -32,7 +32,7 @@ class NodePreviewController extends ControllerBase {
   public function createPreview(NodeInterface $node, $hash) {
     /** @var \Drupal\node_public_url\Storage\PathStorageInterface $pathStorage */
     $pathStorage = \Drupal::service('node_public_url.path_storage');
-    $path = $pathStorage->load(['path' => $hash]);
+    $path = $pathStorage->load(['hash' => $hash]);
 
     if (FALSE === $path) {
       throw new NotFoundHttpException();
