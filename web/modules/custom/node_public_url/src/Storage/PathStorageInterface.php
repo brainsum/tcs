@@ -82,7 +82,7 @@ interface PathStorageInterface {
   public function loadForNode($nid);
 
   /**
-   * Deletes a public path.
+   * Deletes public paths according to the conditions.
    *
    * The default implementation performs case-insensitive matching on the
    * 'path' string.
