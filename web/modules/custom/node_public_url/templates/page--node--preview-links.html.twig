@@ -3,8 +3,6 @@
  * @file
  * Theme override to display a single page.
  *
- * Copy of web/themes/tieto_admin/templates/pages/page--node--clone.html.twig
- *
  * The doctype, html, head and body tags are not in this template. Instead they
  * can be found in the html.html.twig template in this directory.
  *
@@ -42,6 +40,9 @@
  *
  * @see template_preprocess_page()
  * @see html.html.twig
+ *
+ * Based on web/core/themes/classy/templates/layout/page.html.twig
+ * Added {{ page.pre_content }} for displaying the task links.
  */
 #}
 <div class="layout-container">
