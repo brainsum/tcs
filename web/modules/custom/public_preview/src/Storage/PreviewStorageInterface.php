@@ -1,33 +1,33 @@
 <?php
 
-namespace Drupal\node_public_url\Storage;
+namespace Drupal\public_preview\Storage;
 
 use Drupal\Core\Language\LanguageInterface;
 
 /**
- * Provides a class for CRUD operations on public paths.
+ * Provides a class for CRUD operations on public previews.
  */
-interface PathStorageInterface {
+interface PreviewStorageInterface {
 
   /**
-   * Create or update a path.
+   * Create or update a preview.
    *
    * @param int $nid
    *   The node ID.
    * @param string $hash
-   *   The public path.
+   *   The public preview.
    * @param string $langcode
    *   (optional) The language code.
    * @param null|int $id
-   *   (optional) The path ID.
+   *   (optional) The preview ID.
    *
    * @return array|bool
    *   FALSE, if the save failed.
    *   An associative array with the following keys:
    *   - $nid (int): The node id.
-   *   - $hash (string): The public path.
+   *   - $hash (string): The unique hash.
    *   - $id (int): Unique identifier.
-   *   - $langcode (string): The language code of the path.
+   *   - $langcode (string): The language code of the preview.
    *
    * @throws \InvalidArgumentException
    * @throws \Exception
@@ -35,7 +35,7 @@ interface PathStorageInterface {
   public function save($nid, $hash, $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED, $id = NULL);
 
   /**
-   * Fetches a specific public path from the database.
+   * Fetches a specific public preview from the database.
    *
    * The default implementation performs case-insensitive matching on the
    * '$hash' string.
@@ -44,19 +44,19 @@ interface PathStorageInterface {
    *   An array of query conditions.
    *
    * @return \stdClass[]|false
-   *   FALSE if no path was found or an associative array containing the
+   *   FALSE if no preview was found or an associative array containing the
    *   following keys:
    *   - $nid (int): The node id.
-   *   - $hash (string): The public path.
+   *   - $hash (string): The unique hash.
    *   - $id (int): Unique identifier.
-   *   - $langcode (string): The language code of the path.
+   *   - $langcode (string): The language code of the preview.
    *
    * @throws \Exception
    */
   public function load(array $conditions);
 
   /**
-   * Load multiple paths.
+   * Load multiple previews.
    *
    * @param array $ids
    *   (optional) An array of IDs.
@@ -70,22 +70,22 @@ interface PathStorageInterface {
   public function loadMultiple(array $ids = []);
 
   /**
-   * Load paths for a node keyed by the language code.
+   * Load previews for a node keyed by the language codes.
    *
    * @param int $nid
    *   The node ID.
    *
    * @return \stdClass[]|bool
    *   FALSE, if there was a handled exception.
-   *   An array of paths or an empty array.
+   *   An array of previews or an empty array.
    */
   public function loadForNode($nid);
 
   /**
-   * Deletes public paths according to the conditions.
+   * Deletes public previews according to the conditions.
    *
    * The default implementation performs case-insensitive matching on the
-   * 'path' string.
+   * 'hash' string.
    *
    * @param array $conditions
    *   An array of criteria.

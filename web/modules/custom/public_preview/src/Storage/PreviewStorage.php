@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\node_public_url\Storage;
+namespace Drupal\public_preview\Storage;
 
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Database\Connection;
@@ -8,18 +8,18 @@ use Drupal\Core\Database\SchemaObjectExistsException;
 use Drupal\Core\Language\LanguageInterface;
 
 /**
- * Class PathStorage.
+ * Class PreviewStorage.
  *
  * Based on the Drupal\Core\Path\AliasStorage.
  *
- * @package Drupal\node_public_url\Storage
+ * @package Drupal\public_preview\Storage
  */
-class PathStorage implements PathStorageInterface {
+class PreviewStorage implements PreviewStorageInterface {
 
   /**
    * The table for the url_path storage.
    */
-  const TABLE = 'node_public_url';
+  const TABLE = 'public_preview';
 
   /**
    * The database connection.
@@ -29,10 +29,10 @@ class PathStorage implements PathStorageInterface {
   protected $connection;
 
   /**
-   * Constructs a Path CRUD object.
+   * Constructs a Preview CRUD object.
    *
    * @param \Drupal\Core\Database\Connection $connection
-   *   A database connection for reading and writing paths.
+   *   A database connection for reading and writing previews.
    */
   public function __construct(Connection $connection) {
     $this->connection = $connection;
@@ -49,7 +49,7 @@ class PathStorage implements PathStorageInterface {
     ];
 
     $result = FALSE;
-    // Insert or update the path.
+    // Insert or update the preview.
     if (NULL === $id) {
       $tryAgain = FALSE;
       try {
@@ -231,14 +231,14 @@ class PathStorage implements PathStorageInterface {
   }
 
   /**
-   * Defines the schema for the {node_public_url} table.
+   * Defines the schema for the {public_preview} table.
    */
   public static function schemaDefinition() {
     return [
-      'description' => 'The table for public node paths.',
+      'description' => 'The table for public node previews.',
       'fields' => [
         'id' => [
-          'description' => 'The ID of the path.',
+          'description' => 'The ID of the preview.',
           'type' => 'serial',
           'unsigned' => TRUE,
           'not null' => TRUE,

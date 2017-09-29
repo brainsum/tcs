@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Module file for the node_public_url module.
+ * Module file for the public_preview module.
  */
 
 use Drupal\Core\Entity\EntityInterface;
@@ -12,9 +12,9 @@ use Drupal\node\NodeInterface;
 /**
  * Implements hook_help().
  */
-function node_public_url_help($route_name, RouteMatchInterface $route_match) {
+function public_preview_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    case 'help.page.node_public_url':
+    case 'help.page.public_preview':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
       $output .= '<p>' . t('Enables generating public preview links for nodes') . '</p>';
@@ -27,7 +27,7 @@ function node_public_url_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function node_public_url_theme($existing, $type, $theme, $path) {
+function public_preview_theme($existing, $type, $theme, $path) {
   return [
     'page__node__preview_links' => [
       'base hook' => 'page',
@@ -39,19 +39,19 @@ function node_public_url_theme($existing, $type, $theme, $path) {
 /**
  * Implements hook_ENTITY_TYPE_delete().
  */
-function node_public_url_node_delete(NodeInterface $node) {
-  /** @var \Drupal\node_public_url\Storage\PathStorageInterface $storage */
-  $storage = \Drupal::service('node_public_url.path_storage');
+function public_preview_node_delete(NodeInterface $node) {
+  /** @var \Drupal\public_preview\Storage\PreviewStorageInterface $storage */
+  $storage = \Drupal::service('public_preview.preview_storage');
   $storage->delete(['nid' => $node->id()]);
 }
 
 /**
  * Implements hook_entity_translation_delete().
  */
-function node_public_url_entity_translation_delete(EntityInterface $translation) {
+function public_preview_entity_translation_delete(EntityInterface $translation) {
   if ('node' === $translation->getEntityTypeId()) {
-    /** @var \Drupal\node_public_url\Storage\PathStorageInterface $storage */
-    $storage = \Drupal::service('node_public_url.path_storage');
+    /** @var \Drupal\public_preview\Storage\PreviewStorageInterface $storage */
+    $storage = \Drupal::service('public_preview.preview_storage');
     $storage->delete([
       'nid' => $translation->id(),
       'langcode' => $translation->language()->getId(),

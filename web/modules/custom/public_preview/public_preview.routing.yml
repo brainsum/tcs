@@ -1,10 +1,10 @@
-node_public_url.preview_links_form:
+public_preview.preview_links_form:
   path: '/node/{node}/preview-links'
   defaults:
-    _form: Drupal\node_public_url\Form\PreviewLinksForm
+    _form: Drupal\public_preview\Form\PreviewLinksForm
     _title: 'Preview links'
   requirements:
-    _custom_access: '\Drupal\node_public_url\Form\PreviewLinksForm:access'
+    _custom_access: '\Drupal\public_preview\Form\PreviewLinksForm:access'
     node: \d+
   options:
     _node_operation_route: 'TRUE'
@@ -12,11 +12,11 @@ node_public_url.preview_links_form:
       node:
         type: 'entity:node'
 
-node_public_url.preview_link:
+public_preview.preview_link:
   path: '/node/{node}/preview-link/{hash}'
   defaults:
-    _controller: 'Drupal\node_public_url\Controller\NodePreviewController::createPreview'
-    _title_callback: 'Drupal\node_public_url\Controller\NodePreviewController::getTitle'
+    _controller: 'Drupal\public_preview\Controller\PreviewController::createPreview'
+    _title_callback: 'Drupal\public_preview\Controller\PreviewController::getTitle'
   requirements:
     hash: '[a-zA-Z0-9]+'
     node: \d+

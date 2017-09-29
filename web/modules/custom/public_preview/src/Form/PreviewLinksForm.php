@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\node_public_url\Form;
+namespace Drupal\public_preview\Form;
 
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Utility\Random;
@@ -14,22 +14,22 @@ use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\PluralTranslatableMarkup;
 use Drupal\Core\Url;
-use Drupal\node_public_url\Storage\PathStorageInterface;
+use Drupal\public_preview\Storage\PreviewStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class PreviewLinksForm.
  *
- * @package Drupal\node_public_url\Form
+ * @package Drupal\public_preview\Form
  */
 class PreviewLinksForm extends FormBase {
 
   /**
-   * The path storage.
+   * The preview storage.
    *
-   * @var \Drupal\node_public_url\Storage\PathStorageInterface
+   * @var \Drupal\public_preview\Storage\PreviewStorageInterface
    */
-  protected $pathStorage;
+  protected $previewStorage;
 
   /**
    * An empty language object.
@@ -46,11 +46,11 @@ class PreviewLinksForm extends FormBase {
   protected $node;
 
   /**
-   * An array of existing paths.
+   * An array of existing previews.
    *
    * @var bool|\stdClass[]
    */
-  protected $existingPaths;
+  protected $existingPreviews;
 
   /**
    * {@inheritdoc}
@@ -59,20 +59,20 @@ class PreviewLinksForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('node_public_url.path_storage')
+      $container->get('public_preview.preview_storage')
     );
   }
 
   /**
    * PreviewLinksForm constructor.
    *
-   * @param \Drupal\node_public_url\Storage\PathStorageInterface $pathStorage
-   *   The path storage.
+   * @param \Drupal\public_preview\Storage\PreviewStorageInterface $previewStorage
+   *   The preview storage.
    *
    * @throws \InvalidArgumentException
    */
-  public function __construct(PathStorageInterface $pathStorage) {
-    $this->pathStorage = $pathStorage;
+  public function __construct(PreviewStorageInterface $previewStorage) {
+    $this->previewStorage = $previewStorage;
 
     $this->emptyLanguage = new Language();
 
@@ -81,7 +81,7 @@ class PreviewLinksForm extends FormBase {
     }
 
     $this->node = $this->getRequest()->attributes->get('node');
-    $this->existingPaths = $this->pathStorage->loadForNode($this->node->id());
+    $this->existingPreviews = $this->previewStorage->loadForNode($this->node->id());
   }
 
   /**
@@ -91,7 +91,7 @@ class PreviewLinksForm extends FormBase {
    *   The unique string identifying the form.
    */
   public function getFormId() {
-    return 'node_public_url_preview_links_form';
+    return 'public_preview_preview_links_form';
   }
 
   /**
@@ -110,13 +110,13 @@ class PreviewLinksForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     // Add the original language separately.
     $defaultLanguage = $this->node->getTranslation(LanguageInterface::LANGCODE_DEFAULT)->language();
-    $form['paths'][$defaultLanguage->getId()] = $this->createLanguageElement($defaultLanguage, TRUE);
+    $form['previews'][$defaultLanguage->getId()] = $this->createLanguageElement($defaultLanguage, TRUE);
 
     // Go through the rest of the translations,
     // and create form elements for them.
     $translations = $this->node->getTranslationLanguages(FALSE);
     foreach ($translations as $language) {
-      $form['paths'][$language->getId()] = $this->createLanguageElement($language);
+      $form['previews'][$language->getId()] = $this->createLanguageElement($language);
     }
 
     $form['actions']['generate'] = [
@@ -180,15 +180,15 @@ class PreviewLinksForm extends FormBase {
       '#title' => $checkboxTitle,
     ];
 
-    if (isset($this->existingPaths[$langId])) {
-      $path = $this->existingPaths[$langId];
+    if (isset($this->existingPreviews[$langId])) {
+      $preview = $this->existingPreviews[$langId];
 
       // Generate an absolute URL without language codes.
       $url = Url::fromRoute(
-        'node_public_url.preview_link',
+        'public_preview.preview_link',
         [
-          'hash' => $path->hash,
-          'node' => $path->nid,
+          'hash' => $preview->hash,
+          'node' => $preview->nid,
         ],
         [
           'absolute' => TRUE,
@@ -213,7 +213,7 @@ class PreviewLinksForm extends FormBase {
   /**
    * Form submission handler.
    *
-   * Depending on the triggering element, it saves or removes the public paths.
+   * Depending on the triggering element, it saves or removes the public previews.
    *
    * @param array $form
    *   An associative array containing the structure of the form.
@@ -228,26 +228,26 @@ class PreviewLinksForm extends FormBase {
 
     $operationCount = 0;
     $values = $form_state->getValues();
-    if (isset($values['paths'])) {
-      /** @var array $paths */
-      $paths = $values['paths'];
-      foreach ($paths as $langCode => $path) {
+    if (isset($values['previews'])) {
+      /** @var array $previews */
+      $previews = $values['previews'];
+      foreach ($previews as $langCode => $preview) {
         // Act only if the checkbox is checked.
-        if (1 === $path['checkbox']) {
+        if (1 === $preview['checkbox']) {
           // If the 'Generate' button was pressed, and there's no existing url..
-          if ('generate_button' === $triggerName && !isset($path['url'])) {
+          if ('generate_button' === $triggerName && !isset($preview['url'])) {
             $rand = new Random();
             // @todo: The hash should be unique,
             // but we should make sure it doesn't exists in the table.
-            $this->pathStorage->save(
+            $this->previewStorage->save(
               $this->node->id(),
               $rand->name(69, TRUE),
               $langCode
             );
           }
           // If the 'Remove' button was pressed, and there's an existing url..
-          elseif ('remove_button' === $triggerName && isset($path['url'])) {
-            $this->pathStorage->delete([
+          elseif ('remove_button' === $triggerName && isset($preview['url'])) {
+            $this->previewStorage->delete([
               'nid' => $this->node->id(),
               'langcode' => $langCode,
             ]);

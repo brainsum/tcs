@@ -1,20 +1,20 @@
 <?php
 
-namespace Drupal\node_public_url\Controller;
+namespace Drupal\public_preview\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\PageCache\ResponsePolicy\KillSwitch;
 use Drupal\node\NodeInterface;
-use Drupal\node_public_url\Storage\PathStorageInterface;
+use Drupal\public_preview\Storage\PreviewStorageInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * Class NodePreviewController.
+ * Class PreviewController.
  *
- * @package Drupal\node_public_url\Controller
+ * @package Drupal\public_preview\Controller
  */
-class NodePreviewController extends ControllerBase {
+class PreviewController extends ControllerBase {
 
   /**
    * Page cache kill switch service.
@@ -24,11 +24,11 @@ class NodePreviewController extends ControllerBase {
   protected $cacheKillSwitch;
 
   /**
-   * The path storage.
+   * The preview storage.
    *
-   * @var \Drupal\node_public_url\Storage\PathStorageInterface
+   * @var \Drupal\public_preview\Storage\PreviewStorageInterface
    */
-  protected $pathStorage;
+  protected $previewStorage;
 
   /**
    * {@inheritdoc}
@@ -39,24 +39,24 @@ class NodePreviewController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('page_cache_kill_switch'),
-      $container->get('node_public_url.path_storage')
+      $container->get('public_preview.preview_storage')
     );
   }
 
   /**
-   * NodePreviewController constructor.
+   * PreviewController constructor.
    *
    * @param \Drupal\Core\PageCache\ResponsePolicy\KillSwitch $cacheKillSwitch
    *   Service for disabling page cache.
-   * @param \Drupal\node_public_url\Storage\PathStorageInterface $pathStorage
-   *   The path storage.
+   * @param \Drupal\public_preview\Storage\PreviewStorageInterface $previewStorage
+   *   The preview storage.
    */
   public function __construct(
     KillSwitch $cacheKillSwitch,
-    PathStorageInterface $pathStorage
+    PreviewStorageInterface $previewStorage
   ) {
     $this->cacheKillSwitch = $cacheKillSwitch;
-    $this->pathStorage = $pathStorage;
+    $this->previewStorage = $previewStorage;
   }
 
   /**
@@ -127,13 +127,13 @@ class NodePreviewController extends ControllerBase {
    * @throws \Exception
    */
   protected function loadLangcode($hash) {
-    $path = $this->pathStorage->load(['hash' => $hash]);
+    $preview = $this->previewStorage->load(['hash' => $hash]);
 
-    if (FALSE === $path) {
+    if (FALSE === $preview) {
       throw new NotFoundHttpException();
     }
 
-    return $path['langcode'];
+    return $preview['langcode'];
   }
 
 }

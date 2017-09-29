@@ -1,4 +1,0 @@
-services:
-  node_public_url.path_storage:
-    class: Drupal\node_public_url\Storage\PathStorage
-    arguments: ['@database']
