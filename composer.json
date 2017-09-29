@@ -58,7 +58,8 @@
         "drupal/abtestui": "^1.0",
         "drupal/parade": "2.x-dev",
         "drupal/allowed_formats": "^1.1",
-        "drupal/public_preview": "^1.0"
+        "drupal/public_preview": "^1.0",
+        "drupal-composer/drupal-security-advisories": "8.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
