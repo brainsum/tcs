@@ -1,4 +1,0 @@
-public_preview.preview_links_form:
-  route_name: public_preview.preview_links_form
-  group: node
-  title: 'Preview links'
