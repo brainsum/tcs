@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "725c96412c723df534754df08a5d36b2",
+    "content-hash": "49148c4d218f5b18a39199594c54c887",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3181,6 +3181,57 @@
             "homepage": "https://www.drupal.org/project/paragraphs",
             "support": {
                 "source": "http://cgit.drupalcode.org/paragraphs"
+            }
+        },
+        {
+            "name": "drupal/public_preview",
+            "version": "1.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/public_preview",
+                "reference": "8.x-1.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/public_preview-8.x-1.0-alpha2.zip",
+                "reference": "8.x-1.0-alpha2",
+                "shasum": "e23e51ecf354dcb0ae35ba83e4024b827064d90b"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha2",
+                    "datestamp": "1506684544",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "chrisyates",
+                    "homepage": "https://www.drupal.org/user/144965"
+                },
+                {
+                    "name": "mhavelant",
+                    "homepage": "https://www.drupal.org/user/3331139"
+                }
+            ],
+            "description": "Allows access to unpublished nodes.",
+            "homepage": "https://www.drupal.org/project/public_preview",
+            "support": {
+                "source": "http://cgit.drupalcode.org/public_preview"
             }
         },
         {
