@@ -6,6 +6,7 @@
  */
 
 use Drupal\campaign_pages\Handler\ScheduledUpdateListBuilder;
+use Drupal\Component\Utility\Random;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -119,10 +120,40 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
         $form['actions'][$action]['#submit'][] = '_campaign_pages_disable_form_redirect';
       }
     }
-  }
-  // @todo - duplication because of field machine name.
-  if (isset($form['field_paragraphs'])) {
-    _parade_conditional_field_add_parade_field_conditions($form, $form_state);
+
+    // @todo - duplication because of field machine name.
+    if (isset($form['field_paragraphs'])) {
+      _parade_conditional_field_add_parade_field_conditions($form, $form_state);
+
+      // @see TCS-361 | Hide color field for text&image
+      // when layout is not text1st_enhanced.
+      foreach ($form['field_paragraphs']['widget'] as $delta => &$item) {
+        if (
+          is_numeric($delta)
+          && is_array($item)
+          && isset($item['subform']['#cache']['tags'])
+        ) {
+          foreach ($item['subform']['#cache']['tags'] as $tag) {
+            // If there are image_text cache tags, it's an image_text type.
+            // @todo: Fix this, we should have a more stable condition.
+            if (FALSE !== strpos($tag, 'image_text')) {
+              $layoutHelperClass = 'parade-layout-states-help-' . (new Random())->name(10, TRUE);
+              $item['subform']['parade_layout']['#attributes']['class'][] = $layoutHelperClass;
+
+              $layoutCondition = [".$layoutHelperClass select" => ['value' => 'layout_text_1st_enhanced']];
+              $visibleAccordingToLayout = [
+                'visible' => $layoutCondition,
+              ];
+              $item['subform']['parade_color_scheme']['#states'] = $visibleAccordingToLayout;
+
+              // Just skip to the next widget.
+              continue 2;
+            }
+          }
+        }
+      }
+      unset($item);
+    }
   }
 }
 

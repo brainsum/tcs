@@ -22,8 +22,8 @@ services:
       DB_NAME: drupal
       DB_DRIVER: mysql
       PHP_MEMORY_LIMIT: 2048M
-#      PHP_XDEBUG: 1
-#      PHP_XDEBUG_DEFAULT_ENABLE: 1
+      PHP_XDEBUG: 1
+      PHP_XDEBUG_DEFAULT_ENABLE: 1
 #      PHP_XDEBUG_REMOTE_CONNECT_BACK: 0         # This is needed to respect remote.host setting below
 #      PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"  # You will also need to 'sudo ifconfig lo0 alias 10.254.254.254'
     volumes:
@@ -100,18 +100,18 @@ services:
 #      - 'traefik.port=9000'
 #      - 'traefik.frontend.rule=Host:adminer.drupal.docker.localhost'
 
-  pma:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      PMA_HOST: mariadb
-      PMA_USER: drupal
-      PMA_PASSWORD: drupal
-      PHP_UPLOAD_MAX_FILESIZE: 1G
-      PHP_MAX_INPUT_VARS: 1G
-    labels:
-      - 'traefik.backend=pma'
-      - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:pma.drupal.docker.localhost'
+#  pma:
+#    image: phpmyadmin/phpmyadmin
+#    environment:
+#      PMA_HOST: mariadb
+#      PMA_USER: drupal
+#      PMA_PASSWORD: drupal
+#      PHP_UPLOAD_MAX_FILESIZE: 1G
+#      PHP_MAX_INPUT_VARS: 1G
+#    labels:
+#      - 'traefik.backend=pma'
+#      - 'traefik.port=80'
+#      - 'traefik.frontend.rule=Host:pma.drupal.docker.localhost'
 
 #  solr:
 ## wodby/drupal-solr:[DRUPAL_VERSION]-[SOLR_VERSION]-[STABILITY_TAG].
@@ -176,15 +176,15 @@ services:
 #      WEAVER_WORKER_TIMEOUT: 90
 #      WEAVER_CONVERSION_FALLBACK: false
 
-  portainer:
-    image: portainer/portainer
-    command: --no-auth
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    labels:
-      - 'traefik.backend=portainer'
-      - 'traefik.port=9000'
-      - 'traefik.frontend.rule=Host:portainer.drupal.docker.localhost'
+#  portainer:
+#    image: portainer/portainer
+#    command: --no-auth
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    labels:
+#      - 'traefik.backend=portainer'
+#      - 'traefik.port=9000'
+#      - 'traefik.frontend.rule=Host:portainer.drupal.docker.localhost'
 
   traefik:
     image: traefik
