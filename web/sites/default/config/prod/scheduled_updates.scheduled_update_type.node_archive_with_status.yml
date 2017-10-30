@@ -1,0 +1,17 @@
+uuid: 59265993-c1eb-44ca-a550-dda50e558433
+langcode: en
+status: true
+dependencies: {  }
+id: node_archive_with_status
+label: 'Node archive with status'
+update_entity_type: node
+update_types_supported:
+  - embedded
+field_map:
+  field_status_1: status
+update_runner:
+  id: latest_revision
+  after_run: DELETE
+  invalid_update_behavior: DELETE
+  create_revisions: BUNDLE_DEFAULT
+  update_user: USER_UPDATE_OWNER
