@@ -14,6 +14,9 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Datetime\Element\Datetime;
 use Drupal\Core\Url;
 use Drupal\Core\Utility\Error;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\imagemagick\Plugin\ImageToolkit\ImagemagickToolkit;
 
 /**
  * Implements hook_help().
@@ -324,6 +327,72 @@ function campaign_pages_preprocess_status_messages(&$variables) {
         }
       }
       unset($message);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function campaign_pages_preprocess_paragraph(&$variables) {
+  /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = &$variables['paragraph'];
+
+  if (!(method_exists($paragraph, 'getType') && method_exists($paragraph, 'hasField'))) {
+    return;
+  }
+
+  // Parallax and background stuff for Header and Parallax types.
+  // Code from parade. Apply parade_full_hd_width style for
+  // header and parallax parade_background fields, if they contain an image.
+  if (
+    $paragraph->hasField('parade_background') &&
+    in_array($paragraph->getType(), ['header', 'parallax'], FALSE)
+  ) {
+    $target_id = $paragraph->get('parade_background')->target_id;
+    if (!$target_id) {
+      return;
+    }
+
+    // Get background file info.
+    $file = File::load($target_id);
+    if (NULL !== $file) {
+      $file_uri = $file->getFileUri();
+      $file_mime = $file->getMimeType();
+
+      // Compress images with an image style.
+      if ($file_mime === 'image/jpeg') {
+        /** @var Drupal\image\Entity\ImageStyle $style */
+        $style = ImageStyle::load('parade_full_hd_width');
+
+        if (NULL === $style) {
+          return;
+        }
+
+        $variables['parade']['background']['url'] = $style->buildUrl($file_uri);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_imagemagick_arguments_alter().
+ *
+ * Removes quality argument if it's NULL.
+ * It's necessary to avoid errors when quality is empty in the config.
+ */
+function campaign_pages_imagemagick_arguments_alter(ImagemagickToolkit $toolkit, $command) {
+  // @todo: Check if this has been patched in imagemagick.
+  if ($command === 'convert' || $command === 'gm') {
+    $index = $toolkit->findArgument('-quality');
+
+    if ($index !== FALSE) {
+      $quality = $toolkit->getArguments()[$index];
+
+      // Space at the and because NULL casts to an empty string.
+      if ($quality === '-quality ') {
+        $toolkit->removeArgument($index);
+      }
     }
   }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2dd73f32933c1df6a2684342130c7c2b",
+    "content-hash": "715c338b9ba202ad360e715cc1b2b7be",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -9905,6 +9905,7 @@
         "drupal/node_clone": 20,
         "drupal/parade": 20,
         "drupal-composer/drupal-security-advisories": 20,
+        "drupal/imageapi_optimize": 15,
         "drupal/examples": 20
     },
     "prefer-stable": true,
