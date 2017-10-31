@@ -175,7 +175,7 @@ function campaign_pages_element_info_alter(array &$types) {
 /**
  * Add paragraphs bundle machine name to subform wrapper as class.
  */
-function campaign_pages_element_after_build($element, FormStateInterface &$form_state) {
+function campaign_pages_element_after_build($element, FormStateInterface $form_state) {
   if (isset($element['subform'], $element['top']['paragraph_type_title'])) {
     // Add paragraphs bundle machine name to wrapper as class.
     $elementEntity = $form_state->getStorage()['field_storage']['#parents']['#fields']['field_paragraphs']['paragraphs'][$element['#weight']]['entity'];
