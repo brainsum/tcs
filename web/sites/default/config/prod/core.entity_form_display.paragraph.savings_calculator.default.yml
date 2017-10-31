@@ -24,6 +24,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   parade_input_label:
     weight: 2
     settings:
@@ -34,6 +35,7 @@ content:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
+    region: content
   parade_result_label:
     weight: 3
     settings:
@@ -44,6 +46,7 @@ content:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
+    region: content
   parade_title:
     weight: 1
     settings:
@@ -54,6 +57,7 @@ content:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.paragraph.custom
     - field.field.paragraph.text_boxes.parade_anchor
     - field.field.paragraph.text_boxes.parade_boxes_per_row
+    - field.field.paragraph.text_boxes.parade_call_to_action
     - field.field.paragraph.text_boxes.parade_color_scheme
     - field.field.paragraph.text_boxes.parade_layout
     - field.field.paragraph.text_boxes.parade_paragraphs

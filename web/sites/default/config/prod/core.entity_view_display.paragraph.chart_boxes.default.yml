@@ -30,12 +30,14 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
   parade_text:
     weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   parade_title:
     weight: 0
     label: hidden
@@ -43,6 +45,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   parade_anchor: true
   parade_boxes_per_row: true

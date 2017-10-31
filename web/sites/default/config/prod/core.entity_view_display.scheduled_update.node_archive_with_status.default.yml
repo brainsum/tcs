@@ -19,6 +19,7 @@ content:
     weight: -100
     settings: {  }
     third_party_settings: {  }
+    region: content
   update_timestamp:
     label: above
     type: timestamp
@@ -28,11 +29,13 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+    region: content
   user_id:
     label: inline
     type: author
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_status_1: true

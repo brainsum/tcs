@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.campaign.scheduled_publish_date
     - node.type.campaign
   module:
+    - campaign_pages
     - file
     - inline_entity_form
     - metatag
@@ -27,12 +28,14 @@ content:
     weight: 8
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_file:
     weight: 2
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+    region: content
   field_menu:
     weight: 3
     settings:
@@ -40,11 +43,13 @@ content:
       placeholder_title: 'Link text'
     third_party_settings: {  }
     type: link_with_selected_attribute
+    region: content
   field_meta_tags:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
   field_paragraphs:
     weight: 4
     settings:
@@ -56,16 +61,20 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     type: entity_reference_paragraphs_preview
+    region: content
   langcode:
     type: language_select
     weight: 1
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
   scheduled_archive_date:
     type: inline_entity_form_complex
     weight: 6
@@ -78,6 +87,7 @@ content:
       allow_existing: false
       form_mode: default
     third_party_settings: {  }
+    region: content
   scheduled_publish_date:
     type: inline_entity_form_complex
     weight: 5
@@ -90,6 +100,14 @@ content:
       allow_existing: false
       form_mode: default
     third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -97,10 +115,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   translation:
     weight: 9
     settings: {  }
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 7
@@ -109,6 +129,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden:
   field_machine_name: true
   promote: true

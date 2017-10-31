@@ -32,6 +32,7 @@ content:
       target: 0
     third_party_settings: {  }
     type: link_call_to_action
+    region: content
   parade_text:
     weight: 1
     label: hidden

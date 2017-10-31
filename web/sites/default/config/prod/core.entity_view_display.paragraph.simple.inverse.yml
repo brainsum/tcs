@@ -33,6 +33,7 @@ content:
       rel: 0
       target: 0
     third_party_settings: {  }
+    region: content
   parade_text:
     weight: 0
     label: hidden

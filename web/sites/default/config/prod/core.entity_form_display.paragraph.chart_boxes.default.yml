@@ -32,22 +32,26 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   parade_boxes_per_row:
     weight: 4
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   parade_color_scheme:
     weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   parade_layout:
     weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   parade_paragraphs:
     weight: 7
     settings:
@@ -59,6 +63,7 @@ content:
       default_paragraph_type: chart_box
     third_party_settings: {  }
     type: entity_reference_paragraphs_preview
+    region: content
   parade_text:
     weight: 6
     settings:
@@ -74,6 +79,7 @@ content:
         maxlength_js_enforce: false
         maxlength_js_truncate_html: false
     type: text_textarea
+    region: content
   parade_title:
     weight: 5
     settings:
@@ -81,11 +87,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   parade_view_mode:
     weight: 1
     settings: {  }
     third_party_settings: {  }
     type: view_mode_selector_radios
+    region: content
 hidden:
   created: true
   status: true

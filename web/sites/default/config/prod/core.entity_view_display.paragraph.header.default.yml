@@ -32,12 +32,14 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
+    region: content
   parade_lead_text:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   parade_secondary_title:
     weight: 0
     label: hidden
@@ -45,6 +47,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   parade_title:
     weight: 1
     label: hidden
@@ -52,6 +55,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
   parade_anchor: true

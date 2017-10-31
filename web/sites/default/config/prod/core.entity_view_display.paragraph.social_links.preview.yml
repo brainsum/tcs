@@ -22,6 +22,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+    region: content
   parade_title:
     weight: 0
     label: inline
@@ -29,6 +30,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   created: true
   parade_social_link: true

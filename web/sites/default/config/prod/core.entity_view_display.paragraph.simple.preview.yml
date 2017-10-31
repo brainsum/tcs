@@ -26,6 +26,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   parade_color_scheme:
     type: entity_reference_label
     weight: 3
@@ -33,6 +34,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+    region: content
   parade_layout:
     type: entity_reference_label
     weight: 2
@@ -40,6 +42,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+    region: content
   parade_title:
     weight: 0
     label: inline

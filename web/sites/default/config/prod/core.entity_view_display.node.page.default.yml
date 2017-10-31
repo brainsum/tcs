@@ -19,13 +19,16 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   body:
     label: hidden
     type: text_default
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
   links:
     weight: 101
+    region: content
 hidden:
   langcode: true

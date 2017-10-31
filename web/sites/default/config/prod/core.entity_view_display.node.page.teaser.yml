@@ -20,6 +20,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   body:
     label: hidden
     type: text_summary_or_trimmed
@@ -27,7 +28,9 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 101
+    region: content
 hidden:
   langcode: true

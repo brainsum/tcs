@@ -27,16 +27,19 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   parade_color_scheme:
     type: options_select
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   parade_marketo_poll:
     weight: 3
     settings: {  }
     third_party_settings: {  }
     type: marketo_poll
+    region: content
   parade_title:
     weight: 2
     settings:
@@ -44,6 +47,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

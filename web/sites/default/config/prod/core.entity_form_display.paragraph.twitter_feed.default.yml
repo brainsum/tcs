@@ -25,6 +25,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   parade_text:
     weight: 2
     settings:
@@ -32,6 +33,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   parade_title:
     weight: 1
     settings:
@@ -39,11 +41,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   parade_twitter_feed:
     weight: 8
     settings: {  }
     third_party_settings: {  }
     type: twitter_feed
+    region: content
 hidden:
   created: true
   status: true

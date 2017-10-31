@@ -30,6 +30,7 @@ content:
       open_on_new_tab: false
     third_party_settings: {  }
     type: link_cta
+    region: content
   parade_color_scheme:
     type: options_select
     weight: 0

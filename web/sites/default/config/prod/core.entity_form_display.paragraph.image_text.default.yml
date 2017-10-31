@@ -87,6 +87,7 @@ content:
     weight: 8
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   status: true
