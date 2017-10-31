@@ -14,7 +14,6 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.image_text
   module:
-    - content_moderation
     - image
     - link
     - text

@@ -12,7 +12,6 @@ dependencies:
     - field.field.paragraph.simple.parade_view_mode
     - paragraphs.paragraphs_type.simple
   module:
-    - content_moderation
     - parade
     - text
     - view_mode_selector

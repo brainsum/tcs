@@ -437,3 +437,12 @@ function campaign_pages_post_update_8201() {
   $updateHandler = new ScheduledUpdateUpdateHandler();
   $updateHandler->update();
 }
+
+/**
+ * TCS-393 | Remove content moderation data.
+ */
+function campaign_pages_post_update_8202() {
+  $stateStorage = \Drupal::entityTypeManager()->getStorage('content_moderation_state');
+  $states = $stateStorage->loadMultiple();
+  $stateStorage->delete($states);
+}

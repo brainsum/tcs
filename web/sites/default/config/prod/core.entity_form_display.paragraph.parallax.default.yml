@@ -13,7 +13,6 @@ dependencies:
     - field.field.paragraph.parallax.parade_title
     - paragraphs.paragraphs_type.parallax
   module:
-    - content_moderation
     - file
     - text
 _core:

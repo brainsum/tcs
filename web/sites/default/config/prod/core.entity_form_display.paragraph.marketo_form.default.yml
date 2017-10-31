@@ -19,7 +19,6 @@ dependencies:
     module:
       - marketo_form
   module:
-    - content_moderation
     - image
     - marketo_form
     - text

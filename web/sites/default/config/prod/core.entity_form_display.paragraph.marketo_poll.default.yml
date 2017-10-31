@@ -12,7 +12,6 @@ dependencies:
     module:
       - marketo_poll
   module:
-    - content_moderation
     - marketo_poll
 _core:
   default_config_hash: w5p1ytdlFD6z1WjFG4UYmKaQbXBlvs_d1rGZNUMVt4c

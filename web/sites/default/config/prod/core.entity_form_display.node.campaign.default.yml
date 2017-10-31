@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.campaign.scheduled_publish_date
     - node.type.campaign
   module:
-    - content_moderation
     - file
     - inline_entity_form
     - metatag

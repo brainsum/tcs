@@ -14,7 +14,6 @@ dependencies:
     - paragraphs.paragraphs_type.chart_boxes
   module:
     - allowed_formats
-    - content_moderation
     - maxlength
     - parade
     - text

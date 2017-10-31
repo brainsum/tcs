@@ -9,7 +9,6 @@ dependencies:
     - field.field.paragraph.savings_calculator.parade_title
     - paragraphs.paragraphs_type.savings_calculator
   module:
-    - content_moderation
     - maxlength
 _core:
   default_config_hash: FCpyTJp1Nfadmb4ZhezTgSUEak3XHx3Vs18Fi4SYp6g

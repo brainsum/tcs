@@ -10,7 +10,6 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.images
   module:
-    - content_moderation
     - image
 _core:
   default_config_hash: iPn8WxyL5-Xq37hpE97nYCzXHu0_zyj3GeXCLPxOeNg
