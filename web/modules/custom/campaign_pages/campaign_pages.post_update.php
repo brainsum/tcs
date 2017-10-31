@@ -5,9 +5,11 @@
  * Post update functions for Campaign Pages.
  */
 
+use Drupal\campaign_pages\Helper\ScheduledUpdateUpdateHandler;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Database\StatementInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Utility\UpdateException;
 
 /**
  * Re-save classy paragraphs.
@@ -426,4 +428,12 @@ function _campaign_pages_color_update_helper(
       }
     }
   }
+}
+
+/**
+ * Migrate scheduled updates for TCS-393.
+ */
+function campaign_pages_post_update_8201() {
+  $updateHandler = new ScheduledUpdateUpdateHandler();
+  $updateHandler->update();
 }
