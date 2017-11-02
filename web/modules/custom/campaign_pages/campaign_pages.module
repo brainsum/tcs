@@ -41,7 +41,6 @@ function campaign_pages_theme($existing, $type, $theme, $path) {
   return [
     'field__paragraph__parade_paragraphs__text_boxes' => [
       'base hook' => 'paragraph',
-      'path' => $path . '/templates',
     ],
   ];
 }

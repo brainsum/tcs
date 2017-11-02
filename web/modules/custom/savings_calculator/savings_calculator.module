@@ -13,7 +13,6 @@ use Drupal\Core\Form\FormStateInterface;
 function savings_calculator_theme() {
   return [
     'paragraph__savings_calculator' => [
-      'template' => 'paragraph--savings-calculator',
       'base hook' => 'paragraph',
     ],
   ];
