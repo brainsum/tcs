@@ -38,10 +38,10 @@ content:
     type: string_textfield
     region: content
   parade_color_scheme:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
     type: options_select
+    settings: {  }
+    weight: 2
+    third_party_settings: {  }
     region: content
   parade_enable_confirm_message:
     weight: 8
@@ -66,10 +66,10 @@ content:
     type: image_image
     region: content
   parade_layout:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
     type: options_select
+    settings: {  }
+    weight: 1
+    third_party_settings: {  }
     region: content
   parade_lead_text:
     weight: 5

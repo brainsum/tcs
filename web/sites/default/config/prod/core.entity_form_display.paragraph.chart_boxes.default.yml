@@ -39,15 +39,15 @@ content:
     third_party_settings: {  }
     type: number
   parade_color_scheme:
+    type: options_select
+    settings: {  }
     weight: 3
-    settings: {  }
     third_party_settings: {  }
-    type: options_select
   parade_layout:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
     type: options_select
+    settings: {  }
+    weight: 2
+    third_party_settings: {  }
   parade_paragraphs:
     weight: 7
     settings:

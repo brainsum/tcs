@@ -49,15 +49,15 @@ content:
     type: link_cta
   parade_color_scheme:
     type: options_select
+    settings: {  }
     weight: 0
     region: content
-    settings: {  }
     third_party_settings: {  }
   parade_layout:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
     type: options_select
+    settings: {  }
+    weight: 1
+    third_party_settings: {  }
     region: content
   parade_paragraphs:
     type: entity_reference_paragraphs_preview

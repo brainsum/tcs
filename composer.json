@@ -56,7 +56,7 @@
         "drupal/redirect": "^1.0",
         "drupal/maxlength": "^1.0",
         "drupal/abtestui": "^1.0",
-        "drupal/parade": "2.x-dev",
+        "drupal/parade": "dev-2.x",
         "drupal/allowed_formats": "^1.1",
         "drupal/public_preview": "^1.0",
         "drupal-composer/drupal-security-advisories": "8.x-dev",
@@ -135,9 +135,6 @@
             },
             "drupal/core": {
                 "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch" 
-            },
-            "drupal/parade": {
-                "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
             },
             "drupal/classy_paragraphs": {
                 "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
