@@ -446,3 +446,18 @@ function campaign_pages_post_update_8202() {
   $states = $stateStorage->loadMultiple();
   $stateStorage->delete($states);
 }
+
+/**
+ * TCS-393 | Uninstall content_moderation.
+ */
+function campaign_pages_post_update_8203() {
+  field_purge_batch(100);
+  field_purge_batch(100);
+  field_purge_batch(100);
+  drupal_flush_all_caches();
+
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $installer */
+  $installer = \Drupal::service('module_installer');
+  $installer->uninstall(['content_moderation']);
+  drupal_flush_all_caches();
+}
