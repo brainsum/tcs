@@ -10,7 +10,13 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.images
   module:
+    - field_layout
     - image
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: TUi-O3slrMy0WqO7ZBSH_M6sOiEdE9l760hi-LAdKMs
 id: paragraph.images.default

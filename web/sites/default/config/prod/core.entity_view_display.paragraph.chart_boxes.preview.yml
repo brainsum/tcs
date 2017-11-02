@@ -13,6 +13,13 @@ dependencies:
     - field.field.paragraph.chart_boxes.parade_title
     - field.field.paragraph.chart_boxes.parade_view_mode
     - paragraphs.paragraphs_type.chart_boxes
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: Iv8vwJM3ZzflIPEd-8AHEwEWxLCka5muR7SxTDn47QY
 id: paragraph.chart_boxes.preview

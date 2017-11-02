@@ -14,9 +14,15 @@ dependencies:
     - field.field.paragraph.text_boxes.parade_view_mode
     - paragraphs.paragraphs_type.text_boxes
   module:
+    - field_layout
+    - layout_discovery
     - parade
     - text
     - view_mode_selector
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: 1ScQeg0q2n0S-OaIPDVH_pL9xqXAe5-bJN_nQOxCQj4
 id: paragraph.text_boxes.default

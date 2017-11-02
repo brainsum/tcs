@@ -11,8 +11,14 @@ dependencies:
     - field.field.paragraph.locations.parade_title
     - paragraphs.paragraphs_type.locations
   module:
+    - field_layout
     - geocoder_autocomplete
+    - layout_discovery
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: p8cbHaB52Np3WPOWzoeEjNCSRkjLQqlxwGpQdCoaJpM
 id: paragraph.locations.default

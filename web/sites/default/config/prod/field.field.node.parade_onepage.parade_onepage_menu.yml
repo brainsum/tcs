@@ -1,0 +1,25 @@
+uuid: dae9ed53-7aeb-4286-a1d1-e8c4995cbb39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.parade_onepage_menu
+    - node.type.parade_onepage
+  module:
+    - link
+_core:
+  default_config_hash: CozuKBjH3CEQUONaWtetJWhTHSjiOg5M9_gX458xw64
+id: node.parade_onepage.parade_onepage_menu
+field_name: parade_onepage_menu
+entity_type: node
+bundle: parade_onepage
+label: Menu
+description: 'You can set anchor links (e.g. <strong>#contact-us</strong>) or external links (e.g. <strong>https://google.com</strong>). Be sure that the anchor link matches with one of the section''s <em>Anchor</em> field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

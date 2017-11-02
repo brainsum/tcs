@@ -11,6 +11,13 @@ dependencies:
     - field.field.paragraph.locations.parade_text
     - field.field.paragraph.locations.parade_title
     - paragraphs.paragraphs_type.locations
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: iVbQ4-JHhYnv6kNY-TlrmVcGlzUrn_ai6s2L5phZfGk
 id: paragraph.locations.preview

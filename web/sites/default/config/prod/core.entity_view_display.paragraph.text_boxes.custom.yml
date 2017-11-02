@@ -16,6 +16,12 @@ dependencies:
     - paragraphs.paragraphs_type.text_boxes
   module:
     - entity_reference_revisions
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: WrTNNXLcpa7jx7Ntt8ZLbjBpU1VfLBTwionCQu8EGKg
 id: paragraph.text_boxes.custom

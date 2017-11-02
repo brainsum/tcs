@@ -9,7 +9,13 @@ dependencies:
     - field.field.paragraph.savings_calculator.parade_title
     - paragraphs.paragraphs_type.savings_calculator
   module:
+    - field_layout
+    - layout_discovery
     - maxlength
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: FCpyTJp1Nfadmb4ZhezTgSUEak3XHx3Vs18Fi4SYp6g
 id: paragraph.savings_calculator.default

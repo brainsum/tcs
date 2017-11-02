@@ -1,0 +1,20 @@
+uuid: 1c35b317-8ff7-40e3-a718-fa1b89495ee2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.parade_onepage
+_core:
+  default_config_hash: 5YYc3nOKPBkYxepUcwxpqQWRantp1hS6J1IbyODs9w8
+id: node.parade_onepage.title
+field_name: title
+entity_type: node
+bundle: parade_onepage
+label: 'Site title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

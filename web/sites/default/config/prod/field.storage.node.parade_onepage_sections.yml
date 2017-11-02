@@ -1,0 +1,26 @@
+uuid: 35c294e6-a071-4a35-b1d2-ff38d397ec9a
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - parade_demo
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+_core:
+  default_config_hash: SRurv51YFUCoRde3bDYo8AUIacZc-925UMEWInMTIMg
+id: node.parade_onepage_sections
+field_name: parade_onepage_sections
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

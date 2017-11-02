@@ -13,8 +13,14 @@ dependencies:
     - field.field.paragraph.parallax.parade_title
     - paragraphs.paragraphs_type.parallax
   module:
+    - field_layout
     - file
+    - layout_discovery
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: 0Y1arR4l02WJsrQb_H7cpzsa6Qavr3X1v6dly3e38bM
 id: paragraph.parallax.default

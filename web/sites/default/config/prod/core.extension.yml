@@ -28,6 +28,8 @@ module:
   entity_reference_revisions: 0
   facebook_pixel: 0
   field: 0
+  field_group: 0
+  field_layout: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -44,6 +46,7 @@ module:
   inline_entity_form: 0
   lang_dropdown: 0
   language: 0
+  layout_discovery: 0
   leaflet: 0
   leaflet_views: 0
   link: 0
@@ -62,6 +65,7 @@ module:
   page_cache: 0
   parade: 0
   parade_conditional_field: 0
+  parade_demo: 0
   paragraphs_type_permissions: 0
   path: 0
   public_preview: 0

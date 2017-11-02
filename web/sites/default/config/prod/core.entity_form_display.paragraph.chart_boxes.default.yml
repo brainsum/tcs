@@ -14,10 +14,16 @@ dependencies:
     - paragraphs.paragraphs_type.chart_boxes
   module:
     - allowed_formats
+    - field_layout
+    - layout_discovery
     - maxlength
     - parade
     - text
     - view_mode_selector
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: nM4MCO_-izUUWpy7B29-6tvhzNbQhy7568MyfJvtlUk
 id: paragraph.chart_boxes.default
@@ -45,14 +51,12 @@ content:
     settings: {  }
     weight: 3
     third_party_settings: {  }
-    type: options_select
     region: content
   parade_layout:
     type: options_select
     settings: {  }
     weight: 2
     third_party_settings: {  }
-    type: options_select
     region: content
   parade_paragraphs:
     weight: 7

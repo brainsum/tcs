@@ -1,0 +1,24 @@
+uuid: 91cffef8-e781-4481-8fd6-08c5b1da13c8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - parade_demo
+  module:
+    - link
+    - node
+_core:
+  default_config_hash: EFeDmfUIaLab0xkRsghV7uwQg2p_EBZO5cSnFLMkS-4
+id: node.parade_onepage_menu
+field_name: parade_onepage_menu
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

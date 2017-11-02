@@ -14,7 +14,13 @@ dependencies:
     - paragraphs.paragraphs_type.chart_boxes
   module:
     - entity_reference_revisions
+    - field_layout
+    - layout_discovery
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: 3J4tgtxri4hi3TfxuwIj8QG0TQCfK6C1IUN9uPRL-qI
 id: paragraph.chart_boxes.default

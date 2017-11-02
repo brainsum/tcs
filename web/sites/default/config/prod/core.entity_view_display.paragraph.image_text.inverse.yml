@@ -15,9 +15,15 @@ dependencies:
     - image.style.parade_text_and_image
     - paragraphs.paragraphs_type.image_text
   module:
+    - field_layout
     - image
+    - layout_discovery
     - link
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: OcMdVL1Ugp08_lMiSy3hLnLhjGFSTeBD3cvkD6umCn0
 id: paragraph.image_text.inverse

@@ -10,6 +10,13 @@ dependencies:
     - field.field.paragraph.text_box.parade_text
     - field.field.paragraph.text_box.parade_title
     - paragraphs.paragraphs_type.text_box
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: BSgt1j_kGKQk-saX9dzzU17YVAMjItreH1nTy2HsEMs
 id: paragraph.text_box.preview

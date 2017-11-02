@@ -1,0 +1,22 @@
+uuid: 1d5eff85-2282-4bd2-944a-39de32ea82a5
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - parade_demo
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: nZGj5a1faIdIKm3yXvYtyPu3e2nAU4usa6Idt8jr_pI
+name: 'Parade onepage'
+type: parade_onepage
+description: 'Dynamic onepage sites with predefined Paragraph types and styles.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

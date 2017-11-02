@@ -13,6 +13,13 @@ dependencies:
     - field.field.paragraph.image_text.parade_title
     - field.field.paragraph.image_text.parade_view_mode
     - paragraphs.paragraphs_type.image_text
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: UCWoRUDi_Yj6T-R9Ih6bD1Jo9B-AVugc2SQ3nRBa4qE
 id: paragraph.image_text.preview

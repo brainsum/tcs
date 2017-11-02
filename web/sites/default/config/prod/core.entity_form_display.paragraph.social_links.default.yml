@@ -8,7 +8,13 @@ dependencies:
     - field.field.paragraph.social_links.parade_title
     - paragraphs.paragraphs_type.social_links
   module:
+    - field_layout
+    - layout_discovery
     - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: 41lPgOwqPqy5WYlgENsgRJBG1pdzPHb7Mg14ZPKUQaM
 id: paragraph.social_links.default
@@ -21,7 +27,6 @@ content:
     settings: {  }
     weight: 0
     third_party_settings: {  }
-    type: options_select
     region: content
   parade_social_link:
     weight: 2

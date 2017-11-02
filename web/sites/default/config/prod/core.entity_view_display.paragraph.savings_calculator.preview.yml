@@ -9,6 +9,13 @@ dependencies:
     - field.field.paragraph.savings_calculator.parade_result_label
     - field.field.paragraph.savings_calculator.parade_title
     - paragraphs.paragraphs_type.savings_calculator
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: FWYJiOyfsjwkbjLLXyUVPWNSqtZ0oDbl6GYCsyiLX8E
 id: paragraph.savings_calculator.preview

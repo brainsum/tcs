@@ -19,9 +19,15 @@ dependencies:
     module:
       - marketo_form
   module:
+    - field_layout
     - image
+    - layout_discovery
     - marketo_form
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: o3txxlHDvb8cgEjMGpYgsu0QNXVsCPROOP4MwIg3mbI
 id: paragraph.marketo_form.default

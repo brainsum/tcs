@@ -13,9 +13,15 @@ dependencies:
     - field.field.paragraph.image_text.parade_view_mode
     - paragraphs.paragraphs_type.image_text
   module:
+    - field_layout
     - image
+    - layout_discovery
     - link
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: FEGRENNV4PV56U8zLZ0tHe9LUcw2Ta3z606pXiXZEY8
 id: paragraph.image_text.default

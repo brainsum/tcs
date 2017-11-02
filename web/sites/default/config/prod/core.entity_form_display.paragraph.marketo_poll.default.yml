@@ -12,7 +12,13 @@ dependencies:
     module:
       - marketo_poll
   module:
+    - field_layout
+    - layout_discovery
     - marketo_poll
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: w5p1ytdlFD6z1WjFG4UYmKaQbXBlvs_d1rGZNUMVt4c
 id: paragraph.marketo_poll.default

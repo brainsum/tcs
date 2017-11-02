@@ -12,9 +12,15 @@ dependencies:
     - field.field.paragraph.simple.parade_view_mode
     - paragraphs.paragraphs_type.simple
   module:
+    - field_layout
+    - layout_discovery
     - parade
     - text
     - view_mode_selector
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: XuORQcQ9ErlrbRZLIQDp-d6cLj8NrS5gAlXH9tEPNGQ
 id: paragraph.simple.default

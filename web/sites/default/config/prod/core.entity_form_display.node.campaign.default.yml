@@ -13,11 +13,17 @@ dependencies:
     - node.type.campaign
   module:
     - campaign_pages
+    - field_layout
     - file
     - inline_entity_form
+    - layout_discovery
     - metatag
     - parade
     - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.campaign.default
 targetEntityType: node
 bundle: campaign

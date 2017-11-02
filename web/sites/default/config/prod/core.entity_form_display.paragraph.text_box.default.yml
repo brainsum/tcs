@@ -11,10 +11,16 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.text_box
   module:
+    - field_layout
     - image
+    - layout_discovery
     - maxlength
     - parade
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: Z0-M0XWDkYBPmCi1G_9fGt2R3wxDXge65wM7noLFpLI
 id: paragraph.text_box.default

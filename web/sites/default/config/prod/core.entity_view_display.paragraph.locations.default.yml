@@ -12,7 +12,13 @@ dependencies:
     - paragraphs.paragraphs_type.locations
   module:
     - aggregated_leaflet_map
+    - field_layout
+    - layout_discovery
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: l63DyW8CStymQaG2eB_vP8zTvLrhhOtgGMe-onSjyGs
 id: paragraph.locations.default

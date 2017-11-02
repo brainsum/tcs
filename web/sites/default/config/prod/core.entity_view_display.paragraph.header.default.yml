@@ -13,7 +13,13 @@ dependencies:
     - field.field.paragraph.header.parade_title
     - paragraphs.paragraphs_type.header
   module:
+    - field_layout
+    - layout_discovery
     - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: UqHMr0pX7uJ88hLOPGyt9PqUMgo7x2C64LrgX0tYnA4
 id: paragraph.header.default

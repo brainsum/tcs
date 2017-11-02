@@ -14,10 +14,16 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.image_text
   module:
+    - field_layout
     - image
+    - layout_discovery
     - link
     - text
     - view_mode_selector
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: UlcMtHM1YFzlGrDYAVRLQ41XuTEq9ub1CMsy3LeLsKs
 id: paragraph.image_text.default

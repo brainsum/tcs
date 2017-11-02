@@ -12,6 +12,13 @@ dependencies:
     - field.field.paragraph.simple.parade_title
     - field.field.paragraph.simple.parade_view_mode
     - paragraphs.paragraphs_type.simple
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: rZ0Rlh9tIDjY2TJfXhyRHR3AUrWlZMjb9l1LM-vBEAI
 id: paragraph.simple.preview

@@ -9,6 +9,13 @@ dependencies:
     - field.field.paragraph.chart_box.parade_value
     - field.field.paragraph.chart_box.parade_with_pie
     - paragraphs.paragraphs_type.chart_box
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: vlyNaPsc6npHBm2AMkXt_CjIvI4MXmsK5wvREXSk02k
 id: paragraph.chart_box.preview

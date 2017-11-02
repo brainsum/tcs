@@ -18,6 +18,13 @@ dependencies:
   enforced:
     module:
       - marketo_form
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: 7Pn51aF-BKeVmYY-tmYWAmH5xpkItqGgu1KRDIUCohM
 id: paragraph.marketo_form.preview

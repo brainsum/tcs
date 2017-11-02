@@ -9,6 +9,13 @@ dependencies:
     - field.field.paragraph.images.parade_images
     - field.field.paragraph.images.parade_title
     - paragraphs.paragraphs_type.images
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: ZB0-6wz3KKVQAqS026qhbuJ4KZwYun9m7OwlYdLek4I
 id: paragraph.images.preview

@@ -1,51 +1,66 @@
-uuid: 186747c2-a75a-4e5f-88b8-eeae712dd0fb
+uuid: e5f8d053-de61-46d2-aae5-9bad14feacca
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
-    - node.type.page
+    - field.field.node.parade_onepage.parade_onepage_id
+    - field.field.node.parade_onepage.parade_onepage_menu
+    - field.field.node.parade_onepage.parade_onepage_sections
+    - node.type.parade_onepage
+  enforced:
+    module:
+      - parade
   module:
+    - campaign_pages
     - field_layout
     - layout_discovery
+    - parade
     - path
-    - text
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
 _core:
-  default_config_hash: KSvzyFhdLuxniTsunUnUfpfMmod2l57GibtVjL8ymHM
-id: node.page.default
+  default_config_hash: 5_CK65cfYvl1smF-ONWaqlLPtq8ugh3NwJT0DYGzOlw
+id: node.parade_onepage.default
 targetEntityType: node
-bundle: page
+bundle: parade_onepage
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 31
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   langcode:
     type: language_select
     weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  parade_onepage_menu:
+    weight: 3
     settings:
-      include_locked: true
+      placeholder_url: 'Anchor or URL'
+      placeholder_title: 'Link text'
+    third_party_settings: {  }
+    type: link_with_selected_attribute
+    region: content
+  parade_onepage_sections:
+    type: entity_reference_paragraphs_preview
+    weight: 26
+    settings:
+      title: Section
+      title_plural: Sections
+      edit_mode: preview
+      add_mode: button
+      form_display_mode: default
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 30
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -53,33 +68,35 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 8
     third_party_settings: {  }
     region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 121
-    third_party_settings: {  }
+    weight: 120
     region: content
+    third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 9
     third_party_settings: {  }
     region: content
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     region: content
   translation:
-    weight: 10
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
     region: content
   uid:
     type: entity_reference_autocomplete
@@ -90,4 +107,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  parade_onepage_id: true

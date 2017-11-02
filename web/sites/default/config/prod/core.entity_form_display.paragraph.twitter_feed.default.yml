@@ -9,8 +9,14 @@ dependencies:
     - field.field.paragraph.twitter_feed.parade_twitter_feed
     - paragraphs.paragraphs_type.twitter_feed
   module:
+    - field_layout
+    - layout_discovery
     - text
     - twitter_feed_parade_type
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: EPduwrEugavSprNX12kBUI5ykRlrUAEck-fkHgoOHU4
 id: paragraph.twitter_feed.default
