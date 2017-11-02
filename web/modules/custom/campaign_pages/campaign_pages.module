@@ -72,12 +72,12 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
 
   // Remove scheduled updates date description.
   if ($field_name === 'update_timestamp' && isset($context['form']['#entity_type']) && $context['form']['#entity_type'] === 'scheduled_update') {
-    $element['value']['#description'] = t('Format: %format.', array('%format' => Datetime::formatExample('Y.m.d. - H:i:s')));
+    $element['value']['#description'] = t('Format: %format.', ['%format' => Datetime::formatExample('Y.m.d. - H:i:s')]);
   }
 
   // Hide empty scheduled updates field if user doesn't have create permission.
-  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state scheduled updates'))
-  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state_1 scheduled updates'))) {
+  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node_publish_with_status scheduled updates'))
+  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node_archive_with_status scheduled updates'))) {
     $element['#access'] = FALSE;
   }
 }
