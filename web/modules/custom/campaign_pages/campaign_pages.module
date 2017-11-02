@@ -41,7 +41,6 @@ function campaign_pages_theme($existing, $type, $theme, $path) {
   return [
     'field__paragraph__parade_paragraphs__text_boxes' => [
       'base hook' => 'paragraph',
-      'path' => $path . '/templates',
     ],
   ];
 }
@@ -108,12 +107,16 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
       if (isset($form['field_paragraphs']['widget']['add_more'])) {
         foreach ($form['field_paragraphs']['widget']['add_more'] as $key => &$item) {
           if (strpos($key, 'add_more_button_') === 0) {
-            $arguments = $item['#value']->getArguments();
             // Adding a context, so it's translatable separatly.
             $options = ['context' => 'add_paragraph_type'];
-            $item['#value'] = t('@type', $arguments, $options);
+            $item['#value'] = t(
+              '@type',
+              ['@type' => $item['#value']],
+              $options
+            );
           }
         }
+        unset($item);
       }
     }
 

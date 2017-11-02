@@ -41,14 +41,16 @@ content:
     type: number
     region: content
   parade_color_scheme:
-    weight: 3
+    type: options_select
     settings: {  }
+    weight: 3
     third_party_settings: {  }
     type: options_select
     region: content
   parade_layout:
-    weight: 2
+    type: options_select
     settings: {  }
+    weight: 2
     third_party_settings: {  }
     type: options_select
     region: content

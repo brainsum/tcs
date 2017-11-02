@@ -33,9 +33,9 @@ content:
     region: content
   parade_color_scheme:
     type: options_select
+    settings: {  }
     weight: 0
     region: content
-    settings: {  }
     third_party_settings: {  }
   parade_image:
     weight: 3
