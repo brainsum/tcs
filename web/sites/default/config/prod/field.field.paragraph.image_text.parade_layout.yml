@@ -24,9 +24,41 @@ settings:
   handler: classy_paragraphs
   handler_settings:
     filter:
-      type: starts_with
-      starts_with: layout_
+      type: target_bundles
+      target_bundles:
+        layout_image_1st: layout_image_1st
+        layout_text_1st: layout_text_1st
+        layout_text_1st_enhanced: layout_text_1st_enhanced
+        color_blue: 0
+        color_dark_grey: 0
+        color_default: 0
+        color_green: 0
+        color_grey: 0
+        color_light_blue: 0
+        color_light_green: 0
+        color_light_grey: 0
+        color_light_orange: 0
+        color_light_red: 0
+        color_orange: 0
+        color_red: 0
+        color_shaded: 0
+        layout_bar_chart: 0
+        layout_clean: 0
+        layout_contacts: 0
+        layout_doughnut_and_text_chart: 0
+        layout_doughnut_chart: 0
+        layout_download: 0
+        layout_lot_of_infos: 0
+        layout_none: 0
+        layout_one_column: 0
+        layout_one_column_centered: 0
+        layout_rounded_image: 0
+        layout_separator_clean: 0
+        layout_smallinfo: 0
+        layout_text_with_an_icon: 0
+        layout_two_column_content_1st: 0
+        layout_two_column_title_1st: 0
+      negate: 0
     sort:
-      field: label
-      direction: ASC
+      field: _none
 field_type: entity_reference
