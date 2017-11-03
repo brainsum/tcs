@@ -1,18 +1,18 @@
-uuid: 8bb42335-835c-439f-8c76-c420a65e3d53
+uuid: 316620f4-2fc9-4c8c-a410-7142599158e3
 langcode: en
 status: true
 dependencies:
   module:
-    - machine_name
+    - link
     - node
-id: node.field_machine_name
-field_name: field_machine_name
+id: node.parade_onepage_menu
+field_name: parade_onepage_menu
 entity_type: node
-type: machine_name
+type: link
 settings: {  }
-module: machine_name
+module: link
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

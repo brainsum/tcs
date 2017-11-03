@@ -4,14 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.node.campaign.field_file
-    - field.field.node.campaign.field_machine_name
-    - field.field.node.campaign.field_menu
     - field.field.node.campaign.field_meta_tags
-    - field.field.node.campaign.field_paragraphs
+    - field.field.node.campaign.parade_onepage_id
+    - field.field.node.campaign.parade_onepage_menu
+    - field.field.node.campaign.parade_onepage_sections
     - field.field.node.campaign.scheduled_archive_date
     - field.field.node.campaign.scheduled_publish_date
     - node.type.campaign
   module:
+    - campaign_pages
     - content_moderation
     - file
     - inline_entity_form
@@ -34,19 +35,25 @@ content:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
-  field_menu:
-    weight: 3
-    settings:
-      placeholder_url: 'Anchor or URL'
-      placeholder_title: 'Link text'
-    third_party_settings: {  }
-    type: link_with_selected_attribute
   field_meta_tags:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
-  field_paragraphs:
+  langcode:
+    type: language_select
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  parade_onepage_menu:
+    type: link_with_selected_attribute
+    weight: 3
+    settings:
+      placeholder_url: 'Anchor or URL'
+      placeholder_title: 'Link text'
+    third_party_settings: {  }
+  parade_onepage_sections:
+    type: entity_reference_paragraphs_preview
     weight: 4
     settings:
       title: Section
@@ -55,12 +62,6 @@ content:
       add_mode: button
       form_display_mode: default
       default_paragraph_type: _none
-    third_party_settings: {  }
-    type: entity_reference_paragraphs_preview
-  langcode:
-    type: language_select
-    weight: 1
-    settings: {  }
     third_party_settings: {  }
   path:
     type: path
@@ -111,6 +112,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  field_machine_name: true
+  parade_onepage_id: true
   promote: true
   sticky: true

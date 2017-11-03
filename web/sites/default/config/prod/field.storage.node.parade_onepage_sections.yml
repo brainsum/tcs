@@ -1,4 +1,4 @@
-uuid: 1013dbee-faa9-4329-bf13-190ef5c16c86
+uuid: 87edd877-7d50-4136-87f3-14b330175267
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_paragraphs
-field_name: field_paragraphs
+id: node.parade_onepage_sections
+field_name: parade_onepage_sections
 entity_type: node
 type: entity_reference_revisions
 settings:

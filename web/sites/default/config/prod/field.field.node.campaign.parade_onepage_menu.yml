@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_menu
+    - field.storage.node.parade_onepage_menu
     - node.type.campaign
   module:
     - link
-id: node.campaign.field_menu
-field_name: field_menu
+id: node.campaign.parade_onepage_menu
+field_name: parade_onepage_menu
 entity_type: node
 bundle: campaign
 label: Menu
