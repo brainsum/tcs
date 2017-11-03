@@ -10,7 +10,6 @@ dependencies:
     - paragraphs.paragraphs_type.chart_box
   module:
     - allowed_formats
-    - content_moderation
     - maxlength
     - text
 _core:

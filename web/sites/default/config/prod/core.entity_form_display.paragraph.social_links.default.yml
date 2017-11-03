@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.social_links.parade_title
     - paragraphs.paragraphs_type.social_links
   module:
-    - content_moderation
     - link
 _core:
   default_config_hash: 41lPgOwqPqy5WYlgENsgRJBG1pdzPHb7Mg14ZPKUQaM
@@ -18,10 +17,10 @@ bundle: social_links
 mode: default
 content:
   parade_color_scheme:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
     type: options_select
+    settings: {  }
+    weight: 0
+    third_party_settings: {  }
   parade_social_link:
     weight: 2
     settings:

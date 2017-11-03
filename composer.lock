@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "715c338b9ba202ad360e715cc1b2b7be",
+    "content-hash": "1151310d92c8820757a38255d67033f5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1192,80 +1192,6 @@
             }
         },
         {
-            "name": "drupal/aggregated_leaflet_map",
-            "version": "dev-2.x",
-            "require": {
-                "drupal/core": "~8.0",
-                "drupal/leaflet": "*",
-                "drupal/parade": "self.version"
-            },
-            "type": "metapackage",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-2.0-beta1+11-dev",
-                    "datestamp": "1499777342"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Kosa Ilma",
-                    "homepage": "https://www.drupal.org/user/3435475"
-                },
-                {
-                    "name": "balagan",
-                    "homepage": "https://www.drupal.org/user/1230072"
-                },
-                {
-                    "name": "danieldecsi",
-                    "homepage": "https://www.drupal.org/user/3498661"
-                },
-                {
-                    "name": "golddragon007",
-                    "homepage": "https://www.drupal.org/user/2723471"
-                },
-                {
-                    "name": "gpap",
-                    "homepage": "https://www.drupal.org/user/2878517"
-                },
-                {
-                    "name": "malatenszki",
-                    "homepage": "https://www.drupal.org/user/3452551"
-                },
-                {
-                    "name": "mhavelant",
-                    "homepage": "https://www.drupal.org/user/3331139"
-                },
-                {
-                    "name": "pedrop",
-                    "homepage": "https://www.drupal.org/user/1043368"
-                },
-                {
-                    "name": "rteijeiro",
-                    "homepage": "https://www.drupal.org/user/780508"
-                },
-                {
-                    "name": "szamee",
-                    "homepage": "https://www.drupal.org/user/3070377"
-                },
-                {
-                    "name": "szato",
-                    "homepage": "https://www.drupal.org/user/389677"
-                }
-            ],
-            "description": "Leaflet module formatter extension.",
-            "homepage": "https://www.drupal.org/project/parade",
-            "support": {
-                "source": "http://cgit.drupalcode.org/parade"
-            }
-        },
-        {
             "name": "drupal/allowed_formats",
             "version": "1.1.0",
             "source": {
@@ -1608,7 +1534,7 @@
                 }
             ],
             "description": "Language Switcher functionality which should be a core patch.",
-            "time": "2017-01-04 10:04:13"
+            "time": "2017-01-04T10:04:13+00:00"
         },
         {
             "name": "drupal/core",
@@ -2113,6 +2039,69 @@
             }
         },
         {
+            "name": "drupal/field_group",
+            "version": "1.0.0-rc6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/field_group",
+                "reference": "8.x-1.0-rc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-1.0-rc6.zip",
+                "reference": "8.x-1.0-rc6",
+                "shasum": "1ce3c6387e745a04a1099956a5bf39bb50096d44"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-rc6",
+                    "datestamp": "1480365484",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Hydra",
+                    "homepage": "https://www.drupal.org/user/647364"
+                },
+                {
+                    "name": "Stalski",
+                    "homepage": "https://www.drupal.org/user/322618"
+                },
+                {
+                    "name": "jyve",
+                    "homepage": "https://www.drupal.org/user/591438"
+                },
+                {
+                    "name": "swentel",
+                    "homepage": "https://www.drupal.org/user/107403"
+                },
+                {
+                    "name": "zuuperman",
+                    "homepage": "https://www.drupal.org/user/361625"
+                }
+            ],
+            "description": "Provides the field_group module.",
+            "homepage": "https://www.drupal.org/project/field_group",
+            "support": {
+                "source": "http://cgit.drupalcode.org/field_group"
+            }
+        },
+        {
             "name": "drupal/geocoder",
             "version": "2.0.0-alpha5",
             "source": {
@@ -2266,138 +2255,6 @@
             }
         },
         {
-            "name": "drupal/geocoder_field",
-            "version": "2.0.0-alpha5",
-            "require": {
-                "drupal/core": "*",
-                "drupal/geocoder": "self.version"
-            },
-            "type": "metapackage",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-2.0-alpha5",
-                    "datestamp": "1481538483"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Brandonian",
-                    "homepage": "https://www.drupal.org/user/77766"
-                },
-                {
-                    "name": "Dean Reilly",
-                    "homepage": "https://www.drupal.org/user/336031"
-                },
-                {
-                    "name": "GJdan",
-                    "homepage": "https://www.drupal.org/user/847848"
-                },
-                {
-                    "name": "Pol",
-                    "homepage": "https://www.drupal.org/user/47194"
-                },
-                {
-                    "name": "Simon Georges",
-                    "homepage": "https://www.drupal.org/user/172312"
-                },
-                {
-                    "name": "indytechcook",
-                    "homepage": "https://www.drupal.org/user/245817"
-                },
-                {
-                    "name": "michaelfavia",
-                    "homepage": "https://www.drupal.org/user/49137"
-                },
-                {
-                    "name": "phayes",
-                    "homepage": "https://www.drupal.org/user/47098"
-                },
-                {
-                    "name": "vidhatanand",
-                    "homepage": "https://www.drupal.org/user/585764"
-                }
-            ],
-            "description": "Geocodes the content of a field and stores the result in other field and vice-versa.",
-            "homepage": "https://www.drupal.org/project/geocoder",
-            "support": {
-                "source": "http://cgit.drupalcode.org/geocoder"
-            }
-        },
-        {
-            "name": "drupal/geocoder_geofield",
-            "version": "2.0.0-alpha5",
-            "require": {
-                "drupal/core": "~8.0",
-                "drupal/geocoder": "self.version",
-                "drupal/geocoder_field": "*",
-                "drupal/geofield": "*"
-            },
-            "type": "metapackage",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-2.0-alpha5",
-                    "datestamp": "1481538483"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Brandonian",
-                    "homepage": "https://www.drupal.org/user/77766"
-                },
-                {
-                    "name": "Dean Reilly",
-                    "homepage": "https://www.drupal.org/user/336031"
-                },
-                {
-                    "name": "GJdan",
-                    "homepage": "https://www.drupal.org/user/847848"
-                },
-                {
-                    "name": "Pol",
-                    "homepage": "https://www.drupal.org/user/47194"
-                },
-                {
-                    "name": "Simon Georges",
-                    "homepage": "https://www.drupal.org/user/172312"
-                },
-                {
-                    "name": "indytechcook",
-                    "homepage": "https://www.drupal.org/user/245817"
-                },
-                {
-                    "name": "michaelfavia",
-                    "homepage": "https://www.drupal.org/user/49137"
-                },
-                {
-                    "name": "phayes",
-                    "homepage": "https://www.drupal.org/user/47098"
-                },
-                {
-                    "name": "vidhatanand",
-                    "homepage": "https://www.drupal.org/user/585764"
-                }
-            ],
-            "description": "Providers Geocoder integration with contrib Geofield module.",
-            "homepage": "https://www.drupal.org/project/geocoder",
-            "support": {
-                "source": "http://cgit.drupalcode.org/geocoder"
-            }
-        },
-        {
             "name": "drupal/geofield",
             "version": "1.0.0-alpha4",
             "source": {
@@ -2536,6 +2393,48 @@
                 "source": "http://git.drupal.org/project/google_analytics.git",
                 "issues": "https://www.drupal.org/project/issues/google_analytics"
             }
+        },
+        {
+            "name": "drupal/google_tag",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/google_tag",
+                "reference": "09ce10cf135db411b333cfd80e7ce023bc7fe232"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1497651542",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL 2.0"
+            ],
+            "authors": [
+                {
+                    "name": "solotandem",
+                    "homepage": "https://www.drupal.org/user/240748"
+                }
+            ],
+            "description": "Allows your website analytics to be managed using Google Tag Manager.",
+            "homepage": "https://www.drupal.org/project/google_tag",
+            "support": {
+                "source": "http://cgit.drupalcode.org/google_tag"
+            },
+            "time": "2017-06-16T21:53:17+00:00"
         },
         {
             "name": "drupal/imageapi_optimize",
@@ -2911,7 +2810,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/machine_name"
             },
-            "time": "2016-12-02 15:46:28"
+            "time": "2016-12-02T15:46:28+00:00"
         },
         {
             "name": "drupal/maxlength",
@@ -3123,7 +3022,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/node_clone"
             },
-            "time": "2016-10-21 00:15:27"
+            "time": "2016-10-21T00:15:27+00:00"
         },
         {
             "name": "drupal/parade",
@@ -3131,30 +3030,19 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "bc257cfc2e2c4a76859273ba6497b5f66ef22ddf"
+                "reference": "fb9023c09614865091b7a00e42ecc78eb8490ef3"
             },
             "require": {
-                "drupal/aggregated_leaflet_map": "*",
                 "drupal/classy_paragraphs": "~1.0",
                 "drupal/core": "*",
+                "drupal/field_group": "~1.0",
                 "drupal/geocoder": "~2.0",
                 "drupal/geocoder_autocomplete": "~1.0",
-                "drupal/geocoder_field": "*",
-                "drupal/geocoder_geofield": "*",
                 "drupal/geofield": "~1.0",
-                "drupal/imageapi_optimize": "~2.0",
-                "drupal/imagemagick": "~1.0",
                 "drupal/leaflet": "~1.0",
                 "drupal/machine_name": "~1.0",
                 "drupal/paragraphs": "~1.0",
                 "drupal/view_mode_selector": "~1.0"
-            },
-            "require-dev": {
-                "drupal/imageapi_optimize": "*",
-                "drupal/imagemagick": "*",
-                "drupal/leaflet": "*",
-                "drupal/marketo_form": "*",
-                "drupal/marketo_poll": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -3162,11 +3050,12 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta1+32-dev",
-                    "datestamp": "1501121943"
-                },
-                "patches_applied": {
-                    "Temporary fix for the 'Add paragraphs' button icons": "patches/field-paragraphs-hotfix.patch"
+                    "version": "8.x-2.0-beta2+119-dev",
+                    "datestamp": "1509371584",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3224,7 +3113,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-07-28 08:01:07"
+            "time": "2017-11-02T12:02:06+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -3898,7 +3787,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/view_mode_selector"
             },
-            "time": "2017-04-26 09:20:00"
+            "time": "2017-04-26T09:20:00+00:00"
         },
         {
             "name": "drush/drush",
@@ -4951,7 +4840,7 @@
             ],
             "description": "GeoPHP is a open-source native PHP library for doing geometry operations. It is written entirely in PHP and can therefore run on shared hosts. It can read and write a wide variety of formats: WKT (including EWKT), WKB (including EWKB), GeoJSON, KML, GPX, GeoRSS). It works with all Simple-Feature geometries (Point, LineString, Polygon, GeometryCollection etc.) and can be used to get centroids, bounding-boxes, area, and a wide variety of other useful information.",
             "homepage": "https://github.com/phayes/geoPHP",
-            "time": "2016-03-04 05:42:29"
+            "time": "2016-03-04T05:42:29+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -6906,16 +6795,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "2faa791b66bac33ca40031d8bce03b7dc8143490"
+                "reference": "c8664b92a6d5bc229e48b0923486c097e45a7877"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/2faa791b66bac33ca40031d8bce03b7dc8143490",
-                "reference": "2faa791b66bac33ca40031d8bce03b7dc8143490",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/c8664b92a6d5bc229e48b0923486c097e45a7877",
+                "reference": "c8664b92a6d5bc229e48b0923486c097e45a7877",
                 "shasum": ""
             },
             "require": {
@@ -6954,7 +6843,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2017-09-13T14:47:08+00:00"
+            "time": "2017-10-12T15:24:51+00:00"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -7680,6 +7569,79 @@
             }
         },
         {
+            "name": "drupal/aggregated_leaflet_map",
+            "version": "dev-2.x",
+            "require": {
+                "drupal/core": "*",
+                "drupal/parade": "self.version"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-beta1+11-dev",
+                    "datestamp": "1499777342"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Kosa Ilma",
+                    "homepage": "https://www.drupal.org/user/3435475"
+                },
+                {
+                    "name": "balagan",
+                    "homepage": "https://www.drupal.org/user/1230072"
+                },
+                {
+                    "name": "danieldecsi",
+                    "homepage": "https://www.drupal.org/user/3498661"
+                },
+                {
+                    "name": "golddragon007",
+                    "homepage": "https://www.drupal.org/user/2723471"
+                },
+                {
+                    "name": "gpap",
+                    "homepage": "https://www.drupal.org/user/2878517"
+                },
+                {
+                    "name": "malatenszki",
+                    "homepage": "https://www.drupal.org/user/3452551"
+                },
+                {
+                    "name": "mhavelant",
+                    "homepage": "https://www.drupal.org/user/3331139"
+                },
+                {
+                    "name": "pedrop",
+                    "homepage": "https://www.drupal.org/user/1043368"
+                },
+                {
+                    "name": "rteijeiro",
+                    "homepage": "https://www.drupal.org/user/780508"
+                },
+                {
+                    "name": "szamee",
+                    "homepage": "https://www.drupal.org/user/3070377"
+                },
+                {
+                    "name": "szato",
+                    "homepage": "https://www.drupal.org/user/389677"
+                }
+            ],
+            "description": "Leaflet module formatter extension.",
+            "homepage": "https://www.drupal.org/project/parade",
+            "support": {
+                "source": "http://cgit.drupalcode.org/parade"
+            }
+        },
+        {
             "name": "drupal/console",
             "version": "1.0.2",
             "source": {
@@ -8161,7 +8123,139 @@
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
             },
-            "time": "2017-09-22 17:39:55"
+            "time": "2017-09-22T17:39:55+00:00"
+        },
+        {
+            "name": "drupal/geocoder_field",
+            "version": "2.0.0-alpha5",
+            "require": {
+                "drupal/core": "*",
+                "drupal/geocoder": "self.version"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-alpha5",
+                    "datestamp": "1481538483"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Brandonian",
+                    "homepage": "https://www.drupal.org/user/77766"
+                },
+                {
+                    "name": "Dean Reilly",
+                    "homepage": "https://www.drupal.org/user/336031"
+                },
+                {
+                    "name": "GJdan",
+                    "homepage": "https://www.drupal.org/user/847848"
+                },
+                {
+                    "name": "Pol",
+                    "homepage": "https://www.drupal.org/user/47194"
+                },
+                {
+                    "name": "Simon Georges",
+                    "homepage": "https://www.drupal.org/user/172312"
+                },
+                {
+                    "name": "indytechcook",
+                    "homepage": "https://www.drupal.org/user/245817"
+                },
+                {
+                    "name": "michaelfavia",
+                    "homepage": "https://www.drupal.org/user/49137"
+                },
+                {
+                    "name": "phayes",
+                    "homepage": "https://www.drupal.org/user/47098"
+                },
+                {
+                    "name": "vidhatanand",
+                    "homepage": "https://www.drupal.org/user/585764"
+                }
+            ],
+            "description": "Geocodes the content of a field and stores the result in other field and vice-versa.",
+            "homepage": "https://www.drupal.org/project/geocoder",
+            "support": {
+                "source": "http://cgit.drupalcode.org/geocoder"
+            }
+        },
+        {
+            "name": "drupal/geocoder_geofield",
+            "version": "2.0.0-alpha5",
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/geocoder": "self.version",
+                "drupal/geocoder_field": "*",
+                "drupal/geofield": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-alpha5",
+                    "datestamp": "1481538483"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Brandonian",
+                    "homepage": "https://www.drupal.org/user/77766"
+                },
+                {
+                    "name": "Dean Reilly",
+                    "homepage": "https://www.drupal.org/user/336031"
+                },
+                {
+                    "name": "GJdan",
+                    "homepage": "https://www.drupal.org/user/847848"
+                },
+                {
+                    "name": "Pol",
+                    "homepage": "https://www.drupal.org/user/47194"
+                },
+                {
+                    "name": "Simon Georges",
+                    "homepage": "https://www.drupal.org/user/172312"
+                },
+                {
+                    "name": "indytechcook",
+                    "homepage": "https://www.drupal.org/user/245817"
+                },
+                {
+                    "name": "michaelfavia",
+                    "homepage": "https://www.drupal.org/user/49137"
+                },
+                {
+                    "name": "phayes",
+                    "homepage": "https://www.drupal.org/user/47098"
+                },
+                {
+                    "name": "vidhatanand",
+                    "homepage": "https://www.drupal.org/user/585764"
+                }
+            ],
+            "description": "Providers Geocoder integration with contrib Geofield module.",
+            "homepage": "https://www.drupal.org/project/geocoder",
+            "support": {
+                "source": "http://cgit.drupalcode.org/geocoder"
+            }
         },
         {
             "name": "drupal/toolbar_anti_flicker",
@@ -9906,6 +10000,7 @@
         "drupal/parade": 20,
         "drupal-composer/drupal-security-advisories": 20,
         "drupal/imageapi_optimize": 15,
+        "drupal/google_tag": 20,
         "drupal/examples": 20
     },
     "prefer-stable": true,

@@ -9,7 +9,6 @@ dependencies:
     - field.field.paragraph.twitter_feed.parade_twitter_feed
     - paragraphs.paragraphs_type.twitter_feed
   module:
-    - content_moderation
     - text
     - twitter_feed_parade_type
 _core:

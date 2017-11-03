@@ -13,7 +13,6 @@ dependencies:
     - node.type.campaign
   module:
     - campaign_pages
-    - content_moderation
     - file
     - inline_entity_form
     - metatag

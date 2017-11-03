@@ -5,10 +5,10 @@
  * Post update functions for Campaign Pages.
  */
 
+use Drupal\campaign_pages\Helper\ScheduledUpdateUpdateHandler;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Database\StatementInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\node\Entity\Node;
 
 /**
  * Re-save classy paragraphs.
@@ -429,11 +429,42 @@ function _campaign_pages_color_update_helper(
   }
 }
 
+/**
+ * Migrate scheduled updates for TCS-393.
+ */
+function campaign_pages_post_update_8201() {
+  $updateHandler = new ScheduledUpdateUpdateHandler();
+  $updateHandler->update();
+}
+
+/**
+ * TCS-393 | Remove content moderation data.
+ */
+function campaign_pages_post_update_8202() {
+  $stateStorage = \Drupal::entityTypeManager()->getStorage('content_moderation_state');
+  $states = $stateStorage->loadMultiple();
+  $stateStorage->delete($states);
+}
+
+/**
+ * TCS-393 | Uninstall content_moderation.
+ */
+function campaign_pages_post_update_8203() {
+  field_purge_batch(100);
+  field_purge_batch(100);
+  field_purge_batch(100);
+  drupal_flush_all_caches();
+
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $installer */
+  $installer = \Drupal::service('module_installer');
+  $installer->uninstall(['content_moderation']);
+  drupal_flush_all_caches();
+}
 
 /**
  * Copy old campaign field data to parade_ fields.
  */
-function campaign_pages_post_update_8006() {
+function campaign_pages_update_8204() {
   echo "\nRunning: campaign_pages_post_update_campaign_node_field_value_migration\n";
 
   // Copy all field, field revision data.

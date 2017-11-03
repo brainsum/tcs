@@ -28,9 +28,7 @@ function twitter_feed_parade_type_help($route_name, RouteMatchInterface $route_m
 function twitter_feed_parade_type_theme() {
   return [
     'paragraph__twitter_feed' => [
-      'template' => 'paragraph',
       'base hook' => 'paragraph',
-      'path' => drupal_get_path('module', 'parade') . '/templates',
     ],
     'twitter_feed_field' => [
       'variables' => [

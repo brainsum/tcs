@@ -16,7 +16,6 @@ module:
   config: 0
   config_readonly: 0
   content_entity_language_switcher: 0
-  content_moderation: 0
   content_translation: 0
   contextual: 0
   datetime: 0
@@ -38,6 +37,7 @@ module:
   geocoder_geofield: 0
   geofield: 0
   google_analytics: 0
+  google_tag: 0
   image: 0
   imageapi_optimize: 0
   imagemagick: 0
@@ -92,7 +92,6 @@ module:
   view_mode_selector: 0
   views_ui: 0
   campaign_pages: 1
-  image_optimalization: 1
   menu_link_content: 1
   views: 10
   paragraphs: 11

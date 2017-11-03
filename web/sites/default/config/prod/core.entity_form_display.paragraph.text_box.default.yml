@@ -11,7 +11,6 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.text_box
   module:
-    - content_moderation
     - image
     - maxlength
     - parade
@@ -33,9 +32,9 @@ content:
     type: link_cta
   parade_color_scheme:
     type: options_select
+    settings: {  }
     weight: 0
     region: content
-    settings: {  }
     third_party_settings: {  }
   parade_image:
     weight: 3

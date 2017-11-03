@@ -88,3 +88,8 @@ permissions:
   82: 'delete paragraph content chart_boxes'
   83: 'update paragraph content chart_boxes'
   84: 'access preview links form'
+  85: 'create node_archive_with_status scheduled updates'
+  86: 'delete any node_archive_with_status scheduled updates'
+  87: 'delete own node_archive_with_status scheduled updates'
+  88: 'edit any node_archive_with_status scheduled updates'
+  89: 'edit own node_archive_with_status scheduled updates'

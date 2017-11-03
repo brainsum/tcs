@@ -12,7 +12,6 @@ dependencies:
     - field.field.paragraph.simple.parade_view_mode
     - paragraphs.paragraphs_type.simple
   module:
-    - content_moderation
     - parade
     - text
     - view_mode_selector
@@ -41,15 +40,15 @@ content:
     type: link_cta
   parade_color_scheme:
     type: options_select
+    settings: {  }
     weight: 0
     region: content
-    settings: {  }
     third_party_settings: {  }
   parade_layout:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
     type: options_select
+    settings: {  }
+    weight: 1
+    third_party_settings: {  }
     region: content
   parade_text:
     weight: 5

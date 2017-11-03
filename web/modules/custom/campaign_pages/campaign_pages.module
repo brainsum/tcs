@@ -41,7 +41,6 @@ function campaign_pages_theme($existing, $type, $theme, $path) {
   return [
     'field__paragraph__parade_paragraphs__text_boxes' => [
       'base hook' => 'paragraph',
-      'path' => $path . '/templates',
     ],
   ];
 }
@@ -72,12 +71,12 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
 
   // Remove scheduled updates date description.
   if ($field_name === 'update_timestamp' && isset($context['form']['#entity_type']) && $context['form']['#entity_type'] === 'scheduled_update') {
-    $element['value']['#description'] = t('Format: %format.', array('%format' => Datetime::formatExample('Y.m.d. - H:i:s')));
+    $element['value']['#description'] = t('Format: %format.', ['%format' => Datetime::formatExample('Y.m.d. - H:i:s')]);
   }
 
   // Hide empty scheduled updates field if user doesn't have create permission.
-  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state scheduled updates'))
-  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node__moderation_state_1 scheduled updates'))) {
+  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node_publish_with_status scheduled updates'))
+  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node_archive_with_status scheduled updates'))) {
     $element['#access'] = FALSE;
   }
 }
@@ -108,12 +107,16 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
       if (isset($form['field_paragraphs']['widget']['add_more'])) {
         foreach ($form['field_paragraphs']['widget']['add_more'] as $key => &$item) {
           if (strpos($key, 'add_more_button_') === 0) {
-            $arguments = $item['#value']->getArguments();
             // Adding a context, so it's translatable separatly.
             $options = ['context' => 'add_paragraph_type'];
-            $item['#value'] = t('@type', $arguments, $options);
+            $item['#value'] = t(
+              '@type',
+              ['@type' => $item['#value']],
+              $options
+            );
           }
         }
+        unset($item);
       }
     }
 
@@ -175,7 +178,7 @@ function campaign_pages_element_info_alter(array &$types) {
 /**
  * Add paragraphs bundle machine name to subform wrapper as class.
  */
-function campaign_pages_element_after_build($element, FormStateInterface &$form_state) {
+function campaign_pages_element_after_build($element, FormStateInterface $form_state) {
   if (isset($element['subform'], $element['top']['paragraph_type_title'])) {
     // Add paragraphs bundle machine name to wrapper as class.
     $elementEntity = $form_state->getStorage()['field_storage']['#parents']['#fields']['field_paragraphs']['paragraphs'][$element['#weight']]['entity'];
