@@ -70,7 +70,7 @@ function twitter_feed_parade_type_page_attachments(array &$attachments) {
  * Implements hook_form_alter().
  */
 function twitter_feed_parade_type_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (isset($form['field_paragraphs'])) {
+  if (isset($form['parade_onepage_sections'])) {
     $form['#attached']['library'][] = 'twitter_feed_parade_type/twitter-feed-parade-type';
   }
 }

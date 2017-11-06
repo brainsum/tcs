@@ -53,13 +53,13 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
   $field_name = $context['items']->getFieldDefinition()->getName();
 
   // Change dropbuttons to normal list in Paragraphs inline forms.
-  if ($field_name === 'field_paragraphs') {
+  if ($field_name === 'parade_onepage_sections') {
     unset($element['top']['links']['#theme_wrappers']);
     $element['top']['links']['prefix']['#markup'] = '<ul class="paragraph-actions">';
   }
 
   // Changes to Menu field.
-  if ($field_name === 'field_menu') {
+  if ($field_name === 'parade_onepage_menu') {
     $element['uri']['#description'] = NULL;
     $element['uri']['#title_display'] = 'none';
     $element['title']['#title_display'] = 'none';
@@ -87,15 +87,15 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
 function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'])) {
     // Menu: Change wording of Add more button.
-    $form['field_menu']['widget']['add_more']['#value'] = t('New menu link');
+    $form['parade_onepage_menu']['widget']['add_more']['#value'] = t('New menu link');
 
     // Removes the "Add" word from the button values.
     // @todo Get actual display mode instead of default.
-    $settings = entity_get_form_display('node', 'campaign', 'default')->getComponent('field_paragraphs')['settings'];
+    $settings = entity_get_form_display('node', 'campaign', 'default')->getComponent('parade_onepage_sections')['settings'];
     if ($settings['add_mode'] === 'button') {
       // Add title to the section.
-      $field_label = $form['field_paragraphs']['widget']['title']['#value'] ?? $form['field_paragraphs']['widget']['#title'];
-      $form['field_paragraphs']['widget']['add_more']['title'] = [
+      $field_label = $form['parade_onepage_sections']['widget']['title']['#value'] ?? $form['parade_onepage_sections']['widget']['#title'];
+      $form['parade_onepage_sections']['widget']['add_more']['title'] = [
         '#type' => 'table',
         '#header' => [t('Add @type', ['@type' => $field_label])],
         '#attributes' => [
@@ -104,8 +104,8 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
         '#weight' => -1,
       ];
 
-      if (isset($form['field_paragraphs']['widget']['add_more'])) {
-        foreach ($form['field_paragraphs']['widget']['add_more'] as $key => &$item) {
+      if (isset($form['parade_onepage_sections']['widget']['add_more'])) {
+        foreach ($form['parade_onepage_sections']['widget']['add_more'] as $key => &$item) {
           if (strpos($key, 'add_more_button_') === 0) {
             // Adding a context, so it's translatable separatly.
             $options = ['context' => 'add_paragraph_type'];
@@ -128,12 +128,12 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
     }
 
     // @todo - duplication because of field machine name.
-    if (isset($form['field_paragraphs'])) {
+    if (isset($form['parade_onepage_sections'])) {
       _parade_conditional_field_add_parade_field_conditions($form, $form_state);
 
       // @see TCS-361 | Hide color field for text&image
       // when layout is not text1st_enhanced.
-      foreach ($form['field_paragraphs']['widget'] as $delta => &$item) {
+      foreach ($form['parade_onepage_sections']['widget'] as $delta => &$item) {
         if (
           is_numeric($delta)
           && is_array($item)
@@ -181,7 +181,7 @@ function campaign_pages_element_info_alter(array &$types) {
 function campaign_pages_element_after_build($element, FormStateInterface $form_state) {
   if (isset($element['subform'], $element['top']['paragraph_type_title'])) {
     // Add paragraphs bundle machine name to wrapper as class.
-    $elementEntity = $form_state->getStorage()['field_storage']['#parents']['#fields']['field_paragraphs']['paragraphs'][$element['#weight']]['entity'];
+    $elementEntity = $form_state->getStorage()['field_storage']['#parents']['#fields']['parade_onepage_sections']['paragraphs'][$element['#weight']]['entity'];
     if (!empty($elementEntity) && method_exists($elementEntity, 'getType')) {
       $bundle = $elementEntity->getType();
       $element['#prefix'] = str_replace('<div ', '<div class="paragraphs-wrapper-bundle-' . $bundle . '" ', $element['#prefix']);

@@ -39,7 +39,7 @@
  * @see html.html.twig
  */
 #}
-{% set machine_name = node.field_machine_name.value %}
+{% set machine_name = node.parade_onepage_id.value %}
 
 {{ page.pre_content }}
 <div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page revisions">

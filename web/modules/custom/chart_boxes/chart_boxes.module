@@ -90,10 +90,10 @@ function chart_boxes_preprocess_paragraph(&$variables) {
  * Implements hook_form_alter().
  */
 function chart_boxes_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (isset($form['field_paragraphs'])) {
+  if (isset($form['parade_onepage_sections'])) {
     $form['#attached']['library'][] = 'chart_boxes/paragraphs.chart_boxes_admin';
 
-    foreach ($form['field_paragraphs']['widget'] as $delta => &$value) {
+    foreach ($form['parade_onepage_sections']['widget'] as $delta => &$value) {
       if (
         is_numeric($delta)
         && is_array($value)

@@ -41,10 +41,10 @@
 #}
 {{ attach_library('tieto_admin/scrollspy') }}
 {{ attach_library('tieto_admin/smooth-scroll') }}
-{% set machine_name = node.field_machine_name.value %}
+{% set machine_name = node.parade_onepage_id.value %}
 
 <section class="precontent-region to-be-pushed">
-  {{ page.pre_content }}
+    {{ page.pre_content }}
 </section>
 <div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page">
     {% include directory ~ '/templates/inc/logo.html.twig' %}
