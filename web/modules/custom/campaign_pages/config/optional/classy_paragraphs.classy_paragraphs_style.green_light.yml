@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: green_light
-label: 'Green Light'
-classes: scheme-green-light

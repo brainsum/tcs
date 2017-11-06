@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: green
-label: Green
-classes: scheme-green

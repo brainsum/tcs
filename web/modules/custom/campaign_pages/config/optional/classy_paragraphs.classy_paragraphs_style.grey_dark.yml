@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: grey_dark
-label: 'Grey Dark'
-classes: scheme-grey-dark

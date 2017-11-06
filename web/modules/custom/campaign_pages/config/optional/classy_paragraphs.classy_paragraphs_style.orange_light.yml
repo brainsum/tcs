@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: orange_light
-label: 'Orange Light'
-classes: scheme-orange-light
