@@ -9,7 +9,6 @@ use Drupal\campaign_pages\Helper\ScheduledUpdateUpdateHandler;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Database\StatementInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Utility\UpdateException;
 
 /**
  * Re-save classy paragraphs.
@@ -460,4 +459,87 @@ function campaign_pages_post_update_8203() {
   $installer = \Drupal::service('module_installer');
   $installer->uninstall(['content_moderation']);
   drupal_flush_all_caches();
+}
+
+/**
+ * Copy old campaign field data to parade_ fields.
+ */
+function campaign_pages_post_update_8204() {
+  echo "\nRunning: campaign_pages_post_update_campaign_node_field_value_migration\n";
+
+  // Copy all field, field revision data.
+  foreach (['node_', 'node_revision_'] as $table_prefix) {
+    $data = [];
+    $old_field = 'field_machine_name';
+    $new_field = 'parade_onepage_id';
+    $table = $table_prefix . '_' . $old_field;
+    $result = Database::getConnection()
+      ->query('SELECT * FROM ' . $table);
+    foreach ($result as $item) {
+      $item->parade_onepage_id_value = $item->field_machine_name_value;
+      unset($item->field_machine_name_value);
+      $data[] = (array) $item;
+    }
+    Database::getConnection()->truncate($table)->execute();
+    if (!empty($data)) {
+      $table = $table_prefix . '_' . $new_field;
+      $fields = array_keys($data[0]);
+      $query = db_insert($table)->fields($fields);
+      foreach ($data as $record) {
+        $query->values($record);
+      }
+      $query->execute();
+    }
+
+    $data = [];
+    $old_field = 'field_menu';
+    $new_field = 'parade_onepage_menu';
+    $table = $table_prefix . '_' . $old_field;
+    $result = Database::getConnection()
+      ->query('SELECT * FROM ' . $table);
+    foreach ($result as $item) {
+      $item->parade_onepage_menu_uri = $item->field_menu_uri;
+      $item->parade_onepage_menu_title = $item->field_menu_title;
+      $item->parade_onepage_menu_options = $item->field_menu_options;
+      unset($item->field_menu_uri);
+      unset($item->field_menu_title);
+      unset($item->field_menu_options);
+      $data[] = (array) $item;
+    }
+    Database::getConnection()->truncate($table)->execute();
+    if (!empty($data)) {
+      $table = $table_prefix . '_' . $new_field;
+      $fields = array_keys($data[0]);
+      $query = db_insert($table)->fields($fields);
+      foreach ($data as $record) {
+        $query->values($record);
+      }
+      $query->execute();
+    }
+
+    $data = [];
+    $old_field = 'field_paragraphs';
+    $new_field = 'parade_onepage_sections';
+    $table = $table_prefix . '_' . $old_field;
+    $result = Database::getConnection()
+      ->query('SELECT * FROM ' . $table);
+    foreach ($result as $item) {
+      $item->parade_onepage_sections_target_id = $item->field_paragraphs_target_id;
+      $item->parade_onepage_sections_target_revision_id = $item->field_paragraphs_target_revision_id;
+      unset($item->field_paragraphs_target_id);
+      unset($item->field_paragraphs_target_revision_id);
+      $data[] = (array) $item;
+    }
+    Database::getConnection()->truncate($table)->execute();
+    if (!empty($data)) {
+      $table = $table_prefix . '_' . $new_field;
+      $fields = array_keys($data[0]);
+      $query = db_insert($table)->fields($fields);
+      foreach ($data as $record) {
+        $query->values($record);
+      }
+      $query->execute();
+    }
+  }
+
 }

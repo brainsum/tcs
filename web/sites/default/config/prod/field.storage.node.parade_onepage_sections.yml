@@ -1,16 +1,11 @@
-uuid: 35c294e6-a071-4a35-b1d2-ff38d397ec9a
+uuid: 87edd877-7d50-4136-87f3-14b330175267
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - parade_demo
   module:
     - entity_reference_revisions
     - node
     - paragraphs
-_core:
-  default_config_hash: SRurv51YFUCoRde3bDYo8AUIacZc-925UMEWInMTIMg
 id: node.parade_onepage_sections
 field_name: parade_onepage_sections
 entity_type: node

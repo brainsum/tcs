@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_machine_name
+    - field.storage.node.parade_onepage_id
     - node.type.campaign
   module:
     - machine_name
-id: node.campaign.field_machine_name
-field_name: field_machine_name
+id: node.campaign.parade_onepage_id
+field_name: parade_onepage_id
 entity_type: node
 bundle: campaign
 label: 'Machine name'

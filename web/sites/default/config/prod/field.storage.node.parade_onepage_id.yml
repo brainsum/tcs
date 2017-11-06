@@ -1,15 +1,10 @@
-uuid: 1a96fa87-4e86-4e91-a924-ce3a78bf47dd
+uuid: 1c5b5116-4bf7-4e6f-aaad-4e724880e838
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - parade_demo
   module:
     - machine_name
     - node
-_core:
-  default_config_hash: 7uECqnqJttQMaoXHwBj_UGkSiizsEoQ6dZHlBlAPawk
 id: node.parade_onepage_id
 field_name: parade_onepage_id
 entity_type: node

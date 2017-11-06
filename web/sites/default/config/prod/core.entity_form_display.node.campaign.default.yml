@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.campaign.field_file
-    - field.field.node.campaign.field_machine_name
-    - field.field.node.campaign.field_menu
     - field.field.node.campaign.field_meta_tags
-    - field.field.node.campaign.field_paragraphs
+    - field.field.node.campaign.parade_onepage_id
+    - field.field.node.campaign.parade_onepage_menu
+    - field.field.node.campaign.parade_onepage_sections
     - field.field.node.campaign.scheduled_archive_date
     - field.field.node.campaign.scheduled_publish_date
     - node.type.campaign
@@ -42,21 +42,29 @@ content:
     third_party_settings: {  }
     type: file_generic
     region: content
-  field_menu:
-    weight: 3
-    settings:
-      placeholder_url: 'Anchor or URL'
-      placeholder_title: 'Link text'
-    third_party_settings: {  }
-    type: link_with_selected_attribute
-    region: content
   field_meta_tags:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
-  field_paragraphs:
+  langcode:
+    type: language_select
+    weight: 1
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+    region: content
+  parade_onepage_menu:
+    type: link_with_selected_attribute
+    weight: 3
+    settings:
+      placeholder_url: 'Anchor or URL'
+      placeholder_title: 'Link text'
+    third_party_settings: {  }
+    region: content
+  parade_onepage_sections:
+    type: entity_reference_paragraphs_preview
     weight: 4
     settings:
       title: Section
@@ -65,14 +73,6 @@ content:
       add_mode: button
       form_display_mode: default
       default_paragraph_type: _none
-    third_party_settings: {  }
-    type: entity_reference_paragraphs_preview
-    region: content
-  langcode:
-    type: language_select
-    weight: 1
-    settings:
-      include_locked: true
     third_party_settings: {  }
     region: content
   path:
@@ -124,9 +124,9 @@ content:
     region: content
   translation:
     weight: 9
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 7
@@ -137,6 +137,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_machine_name: true
+  parade_onepage_id: true
   promote: true
   sticky: true
