@@ -461,3 +461,12 @@ function campaign_pages_post_update_8203() {
   $installer->uninstall(['content_moderation']);
   drupal_flush_all_caches();
 }
+
+/**
+ * Remove basic pages.
+ */
+function campaign_pages_post_update_8401() {
+  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+  $pages = $nodeStorage->loadByProperties(['type' => 'page']);
+  $nodeStorage->delete($pages);
+}
