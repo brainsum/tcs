@@ -541,5 +541,13 @@ function campaign_pages_post_update_8204() {
       $query->execute();
     }
   }
+}
 
+/**
+ * Remove basic pages.
+ */
+function campaign_pages_post_update_8401() {
+  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+  $pages = $nodeStorage->loadByProperties(['type' => 'page']);
+  $nodeStorage->delete($pages);
 }
