@@ -1533,7 +1533,7 @@
                 }
             ],
             "description": "Language Switcher functionality which should be a core patch.",
-            "time": "2017-01-04T10:04:13+00:00"
+            "time": "2017-01-04 10:04:13"
         },
         {
             "name": "drupal/core",
@@ -2444,7 +2444,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/google_tag"
             },
-            "time": "2017-06-16T21:53:17+00:00"
+            "time": "2017-06-16 21:53:17"
         },
         {
             "name": "drupal/imageapi_optimize",
@@ -2820,7 +2820,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/machine_name"
             },
-            "time": "2016-12-02T15:46:28+00:00"
+            "time": "2016-12-02 15:46:28"
         },
         {
             "name": "drupal/maxlength",
@@ -3032,7 +3032,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/node_clone"
             },
-            "time": "2016-10-21T00:15:27+00:00"
+            "time": "2016-10-21 00:15:27"
         },
         {
             "name": "drupal/parade",
@@ -3040,7 +3040,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "3e62349fcf1fcefb0030acb638db7f1aceb6a365"
+                "reference": "e36cee918e805f53d9df9e08bc15706de147a8a6"
             },
             "require": {
                 "drupal/classy_paragraphs": "~1.0",
@@ -3060,8 +3060,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta2+120-dev",
-                    "datestamp": "1509624184",
+                    "version": "8.x-2.0-beta2+121-dev",
+                    "datestamp": "1509965286",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3123,7 +3123,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-11-06T10:45:28+00:00"
+            "time": "2017-11-06 15:26:45"
         },
         {
             "name": "drupal/paragraphs",
@@ -3797,7 +3797,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/view_mode_selector"
             },
-            "time": "2017-04-26T09:20:00+00:00"
+            "time": "2017-04-26 09:20:00"
         },
         {
             "name": "drush/drush",
@@ -4818,7 +4818,7 @@
             ],
             "description": "GeoPHP is a open-source native PHP library for doing geometry operations. It is written entirely in PHP and can therefore run on shared hosts. It can read and write a wide variety of formats: WKT (including EWKT), WKB (including EWKB), GeoJSON, KML, GPX, GeoRSS). It works with all Simple-Feature geometries (Point, LineString, Polygon, GeometryCollection etc.) and can be used to get centroids, bounding-boxes, area, and a wide variety of other useful information.",
             "homepage": "https://github.com/phayes/geoPHP",
-            "time": "2016-03-04T05:42:29+00:00"
+            "time": "2016-03-04 05:42:29"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -7889,7 +7889,7 @@
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
             },
-            "time": "2017-11-04T20:38:33+00:00"
+            "time": "2017-11-04 20:38:33"
         },
         {
             "name": "drupal/toolbar_anti_flicker",
