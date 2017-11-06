@@ -464,7 +464,7 @@ function campaign_pages_post_update_8203() {
 /**
  * Copy old campaign field data to parade_ fields.
  */
-function campaign_pages_update_8204() {
+function campaign_pages_post_update_8204() {
   echo "\nRunning: campaign_pages_post_update_campaign_node_field_value_migration\n";
 
   // Copy all field, field revision data.
@@ -480,6 +480,7 @@ function campaign_pages_update_8204() {
       unset($item->field_machine_name_value);
       $data[] = (array) $item;
     }
+    Database::getConnection()->truncate($table)->execute();
     if (!empty($data)) {
       $table = $table_prefix . '_' . $new_field;
       $fields = array_keys($data[0]);
@@ -505,6 +506,7 @@ function campaign_pages_update_8204() {
       unset($item->field_menu_options);
       $data[] = (array) $item;
     }
+    Database::getConnection()->truncate($table)->execute();
     if (!empty($data)) {
       $table = $table_prefix . '_' . $new_field;
       $fields = array_keys($data[0]);
@@ -528,6 +530,7 @@ function campaign_pages_update_8204() {
       unset($item->field_paragraphs_target_revision_id);
       $data[] = (array) $item;
     }
+    Database::getConnection()->truncate($table)->execute();
     if (!empty($data)) {
       $table = $table_prefix . '_' . $new_field;
       $fields = array_keys($data[0]);
@@ -538,4 +541,5 @@ function campaign_pages_update_8204() {
       $query->execute();
     }
   }
+
 }
