@@ -399,3 +399,21 @@ function campaign_pages_imagemagick_arguments_alter(ImagemagickToolkit $toolkit,
     }
   }
 }
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function campaign_pages_page_attachments(array &$page) {
+  $attributes = Drupal::request()->attributes;
+  if ($attributes->has('node') &&  $attributes->get('_route') === 'entity.node.canonical') {
+    $bundles = array_keys(\Drupal::config('parade_demo.settings')->get('bundles'));
+    if (in_array($attributes->get('node')->getType(), $bundles)) {
+      // Remove attached parade_onepage library (css, js), add js only.
+      if (($key = array_search('parade_demo/parade_onepage', $page['#attached']['library'])) !== FALSE) {
+        unset($page['#attached']['library'][$key]);
+        $page['#attached']['library'][] = 'campaign_pages/parade_onepage_js';
+      }
+    }
+  }
+}
