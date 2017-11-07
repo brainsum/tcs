@@ -13,6 +13,7 @@ dependencies:
     - field.field.paragraph.parallax.parade_title
     - paragraphs.paragraphs_type.parallax
   module:
+    - field_group
     - field_layout
     - file
     - layout_discovery
@@ -21,6 +22,47 @@ third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
+  field_group:
+    group_top:
+      children:
+        - parade_color_scheme
+        - parade_anchor
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: 'layout__region layout__region--top'
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: false
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Top
+    group_content:
+      children:
+        - parade_title
+        - parade_text
+        - parade_background
+        - parade_enable_parallax
+        - parade_minimum_height
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: Content
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'layout__region layout__region--content'
+        required_fields: false
+      label: Content
 _core:
   default_config_hash: 0Y1arR4l02WJsrQb_H7cpzsa6Qavr3X1v6dly3e38bM
 id: paragraph.parallax.default
@@ -29,7 +71,7 @@ bundle: parallax
 mode: default
 content:
   parade_anchor:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -46,7 +88,7 @@ content:
   parade_color_scheme:
     type: options_select
     settings: {  }
-    weight: 0
+    weight: 1
     third_party_settings: {  }
     region: content
   parade_enable_parallax:
