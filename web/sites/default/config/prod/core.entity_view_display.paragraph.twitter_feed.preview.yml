@@ -11,10 +11,10 @@ dependencies:
     - paragraphs.paragraphs_type.twitter_feed
   module:
     - field_layout
-    - layout_discovery
+    - parade
 third_party_settings:
   field_layout:
-    id: layout_onecol
+    id: parade_admin_twocol_bricks
     settings: {  }
 _core:
   default_config_hash: qUVUdW5feP_Bt98fqjRZG5tPSjRx9qIci_Do6mssn3E
@@ -30,7 +30,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    region: content
+    region: second
   parade_title:
     weight: 0
     label: inline
@@ -38,7 +38,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: top
 hidden:
   parade_text: true
   parade_twitter_feed: true
