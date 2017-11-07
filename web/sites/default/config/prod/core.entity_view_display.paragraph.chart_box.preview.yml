@@ -11,10 +11,10 @@ dependencies:
     - paragraphs.paragraphs_type.chart_box
   module:
     - field_layout
-    - layout_discovery
+    - parade
 third_party_settings:
   field_layout:
-    id: layout_onecol
+    id: parade_admin_twocol_bricks
     settings: {  }
 _core:
   default_config_hash: vlyNaPsc6npHBm2AMkXt_CjIvI4MXmsK5wvREXSk02k
@@ -30,7 +30,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: top
 hidden:
   parade_text: true
   parade_value: true
