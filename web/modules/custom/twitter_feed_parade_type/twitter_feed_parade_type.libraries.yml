@@ -1,6 +1,6 @@
 # Twitter feed
 twitter-feed-parade-type:
-  version: VERSION
+  version: v2
   css:
     component:
       css/twitter_feed_parade_type.css: {}

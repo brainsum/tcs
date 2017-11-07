@@ -26,7 +26,7 @@ paragraphs.horizontal_bar_chart:
     js/horizontal-bar-chart.js: {}
 
 paragraphs.chart_boxes_admin:
-  version: VERSION
+  version: v2
   css:
     component:
       css/paragraphs.chart-boxes_admin.css: {}

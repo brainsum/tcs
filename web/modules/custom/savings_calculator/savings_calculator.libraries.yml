@@ -1,6 +1,6 @@
 # Savings calculator
 savings-calculator:
-  version: VERSION
+  version: v2
   css:
     component:
       css/savings-calculator.css: {}
