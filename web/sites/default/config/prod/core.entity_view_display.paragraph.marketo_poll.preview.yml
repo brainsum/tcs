@@ -14,10 +14,10 @@ dependencies:
       - marketo_poll
   module:
     - field_layout
-    - layout_discovery
+    - parade
 third_party_settings:
   field_layout:
-    id: layout_onecol
+    id: parade_admin_twocol_bricks
     settings: {  }
 _core:
   default_config_hash: 0GvfDEYpzL3dZxicLgqOHWm5veqnzoHUhiA7FR1KUDI
@@ -27,21 +27,21 @@ bundle: marketo_poll
 mode: preview
 content:
   parade_anchor:
-    weight: 1
+    weight: 2
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: second
   parade_color_scheme:
     type: entity_reference_label
-    weight: 2
+    weight: 1
     label: inline
     settings:
       link: false
     third_party_settings: {  }
-    region: content
+    region: first
   parade_title:
     weight: 0
     label: inline
@@ -49,7 +49,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: top
 hidden:
   created: true
   parade_marketo_poll: true
