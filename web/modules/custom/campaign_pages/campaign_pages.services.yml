@@ -1,4 +1,8 @@
 services:
+  campaign_pages.onepage_id_autoincrement:
+    class: Drupal\campaign_pages\Service\OnepageIdAutoincrement
+    arguments: ['@database']
+
   campaign_pages.redirect_subscriber:
     class: Drupal\campaign_pages\EventSubscriber\RedirectSubscriber
     tags:
