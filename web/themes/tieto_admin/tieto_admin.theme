@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
@@ -270,5 +271,25 @@ function tieto_admin_preprocess_field__paragraph__parade_image__text_box(&$varia
     ], TRUE)
   ) {
     $variables['items'][0]['content']['#image_style'] = 'square_350x350';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function tieto_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'user_login_form') {
+    $form['pass']['#suffix'] = Link::createFromRoute(
+      t('Reset your password'),
+      'user.pass',
+      [],
+      [
+        'attributes' => [
+          'class' => [
+            'reset-password-link',
+          ],
+        ],
+      ]
+    )->toString()->getGeneratedLink();
   }
 }
