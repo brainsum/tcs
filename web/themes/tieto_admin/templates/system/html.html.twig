@@ -37,6 +37,29 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
+{# @see: TCS-348 #}
+<script charset='UTF-8'>
+window['adrum-start-time'] = new Date().getTime();
+(function(config){
+    config.appKey = 'AD-AAB-AAE-XYB';
+    config.adrumExtUrlHttp = 'http://cdn.appdynamics.com';
+    config.adrumExtUrlHttps = 'https://cdn.appdynamics.com';
+    config.beaconUrlHttp = 'http://col.eum-appdynamics.com';
+    config.beaconUrlHttps = 'https://col.eum-appdynamics.com';
+    config.xd = {enable : true};
+})(window['adrum-config'] || (window['adrum-config'] = {}));
+if ('https:' === document.location.protocol) {
+    document.write(unescape('%3Cscript')
+ + " src='https://cdn.appdynamics.com/adrum/adrum-4.3.3.0.js' "
+ + " type='text/javascript' charset='UTF-8'" 
+ + unescape('%3E%3C/script%3E'));
+} else {
+    document.write(unescape('%3Cscript')
+ + " src='http://cdn.appdynamics.com/adrum/adrum-4.3.3.0.js' "
+ + " type='text/javascript' charset='UTF-8'" 
+ + unescape('%3E%3C/script%3E'));
+}
+</script>
     <!-- TCS-380 | Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -44,6 +67,24 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-W5CS5RB');</script>
     <!-- End Google Tag Manager -->
+    {# @see: TCS-256 #}
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+      })(window,document.documentElement,'async-hide','dataLayer',4000,
+        {'GTM-KNL97VZ':true});</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-7407225-28', 'auto');
+      ga('require', 'GTM-KNL97VZ');
+      ga('send', 'pageview');
+    </script>
+    {# end TCS-256 #}
+
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
 

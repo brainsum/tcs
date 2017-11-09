@@ -75,6 +75,9 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP_HOST} ^www.tieto.dk [NC]
   RewriteRule (.*)$ https://campaigns.tieto.com/da/360 [R=301,L]
 
+  RewriteCond %{HTTP_HOST} ^marketing.tieto.com [NC]
+  RewriteRule (.*)$ https://campaigns.tieto.com/node/301 [R=301,L]
+
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
   # if you enable "www." stripping or enforcement, in order to ensure that
   # you don't bounce between http and https.
