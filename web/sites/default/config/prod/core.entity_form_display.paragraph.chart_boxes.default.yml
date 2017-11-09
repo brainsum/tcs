@@ -105,7 +105,7 @@ content:
     settings:
       title: Chart
       title_plural: Charts
-      edit_mode: closed
+      edit_mode: preview
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: chart_box
