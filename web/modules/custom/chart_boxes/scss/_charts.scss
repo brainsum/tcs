@@ -213,7 +213,17 @@
     @include justify-content(space-around);
     @include flex-wrap(wrap);
     >.field__item {
-      margin: 0 20px;
+      padding: 0 20px;
+      @include flexbox;
+      @include justify-content(center);
+    }
+  }
+  &.columns-3 {
+    .field.field__items {
+      >.field__item {
+        width: 33.3333%;
+        margin-bottom: 20px;
+      }
     }
   }
 
