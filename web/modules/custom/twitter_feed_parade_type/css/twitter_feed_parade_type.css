@@ -1,3 +1,6 @@
+.paragraphs-type-twitter_feed {
+  background-image: url("../images/twitter-feed.png?v2");
+}
 .paragraphs-dropbutton-wrapper .button.parade-button-twitter-feed {
   background-image: url("../images/twitter-feed.png?v2");
   font-size: .85em;
