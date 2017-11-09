@@ -210,7 +210,7 @@
 
   .field.field__items {
     @include flexbox;
-    @include justify-content(space-around);
+    @include justify-content(center);
     @include flex-wrap(wrap);
     >.field__item {
       padding: 0 20px;
@@ -218,11 +218,59 @@
       @include justify-content(center);
     }
   }
+  &.columns-1,
+  &.columns-2,
+  &.columns-3,
+  &.columns-4 {
+    .field.field__items {
+      >.field__item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &.columns-1 {
+    .field.field__items {
+      >.field__item {
+        width: 100%;
+      }
+    }
+  }
+  &.columns-2 {
+    .field.field__items {
+      >.field__item {
+        width: 50%;
+        @media (max-width: 480px) {
+          width: 100%;
+        }
+      }
+    }
+  }
   &.columns-3 {
     .field.field__items {
       >.field__item {
         width: 33.3333%;
-        margin-bottom: 20px;
+        @media (max-width: 768px) {
+          width: 50%;
+        }
+        @media (max-width: 480px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &.columns-4 {
+    .field.field__items {
+      >.field__item {
+        width: 25%;
+        @media (max-width: 1024px) {
+          width: 33.3333%;
+        }
+        @media (max-width: 768px) {
+          width: 50%;
+        }
+        @media (max-width: 480px) {
+          width: 100%;
+        }
       }
     }
   }
