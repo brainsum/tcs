@@ -127,7 +127,7 @@ content:
             alt_attribute_path: data->relationships->field_image->data->meta->alt
             title_attribute_path: data->attributes->name
             sort_option_list: "-created|Newest first\nname|By name"
-            search_filter: 'name,field.category'
+            search_filter: 'name,field_category.name'
             items_per_page: '12'
             modal_width: '1000'
             modal_height: '750'
