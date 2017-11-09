@@ -1,7 +1,7 @@
 # Global libraries
 # Loaded on every page.
 global:
-  version: VERSION
+  version: 1.0
   js:
     js/global.js: {}
   css:
