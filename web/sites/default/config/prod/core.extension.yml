@@ -32,6 +32,7 @@ module:
   field_layout: 0
   field_ui: 0
   file: 0
+  filefield_sources_jsonapi: 0
   filter: 0
   geocoder: 0
   geocoder_autocomplete: 0
@@ -96,6 +97,7 @@ module:
   view_mode_selector: 0
   views_ui: 0
   campaign_pages: 1
+  filefield_sources: 1
   menu_link_content: 1
   views: 10
   paragraphs: 11

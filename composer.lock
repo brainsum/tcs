@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2f935f06a406f71ba7e658a2a28cfb0",
+    "content-hash": "18b419640e224fdf2d162c1d9e46e582",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2110,6 +2110,99 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/field_group"
             }
+        },
+        {
+            "name": "drupal/filefield_sources",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/filefield_sources",
+                "reference": "b19c6a839804f47587828d4a50e29e0720fa4c08"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1487711283",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "profak",
+                    "homepage": "https://www.drupal.org/user/782534"
+                },
+                {
+                    "name": "quicksketch",
+                    "homepage": "https://www.drupal.org/user/35821"
+                }
+            ],
+            "description": "Extends File fields to allow referencing of existing files, remote files, and server files.",
+            "homepage": "https://www.drupal.org/project/filefield_sources",
+            "support": {
+                "source": "http://cgit.drupalcode.org/filefield_sources"
+            },
+            "time": "2017-02-21 21:07:00"
+        },
+        {
+            "name": "drupal/filefield_sources_jsonapi",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/filefield_sources_jsonapi",
+                "reference": "8078135c01b0459ab3ab20fece062f0f6379b38a"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/filefield_sources": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1509105784",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "pedrop",
+                    "homepage": "https://www.drupal.org/user/1043368"
+                },
+                {
+                    "name": "szato",
+                    "homepage": "https://www.drupal.org/user/389677"
+                }
+            ],
+            "description": "JSON API remote file field source.",
+            "homepage": "https://www.drupal.org/project/filefield_sources_jsonapi",
+            "support": {
+                "source": "http://cgit.drupalcode.org/filefield_sources_jsonapi"
+            },
+            "time": "2017-10-30 13:00:00"
         },
         {
             "name": "drupal/geocoder",
@@ -9642,6 +9735,7 @@
         "drupal-composer/drupal-security-advisories": 20,
         "drupal/imageapi_optimize": 15,
         "drupal/google_tag": 20,
+        "drupal/filefield_sources_jsonapi": 20,
         "drupal/examples": 20
     },
     "prefer-stable": true,
