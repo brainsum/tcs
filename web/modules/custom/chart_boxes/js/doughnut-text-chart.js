@@ -6,7 +6,7 @@
 
       for (var i=0; i <= (chartLength-1); i++ ) {
         var chartId = chartBox[i].id;
-        var chartFill = parseInt($(('#' + chartId)).siblings('.field--name-parade-value')[0].textContent);
+        var chartFill = parseInt($(('#' + chartId)).siblings('.layout').find('.field--name-parade-value')[0].textContent);
         var chartData = [chartFill, (100 - chartFill)];
 
         var chart = new Chartist.Pie(('#' + chartId), {
