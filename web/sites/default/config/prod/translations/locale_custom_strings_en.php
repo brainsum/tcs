@@ -25,4 +25,5 @@
  */
 $settings['locale_custom_strings_en'][''] = array(
   'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
 );
