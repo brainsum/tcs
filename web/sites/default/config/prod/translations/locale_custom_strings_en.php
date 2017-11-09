@@ -6,8 +6,8 @@
  *
  * Include code needed in settings.php:
  * // String overrides in separate file (for git)
- * if (file_exists($config_directories['sync'] . '/local_translations/locale_custom_strings_en.php')) {
- *  include $config_directories['sync'] . '/local_translations/locale_custom_strings_en.php';
+ * if (file_exists($config_directories['sync'] . '/translations/locale_custom_strings_en.php')) {
+ *  include $config_directories['sync'] . '/translations/locale_custom_strings_en.php';
  * }
  */
 
