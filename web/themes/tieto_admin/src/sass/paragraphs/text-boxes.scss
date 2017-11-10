@@ -56,7 +56,7 @@
   &.layout--contacts {
     // @fixme this is mess but was quick
     @include md {
-      > .paragraph-inner > .field--name-parade-title {
+      > .paragraph-inner .field--name-parade-title {
         width: 33%;
         float: left;
       }
@@ -110,7 +110,7 @@
     }
 
     // Equal height columns
-    &[class*="columns-"] > .paragraph-inner > .field--name-parade-paragraphs {
+    &[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs {
       display: flex;
       flex-wrap: wrap;
       // added for TIET-276, instead of "Some padding trickery" section below
@@ -118,6 +118,15 @@
 
       > .col > .paragraph-inner {
         height: 100%;
+        .layout,
+        .layout__region {
+          height: 100%;
+        }
+        .layout__region {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+        }
       }
     }
   }
