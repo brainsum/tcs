@@ -1,0 +1,3 @@
+publish nodes:
+  title: 'Publish nodes'
+  description: 'Allow setting nodes to published.'
