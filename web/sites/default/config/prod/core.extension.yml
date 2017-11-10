@@ -63,6 +63,7 @@ module:
   node: 0
   node_clone: 0
   options: 0
+  override_node_options: 0
   page_cache: 0
   parade: 0
   parade_conditional_field: 0
