@@ -50,17 +50,21 @@ function chart_boxes_preprocess_paragraph__chart_boxes(&$variables) {
   /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = &$variables['paragraph'];
 
-  // Pass the number of Columns field value.
+  // Pass the Layout and number of Columns field value.
+  $data['layout'] = $paragraph->get('parade_layout')->target_id;
   if ($columns = $paragraph->get('parade_boxes_per_row')->value) {
-    _parade_add_template_variable($variables, [
-      'columns' => $columns,
-    ]);
+    $data['columns'] = $columns;
   }
+  _parade_add_template_variable($variables, $data);
   $variables['paragraph_id'] = $paragraph->id();
   $variables['#attached']['drupalSettings']['chart_boxes']['paragraph_id'] = $paragraph->id();
   $variables['descriptions'] = [];
   if ($variables['view_mode'] !== 'preview') {
-    foreach ($variables['content']['parade_paragraphs'] as $delta => $data) {
+    $source = $variables['content'];
+    if (\Drupal::moduleHandler()->moduleExists('field_layout')) {
+      $source = $source['_field_layout']['content'];
+    }
+    foreach ($source['parade_paragraphs'] as $delta => $data) {
       if (is_numeric($delta)) {
         /** @var \Drupal\paragraphs\Entity\Paragraph $box */
         $box = $data['#paragraph'];

@@ -25,7 +25,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     <div{{ attributes.addClass(classes) }}>
         <div class="paragraph-inner">
             {# Doughnut chart layout#}
-            {% if attributes.class[1] == "layout--chart-type--doughnut" %}
+            {% if parade.layout == "layout_doughnut_chart" %}
                 <div class="doughnut-chart--left">
                     {{ content }}
                     <div class="clearfix"></div>
@@ -36,14 +36,14 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         {% endif %}
 
             {# Doughnut & text chart layout #}
-        {% if attributes.class[1] == "layout--chart-type--doughnut-and-text" %}
+        {% if parade.layout == "layout_doughnut_and_text_chart" %}
             {{ content }}
         {% endif %}
 
         {# Bar chart layout #}
-        {% if attributes.class[1] == "layout--chart-type--bar" %}
+        {% if parade.layout == "layout_bar_chart" %}
                 <div class="horizontal-bar-chart--left">
-                    {{ elements.parade_title }}
+                    {{ content._field_layout.content.parade_title }}
                 </div>
                 <div class="horizontal-bar-chart--right">
                     <div class="ct-chart" id="{{ "bar-chart_" ~ paragraph_id }}"></div>
