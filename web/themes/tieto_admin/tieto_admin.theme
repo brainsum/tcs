@@ -220,6 +220,21 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
   if (in_array('page__node__campaign', $suggestions)) {
     $suggestions[] = 'page__node__campaign__revisions';
   }
+
+  // Set 40x template suggestions.
+  // @see https://www.drupal.org/node/2363987.
+  $path_args = explode('/', trim(\Drupal::service('path.current')->getPath(), '/'));
+  $suggestions = theme_get_suggestions($path_args, 'page');
+  $http_error_suggestions = [
+    'system.403' => 'page__system__403',
+    'system.404' => 'page__system__404',
+  ];
+
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if (isset($http_error_suggestions[$route_name])) {
+    $suggestions[] = $http_error_suggestions[$route_name];
+  }
+
   return $suggestions;
 }
 
