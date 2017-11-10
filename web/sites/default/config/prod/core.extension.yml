@@ -40,7 +40,6 @@ module:
   geocoder_geofield: 0
   geofield: 0
   google_analytics: 0
-  google_tag: 0
   image: 0
   imageapi_optimize: 0
   imagemagick: 0
