@@ -1,5 +1,9 @@
 .paragraph--type--marketo-form.paragraph--view-mode--default {
   background: $tieto-lightgrey;
+  .layout__region {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
   .field--name-parade-title {
     @include campaign-headline;

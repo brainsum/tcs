@@ -4364,17 +4364,22 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 }
 
 @media (min-width: 767px) {
-  .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner > .field--name-parade-title,
-  .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts > .paragraph-inner > .field--name-parade-title,
-  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner > .field--name-parade-title {
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner .field--name-parade-title,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts > .paragraph-inner .field--name-parade-title,
+  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner .field--name-parade-title {
     width: 33%;
     float: left;
   }
-  .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts .field--name-parade-paragraphs,
-  .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts .field--name-parade-paragraphs,
-  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts .field--name-parade-paragraphs {
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner .field--name-parade-paragraphs,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts > .paragraph-inner .field--name-parade-paragraphs,
+  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner .field--name-parade-paragraphs {
     width: 66%;
     float: left;
+  }
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region.layout__region--content,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region.layout__region--content,
+  .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region.layout__region--content {
+    display: block;
   }
 }
 
@@ -4482,18 +4487,37 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   .paragraph--type--text-boxes.paragraph--view-mode--default.layout--lot_infos .paragraph--type--text-box {
     text-align: left;
   }
-  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner > .field--name-parade-paragraphs,
-  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner > .field--name-parade-paragraphs,
-  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner > .field--name-parade-paragraphs {
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs,
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs {
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
     margin: 0 -16px;
   }
-  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner > .field--name-parade-paragraphs > .col > .paragraph-inner,
-  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner > .field--name-parade-paragraphs > .col > .paragraph-inner,
-  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner > .field--name-parade-paragraphs > .col > .paragraph-inner {
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner,
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner {
     height: 100%;
+  }
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout,
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > layout > .layout__region,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > layout > .layout__region,
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout,
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > layout > .layout__region {
+    height: 100%;
+  }
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region,
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
   }
 }
 
@@ -4704,6 +4728,11 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 
 .paragraph--type--marketo-form.paragraph--view-mode--default {
   background: #efefef;
+}
+
+.paragraph--type--marketo-form.paragraph--view-mode--default .layout__region {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .paragraph--type--marketo-form.paragraph--view-mode--default .field--name-parade-title {
