@@ -223,8 +223,6 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
 
   // Set 40x template suggestions.
   // @see https://www.drupal.org/node/2363987.
-  $path_args = explode('/', trim(\Drupal::service('path.current')->getPath(), '/'));
-  $suggestions = theme_get_suggestions($path_args, 'page');
   $http_error_suggestions = [
     'system.403' => 'page__system__403',
     'system.404' => 'page__system__404',
