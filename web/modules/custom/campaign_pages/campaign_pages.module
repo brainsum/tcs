@@ -409,7 +409,7 @@ function campaign_pages_imagemagick_arguments_alter(ImagemagickToolkit $toolkit,
 function campaign_pages_preprocess_html(&$variables) {
   // Add custom class to body for node add/edit page.
   // @todo css refactor needed - custom class instead of node type class.
-  $route_name = Drupal::request()->attributes->get('_route');kint($route_name);
+  $route_name = Drupal::request()->attributes->get('_route');
   $route_match = \Drupal::routeMatch();
   $type = NULL;
   if ('node_clone.prepopulate_node' === $route_name) {
