@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "18b419640e224fdf2d162c1d9e46e582",
+    "content-hash": "ad83d3ac5bbc32ea490f63d559e51258",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1533,7 +1533,7 @@
                 }
             ],
             "description": "Language Switcher functionality which should be a core patch.",
-            "time": "2017-01-04 10:04:13"
+            "time": "2017-01-04T10:04:13+00:00"
         },
         {
             "name": "drupal/core",
@@ -2155,7 +2155,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/filefield_sources"
             },
-            "time": "2017-02-21 21:07:00"
+            "time": "2017-02-21T21:07:00+00:00"
         },
         {
             "name": "drupal/filefield_sources_jsonapi",
@@ -2202,7 +2202,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/filefield_sources_jsonapi"
             },
-            "time": "2017-11-09 11:21:02"
+            "time": "2017-11-09T11:21:02+00:00"
         },
         {
             "name": "drupal/geocoder",
@@ -2537,7 +2537,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/google_tag"
             },
-            "time": "2017-06-16 21:53:17"
+            "time": "2017-06-16T21:53:17+00:00"
         },
         {
             "name": "drupal/imageapi_optimize",
@@ -2913,7 +2913,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/machine_name"
             },
-            "time": "2016-12-02 15:46:28"
+            "time": "2016-12-02T15:46:28+00:00"
         },
         {
             "name": "drupal/maxlength",
@@ -3125,7 +3125,55 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/node_clone"
             },
-            "time": "2016-10-21 00:15:27"
+            "time": "2016-10-21T00:15:27+00:00"
+        },
+        {
+            "name": "drupal/override_node_options",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/override_node_options",
+                "reference": "8.x-2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/override_node_options-8.x-2.3.zip",
+                "reference": "8.x-2.3",
+                "shasum": "9f8745eaf3ebfdc04dd81aa2734d9666fa70bb0b"
+            },
+            "require": {
+                "drupal/core": "^8.4.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.3",
+                    "datestamp": "1507667643",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Davies",
+                    "homepage": "https://www.drupal.org/user/381388",
+                    "email": "oliver@oliverdavies.uk"
+                }
+            ],
+            "description": "Allows permissions to be set on each node option such as published and authoring information.",
+            "homepage": "https://www.drupal.org/project/override_node_options",
+            "support": {
+                "source": "http://cgit.drupalcode.org/override_node_options"
+            }
         },
         {
             "name": "drupal/parade",
@@ -3216,7 +3264,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-11-09 13:57:53"
+            "time": "2017-11-09T13:57:53+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -3352,65 +3400,6 @@
             "homepage": "https://www.drupal.org/project/public_preview",
             "support": {
                 "source": "http://cgit.drupalcode.org/public_preview"
-            }
-        },
-        {
-            "name": "drupal/publishcontent",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/publishcontent",
-                "reference": "8.x-1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/publishcontent-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "903f1dd106dd5082d07e1a927fd3e8f8e7741e52"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1473318539"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Simon Georges",
-                    "homepage": "https://www.drupal.org/user/172312"
-                },
-                {
-                    "name": "aaronbauman",
-                    "homepage": "https://www.drupal.org/user/384578"
-                },
-                {
-                    "name": "ceng",
-                    "homepage": "https://www.drupal.org/user/1150042"
-                },
-                {
-                    "name": "jacobroufa",
-                    "homepage": "https://www.drupal.org/user/168080"
-                },
-                {
-                    "name": "malaussene",
-                    "homepage": "https://www.drupal.org/user/79249"
-                }
-            ],
-            "description": "Adds a 'Publish' or 'Unpublish' link on the node edit/view pages, and a 'Publish Link' field if the Views module is enabled.",
-            "homepage": "https://www.drupal.org/project/publishcontent",
-            "support": {
-                "source": "http://cgit.drupalcode.org/publishcontent"
             }
         },
         {
@@ -3890,7 +3879,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/view_mode_selector"
             },
-            "time": "2017-04-26 09:20:00"
+            "time": "2017-04-26T09:20:00+00:00"
         },
         {
             "name": "drush/drush",
@@ -4911,7 +4900,7 @@
             ],
             "description": "GeoPHP is a open-source native PHP library for doing geometry operations. It is written entirely in PHP and can therefore run on shared hosts. It can read and write a wide variety of formats: WKT (including EWKT), WKB (including EWKB), GeoJSON, KML, GPX, GeoRSS). It works with all Simple-Feature geometries (Point, LineString, Polygon, GeometryCollection etc.) and can be used to get centroids, bounding-boxes, area, and a wide variety of other useful information.",
             "homepage": "https://github.com/phayes/geoPHP",
-            "time": "2016-03-04 05:42:29"
+            "time": "2016-03-04T05:42:29+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -7982,7 +7971,7 @@
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
             },
-            "time": "2017-11-04 20:38:33"
+            "time": "2017-11-04T20:38:33+00:00"
         },
         {
             "name": "drupal/toolbar_anti_flicker",
