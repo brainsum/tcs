@@ -13,10 +13,10 @@ third_party_settings:
     method: source
     field: parade_location
     plugins:
+      - openstreetmap
+      - geonames
       - googlemaps
-      - bingmaps
-      - geoplugin
-      - geoip
+      - mapquest
     dumper: wkt
     delta_handling: default
     failure:
