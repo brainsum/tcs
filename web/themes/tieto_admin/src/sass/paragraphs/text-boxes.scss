@@ -60,9 +60,12 @@
         width: 33%;
         float: left;
       }
-      .field--name-parade-paragraphs {
+      > .paragraph-inner .field--name-parade-paragraphs {
         width: 66%;
         float: left;
+        > .col > .paragraph-inner > .layout > .layout__region.layout__region--content {
+          display: block;
+        }
       }
     }
     .paragraph--type--text-box {
