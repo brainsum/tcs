@@ -4495,17 +4495,17 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner {
     height: 100%;
   }
-  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout,
-  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout__region,
-  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout,
-  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout__region,
-  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout,
-  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout__region {
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout,
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > layout > .layout__region,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > layout > .layout__region,
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout,
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > layout > .layout__region {
     height: 100%;
   }
-  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout__region,
-  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout__region,
-  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner .layout__region {
+  .paragraph--type--text-boxes.paragraph--view-mode--inverse[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region,
+  .paragraph--type--text-boxes.paragraph--view-mode--custom[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region,
+  .paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region {
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;

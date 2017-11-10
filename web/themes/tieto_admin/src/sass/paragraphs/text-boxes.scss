@@ -118,11 +118,11 @@
 
       > .col > .paragraph-inner {
         height: 100%;
-        .layout,
-        .layout__region {
+        > .layout,
+        > layout > .layout__region {
           height: 100%;
         }
-        .layout__region {
+        > .layout > .layout__region {
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
