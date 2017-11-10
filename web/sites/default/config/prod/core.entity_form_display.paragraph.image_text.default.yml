@@ -120,7 +120,7 @@ content:
             absolute: 0
             attach_mode: move
           source_remote_jsonapi:
-            api_url: 'http://tml.brainsum.com/jsonapi/media/image'
+            api_url: 'https://tml.brainsum.com/jsonapi/media/image'
             params: "fields[media--image]|name,field_image\ninclude|field_image,field_category\nfields[file--file]|url,thumbnail_url\nfilter[statusFilter][condition][path]|status\nfilter[statusFilter][condition][operator]|=\nfilter[statusFilter][condition][value]|1"
             url_attribute_path: data->relationships->field_image->included->attributes->url
             thumbnail_url_attribute_path: data->relationships->field_image->included->attributes->thumbnail_url
