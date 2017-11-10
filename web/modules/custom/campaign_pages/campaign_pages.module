@@ -52,6 +52,8 @@ function campaign_pages_theme($existing, $type, $theme, $path) {
 function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   // @fixme check for field Type, not name.
   $field_name = $context['items']->getFieldDefinition()->getName();
+  /** @var \Drupal\Core\Session\AccountProxyInterface $currentUser */
+  $currentUser = \Drupal::currentUser();
 
   if ($field_name === 'call_to_action' || $field_name === 'parade_call_to_action') {
     $element['title']['#maxlength'] = 32;
@@ -63,8 +65,12 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
   }
 
   // Hide empty scheduled updates field if user doesn't have create permission.
-  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node_publish_with_status scheduled updates'))
-  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node_archive_with_status scheduled updates'))) {
+  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !$currentUser->hasPermission('create node_publish_with_status scheduled updates'))
+  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !$currentUser->hasPermission('create node_archive_with_status scheduled updates'))) {
+    $element['#access'] = FALSE;
+  }
+
+  if ('status' === $field_name && !$currentUser->hasPermission('publish nodes')) {
     $element['#access'] = FALSE;
   }
 }
