@@ -31,3 +31,4 @@ web/sites/*.dd/**
 data/*
 
 mariadb-init
+tmp
