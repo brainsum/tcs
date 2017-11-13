@@ -105,6 +105,7 @@ permissions:
   - 'use published_archived transition'
   - 'use published_draft transition'
   - 'use published_published transition'
+  - 'view any unpublished campaign content'
   - 'view any unpublished content'
   - 'view campaign revisions'
   - 'view latest version'
