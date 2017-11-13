@@ -13,8 +13,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 %}
 <div{{ attributes.addClass(classes) }}>
     <div class="paragraph-inner">
-        {{ content._field_layout.content.parade_title }}
         {% if view_mode != 'preview' %}
+        {{ content._field_layout.content.parade_title }}
         <form class="savings-calculator">
             <div class="savings-calculator__input-container">
                 {{ content._field_layout.content.parade_input_label }}
@@ -30,6 +30,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                 <span class="result">0</span> €
             </div>
         </form>
+        {% else %}
+            {{ content }}
         {% endif %}
     </div>
 </div>
