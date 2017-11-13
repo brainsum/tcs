@@ -66,7 +66,8 @@
         "drupal/imageapi_optimize": "^2.0@alpha",
         "drupal/google_tag": "1.x-dev",
         "drupal/filefield_sources_jsonapi": "1.x-dev",
-        "drupal/override_node_options": "^2.3"
+        "drupal/override_node_options": "^2.3",
+        "drupal/view_unpublished": "dev-1.x"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -135,7 +136,8 @@
                 "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
             },
             "drupal/core": {
-                "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch" 
+                "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
+                "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch"
             },
             "drupal/classy_paragraphs": {
                 "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"

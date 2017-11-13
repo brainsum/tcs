@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad83d3ac5bbc32ea490f63d559e51258",
+    "content-hash": "a2df130f05ba784e854b0b33681ce572",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1702,7 +1702,8 @@
             "type": "drupal-core",
             "extra": {
                 "patches_applied": {
-                    "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch"
+                    "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
+                    "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch"
                 }
             },
             "autoload": {
@@ -3880,6 +3881,60 @@
                 "source": "http://cgit.drupalcode.org/view_mode_selector"
             },
             "time": "2017-04-26T09:20:00+00:00"
+        },
+        {
+            "name": "drupal/view_unpublished",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/view_unpublished",
+                "reference": "aea97e837ea9b1b5522f710239cf7d1cc16f2306"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1+3-dev",
+                    "datestamp": "1486932784",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "amaria",
+                    "homepage": "https://www.drupal.org/user/66428"
+                },
+                {
+                    "name": "beeradb",
+                    "homepage": "https://www.drupal.org/user/120651"
+                },
+                {
+                    "name": "elevins",
+                    "homepage": "https://www.drupal.org/user/781882"
+                },
+                {
+                    "name": "entendu",
+                    "homepage": "https://www.drupal.org/user/173461"
+                }
+            ],
+            "description": "Select which roles should be able to see unpublished nodes.",
+            "homepage": "https://www.drupal.org/project/view_unpublished",
+            "support": {
+                "source": "http://cgit.drupalcode.org/view_unpublished"
+            },
+            "time": "2017-02-12T20:42:52+00:00"
         },
         {
             "name": "drush/drush",
@@ -9725,6 +9780,7 @@
         "drupal/imageapi_optimize": 15,
         "drupal/google_tag": 20,
         "drupal/filefield_sources_jsonapi": 20,
+        "drupal/view_unpublished": 20,
         "drupal/examples": 20
     },
     "prefer-stable": true,

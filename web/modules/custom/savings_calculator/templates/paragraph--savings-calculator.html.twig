@@ -13,11 +13,11 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 %}
 <div{{ attributes.addClass(classes) }}>
     <div class="paragraph-inner">
-        {{ content.parade_title }}
         {% if view_mode != 'preview' %}
+        {{ content._field_layout.content.parade_title }}
         <form class="savings-calculator">
             <div class="savings-calculator__input-container">
-                {{ content.parade_input_label }}
+                {{ content._field_layout.content.parade_input_label }}
 
                 <div class="savings-calculator__inputs">
                     <input class="form-number" type="number" name="number" min="0">
@@ -26,10 +26,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
             </div>
 
             <div class="savings-calculator__result-container">
-                {{ content.parade_result_label }}
+                {{ content._field_layout.content.parade_result_label }}
                 <span class="result">0</span> €
             </div>
         </form>
+        {% else %}
+            {{ content }}
         {% endif %}
     </div>
 </div>
