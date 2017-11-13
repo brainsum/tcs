@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad83d3ac5bbc32ea490f63d559e51258",
+    "content-hash": "849111fb9276fd23baf2edd7454335f3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1702,7 +1702,8 @@
             "type": "drupal-core",
             "extra": {
                 "patches_applied": {
-                    "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch"
+                    "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
+                    "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch"
                 }
             },
             "autoload": {

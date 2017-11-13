@@ -135,7 +135,8 @@
                 "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
             },
             "drupal/core": {
-                "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch" 
+                "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
+                "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch"
             },
             "drupal/classy_paragraphs": {
                 "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
