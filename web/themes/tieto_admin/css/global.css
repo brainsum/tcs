@@ -3286,10 +3286,12 @@ body.offcanvas.toolbar-fixed .tieto-campaign-page {
   overflow-y: hidden;
 }
 
-body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.toolbar-fixed .hamburger, body.page-node-type-campaign.toolbar-fixed .field--name-field-menu:not(.form-wrapper),
+body.page-node-type-campaign.toolbar-fixed .logo,
+body.page-node-type-campaign.toolbar-fixed .hamburger,
+body.page-node-type-campaign.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper),
 body.offcanvas.toolbar-fixed .logo,
 body.offcanvas.toolbar-fixed .hamburger,
-body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
+body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper) {
   position: absolute;
   top: 0;
 }
