@@ -6,4 +6,7 @@
 .paragraphs-type-chart_boxes {
   background-image: url("../img/charts.png?v2");
 }
+.layout__region--content .field--name-parade-paragraphs .paragraphs-add_more-wrapper .paragraphs-add_more-label {
+  display: block !important;
+}
 
