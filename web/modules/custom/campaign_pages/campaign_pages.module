@@ -89,7 +89,7 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
         if (isset($form['parade_onepage_sections']['widget']['add_more'])) {
           foreach ($form['parade_onepage_sections']['widget']['add_more'] as $key => &$item) {
             if (strpos($key, 'add_more_button_') === 0) {
-              // Adding a context, so it's translatable separatly.
+              // Adding a context, so it's translatable separately.
               $options = ['context' => 'add_paragraph_type'];
               $item['#value'] = t(
                 '@type',
