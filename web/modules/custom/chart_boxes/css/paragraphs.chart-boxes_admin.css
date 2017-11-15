@@ -17,3 +17,9 @@
   display: block !important;
 }
 
+/* @fixme just a quick fix; move it from here */
+.field--name-parade-onepage-sections table tbody .draggable > td:nth-child(2) > div .draggable > td:nth-child(2) > div {
+  display: block;
+  margin-bottom: 40px;
+}
+
