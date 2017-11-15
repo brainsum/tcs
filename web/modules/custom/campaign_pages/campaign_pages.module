@@ -110,10 +110,7 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
       }
     }
 
-    // @todo - duplication because of field machine name.
     if (isset($form['parade_onepage_sections'])) {
-      _parade_conditional_field_add_parade_field_conditions($form, $form_state);
-
       // @see TCS-361 | Hide color field for text&image
       // when layout is not text1st_enhanced.
       foreach ($form['parade_onepage_sections']['widget'] as $delta => &$item) {
