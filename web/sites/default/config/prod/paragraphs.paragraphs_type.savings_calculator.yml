@@ -6,4 +6,6 @@ _core:
   default_config_hash: EJePecM4CfXznVZmml9QOxESYa4-jyLQ0gF45rfDYUY
 id: savings_calculator
 label: 'Savings calculator'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

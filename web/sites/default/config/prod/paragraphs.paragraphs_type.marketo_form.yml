@@ -9,4 +9,6 @@ _core:
   default_config_hash: LnkA12lmXjPe0ZTBpzo-PGpbu8K2f_ilIbmR_ep3MMo
 id: marketo_form
 label: Form
+icon_uuid: null
+description: null
 behavior_plugins: {  }

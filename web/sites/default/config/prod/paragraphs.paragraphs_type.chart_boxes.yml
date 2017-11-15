@@ -6,4 +6,6 @@ _core:
   default_config_hash: Ik2ZImW-hflRFfzV4SCWcu8vmfV5QQn-QymUzFOc-Iw
 id: chart_boxes
 label: 'Chart boxes'
+icon_uuid: null
+description: null
 behavior_plugins: {  }
