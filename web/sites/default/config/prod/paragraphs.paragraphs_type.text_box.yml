@@ -6,4 +6,6 @@ _core:
   default_config_hash: XzUu43seXzIYdUiWRg5TbAs1IOMWgTgzt0wO30rJyeU
 id: text_box
 label: 'Text box'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

@@ -9,4 +9,6 @@ _core:
   default_config_hash: a4vRXy-OumSaPL3F_ijo4461eJciSPVgPEEI75RyzAo
 id: marketo_poll
 label: Poll
+icon_uuid: null
+description: null
 behavior_plugins: {  }
