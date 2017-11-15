@@ -82,7 +82,11 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
     $settings = entity_get_form_display('node', 'campaign', 'default')->getComponent('parade_onepage_sections')['settings'];
     if ($settings['add_mode'] === 'button') {
       // Add title to the section.
-      $field_label = $form['parade_onepage_sections']['widget']['title']['#value'] ?? $form['parade_onepage_sections']['widget']['#title'];
+      $field_label =
+        isset($form['parade_onepage_sections']['widget']['title']['#value'])
+          ? $form['parade_onepage_sections']['widget']['title']['#value']
+          : $form['parade_onepage_sections']['widget']['#title'];
+
       $form['parade_onepage_sections']['widget']['add_more']['title'] = [
         '#type' => 'table',
         '#header' => [t('Add @type', ['@type' => $field_label])],
