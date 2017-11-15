@@ -259,16 +259,6 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
 /**
  * Implements hook_preprocess_HOOK().
  */
-function tieto_admin_preprocess_field__parade_call_to_action(&$variables) {
-  $classes = ['button', 'button--primary'];
-  foreach ($variables['items'] as $key => $link) {
-    $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
 function tieto_admin_preprocess_paragraph__header(&$variables) {
   $variables['#attached']['library'][] = 'tieto_admin/flying_cta';
 }
@@ -308,13 +298,21 @@ function tieto_admin_preprocess_field__paragraph__parade_image__text_box(&$varia
 }
 
 /**
- * Implements hook_preprocess_paragraph__text_boxes().
+ * Implements hook_preprocess_HOOK().
  */
-function tieto_admin_preprocess_paragraph__text_boxes(&$variables) {
-  // @todo: FIXME
-  // Why isn't the parade_call_to_action hook catching text_boxes cta fields?
-  if (isset($variables['content']['_field_layout']['content']['parade_call_to_action'])) {
-    $classes = ['button', 'button--primary'];
-    $variables['content']['_field_layout']['content']['parade_call_to_action']['0']['#options']['attributes']['class'] = $classes;
+function tieto_admin_preprocess_field__parade_call_to_action(&$variables) {
+  $classes = ['button', 'button--primary'];
+  foreach ($variables['items'] as $key => $link) {
+    $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tieto_admin_preprocess_field__paragraph__parade_call_to_action(&$variables) {
+  $classes = ['button', 'button--primary'];
+  foreach ($variables['items'] as $key => $link) {
+    $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
   }
 }
