@@ -551,3 +551,12 @@ function campaign_pages_post_update_8401() {
   $pages = $nodeStorage->loadByProperties(['type' => 'page']);
   $nodeStorage->delete($pages);
 }
+
+/**
+ * Remove parade onepage content.
+ */
+function campaign_pages_post_update_8402() {
+  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+  $pages = $nodeStorage->loadByProperties(['type' => 'parade_onepage']);
+  $nodeStorage->delete($pages);
+}
