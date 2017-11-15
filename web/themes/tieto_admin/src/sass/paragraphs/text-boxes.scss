@@ -57,11 +57,11 @@
     // @fixme this is mess but was quick
     @include md {
       > .paragraph-inner .field--name-parade-title {
-        width: 40%;
+        width: 36%;
         float: left;
       }
       > .paragraph-inner .field--name-parade-paragraphs {
-        width: 60%;
+        width: 64%;
         float: left;
         > .col > .paragraph-inner > .layout > .layout__region.layout__region--content {
           display: block;
