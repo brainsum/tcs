@@ -30,7 +30,7 @@ class TwitterFeedWidget extends WidgetBase {
    *
    * @throws \InvalidArgumentException
    */
-  public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
+  public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $item = $items[$delta];
 
     $element['type'] = [
@@ -90,7 +90,7 @@ class TwitterFeedWidget extends WidgetBase {
   /**
    * {@inheritdoc}
    */
-  public static function afterBuild(array $element, FormStateInterface $form_state): array {
+  public static function afterBuild(array $element, FormStateInterface $form_state) {
     // Hide+optional/Show+required the username and widget_id fields
     // based on the type field value.
     $usernameOn = [':input[name="' . $element[0]['type']['#name'] . '"]' => ['value' => static::FEED_TYPE_USER]];

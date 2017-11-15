@@ -23,7 +23,7 @@ class TwitterFeed extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
-  public static function schema(FieldStorageDefinitionInterface $field_definition): array {
+  public static function schema(FieldStorageDefinitionInterface $field_definition) {
     return [
       'columns' => [
         'type' => [
@@ -58,7 +58,7 @@ class TwitterFeed extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
-  public function isEmpty(): bool {
+  public function isEmpty() {
     $type = $this->get('type')->getValue();
 
     return $type === NULL || $type === '';
@@ -67,7 +67,7 @@ class TwitterFeed extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
-  public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition): array {
+  public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties['type'] = DataDefinition::create('integer')
       ->setLabel(t('Feed type'));
     $properties['width'] = DataDefinition::create('integer')
