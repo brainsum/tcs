@@ -4409,7 +4409,7 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
   .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner .field--name-parade-paragraphs,
   .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts > .paragraph-inner .field--name-parade-paragraphs,
   .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner .field--name-parade-paragraphs {
-    width: 66%;
+    width: 60%;
     float: left;
   }
   .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region.layout__region--content,
