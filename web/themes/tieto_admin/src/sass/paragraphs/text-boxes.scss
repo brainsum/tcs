@@ -1,7 +1,3 @@
-.paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner .field--name-parade-title {
-  width: 40%;
-}
-
 // Text Boxes
 .paragraph--type--text-boxes.paragraph--view-mode--inverse,
 .paragraph--type--text-boxes.paragraph--view-mode--custom,
@@ -61,7 +57,7 @@
     // @fixme this is mess but was quick
     @include md {
       > .paragraph-inner .field--name-parade-title {
-        width: 33%;
+        width: 40%;
         float: left;
       }
       > .paragraph-inner .field--name-parade-paragraphs {
