@@ -104,10 +104,8 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
     }
 
     // Set custom redirection callback to stay on the node form after submit.
-    foreach (['submit', 'publish', 'unpublish'] as $action) {
-      if (isset($form['actions'][$action])) {
-        $form['actions'][$action]['#submit'][] = '_campaign_pages_disable_form_redirect';
-      }
+    if (isset($form['actions']['submit'])) {
+      $form['actions']['submit']['#submit'][] = '_campaign_pages_disable_form_redirect';
     }
 
     if (isset($form['parade_onepage_sections'])) {
@@ -181,8 +179,6 @@ function campaign_pages_element_after_build($element, FormStateInterface $form_s
 function _campaign_pages_disable_form_redirect(array &$form, FormStateInterface $form_state) {
   // Sadly $form_state->disableRedirect() not works as expected, so we also
   // need to redirect to the edit form.
-  // @todo Fix redirection of Content Moderation module
-  // @see Drupal\content_moderation\EntityType
   $nid = $form_state->getValue('nid');
   $form_state->setRedirect('entity.node.edit_form', ['node' => $nid]);
 }
