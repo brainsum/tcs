@@ -4942,6 +4942,10 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
   }
 }
 
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default .field--name-parade-image {
+  margin: inherit;
+}
+
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-green, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green {
   color: white;
   background: #b2eb95;

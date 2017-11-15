@@ -1,5 +1,9 @@
 // @todo move this to text-boxes.scss!
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default {
+  
+  .field--name-parade-image {
+    margin:inherit;
+  }
 
   &.color-light-green,
   &.color-green {
