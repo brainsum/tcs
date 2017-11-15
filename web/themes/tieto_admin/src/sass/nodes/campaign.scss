@@ -221,6 +221,42 @@ body.offcanvas {
   }
 }
 
+body.page-node-type-campaign.user-logged-in.toolbar-fixed {
+  
+    .precontent-region {
+      display: none;
+    }
+    .campaign-menu {
+      top: 39px;
+      position: fixed;
+    }
+    .logo {
+      top: 39px;
+      position: fixed;
+    }
+    &.toolbar-vertical.toolbar-tray-open {
+      .campaign-menu {
+        top: 39px;
+        position: fixed;
+      }
+      .logo {
+        top: 39px;
+        position: fixed;
+      }
+    }
+    &.toolbar-horizontal.toolbar-tray-open {
+      .campaign-menu {
+        top: 79px;
+        position: fixed;
+      }
+      .logo {
+        top: 79px;
+        position: fixed;
+      }
+    }
+  
+  }
+
 // Super ugly hack for correctly displaying the fucking
 // admin toolbar with the fucking logo and the fucking responsive hamburger shit.
 // body.toolbar-vertical, body.toolbar-horizontal {

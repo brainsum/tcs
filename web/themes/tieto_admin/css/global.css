@@ -3309,6 +3309,40 @@ body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper)
   text-decoration: underline;
 }
 
+body.page-node-type-campaign.user-logged-in.toolbar-fixed .precontent-region {
+  display: none;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed .campaign-menu {
+  top: 39px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed .logo {
+  top: 39px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-vertical.toolbar-tray-open .campaign-menu {
+  top: 39px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-vertical.toolbar-tray-open .logo {
+  top: 39px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .campaign-menu {
+  top: 79px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .logo {
+  top: 79px;
+  position: fixed;
+}
+
 .node-campaign-form .field--name-field-menu .field-multiple-table td,
 .node-campaign-edit-form .field--name-field-menu .field-multiple-table td {
   padding: .5em 0;
