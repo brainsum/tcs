@@ -1,0 +1,15 @@
+uuid: 0a93856f-da8f-43f4-a834-f1967a057beb
+langcode: en
+status: true
+dependencies: {  }
+id: tml_media_video_file
+label: Video
+apiUrl: 'http://tml.brainsum.com/jsonapi/media/video_file'
+params: "fields[media--video-file]|name\r\ninclude|thumbnail,field_video_file,field_category\r\nfields[file--file]|url,thumbnail_url\r\nfilter[statusFilter][condition][path]|status\r\nfilter[statusFilter][condition][operator]|=\r\nfilter[statusFilter][condition][value]|1"
+urlAttributePath: data->relationships->field_video_file->included->attributes->url
+thumbnailUrlAttributePath: data->relationships->thumbnail->included->attributes->thumbnail_url
+titleAttributePath: data->attributes->name
+altAttributePath: ''
+sortOptionList: "-created|Newest first\r\nname|By name"
+searchFilter: 'name,field_category.name'
+itemsPerPage: '12'

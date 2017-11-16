@@ -16,6 +16,7 @@ dependencies:
     - field_group
     - field_layout
     - file
+    - filefield_sources
     - layout_discovery
     - link
 third_party_settings:
@@ -83,7 +84,29 @@ content:
     weight: 6
     settings:
       progress_indicator: throbber
-    third_party_settings: {  }
+    third_party_settings:
+      filefield_sources:
+        filefield_sources:
+          sources:
+            upload: true
+            remote_jsonapi: remote_jsonapi
+            remote: false
+            clipboard: false
+            reference: false
+            attach: false
+          source_reference:
+            autocomplete: '0'
+            search_all_fields: '0'
+          source_attach:
+            path: file_attach
+            absolute: 0
+            attach_mode: move
+          source_remote_jsonapi:
+            sources:
+              tml_media_image: tml_media_image
+              tml_media_video_file: tml_media_video_file
+            modal_width: '1000'
+            modal_height: '750'
     type: file_generic
     region: content
   parade_call_to_action:
