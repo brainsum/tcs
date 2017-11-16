@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2df130f05ba784e854b0b33681ce572",
+    "content-hash": "eb30332d99788210769af40a2cc271ca",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1354,6 +1354,16 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/classy_paragraphs"
             }
+        },
+        {
+            "name": "drupal/client_support",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brainsum/client_support",
+                "reference": "master"
+            },
+            "type": "drupal-module"
         },
         {
             "name": "drupal/cloudfront_purger",
