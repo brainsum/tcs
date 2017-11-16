@@ -12,9 +12,12 @@ module:
   chart_boxes: 0
   ckeditor: 0
   classy_paragraphs: 0
+  client_support: 0
+  client_support_contact_form: 0
   cloudfront_purger: 0
   config: 0
   config_readonly: 0
+  contact: 0
   content_entity_language_switcher: 0
   content_translation: 0
   contextual: 0

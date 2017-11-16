@@ -1,0 +1,21 @@
+uuid: 123cb033-86ad-4af6-aa45-bc63821ef316
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - link
+_core:
+  default_config_hash: HZWJrqYv_PUAl_s_iF6YvhBUAI06WkQh0KMzvUu6WTs
+id: contact_message.client_support_issue_urls
+field_name: client_support_issue_urls
+entity_type: contact_message
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

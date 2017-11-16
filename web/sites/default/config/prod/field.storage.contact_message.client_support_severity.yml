@@ -1,0 +1,35 @@
+uuid: ef1d6bfb-79c7-4849-b7e4-823f9986a4d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+_core:
+  default_config_hash: kD5P0tBbvD1E8-9InwmikbDD5paJh0M1lxZA--8Md8A
+id: contact_message.client_support_severity
+field_name: client_support_severity
+entity_type: contact_message
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 0
+      label: Low
+    -
+      value: 1
+      label: Medium
+    -
+      value: 2
+      label: High
+    -
+      value: 3
+      label: Critical
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

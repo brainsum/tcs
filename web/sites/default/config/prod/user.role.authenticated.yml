@@ -9,6 +9,7 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
+  - 'access client support'
   - 'access comments'
   - 'access content'
   - 'access kint'
