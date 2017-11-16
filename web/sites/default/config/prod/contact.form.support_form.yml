@@ -1,0 +1,14 @@
+uuid: 4f3fb3c9-0d77-4f50-b0cb-16f3c37218a6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3ZuyPJlMqFrtCzX5TmTsxYrLLB0M11bAftPGoZfrlKY
+id: support_form
+label: 'Support Form'
+recipients:
+  - tieto@brainsum.com
+reply: ''
+weight: 0
+message: 'Thank you for sending feedback!'
+redirect: ''

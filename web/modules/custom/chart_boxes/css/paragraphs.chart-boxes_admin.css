@@ -23,3 +23,9 @@
   margin-bottom: 40px;
 }
 
+/* @fixme just a quick fix; move it from here */
+.field--name-parade-background .button,
+.field--name-parade-background .button:hover {
+  width: auto !important;
+}
+
