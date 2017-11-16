@@ -2166,7 +2166,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/filefield_sources_jsonapi",
-                "reference": "e5d8acd8bd6a2a91a5e11b664fcd7c362fd45ecc"
+                "reference": "cae3cc0951003d2af9d4152d79785f211c488d70"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2179,7 +2179,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1510852084",
+                    "datestamp": "1510861085",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2209,7 +2209,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/filefield_sources_jsonapi"
             },
-            "time": "2017-11-16 19:36:59"
+            "time": "2017-11-16 20:30:39"
         },
         {
             "name": "drupal/geocoder",
