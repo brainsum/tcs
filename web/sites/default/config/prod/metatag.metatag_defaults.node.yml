@@ -8,8 +8,8 @@ id: node
 label: Content
 tags:
   description: '[node:summary]'
-  title: '[node:title] | [site:name]'
+  title: '[node:title] | Tieto'
   og_description: '[node:summary]'
-  og_site_name: '[node:title] | [site:name]'
+  og_site_name: '[node:title] | Tieto'
   og_title: '[current-page:title]'
   og_url: '[current-page:url]'
