@@ -2174,7 +2174,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/filefield_sources_jsonapi",
-                "reference": "dead53cd2e66a9278ec13675ce81b2079132e0a7"
+                "reference": "125b75097157303543d81654cbc1e90881fd1fc7"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2187,7 +2187,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1509368584",
+                    "datestamp": "1510824488",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2199,6 +2199,10 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "keeteean",
+                    "homepage": "https://www.drupal.org/user/1247854"
+                },
                 {
                     "name": "pedrop",
                     "homepage": "https://www.drupal.org/user/1043368"
@@ -2213,7 +2217,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/filefield_sources_jsonapi"
             },
-            "time": "2017-11-09T11:21:02+00:00"
+            "time": "2017-11-16T09:55:32+00:00"
         },
         {
             "name": "drupal/geocoder",
