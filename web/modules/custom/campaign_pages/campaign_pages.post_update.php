@@ -560,3 +560,57 @@ function campaign_pages_post_update_8402() {
   $pages = $nodeStorage->loadByProperties(['type' => 'parade_onepage']);
   $nodeStorage->delete($pages);
 }
+
+/**
+ * Update metatags for existing content (replace site name with 'Tieto').
+ */
+function campaign_pages_post_update_8403() {
+  $database = \Drupal::database();
+
+  $tables = [
+    'node__field_meta_tags',
+    'node_revision__field_meta_tags',
+  ];
+  $fields = [
+    'entity_id',
+    'revision_id',
+    'field_meta_tags_value',
+  ];
+  foreach ($tables as $table) {
+    $select = $database->select($table);
+    $select->fields($table, $fields);
+    $select->condition('field_meta_tags_value', '%[site:name]%', 'like');
+    $result = $select->execute();
+    if (NULL === $result) {
+      continue;
+    }
+
+    $rows = $result->fetchAllAssoc('revision_id');
+
+    $transaction = $database->startTransaction();
+    $batch = 0;
+    foreach ($rows as $row) {
+      $data = unserialize($row->field_meta_tags_value, [FALSE]);
+      $data['title'] = str_replace('[site:name]', 'Tieto', $data['title']);
+      $row->field_meta_tags_value = serialize($data);
+
+      $row->field_meta_tags_value = str_replace('[site:name]', 'Tieto', $row->field_meta_tags_value);
+      $update = $database->update($table);
+      $update->condition('entity_id', $row->entity_id);
+      $update->condition('revision_id', $row->revision_id);
+      $update->fields([
+        'field_meta_tags_value' => $row->field_meta_tags_value,
+      ]);
+      $update->execute();
+
+      if ($batch >= 50) {
+        $batch = 0;
+        $database->popTransaction($transaction->name());
+      }
+      ++$batch;
+    }
+
+    unset($row);
+  }
+
+}
