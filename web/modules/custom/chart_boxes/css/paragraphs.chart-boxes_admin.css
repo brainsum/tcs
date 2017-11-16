@@ -1,3 +1,8 @@
+/*
+ * This file is not generated from gulp,
+ * it's just a static css file!
+ */
+
 .paragraphs-dropbutton-wrapper .button.parade-button-chart-boxes {
   background-image: url("../img/charts.png?v2");
   font-size: .85em;
@@ -5,5 +10,22 @@
 }
 .paragraphs-type-chart_boxes {
   background-image: url("../img/charts.png?v2");
+}
+
+/* @fixme it's not part of chart boxes, but I don't want to create a new library for a temporary css hack on admin */
+.layout__region--content .field--name-parade-paragraphs .paragraphs-add_more-wrapper .paragraphs-add_more-label {
+  display: block !important;
+}
+
+/* @fixme just a quick fix; move it from here */
+.field--name-parade-onepage-sections table tbody .draggable > td:nth-child(2) > div .draggable > td:nth-child(2) > div {
+  display: block;
+  margin-bottom: 40px;
+}
+
+/* @fixme just a quick fix; move it from here */
+.field--name-parade-background .button,
+.field--name-parade-background .button:hover {
+  width: auto !important;
 }
 

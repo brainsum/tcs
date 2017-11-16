@@ -2,6 +2,7 @@
 
 namespace Drupal\twitter_feed_parade_type\Plugin\Field\FieldFormatter;
 
+use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Render\Markup;
@@ -28,7 +29,7 @@ class TwitterFeedFormatter extends FormatterBase {
    *
    * {@inheritdoc}
    */
-  public function __construct($plugin_id, $plugin_definition, \Drupal\Core\Field\FieldDefinitionInterface $field_definition, array $settings, $label, $view_mode, array $third_party_settings) {
+  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, $label, $view_mode, array $third_party_settings) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $label, $view_mode, $third_party_settings);
 
     $this->modulePath = drupal_get_path('module', 'twitter_feed_parade_type');
@@ -37,7 +38,7 @@ class TwitterFeedFormatter extends FormatterBase {
   /**
    * {@inheritdoc}
    */
-  public function viewElements(FieldItemListInterface $items, $langcode): array {
+  public function viewElements(FieldItemListInterface $items, $langcode) {
     $rendered_feeds = [];
     $raw_feeds = [];
     foreach ($items as $item) {

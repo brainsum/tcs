@@ -1,0 +1,90 @@
+uuid: 6d10192f-ab0f-449a-9759-27b4ff1a0c59
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.support_form
+    - field.field.contact_message.support_form.client_support_attachments
+    - field.field.contact_message.support_form.client_support_issue_urls
+    - field.field.contact_message.support_form.client_support_severity
+  module:
+    - field_layout
+    - file
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+_core:
+  default_config_hash: cDxKUg0Aut3UShpQpAxIrtISJpOrFeFmY1yjXTkXXkQ
+id: contact_message.support_form.default
+targetEntityType: contact_message
+bundle: support_form
+mode: default
+content:
+  client_support_attachments:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  client_support_issue_urls:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  client_support_severity:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  copy:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 7
+    region: content
+    settings:
+      include_locked: false
+    third_party_settings: {  }
+  mail:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  message:
+    type: string_textarea
+    weight: 3
+    settings:
+      rows: 12
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  name:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  preview:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

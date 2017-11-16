@@ -9,12 +9,12 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
+  - 'access client support'
   - 'access comments'
   - 'access content'
   - 'access kint'
   - 'access shortcuts'
   - 'access site-wide contact form'
-  - 'access user contact forms'
   - 'access user profiles'
   - 'post comments'
   - 'search content'

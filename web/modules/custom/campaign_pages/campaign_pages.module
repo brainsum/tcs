@@ -73,52 +73,42 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
  * Implements hook_form_alter().
  */
 function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'])) {
+  if (in_array($form_id, ['node_campaign_form', 'node_campaign_edit_form'], TRUE)) {
     // Menu: Change wording of Add more button.
     $form['parade_onepage_menu']['widget']['add_more']['#value'] = t('New menu link');
 
-    // Removes the "Add" word from the button values.
-    // @todo Get actual display mode instead of default.
-    $settings = entity_get_form_display('node', 'campaign', 'default')->getComponent('parade_onepage_sections')['settings'];
-    if ($settings['add_mode'] === 'button') {
-      // Add title to the section.
-      $field_label = $form['parade_onepage_sections']['widget']['title']['#value'] ?? $form['parade_onepage_sections']['widget']['#title'];
-      $form['parade_onepage_sections']['widget']['add_more']['title'] = [
-        '#type' => 'table',
-        '#header' => [t('Add @type', ['@type' => $field_label])],
-        '#attributes' => [
-          'class' => ['paragraphs-add-sections-title'],
-        ],
-        '#weight' => -1,
-      ];
+    /** @var \Drupal\node\NodeForm $nodeFormObject */
+    $nodeFormObject = $form_state->getFormObject();
+    /** @var \Drupal\Core\Entity\Display\EntityFormDisplayInterface $formDisplay */
+    $formDisplay = $nodeFormObject->getFormDisplay($form_state);
 
-      if (isset($form['parade_onepage_sections']['widget']['add_more'])) {
-        foreach ($form['parade_onepage_sections']['widget']['add_more'] as $key => &$item) {
-          if (strpos($key, 'add_more_button_') === 0) {
-            // Adding a context, so it's translatable separatly.
-            $options = ['context' => 'add_paragraph_type'];
-            $item['#value'] = t(
-              '@type',
-              ['@type' => $item['#value']],
-              $options
-            );
+    if (NULL !== $formDisplay) {
+      // Removes the "Add" word from the button values.
+      $settings = $formDisplay->getComponent('parade_onepage_sections')['settings'];
+      if ($settings['add_mode'] === 'button') {
+        if (isset($form['parade_onepage_sections']['widget']['add_more'])) {
+          foreach ($form['parade_onepage_sections']['widget']['add_more'] as $key => &$item) {
+            if (strpos($key, 'add_more_button_') === 0) {
+              // Adding a context, so it's translatable separately.
+              $options = ['context' => 'add_paragraph_type'];
+              $item['#value'] = t(
+                '@type',
+                ['@type' => $item['#value']],
+                $options
+              );
+            }
           }
+          unset($item);
         }
-        unset($item);
       }
     }
 
     // Set custom redirection callback to stay on the node form after submit.
-    foreach (['submit', 'publish', 'unpublish'] as $action) {
-      if (isset($form['actions'][$action])) {
-        $form['actions'][$action]['#submit'][] = '_campaign_pages_disable_form_redirect';
-      }
+    if (isset($form['actions']['submit'])) {
+      $form['actions']['submit']['#submit'][] = '_campaign_pages_disable_form_redirect';
     }
 
-    // @todo - duplication because of field machine name.
     if (isset($form['parade_onepage_sections'])) {
-      _parade_conditional_field_add_parade_field_conditions($form, $form_state);
-
       // @see TCS-361 | Hide color field for text&image
       // when layout is not text1st_enhanced.
       foreach ($form['parade_onepage_sections']['widget'] as $delta => &$item) {
@@ -189,8 +179,6 @@ function campaign_pages_element_after_build($element, FormStateInterface $form_s
 function _campaign_pages_disable_form_redirect(array &$form, FormStateInterface $form_state) {
   // Sadly $form_state->disableRedirect() not works as expected, so we also
   // need to redirect to the edit form.
-  // @todo Fix redirection of Content Moderation module
-  // @see Drupal\content_moderation\EntityType
   $nid = $form_state->getValue('nid');
   $form_state->setRedirect('entity.node.edit_form', ['node' => $nid]);
 }

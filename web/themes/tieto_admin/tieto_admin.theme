@@ -165,6 +165,26 @@ function tieto_admin_preprocess_maintenance_page(&$variables) {
 
 /**
  * Implements hook_form_alter().
+ */
+function tieto_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'user_login_form') {
+    $form['pass']['#suffix'] = Link::createFromRoute(
+      t('Reset your password'),
+      'user.pass',
+      [],
+      [
+        'attributes' => [
+          'class' => [
+            'reset-password-link',
+          ],
+        ],
+      ]
+    )->toString()->getGeneratedLink();
+  }
+}
+
+/**
+ * Implements hook_form_alter().
  *
  * Changes vertical tabs to container and adds meta information
  * and attach custom tabledrag library on campaign edit forms.
@@ -239,16 +259,6 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
 /**
  * Implements hook_preprocess_HOOK().
  */
-function tieto_admin_preprocess_field__parade_call_to_action(&$variables) {
-  foreach ($variables['items'] as $key => $link) {
-    $classes = ['button', 'button--primary'];
-    $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
 function tieto_admin_preprocess_paragraph__header(&$variables) {
   $variables['#attached']['library'][] = 'tieto_admin/flying_cta';
 }
@@ -257,7 +267,12 @@ function tieto_admin_preprocess_paragraph__header(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function tieto_admin_preprocess_details(&$variables) {
-  $variables['title'] = strip_tags($variables['title']);
+  if (isset($variables['title']['#markup'])) {
+    $variables['title'] = strip_tags($variables['title']['#markup']);
+  }
+  else {
+    $variables['title'] = strip_tags($variables['title']);
+  }
 }
 
 /**
@@ -288,21 +303,21 @@ function tieto_admin_preprocess_field__paragraph__parade_image__text_box(&$varia
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_preprocess_HOOK().
  */
-function tieto_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id === 'user_login_form') {
-    $form['pass']['#suffix'] = Link::createFromRoute(
-      t('Reset your password'),
-      'user.pass',
-      [],
-      [
-        'attributes' => [
-          'class' => [
-            'reset-password-link',
-          ],
-        ],
-      ]
-    )->toString()->getGeneratedLink();
+function tieto_admin_preprocess_field__parade_call_to_action(&$variables) {
+  $classes = ['button', 'button--primary'];
+  foreach ($variables['items'] as $key => $link) {
+    $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function tieto_admin_preprocess_field__paragraph__parade_call_to_action(&$variables) {
+  $classes = ['button', 'button--primary'];
+  foreach ($variables['items'] as $key => $link) {
+    $variables['items'][$key]['content']['#options']['attributes']['class'] = $classes;
   }
 }

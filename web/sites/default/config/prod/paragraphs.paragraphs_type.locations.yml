@@ -6,4 +6,6 @@ _core:
   default_config_hash: Uv6iRNIfV3yg0WITdy1Exe_Z6kabjIuTYMFN5OPMp0o
 id: locations
 label: Locations
+icon_uuid: null
+description: null
 behavior_plugins: {  }

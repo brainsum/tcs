@@ -6,4 +6,6 @@ _core:
   default_config_hash: shEdFwWFYY6A5g9rK5y8U5-MOncuGsZSx-k6ucmWOYY
 id: image_text
 label: 'Text & image'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

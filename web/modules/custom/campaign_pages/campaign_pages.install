@@ -423,3 +423,18 @@ function _campaign_pages_import_campaign_node_parade_fields() {
     $configStorage->write($config, $source->read($config));
   }
 }
+
+/**
+ * Remove stuck moderation_state config overrides.
+ */
+function campaign_pages_update_8401() {
+  $configFactory = \Drupal::configFactory();
+  $configs = $configFactory->listAll();
+
+  foreach ($configs as $config) {
+    if (FALSE !== strpos($config, '.moderation_state')) {
+      echo "\tRemoving $config\n";
+      $configFactory->getEditable($config)->delete();
+    }
+  }
+}

@@ -1,5 +1,12 @@
 // @todo move this to text-boxes.scss!
+.paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region {
+  display:block;
+}
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default {
+  
+  .field--name-parade-paragraphs .field.field--name-parade-image {
+    margin:inherit;
+  }
 
   &.color-light-green,
   &.color-green {

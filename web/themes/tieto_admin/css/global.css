@@ -3286,10 +3286,12 @@ body.offcanvas.toolbar-fixed .tieto-campaign-page {
   overflow-y: hidden;
 }
 
-body.page-node-type-campaign.toolbar-fixed .logo, body.page-node-type-campaign.toolbar-fixed .hamburger, body.page-node-type-campaign.toolbar-fixed .field--name-field-menu:not(.form-wrapper),
+body.page-node-type-campaign.toolbar-fixed .logo,
+body.page-node-type-campaign.toolbar-fixed .hamburger,
+body.page-node-type-campaign.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper),
 body.offcanvas.toolbar-fixed .logo,
 body.offcanvas.toolbar-fixed .hamburger,
-body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
+body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper) {
   position: absolute;
   top: 0;
 }
@@ -3305,6 +3307,40 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
 
 .node-preview-container a:hover {
   text-decoration: underline;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed .precontent-region {
+  display: none;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed .campaign-menu {
+  top: 39px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed .logo {
+  top: 39px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-vertical.toolbar-tray-open .campaign-menu {
+  top: 39px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-vertical.toolbar-tray-open .logo {
+  top: 39px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .campaign-menu {
+  top: 79px;
+  position: fixed;
+}
+
+body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .logo {
+  top: 79px;
+  position: fixed;
 }
 
 .node-campaign-form .field--name-field-menu .field-multiple-table td,
@@ -4367,13 +4403,13 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
   .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner .field--name-parade-title,
   .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts > .paragraph-inner .field--name-parade-title,
   .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner .field--name-parade-title {
-    width: 33%;
+    width: 36%;
     float: left;
   }
   .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner .field--name-parade-paragraphs,
   .paragraph--type--text-boxes.paragraph--view-mode--custom.layout--contacts > .paragraph-inner .field--name-parade-paragraphs,
   .paragraph--type--text-boxes.paragraph--view-mode--default.layout--contacts > .paragraph-inner .field--name-parade-paragraphs {
-    width: 66%;
+    width: 64%;
     float: left;
   }
   .paragraph--type--text-boxes.paragraph--view-mode--inverse.layout--contacts > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region.layout__region--content,
@@ -4904,6 +4940,14 @@ body.offcanvas.toolbar-fixed .field--name-field-menu:not(.form-wrapper) {
     line-height: 1;
     font-size: 48px;
   }
+}
+
+.paragraph--type--text-boxes.paragraph--view-mode--default[class*="columns-"] > .paragraph-inner .field--name-parade-paragraphs > .col > .paragraph-inner > .layout > .layout__region {
+  display: block;
+}
+
+.paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default .field--name-parade-paragraphs .field.field--name-parade-image {
+  margin: inherit;
 }
 
 .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-light-green, .paragraph--type--text-boxes.layout--rounded_image.paragraph--view-mode--default.color-green {

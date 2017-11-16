@@ -1,0 +1,15 @@
+uuid: a6fbd9f5-c983-4f56-a208-e5d9b853882f
+langcode: en
+status: true
+dependencies: {  }
+id: tml_media_image
+label: Image
+apiUrl: 'http://tml.brainsum.com/jsonapi/media/image'
+params: "fields[media--image]|name,field_image\r\ninclude|field_image,field_category\r\nfields[file--file]|url,thumbnail_url\r\nfilter[statusFilter][condition][path]|status\r\nfilter[statusFilter][condition][operator]|=\r\nfilter[statusFilter][condition][value]|1"
+urlAttributePath: data->relationships->field_image->included->attributes->url
+thumbnailUrlAttributePath: data->relationships->field_image->included->attributes->thumbnail_url
+titleAttributePath: data->attributes->name
+altAttributePath: data->relationships->field_image->data->meta->alt
+sortOptionList: "-created|Newest first\r\nname|By name"
+searchFilter: 'name,field_category.name'
+itemsPerPage: '12'

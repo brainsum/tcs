@@ -6,4 +6,6 @@ _core:
   default_config_hash: JbEQZ3Yu8mkAYWdyqBfrtXSqR61FikC-iBQ4hRjptkU
 id: header
 label: Header
+icon_uuid: null
+description: null
 behavior_plugins: {  }
