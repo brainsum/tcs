@@ -224,33 +224,36 @@ body.offcanvas {
 body.page-node-type-campaign.user-logged-in.toolbar-fixed {
   
     .precontent-region {
-      display: none;
+      // display: none;
+      position: fixed;
+      width: 100%;
+      z-index: 502;
     }
     .campaign-menu {
-      top: 39px;
+      top: 120px;
       position: fixed;
     }
     .logo {
-      top: 39px;
+      top: 120px;
       position: fixed;
     }
     &.toolbar-vertical.toolbar-tray-open {
       .campaign-menu {
-        top: 39px;
+        top: 120px;
         position: fixed;
       }
       .logo {
-        top: 39px;
+        top: 120px;
         position: fixed;
       }
     }
     &.toolbar-horizontal.toolbar-tray-open {
       .campaign-menu {
-        top: 79px;
+        top: 160px;
         position: fixed;
       }
       .logo {
-        top: 79px;
+        top: 160px;
         position: fixed;
       }
     }

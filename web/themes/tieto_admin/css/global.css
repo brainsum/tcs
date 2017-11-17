@@ -3310,36 +3310,38 @@ body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper)
 }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed .precontent-region {
-  display: none;
+  position: fixed;
+  width: 100%;
+  z-index: 502;
 }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed .campaign-menu {
-  top: 39px;
+  top: 120px;
   position: fixed;
 }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed .logo {
-  top: 39px;
+  top: 120px;
   position: fixed;
 }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-vertical.toolbar-tray-open .campaign-menu {
-  top: 39px;
+  top: 120px;
   position: fixed;
 }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-vertical.toolbar-tray-open .logo {
-  top: 39px;
+  top: 120px;
   position: fixed;
 }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .campaign-menu {
-  top: 79px;
+  top: 160px;
   position: fixed;
 }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .logo {
-  top: 79px;
+  top: 160px;
   position: fixed;
 }
 
