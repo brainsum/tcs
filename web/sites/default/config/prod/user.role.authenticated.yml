@@ -9,6 +9,7 @@ label: 'Authenticated user'
 weight: -9
 is_admin: false
 permissions:
+  - 'access campaigns changelog'
   - 'access client support'
   - 'access comments'
   - 'access content'
