@@ -12,6 +12,7 @@ permissions:
   - 'access preview links form'
   - 'access toolbar'
   - 'access tour'
+  - 'administer ab tests'
   - 'clone node'
   - 'clone own nodes'
   - 'create campaign content'
