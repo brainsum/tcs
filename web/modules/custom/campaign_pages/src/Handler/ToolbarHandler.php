@@ -83,19 +83,16 @@ class ToolbarHandler implements ContainerInjectionInterface {
       '#weight' => 0,
       'tab' => [
         '#type' => 'link',
-        '#title' => $this->t('Changelog'),
-        '#url' => Url::fromUri('https://drive.google.com/drive/folders/0B3lAo1rFzM2VV0N6ZGp5S1prZ3M', [
-          'attributes' => [
-            'target' => '_blank',
-            'rel' => 'noopener',
-          ],
-        ]),
+        '#title' => $this->t("What's new?"),
+        '#url' => Url::fromRoute('campaign_pages.changelog'),
         '#attributes' => [
-          'title' => $this->t('Changelog'),
+          'title' => $this->t('Changes on the Tieto Campaign Sites'),
           'class' => [
             'toolbar-icon',
             'toolbar-icon-campaign-pages-changelog',
           ],
+          'rel' => 'noopener',
+          'target' => '_blank',
         ],
       ],
       '#wrapper_attributes' => [
@@ -106,34 +103,14 @@ class ToolbarHandler implements ContainerInjectionInterface {
       '#cache' => [
         'contexts' => ['user.permissions'],
       ],
+      '#attached' => [
+        'library' => [
+          'campaign_pages/toolbar',
+        ],
+      ],
     ];
 
     return $items;
-  }
-
-  /**
-   * Lazy builder callback for the menu toolbar.
-   *
-   * @return array
-   *   The renderable array representation of the devel menu.
-   */
-  public function lazyBuilder() {
-    $parameters = new MenuTreeParameters();
-    $parameters->onlyEnabledLinks()->setTopLevelOnly();
-
-    $tree = $this->menuLinkTree->load('campaign_pages', $parameters);
-
-    $manipulators = [
-      ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-      ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
-    ];
-    $tree = $this->menuLinkTree->transform($tree, $manipulators);
-
-    $build = $this->menuLinkTree->build($tree);
-
-    CacheableMetadata::createFromRenderArray($build)->applyTo($build);
-
-    return $build;
   }
 
   /**

@@ -1,0 +1,12 @@
+.campaign-pages-changelog-toolbar-tab.toolbar-tab {
+  float: right !important;
+}
+
+.toolbar-bar .toolbar-icon-campaign-pages-changelog:before {
+  background-image: url(../images/questionmark-disc-acacac.svg);
+}
+
+.toolbar-bar .toolbar-icon-campaign-pages-changelog:active:before,
+.toolbar-bar .toolbar-icon-campaign-pages-changelog.is-active:before {
+  background-image: url(../images/questionmark-disc-ffffff.svg);
+}
