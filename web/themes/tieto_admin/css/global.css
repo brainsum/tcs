@@ -5025,6 +5025,15 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
   color: #777;
 }
 
+.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text {
+  background-image: none;
+  background-color: #EFEFEF;
+}
+
+.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey {
+  background-color: #2D2D2D;
+}
+
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
  *

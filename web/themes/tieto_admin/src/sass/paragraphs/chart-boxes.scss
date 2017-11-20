@@ -1,0 +1,11 @@
+.paragraph--type--chart-boxes {
+
+  &.layout--chart-type--doughnut-and-text {
+    background-image: none;
+    background-color: #EFEFEF;
+    &.color-dark-grey {
+      background-color: #2D2D2D;
+    }
+  }
+
+}
