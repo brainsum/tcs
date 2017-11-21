@@ -1,10 +1,31 @@
 .paragraph--type--chart-boxes {
 
   &.layout--chart-type--doughnut-and-text {
+
+    > .paragraph-inner  {
+      .field--name-parade-title {
+        color: #333333;
+      }
+      .field--name-parade-text {
+        color:#333333;
+      }
+    }
     background-image: none;
     background-color: #EFEFEF;
     &.color-dark-grey {
       background-color: #2D2D2D;
+    }
+
+    // Color Schemes
+    &.color-dark-grey {
+      > .paragraph-inner  {
+        .field--name-parade-title {
+          color: #FFFFFF;
+        }
+        .field--name-parade-text {
+          color:#FFFFFF;
+        }
+      }
     }
   }
 

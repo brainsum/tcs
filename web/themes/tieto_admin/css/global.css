@@ -5030,8 +5030,24 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
   background-color: #EFEFEF;
 }
 
+.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title {
+  color: #333333;
+}
+
+.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text {
+  color: #333333;
+}
+
 .paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey {
   background-color: #2D2D2D;
+}
+
+.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title {
+  color: #FFFFFF;
+}
+
+.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text {
+  color: #FFFFFF;
 }
 
 /**
