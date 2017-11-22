@@ -3021,6 +3021,52 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
   padding-top: 80px;
 }
 
+.campaign-footer .addtoany_list.a2a_kit_size_32 > a {
+  margin: 0;
+  padding: 0;
+}
+
+.campaign-footer .addtoany_list.a2a_kit_size_32 > a > span {
+  border-radius: initial !important;
+}
+
+.campaign-footer .a2a_svg:hover {
+  -webkit-transform: none;
+  transform: none;
+}
+
+.campaign-footer .a2a_s_facebook {
+  background-color: #4267b2 !important;
+}
+
+.campaign-footer .a2a_s_facebook:hover {
+  background-color: #34518d !important;
+}
+
+.campaign-footer .a2a_s_twitter {
+  background-color: #67afe1 !important;
+}
+
+.campaign-footer .a2a_s_twitter:hover {
+  background-color: #3c99d9 !important;
+}
+
+.campaign-footer .a2a_s_google_plus {
+  background-color: #db4437 !important;
+}
+
+.campaign-footer .a2a_s_google_plus:hover {
+  background-color: #bd2e22 !important;
+}
+
+.campaign-footer .a2a_s_linkedin {
+  background-color: #1884bb !important;
+}
+
+.campaign-footer .a2a_s_linkedin:hover {
+  background-color: #12648e !important;
+}
+
 @supports not ((-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0))) {
   .campaign-footer {
     position: relative;
