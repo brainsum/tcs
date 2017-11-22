@@ -109,6 +109,7 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: chart_box
+      add_text_needed: '1'
     third_party_settings: {  }
     type: entity_reference_paragraphs_preview
     region: content

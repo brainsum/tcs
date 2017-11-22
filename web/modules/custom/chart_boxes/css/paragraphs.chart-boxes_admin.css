@@ -12,11 +12,6 @@
   background-image: url("../img/charts.png?v2");
 }
 
-/* @fixme it's not part of chart boxes, but I don't want to create a new library for a temporary css hack on admin */
-.layout__region--content .field--name-parade-paragraphs .paragraphs-add_more-wrapper .paragraphs-add_more-label {
-  display: block !important;
-}
-
 /* @fixme just a quick fix; move it from here */
 .field--name-parade-onepage-sections table tbody .draggable > td:nth-child(2) > div .draggable > td:nth-child(2) > div {
   display: block;
