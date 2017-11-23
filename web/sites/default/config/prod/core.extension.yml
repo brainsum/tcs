@@ -1,6 +1,5 @@
 module:
   abjs: 0
-  abtestui: 0
   addtoany: 0
   aggregated_leaflet_map: 0
   allowed_formats: 0
@@ -42,7 +41,6 @@ module:
   geocoder_field: 0
   geocoder_geofield: 0
   geofield: 0
-  google_analytics: 0
   image: 0
   imageapi_optimize: 0
   imagemagick: 0
