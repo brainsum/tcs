@@ -31,17 +31,8 @@
             "url": "https://git.drupal.org/sandbox/mhavelant/2831414.git"
         },
         "drupal/client_support": {
-            "type": "package",
-            "package": {
-                "name": "drupal/client_support",
-                "version": "0.1.0",
-                "type": "drupal-module",
-                "source": {
-                    "url": "https://github.com/brainsum/client_support",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
+            "type": "vcs",
+            "url": "https://github.com/brainsum/client_support"
         }
     },
     "require": {
@@ -81,7 +72,7 @@
         "drupal/filefield_sources_jsonapi": "1.x-dev",
         "drupal/override_node_options": "^2.3",
         "drupal/view_unpublished": "dev-1.x",
-        "drupal/client_support": "^0.1.0"
+        "drupal/client_support": "dev-master"
     },
     "require-dev": {
         "behat/mink": "~1.7",

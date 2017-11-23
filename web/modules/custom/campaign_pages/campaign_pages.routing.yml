@@ -5,3 +5,11 @@ campaign_pages.frontredirect:
     _title: 'Redirect to tieto.com'
   requirements:
     _permission: 'access content'
+
+campaign_pages.changelog:
+  path: '/campaign-pages/changelog'
+  defaults:
+    _controller: '\Drupal\campaign_pages\Controller\ToolbarController::changelog'
+    _title: 'Changelog'
+  requirements:
+    _permission: 'access campaigns changelog'

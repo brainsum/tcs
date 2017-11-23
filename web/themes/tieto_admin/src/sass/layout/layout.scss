@@ -144,6 +144,44 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
   background-color: white;
   padding-top: 80px;
 
+  // Social media Icons
+  .addtoany_list.a2a_kit_size_32 {
+    > a {
+      margin: 0;
+      padding: 0;
+      > span{
+        border-radius: initial !important;
+      }
+    }
+  }
+  .a2a_svg:hover {
+    transform: none;
+  }
+  .a2a_s_facebook {
+    background-color: #4267b2 !important;
+  }
+  .a2a_s_facebook:hover {
+    background-color: darken(#4267b2, 10%) !important;
+  }
+  .a2a_s_twitter {
+    background-color: #67afe1 !important;
+  }
+  .a2a_s_twitter:hover {
+    background-color: darken(#67afe1, 10%) !important;
+  }
+  .a2a_s_google_plus {
+    background-color: #db4437 !important;
+  }
+  .a2a_s_google_plus:hover {
+    background-color: darken(#db4437, 10%) !important;
+  }
+  .a2a_s_linkedin {
+    background-color: #1884bb !important;
+  }
+  .a2a_s_linkedin:hover {
+    background-color: darken(#1884bb, 10%) !important;
+  }
+
   // These are needed because of CSS slope.
   // @see header.scss
   @supports not (clip-path: polygon(0 0)) {
