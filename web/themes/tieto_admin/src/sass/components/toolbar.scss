@@ -1,0 +1,20 @@
+#toolbar-administration {
+  #toolbar-bar {
+    .toolbar-tab {
+      &.client-support-toolbar-tab,
+      &.campaign-pages-changelog-toolbar-tab {
+          color: #fff;
+          border-color: #3198cc;
+          background-color: #3198cc;
+          font-weight: normal;
+          border-left: 1px solid rgba(0,0,0,0.3);
+          a::before {
+            background-image: url(/modules/custom/campaign_pages/images/questionmark-disc-ffffff.svg);
+          }
+          a:hover {
+            text-decoration: none;
+          }
+        }
+    }
+  }
+}
