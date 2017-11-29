@@ -3,13 +3,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_computed_image
-    - node.type.parade_onepage
+    - node.type.campaign
   module:
     - text
-id: node.parade_onepage.field_computed_image
+id: node.campaign.field_computed_image
 field_name: field_computed_image
 entity_type: node
-bundle: parade_onepage
+bundle: campaign
 label: 'Computed image'
 description: ''
 required: false

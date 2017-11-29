@@ -33,6 +33,7 @@ function parade_content_lister_toolbar_alter(&$items) {
 function parade_content_lister_preprocess_views_view(&$variables) {
   $content_type = \Drupal::config('parade_content_lister.settings')->get('pcl_content_type');
   if ($variables['view']->storage->id() === 'parade_content') {
+    // @todo: Use $contentType->tolink
     $link = [
       '#prefix' => '<a href="/node/add/' . $content_type . '" class="add-more-link">',
       '#suffix' => '</a>',
@@ -59,8 +60,10 @@ function parade_content_lister_form_node_form_alter(&$form, FormStateInterface $
   if ($form_id === 'node_' . $content_type . '_edit_form' || $form_id === 'node_' . $content_type . '_form') {
 
     foreach (array_keys($form['actions']) as $action) {
-      if ($action !== 'preview' && isset($form['actions'][$action]['#type']) &&
-        $form['actions'][$action]['#type'] === 'submit') {
+      if (
+        $action !== 'preview' && isset($form['actions'][$action]['#type']) &&
+        $form['actions'][$action]['#type'] === 'submit'
+      ) {
         $form['actions'][$action]['#submit'][] = 'parade_content_lister_submit_computed';
       }
     }
@@ -72,6 +75,7 @@ function parade_content_lister_form_node_form_alter(&$form, FormStateInterface $
  */
 function parade_content_lister_submit_computed($form, FormStateInterface $form_state) {
   $form_state_values = $form_state->getValues();
+  // @todo: Move to service.
   parade_content_lister_save_computed($form_state_values['nid']);
 
 }

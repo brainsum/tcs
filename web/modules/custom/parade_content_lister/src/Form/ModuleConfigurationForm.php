@@ -91,7 +91,7 @@ class ModuleConfigurationForm extends ConfigFormBase {
       ->save();
 
     if ($regen || $form_state->getValue('pcl_regenerate_thumbnails')) {
-      $nids = \Drupal::entityQuery('node')->condition('type', 'parade_onepage')->execute();
+      $nids = \Drupal::entityQuery('node')->condition('type', 'campaign')->execute();
       $batch = [
         'title' => t('Generating thumbnails...'),
         'init_message' => t('Initializing.'),

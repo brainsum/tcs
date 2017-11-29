@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_computed_image
-    - node.type.parade_onepage
+    - node.type.campaign
   module:
     - node
     - text
@@ -715,7 +715,7 @@ display:
           table: node_field_data
           field: type
           value:
-            parade_onepage: parade_onepage
+            campaign: campaign
           entity_type: node
           entity_field: type
           plugin_id: bundle
