@@ -12,15 +12,20 @@ class ParadeContentListerRunBatch {
   /**
    * Batch op to save images.
    *
-   * @param array $context
-   *   Context.
    * @param array $nids
    *   Gets node ids.
+   * @param array $context
+   *   Context.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public static function generateImages(array $nids, array &$context) {
+    /** @var \Drupal\parade_content_lister\Service\CardThumbnailBuilder $cardThumbnailBuilder */
+    $cardThumbnailBuilder = \Drupal::service('parade_content_lister.card_thumbnail_builder');
     $message = 'Generating...';
-    foreach ($nids as $id) {
-      $results[] = parade_content_lister_save_computed($id);
+    foreach ($nids as $nid) {
+      $results[] = $cardThumbnailBuilder->build($nid);
     }
 
     $context['message'] = $message;

@@ -29,6 +29,8 @@ class ModuleConfigurationForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
   public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
     // Config get for default values.
@@ -37,7 +39,7 @@ class ModuleConfigurationForm extends ConfigFormBase {
     $centered = $config->get('pcl_vertical_center');
 
     /** @var \Drupal\node\NodeTypeInterface[] $contentTypes */
-    $contentTypes = \Drupal::service('entity.manager')->getStorage('node_type')->loadMultiple();
+    $contentTypes = \Drupal::entityTypeManager()->getStorage('node_type')->loadMultiple();
 
     $contentTypesList = [];
     $contentTypesList['-none-'] = $this->t('-none-');
@@ -54,13 +56,13 @@ class ModuleConfigurationForm extends ConfigFormBase {
     $form['pcl_vertical_center'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Verticaly centered thumbnails.'),
-      '#description' => $this->t('If changed thumbnails will be automatically regenarated!'),
+      '#description' => $this->t('If changed thumbnails will be automatically regenerated!'),
       '#default_value' => isset($centered) ? $centered : FALSE,
     ];
     $form['pcl_thumbnail_height'] = [
       '#type' => 'number',
       '#title' => $this->t('Thumbnail height (px).'),
-      '#description' => $this->t('If changed thumbnails will be automatically regenarated!'),
+      '#description' => $this->t('If changed thumbnails will be automatically regenerated!'),
       '#default_value' => isset($thumbnail_height) ? $thumbnail_height : '222',
     ];
     $form['pcl_regenerate_thumbnails'] = [

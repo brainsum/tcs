@@ -1,5 +1,5 @@
 parade_content_lister.admin_settings:
-  path: '/admin/config/parade_content_lister'
+  path: '/admin/config/content/parade_content_lister'
   defaults:
     _form: '\Drupal\parade_content_lister\Form\ModuleConfigurationForm'
     _title: 'Parade content lister settings'

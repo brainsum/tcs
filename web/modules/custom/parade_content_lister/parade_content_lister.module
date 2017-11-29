@@ -6,14 +6,14 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\file\Entity\File;
-use Drupal\views\ViewExecutable;
+use Drupal\Core\Link;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
 
 /**
- * Hook_preprocess.
+ * Implements hook_preprocess_HOOK().
  */
-function parade_content_lister_preprocess(&$variables, $hook) {
+function parade_content_lister_preprocess_page(&$variables) {
   $routeName = \Drupal::routeMatch()->getRouteName();
   if ($routeName === 'view.parade_content.page_1') {
     $variables['#attached']['library'][] = 'parade_content_lister/parade_content_lister.view.design';
@@ -31,14 +31,24 @@ function parade_content_lister_toolbar_alter(&$items) {
  * Adds content add link to top of view.
  */
 function parade_content_lister_preprocess_views_view(&$variables) {
-  $content_type = \Drupal::config('parade_content_lister.settings')->get('pcl_content_type');
+  $content_type = \Drupal::config('parade_content_lister.settings')
+    ->get('pcl_content_type');
   if ($variables['view']->storage->id() === 'parade_content') {
-    // @todo: Use $contentType->tolink
-    $link = [
-      '#prefix' => '<a href="/node/add/' . $content_type . '" class="add-more-link">',
-      '#suffix' => '</a>',
-      '#markup' => '+ ' . t('Add new page'),
-    ];
+    $link = Link::createFromRoute(
+      '+ ' . t('Add new page'),
+      'node.add',
+      [
+        'node_type' => $content_type,
+      ],
+      [
+        'attributes' => [
+          'classes' => [
+            'add-more-link',
+          ],
+        ],
+      ]
+    );
+
     if (!isset($variables['rows'][0]['#rows'])) {
       $variables['rows'][0]['#rows'] = $link;
     }
@@ -52,7 +62,8 @@ function parade_content_lister_preprocess_views_view(&$variables) {
  * Implements hook_node_form_alter().
  */
 function parade_content_lister_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $content_type = \Drupal::config('parade_content_lister.settings')->get('pcl_content_type');
+  $content_type = \Drupal::config('parade_content_lister.settings')
+    ->get('pcl_content_type');
   if (!isset($content_type)) {
     $content_type = 'page';
   }
@@ -72,102 +83,15 @@ function parade_content_lister_form_node_form_alter(&$form, FormStateInterface $
 
 /**
  * Implements hook_form_submit().
+ *
+ * @deprecated
  */
 function parade_content_lister_submit_computed($form, FormStateInterface $form_state) {
   $form_state_values = $form_state->getValues();
-  // @todo: Move to service.
-  parade_content_lister_save_computed($form_state_values['nid']);
 
-}
-
-/**
- * Saves generated thumbnail image.
- *
- * @param int|string $id
- *   The node object.
- *
- * @return bool
- *   ?
- */
-function parade_content_lister_save_computed($id) {
-  $config = \Drupal::config('parade_content_lister.settings');
-  $entityTypeManager = \Drupal::entityTypeManager();
-  /** @var \Drupal\node\NodeInterface $node */
-  $node = $entityTypeManager->getStorage('node')->load($id);
-
-  // @todo: check NULL === $node.
-
-  $nid = $node->id();
-  $thumbnail = $node->get('field_thumbnail')->getValue();
-  $thumb_height = ' style="height: ' . $config->get('pcl_thumbnail_height') . 'px;" ';
-  $classes = '';
-  if ($config->get('pcl_vertical_center') === 1) {
-    $classes = ' vertically-centered ';
-  }
-
-  if (isset($thumbnail[0])) {
-    $file = File::load($thumbnail[0]['target_id']);
-    $path = $file->getFileUri();
-    $type = $file->getMimeType();
-    /** @var \Drupal\image\ImageStyleInterface $style */
-    $style = $entityTypeManager->getStorage('image_style')->load('adapstyle_content_lister');
-    $url = $style->buildUrl($path);
-
-    // @todo: Use node->toLink
-    $node->field_computed_image->value = '<a class="' . $classes . '" ' . $thumb_height . ' href="/node/' . $nid . '/edit" ><img src="' . $url . '"/></a>';
-  }
-  else {
-    $sections = $node->get('parade_onepage_sections')->getValue();
-    foreach ($sections as $key => $value) {
-      $revision_ids[] = $value['target_revision_id'];
-    }
-    if (isset($revision_ids)) {
-      $query = \Drupal::entityQuery('paragraph');
-      $query->condition('revision_id', $revision_ids, 'IN');
-      $query->condition('type', 'header');
-      $ent = $query->execute();
-      foreach ($ent as $key => $value) {
-        $header_entity = \Drupal::entityTypeManager()->getStorage('paragraph')->loadRevision($key);
-        if ($header_entity->get('type')->getValue()[0]['target_id'] === 'header') {
-          $header_paragraph = $header_entity;
-          break;
-        }
-      }
-    }
-
-    if (isset($header_paragraph)) {
-      $header_bg = $header_paragraph->get('parade_background')->getValue();
-      /** @var \Drupal\file\FileInterface $file */
-      $file = $entityTypeManager->getStorage('file')->load($header_bg[0]['target_id']);
-      $path = $file->getFileUri();
-      $type = $file->getMimeType();
-      $type = explode('/', $type)[0];
-
-      if ($type === 'video') {
-        $path = file_create_url($path);
-        $node->field_computed_image->value = '<a class="' . $classes . '"' . $thumb_height .
-          ' href="/node/' . $nid . '/edit"><video muted="" loop="" playsinline=""><source src="' . $path .
-          '" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2"></video></a>';
-
-      }
-      else {
-        $style = $entityTypeManager->getStorage('image_style')
-          ->load('adapstyle_content_lister');
-        $url = $style->buildUrl($path);
-        $node->field_computed_image->value = '<a class="' . $classes . '"' . $thumb_height .
-          ' href="/node/' . $nid . '/edit"><img src="' . $url . '"/></a>';
-      }
-    }
-    else {
-      $image = drupal_get_path('module', 'parade_content_lister') . '/styles/images/default-thumbnail.png';
-      $node->field_computed_image->value = '<a class="vertically-centered "' . $thumb_height .
-        ' href="/node/' . $nid . '/edit"><img src="' . $image . '"/></a>';
-    }
-  }
-  $node->field_computed_image->format = 'full_html';
-  $results[] = $node->save();
-
-  return TRUE;
+  /** @var \Drupal\parade_content_lister\Service\CardThumbnailBuilder $cardThumbnailBuilder */
+  $cardThumbnailBuilder = \Drupal::service('parade_content_lister.card_thumbnail_builder');
+  $cardThumbnailBuilder->build($form_state_values['nid']);
 }
 
 /**
