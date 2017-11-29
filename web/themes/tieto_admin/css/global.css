@@ -1793,22 +1793,6 @@ li.tabs__tab a {
   background: rgba(0, 0, 0, 0.5);
 }
 
-#toolbar-administration #toolbar-bar .toolbar-tab.client-support-toolbar-tab, #toolbar-administration #toolbar-bar .toolbar-tab.campaign-pages-changelog-toolbar-tab {
-  color: #fff;
-  border-color: #3198cc;
-  background-color: #3198cc;
-  font-weight: normal;
-  border-left: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-#toolbar-administration #toolbar-bar .toolbar-tab.client-support-toolbar-tab a::before, #toolbar-administration #toolbar-bar .toolbar-tab.campaign-pages-changelog-toolbar-tab a::before {
-  background-image: url(/modules/custom/campaign_pages/images/questionmark-disc-ffffff.svg);
-}
-
-#toolbar-administration #toolbar-bar .toolbar-tab.client-support-toolbar-tab a:hover, #toolbar-administration #toolbar-bar .toolbar-tab.campaign-pages-changelog-toolbar-tab a:hover {
-  text-decoration: none;
-}
-
 .scroll-to-top {
   position: fixed;
   right: 1em;
