@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.campaign.field_computed_image
     - field.field.node.campaign.field_file
     - field.field.node.campaign.field_meta_tags
+    - field.field.node.campaign.field_thumbnail
     - field.field.node.campaign.parade_onepage_id
     - field.field.node.campaign.parade_onepage_menu
     - field.field.node.campaign.parade_onepage_sections
@@ -73,6 +75,7 @@ content:
       add_mode: button
       form_display_mode: default
       default_paragraph_type: _none
+      add_text_needed: false
     third_party_settings: {  }
     region: content
   path:
@@ -111,7 +114,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 121
+    weight: 12
     third_party_settings: {  }
     region: content
   title:
@@ -137,6 +140,8 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_computed_image: true
+  field_thumbnail: true
   parade_onepage_id: true
   promote: true
   sticky: true

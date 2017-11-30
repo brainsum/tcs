@@ -1,0 +1,41 @@
+uuid: e8d61250-7d8c-4eb1-bf5c-fb4cf0b6f7f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_computed_image
+    - node.type.campaign
+  module:
+    - allowed_formats
+    - geocoder_field
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: '0'
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+_core:
+  default_config_hash: F-4Cu3agWGvid5-iklM7fB32fadiQGSI9tEX88yMK7A
+id: node.campaign.field_computed_image
+field_name: field_computed_image
+entity_type: node
+bundle: campaign
+label: 'Computed image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
