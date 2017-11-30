@@ -6,6 +6,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Image\ImageFactory;
 use Drupal\Core\Render\Markup;
+use Drupal\node\NodeInterface;
 
 /**
  * Class CardThumbnailBuilder.
@@ -95,7 +96,126 @@ class CardThumbnailBuilder {
   }
 
   /**
-   * Saves generated thumbnail image.
+   * Updates the computed image field of a node.
+   *
+   * Note, this function doesn't save the node, only updates the
+   * node object.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   *   The node to be updated.
+   *
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Core\Entity\EntityMalformedException
+   * @throws \Drupal\Core\TypedData\Exception\ReadOnlyException
+   */
+  public function updateNode(NodeInterface $node) {
+    $thumbnail = $node->get('field_thumbnail')->getValue();
+    $classes = [];
+    if ($this->moduleConfig->get('pcl_vertical_center') === 1) {
+      $classes[] = 'vertically-centered';
+    }
+
+    $derivativePath = NULL;
+
+    if (isset($thumbnail[0])) {
+      /** @var \Drupal\file\FileInterface $file */
+      $file = $this->entityTypeManager->getStorage('file')
+        ->load([0]['target_id']);
+      $path = $file->getFileUri();
+      $url = $this->cardImageStyle->buildUrl($path);
+      $thumbnailTag = "<img src='$url'/>";
+      $derivativePath = $path;
+    }
+    else {
+      $sections = $node->get('parade_onepage_sections')->getValue();
+      foreach ($sections as $key => $value) {
+        $revision_ids[] = $value['target_revision_id'];
+      }
+      if (isset($revision_ids)) {
+        $query = $this->entityTypeManager->getStorage('paragraph')->getQuery();
+        $query->condition('revision_id', $revision_ids, 'IN');
+        $query->condition('type', 'header');
+        $ent = $query->execute();
+        foreach ($ent as $key => $value) {
+          /** @var \Drupal\paragraphs\ParagraphInterface $headerEntity */
+          $headerEntity = $this->entityTypeManager
+            ->getStorage('paragraph')
+            ->loadRevision($key);
+
+          if ($headerEntity->isTranslatable()) {
+            $headerEntity = $headerEntity->getTranslation($node->language()->getId());
+          }
+
+          if (
+            NULL !== $headerEntity
+            && $headerEntity->get('type')->getValue()[0]['target_id'] === 'header'
+          ) {
+            $headerParagraph = $headerEntity;
+            break;
+          }
+        }
+      }
+
+      if (isset($headerParagraph)) {
+        $header_bg = $headerParagraph->get('parade_background')->getValue();
+        /** @var \Drupal\file\FileInterface $file */
+        $file = $this->entityTypeManager->getStorage('file')
+          ->load($header_bg[0]['target_id']);
+        $path = $file->getFileUri();
+        $type = $file->getMimeType();
+        $type = explode('/', $type)[0];
+
+        if ($type === 'video') {
+          $path = file_create_url($path);
+          $thumbnailTag = '<video muted="" loop="" playsinline="">';
+          $thumbnailTag .= "<source src='$path' type='video/mp4' codecs='avc1.42E01E, mp4a.40.2'>";
+          $thumbnailTag .= '</video>';
+        }
+        else {
+          $url = $this->cardImageStyle->buildUrl($path);
+          $thumbnailTag = "<img src='$url'/>";
+          $derivativePath = $path;
+        }
+      }
+      else {
+        $classes[] = 'vertically-centered';
+        $image = drupal_get_path('module', 'parade_content_lister') . '/styles/images/default-thumbnail.png';
+        $url = $this->cardImageStyle->buildUrl($image);
+        $thumbnailTag = "<img src='$url'/>";
+        $derivativePath = $image;
+      }
+    }
+
+    if (NULL !== $derivativePath) {
+      // Styled images don't get created by default,
+      // we need to do it manually.
+      $this->createDerivative($derivativePath);
+    }
+
+    $thumb_height = $this->moduleConfig->get('pcl_thumbnail_height') . 'px';
+    $imageLink = $node->toLink(
+      Markup::create($thumbnailTag),
+      'edit-form',
+      [
+        'attributes' => [
+          'class' => $classes,
+          'style' => "height: $thumb_height;",
+        ],
+      ]
+    )->toString()->getGeneratedLink();
+
+    $node->get('field_computed_image')->setValue([
+      'value' => $imageLink,
+      'format' => 'full_html',
+    ]);
+  }
+
+  /**
+   * Generate thumbnail images for every translation of a node by nid.
+   *
+   * Note, use this only when every translation of a node has to be updated.
+   * E.g when bulk-updating.
+   * Note, this saves the node.
    *
    * @param int|string $nid
    *   The node object.
@@ -104,13 +224,9 @@ class CardThumbnailBuilder {
    *   ?
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Core\Entity\EntityStorageException
    * @throws \Drupal\Core\Entity\EntityMalformedException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    * @throws \Drupal\Core\TypedData\Exception\ReadOnlyException
-   *
-   * @todo: Create a new function, call it in node presave, delete this:
-   *        parade_content_lister_submit_computed
-   * @todo: Build should only be called in the batch process.
    */
   public function build($nid) {
     /** @var \Drupal\node\NodeInterface $defaultNode */
@@ -124,100 +240,7 @@ class CardThumbnailBuilder {
     $languages = $defaultNode->getTranslationLanguages();
     foreach ($languages as $language) {
       $node = $defaultNode->getTranslation($language->getId());
-      $thumbnail = $node->get('field_thumbnail')->getValue();
-      $classes = [];
-      if ($this->moduleConfig->get('pcl_vertical_center') === 1) {
-        $classes[] = 'vertically-centered';
-      }
-
-      $derivativePath = NULL;
-
-      if (isset($thumbnail[0])) {
-        /** @var \Drupal\file\FileInterface $file */
-        $file = $this->entityTypeManager->getStorage('file')
-          ->load([0]['target_id']);
-        $path = $file->getFileUri();
-        $url = $this->cardImageStyle->buildUrl($path);
-        $thumbnailTag = "<img src='$url'/>";
-        $derivativePath = $path;
-      }
-      else {
-        $sections = $node->get('parade_onepage_sections')->getValue();
-        foreach ($sections as $key => $value) {
-          $revision_ids[] = $value['target_revision_id'];
-        }
-        if (isset($revision_ids)) {
-          $query = \Drupal::entityQuery('paragraph');
-          $query->condition('revision_id', $revision_ids, 'IN');
-          $query->condition('type', 'header');
-          $ent = $query->execute();
-          foreach ($ent as $key => $value) {
-            /** @var \Drupal\paragraphs\ParagraphInterface $header_entity */
-            $header_entity = $this->entityTypeManager
-              ->getStorage('paragraph')
-              ->loadRevision($key);
-            if (NULL !== $header_entity && $header_entity->get('type')
-              ->getValue()[0]['target_id'] === 'header'
-            ) {
-              $header_paragraph = $header_entity;
-              break;
-            }
-          }
-        }
-
-        if (isset($header_paragraph)) {
-          $header_bg = $header_paragraph->get('parade_background')->getValue();
-          /** @var \Drupal\file\FileInterface $file */
-          $file = $this->entityTypeManager->getStorage('file')
-            ->load($header_bg[0]['target_id']);
-          $path = $file->getFileUri();
-          $type = $file->getMimeType();
-          $type = explode('/', $type)[0];
-
-          if ($type === 'video') {
-            $path = file_create_url($path);
-            $thumbnailTag = '<video muted="" loop="" playsinline="">';
-            $thumbnailTag .= "<source src='$path' type='video/mp4' codecs='avc1.42E01E, mp4a.40.2'>";
-            $thumbnailTag .= '</video>';
-          }
-          else {
-            $url = $this->cardImageStyle->buildUrl($path);
-            $thumbnailTag = "<img src='$url'/>";
-            $derivativePath = $path;
-          }
-        }
-        else {
-          $classes[] = 'vertically-centered';
-          $image = drupal_get_path('module', 'parade_content_lister') . '/styles/images/default-thumbnail.png';
-          $url = $this->cardImageStyle->buildUrl($image);
-          $thumbnailTag = "<img src='$url'/>";
-          $derivativePath = $image;
-        }
-      }
-
-      if (NULL !== $derivativePath) {
-        // Styled images don't get created by default,
-        // we need to do it manually.
-        $this->createDerivative($derivativePath);
-      }
-
-      $thumb_height = $this->moduleConfig->get('pcl_thumbnail_height') . 'px';
-      $imageLink = $node->toLink(
-        Markup::create($thumbnailTag),
-        'edit-form',
-        [
-          'attributes' => [
-            'class' => $classes,
-            'style' => "height: $thumb_height;",
-          ],
-        ]
-      )->toString()->getGeneratedLink();
-
-      $node->get('field_computed_image')->setValue([
-        'value' => $imageLink,
-        'format' => 'full_html',
-      ]);
-
+      $this->updateNode($node);
       $node->save();
     }
     return TRUE;

@@ -18,12 +18,15 @@ class ParadeContentListerRunBatch {
    *   Context.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Core\Entity\EntityMalformedException
    * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Drupal\Core\TypedData\Exception\ReadOnlyException
    */
   public static function generateImages(array $nids, array &$context) {
     /** @var \Drupal\parade_content_lister\Service\CardThumbnailBuilder $cardThumbnailBuilder */
     $cardThumbnailBuilder = \Drupal::service('parade_content_lister.card_thumbnail_builder');
     $message = 'Generating...';
+    $results = [];
     foreach ($nids as $nid) {
       $results[] = $cardThumbnailBuilder->build($nid);
     }

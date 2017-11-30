@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\node\NodeInterface;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
@@ -59,39 +60,13 @@ function parade_content_lister_preprocess_views_view(&$variables) {
 }
 
 /**
- * Implements hook_node_form_alter().
+ * Implements hook_ENTITY_TYPE_presave().
  */
-function parade_content_lister_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $content_type = \Drupal::config('parade_content_lister.settings')
-    ->get('pcl_content_type');
-  if (!isset($content_type)) {
-    $content_type = 'page';
-  }
-
-  if ($form_id === 'node_' . $content_type . '_edit_form' || $form_id === 'node_' . $content_type . '_form') {
-
-    foreach (array_keys($form['actions']) as $action) {
-      if (
-        $action !== 'preview' && isset($form['actions'][$action]['#type']) &&
-        $form['actions'][$action]['#type'] === 'submit'
-      ) {
-        $form['actions'][$action]['#submit'][] = 'parade_content_lister_submit_computed';
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_form_submit().
- *
- * @deprecated
- */
-function parade_content_lister_submit_computed($form, FormStateInterface $form_state) {
-  $form_state_values = $form_state->getValues();
-
+function parade_content_lister_node_presave(NodeInterface $node) {
   /** @var \Drupal\parade_content_lister\Service\CardThumbnailBuilder $cardThumbnailBuilder */
   $cardThumbnailBuilder = \Drupal::service('parade_content_lister.card_thumbnail_builder');
-  $cardThumbnailBuilder->build($form_state_values['nid']);
+  // @todo: Check node type?
+  $cardThumbnailBuilder->updateNode($node);
 }
 
 /**
