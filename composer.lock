@@ -3308,12 +3308,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade_content_lister.git",
-                "reference": "35dd703c55b47c3ac3d861ea183ca826e56a66c1"
+                "reference": "5b8df191df77477e09a2df26cad6f285c694f0dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade_content_lister/zipball/35dd703c55b47c3ac3d861ea183ca826e56a66c1",
-                "reference": "35dd703c55b47c3ac3d861ea183ca826e56a66c1",
+                "url": "https://api.github.com/repos/brainsum/parade_content_lister/zipball/5b8df191df77477e09a2df26cad6f285c694f0dc",
+                "reference": "5b8df191df77477e09a2df26cad6f285c694f0dc",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -3335,7 +3335,7 @@
                 "source": "https://github.com/brainsum/parade_content_lister/tree/master",
                 "issues": "https://github.com/brainsum/parade_content_lister/issues"
             },
-            "time": "2017-11-30T14:08:50+00:00"
+            "time": "2017-11-30T16:52:24+00:00"
         },
         {
             "name": "drupal/paragraphs",
