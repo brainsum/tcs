@@ -33,6 +33,10 @@
         "drupal/client_support": {
             "type": "vcs",
             "url": "https://github.com/brainsum/client_support"
+        },
+        "drupal/parade_content_lister": {
+            "type": "vcs",
+            "url": "https://github.com/brainsum/parade_content_lister"
         }
     },
     "require": {
@@ -72,7 +76,8 @@
         "drupal/filefield_sources_jsonapi": "1.x-dev",
         "drupal/override_node_options": "^2.3",
         "drupal/view_unpublished": "dev-1.x",
-        "drupal/client_support": "dev-master"
+        "drupal/client_support": "dev-master",
+        "drupal/parade_content_lister": "dev-master"
     },
     "require-dev": {
         "behat/mink": "~1.7",

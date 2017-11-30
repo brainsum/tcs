@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e8a49d47409b8c4aecf3221e2b06290c",
+    "content-hash": "200c120626842300117149e7c69f5fa5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3301,6 +3301,41 @@
                 "source": "http://cgit.drupalcode.org/parade"
             },
             "time": "2017-11-29T19:10:45+00:00"
+        },
+        {
+            "name": "drupal/parade_content_lister",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brainsum/parade_content_lister.git",
+                "reference": "086b360708084f22a698e7c1395e0d9d57d8b017"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brainsum/parade_content_lister/zipball/086b360708084f22a698e7c1395e0d9d57d8b017",
+                "reference": "086b360708084f22a698e7c1395e0d9d57d8b017",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "mhavelant",
+                    "email": "mhavelant@brainsum.com"
+                },
+                {
+                    "name": "aherczeg",
+                    "email": "aherczeg@brainsum.com"
+                }
+            ],
+            "description": "Card style lister for content.",
+            "support": {
+                "source": "https://github.com/brainsum/parade_content_lister/tree/master",
+                "issues": "https://github.com/brainsum/parade_content_lister/issues"
+            },
+            "time": "2017-11-30T11:49:09+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -9817,6 +9852,7 @@
         "drupal/filefield_sources_jsonapi": 20,
         "drupal/view_unpublished": 20,
         "drupal/client_support": 20,
+        "drupal/parade_content_lister": 20,
         "drupal/examples": 20
     },
     "prefer-stable": true,
