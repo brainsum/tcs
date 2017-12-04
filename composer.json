@@ -147,7 +147,8 @@
             },
             "drupal/core": {
                 "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
-                "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch"
+                "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch",
+                "Link to Entity get invalid language link in views": "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch"
             },
             "drupal/classy_paragraphs": {
                 "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"

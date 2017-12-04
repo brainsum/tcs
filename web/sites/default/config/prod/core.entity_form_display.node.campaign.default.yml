@@ -12,11 +12,13 @@ dependencies:
     - field.field.node.campaign.parade_onepage_sections
     - field.field.node.campaign.scheduled_archive_date
     - field.field.node.campaign.scheduled_publish_date
+    - image.style.thumbnail
     - node.type.campaign
   module:
     - campaign_pages
     - field_layout
     - file
+    - image
     - inline_entity_form
     - layout_discovery
     - metatag
@@ -33,23 +35,31 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     region: content
   field_file:
-    weight: 2
+    weight: 3
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_meta_tags:
-    weight: 11
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_thumbnail:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 1
@@ -59,7 +69,7 @@ content:
     region: content
   parade_onepage_menu:
     type: link_with_selected_attribute
-    weight: 3
+    weight: 4
     settings:
       placeholder_url: 'Anchor or URL'
       placeholder_title: 'Link text'
@@ -67,7 +77,7 @@ content:
     region: content
   parade_onepage_sections:
     type: entity_reference_paragraphs_preview
-    weight: 4
+    weight: 5
     settings:
       title: Section
       title_plural: Sections
@@ -80,13 +90,13 @@ content:
     region: content
   path:
     type: path
-    weight: 10
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     region: content
   scheduled_archive_date:
     type: inline_entity_form_complex
-    weight: 6
+    weight: 7
     settings:
       override_labels: true
       label_singular: 'Scheduled archive date'
@@ -99,7 +109,7 @@ content:
     region: content
   scheduled_publish_date:
     type: inline_entity_form_complex
-    weight: 5
+    weight: 6
     settings:
       override_labels: true
       label_singular: 'Scheduled publish date'
@@ -114,7 +124,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 13
     third_party_settings: {  }
     region: content
   title:
@@ -126,13 +136,13 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 8
     settings:
       match_operator: CONTAINS
       size: 60
@@ -141,7 +151,6 @@ content:
     region: content
 hidden:
   field_computed_image: true
-  field_thumbnail: true
   parade_onepage_id: true
   promote: true
   sticky: true
