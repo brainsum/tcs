@@ -25,6 +25,7 @@ dependencies:
     - layout_discovery
     - marketo_form
     - text
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol

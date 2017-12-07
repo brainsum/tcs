@@ -1,0 +1,12 @@
+uuid: 6497e71e-835f-4780-bc6b-63cc66a0f6c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.archived
+    - workbench_moderation.moderation_state.draft
+id: draft_archived
+label: Archive
+stateFrom: draft
+stateTo: archived
+weight: -1

@@ -1,0 +1,26 @@
+uuid: 6e34f1e7-0038-467a-9706-0e96ac4fb3d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.scheduled_update.field_moderation_state
+    - scheduled_updates.scheduled_update_type.moderation_publish
+    - workbench_moderation.moderation_state.published
+id: scheduled_update.moderation_publish.field_moderation_state
+field_name: field_moderation_state
+entity_type: scheduled_update
+bundle: moderation_publish
+label: 'Moderation state'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: ce58b3ad-300a-46de-a2ac-1eddcdb3f3f1
+default_value_callback: ''
+settings:
+  handler: 'default:moderation_state'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

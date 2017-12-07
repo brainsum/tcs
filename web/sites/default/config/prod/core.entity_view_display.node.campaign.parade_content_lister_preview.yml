@@ -8,11 +8,11 @@ dependencies:
     - field.field.node.campaign.field_file
     - field.field.node.campaign.field_meta_tags
     - field.field.node.campaign.field_thumbnail
+    - field.field.node.campaign.moderation_state_archive
+    - field.field.node.campaign.moderation_state_publish
     - field.field.node.campaign.parade_onepage_id
     - field.field.node.campaign.parade_onepage_menu
     - field.field.node.campaign.parade_onepage_sections
-    - field.field.node.campaign.scheduled_archive_date
-    - field.field.node.campaign.scheduled_publish_date
     - image.style.parade_card_thumbnail
     - node.type.campaign
   module:
@@ -43,6 +43,11 @@ content:
       image_style: parade_card_thumbnail
       image_link: content
     third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   addtoany: true
   field_computed_image: true
@@ -50,8 +55,8 @@ hidden:
   field_meta_tags: true
   langcode: true
   links: true
+  moderation_state_archive: true
+  moderation_state_publish: true
   parade_onepage_id: true
   parade_onepage_menu: true
   parade_onepage_sections: true
-  scheduled_archive_date: true
-  scheduled_publish_date: true

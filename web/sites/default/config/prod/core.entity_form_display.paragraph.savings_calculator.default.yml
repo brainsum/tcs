@@ -13,6 +13,7 @@ dependencies:
     - field_layout
     - layout_discovery
     - maxlength
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol
