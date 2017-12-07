@@ -11,7 +11,7 @@ field_map:
   field_moderation_state_1: moderation_state
 update_runner:
   id: latest_revision
-  after_run: DELETE
+  after_run: ARCHIVE
   invalid_update_behavior: REQUEUE
   create_revisions: BUNDLE_DEFAULT
   update_user: USER_UPDATE_RUNNER
