@@ -12,6 +12,6 @@ field_map:
 update_runner:
   id: latest_revision
   after_run: DELETE
-  invalid_update_behavior: DELETE
+  invalid_update_behavior: REQUEUE
   create_revisions: BUNDLE_DEFAULT
-  update_user: USER_UPDATE_OWNER
+  update_user: USER_UPDATE_RUNNER
