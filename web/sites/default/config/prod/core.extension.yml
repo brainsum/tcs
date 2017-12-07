@@ -99,6 +99,7 @@ module:
   view_mode_selector: 0
   view_unpublished: 0
   views_ui: 0
+  workbench_moderation: 0
   campaign_pages: 1
   filefield_sources: 1
   menu_link_content: 1

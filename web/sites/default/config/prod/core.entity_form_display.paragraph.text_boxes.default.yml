@@ -20,6 +20,7 @@ dependencies:
     - parade
     - text
     - view_mode_selector
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol

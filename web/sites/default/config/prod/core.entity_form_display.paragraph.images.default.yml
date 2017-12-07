@@ -14,6 +14,7 @@ dependencies:
     - field_layout
     - image
     - layout_discovery
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol

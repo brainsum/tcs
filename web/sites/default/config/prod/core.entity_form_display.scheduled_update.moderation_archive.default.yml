@@ -1,0 +1,27 @@
+uuid: 3693eb7a-a1f8-484e-902d-ab6924d8c953
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.scheduled_update.moderation_archive.field_moderation_state_1
+    - scheduled_updates.scheduled_update_type.moderation_archive
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: scheduled_update.moderation_archive.default
+targetEntityType: scheduled_update
+bundle: moderation_archive
+mode: default
+content:
+  update_timestamp:
+    type: datetime_timestamp
+    weight: -9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_moderation_state_1: true
