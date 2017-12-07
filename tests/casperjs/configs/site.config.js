@@ -1,4 +1,4 @@
-var baseURL = 'http://tcs-dev.gubo.brainsum.com/';
+var baseURL = 'https://tcs-dev.gubo.brainsum.com/';
 var nid = 272;
 
 exports.siteURL = baseURL;
