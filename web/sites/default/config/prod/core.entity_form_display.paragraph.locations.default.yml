@@ -16,6 +16,7 @@ dependencies:
     - geocoder_autocomplete
     - layout_discovery
     - text
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol

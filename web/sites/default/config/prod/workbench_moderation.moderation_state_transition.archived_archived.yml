@@ -1,0 +1,11 @@
+uuid: 6193137f-bc04-414e-b3c3-f74f1ff8c7ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.archived
+id: archived_archived
+label: 'Keep as Archived'
+stateFrom: archived
+stateTo: archived
+weight: 0

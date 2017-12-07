@@ -1,14 +1,16 @@
-uuid: dae4ba0a-1446-4eb3-acee-1a91cfd1d6b3
+uuid: 446b2f00-2306-49bc-aff1-9de8a20a128f
 langcode: en
 status: true
 dependencies:
   module:
     - scheduled_updates
-id: scheduled_update.field_status
-field_name: field_status
+    - workbench_moderation
+id: scheduled_update.field_moderation_state
+field_name: field_moderation_state
 entity_type: scheduled_update
-type: boolean
-settings: {  }
+type: entity_reference
+settings:
+  target_type: moderation_state
 module: core
 locked: false
 cardinality: 1

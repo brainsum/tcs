@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b9e9fe9858cec907bdbf653490908a9",
+    "content-hash": "f623a93bb226360eeea3d10ebdfd8e15",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1088,17 +1088,17 @@
         },
         {
             "name": "drupal/abtestui",
-            "version": "1.0.0-beta4",
+            "version": "1.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/abtestui",
-                "reference": "8.x-1.0-beta4"
+                "reference": "8.x-1.0-beta5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/abtestui-8.x-1.0-beta4.zip",
-                "reference": "8.x-1.0-beta4",
-                "shasum": "55088442890e977cb4d402563bfc35c20b020c68"
+                "url": "https://ftp.drupal.org/files/projects/abtestui-8.x-1.0-beta5.zip",
+                "reference": "8.x-1.0-beta5",
+                "shasum": "ca650bce90748ec20e0f6a75f6ec7a49e01ea4f9"
             },
             "require": {
                 "drupal/abjs": "^1.0",
@@ -1111,8 +1111,12 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta4",
-                    "datestamp": "1500047942"
+                    "version": "8.x-1.0-beta5",
+                    "datestamp": "1512492186",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1325,11 +1329,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1477459140",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1477459140"
                 },
                 "patches_applied": {
                     "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
@@ -1734,7 +1734,8 @@
             "extra": {
                 "patches_applied": {
                     "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
-                    "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch"
+                    "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch",
+                    "Link to Entity get invalid language link in views": "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch"
                 }
             },
             "autoload": {
@@ -1995,11 +1996,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1495814284",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
+                    "datestamp": "1495814284"
                 },
                 "patches_applied": {
                     "Deletion of referenced entities on host delete, without checking usage/another reference.": "https://www.drupal.org/files/issues/deletion_of_used_referenced_entity-2852522-4.patch"
@@ -2270,11 +2267,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-alpha5",
-                    "datestamp": "1481538483",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1481538483"
                 },
                 "patches_applied": {
                     "Fix config schema.": "https://www.drupal.org/files/issues/2824802-geocoder-schema-fix-2.patch"
@@ -2355,11 +2348,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1484303583",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
+                    "datestamp": "1484303583"
                 },
                 "patches_applied": {
                     "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
@@ -2737,7 +2726,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1477868343"
+                    "datestamp": "1477868343",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3136,11 +3129,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477009139",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1477009139"
                 },
                 "patches_applied": {
                     "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
@@ -3217,7 +3206,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "dce888fb0dfb95aed37f37f9411ba25c7a442ad7"
+                "reference": "2d7cb68df055179d016875255aff7a691cb2181d"
             },
             "require": {
                 "drupal/classy_paragraphs": "~1.0",
@@ -3237,8 +3226,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta2+159-dev",
-                    "datestamp": "1511345885",
+                    "version": "8.x-2.0-beta2+163-dev",
+                    "datestamp": "1511955785",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3300,7 +3289,42 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-11-22T13:51:51+00:00"
+            "time": "2017-11-29T19:10:45+00:00"
+        },
+        {
+            "name": "drupal/parade_content_lister",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brainsum/parade_content_lister.git",
+                "reference": "d5d4ebaa794ee9b4b108b854da8b189a10e12c0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brainsum/parade_content_lister/zipball/d5d4ebaa794ee9b4b108b854da8b189a10e12c0b",
+                "reference": "d5d4ebaa794ee9b4b108b854da8b189a10e12c0b",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "mhavelant",
+                    "email": "mhavelant@brainsum.com"
+                },
+                {
+                    "name": "aherczeg",
+                    "email": "aherczeg@brainsum.com"
+                }
+            ],
+            "description": "Card style lister for content.",
+            "support": {
+                "source": "https://github.com/brainsum/parade_content_lister/tree/master",
+                "issues": "https://github.com/brainsum/parade_content_lister/issues"
+            },
+            "time": "2017-12-05T10:20:02+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -3655,17 +3679,11 @@
         },
         {
             "name": "drupal/scheduled_updates",
-            "version": "1.0.0-alpha6",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/scheduled_updates",
-                "reference": "8.x-1.0-alpha6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/scheduled_updates-8.x-1.0-alpha6.zip",
-                "reference": "8.x-1.0-alpha6",
-                "shasum": "3746c71d480fb62c5c55db7e08be41370edb4d03"
+                "reference": "e692a82707ba6f230ee8722b6b73f9d38e9fad97"
             },
             "require": {
                 "drupal/core": "*",
@@ -3677,8 +3695,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha6",
-                    "datestamp": "1489190883",
+                    "version": "8.x-1.0-alpha5+14-dev",
+                    "datestamp": "1482247383",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3702,7 +3720,8 @@
             "homepage": "https://www.drupal.org/project/scheduled_updates",
             "support": {
                 "source": "http://cgit.drupalcode.org/scheduled_updates"
-            }
+            },
+            "time": "2017-11-22T17:35:46+00:00"
         },
         {
             "name": "drupal/seckit",
@@ -3970,6 +3989,109 @@
                 "source": "http://cgit.drupalcode.org/view_unpublished"
             },
             "time": "2017-02-12T20:42:52+00:00"
+        },
+        {
+            "name": "drupal/workbench_moderation",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/workbench_moderation",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/workbench_moderation-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "3d37b29ed1e7fbf398160fe2494abc4361e4341c"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1483529942",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Crell",
+                    "homepage": "https://www.drupal.org/user/26398"
+                },
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "becw",
+                    "homepage": "https://www.drupal.org/user/81067"
+                },
+                {
+                    "name": "caroltron",
+                    "homepage": "https://www.drupal.org/user/171342"
+                },
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
+                {
+                    "name": "das-peter",
+                    "homepage": "https://www.drupal.org/user/762870"
+                },
+                {
+                    "name": "josephdpurcell",
+                    "homepage": "https://www.drupal.org/user/2944035"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                },
+                {
+                    "name": "robeano",
+                    "homepage": "https://www.drupal.org/user/67660"
+                },
+                {
+                    "name": "srjosh",
+                    "homepage": "https://www.drupal.org/user/165878"
+                },
+                {
+                    "name": "stevector",
+                    "homepage": "https://www.drupal.org/user/179805"
+                },
+                {
+                    "name": "tedbow",
+                    "homepage": "https://www.drupal.org/user/240860"
+                },
+                {
+                    "name": "timmillwood",
+                    "homepage": "https://www.drupal.org/user/227849"
+                }
+            ],
+            "description": "Provides moderation states for content",
+            "homepage": "http://drupal.org/project/workbench_moderation",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/workbench_moderation",
+                "issues": "http://drupal.org/project/issues/workbench_moderation"
+            }
         },
         {
             "name": "drush/drush",
@@ -9817,6 +9939,8 @@
         "drupal/filefield_sources_jsonapi": 20,
         "drupal/view_unpublished": 20,
         "drupal/client_support": 20,
+        "drupal/parade_content_lister": 20,
+        "drupal/scheduled_updates": 20,
         "drupal/examples": 20
     },
     "prefer-stable": true,

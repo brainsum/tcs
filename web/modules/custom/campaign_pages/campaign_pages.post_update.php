@@ -6,6 +6,7 @@
  */
 
 use Drupal\campaign_pages\Helper\ScheduledUpdateUpdateHandler;
+use Drupal\campaign_pages\Helper\ScheduledUpdateState2WorkbenchModeration;
 use Drupal\Core\Database\Database;
 use Drupal\Core\Database\StatementInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
@@ -613,4 +614,12 @@ function campaign_pages_post_update_8403() {
     unset($row);
   }
 
+}
+
+/**
+ * Migrate scheduled updates for TCS-455.
+ */
+function campaign_pages_post_update_8404() {
+  $updateHandler = new ScheduledUpdateState2WorkbenchModeration();
+  $updateHandler->update();
 }

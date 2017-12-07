@@ -1,13 +1,13 @@
-uuid: 79541252-819e-4947-87ac-3c6bbf56b441
+uuid: 887e8c43-0e62-4d86-903c-a04d680343d3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.scheduled_publish_date
+    - field.storage.node.moderation_state_publish
     - node.type.campaign
-    - scheduled_updates.scheduled_update_type.node_publish_with_status
-id: node.campaign.scheduled_publish_date
-field_name: scheduled_publish_date
+    - scheduled_updates.scheduled_update_type.moderation_publish
+id: node.campaign.moderation_state_publish
+field_name: moderation_state_publish
 entity_type: node
 bundle: campaign
 label: 'Scheduled publish date'
@@ -20,7 +20,7 @@ settings:
   handler: 'default:scheduled_update'
   handler_settings:
     target_bundles:
-      node_publish_with_status: node_publish_with_status
+      moderation_publish: moderation_publish
     sort:
       field: _none
     auto_create: false

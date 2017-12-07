@@ -14,6 +14,7 @@ dependencies:
     - layout_discovery
     - text
     - twitter_feed_parade_type
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol

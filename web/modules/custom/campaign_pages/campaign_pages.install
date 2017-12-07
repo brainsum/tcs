@@ -438,3 +438,11 @@ function campaign_pages_update_8401() {
     }
   }
 }
+
+/**
+ * Install workbench moderation module - needed for post updates.
+ */
+function campaign_pages_update_8402() {
+  $modules = ['workbench_moderation'];
+  \Drupal::service('module_installer')->install($modules, TRUE);
+}

@@ -17,6 +17,7 @@ dependencies:
     - maxlength
     - parade
     - text
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -73,6 +74,8 @@ content:
   translation:
     weight: 10
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

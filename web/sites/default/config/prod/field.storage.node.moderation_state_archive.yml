@@ -1,12 +1,12 @@
-uuid: b5e47fe4-c83c-4c31-9aaa-d7ecd6af85ed
+uuid: ef442a80-a0df-482e-93a1-2f18a9287647
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - scheduled_updates
-id: node.scheduled_archive_date
-field_name: scheduled_archive_date
+id: node.moderation_state_archive
+field_name: moderation_state_archive
 entity_type: node
 type: entity_reference
 settings:

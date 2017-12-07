@@ -64,8 +64,8 @@ function campaign_pages_field_widget_form_alter(&$element, FormStateInterface $f
   }
 
   // Hide empty scheduled updates field if user doesn't have create permission.
-  if (($field_name === 'scheduled_publish_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node_publish_with_status scheduled updates'))
-  || ($field_name === 'scheduled_archive_date' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create node_archive_with_status scheduled updates'))) {
+  if (($field_name === 'moderation_state_publish' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create moderation_publish scheduled updates'))
+  || ($field_name === 'moderation_state_archive' && !isset($element['entities'][0]) && !\Drupal::currentUser()->hasPermission('create moderation_archive scheduled updates'))) {
     $element['#access'] = FALSE;
   }
 }

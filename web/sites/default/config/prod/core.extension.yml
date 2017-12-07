@@ -42,7 +42,6 @@ module:
   geocoder_field: 0
   geocoder_geofield: 0
   geofield: 0
-  google_analytics: 0
   image: 0
   imageapi_optimize: 0
   imagemagick: 0
@@ -69,6 +68,7 @@ module:
   page_cache: 0
   parade: 0
   parade_conditional_field: 0
+  parade_content_lister: 0
   parade_demo: 0
   paragraphs_type_permissions: 0
   path: 0
@@ -100,6 +100,7 @@ module:
   view_mode_selector: 0
   view_unpublished: 0
   views_ui: 0
+  workbench_moderation: 0
   campaign_pages: 1
   filefield_sources: 1
   menu_link_content: 1

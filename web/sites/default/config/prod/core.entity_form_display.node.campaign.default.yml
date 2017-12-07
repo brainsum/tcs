@@ -3,23 +3,28 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.campaign.field_computed_image
     - field.field.node.campaign.field_file
     - field.field.node.campaign.field_meta_tags
+    - field.field.node.campaign.field_thumbnail
+    - field.field.node.campaign.moderation_state_archive
+    - field.field.node.campaign.moderation_state_publish
     - field.field.node.campaign.parade_onepage_id
     - field.field.node.campaign.parade_onepage_menu
     - field.field.node.campaign.parade_onepage_sections
-    - field.field.node.campaign.scheduled_archive_date
-    - field.field.node.campaign.scheduled_publish_date
+    - image.style.thumbnail
     - node.type.campaign
   module:
     - campaign_pages
     - field_layout
     - file
+    - image
     - inline_entity_form
     - layout_discovery
     - metatag
     - parade
     - path
+    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -31,23 +36,31 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     region: content
   field_file:
-    weight: 2
+    weight: 3
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_meta_tags:
-    weight: 11
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_thumbnail:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 1
@@ -55,35 +68,9 @@ content:
       include_locked: true
     third_party_settings: {  }
     region: content
-  parade_onepage_menu:
-    type: link_with_selected_attribute
-    weight: 3
-    settings:
-      placeholder_url: 'Anchor or URL'
-      placeholder_title: 'Link text'
-    third_party_settings: {  }
-    region: content
-  parade_onepage_sections:
-    type: entity_reference_paragraphs_preview
-    weight: 4
-    settings:
-      title: Section
-      title_plural: Sections
-      edit_mode: preview
-      add_mode: button
-      form_display_mode: default
-      default_paragraph_type: _none
-    third_party_settings: {  }
-    region: content
-  path:
-    type: path
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  scheduled_archive_date:
+  moderation_state_archive:
     type: inline_entity_form_complex
-    weight: 6
+    weight: 9
     settings:
       override_labels: true
       label_singular: 'Scheduled archive date'
@@ -94,24 +81,44 @@ content:
       form_mode: default
     third_party_settings: {  }
     region: content
-  scheduled_publish_date:
+  moderation_state_publish:
     type: inline_entity_form_complex
-    weight: 5
+    weight: 8
     settings:
+      form_mode: default
       override_labels: true
       label_singular: 'Scheduled publish date'
       label_plural: 'Scheduled publish dates'
       allow_new: true
       match_operator: CONTAINS
       allow_existing: false
-      form_mode: default
     third_party_settings: {  }
     region: content
-  status:
-    type: boolean_checkbox
+  parade_onepage_menu:
+    type: link_with_selected_attribute
+    weight: 4
     settings:
-      display_label: true
-    weight: 121
+      placeholder_url: 'Anchor or URL'
+      placeholder_title: 'Link text'
+    third_party_settings: {  }
+    region: content
+  parade_onepage_sections:
+    type: entity_reference_paragraphs_preview
+    weight: 5
+    settings:
+      title: Section
+      title_plural: Sections
+      edit_mode: preview
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      add_text_needed: false
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 13
+    settings: {  }
     third_party_settings: {  }
     region: content
   title:
@@ -123,13 +130,13 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 9
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -137,6 +144,8 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_computed_image: true
   parade_onepage_id: true
   promote: true
+  status: true
   sticky: true
