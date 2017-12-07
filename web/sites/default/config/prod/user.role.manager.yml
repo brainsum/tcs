@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access content overview'
   - 'access geocoder autocomplete'
+  - 'access parade content cards list'
   - 'access preview links form'
   - 'access toolbar'
   - 'access tour'
