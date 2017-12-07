@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5da1b3af5a2e8165af34364b71bcedb",
+    "content-hash": "f623a93bb226360eeea3d10ebdfd8e15",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1329,11 +1329,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1477459140",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1477459140"
                 },
                 "patches_applied": {
                     "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
@@ -2000,11 +1996,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1495814284",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
+                    "datestamp": "1495814284"
                 },
                 "patches_applied": {
                     "Deletion of referenced entities on host delete, without checking usage/another reference.": "https://www.drupal.org/files/issues/deletion_of_used_referenced_entity-2852522-4.patch"
@@ -2275,11 +2267,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-alpha5",
-                    "datestamp": "1481538483",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1481538483"
                 },
                 "patches_applied": {
                     "Fix config schema.": "https://www.drupal.org/files/issues/2824802-geocoder-schema-fix-2.patch"
@@ -2360,11 +2348,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1484303583",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
+                    "datestamp": "1484303583"
                 },
                 "patches_applied": {
                     "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
@@ -2742,7 +2726,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1477868343"
+                    "datestamp": "1477868343",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3141,11 +3129,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477009139",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1477009139"
                 },
                 "patches_applied": {
                     "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
@@ -3695,17 +3679,11 @@
         },
         {
             "name": "drupal/scheduled_updates",
-            "version": "1.0.0-alpha6",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/scheduled_updates",
-                "reference": "8.x-1.0-alpha6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/scheduled_updates-8.x-1.0-alpha6.zip",
-                "reference": "8.x-1.0-alpha6",
-                "shasum": "3746c71d480fb62c5c55db7e08be41370edb4d03"
+                "reference": "e692a82707ba6f230ee8722b6b73f9d38e9fad97"
             },
             "require": {
                 "drupal/core": "*",
@@ -3717,8 +3695,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha6",
-                    "datestamp": "1489190883",
+                    "version": "8.x-1.0-alpha5+14-dev",
+                    "datestamp": "1482247383",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3742,7 +3720,8 @@
             "homepage": "https://www.drupal.org/project/scheduled_updates",
             "support": {
                 "source": "http://cgit.drupalcode.org/scheduled_updates"
-            }
+            },
+            "time": "2017-11-22T17:35:46+00:00"
         },
         {
             "name": "drupal/seckit",
@@ -9961,6 +9940,7 @@
         "drupal/view_unpublished": 20,
         "drupal/client_support": 20,
         "drupal/parade_content_lister": 20,
+        "drupal/scheduled_updates": 20,
         "drupal/examples": 20
     },
     "prefer-stable": true,
