@@ -5,5 +5,65 @@ definitions:
     parent: ''
     weight: 0
     expanded: false
+  parade_content_lister__adapstyle_content_page:
+    weight: -85
+    enabled: false
+    menu_name: admin
+    parent: system.admin
+    expanded: false
+  entity__scheduled_update__collection:
+    weight: -85
+    menu_name: admin
+    parent: system.admin_content
+    expanded: false
+    enabled: true
+  entity__classy_paragraphs_style__collection:
+    weight: -85
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  parade_demo__admin:
+    weight: -85
+    menu_name: admin
+    parent: system.admin_config_content
+    expanded: false
+    enabled: true
+  parade_content_lister__admin_settings:
+    weight: -85
+    menu_name: admin
+    parent: system.admin_config_content
+    expanded: false
+    enabled: true
+  facebook_pixel__facebook_pixel_config_form:
+    weight: -85
+    menu_name: admin
+    parent: system.admin_config_services
+    expanded: false
+    enabled: true
+  scheduled_update__config__overview:
+    weight: -85
+    menu_name: admin
+    parent: system.admin_config_workflow
+    expanded: false
+    enabled: true
+  entity__scheduled_update_type__collection:
+    weight: -85
+    menu_name: admin
+    parent: scheduled_update.config.overview
+    expanded: false
+    enabled: true
+  schedule_updates__runner_form:
+    weight: -85
+    menu_name: admin
+    parent: scheduled_update.config.overview
+    expanded: false
+    enabled: true
+  schedule_updates__settings_form:
+    weight: -85
+    menu_name: admin
+    parent: scheduled_update.config.overview
+    expanded: false
+    enabled: true
 _core:
   default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM
