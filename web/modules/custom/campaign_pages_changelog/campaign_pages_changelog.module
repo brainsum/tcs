@@ -6,6 +6,8 @@
  */
 
 use Drupal\campaign_pages_changelog\Handler\ToolbarHandler;
+use Drupal\Core\Link;
+use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_toolbar().
@@ -14,4 +16,34 @@ function campaign_pages_changelog_toolbar() {
   return \Drupal::service('class_resolver')
     ->getInstanceFromDefinition(ToolbarHandler::class)
     ->toolbar();
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function campaign_pages_changelog_page_attachments(array &$attachments) {
+  $request = \Drupal::request();
+  $user = \Drupal::currentUser();
+  if (
+    !$request->cookies->has('Drupal_visitor_campaigns_changelog_alert')
+    && $user->hasPermission('access campaigns changelog')
+  ) {
+    // Note: Drupal adds it as 'Drupal.visitor.campaigns_changelog_alert'.
+    user_cookie_save(['campaigns_changelog_alert' => 'shown']);
+    $link = Link::createFromRoute(
+      'exciting new changes',
+      'campaign_pages_changelog.changelog',
+      [],
+      [
+        'attributes' => [
+          'target' => '_blank',
+          'rel' => 'noopener',
+        ],
+      ]
+    );
+    $link = $link->toString()->getGeneratedLink();
+    drupal_set_message(t("It seems you haven't logged in a while. Check out the @url to Tieto Campaign Sites.", [
+      '@url' => Markup::create($link),
+    ]));
+  }
 }
