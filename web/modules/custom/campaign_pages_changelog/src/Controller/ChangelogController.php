@@ -6,11 +6,11 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Routing\TrustedRedirectResponse;
 
 /**
- * Class ToolbarController.
+ * Class ChangelogController.
  *
  * @package Drupal\campaign_pages_changelog\Controller
  */
-class ToolbarController extends ControllerBase {
+class ChangelogController extends ControllerBase {
 
   /**
    * Changelog handler.
@@ -21,7 +21,9 @@ class ToolbarController extends ControllerBase {
    * @throws \InvalidArgumentException
    */
   public function changelog() {
-    return new TrustedRedirectResponse('https://drive.google.com/drive/folders/0B3lAo1rFzM2VV0N6ZGp5S1prZ3M');
+    // Minified link points here:
+    // @see: 'https://drive.google.com/drive/folders/0B3lAo1rFzM2VV0N6ZGp5S1prZ3M'
+    return new TrustedRedirectResponse('https://goo.gl/2sQoiz');
   }
 
 }
