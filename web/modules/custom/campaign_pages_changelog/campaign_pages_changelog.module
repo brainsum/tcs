@@ -38,6 +38,7 @@ function campaign_pages_changelog_page_attachments(array &$attachments) {
         'attributes' => [
           'target' => '_blank',
           'rel' => 'noopener',
+          'title' => t('Click here to read about the latest improvements'),
         ],
       ]
     );
