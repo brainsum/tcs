@@ -623,3 +623,19 @@ function campaign_pages_post_update_8404() {
   $updateHandler = new ScheduledUpdateState2WorkbenchModeration();
   $updateHandler->update();
 }
+
+/**
+ * Set moderation states based on status values.
+ */
+function campaign_pages_post_update_8405() {
+  $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+  $nodes = $nodeStorage->loadByProperties(['status' => TRUE]);
+  foreach ($nodes as $node) {
+    $translations = $node->getTranslationLanguages();
+    foreach ($translations as $langcode => $translation) {
+      $translated_node = $node->getTranslation($langcode);
+      $translated_node->moderation_state->target_id = ($translated_node->isPublished() ? 'published' : 'draft');
+      $translated_node->save();
+    }
+  }
+}
