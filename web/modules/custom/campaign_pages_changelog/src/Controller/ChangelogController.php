@@ -1,16 +1,16 @@
 <?php
 
-namespace Drupal\campaign_pages\Controller;
+namespace Drupal\campaign_pages_changelog\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Routing\TrustedRedirectResponse;
 
 /**
- * Class ToolbarController.
+ * Class ChangelogController.
  *
- * @package Drupal\campaign_pages\Controller
+ * @package Drupal\campaign_pages_changelog\Controller
  */
-class ToolbarController extends ControllerBase {
+class ChangelogController extends ControllerBase {
 
   /**
    * Changelog handler.

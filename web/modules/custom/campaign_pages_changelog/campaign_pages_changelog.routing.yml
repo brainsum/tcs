@@ -1,0 +1,7 @@
+campaign_pages_changelog.changelog:
+  path: '/campaign-pages/changelog'
+  defaults:
+    _controller: '\Drupal\campaign_pages_changelog\Controller\ChangelogController::changelog'
+    _title: 'Changelog'
+  requirements:
+    _permission: 'access campaigns changelog'

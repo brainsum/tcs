@@ -7,6 +7,7 @@ module:
   automated_cron: 0
   block: 0
   breakpoint: 0
+  campaign_pages_changelog: 0
   campaign_pages_tour: 0
   captcha: 0
   chart_boxes: 0

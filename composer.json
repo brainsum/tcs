@@ -138,7 +138,6 @@
                 "Deletion of referenced entities on host delete, without checking usage/another reference.": "https://www.drupal.org/files/issues/deletion_of_used_referenced_entity-2852522-4.patch"
             },
             "drupal/scheduled_updates": {
-                "Scheduled Updates does not work with Content Moderation.": "https://www.drupal.org/files/issues/scheduled_updates_does-2821916-7.patch",
                 "Cron Updates not runned by User #1": "https://www.drupal.org/files/issues/2793489-20.patch"
             },
             "drupal/geocoder": {
