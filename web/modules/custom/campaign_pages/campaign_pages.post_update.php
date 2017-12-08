@@ -617,9 +617,27 @@ function campaign_pages_post_update_8403() {
 }
 
 /**
- * Migrate scheduled updates for TCS-455.
+ * Delete all newer revisions (old draft) as actual.
+ *
+ * @throws Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
  */
 function campaign_pages_post_update_8404() {
+  $select = \Drupal::database()->select('node', 'n');
+  $select->join('node_revision', 'nr', 'n.nid = nr.nid AND nr.vid > n.vid');
+  $select->fields('nr', ['vid']);
+  $result = $select->execute();
+  $rows = $result->fetchAllAssoc('vid');
+  foreach ($rows as $row) {
+    \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->deleteRevision($row->vid);
+  }
+}
+
+/**
+ * Migrate scheduled updates for TCS-455.
+ */
+function campaign_pages_post_update_8405() {
   $updateHandler = new ScheduledUpdateState2WorkbenchModeration();
   $updateHandler->update();
 }
@@ -627,7 +645,7 @@ function campaign_pages_post_update_8404() {
 /**
  * Set moderation states based on status values.
  */
-function campaign_pages_post_update_8405() {
+function campaign_pages_post_update_8406() {
   $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
   $nodes = $nodeStorage->loadByProperties(['status' => TRUE]);
   foreach ($nodes as $node) {
