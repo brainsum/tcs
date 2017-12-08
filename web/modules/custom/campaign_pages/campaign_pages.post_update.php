@@ -626,7 +626,7 @@ function campaign_pages_post_update_8404() {
   $select->join('node_revision', 'nr', 'n.nid = nr.nid AND nr.vid > n.vid');
   $select->fields('nr', ['vid']);
   $result = $select->execute();
-  $rows = $result->fetchAllAssoc('vid');
+  $rows = $result->fetchAll();
   foreach ($rows as $row) {
     \Drupal::entityTypeManager()
       ->getStorage('node')
