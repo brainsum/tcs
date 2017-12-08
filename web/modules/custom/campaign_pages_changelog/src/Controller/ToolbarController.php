@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\campaign_pages\Controller;
+namespace Drupal\campaign_pages_changelog\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Routing\TrustedRedirectResponse;
@@ -8,7 +8,7 @@ use Drupal\Core\Routing\TrustedRedirectResponse;
 /**
  * Class ToolbarController.
  *
- * @package Drupal\campaign_pages\Controller
+ * @package Drupal\campaign_pages_changelog\Controller
  */
 class ToolbarController extends ControllerBase {
 

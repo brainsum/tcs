@@ -6,7 +6,6 @@
  */
 
 use Drupal\campaign_pages\Handler\ScheduledUpdateListBuilder;
-use Drupal\campaign_pages\Handler\ToolbarHandler;
 use Drupal\Component\Utility\Random;
 use Drupal\Core\Render\Markup;
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -419,13 +418,4 @@ function campaign_pages_preprocess_html(&$variables) {
       }
     }
   }
-}
-
-/**
- * Implements hook_toolbar().
- */
-function campaign_pages_toolbar() {
-  return \Drupal::service('class_resolver')
-    ->getInstanceFromDefinition(ToolbarHandler::class)
-    ->toolbar();
 }

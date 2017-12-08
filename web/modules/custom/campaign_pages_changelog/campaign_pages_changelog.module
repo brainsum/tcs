@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+use Drupal\campaign_pages_changelog\Handler\ToolbarHandler;
+
+/**
+ * Implements hook_toolbar().
+ */
+function campaign_pages_changelog_toolbar() {
+  return \Drupal::service('class_resolver')
+    ->getInstanceFromDefinition(ToolbarHandler::class)
+    ->toolbar();
+}

@@ -1,11 +1,9 @@
 <?php
 
-namespace Drupal\campaign_pages\Handler;
+namespace Drupal\campaign_pages_changelog\Handler;
 
-use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
-use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
@@ -14,7 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Class ToolbarHandler.
  *
- * @package Drupal\campaign_pages\Handler
+ * @package Drupal\campaign_pages_changelog\Handler
  */
 class ToolbarHandler implements ContainerInjectionInterface {
 
@@ -78,13 +76,13 @@ class ToolbarHandler implements ContainerInjectionInterface {
       return [];
     }
 
-    $items['campaign_pages'] = [
+    $items['campaign_pages_changelog'] = [
       '#type' => 'toolbar_item',
       '#weight' => 0,
       'tab' => [
         '#type' => 'link',
         '#title' => $this->t("What's new?"),
-        '#url' => Url::fromRoute('campaign_pages.changelog'),
+        '#url' => Url::fromRoute('campaign_pages_changelog.changelog'),
         '#attributes' => [
           'title' => $this->t('Changes on the Tieto Campaign Sites'),
           'class' => [
@@ -105,7 +103,7 @@ class ToolbarHandler implements ContainerInjectionInterface {
       ],
       '#attached' => [
         'library' => [
-          'campaign_pages/toolbar',
+          'campaign_pages_changelog/toolbar',
         ],
       ],
     ];
