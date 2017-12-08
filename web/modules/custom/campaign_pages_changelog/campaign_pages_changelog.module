@@ -43,8 +43,9 @@ function campaign_pages_changelog_page_attachments(array &$attachments) {
       ]
     );
     $link = $link->toString()->getGeneratedLink();
-    drupal_set_message(t("It seems you haven't logged in a while. Check out the @url to Tieto Campaign Sites.", [
+    drupal_set_message(t("It seems you haven't logged in a while. Check out the @url to @sitename.", [
       '@url' => Markup::create($link),
+      '@sitename' => \Drupal::config('system.site')->get('name'),
     ]));
   }
 }
