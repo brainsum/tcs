@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "060b502a475dcc1846004c672c19e4c5",
+    "content-hash": "5d1287573dead7fa8d2972a0c533268d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3297,12 +3297,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade_content_lister.git",
-                "reference": "a7e8079561530be16daaae753246d5fa16b89ad0"
+                "reference": "dba68bef4d4c2ce1be9922967c3e49597466284f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade_content_lister/zipball/a7e8079561530be16daaae753246d5fa16b89ad0",
-                "reference": "a7e8079561530be16daaae753246d5fa16b89ad0",
+                "url": "https://api.github.com/repos/brainsum/parade_content_lister/zipball/dba68bef4d4c2ce1be9922967c3e49597466284f",
+                "reference": "dba68bef4d4c2ce1be9922967c3e49597466284f",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -3324,7 +3324,7 @@
                 "source": "https://github.com/brainsum/parade_content_lister/tree/master",
                 "issues": "https://github.com/brainsum/parade_content_lister/issues"
             },
-            "time": "2017-12-11T13:01:05+00:00"
+            "time": "2017-12-12T12:57:07+00:00"
         },
         {
             "name": "drupal/paragraphs",
@@ -4019,6 +4019,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Do not force the creation of new revisions": "https://www.drupal.org/files/issues/do_not_force_new_revisions-2768977-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
