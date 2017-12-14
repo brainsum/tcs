@@ -76,8 +76,6 @@
       });
 
       // Somewhy we need "dynamic listening".
-      console.log($('body').attr('class'));
-      console.log($('#hamburger').attr('class'));
       $(document).on('click', "#hamburger", function () {
         removeFromAll(navLinkContainers, "selected");
         $('body').toggleClass('pushed');
