@@ -10,15 +10,6 @@ global:
   dependencies:
     - system/admin
     - core/jquery
-    - tieto_admin/jqmigrate
-
-# Jq migrate
-jqmigrate:
-  version: VERSION
-  js:
-    js/jquery-migrate-3.0.1.min.js: {}
-  dependencies:
-    - core/jquery
 
 # Parallax, using Rellax.
 # @see https://github.com/dixonandmoe/rellax
