@@ -27,3 +27,39 @@ $settings['locale_custom_strings_en'][''] = array(
   'JSON API Library'      => 'dam.tieto.com',
   'Open JSON API browser' => 'Open DAM browser',
 );
+$settings['locale_custom_strings_de'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);
+$settings['locale_custom_strings_fr'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);
+$settings['locale_custom_strings_sv'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);
+$settings['locale_custom_strings_fi'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);
+$settings['locale_custom_strings_ru'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);
+$settings['locale_custom_strings_hi'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);
+$settings['locale_custom_strings_zh-hans'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);
+$settings['locale_custom_strings_nb'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);
+$settings['locale_custom_strings_da'][''] = array(
+  'JSON API Library'      => 'dam.tieto.com',
+  'Open JSON API browser' => 'Open DAM browser',
+);

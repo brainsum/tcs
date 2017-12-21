@@ -2200,7 +2200,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/filefield_sources_jsonapi",
-                "reference": "cae3cc0951003d2af9d4152d79785f211c488d70"
+                "reference": "2716b84694b84b2ec7c5a824771bfd8637f046a7"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2213,7 +2213,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1510861085",
+                    "datestamp": "1513259585",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2243,7 +2243,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/filefield_sources_jsonapi"
             },
-            "time": "2017-11-16T20:30:39+00:00"
+            "time": "2017-12-19T10:49:18+00:00"
         },
         {
             "name": "drupal/geocoder",
@@ -3222,7 +3222,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "7a479e528354e31ef560fe03c13702724a7fe830"
+                "reference": "e839d9808182970f1aff690bc2ffeb10cdbae0b3"
             },
             "require": {
                 "drupal/classy_paragraphs": "~1.0",
@@ -3242,8 +3242,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta2+164-dev",
-                    "datestamp": "1511982786",
+                    "version": "8.x-2.0-beta2+165-dev",
+                    "datestamp": "1513187885",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3305,7 +3305,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-12-13T17:56:40+00:00"
+            "time": "2017-12-18T09:33:02+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
