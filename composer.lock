@@ -3222,7 +3222,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/parade",
-                "reference": "e839d9808182970f1aff690bc2ffeb10cdbae0b3"
+                "reference": "ff76f7176312c86c1b023f63c9eff9c715993d5f"
             },
             "require": {
                 "drupal/classy_paragraphs": "~1.0",
@@ -3242,8 +3242,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-beta2+165-dev",
-                    "datestamp": "1513187885",
+                    "version": "8.x-2.0-beta2+166-dev",
+                    "datestamp": "1513589886",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3305,7 +3305,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/parade"
             },
-            "time": "2017-12-18T09:33:02+00:00"
+            "time": "2017-12-18T09:52:20+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
