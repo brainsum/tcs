@@ -5098,9 +5098,10 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
 
 .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) {
   color: #333333;
+  background-color: #FFF;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title {
+.paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title {
   color: #333333;
 }
 
