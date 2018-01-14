@@ -25,6 +25,7 @@ web/sites/*/*services*.yml
 !web/sites/*/amazeeio.settings.php
 
 # Other
+node_modules
 nbproject
 
 web/sites/*.dd/**

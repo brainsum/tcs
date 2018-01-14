@@ -3304,6 +3304,12 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
     color: white;
     border-color: white;
   }
+  .node--type-campaign .campaign-menu .campaign-menu-link.active a[data-selected="0"] {
+    border-bottom: 2px solid white;
+    transition: border-color .2s;
+    background: 0;
+    color: white;
+  }
   .node--type-campaign .campaign-menu .campaign-menu-link a[data-selected="1"] {
     display: block;
     padding: .5em 1.5em;
@@ -3311,6 +3317,14 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
     border-radius: 3px;
   }
   .node--type-campaign .campaign-menu .campaign-menu-link a[data-selected="1"]:hover {
+    background: white;
+    color: #67afe1;
+  }
+  .node--type-campaign .campaign-menu .campaign-menu-link.active a[data-selected="1"] {
+    display: block;
+    padding: .5em 1.5em;
+    border: 2px solid white;
+    border-radius: 3px;
     background: white;
     color: #67afe1;
   }

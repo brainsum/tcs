@@ -53,6 +53,14 @@ scrollspy:
   dependencies:
     - core/jquery
 
+# Menu Spy
+menuspy:
+  version: VERSION
+  js:
+    js/menuspy.js: {}
+  dependencies:
+    - core/jquery
+
 # Maintenance page
 maintenance-page:
   version: VERSION
