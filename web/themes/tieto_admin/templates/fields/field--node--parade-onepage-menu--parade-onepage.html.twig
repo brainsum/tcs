@@ -21,8 +21,10 @@
   {#</span>#}
 {#</button>#}
 
-<nav{{ attributes.addClass(classes, 'campaign-menu navigation-menu') }}>
-  <ul class="nav-menu-link-list">
+{{ attach_library('tieto_admin/menuspy') }}
+
+<nav id="campaign-menu" {{ attributes.addClass(classes, 'campaign-menu navigation-menu') }}>
+  <ul id="nav-menu-link-list" class="nav-menu-link-list">
     {% for item in items %}
       <li{{ item.attributes.addClass('campaign-menu-link nav-menu-link') }}>{{ item.content }}</li>
     {% endfor %}

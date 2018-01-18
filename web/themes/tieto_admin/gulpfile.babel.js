@@ -23,7 +23,7 @@ Elixir.config.publicPath = __dirname
 Elixir.config.viewPath = 'templates'
 Elixir.config.js.folder = 'scripts'
 Elixir.config.browserSync = {
-    proxy: 'http://public360.local',
+    proxy: 'http://tcs.docker.localhost:8000',
     open: false,
     reloadOnRestart: true,
     notify: false
@@ -52,6 +52,7 @@ Elixir(mix => {
         .rollup('parallax.js')
         .rollup('iphone-inline-video.js')
         .rollup('scrollspy.js')
+        .rollup('menuspy.js')
         .rollup('smooth-scroll.js')
         .rollup('mobile.install.js')
         .rollup('nav-tabs.js')

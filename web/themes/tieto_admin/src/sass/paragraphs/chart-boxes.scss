@@ -29,4 +29,19 @@
     }
   }
 
+  &.layout--chart-type--bar {
+      &:not([class^="color-"]) {
+        color:#333333;
+        background-color: #FFF;
+        > .paragraph-inner  {
+          .ct-label, p, li, .field--name-parade-title {
+            color: #333333;
+          }
+          .ct-bar {
+            stroke: #e2e2e2 !important;
+          }
+        }
+      }
+  }
+
 }

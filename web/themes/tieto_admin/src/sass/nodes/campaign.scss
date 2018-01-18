@@ -154,6 +154,7 @@
         display: inline-block;
         padding: .5em;
 
+        
         // On desktop, the links have a bottom border on :hover
         a[data-selected="0"] {
           border-bottom: 2px solid transparent;
@@ -166,6 +167,16 @@
           }
         }
 
+        &.active {
+          a[data-selected="0"] {
+            border-bottom: 2px solid white;
+            transition: border-color .2s;
+            background: 0;
+            color: white;
+          }
+        }
+
+
         // Highlighted elements look like a button.
         a[data-selected="1"] {
           display: block;
@@ -174,6 +185,17 @@
           border-radius: 3px;
 
           &:hover {
+            background: white;
+            color: $tieto-blue;
+          }
+        }
+
+        &.active {
+          a[data-selected="1"] {
+            display: block;
+            padding: .5em 1.5em;
+            border: 2px solid white;
+            border-radius: 3px;
             background: white;
             color: $tieto-blue;
           }
