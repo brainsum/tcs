@@ -5,6 +5,7 @@
  * Post update functions for Campaign Pages.
  */
 
+use Drupal\campaign_pages\Handler\ColorUpdateHandler;
 use Drupal\campaign_pages\Helper\ScheduledUpdateUpdateHandler;
 use Drupal\campaign_pages\Helper\ScheduledUpdateState2WorkbenchModeration;
 use Drupal\Core\Database\Database;
@@ -638,4 +639,34 @@ function campaign_pages_post_update_8405() {
       $translated_node->save();
     }
   }
+}
+
+/**
+ * Update Chart Boxes layouts and color schemes.
+ */
+function campaign_pages_post_update_8406() {
+  $database = \Drupal::database();
+
+  $query = '
+    SELECT
+      nfp.parade_onepage_sections_target_revision_id
+    FROM
+      {node__parade_onepage_sections} AS nfp,
+      {paragraphs_item} AS pi
+    WHERE
+      nfp.parade_onepage_sections_target_id = pi.id
+      AND pi.type = :type_id;';
+  $results = $database
+    ->query($query, [
+      ':type_id' => 'chart_boxes',
+    ]);
+
+
+  $handler = new ColorUpdateHandler();
+  $handler->handle(
+    $results,
+    'color_blue',
+    NULL,
+    'layout_bar_chart'
+  );
 }
