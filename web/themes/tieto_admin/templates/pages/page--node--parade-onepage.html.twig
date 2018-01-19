@@ -6,7 +6,7 @@
     {{ page.pre_content }}
 </section>
 <div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page">
-    {% include directory ~ '/templates/inc/logo.html.twig' %}
+  {% include directory ~ '/templates/inc/logo.html.twig' with tieto_logo %}
 
   <main class="page-content" role="main">
       {{ page.content }}
