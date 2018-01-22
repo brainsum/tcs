@@ -215,12 +215,17 @@ body.offcanvas {
       margin: 1em;
     }
   }
-
+  .tieto-campaign-page {
+    &.preview {
+      margin-top: 50px;
+    }
+  }
   // Fixed for toolbar.
   &.toolbar-fixed {
     .tieto-campaign-page {
       position: relative;
       overflow-y: hidden;
+      
     }
     .logo,
     .hamburger,
@@ -234,6 +239,7 @@ body.offcanvas {
 
 .node-preview-container {
   background: $tieto-blue;
+  z-index: 999;
   color: white;
   a {
     color: white;

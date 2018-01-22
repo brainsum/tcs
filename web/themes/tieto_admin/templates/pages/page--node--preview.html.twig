@@ -44,7 +44,7 @@
 {% set machine_name = node.parade_onepage_id.value %}
 
 {{ page.pre_content }}
-<div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page">
+<div id="{{ machine_name|default('tieto_campaign_page') }}" class="tieto-campaign-page preview">
     {% include directory ~ '/templates/inc/logo.html.twig' %}
 
     <main class="page-content" role="main">

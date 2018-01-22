@@ -3340,6 +3340,11 @@ body.offcanvas .region-pre-content .block {
   margin: 1em;
 }
 
+body.page-node-type-campaign .tieto-campaign-page.preview,
+body.offcanvas .tieto-campaign-page.preview {
+  margin-top: 50px;
+}
+
 body.page-node-type-campaign.toolbar-fixed .tieto-campaign-page,
 body.offcanvas.toolbar-fixed .tieto-campaign-page {
   position: relative;
@@ -3358,6 +3363,7 @@ body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper)
 
 .node-preview-container {
   background: #67afe1;
+  z-index: 999;
   color: white;
 }
 
