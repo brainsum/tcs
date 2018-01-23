@@ -7,9 +7,9 @@
       for (var i=0; i <= (chartLength-1); i++ ) {
         var chartId = chartBox[i].id;
 
-        var chartValue = $($(('#' + chartId))).siblings('.hidden-content').find('.paragraph-inner .field--name-parade-value');
-        var chartLabel = $($(('#' + chartId))).siblings('.hidden-content').find('.paragraph-inner .field--name-parade-title');
-        var chartText = $($(('#' + chartId))).siblings('.hidden-content').find('.paragraph-inner .field--name-parade-text');
+        var chartValue = $($('#' + chartId)).siblings('.hidden-content').find('.paragraph-inner .field--name-parade-value');
+        var chartLabel = $($('#' + chartId)).siblings('.hidden-content').find('.paragraph-inner .field--name-parade-title');
+        var chartText = $($('#' + chartId)).siblings('.hidden-content').find('.paragraph-inner .field--name-parade-text');
 
         // save all chart values to arrays
         var series = chartValue.map(function() {
@@ -27,8 +27,8 @@
           return value + "%";
         });
 
-        var barS = chartValue.length;
-        chartBox.css('height', (32 * barS) + "px");
+        var barS = chartValue.length; console.log(chartValue);
+        $(chartBox[i]).css('height', (32 * barS) + "px");
 
         new Chartist.Bar(('#'+ chartId), {
           labels: fullLabels,
