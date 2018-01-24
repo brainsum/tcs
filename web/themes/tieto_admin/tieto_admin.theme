@@ -8,8 +8,6 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
-use Drupal\file\Entity\File;
-use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements hook_theme_registry_alter().
@@ -38,6 +36,28 @@ function tieto_admin_preprocess_html(&$variables) {
  */
 function tieto_admin_preprocess_page(&$vars) {
   $vars['site_name'] = Drupal::config('system.site')->get('name');
+
+  $tietoLogo = [
+    'logo_path' => '/' . drupal_get_path('theme', 'tieto_admin') . '/images/tietologo.svg?v2',
+    'alt' => t('Tieto'),
+    'href' => '//www.tieto.com',
+    'dimensions' => [
+      'width' => 98,
+      'height' => 65,
+    ],
+  ];
+
+  $routeMatch = \Drupal::routeMatch();
+  if ($routeMatch->getParameters()->has('node')) {
+    /** @var \Drupal\node\NodeInterface $node */
+    $node = $routeMatch->getParameters()->get('node');
+
+    /** @var \Drupal\campaign_pages\Service\NodeLogoResolver $resolver */
+    $resolver = \Drupal::service('campaign_pages.node_logo_resolver');
+    $tietoLogo = $resolver->resolve($node);
+  }
+
+  $vars['tieto_logo'] = $tietoLogo;
 }
 
 /**

@@ -5,7 +5,7 @@
  */
 #}
 <div class="error-page error-page--404">
-  {% include directory ~ '/templates/inc/logo.html.twig' %}
+  {% include directory ~ '/templates/inc/logo.html.twig' with tieto_logo %}
   <div class="error-page__content">
     <h1>{{ 'Page not found. 404'|t }}</h1>
     <p>{{ 'Unfortunately we were not able to retrieve the page you were looking for.'|t }}</p>

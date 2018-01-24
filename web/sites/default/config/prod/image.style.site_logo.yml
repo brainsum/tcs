@@ -1,0 +1,16 @@
+uuid: ab436aac-b315-419e-b232-cf71b518d4b8
+langcode: en
+status: true
+dependencies: {  }
+name: site_logo
+label: 'Site logo'
+effects:
+  85b569c5-92f5-461e-bb2b-c85a9ca2948e:
+    uuid: 85b569c5-92f5-461e-bb2b-c85a9ca2948e
+    id: image_scale
+    weight: 1
+    data:
+      width: 98
+      height: 65
+      upscale: true
+pipeline: __default__
