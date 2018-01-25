@@ -47,15 +47,15 @@ function tieto_admin_preprocess_page(&$vars) {
     ],
   ];
 
-  $routeMatch = \Drupal::routeMatch();
-  if ($routeMatch->getParameters()->has('node')) {
-    /** @var \Drupal\node\NodeInterface $node */
-    $node = $routeMatch->getParameters()->get('node');
-
-    /** @var \Drupal\campaign_pages\Service\NodeLogoResolver $resolver */
-    $resolver = \Drupal::service('campaign_pages.node_logo_resolver');
-    $tietoLogo = $resolver->resolve($node);
-  }
+//  $routeMatch = \Drupal::routeMatch();
+//  if ($routeMatch->getParameters()->has('node')) {
+//    /** @var \Drupal\node\NodeInterface $node */
+//    $node = $routeMatch->getParameters()->get('node');
+//
+//    /** @var \Drupal\campaign_pages\Service\NodeLogoResolver $resolver */
+//    $resolver = \Drupal::service('campaign_pages.node_logo_resolver');
+//    $tietoLogo = $resolver->resolve($node);
+//  }
 
   $vars['tieto_logo'] = $tietoLogo;
 }
