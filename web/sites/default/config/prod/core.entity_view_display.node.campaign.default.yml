@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.campaign.field_computed_image
     - field.field.node.campaign.field_file
-    - field.field.node.campaign.field_logo
     - field.field.node.campaign.field_meta_tags
     - field.field.node.campaign.field_thumbnail
     - field.field.node.campaign.moderation_state_archive
@@ -72,7 +71,6 @@ hidden:
   addtoany: true
   field_computed_image: true
   field_file: true
-  field_logo: true
   field_thumbnail: true
   langcode: true
   links: true
