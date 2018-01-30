@@ -25,7 +25,11 @@ web/sites/*/*services*.yml
 !web/sites/*/amazeeio.settings.php
 
 # Other
+node_modules
 nbproject
+
+# Alternative local docker config
+docker-compose.override.yml
 
 web/sites/*.dd/**
 data/*
