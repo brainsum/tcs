@@ -11,7 +11,7 @@ var $menu = jQuery('#nav-menu-link-list');
 
 var menuspy = new MenuSpy($menu[0],{
   enableLocationHash: false,
-  threshold: 0,
+  threshold: 15,
   callback: function() {
     console.log('callback')
   }
