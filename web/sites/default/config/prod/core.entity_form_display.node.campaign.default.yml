@@ -36,19 +36,19 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content
   field_file:
-    weight: 3
+    weight: 4
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_meta_tags:
-    weight: 14
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -70,7 +70,7 @@ content:
     region: content
   moderation_state_archive:
     type: inline_entity_form_complex
-    weight: 9
+    weight: 8
     settings:
       override_labels: true
       label_singular: 'Scheduled archive date'
@@ -83,7 +83,7 @@ content:
     region: content
   moderation_state_publish:
     type: inline_entity_form_complex
-    weight: 8
+    weight: 7
     settings:
       form_mode: default
       override_labels: true
@@ -96,7 +96,7 @@ content:
     region: content
   parade_onepage_menu:
     type: link_with_selected_attribute
-    weight: 4
+    weight: 5
     settings:
       placeholder_url: 'Anchor or URL'
       placeholder_title: 'Link text'
@@ -104,7 +104,7 @@ content:
     region: content
   parade_onepage_sections:
     type: entity_reference_paragraphs_preview
-    weight: 5
+    weight: 6
     settings:
       title: Section
       title_plural: Sections
@@ -117,7 +117,7 @@ content:
     region: content
   path:
     type: path
-    weight: 13
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -130,13 +130,13 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60

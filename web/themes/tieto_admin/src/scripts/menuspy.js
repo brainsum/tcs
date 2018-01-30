@@ -11,10 +11,7 @@ var $menu = jQuery('#nav-menu-link-list');
 
 var menuspy = new MenuSpy($menu[0],{
   enableLocationHash: false,
-  threshold: 15,
-  callback: function() {
-    console.log('callback')
-  }
+  threshold: 50
 });
 
 var $lis = $menu.find('>li');

@@ -3340,6 +3340,11 @@ body.offcanvas .region-pre-content .block {
   margin: 1em;
 }
 
+body.page-node-type-campaign .tieto-campaign-page.preview,
+body.offcanvas .tieto-campaign-page.preview {
+  margin-top: 50px;
+}
+
 body.page-node-type-campaign.toolbar-fixed .tieto-campaign-page,
 body.offcanvas.toolbar-fixed .tieto-campaign-page {
   position: relative;
@@ -3358,6 +3363,7 @@ body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper)
 
 .node-preview-container {
   background: #67afe1;
+  z-index: 999;
   color: white;
 }
 
@@ -5085,41 +5091,53 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
   color: #777;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text {
   background-image: none;
   background-color: #EFEFEF;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title {
   color: #333333;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text {
   color: #333333;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey {
   background-color: #2D2D2D;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title {
   color: #FFFFFF;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text {
   color: #FFFFFF;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]),
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) {
   color: #333333;
   background-color: #FFF;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title {
   color: #333333;
 }
 
-.paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-bar {
+.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-bar,
+.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-bar {
   stroke: #e2e2e2 !important;
 }
 

@@ -2,6 +2,17 @@
 /**
  * @file
  * Include file for Tieto logo.
+ *
+ * Variables:
+ *   tieto_logo: Associative array with these keys:
+ *     logo_path: Relative path of the logo (string).
+ *     alt: Logo alt text (TranslatableMarkup).
+ *     href: Link href (string).
+ *     dimensions: Associative array with these keys:
+ *       width: Image width (integer).
+ *       height: Image height (integer).
  */
 #}
-<a href="//www.tieto.com" class="logo"><img src="/themes/tieto_admin/images/tietologo.svg?v2" alt="Tieto" width="98" height="65"></a>
+<a href="{{ tieto_logo.href }}" class="logo">
+    <img src="{{ tieto_logo.logo_path }}" alt="{{ tieto_logo.alt }}" width="{{ tieto_logo.dimensions.width }}" height="{{ tieto_logo.dimensions.height }}">
+</a>

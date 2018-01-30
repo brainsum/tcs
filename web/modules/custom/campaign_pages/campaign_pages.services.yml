@@ -12,3 +12,9 @@ services:
     class: Drupal\campaign_pages\Theme\RevisionDiffNegotiator
     tags:
       - { name: theme_negotiator, priority: 10 }
+
+  campaign_pages.node_logo_resolver:
+    class: Drupal\campaign_pages\Service\NodeLogoResolver
+    arguments:
+      - '@entity_type.manager'
+      - '@image.factory'

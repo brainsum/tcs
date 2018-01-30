@@ -28,6 +28,9 @@ web/sites/*/*services*.yml
 node_modules
 nbproject
 
+# Alternative local docker config
+docker-compose.override.yml
+
 web/sites/*.dd/**
 data/*
 
