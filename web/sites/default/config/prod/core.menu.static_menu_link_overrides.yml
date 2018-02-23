@@ -5,12 +5,6 @@ definitions:
     parent: ''
     weight: 0
     expanded: false
-  parade_content_lister__adapstyle_content_page:
-    weight: -85
-    enabled: false
-    menu_name: admin
-    parent: system.admin
-    expanded: false
   entity__scheduled_update__collection:
     weight: -85
     menu_name: admin
