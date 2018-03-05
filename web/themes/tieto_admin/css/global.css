@@ -1920,6 +1920,10 @@ li.tabs__tab a {
   }
 }
 
+.node--unpublished .slide-in-menu {
+  background-color: #67afe1;
+}
+
 .pre-loader-overlay {
   -webkit-box-align: center;
   align-items: center;
