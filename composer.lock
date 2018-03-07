@@ -3934,7 +3934,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/view_mode_selector",
-                "reference": "8cb9c5cf97f46e3610fff25be7c5040c3104cd46"
+                "reference": "11c9ad2148d5b9c3bd552883da54b401736d0b31"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -3946,12 +3946,16 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1448038139"
+                    "datestamp": "1493198644",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -3968,7 +3972,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/view_mode_selector"
             },
-            "time": "2017-04-26T09:20:00+00:00"
+            "time": "2018-02-12T12:03:58+00:00"
         },
         {
             "name": "drupal/view_unpublished",
