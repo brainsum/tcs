@@ -78,7 +78,8 @@
         "drupal/client_support": "dev-master",
         "drupal/parade_content_lister": "dev-master",
         "drupal/workbench_moderation": "^1.2",
-        "drupal/scheduled_updates": "1.x-dev"
+        "drupal/scheduled_updates": "1.x-dev",
+        "roave/security-advisories": "dev-master"
     },
     "require-dev": {
         "behat/mink": "~1.7",
