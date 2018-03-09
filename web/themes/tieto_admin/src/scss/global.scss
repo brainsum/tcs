@@ -63,12 +63,11 @@
 @import "paragraphs/chart-boxes";
 
 // Theme
-@import "theme/wysiwyg";
+@import "wysiwyg";
 @import "theme/error-pages";
 
 // Vendor
-@import "vendor/hamburgers";
-
-@import "vendor/eucooke";
+@import "vendors/hamburgers";
+@import "vendors/eucooke";
 
 

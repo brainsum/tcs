@@ -13,7 +13,7 @@ var menuspy = new MenuSpy($menu[0],{
   enableLocationHash: false,
   threshold: 0,
   callback: function() {
-    console.log('callback')
+    //console.log('callback')
   }
 });
 
