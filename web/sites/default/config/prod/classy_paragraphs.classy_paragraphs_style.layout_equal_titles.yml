@@ -1,0 +1,7 @@
+uuid: 2d10a725-1783-488d-87a7-042d0657b1c3
+langcode: en
+status: true
+dependencies: {  }
+id: layout_equal_titles
+label: 'Layout equal titles'
+classes: layout--equal_titles
