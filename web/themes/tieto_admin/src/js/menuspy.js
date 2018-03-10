@@ -11,14 +11,7 @@ var $menu = jQuery('#nav-menu-link-list');
 
 var menuspy = new MenuSpy($menu[0],{
   enableLocationHash: false,
-<<<<<<< HEAD:web/themes/tieto_admin/src/scripts/menuspy.js
   threshold: 50
-=======
-  threshold: 0,
-  callback: function() {
-    //console.log('callback')
-  }
->>>>>>> TCS-479:web/themes/tieto_admin/src/js/menuspy.js
 });
 
 var $lis = $menu.find('>li');

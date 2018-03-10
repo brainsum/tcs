@@ -1569,8 +1569,7 @@ li.tabs__tab a {
     box-shadow: 0 -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0 0 0, -2em -2em 0 0.2em; } }
 
 .node--unpublished .slide-in-menu {
-  background-color: #67afe1;
-}
+  background-color: #67afe1; }
 
 .pre-loader-overlay {
   align-items: center;
@@ -2504,8 +2503,7 @@ body.offcanvas .region-pre-content {
 
 body.page-node-type-campaign .tieto-campaign-page.preview,
 body.offcanvas .tieto-campaign-page.preview {
-  margin-top: 50px;
-}
+  margin-top: 50px; }
 
 body.page-node-type-campaign.toolbar-fixed .tieto-campaign-page,
 body.offcanvas.toolbar-fixed .tieto-campaign-page {
@@ -2523,25 +2521,12 @@ body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper)
 
 .node-preview-container {
   background: #67afe1;
-<<<<<<< HEAD
   z-index: 999;
-  color: white;
-}
-
-.node-preview-container a {
-  color: white;
-}
-
-.node-preview-container a:hover {
-  text-decoration: underline;
-}
-=======
   color: white; }
   .node-preview-container a {
     color: white; }
     .node-preview-container a:hover {
       text-decoration: underline; }
->>>>>>> TCS-479
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed .precontent-region {
   position: fixed;
@@ -3751,74 +3736,36 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
 .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text,
 .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text {
   background-image: none;
-<<<<<<< HEAD
-  background-color: #EFEFEF;
-}
-
-.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title {
-  color: #333333;
-}
-
-.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text {
-  color: #333333;
-}
-
-.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey {
-  background-color: #2D2D2D;
-}
-
-.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title {
-  color: #FFFFFF;
-}
-
-.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text {
-  color: #FFFFFF;
-}
-=======
   background-color: #EFEFEF; }
-  .paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title {
+  .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-title {
     color: #333333; }
-  .paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text {
+  .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text > .paragraph-inner .field--name-parade-text {
     color: #333333; }
-  .paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey {
+  .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey {
     background-color: #2D2D2D; }
-  .paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title {
+  .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-title {
     color: #FFFFFF; }
-  .paragraph--type--chart-boxes.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text {
+  .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--doughnut-and-text.color-dark-grey > .paragraph-inner .field--name-parade-text {
     color: #FFFFFF; }
->>>>>>> TCS-479
 
 .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]),
 .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) {
   color: #333333;
-<<<<<<< HEAD
-  background-color: #FFF;
-}
-
-.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title {
-  color: #333333;
-}
-
-.paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-bar,
-.paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-bar {
-  stroke: #e2e2e2 !important;
-}
-=======
   background-color: #FFF; }
-  .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li, .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title {
+  .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li, .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-label,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner p,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner li,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .field--name-parade-title {
     color: #333333; }
-  .paragraph--type--chart-boxes.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-bar {
+  .paragraph--type--chart-boxes.paragraph--view-mode--custom.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-bar,
+  .paragraph--type--chart-boxes.paragraph--view-mode--default.layout--chart-type--bar:not([class^="color-"]) > .paragraph-inner .ct-bar {
     stroke: #e2e2e2 !important; }
->>>>>>> TCS-479
 
 /**
  * CUSTOM CSS FOR CAMPAIGN PAGES
