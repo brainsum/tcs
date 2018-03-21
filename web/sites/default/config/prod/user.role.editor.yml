@@ -89,6 +89,7 @@ permissions:
   - 'use archived_draft transition'
   - 'use draft_draft transition'
   - 'use published_draft transition'
+  - 'view all revisions'
   - 'view any unpublished campaign content'
   - 'view any unpublished content'
   - 'view campaign revisions'
