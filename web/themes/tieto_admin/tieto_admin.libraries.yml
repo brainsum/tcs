@@ -37,6 +37,14 @@ responsive-tabs:
   dependencies:
     - core/jquery
 
+# Paragraph related functions
+paragraphs:
+  version: VERSION
+  js:
+    js/paragraphs.js: {}
+  dependencies:
+    - core/jquery
+
 # Smooth Scroll
 smooth-scroll:
   version: VERSION

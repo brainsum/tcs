@@ -41,6 +41,9 @@ $white: rgb(255, 255, 255);
   }
 }
 
+.node--unpublished .slide-in-menu {
+  background-color: $tieto-blue;
+}
 .pre-loader-overlay {
   align-items: center;
   background-color: $tieto-blue;

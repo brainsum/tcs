@@ -5,6 +5,7 @@ dependencies: {  }
 id: text_boxes_2
 bundle: text_boxes
 layouts:
+  layout_equal_titles: layout_equal_titles
   layout_lot_of_infos: layout_lot_of_infos
   layout_none: layout_none
   layout_smallinfo: layout_smallinfo

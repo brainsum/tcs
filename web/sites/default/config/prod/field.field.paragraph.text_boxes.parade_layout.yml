@@ -24,6 +24,7 @@ settings:
       type: target_bundles
       target_bundles:
         layout_contacts: layout_contacts
+        layout_equal_titles: layout_equal_titles
         layout_image_1st: layout_image_1st
         layout_lot_of_infos: layout_lot_of_infos
         layout_rounded_image: layout_rounded_image
