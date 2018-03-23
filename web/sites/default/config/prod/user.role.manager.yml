@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: manager
 label: Manager
-weight: -6
+weight: 4
 is_admin: null
 permissions:
   - 'access content overview'
