@@ -157,6 +157,9 @@
             },
             "drupal/workbench_moderation": {
                 "Do not force the creation of new revisions": "https://www.drupal.org/files/issues/do_not_force_new_revisions-2768977-6.patch"
+            },
+            "drupal/filefield_sources_jsonapi": {
+                "Get preview image via curl" : "patches/RetrieveRemoteFileWithCurl.patch"
             }
         }
     },
