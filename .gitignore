@@ -36,3 +36,6 @@ data/*
 
 mariadb-init
 tmp
+
+#static-pages
+web/tieto50/*
