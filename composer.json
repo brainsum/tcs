@@ -43,7 +43,7 @@
         "composer/installers": "^1.2",
         "drupal-composer/drupal-scaffold": "^2.2",
         "cweagans/composer-patches": "^1.6",
-        "drupal/core": "^8.4",
+        "drupal/core": "~8.4",
         "drush/drush": "~8.1",
         "aws/aws-sdk-php": "~3.0",
         "drupal/cloudfront_purger": "~1.1",
