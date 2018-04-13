@@ -1,0 +1,13 @@
+diff --git a/core/modules/quickedit/src/QuickEditController.php b/core/modules/quickedit/src/QuickEditController.php
+index 2b1e4b2..8df73e2 100644
+--- a/core/modules/quickedit/src/QuickEditController.php
++++ b/core/modules/quickedit/src/QuickEditController.php
+@@ -256,7 +256,7 @@ class QuickEditController extends ControllerBase {
+    * @see hook_quickedit_render_field()
+    */
+   protected function renderField(EntityInterface $entity, $field_name, $langcode, $view_mode_id) {
+-    $entity_view_mode_ids = array_keys($this->entityManager()->getViewModes($entity->getEntityTypeId()));
++    $entity_view_mode_ids = array_keys($this->entityManager()->getViewModeOptions($entity->getEntityTypeId()));
+     if (in_array($view_mode_id, $entity_view_mode_ids)) {
+       $entity = \Drupal::entityManager()->getTranslationFromContext($entity, $langcode);
+       $output = $entity->get($field_name)->view($view_mode_id);

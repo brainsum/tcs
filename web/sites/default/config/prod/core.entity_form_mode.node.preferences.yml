@@ -1,0 +1,12 @@
+uuid: d3ee9912-ee5e-4ecc-be7a-de94d77010e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: iPL2n4YKJQVRSwTpAFYI333okNjqzzJ9QzKVs9Z8f8M
+id: node.preferences
+label: Preferences
+targetEntityType: node
+cache: true

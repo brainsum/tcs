@@ -1,0 +1,41 @@
+diff --git a/src/Plugin/Field/FieldType/EntityReferenceRevisionsItem.php b/src/Plugin/Field/FieldType/EntityReferenceRevisionsItem.php
+index 9146df4..3626bbb 100644
+--- a/src/Plugin/Field/FieldType/EntityReferenceRevisionsItem.php
++++ b/src/Plugin/Field/FieldType/EntityReferenceRevisionsItem.php
+@@ -355,8 +355,35 @@ class EntityReferenceRevisionsItem extends EntityReferenceItem implements Option
+     parent::delete();
+ 
+     if ($this->entity && $this->entity->getEntityType()->get('entity_revision_parent_type_field') && $this->entity->getEntityType()->get('entity_revision_parent_id_field')) {
+-      // Only delete composite entities if the host field is not translatable.
++      // Only delete composite entities if the host field is not translatable
++      // and there is no another usage/reference.
+       if (!$this->getFieldDefinition()->isTranslatable()) {
++        $host = $this->getEntity();
++
++        // Get all fields of entity_reference_revisions type.
++        $ref_fields = \Drupal::entityTypeManager()->getStorage('field_storage_config')->loadByProperties(
++        array(
++          'type' => 'entity_reference_revisions',
++          'deleted' => FALSE,
++          'status' => 1,
++        )
++        );
++        foreach ($ref_fields as $ref_field) {
++          $usage = \Drupal::entityQuery($ref_field->getTargetEntityTypeId())
++            ->condition($ref_field->getName(), $this->entity->id())
++            ->execute();
++
++          // Remove host entity.
++          if ($key = array_search($host->id(), $usage)) {
++            unset($usage[$key]);
++          }
++
++          // Do not delete if there is usage of this entity.
++          if (count($usage) > 0) {
++            return;
++          }
++        }
++
+         $this->entity->delete();
+       }
+     }

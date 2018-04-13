@@ -43,6 +43,8 @@ module:
   geocoder_field: 0
   geocoder_geofield: 0
   geofield: 0
+  geophp: 0
+  geysir: 0
   image: 0
   imageapi_optimize: 0
   imagemagick: 0
@@ -71,6 +73,7 @@ module:
   parade_conditional_field: 0
   parade_content_lister: 0
   parade_demo: 0
+  paragraphs_edit: 0
   paragraphs_type_permissions: 0
   path: 0
   public_preview: 0
@@ -82,6 +85,7 @@ module:
   purge_queuer_url: 0
   purge_tokens: 0
   purge_ui: 0
+  quickedit: 0
   rdf: 0
   redirect: 0
   savings_calculator: 0
@@ -105,6 +109,7 @@ module:
   campaign_pages: 1
   filefield_sources: 1
   menu_link_content: 1
+  parade_edit: 1
   views: 10
   paragraphs: 11
   standard: 1000

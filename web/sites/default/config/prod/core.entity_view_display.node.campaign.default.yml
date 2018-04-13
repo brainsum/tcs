@@ -41,6 +41,11 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
+  parade_edit_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   parade_onepage_menu:
     type: link
     weight: 1
@@ -62,11 +67,6 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  workbench_moderation_control:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   addtoany: true
   field_computed_image: true
@@ -77,3 +77,4 @@ hidden:
   moderation_state_archive: true
   moderation_state_publish: true
   parade_onepage_id: true
+  workbench_moderation_control: true

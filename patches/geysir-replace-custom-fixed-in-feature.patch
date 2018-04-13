@@ -1,0 +1,53 @@
+diff --git a/src/Form/GeysirModalParagraphDeleteForm.php b/src/Form/GeysirModalParagraphDeleteForm.php
+index dc0bbd8..adff8ed 100644
+--- a/src/Form/GeysirModalParagraphDeleteForm.php
++++ b/src/Form/GeysirModalParagraphDeleteForm.php
+@@ -5,7 +5,7 @@ namespace Drupal\geysir\Form;
+ use Drupal\Core\Ajax\AjaxResponse;
+ use Drupal\Core\Ajax\CloseModalDialogCommand;
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\Core\Ajax\HtmlCommand;
++use Drupal\Core\Ajax\ReplaceCommand;
+ 
+ /**
+  * Functionality to delete a paragraph through a modal.
+@@ -87,7 +87,7 @@ class GeysirModalParagraphDeleteForm extends GeysirParagraphDeleteForm {
+ 
+     // Refresh the paragraphs field.
+     $response->addCommand(
+-      new HtmlCommand(
++      new ReplaceCommand(
+         '[data-geysir-field-paragraph-field-wrapper=' . $field_wrapper_id . ']',
+         $parent_entity->get($field_name)->view('default')));
+ 
+diff --git a/src/Form/GeysirModalParagraphForm.php b/src/Form/GeysirModalParagraphForm.php
+index 05a91c0..ce0542c 100644
+--- a/src/Form/GeysirModalParagraphForm.php
++++ b/src/Form/GeysirModalParagraphForm.php
+@@ -4,7 +4,7 @@ namespace Drupal\geysir\Form;
+ 
+ use Drupal\Core\Ajax\AjaxResponse;
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\Core\Ajax\HtmlCommand;
++use Drupal\Core\Ajax\ReplaceCommand;
+ use Drupal\geysir\Ajax\GeysirCloseModalDialogCommand;
+ 
+ /**
+@@ -66,7 +66,7 @@ class GeysirModalParagraphForm extends GeysirParagraphForm {
+         '#type' => 'status_messages',
+         '#weight' => -10,
+       ];
+-      $response->addCommand(new HtmlCommand('#geysir-modal-form', $form));
++      $response->addCommand(new ReplaceCommand('#geysir-modal-form', $form));
+     }
+     else {
+       // Get all necessary data to be able to correctly update the correct
+@@ -82,7 +82,7 @@ class GeysirModalParagraphForm extends GeysirParagraphForm {
+ 
+       // Refresh the paragraphs field.
+       $response->addCommand(
+-        new HtmlCommand(
++        new ReplaceCommand(
+           '[data-geysir-field-paragraph-field-wrapper=' . $field_wrapper_id . ']',
+           $parent_entity->get($field_name)->view('default')));
+ 
