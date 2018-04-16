@@ -1,0 +1,39 @@
+diff --git a/core/modules/editor/js/editor.formattedTextEditor.js b/core/modules/editor/js/editor.formattedTextEditor.js
+index 3d74aab..a9be38a 100644
+--- a/core/modules/editor/js/editor.formattedTextEditor.js
++++ b/core/modules/editor/js/editor.formattedTextEditor.js
+@@ -104,7 +104,7 @@
+       }
+     },
+     getQuickEditUISettings: function getQuickEditUISettings() {
+-      return { padding: true, unifiedToolbar: true, fullWidthToolbar: true, popup: false };
++      return { padding: false, unifiedToolbar: true, fullWidthToolbar: true, popup: false };
+     },
+     revert: function revert() {
+       this.$textElement.html(this.model.get('originalValue'));
+diff --git a/core/modules/quickedit/js/editors/formEditor.js b/core/modules/quickedit/js/editors/formEditor.js
+index 8a872ed..b33bf57 100644
+--- a/core/modules/quickedit/js/editors/formEditor.js
++++ b/core/modules/quickedit/js/editors/formEditor.js
+@@ -52,7 +52,7 @@
+       }
+     },
+     getQuickEditUISettings: function getQuickEditUISettings() {
+-      return { padding: true, unifiedToolbar: true, fullWidthToolbar: true, popup: true };
++      return { padding: false, unifiedToolbar: true, fullWidthToolbar: true, popup: true };
+     },
+     loadForm: function loadForm() {
+       var fieldModel = this.fieldModel;
+diff --git a/core/modules/quickedit/js/editors/plainTextEditor.js b/core/modules/quickedit/js/editors/plainTextEditor.js
+index dde834b..9619976 100644
+--- a/core/modules/quickedit/js/editors/plainTextEditor.js
++++ b/core/modules/quickedit/js/editors/plainTextEditor.js
+@@ -81,7 +81,7 @@
+       }
+     },
+     getQuickEditUISettings: function getQuickEditUISettings() {
+-      return { padding: true, unifiedToolbar: false, fullWidthToolbar: false, popup: false };
++      return { padding: false, unifiedToolbar: false, fullWidthToolbar: false, popup: false };
+     },
+     revert: function revert() {
+       this.$textElement.html(this.model.get('originalValue'));
