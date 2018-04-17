@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3a7d5f2fa2147a1b16eb22164798fab",
+    "content-hash": "42ccdb41e7f365d60dc948cfe555c886",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2624,6 +2624,7 @@
                 },
                 "patches_applied": {
                     "Allow to reorder paragraphs": "https://www.drupal.org/files/issues/geysir-reordering-2900784-22-D8.patch",
+                    "Disable add/remove geysir modal actions on translations": "patches/geysir-translation_disable_actions-after-2900784.patch",
                     "Use ReplaceCommand instead of HtmlCommand": "patches/geysir-replace-custom-fixed-in-feature.patch"
                 }
             },
@@ -3424,7 +3425,8 @@
             "type": "drupal-module",
             "extra": {
                 "patches_applied": {
-                    "Parade aggregated leaflet vs leaflet-8.x-1.0-beta3": "patches/parade-aggregated_leaflet_map.leaflet-beta3.patch"
+                    "Parade aggregated leaflet vs leaflet-8.x-1.0-beta3": "patches/parade-aggregated_leaflet_map.leaflet-beta3.patch",
+                    "Disable add/remove geysir modal actions on translations": "patches/parade_edit-geysir-translation_disable_actions.patch"
                 }
             },
             "license": [

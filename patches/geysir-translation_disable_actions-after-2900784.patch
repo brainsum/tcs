@@ -1,0 +1,142 @@
+diff --git a/geysir.module b/geysir.module
+index 391bb40..1641e36 100644
+--- a/geysir.module
++++ b/geysir.module
+@@ -102,47 +102,49 @@ function geysir_preprocess_field(&$vars) {
+     $links = [];
+     $entity = $element[$delta]['#paragraph'];
+ 
+-    // Add link - before.
+-    $links['add_before'] = [
+-      'title'      => t('Add before'),
+-      'url'        => Url::fromRoute('geysir.modal.add_form', [
+-        'parent_entity_type'     => $parent->getEntityType()->id(),
+-        'parent_entity_bundle'   => $parent->bundle(),
+-        'parent_entity_revision' => $parent->getRevisionId(),
+-        'field'                  => $vars['field_name'],
+-        'field_wrapper_id'       => $field_wrapper_id,
+-        'delta'                  => $delta,
+-        'paragraph'              => $entity->id(),
+-        'paragraph_revision'     => $entity->getRevisionId(),
+-        'position'               => 'before',
+-        'js'                     => 'nojs',
+-      ]),
+-      'attributes' => [
+-        'class'            => ['use-ajax', 'geysir-button'],
+-        'data-dialog-type' => 'modal',
+-      ],
+-    ];
+-
+-    // Add link - after.
+-    $links['add_after'] = [
+-      'title' => t('Add after'),
+-      'url' => Url::fromRoute('geysir.modal.add_form', [
+-        'parent_entity_type'     => $parent->getEntityType()->id(),
+-        'parent_entity_bundle'   => $parent->bundle(),
+-        'parent_entity_revision' => $parent->getRevisionId(),
+-        'field'                  => $vars['field_name'],
+-        'field_wrapper_id'       => $field_wrapper_id,
+-        'delta'                  => $delta,
+-        'paragraph'              => $entity->id(),
+-        'paragraph_revision'     => $entity->getRevisionId(),
+-        'position'               => 'after',
+-        'js'                     => 'nojs',
+-      ]),
+-      'attributes' => [
+-        'class' => ['use-ajax', 'geysir-button'],
+-        'data-dialog-type' => 'modal',
+-      ],
+-    ];
++    if ($parent->parade_edit_isDefaultTranslation) {
++      // Add link - before.
++      $links['add_before'] = [
++        'title' => t('Add before'),
++        'url' => Url::fromRoute('geysir.modal.add_form', [
++          'parent_entity_type' => $parent->getEntityType()->id(),
++          'parent_entity_bundle' => $parent->bundle(),
++          'parent_entity_revision' => $parent->getRevisionId(),
++          'field' => $vars['field_name'],
++          'field_wrapper_id' => $field_wrapper_id,
++          'delta' => $delta,
++          'paragraph' => $entity->id(),
++          'paragraph_revision' => $entity->getRevisionId(),
++          'position' => 'before',
++          'js' => 'nojs',
++        ]),
++        'attributes' => [
++          'class' => ['use-ajax', 'geysir-button'],
++          'data-dialog-type' => 'modal',
++        ],
++      ];
++
++      // Add link - after.
++      $links['add_after'] = [
++        'title' => t('Add after'),
++        'url' => Url::fromRoute('geysir.modal.add_form', [
++          'parent_entity_type' => $parent->getEntityType()->id(),
++          'parent_entity_bundle' => $parent->bundle(),
++          'parent_entity_revision' => $parent->getRevisionId(),
++          'field' => $vars['field_name'],
++          'field_wrapper_id' => $field_wrapper_id,
++          'delta' => $delta,
++          'paragraph' => $entity->id(),
++          'paragraph_revision' => $entity->getRevisionId(),
++          'position' => 'after',
++          'js' => 'nojs',
++        ]),
++        'attributes' => [
++          'class' => ['use-ajax', 'geysir-button'],
++          'data-dialog-type' => 'modal',
++        ],
++      ];
++    }
+ 
+     // Edit link.
+     $links['edit'] = [
+@@ -164,25 +166,27 @@ function geysir_preprocess_field(&$vars) {
+       ],
+     ];
+ 
+-    // Delete link.
+-    $links['delete'] = [
+-      'title' => t('Delete'),
+-      'url' => Url::fromRoute('geysir.modal.delete_form', [
+-        'parent_entity_type'     => $parent->getEntityType()->id(),
+-        'parent_entity_bundle'   => $parent->bundle(),
+-        'parent_entity_revision' => $parent->getRevisionId(),
+-        'field'                  => $vars['field_name'],
+-        'field_wrapper_id'       => $field_wrapper_id,
+-        'delta'                  => $delta,
+-        'paragraph'              => $entity->id(),
+-        'paragraph_revision'     => $entity->getRevisionId(),
+-        'js'                     => 'nojs',
+-      ]),
+-      'attributes' => [
+-        'class' => ['use-ajax', 'geysir-button'],
+-        'data-dialog-type' => 'modal',
+-      ],
+-    ];
++    if ($parent->parade_edit_isDefaultTranslation) {
++      // Delete link.
++      $links['delete'] = [
++        'title' => t('Delete'),
++        'url' => Url::fromRoute('geysir.modal.delete_form', [
++          'parent_entity_type' => $parent->getEntityType()->id(),
++          'parent_entity_bundle' => $parent->bundle(),
++          'parent_entity_revision' => $parent->getRevisionId(),
++          'field' => $vars['field_name'],
++          'field_wrapper_id' => $field_wrapper_id,
++          'delta' => $delta,
++          'paragraph' => $entity->id(),
++          'paragraph_revision' => $entity->getRevisionId(),
++          'js' => 'nojs',
++        ]),
++        'attributes' => [
++          'class' => ['use-ajax', 'geysir-button'],
++          'data-dialog-type' => 'modal',
++        ],
++      ];
++    }
+ 
+     // Up link.
+     $links['up'] = [
