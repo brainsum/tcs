@@ -2978,7 +2978,8 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
   overflow: hidden;
   z-index: 50;
   background: none; }
-  .paragraph--type--header.paragraph--view-mode--default + * {
+  .paragraph--type--header.paragraph--view-mode--default + div,
+  .paragraph--type--header.paragraph--view-mode--default + section {
     padding-top: calc(40px + 40%) !important;
     position: relative;
     z-index: 0;
