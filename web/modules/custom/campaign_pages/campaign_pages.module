@@ -263,6 +263,10 @@ function campaign_pages_entity_type_alter(array &$entity_types) {
   if (NULL !== $entity_types['scheduled_update'] && method_exists($entity_types['scheduled_update'], 'setListBuilderClass')) {
     $entity_types['scheduled_update']->setListBuilderClass(ScheduledUpdateListBuilder::class);
   }
+  // Disable non-translatable fields constraint added in 8.5.0.
+  $constraints = $entity_types['node']->getConstraints();
+  unset($constraints['EntityUntranslatableFields']);
+  $entity_types['node']->setConstraints($constraints);
 }
 
 /**

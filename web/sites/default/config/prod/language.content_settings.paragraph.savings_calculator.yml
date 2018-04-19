@@ -9,6 +9,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 _core:
   default_config_hash: T5Gq2OgcF7gBjrbBlzselP9Uf58ZEFCnJS-ZtIXKnB4
 id: paragraph.savings_calculator

@@ -10,7 +10,7 @@
     attach: function (context, settings) {
       var latestKnownScrollY = 0;
       var ticking = false;
-      var $cta = $('.paragraph--type--header .field--name-field-call-to-action .button').first().once('flying-cta');
+      var $cta = $('.paragraph--type--header .field--name-parade-call-to-action .button').first().once('flying-cta');
       var $fixed = null;
       var isFixed = false;
       var classAfterScroll = 'fly';

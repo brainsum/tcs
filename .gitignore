@@ -39,3 +39,6 @@ tmp
 
 #static-pages
 web/tieto50/*
+
+# Ignore Google Search Console ownership verification key file
+web/googlea71e1908006fa214.html
