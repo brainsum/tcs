@@ -56,7 +56,7 @@
   &.layout--contacts {
     // @fixme this is mess but was quick
     @include md {
-      > .paragraph-inner .field--name-parade-title {
+      > .paragraph-inner .field--name-parade-title--wrapper {
         width: 36%;
         float: left;
       }
@@ -95,7 +95,7 @@
       .field--name-parade-title {
         margin-bottom: 0;
       }
-      .field--name-parade-title,
+      .field--name-parade-title--wrapper,
       .field--name-parade-text,
       .field--name-parade-call-to-action {
         width: 66%;

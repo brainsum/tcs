@@ -37,7 +37,7 @@
       }
     }
 
-    .field--name-parade-title,
+    .field--name-parade-title--wrapper,
     .field--name-parade-text {
       @include md {
         width: 60.666%;
@@ -69,7 +69,7 @@
 
     @include md {
       // Title and Text
-      .field--name-parade-title,
+      .field--name-parade-title--wrapper,
       .field--name-parade-text {
         float: left;
       }
@@ -91,7 +91,7 @@
 
     @include md {
       // Title and Text
-      .field--name-parade-title,
+      .field--name-parade-title--wrapper,
       .field--name-parade-text {
         float: right;
       }
@@ -114,8 +114,10 @@
   &.layout--image_1st_enhanced {
 
     // Title
-    .field--name-parade-title {
-      @include campaign-title-center;
+    .field--name-parade-title--wrapper {
+      .field--name-parade-title {
+        @include campaign-title-center;
+      }
       width: 100%;
     }
 
