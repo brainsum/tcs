@@ -11,8 +11,8 @@ const reload = browserSync.reload;
 
 gulp.task('default', function() {
   gulp.watch('src/js/*.js', ['js']);
-  gulp.watch('src/scss/*.scss', ['sass'])
-  gulp.watch('src/img/*', ['img'])
+  gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/img/*', ['img']);
 });
 
 gulp.task('js', function(done) {
