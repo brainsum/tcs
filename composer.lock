@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42ccdb41e7f365d60dc948cfe555c886",
+    "content-hash": "f341b8e0345f5ccf15449d1141f839d5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1793,7 +1793,8 @@
                     "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
                     "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch",
                     "Link to Entity get invalid language link in views": "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch",
-                    "Paragraphs_edit vs quick edit": "patches/quickedit_2922324_custom.patch"
+                    "Paragraphs_edit vs quick edit": "patches/quickedit_2922324_custom.patch",
+                    "TODO: fix me proper way, removes paddings on quick edit": "patches/drupal-8-custom-patch-no-padding-inplace-edit.patch"
                 }
             },
             "autoload": {
@@ -2427,11 +2428,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1484303583",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
+                    "datestamp": "1484303583"
                 },
                 "patches_applied": {
                     "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
@@ -2917,7 +2914,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1477868343"
+                    "datestamp": "1477868343",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3325,11 +3326,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477009139",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1477009139"
                 },
                 "patches_applied": {
                     "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
@@ -3406,12 +3403,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "6cc1e4c156726b90724f16d12e35d564742b190c"
+                "reference": "7d09f783e5b867980ceaad086dd3f547570bee4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/6cc1e4c156726b90724f16d12e35d564742b190c",
-                "reference": "6cc1e4c156726b90724f16d12e35d564742b190c",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/7d09f783e5b867980ceaad086dd3f547570bee4b",
+                "reference": "7d09f783e5b867980ceaad086dd3f547570bee4b",
                 "shasum": ""
             },
             "require": {
@@ -3440,7 +3437,7 @@
             "support": {
                 "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-04-13T09:13:58+00:00"
+            "time": "2018-04-20T14:08:08+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
