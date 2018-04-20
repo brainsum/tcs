@@ -168,6 +168,7 @@
             },
             "drupal/geysir": {
                 "Allow to reorder paragraphs": "https://www.drupal.org/files/issues/geysir-reordering-2900784-22-D8.patch",
+                "Disable add/remove geysir modal actions on translations": "patches/geysir-translation_disable_actions-after-2900784.patch",
                 "Use ReplaceCommand instead of HtmlCommand": "patches/geysir-replace-custom-fixed-in-feature.patch"
             },
             "drupal/field_group": {
@@ -177,7 +178,8 @@
                 "Fix support for field_group module in combination with field_layout module patch": "https://www.drupal.org/files/issues/2907094_7_field_group_support.patch"
             },
             "drupal/parade": {
-                "Parade aggregated leaflet vs leaflet-8.x-1.0-beta3": "patches/parade-aggregated_leaflet_map.leaflet-beta3.patch"
+                "Parade aggregated leaflet vs leaflet-8.x-1.0-beta3": "patches/parade-aggregated_leaflet_map.leaflet-beta3.patch",
+                "Disable add/remove geysir modal actions on translations": "patches/parade_edit-geysir-translation_disable_actions.patch"
             }
         }
     },
