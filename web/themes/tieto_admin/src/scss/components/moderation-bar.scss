@@ -1,0 +1,42 @@
+/* Contains the moderation bar's css form the latest page. */
+
+#parade-edit-moderation-wrapper {
+  position: fixed;
+  z-index: 510;
+  max-width: 100%;
+  transition: all .5s ease-in-out;
+  transition-delay: .2s;
+
+  form.parade-edit-entity-moderation-form.unpublished {
+    background-color: #75c797;
+    padding: 9px 0;
+    color: white;
+
+    .button {
+      border: none;
+      font-weight: normal;
+      padding: 10px 32px;
+      font-size: 13px;
+    }
+
+    .state_group-published {
+      display: inline-block;
+      margin-left: 100px;
+
+      .button {
+        background-color: #28a834;
+        color: #ffffff;
+      }
+    }
+
+    .state_group-unpublished {
+      display: inline-block;
+      margin-left: 270px;
+
+      .button {
+        background-color: #c1c1c1;
+        color: #565656;
+      }
+    }
+  }
+}

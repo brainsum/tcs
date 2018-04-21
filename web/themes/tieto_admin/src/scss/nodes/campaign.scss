@@ -225,7 +225,6 @@ body.offcanvas {
     .tieto-campaign-page {
       position: relative;
       overflow-y: hidden;
-      
     }
     .logo,
     .hamburger,
@@ -235,6 +234,14 @@ body.offcanvas {
     }
   }
 
+}
+
+.parade-edit-latest {
+  &.toolbar-fixed {
+    .tieto-campaign-page {
+      top: 200px;
+    }
+  }
 }
 
 .node-preview-container {
@@ -250,43 +257,73 @@ body.offcanvas {
 }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed {
-  
-    .precontent-region {
-      // display: none;
-      position: fixed;
-      width: 100%;
-      z-index: 502;
-    }
-    .campaign-menu {
-      top: 120px;
-      position: fixed;
-    }
+  .precontent-region {
+    // display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 502;
+  }
+  .campaign-menu,
+  .logo {
+    top: 120px;
+    position: fixed;
+  }
+  #parade-edit-preferences-wrapper {
+    top: 119px;
+  }
+  #parade-edit-moderation-wrapper {
+    top: 189px;
+  }
+  &.toolbar-vertical.toolbar-tray-open {
+    .campaign-menu,
     .logo {
       top: 120px;
       position: fixed;
     }
+  }
+  &.toolbar-horizontal.toolbar-tray-open {
+    .campaign-menu,
+    .logo {
+      top: 160px;
+      position: fixed;
+    }
+  }
+
+  &.parade-edit-latest {
+    .campaign-menu,
+    .logo {
+      top: 240px;
+      position: fixed;
+    }
     &.toolbar-vertical.toolbar-tray-open {
-      .campaign-menu {
-        top: 120px;
+      .campaign-menu,
+      .logo {
+        top: 240px;
         position: fixed;
       }
-      .logo {
-        top: 120px;
-        position: fixed;
+      #parade-edit-preferences-wrapper {
+        top: 119px;
+      }
+      #parade-edit-moderation-wrapper {
+        top: 189px;
       }
     }
     &.toolbar-horizontal.toolbar-tray-open {
-      .campaign-menu {
-        top: 160px;
+      .campaign-menu,
+      .logo {
+        top: 280px;
         position: fixed;
       }
-      .logo {
-        top: 160px;
-        position: fixed;
+      #parade-edit-preferences-wrapper {
+        top: 159px;
+      }
+      #parade-edit-moderation-wrapper {
+        top: 229px;
       }
     }
-  
   }
+
+}
 
 // Super ugly hack for correctly displaying the fucking
 // admin toolbar with the fucking logo and the fucking responsive hamburger shit.

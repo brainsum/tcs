@@ -1,0 +1,32 @@
+/* Preferences floating menu */
+#parade-edit-preferences-wrapper {
+  position: fixed;
+  z-index: 510;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 13.5px 0;
+  max-width: 100%;
+  transition: all .5s ease-in-out;
+  transition-delay: .2s;
+
+  a {
+    font-size: 13px;
+    color: white;
+    padding: 13.5px 52px 13.5px 16px;
+    font-weight: normal;
+    position: relative;
+
+    &:after {
+      content: " ";
+      background-image: url(../images/geysir-prefs.svg);
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background-size: 22px;
+      position: absolute;
+      top: 10px;
+      right: 16px;
+    }
+  }
+}

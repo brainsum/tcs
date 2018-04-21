@@ -183,6 +183,19 @@ body.offcanvas {
     }
   }
 }
+#parade-edit-preferences-wrapper,
+#parade-edit-moderation-wrapper {
+  .pushed & {
+    transition-delay: 0s;
+    @include breakpoint(md) {
+      max-width: calc(100vw - 317px);
+      margin: 0 294px 0 0;
+    }
+    @include breakpoint(mlg) {
+      max-width: calc(100vw - 317px);
+    }
+  }
+}
 .nav-menu-link-list {
   display: flex;
   flex-direction: column;

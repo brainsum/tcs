@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "f341b8e0345f5ccf15449d1141f839d5",
@@ -3403,12 +3403,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "7d09f783e5b867980ceaad086dd3f547570bee4b"
+                "reference": "7d23d021709bc6265612b6303859b8160e7c919d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/7d09f783e5b867980ceaad086dd3f547570bee4b",
-                "reference": "7d09f783e5b867980ceaad086dd3f547570bee4b",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/7d23d021709bc6265612b6303859b8160e7c919d",
+                "reference": "7d23d021709bc6265612b6303859b8160e7c919d",
                 "shasum": ""
             },
             "require": {
@@ -3437,7 +3437,7 @@
             "support": {
                 "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-04-20T14:08:08+00:00"
+            "time": "2018-04-21T13:48:56+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
