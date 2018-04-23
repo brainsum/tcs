@@ -56,15 +56,25 @@
   &.layout--contacts {
     // @fixme this is mess but was quick
     @include md {
-      > .paragraph-inner .field--name-parade-title--wrapper {
-        width: 36%;
-        float: left;
-      }
-      > .paragraph-inner .field--name-parade-paragraphs {
-        width: 64%;
-        float: left;
-        > .col > .paragraph-inner > .layout > .layout__region.layout__region--content {
-          display: block;
+      > .paragraph-inner {
+        .field--name-parade-title--wrapper {
+          width: 36%;
+          float: left;
+          h1 {
+            margin-top: 16px;
+          }
+        }
+
+        .field--name-parade-paragraphs {
+          width: 64%;
+          float: left;
+          > .col > .paragraph-inner > .layout > .layout__region.layout__region--content {
+            display: block;
+          }
+        }
+
+        .field--name-parade-text {
+          float: left;
         }
       }
     }
