@@ -127,7 +127,7 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
         color: $brand-primary;
       }
     }
-    .is-active {
+    &.is-active a {
       background: white;
       color: $brand-primary;
     }

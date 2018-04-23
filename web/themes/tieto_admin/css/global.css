@@ -1115,6 +1115,9 @@ div.filter-options select {
       position: absolute;
       top: 10px;
       right: 16px; }
+  #parade-edit-preferences-wrapper .ajax-progress {
+    margin-right: -32.16px;
+    width: 32.16px; }
 
 /**
  * @file
@@ -2347,7 +2350,7 @@ body.page-node-type-campaign .region-pre-content .block.block-local-tasks-block 
         transition: background .2s, color .2s;
         background: white;
         color: #67afe1; }
-    .block-local-tasks-block .tabs.primary .tabs__tab .is-active {
+    .block-local-tasks-block .tabs.primary .tabs__tab.is-active a {
       background: white;
       color: #67afe1; }
 
