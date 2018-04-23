@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f341b8e0345f5ccf15449d1141f839d5",
+    "content-hash": "d79ab4862f5c82074625ddde70b765ce",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3403,12 +3403,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "7d23d021709bc6265612b6303859b8160e7c919d"
+                "reference": "87a77f0aa99b5f13a0054aa4a1721922919d4a27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/7d23d021709bc6265612b6303859b8160e7c919d",
-                "reference": "7d23d021709bc6265612b6303859b8160e7c919d",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/87a77f0aa99b5f13a0054aa4a1721922919d4a27",
+                "reference": "87a77f0aa99b5f13a0054aa4a1721922919d4a27",
                 "shasum": ""
             },
             "require": {
@@ -3426,7 +3426,6 @@
             "type": "drupal-module",
             "extra": {
                 "patches_applied": {
-                    "Parade aggregated leaflet vs leaflet-8.x-1.0-beta3": "patches/parade-aggregated_leaflet_map.leaflet-beta3.patch",
                     "Disable add/remove geysir modal actions on translations": "patches/parade_edit-geysir-translation_disable_actions.patch"
                 }
             },
@@ -3437,7 +3436,7 @@
             "support": {
                 "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-04-21T13:48:56+00:00"
+            "time": "2018-04-23T08:31:57+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
