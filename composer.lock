@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
     "content-hash": "e2ab7bf093f287cb76122df1649606ee",
@@ -3475,17 +3475,17 @@
         },
         {
             "name": "drupal/public_preview",
-            "version": "1.0.0-alpha4",
+            "version": "1.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/public_preview",
-                "reference": "8.x-1.0-alpha4"
+                "reference": "8.x-1.0-alpha5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/public_preview-8.x-1.0-alpha4.zip",
-                "reference": "8.x-1.0-alpha4",
-                "shasum": "427838f5d9ad7fd3efd4e135ba6a73551aebf872"
+                "url": "https://ftp.drupal.org/files/projects/public_preview-8.x-1.0-alpha5.zip",
+                "reference": "8.x-1.0-alpha5",
+                "shasum": "51c70d74cea9c1cfcfed18872f6e2e7dcc0ec185"
             },
             "require": {
                 "drupal/core": "*"
@@ -3496,8 +3496,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha4",
-                    "datestamp": "1519385585",
+                    "version": "8.x-1.0-alpha5",
+                    "datestamp": "1522939983",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
