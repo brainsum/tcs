@@ -72,7 +72,7 @@
         "drupal/imagemagick": "~1.0",
         "drupal/imageapi_optimize": "^2.0@alpha",
         "drupal/google_tag": "1.x-dev",
-        "drupal/filefield_sources_jsonapi": "1.x-dev",
+        "drupal/filefield_sources_jsonapi": "^1.0",
         "drupal/override_node_options": "^2.3",
         "drupal/view_unpublished": "dev-1.x",
         "drupal/client_support": "dev-master",

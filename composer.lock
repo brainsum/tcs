@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4929c1947a6007b8d0ccc797690ae9fd",
+    "content-hash": "e2ab7bf093f287cb76122df1649606ee",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2249,11 +2249,17 @@
         },
         {
             "name": "drupal/filefield_sources_jsonapi",
-            "version": "dev-1.x",
+            "version": "1.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/filefield_sources_jsonapi",
-                "reference": "e498338a8989b545e1ea863476e088d63eb35079"
+                "reference": "8.x-1.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/filefield_sources_jsonapi-8.x-1.0-beta1.zip",
+                "reference": "8.x-1.0-beta1",
+                "shasum": "63b96c8c3fd558363b38dda52246e989a2685267"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2265,8 +2271,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1522142284",
+                    "version": "8.x-1.0-beta1",
+                    "datestamp": "1524649384",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2295,8 +2301,7 @@
             "homepage": "https://www.drupal.org/project/filefield_sources_jsonapi",
             "support": {
                 "source": "http://cgit.drupalcode.org/filefield_sources_jsonapi"
-            },
-            "time": "2018-04-12T11:36:05+00:00"
+            }
         },
         {
             "name": "drupal/geocoder",
@@ -10168,7 +10173,6 @@
         "drupal-composer/drupal-security-advisories": 20,
         "drupal/imageapi_optimize": 15,
         "drupal/google_tag": 20,
-        "drupal/filefield_sources_jsonapi": 20,
         "drupal/view_unpublished": 20,
         "drupal/client_support": 20,
         "drupal/parade_content_lister": 20,
