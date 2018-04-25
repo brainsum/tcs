@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.text_box
   module:
     - field_layout
+    - filefield_sources
     - image
     - layout_discovery
     - maxlength
@@ -47,9 +48,31 @@ content:
   parade_image:
     weight: 3
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
+      progress_indicator: throbber
+    third_party_settings:
+      filefield_sources:
+        filefield_sources:
+          sources:
+            upload: true
+            remote_jsonapi: remote_jsonapi
+            remote: false
+            clipboard: false
+            reference: false
+            attach: false
+          source_reference:
+            autocomplete: '0'
+            search_all_fields: '0'
+          source_attach:
+            path: file_attach
+            absolute: 0
+            attach_mode: move
+          source_remote_jsonapi:
+            sources:
+              tml_media_image: tml_media_image
+              tml_media_video_file: 0
+            image_style: ''
+            modal_width: '1000'
     type: image_image
     region: content
   parade_text:
