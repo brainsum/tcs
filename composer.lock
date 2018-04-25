@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "4929c1947a6007b8d0ccc797690ae9fd",
@@ -2253,7 +2253,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/filefield_sources_jsonapi",
-                "reference": "5d73a84459ceb7b4910a72cd7adbc86d99cf83e2"
+                "reference": "e498338a8989b545e1ea863476e088d63eb35079"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2266,14 +2266,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1521811685",
+                    "datestamp": "1522142284",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
-                },
-                "patches_applied": {
-                    "Get preview image via curl": "patches/RetrieveRemoteFileWithCurl.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2299,7 +2296,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/filefield_sources_jsonapi"
             },
-            "time": "2018-03-27T09:18:59+00:00"
+            "time": "2018-04-12T11:36:05+00:00"
         },
         {
             "name": "drupal/geocoder",
