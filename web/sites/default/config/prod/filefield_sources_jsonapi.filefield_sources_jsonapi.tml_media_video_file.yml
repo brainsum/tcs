@@ -13,3 +13,4 @@ altAttributePath: ''
 sortOptionList: "-created|Newest first\r\nname|By name"
 searchFilter: 'name,field_category.name'
 itemsPerPage: '12'
+basicAuthentication: true
