@@ -1,14 +1,16 @@
 diff --git a/geysir.module b/geysir.module
-index 391bb40..5975243 100644
+index 391bb40..0c39f25 100644
 --- a/geysir.module
 +++ b/geysir.module
-@@ -97,52 +97,58 @@ function geysir_preprocess_field(&$vars) {
+@@ -97,52 +97,60 @@ function geysir_preprocess_field(&$vars) {
  
    $field_wrapper_id = Html::getUniqueId('geysir--' . $vars['field_name']);
  
-+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-+  $parentTranslation = $parent->getTranslation($language);
-+  $parentIsDefaultTranslation = $parentTranslation->isDefaultTranslation();
++  $translatedParent = FALSE;
++  if ($parent->isTranslatable()) {
++    $parentTranslation = \Drupal::service('entity.repository')->getTranslationFromContext($parent);
++    $translatedParent = !$parentTranslation->isDefaultTranslation();
++  }
 +
    $delta = 0;
    while (!empty($element[$delta])) {
@@ -56,7 +58,7 @@ index 391bb40..5975243 100644
 -        'data-dialog-type' => 'modal',
 -      ],
 -    ];
-+    if ($parentIsDefaultTranslation) {
++    if (!$translatedParent) {
 +      // Add link - before.
 +      $links['add_before'] = [
 +        'title' => t('Add before'),
@@ -102,7 +104,7 @@ index 391bb40..5975243 100644
  
      // Edit link.
      $links['edit'] = [
-@@ -164,25 +170,27 @@ function geysir_preprocess_field(&$vars) {
+@@ -164,25 +172,27 @@ function geysir_preprocess_field(&$vars) {
        ],
      ];
  
@@ -125,7 +127,7 @@ index 391bb40..5975243 100644
 -        'data-dialog-type' => 'modal',
 -      ],
 -    ];
-+    if ($parentIsDefaultTranslation) {
++    if (!$translatedParent) {
 +      // Delete link.
 +      $links['delete'] = [
 +        'title' => t('Delete'),

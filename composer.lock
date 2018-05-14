@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e65c7ccc8fcc34e852fdb0ae9d8c0c0f",
+    "content-hash": "e0c9453a7a4f8b8a069887e9ae330fc0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2638,7 +2638,7 @@
                 },
                 "patches_applied": {
                     "Allow to reorder paragraphs": "https://www.drupal.org/files/issues/geysir-reordering-2900784-22-D8.patch",
-                    "Disable add/remove geysir modal actions on translations": "patches/geysir-translation_disable_actions-after-2900784.patch",
+                    "Disable add/remove geysir modal actions on translations": "patches/geysir-translation_disable_actions-after-2900784-v2.patch",
                     "Use ReplaceCommand instead of HtmlCommand": "patches/geysir-replace-custom-fixed-in-feature.patch"
                 }
             },
