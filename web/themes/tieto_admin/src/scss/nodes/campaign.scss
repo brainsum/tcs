@@ -256,6 +256,26 @@ body.offcanvas {
   }
 }
 
+body.page-node-type-campaign {
+  .logo {
+    pointer-events: none;
+
+    img {
+      pointer-events: auto;
+    }
+  }
+
+  .campaign-menu {
+    pointer-events: none;
+
+    .nav-menu-link,
+    #hamburger,
+    .slide-in-menu-link {
+      pointer-events: auto;
+    }
+  }
+}
+
 body.page-node-type-campaign.user-logged-in.toolbar-fixed {
   .precontent-region {
     // display: none;

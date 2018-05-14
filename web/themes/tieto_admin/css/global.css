@@ -2606,6 +2606,18 @@ body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper)
     .node-preview-container a:hover {
       text-decoration: underline; }
 
+body.page-node-type-campaign .logo {
+  pointer-events: none; }
+  body.page-node-type-campaign .logo img {
+    pointer-events: auto; }
+
+body.page-node-type-campaign .campaign-menu {
+  pointer-events: none; }
+  body.page-node-type-campaign .campaign-menu .nav-menu-link,
+  body.page-node-type-campaign .campaign-menu #hamburger,
+  body.page-node-type-campaign .campaign-menu .slide-in-menu-link {
+    pointer-events: auto; }
+
 body.page-node-type-campaign.user-logged-in.toolbar-fixed .precontent-region {
   position: fixed;
   width: 100%;
