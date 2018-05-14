@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1d99bac6dda42e3db89651d5ff4d8fa",
+    "content-hash": "e65c7ccc8fcc34e852fdb0ae9d8c0c0f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3416,12 +3416,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "5ee8393e757d8bd4b9add64bf22574a2197f4667"
+                "reference": "fbbddee4a3ca1372a314b12a93865a367a2630af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/5ee8393e757d8bd4b9add64bf22574a2197f4667",
-                "reference": "5ee8393e757d8bd4b9add64bf22574a2197f4667",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/fbbddee4a3ca1372a314b12a93865a367a2630af",
+                "reference": "fbbddee4a3ca1372a314b12a93865a367a2630af",
                 "shasum": ""
             },
             "require": {
@@ -3437,11 +3437,6 @@
                 "drupal/view_mode_selector": "~1.0"
             },
             "type": "drupal-module",
-            "extra": {
-                "patches_applied": {
-                    "Disable add/remove geysir modal actions on translations": "patches/parade_edit-geysir-translation_disable_actions.patch"
-                }
-            },
             "license": [
                 "GPL-2.0+"
             ],
@@ -3449,7 +3444,7 @@
             "support": {
                 "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-05-14T11:46:15+00:00"
+            "time": "2018-05-14T13:01:09+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
