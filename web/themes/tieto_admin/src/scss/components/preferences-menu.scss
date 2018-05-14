@@ -1,13 +1,7 @@
 /* Preferences floating menu */
-#parade-edit-preferences-wrapper {
-  position: fixed;
-  z-index: 510;
-  background-color: #ffffff;
-  width: 100%;
-  padding: 13.5px 0;
-  max-width: 100%;
-  transition: all .5s ease-in-out;
-  transition-delay: .2s;
+#parade-edit-moderation-wrapper #parade-edit-preferences-wrapper {
+  display: inline-block;
+  margin-right: 40px;
 
   a {
     font-size: 13px;
