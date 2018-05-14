@@ -1077,34 +1077,28 @@ div.filter-options select {
       font-size: 13px; }
     #parade-edit-moderation-wrapper form.parade-edit-entity-moderation-form.unpublished .state_group-published {
       display: inline-block;
-      margin-left: 100px; }
+      margin-left: 60px; }
       #parade-edit-moderation-wrapper form.parade-edit-entity-moderation-form.unpublished .state_group-published .button {
         background-color: #28a834;
         color: #ffffff; }
     #parade-edit-moderation-wrapper form.parade-edit-entity-moderation-form.unpublished .state_group-unpublished {
       display: inline-block;
-      margin-left: 270px; }
+      margin-left: 230px; }
       #parade-edit-moderation-wrapper form.parade-edit-entity-moderation-form.unpublished .state_group-unpublished .button {
         background-color: #c1c1c1;
         color: #565656; }
 
 /* Preferences floating menu */
-#parade-edit-preferences-wrapper {
-  position: fixed;
-  z-index: 510;
-  background-color: #ffffff;
-  width: 100%;
-  padding: 13.5px 0;
-  max-width: 100%;
-  transition: all .5s ease-in-out;
-  transition-delay: .2s; }
-  #parade-edit-preferences-wrapper a {
+#parade-edit-moderation-wrapper #parade-edit-preferences-wrapper {
+  display: inline-block;
+  margin-right: 40px; }
+  #parade-edit-moderation-wrapper #parade-edit-preferences-wrapper a {
     font-size: 13px;
     color: white;
     padding: 13.5px 52px 13.5px 16px;
     font-weight: normal;
     position: relative; }
-    #parade-edit-preferences-wrapper a:after {
+    #parade-edit-moderation-wrapper #parade-edit-preferences-wrapper a:after {
       content: " ";
       background-image: url(../images/geysir-prefs.svg);
       background-repeat: no-repeat;
@@ -1115,7 +1109,7 @@ div.filter-options select {
       position: absolute;
       top: 10px;
       right: 16px; }
-  #parade-edit-preferences-wrapper .ajax-progress {
+  #parade-edit-moderation-wrapper #parade-edit-preferences-wrapper .ajax-progress {
     margin-right: -32.16px;
     width: 32.16px; }
 
@@ -1748,17 +1742,14 @@ body.offcanvas {
       .node--type-campaign .campaign-menu a {
         text-align: center; } }
 
-.pushed #parade-edit-preferences-wrapper, .pushed
-#parade-edit-moderation-wrapper {
+.pushed #parade-edit-moderation-wrapper {
   transition-delay: 0s; }
   @media (min-width: 767px) {
-    .pushed #parade-edit-preferences-wrapper, .pushed
-    #parade-edit-moderation-wrapper {
+    .pushed #parade-edit-moderation-wrapper {
       max-width: calc(100vw - 317px);
       margin: 0 294px 0 0; } }
   @media (min-width: 992px) {
-    .pushed #parade-edit-preferences-wrapper, .pushed
-    #parade-edit-moderation-wrapper {
+    .pushed #parade-edit-moderation-wrapper {
       max-width: calc(100vw - 317px); } }
 
 .nav-menu-link-list {
@@ -2595,7 +2586,7 @@ body.offcanvas.toolbar-fixed .field--name-parade-onepage-menu:not(.form-wrapper)
   top: 0; }
 
 .parade-edit-latest.toolbar-fixed .tieto-campaign-page {
-  top: 200px; }
+  top: 140px; }
 
 .node-preview-container {
   background: #67afe1;
@@ -2628,11 +2619,8 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed .logo {
   top: 120px;
   position: fixed; }
 
-body.page-node-type-campaign.user-logged-in.toolbar-fixed #parade-edit-preferences-wrapper {
-  top: 119px; }
-
 body.page-node-type-campaign.user-logged-in.toolbar-fixed #parade-edit-moderation-wrapper {
-  top: 189px; }
+  top: 119px; }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-vertical.toolbar-tray-open .campaign-menu,
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-vertical.toolbar-tray-open .logo {
@@ -2646,30 +2634,24 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest .campaign-menu,
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest .logo {
-  top: 240px;
+  top: 180px;
   position: fixed; }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.toolbar-vertical.toolbar-tray-open .campaign-menu,
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.toolbar-vertical.toolbar-tray-open .logo {
-  top: 240px;
+  top: 180px;
   position: fixed; }
 
-body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.toolbar-vertical.toolbar-tray-open #parade-edit-preferences-wrapper {
-  top: 119px; }
-
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.toolbar-vertical.toolbar-tray-open #parade-edit-moderation-wrapper {
-  top: 189px; }
+  top: 119px; }
 
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.toolbar-horizontal.toolbar-tray-open .campaign-menu,
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.toolbar-horizontal.toolbar-tray-open .logo {
-  top: 280px;
+  top: 220px;
   position: fixed; }
 
-body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.toolbar-horizontal.toolbar-tray-open #parade-edit-preferences-wrapper {
-  top: 159px; }
-
 body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.toolbar-horizontal.toolbar-tray-open #parade-edit-moderation-wrapper {
-  top: 229px; }
+  top: 159px; }
 
 .node-campaign-form .field--name-field-menu .field-multiple-table td,
 .node-campaign-edit-form .field--name-field-menu .field-multiple-table td {
