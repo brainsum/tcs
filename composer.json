@@ -147,6 +147,10 @@
                 "Cron Updates not runned by User #1": "https://www.drupal.org/files/issues/2793489-20.patch",
                 "Fix revisions": "https://www.drupal.org/files/issues/scheduled_updates-fix-all-revisions-queries-2872239-36.patch"
             },
+            "drupal/geocoder": {
+                "geocoder_field schema is not up to date": "https://www.drupal.org/files/issues/2018-03-18/2954070-2.patch",
+                "Invalid geocoder_field schema": "https://www.drupal.org/files/issues/2018-05-14/invalid-geocoder_field-schema-2971970-5-D8.patch"
+            },
             "drupal/geocoder_autocomplete": {
                 "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
             },
@@ -158,7 +162,7 @@
                 "TODO: fix me proper way, removes paddings on quick edit": "patches/drupal-8-custom-patch-no-padding-inplace-edit.patch"
             },
             "drupal/classy_paragraphs": {
-                "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
+                "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/2018-05-12/choose_and_order-2830403-27.patch"
             },
             "drupal/workbench_moderation": {
                 "Do not force the creation of new revisions": "https://www.drupal.org/files/issues/do_not_force_new_revisions-2768977-6.patch"

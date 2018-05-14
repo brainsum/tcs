@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2ab7bf093f287cb76122df1649606ee",
+    "content-hash": "f1d99bac6dda42e3db89651d5ff4d8fa",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1351,7 +1351,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
+                    "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/2018-05-12/choose_and_order-2830403-27.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2355,6 +2355,10 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "geocoder_field schema is not up to date": "https://www.drupal.org/files/issues/2018-03-18/2954070-2.patch",
+                    "Invalid geocoder_field schema": "https://www.drupal.org/files/issues/2018-05-14/invalid-geocoder_field-schema-2971970-5-D8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2373,16 +2377,16 @@
                     "role": "Co-maintainer"
                 },
                 {
-                    "name": "GJdan",
-                    "homepage": "https://www.drupal.org/user/847848"
-                },
-                {
                     "name": "Pol",
                     "homepage": "https://www.drupal.org/user/47194"
                 },
                 {
                     "name": "Simon Georges",
                     "homepage": "https://www.drupal.org/user/172312"
+                },
+                {
+                    "name": "gregseb",
+                    "homepage": "https://www.drupal.org/user/847848"
                 },
                 {
                     "name": "indytechcook",
@@ -3412,12 +3416,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "7cca01edb7f96866c964f4625bc7b296fa42a07c"
+                "reference": "a56d270990aa6433783858d9c9d327e92e19719b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/7cca01edb7f96866c964f4625bc7b296fa42a07c",
-                "reference": "7cca01edb7f96866c964f4625bc7b296fa42a07c",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/a56d270990aa6433783858d9c9d327e92e19719b",
+                "reference": "a56d270990aa6433783858d9c9d327e92e19719b",
                 "shasum": ""
             },
             "require": {
@@ -3445,7 +3449,7 @@
             "support": {
                 "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-04-24T09:48:51+00:00"
+            "time": "2018-05-14T09:11:25+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
