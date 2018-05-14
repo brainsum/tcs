@@ -177,9 +177,6 @@
             },
             "drupal/paragraphs": {
                 "Fix support for field_group module in combination with field_layout module patch": "https://www.drupal.org/files/issues/2907094_7_field_group_support.patch"
-            },
-            "drupal/parade": {
-                "Disable add/remove geysir modal actions on translations": "patches/parade_edit-geysir-translation_disable_actions.patch"
             }
         }
     },
