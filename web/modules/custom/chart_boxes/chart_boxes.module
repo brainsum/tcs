@@ -94,41 +94,43 @@ function chart_boxes_preprocess_paragraph(&$variables) {
  * Implements hook_form_alter().
  */
 function chart_boxes_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (isset($form['parade_onepage_sections'])) {
+  if (isset($form['parade_onepage_sections']) || 'geysir.modal.add_select_type_form' === $form_id) {
     $form['#attached']['library'][] = 'chart_boxes/paragraphs.chart_boxes_admin';
 
-    foreach ($form['parade_onepage_sections']['widget'] as $delta => &$value) {
-      if (
-        is_numeric($delta)
-        && is_array($value)
-        && isset($value['subform']['parade_paragraphs'])
-        && array_key_exists('layout_doughnut_and_text_chart', $value['subform']['parade_layout']['widget']['#options'])
-      ) {
-        $layoutHelperClass = 'parade-layout-states-help-' . (new Random())->name(10, TRUE);
-        $value['subform']['parade_layout']['#attributes']['class'][] = $layoutHelperClass;
-        // Only show this field when the
-        // 'layout_doughnut_and_text_chart' value is selected.
-        $layoutCondition = [".$layoutHelperClass select" => ['value' => 'layout_doughnut_and_text_chart']];
-        $visibleAccordingToLayout = [
-          'visible' => $layoutCondition,
-        ];
-        $value['subform']['parade_boxes_per_row']['#states'] = $visibleAccordingToLayout;
-        foreach ($value['subform']['parade_paragraphs']['widget'] as $subDelta => &$subValue) {
-          if (is_numeric($subDelta) && is_array($subValue) && isset($subValue['subform']['parade_with_pie'])) {
-            $subValue['subform']['parade_with_pie']['#states'] = $visibleAccordingToLayout;
-          }
+    if (isset($form['parade_onepage_sections'])) {
+      foreach ($form['parade_onepage_sections']['widget'] as $delta => &$value) {
+        if (
+          is_numeric($delta)
+          && is_array($value)
+          && isset($value['subform']['parade_paragraphs'])
+          && array_key_exists('layout_doughnut_and_text_chart', $value['subform']['parade_layout']['widget']['#options'])
+        ) {
+          $layoutHelperClass = 'parade-layout-states-help-' . (new Random())->name(10, TRUE);
+          $value['subform']['parade_layout']['#attributes']['class'][] = $layoutHelperClass;
+          // Only show this field when the
+          // 'layout_doughnut_and_text_chart' value is selected.
+          $layoutCondition = [".$layoutHelperClass select" => ['value' => 'layout_doughnut_and_text_chart']];
+          $visibleAccordingToLayout = [
+            'visible' => $layoutCondition,
+          ];
+          $value['subform']['parade_boxes_per_row']['#states'] = $visibleAccordingToLayout;
+          foreach ($value['subform']['parade_paragraphs']['widget'] as $subDelta => &$subValue) {
+            if (is_numeric($subDelta) && is_array($subValue) && isset($subValue['subform']['parade_with_pie'])) {
+              $subValue['subform']['parade_with_pie']['#states'] = $visibleAccordingToLayout;
+            }
 
-          // @see TCS-351: Hide parade_title of a chart_box if 'doughnut_and_text' is the layout.
-          if (is_numeric($subDelta) && is_array($subValue) && isset($subValue['subform']['parade_title'])) {
-            $invisibleAccordingToLayout = [
-              'invisible' => $layoutCondition,
-            ];
-            $subValue['subform']['parade_title']['#states'] = $invisibleAccordingToLayout;
+            // @see TCS-351: Hide parade_title of a chart_box if 'doughnut_and_text' is the layout.
+            if (is_numeric($subDelta) && is_array($subValue) && isset($subValue['subform']['parade_title'])) {
+              $invisibleAccordingToLayout = [
+                'invisible' => $layoutCondition,
+              ];
+              $subValue['subform']['parade_title']['#states'] = $invisibleAccordingToLayout;
+            }
           }
+          unset($subValue);
         }
-        unset($subValue);
       }
+      unset($value);
     }
-    unset($value);
   }
 }

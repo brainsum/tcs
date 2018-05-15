@@ -67,7 +67,7 @@ function twitter_feed_parade_type_page_attachments(array &$attachments) {
  * Implements hook_form_alter().
  */
 function twitter_feed_parade_type_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (isset($form['parade_onepage_sections'])) {
+  if (isset($form['parade_onepage_sections']) || 'geysir.modal.add_select_type_form' === $form_id) {
     $form['#attached']['library'][] = 'twitter_feed_parade_type/twitter-feed-parade-type';
   }
 }
