@@ -3,8 +3,20 @@ langcode: en
 status: true
 dependencies:
   module:
+    - field_encrypt
     - paragraphs
     - twitter_feed_parade_type
+third_party_settings:
+  field_encrypt:
+    uncacheable: true
+    encrypt: true
+    properties:
+      username: username
+      type: '0'
+      width: '0'
+      height: '0'
+      widget_id: '0'
+    encryption_profile: encrypt
 _core:
   default_config_hash: lin6EREfFE1BpKJe3_b60lzVLfWm3AP7kukBfwR8Hc0
 id: paragraph.parade_twitter_feed

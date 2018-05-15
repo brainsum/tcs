@@ -3,8 +3,18 @@ langcode: en
 status: true
 dependencies:
   module:
+    - field_encrypt
     - paragraphs
     - text
+third_party_settings:
+  field_encrypt:
+    uncacheable: true
+    encrypt: true
+    properties:
+      value: value
+      processed: processed
+      format: '0'
+    encryption_profile: encrypt
 _core:
   default_config_hash: Dc-MgCNXtoC8whoFcqEA9K9njPInC2Jpl2-pXgIH8zY
 id: paragraph.parade_text

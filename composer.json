@@ -78,7 +78,10 @@
         "drupal/client_support": "dev-master",
         "drupal/parade_content_lister": "dev-master",
         "drupal/workbench_moderation": "^1.2",
-        "drupal/scheduled_updates": "1.x-dev"
+        "drupal/scheduled_updates": "1.x-dev",
+        "drupal/encrypt": "^3.0@alpha",
+        "drupal/real_aes": "^2.1",
+        "drupal/field_encrypt": "^2.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
