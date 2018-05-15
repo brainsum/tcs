@@ -159,7 +159,8 @@
                 "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch",
                 "Link to Entity get invalid language link in views": "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch",
                 "Paragraphs_edit vs quick edit": "patches/quickedit_2922324_custom.patch",
-                "TODO: fix me proper way, removes paddings on quick edit": "patches/drupal-8-custom-patch-no-padding-inplace-edit.patch"
+                "TODO: fix me proper way, removes paddings on quick edit": "patches/drupal-8-custom-patch-no-padding-inplace-edit.patch",
+                "Fix image quickedit uplods for paragraphs": "patches/drupal-8-custom-image-quickedit-paragraphs.patch"
             },
             "drupal/classy_paragraphs": {
                 "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/2018-05-12/choose_and_order-2830403-27.patch"

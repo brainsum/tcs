@@ -1,0 +1,15 @@
+diff --git a/core/modules/image/src/Controller/QuickEditImageController.php b/core/modules/image/src/Controller/QuickEditImageController.php
+index 5fc28ba..32c92f6 100644
+--- a/core/modules/image/src/Controller/QuickEditImageController.php
++++ b/core/modules/image/src/Controller/QuickEditImageController.php
+@@ -116,6 +116,10 @@ class QuickEditImageController extends ControllerBase {
+ 
+       // Render the new image using the correct formatter settings.
+       $entity_view_mode_ids = array_keys($this->entityManager()->getViewModes($entity->getEntityTypeId()));
++      // Add 'default' view mode.
++      if ('paragraph' === $entity->getEntityTypeId()) {
++        $entity_view_mode_ids[] = 'default';
++      }
+       if (in_array($view_mode_id, $entity_view_mode_ids, TRUE)) {
+         $output = $entity->$field_name->view($view_mode_id);
+       }
