@@ -1,0 +1,51 @@
+default_properties:
+  boolean: {  }
+  datetime: {  }
+  email:
+    - value
+  marketo_poll: {  }
+  metatag: {  }
+  timestamp: {  }
+  view_mode_selector: {  }
+  twitter_feed:
+    - username
+  geofield: {  }
+  link:
+    - uri
+    - title
+  machine_name: {  }
+  marketo_form: {  }
+  video_embed_field:
+    - value
+  list_float: {  }
+  list_integer: {  }
+  decimal: {  }
+  float: {  }
+  integer: {  }
+  'field_ui:entity_reference:node': {  }
+  entity_reference: {  }
+  file: {  }
+  image: {  }
+  'field_ui:entity_reference:taxonomy_term': {  }
+  'field_ui:entity_reference:user': {  }
+  entity_reference_revisions: {  }
+  'field_ui:entity_reference_revisions:paragraph': {  }
+  list_string:
+    - value
+  text:
+    - value
+    - processed
+  text_long:
+    - value
+    - processed
+  text_with_summary:
+    - value
+    - processed
+    - summary
+  string:
+    - value
+  string_long:
+    - value
+batch_size: 5
+_core:
+  default_config_hash: Yj_mAzAokvtrEXjz7r1nY8xFMAeddY9lz3CAHTR0-y4

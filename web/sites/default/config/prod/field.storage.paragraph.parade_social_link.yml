@@ -3,8 +3,18 @@ langcode: en
 status: true
 dependencies:
   module:
+    - field_encrypt
     - link
     - paragraphs
+third_party_settings:
+  field_encrypt:
+    encrypt: true
+    properties:
+      uri: uri
+      title: title
+      options: '0'
+    encryption_profile: encrypt
+    uncacheable: true
 _core:
   default_config_hash: X33HNuQUkUi6shi6yQhxfch0tetOZpP2_zKRStAw-iA
 id: paragraph.parade_social_link

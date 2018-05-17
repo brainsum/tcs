@@ -446,3 +446,57 @@ function campaign_pages_update_8402() {
   $modules = ['workbench_moderation'];
   \Drupal::service('module_installer')->install($modules, TRUE);
 }
+
+/**
+ * Enable field encryption modules, configure them and run field encrypt update
+ * script for existing field data.
+ */
+function campaign_pages_update_8403() {
+
+  // Enable field encryption modules.
+  $modules = ['key', 'encrypt', 'field_encrypt'];
+  \Drupal::service('module_installer')->install($modules, TRUE);
+
+  // Configure sensitive fields for encryption.
+  _campaign_pages_import_field_encryption_config();
+
+  // Run batch script for encrypting existing sensitive field data.
+  $fieldUpdateFormClass = 'Drupal\field_encrypt\Form\FieldEncryptUpdateForm';
+  $batch = [
+    'title' => t('Updating field encryption'),
+    'operations' => [
+      [[$fieldUpdateFormClass, 'processBatch'], []],
+    ],
+    'finished' => [$fieldUpdateFormClass, 'finishBatch'],
+  ];
+  batch_set($batch);
+}
+
+/**
+ * Import field encryption configuration from sync directory.
+ */
+function _campaign_pages_import_field_encryption_config() {
+  $projectConfigPath = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
+  $source = new FileStorage($projectConfigPath);
+  $configStorage = \Drupal::service('config.storage');
+
+  $configs = [
+    'field_encrypt.settings',
+    'encrypt.settings',
+    'key.key.encrypt',
+    'encrypt.profile.encrypt',
+    'field.storage.paragraph.parade_title',
+    'field.storage.paragraph.parade_social_link',
+    'field.storage.paragraph.parade_secondary_title',
+    'field.storage.paragraph.parade_location',
+    'field.storage.paragraph.parade_lead_text',
+    'field.storage.paragraph.parade_call_to_action',
+    'field.storage.paragraph.parade_anchor',
+    'field.storage.paragraph.parade_text',
+    'field.storage.paragraph.parade_twitter_feed',
+  ];
+
+  foreach ($configs as $config) {
+    $configStorage->write($config, $source->read($config));
+  }
+}

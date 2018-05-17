@@ -72,13 +72,18 @@
         "drupal/imagemagick": "~1.0",
         "drupal/imageapi_optimize": "^2.0@alpha",
         "drupal/google_tag": "1.x-dev",
-        "drupal/filefield_sources_jsonapi": "1.x-dev",
+        "drupal/filefield_sources_jsonapi": "^1.0",
         "drupal/override_node_options": "^2.3",
         "drupal/view_unpublished": "dev-1.x",
         "drupal/client_support": "dev-master",
         "drupal/parade_content_lister": "dev-master",
         "drupal/workbench_moderation": "^1.2",
-        "drupal/scheduled_updates": "1.x-dev"
+        "drupal/scheduled_updates": "1.x-dev",
+        "drupal/encrypt": "^3.0@alpha",
+        "drupal/real_aes": "^2.1",
+        "drupal/field_encrypt": "^2.0@alpha",
+        "drupal/gdpr": "^1.0@alpha",
+        "drupal/token": "1.1.0"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -135,7 +140,7 @@
                 "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
             },
             "drupal/entity_reference_revisions": {
-                "Deletion of referenced entities on host delete, without checking usage/another reference.": "https://www.drupal.org/files/issues/deletion_of_used_referenced_entity-2852522-4.patch"
+                "Deletion of referenced entities on host delete, without checking usage/another reference.": "patches/deletion_of_used_referenced_entity-2852522-4-custom-v1.4.patch"
             },
             "drupal/scheduled_updates": {
                 "Cron Updates not runned by User #1": "https://www.drupal.org/files/issues/2793489-20.patch",
