@@ -1,0 +1,81 @@
+mapping:
+  node__body:
+    body_value: long_text_anonymizer
+    body_summary: long_text_anonymizer
+  node_field_data:
+    title: text_anonymizer
+  node_revision__body:
+    body_value: long_text_anonymizer
+    body_summary: long_text_anonymizer
+  paragraph__parade_anchor:
+    parade_anchor_value: text_anonymizer
+  paragraph__parade_background:
+    parade_background_description: text_anonymizer
+  paragraph__parade_call_to_action:
+    parade_call_to_action_uri: uri_anonymizer
+    parade_call_to_action_title: text_anonymizer
+  paragraph__parade_input_label:
+    parade_input_label_value: text_anonymizer
+  paragraph__parade_lead_text:
+    parade_lead_text_value: long_text_anonymizer
+  paragraph__parade_location:
+    parade_location_value: text_anonymizer
+  paragraph__parade_result_label:
+    parade_result_label_value: text_anonymizer
+  paragraph__parade_secondary_title:
+    parade_secondary_title_value: text_anonymizer
+  paragraph__parade_social_link:
+    parade_social_link_uri: uri_anonymizer
+    parade_social_link_title: text_anonymizer
+  paragraph__parade_text:
+    parade_text_value: long_text_anonymizer
+  paragraph__parade_title:
+    parade_title_value: text_anonymizer
+  paragraph__parade_twitter_feed:
+    parade_twitter_feed_username: username_anonymizer
+  paragraph_revision__parade_anchor:
+    parade_anchor_value: text_anonymizer
+  paragraph_revision__parade_background:
+    parade_background_description: text_anonymizer
+  paragraph_revision__parade_call_to_action:
+    parade_call_to_action_uri: uri_anonymizer
+    parade_call_to_action_title: text_anonymizer
+  paragraph_revision__parade_input_label:
+    parade_input_label_value: text_anonymizer
+  paragraph_revision__parade_lead_text:
+    parade_lead_text_value: long_text_anonymizer
+  paragraph_revision__parade_result_label:
+    parade_result_label_value: text_anonymizer
+  paragraph_revision__parade_secondary_title:
+    parade_secondary_title_value: text_anonymizer
+  paragraph_revision__parade_social_link:
+    parade_social_link_uri: uri_anonymizer
+    parade_social_link_title: text_anonymizer
+  paragraph_revision__parade_text:
+    parade_text_value: long_text_anonymizer
+    parade_text_format: text_anonymizer
+  paragraph_revision__parade_title:
+    parade_title_value: text_anonymizer
+  paragraph_revision__parade_twitter_feed:
+    parade_twitter_feed_username: username_anonymizer
+  users_field_data:
+    name: username_anonymizer
+    mail: email_anonymizer
+    init: email_anonymizer
+empty_tables:
+  cache_bootstrap: 1
+  cache_config: 1
+  cache_container: 1
+  cache_data: 1
+  cache_default: 1
+  cache_discovery: 1
+  cache_dynamic_page_cache: 1
+  cache_entity: 1
+  cache_geocoder: 1
+  cache_menu: 1
+  cache_page: 1
+  cache_render: 1
+  cache_toolbar: 1
+  cachetags: 1
+  sessions: 1
+  watchdog: 1

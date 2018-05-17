@@ -4,6 +4,7 @@ module:
   addtoany: 0
   aggregated_leaflet_map: 0
   allowed_formats: 0
+  anonymizer: 0
   automated_cron: 0
   block: 0
   breakpoint: 0
@@ -11,6 +12,7 @@ module:
   campaign_pages_tour: 0
   captcha: 0
   chart_boxes: 0
+  checklistapi: 0
   ckeditor: 0
   classy_paragraphs: 0
   client_support: 0
@@ -40,6 +42,8 @@ module:
   file: 0
   filefield_sources_jsonapi: 0
   filter: 0
+  gdpr: 0
+  gdpr_dump: 0
   geocoder: 0
   geocoder_autocomplete: 0
   geocoder_field: 0
