@@ -5,7 +5,7 @@
  * @see  https://github.com/lcdsantos/menuspy
  */
 
-import MenuSpy from 'menuspy';
+@import '../../node_modules/menuspy/dist/menuspy.min.js';
 
 var $menu = jQuery('#nav-menu-link-list');
 

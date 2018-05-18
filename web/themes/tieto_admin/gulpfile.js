@@ -3,8 +3,9 @@ const path = require('path');
 const exec = require('child_process').exec;
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const jsImport = require('gulp-js-import');
+const minify = require('gulp-minify');
 const imagemin = require('gulp-imagemin');
-const each = require('gulp-each');
 const changed = require('gulp-changed');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
@@ -20,15 +21,15 @@ gulp.task('js', function(done) {
 
   return gulp.src('src/js/*.js')
     .pipe(changed('js'))
-    .pipe(each(function(content, file, callback) {
-      let fileName = 'src/js/' + path.basename(file.path);
-      exec(`parcel build ${fileName} --out-dir js`, {}, function(error, stdout, stderr) {
-        console.log(stdout);
-      });
-      // the first argument is an error,
-      // second is modified file
-      callback(null, null);
-    }));
+    .pipe(jsImport({hideConsole: true}))
+    .pipe(minify({
+      ext:{
+        src:null,
+        min:'.js'
+      },
+      noSource: true
+    }))
+    .pipe(gulp.dest('js'));
 });
 
 gulp.task('sass', function (done) {
