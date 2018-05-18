@@ -22,7 +22,7 @@
         ticking = false;
 
         var boundingClientRect = $cta[0].getBoundingClientRect();
-        var shouldBeFixed = boundingClientRect.top < 50;
+        var shouldBeFixed = boundingClientRect.top < $('.logo').position().top + 10;
         var isMobile = window.innerWidth < 768;
 
         // Create fixed element if it hasnt been created yet.
