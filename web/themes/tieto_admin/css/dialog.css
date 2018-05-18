@@ -10,11 +10,9 @@
   .ui-dialog.ui-draggable .ui-draggable-handle {
     cursor: move;
     cursor: -webkit-grab;
-    cursor: -moz-grab;
     cursor: grab; }
   .ui-dialog.ui-draggable.ui-draggable-dragging .ui-draggable-handle {
     cursor: -webkit-grabbing;
-    cursor: -moz-grabbing;
     cursor: grabbing; }
 
 @media all and (max-width: 48em) {
