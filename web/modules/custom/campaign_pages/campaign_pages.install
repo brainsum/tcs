@@ -454,7 +454,7 @@ function campaign_pages_update_8402() {
 function campaign_pages_update_8403() {
 
   // Enable field encryption modules.
-  $modules = ['key', 'encrypt', 'field_encrypt'];
+  $modules = ['key', 'encrypt', 'field_encrypt', 'real_aes'];
   \Drupal::service('module_installer')->install($modules, TRUE);
 
   // Configure sensitive fields for encryption.
