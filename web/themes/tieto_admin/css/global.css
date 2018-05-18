@@ -1550,6 +1550,7 @@ li.tabs__tab a {
   background: rgba(0, 0, 0, 0.5); }
 
 .scroll-to-top {
+  z-index: 1;
   position: fixed;
   right: 1em;
   bottom: 5em;
