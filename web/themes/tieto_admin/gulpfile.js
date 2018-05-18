@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const path = require('path');
 const exec = require('child_process').exec;
 const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const each = require('gulp-each');
 const changed = require('gulp-changed');
@@ -33,6 +34,7 @@ gulp.task('js', function(done) {
 gulp.task('sass', function (done) {
   return gulp.src('src/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(gulp.dest('css'));
 });
 
