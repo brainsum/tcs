@@ -3,7 +3,7 @@
  * Initialize ScrollSpy scripts
  */
 
-import '../../vendor/jquery-scrollspy'
+@import '../../vendor/jquery-scrollspy.js'
 
 ($ => {
 
