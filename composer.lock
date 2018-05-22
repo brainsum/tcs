@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "5d8bc2f0277f09860787c9dc086421c9",
@@ -2717,17 +2717,17 @@
         },
         {
             "name": "drupal/gdpr",
-            "version": "1.0.0-alpha10",
+            "version": "1.0.0-alpha11",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/gdpr",
-                "reference": "8.x-1.0-alpha10"
+                "reference": "8.x-1.0-alpha11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/gdpr-8.x-1.0-alpha10.zip",
-                "reference": "8.x-1.0-alpha10",
-                "shasum": "dd783bcb5b0cbff0456270f7268f82b6dd4abe21"
+                "url": "https://ftp.drupal.org/files/projects/gdpr-8.x-1.0-alpha11.zip",
+                "reference": "8.x-1.0-alpha11",
+                "shasum": "9db76ef1f283a88ea943e666df9735e7d6cee260"
             },
             "require": {
                 "cweagans/composer-patches": "~1.0",
@@ -2738,7 +2738,6 @@
                 "drupal/entity_reference_revisions": "^1.4",
                 "drupal/message": "^1.0",
                 "drupal/token": "^1.1",
-                "drush/drush": "~8",
                 "fzaninotto/faker": "^1.7",
                 "php": "^5.6|>=7.0.8"
             },
@@ -2757,8 +2756,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha10",
-                    "datestamp": "1526475184",
+                    "version": "8.x-1.0-alpha11",
+                    "datestamp": "1526664780",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2787,6 +2786,10 @@
                 {
                     "name": "bfr",
                     "homepage": "https://www.drupal.org/user/369262"
+                },
+                {
+                    "name": "james.williams",
+                    "homepage": "https://www.drupal.org/user/592268"
                 },
                 {
                     "name": "lbesenyei",
@@ -2845,7 +2848,11 @@
                 },
                 "drupal": {
                     "version": "8.x-2.0-alpha5",
-                    "datestamp": "1481538483"
+                    "datestamp": "1481538483",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
                 },
                 "patches_applied": {
                     "Fix config schema.": "https://www.drupal.org/files/issues/2824802-geocoder-schema-fix-2.patch"
@@ -2926,7 +2933,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1484303583"
+                    "datestamp": "1484303583",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 },
                 "patches_applied": {
                     "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
@@ -3304,11 +3315,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1477868343",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1477868343"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3842,7 +3849,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477009139"
+                    "datestamp": "1477009139",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
                 },
                 "patches_applied": {
                     "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
