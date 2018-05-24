@@ -113,6 +113,7 @@ module:
   campaign_pages: 1
   filefield_sources: 1
   menu_link_content: 1
+  dbee: 10
   views: 10
   paragraphs: 11
   standard: 1000

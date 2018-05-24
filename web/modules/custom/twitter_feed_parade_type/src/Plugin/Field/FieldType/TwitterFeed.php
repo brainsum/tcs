@@ -58,6 +58,13 @@ class TwitterFeed extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
+  public static function mainPropertyName() {
+    return 'username';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function isEmpty() {
     $type = $this->get('type')->getValue();
 
