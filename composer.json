@@ -83,7 +83,8 @@
         "drupal/real_aes": "^2.1",
         "drupal/field_encrypt": "^2.0@alpha",
         "drupal/gdpr": "^1.0@alpha",
-        "drupal/token": "1.1.0"
+        "drupal/token": "1.1.0",
+        "drupal/dbee": "2.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -162,6 +163,9 @@
             },
             "drupal/workbench_moderation": {
                 "Do not force the creation of new revisions": "https://www.drupal.org/files/issues/do_not_force_new_revisions-2768977-6.patch"
+            },
+            "drupal/dbee": {
+                "Email addresses not encrypted after install from cli": "https://www.drupal.org/files/issues/2018-05-23/email-addresses-not-encrypted-from-cli-2974819-2-D8.patch"
             }
         }
     },

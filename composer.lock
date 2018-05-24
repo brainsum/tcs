@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d8bc2f0277f09860787c9dc086421c9",
+    "content-hash": "ce5110d0bdaf3500f224c894a2b6078f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2030,6 +2030,58 @@
                 "source": "http://cgit.drupalcode.org/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
             }
+        },
+        {
+            "name": "drupal/dbee",
+            "version": "dev-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/dbee",
+                "reference": "272e05988b40a77d1489a23b3ade6bba6d3dca82"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/encrypt": "*",
+                "drupal/real_aes": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.x-dev",
+                    "datestamp": "1524778985",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ivo.Radulovski",
+                    "homepage": "https://www.drupal.org/user/337498"
+                },
+                {
+                    "name": "ShaxA",
+                    "homepage": "https://www.drupal.org/user/3055949"
+                },
+                {
+                    "name": "thedut",
+                    "homepage": "https://www.drupal.org/user/1399164"
+                }
+            ],
+            "description": "Encrypt user email addresses stored into the database for security reasons. This module doesn't alter user experience",
+            "homepage": "https://www.drupal.org/project/dbee",
+            "support": {
+                "source": "http://cgit.drupalcode.org/dbee"
+            },
+            "time": "2018-04-27T09:24:55+00:00"
         },
         {
             "name": "drupal/diff",
@@ -10942,6 +10994,7 @@
         "drupal/encrypt": 15,
         "drupal/field_encrypt": 15,
         "drupal/gdpr": 15,
+        "drupal/dbee": 20,
         "drupal/examples": 20
     },
     "prefer-stable": true,
