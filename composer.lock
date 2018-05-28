@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "874c11eada425bc35716e0f3a6a55076",
+    "content-hash": "741216e64b7585c0ff204996a8a02803",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2822,6 +2822,9 @@
                     "drupal/ctools": {
                         "#2951267: Bundle specific fields not derived correctly in entity reference relationships": "https://www.drupal.org/files/issues/2951267-2.patch"
                     }
+                },
+                "patches_applied": {
+                    "Reverse relationships via 'revision_user' and 'revision_uid' can cause fatal errors": "https://www.drupal.org/files/issues/2018-05-25/2974518-6-ignore_reverse_revision_users.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
