@@ -29,15 +29,18 @@ before_install:
   - phpenv config-add $TRAVIS_BUILD_DIR/travis-ci/travis.php.ini
   # Track our general build directory.
   - export DRUPAL_BUILD_ROOT="$(dirname "$TRAVIS_BUILD_DIR")"
-  - export VENDOR_DIR="$(dirname "$TRAVIS_BUILD_DIR")/drupal/vendor"
+  - export VENDOR_DIR="$(dirname "$TRAVIS_BUILD_DIR")/vendor"
+  - export CUSTOM_MODULES_DIR="$(dirname "$TRAVIS_BUILD_DIR")/web/modules/custom"
+  - export CUSTOM_THEMES_DIR="$(dirname "$TRAVIS_BUILD_DIR")/web/themes/tieto_admin"
 
 install:
   - ./travis-ci/install.sh
 
 before_script:
-  - $DRUPAL_BUILD_ROOT/drupal/vendor/bin/phpcs --config-set installed_paths $VENDOR_DIR/drupal/coder/coder_sniffer,$VENDOR_DIR/wimg/php-compatibility
+  - $VENDOR_DIR/bin/phpcs --config-set installed_paths $VENDOR_DIR/drupal/coder/coder_sniffer,$VENDOR_DIR/wimg/php-compatibility
 
 script:
-  - $VENDOR_DIR/bin/parallel-lint $TRAVIS_BUILD_DIR
-  - $VENDOR_DIR/bin/phpcs $TRAVIS_BUILD_DIR/web/modules/custom --standard=$TRAVIS_BUILD_DIR/phpcs.xml
-  - $VENDOR_DIR/bin/phpcs $TRAVIS_BUILD_DIR/web/themes/tieto_admin --standard=$TRAVIS_BUILD_DIR/phpcs.xml
+  - $VENDOR_DIR/bin/parallel-lint $CUSTOM_MODULES_DIR
+  - $VENDOR_DIR/bin/parallel-lint $CUSTOM_THEMES_DIR
+  - $VENDOR_DIR/bin/phpcs $CUSTOM_MODULES_DIR --standard=$TRAVIS_BUILD_DIR/phpcs.xml
+  - $VENDOR_DIR/bin/phpcs $CUSTOM_THEMES_DIR --standard=$TRAVIS_BUILD_DIR/phpcs.xml
