@@ -183,8 +183,11 @@ function tieto_admin_preprocess_maintenance_page(&$variables) {
   $variables['#attached']['library'][] = 'tieto_admin/maintenance-page';
 }
 
+// @codingStandardsIgnoreStart
 /**
  * Implements hook_form_alter().
+ *
+ * // @codingStandardsIgnoreEnd
  */
 function tieto_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id === 'user_login_form') {
