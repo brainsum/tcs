@@ -12,5 +12,5 @@ composer --verbose validate
 composer install
 
 # Add test dependencies
-composer require --dev --no-update squizlabs/php_codesniffer drupal/coder wimg/php-compatibility jakub-onderka/php-parallel-lint jakub-onderka/php-console-highlighter
+composer require --dev --no-update drupal/coder wimg/php-compatibility jakub-onderka/php-parallel-lint jakub-onderka/php-console-highlighter
 composer update --lock
