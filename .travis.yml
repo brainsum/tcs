@@ -28,9 +28,9 @@ before_install:
   - git config --global github.accesstoken $GITHUB_OAUTH_TOKEN
   - phpenv config-add $TRAVIS_BUILD_DIR/travis-ci/travis.php.ini
   # Track our general build directory.
-  - export VENDOR_DIR="$(dirname "$TRAVIS_BUILD_DIR")/vendor"
-  - export CUSTOM_MODULES_DIR="$(dirname "$TRAVIS_BUILD_DIR")/web/modules/custom"
-  - export CUSTOM_THEMES_DIR="$(dirname "$TRAVIS_BUILD_DIR")/web/themes/tieto_admin"
+  - export VENDOR_DIR="$TRAVIS_BUILD_DIR/vendor"
+  - export CUSTOM_MODULES_DIR="$TRAVIS_BUILD_DIR/web/modules/custom"
+  - export CUSTOM_THEMES_DIR="$TRAVIS_BUILD_DIR/web/themes/tieto_admin"
 
 install:
   - ./travis-ci/install.sh
