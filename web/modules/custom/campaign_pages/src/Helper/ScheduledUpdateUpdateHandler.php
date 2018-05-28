@@ -3,10 +3,6 @@
 namespace Drupal\campaign_pages\Helper;
 
 use Drupal\Core\Config\FileStorage;
-use Drupal\Core\Entity\Entity\EntityFormDisplay;
-use Drupal\Core\Entity\Entity\EntityViewDisplay;
-use Drupal\field\Entity\FieldConfig;
-use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Class ScheduledUpdateUpdateHandler.
@@ -21,10 +17,10 @@ use Drupal\field\Entity\FieldStorageConfig;
 class ScheduledUpdateUpdateHandler {
 
   /*
-     // Copy-paste into devel:
-     $updateHandler = new \Drupal\campaign_pages\Helper\ScheduledUpdateUpdateHandler();
-     $updateHandler->update();
-  */
+  // Copy-paste into devel:
+  $updateHandler = new \Drupal\campaign_pages\Helper\ScheduledUpdateUpdateHandler();
+  $updateHandler->update();
+   */
 
   /**
    * Do the updates.
@@ -170,7 +166,6 @@ class ScheduledUpdateUpdateHandler {
       $scheduleStorage->save($newSchedule);
 
       $newScheduleId = $newSchedule->id();
-
 
       $fieldName = ($bundle === 'node__moderation_state') ? 'scheduled_publish_date' : 'scheduled_archive_date';
       $fieldTargetId = $fieldName . '_target_id';

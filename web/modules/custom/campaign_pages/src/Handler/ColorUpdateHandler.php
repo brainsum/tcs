@@ -21,6 +21,9 @@ class ColorUpdateHandler {
   protected $colorSchemeField = 'parade_color_scheme';
   protected $layoutField = 'parade_layout';
 
+  /**
+   *
+   */
   public function __construct() {
     $this->storage = \Drupal::entityTypeManager()->getStorage('paragraph');
   }

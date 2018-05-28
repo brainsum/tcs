@@ -57,16 +57,6 @@ function tieto_admin_preprocess_page(&$vars) {
     ],
   ];
 
-//  $routeMatch = \Drupal::routeMatch();
-//  if ($routeMatch->getParameters()->has('node')) {
-//    /** @var \Drupal\node\NodeInterface $node */
-//    $node = $routeMatch->getParameters()->get('node');
-//
-//    /** @var \Drupal\campaign_pages\Service\NodeLogoResolver $resolver */
-//    $resolver = \Drupal::service('campaign_pages.node_logo_resolver');
-//    $tietoLogo = $resolver->resolve($node);
-//  }
-
   $vars['tieto_logo'] = $tietoLogo;
 }
 
@@ -214,7 +204,7 @@ function tieto_admin_form_alter(&$form, FormStateInterface $form_state, $form_id
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * Changes vertical tabs to container and adds meta information
  * and attach custom tabledrag library on campaign edit forms.
@@ -255,11 +245,6 @@ function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state
   ];
   $form['revision_information']['#type'] = 'container';
   $form['revision_information']['#group'] = 'meta';
-
-  // Custom tabledrag library
-  // if ($form['form_id']['#id'] === 'edit-node-campaign-edit-form') {
-  //  $form['#attached']['library'][] = 'tieto_admin/tabledrag';
-  // }
 }
 
 /**
@@ -267,7 +252,7 @@ function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state
  */
 function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   // @todo @fixme
-  if (in_array('page__node__campaign', $suggestions)) {
+  if (\in_array('page__node__campaign', $suggestions)) {
     $suggestions[] = 'page__node__campaign__revisions';
   }
 

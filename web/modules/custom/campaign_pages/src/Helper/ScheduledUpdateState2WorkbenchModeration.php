@@ -3,10 +3,6 @@
 namespace Drupal\campaign_pages\Helper;
 
 use Drupal\Core\Config\FileStorage;
-use Drupal\Core\Entity\Entity\EntityFormDisplay;
-use Drupal\Core\Entity\Entity\EntityViewDisplay;
-use Drupal\field\Entity\FieldConfig;
-use Drupal\field\Entity\FieldStorageConfig;
 
 /**
  * Class ScheduledUpdateState2WorkbenchModeration.
@@ -151,29 +147,29 @@ class ScheduledUpdateState2WorkbenchModeration {
 
     // Copy data, revisions.
     /*$fieldNames = [
-      'field_status' => 'field_moderation_state',
-      'field_status_1' => 'field_moderation_state_1',
+    'field_status' => 'field_moderation_state',
+    'field_status_1' => 'field_moderation_state_1',
     ];
     $table_prefix = 'scheduled_update_';
     foreach ($fieldNames as $oldField => $newField) {
-      $data = [];
-      $table = $table_prefix . '_' . $oldField;
-      $result = $database->query('SELECT * FROM ' . $table);
-      foreach ($result as $item) {
-        $item->{$newField . '_target_id'} = $schedulesIds[$item->{$oldField . '_target_id'}];
-        unset($item->{$oldField . '_target_id'});
-        $data[] = (array) $item;
-      }
+    $data = [];
+    $table = $table_prefix . '_' . $oldField;
+    $result = $database->query('SELECT * FROM ' . $table);
+    foreach ($result as $item) {
+    $item->{$newField . '_target_id'} = $schedulesIds[$item->{$oldField . '_target_id'}];
+    unset($item->{$oldField . '_target_id'});
+    $data[] = (array) $item;
+    }
 
-      if (!empty($data)) {
-        $table = $table_prefix . '_' . $newField;
-        $fields = array_keys($data[0]);
-        $query = $database->insert($table)->fields($fields);
-        foreach ($data as $record) {
-          $query->values($record);
-        }
-        $query->execute();
-      }
+    if (!empty($data)) {
+    $table = $table_prefix . '_' . $newField;
+    $fields = array_keys($data[0]);
+    $query = $database->insert($table)->fields($fields);
+    foreach ($data as $record) {
+    $query->values($record);
+    }
+    $query->execute();
+    }
     }*/
 
     $fieldNames = [
