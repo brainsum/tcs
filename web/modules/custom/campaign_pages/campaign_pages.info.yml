@@ -5,9 +5,9 @@ core: 8.x
 package: Custom
 
 dependencies:
-  - drupal:parade
-  - drupal:marketo_form
-  - drupal:marketo_poll
+  - parade:parade
+  - parade:marketo_form
+  - parade:marketo_poll
   - drupal:content_translation
-  - drupal:imageapi_optimize
-  - drupal:imagemagick
+  - imageapi_optimize:imageapi_optimize
+  - imagemagick:imagemagick

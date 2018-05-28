@@ -5,5 +5,5 @@ core: 8.x
 package: Custom
 
 dependencies:
-  - campaign_pages
-  - tour
+  - campaign_pages:campaign_pages
+  - drupal:tour

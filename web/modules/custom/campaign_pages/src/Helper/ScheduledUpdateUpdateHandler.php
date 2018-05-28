@@ -16,12 +16,6 @@ use Drupal\Core\Config\FileStorage;
  */
 class ScheduledUpdateUpdateHandler {
 
-  /*
-  // Copy-paste into devel:
-  $updateHandler = new \Drupal\campaign_pages\Helper\ScheduledUpdateUpdateHandler();
-  $updateHandler->update();
-   */
-
   /**
    * Do the updates.
    *
