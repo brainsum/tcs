@@ -40,6 +40,7 @@
         }
     },
     "require": {
+        "php": "~7.0",
         "composer/installers": "^1.2",
         "drupal-composer/drupal-scaffold": "^2.2",
         "cweagans/composer-patches": "^1.6",
@@ -71,7 +72,7 @@
         "drupal/facebook_pixel": "^1.0",
         "drupal/imagemagick": "~1.0",
         "drupal/imageapi_optimize": "^2.0@alpha",
-        "drupal/google_tag": "1.x-dev",
+        "drupal/google_tag": "^1.0",
         "drupal/filefield_sources_jsonapi": "^1.0",
         "drupal/override_node_options": "^2.3",
         "drupal/view_unpublished": "dev-1.x",
