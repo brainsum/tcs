@@ -24,6 +24,7 @@ module:
   content_entity_language_switcher: 0
   content_translation: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   dblog: 0
   diff: 0
@@ -31,6 +32,7 @@ module:
   editor: 0
   embed: 0
   encrypt: 0
+  entity: 0
   entity_embed: 0
   entity_reference_revisions: 0
   facebook_pixel: 0
@@ -44,6 +46,8 @@ module:
   filter: 0
   gdpr: 0
   gdpr_dump: 0
+  gdpr_fields: 0
+  gdpr_tasks: 0
   geocoder: 0
   geocoder_autocomplete: 0
   geocoder_field: 0
