@@ -13,3 +13,4 @@ composer install
 
 # Add test dependencies
 composer require --dev --no-update squizlabs/php_codesniffer drupal/coder wimg/php-compatibility jakub-onderka/php-parallel-lint jakub-onderka/php-console-highlighter
+composer update --lock
