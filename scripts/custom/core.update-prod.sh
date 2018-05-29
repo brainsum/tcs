@@ -3,6 +3,7 @@
 echo "Executing core for update-prod.sh"
 composer install --no-dev -o \
     && cd web \
+    && drush cr \
     && drush updb -y \
     && drush cr \
     && drush cim sync -y \
