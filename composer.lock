@@ -3054,21 +3054,21 @@
         },
         {
             "name": "drupal/geofield",
-            "version": "1.0.0-alpha4",
+            "version": "1.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/geofield",
-                "reference": "8.x-1.0-alpha4"
+                "reference": "8.x-1.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.0-alpha4.zip",
-                "reference": "8.x-1.0-alpha4",
-                "shasum": "3bd9f6077bfce43631b35bee37e0b0d04c12c0e3"
+                "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.0-beta4.zip",
+                "reference": "8.x-1.0-beta4",
+                "shasum": "afc3006a891a83b79f44f8f62cac6322c83726e1"
             },
             "require": {
                 "drupal/core": "~8.0",
-                "phayes/geophp": "dev-master"
+                "phayes/geophp": "^1.2"
             },
             "type": "drupal-module",
             "extra": {
@@ -3076,8 +3076,12 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha4",
-                    "datestamp": "1496311442"
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1520365980",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3096,24 +3100,17 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "chachasikes",
-                    "homepage": "https://www.drupal.org/user/50674"
+                    "name": "Italo Mairo",
+                    "homepage": "https://www.drupal.org/u/itamair",
+                    "role": "Maintainer"
                 },
                 {
                     "name": "davidseth",
                     "homepage": "https://www.drupal.org/user/254857"
                 },
                 {
-                    "name": "dtarc",
-                    "homepage": "https://www.drupal.org/user/114087"
-                },
-                {
-                    "name": "jherencia",
-                    "homepage": "https://www.drupal.org/user/360690"
-                },
-                {
-                    "name": "nikhiltri",
-                    "homepage": "https://www.drupal.org/user/270223"
+                    "name": "itamair",
+                    "homepage": "https://www.drupal.org/user/1179076"
                 },
                 {
                     "name": "phayes",
@@ -6023,16 +6020,16 @@
         },
         {
             "name": "phayes/geophp",
-            "version": "dev-master",
+            "version": "1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phayes/geoPHP.git",
-                "reference": "685562416ec6d22b9b3927e02ca0ddacf84ca646"
+                "reference": "015404e85b602e0df1f91441f8db0f9e98f7e567"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phayes/geoPHP/zipball/685562416ec6d22b9b3927e02ca0ddacf84ca646",
-                "reference": "685562416ec6d22b9b3927e02ca0ddacf84ca646",
+                "url": "https://api.github.com/repos/phayes/geoPHP/zipball/015404e85b602e0df1f91441f8db0f9e98f7e567",
+                "reference": "015404e85b602e0df1f91441f8db0f9e98f7e567",
                 "shasum": ""
             },
             "require-dev": {
@@ -6055,7 +6052,7 @@
             ],
             "description": "GeoPHP is a open-source native PHP library for doing geometry operations. It is written entirely in PHP and can therefore run on shared hosts. It can read and write a wide variety of formats: WKT (including EWKT), WKB (including EWKB), GeoJSON, KML, GPX, GeoRSS). It works with all Simple-Feature geometries (Point, LineString, Polygon, GeometryCollection etc.) and can be used to get centroids, bounding-boxes, area, and a wide variety of other useful information.",
             "homepage": "https://github.com/phayes/geoPHP",
-            "time": "2016-03-04T05:42:29+00:00"
+            "time": "2014-12-02T06:11:22+00:00"
         },
         {
             "name": "psr/container",
