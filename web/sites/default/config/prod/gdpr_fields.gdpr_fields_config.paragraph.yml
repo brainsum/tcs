@@ -1,0 +1,23 @@
+uuid: d4f2281b-dbde-4caf-9fad-1e97e5f75437
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph
+bundles:
+  locations:
+    parade_location:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: locations
+      name: parade_location
+    parade_geofield:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: locations
+      name: parade_geofield

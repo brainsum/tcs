@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d2e1f3dddee1a7a8055e1b0ff9171e8",
+    "content-hash": "ea42043a7d04080d7e6dbcdcdab71c47",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2894,17 +2894,17 @@
         },
         {
             "name": "drupal/geocoder",
-            "version": "2.0.0-alpha5",
+            "version": "2.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/geocoder",
-                "reference": "8.x-2.0-alpha5"
+                "reference": "8.x-2.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geocoder-8.x-2.0-alpha5.zip",
-                "reference": "8.x-2.0-alpha5",
-                "shasum": "1cbac01cc6217e17fd53dd8be68d4ad8f018c004"
+                "url": "https://ftp.drupal.org/files/projects/geocoder-8.x-2.0-beta3.zip",
+                "reference": "8.x-2.0-beta3",
+                "shasum": "6d6378ec78577077d26f82a51682ac28a778e91a"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2912,8 +2912,13 @@
             },
             "require-dev": {
                 "drupal/address": "*",
+                "drupal/coder": "^8.2",
                 "drupal/geocoder_field": "*",
-                "drupal/geofield": "*"
+                "drupal/geofield": "*",
+                "phpro/grumphp": "^0.12.1",
+                "phpunit/phpunit": "^5.7|^6.5",
+                "sensiolabs/security-checker": "^4.1",
+                "squizlabs/php_codesniffer": "^2.7"
             },
             "type": "drupal-module",
             "extra": {
@@ -2921,15 +2926,12 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-alpha5",
-                    "datestamp": "1481538483",
+                    "version": "8.x-2.0-beta3",
+                    "datestamp": "1521381784",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": {
-                    "Fix config schema.": "https://www.drupal.org/files/issues/2824802-geocoder-schema-fix-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2943,12 +2945,9 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Dean Reilly",
-                    "homepage": "https://www.drupal.org/user/336031"
-                },
-                {
-                    "name": "GJdan",
-                    "homepage": "https://www.drupal.org/user/847848"
+                    "name": "Italo Mairo (@itamair)",
+                    "homepage": "https://www.drupal.org/u/itamair",
+                    "role": "Co-maintainer"
                 },
                 {
                     "name": "Pol",
@@ -2959,8 +2958,16 @@
                     "homepage": "https://www.drupal.org/user/172312"
                 },
                 {
+                    "name": "gregseb",
+                    "homepage": "https://www.drupal.org/user/847848"
+                },
+                {
                     "name": "indytechcook",
                     "homepage": "https://www.drupal.org/user/245817"
+                },
+                {
+                    "name": "itamair",
+                    "homepage": "https://www.drupal.org/user/1179076"
                 },
                 {
                     "name": "michaelfavia",
@@ -2975,7 +2982,7 @@
                     "homepage": "https://www.drupal.org/user/585764"
                 }
             ],
-            "description": "An API to geocode and reverse geocode data into other GIS data types.",
+            "description": "A Drupal module and a services based API to perform Geocode & Reverse Geocode operations among GIS data and addresses types & formats.",
             "homepage": "https://drupal.org/project/geocoder",
             "support": {
                 "source": "https://cgit.drupalcode.org/geocoder",
@@ -8023,16 +8030,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "bf26aff803a11c5cc8eb7c4878a702c403ec67f1"
+                "reference": "741e7a571836f038de731105f4742ca8a164e43a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/bf26aff803a11c5cc8eb7c4878a702c403ec67f1",
-                "reference": "bf26aff803a11c5cc8eb7c4878a702c403ec67f1",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/741e7a571836f038de731105f4742ca8a164e43a",
+                "reference": "741e7a571836f038de731105f4742ca8a164e43a",
                 "shasum": ""
             },
             "require": {
@@ -8052,7 +8059,8 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.7.x-dev",
-                    "dev-develop": "1.8.x-dev"
+                    "dev-develop": "1.8.x-dev",
+                    "dev-release-2.0": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -8071,7 +8079,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2018-02-26T15:44:50+00:00"
+            "time": "2018-05-29T16:53:08+00:00"
         },
         {
             "name": "zendframework/zend-escaper",
