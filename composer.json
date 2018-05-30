@@ -164,9 +164,6 @@
             },
             "drupal/dbee": {
                 "Email addresses not encrypted after install from cli": "https://www.drupal.org/files/issues/2018-05-23/email-addresses-not-encrypted-from-cli-2974819-2-D8.patch"
-            },
-            "drupal/gdpr": {
-                "Reverse relationships via 'revision_user' and 'revision_uid' can cause fatal errors": "https://www.drupal.org/files/issues/2018-05-25/2974518-6-ignore_reverse_revision_users.patch"
             }
         }
     },
