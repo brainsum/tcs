@@ -1,0 +1,13 @@
+uuid: 196a7ed4-8d0f-4303-9476-fed56708c50a
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.dbee
+  module:
+    - real_aes
+id: dbee
+label: 'Dbee real_aes'
+encryption_method: real_aes
+encryption_key: dbee
+encryption_method_configuration: {  }

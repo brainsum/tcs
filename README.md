@@ -1,6 +1,22 @@
-# Composer template for Drupal projects
+# Tieto Campaign Sites
 
-[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
+[![Build Status](https://travis-ci.org/brainsum/tcs.svg?branch=master)](https://travis-ci.org/brainsum/tcs)
+
+## Encryption
+### Re-use
+If you want to use the DB dump from an existing, encrypted instance, you need that specific key.
+
+### Create
+- Create a ```private_files``` folder in the root directory
+- Update settings.php so it's set:
+    - ```$settings['file_private_path'] = '../private_files';```
+- Clear the cache
+- Create the ```private_files/keys``` folder
+- Generate an encrypt.key file there
+    - cd private_files/keys
+    - ```dd bs=1 count=32 if=/dev/urandom | openssl base64 > encrypt.key```
+
+## Drupal composer project
 
 This project template should provide a kickstart for managing your site
 dependencies with [Composer](https://getcomposer.org/).

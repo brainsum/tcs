@@ -1,38 +1,46 @@
 language: php
-php:
-  - 5.5
-  - 5.6
-  - 7.0
-
+dist: trusty
 sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+php:
+  - 7.0
 
 env:
   global:
-    - SIMPLETEST_DB=sqlite://tmp/site.sqlite
-    - SIMPLETEST_BASE_URL="http://127.0.0.1:8080"
-  matrix:
-    - RELEASE=stable COMPOSER_CHANNEL=stable
-    - RELEASE=dev COMPOSER_CHANNEL=stable
-    - RELEASE=stable COMPOSER_CHANNEL=snapshot
+    # Ensure composer is able to apply patches.
+    - COMPOSER_EXIT_ON_PATCH_FAILURE=1
+    # DRUPAL_TI Testing.
+    - SIMPLETEST_DB="mysql://root:@localhost/drupal_travis_db"
+    - SIMPLETEST_BASE_URL="http://localhost:8888"
+    # Ignore deprecation warnings.
+    - SYMFONY_DEPRECATIONS_HELPER=weak
+
+matrix:
+  fast_finish: true
 
 before_install:
-  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - phpenv config-rm xdebug.ini
-  - composer --verbose self-update --$COMPOSER_CHANNEL
-  - composer --version
+  # Remove xdebug. We aren't generating code coverage, and it slows down Composer.
+  - phpenv config-rm xdebug.ini || true
+  - git config --global github.accesstoken $GITHUB_OAUTH_TOKEN
+  - phpenv config-add $TRAVIS_BUILD_DIR/travis-ci/travis.php.ini
+  # Track our general build directory.
+  - export VENDOR_DIR="$TRAVIS_BUILD_DIR/vendor"
+  - export CUSTOM_MODULES_DIR="$TRAVIS_BUILD_DIR/web/modules/custom"
+  - export CUSTOM_THEMES_DIR="$TRAVIS_BUILD_DIR/web/themes/tieto_admin"
+  - export DRUPAL_FILE_EXTENSIONS="php,module,inc,install,test,profile,theme"
 
 install:
-  - composer --verbose install
+  - ./travis-ci/install.sh
+
+before_script:
+  - $VENDOR_DIR/bin/phpcs --config-set installed_paths $VENDOR_DIR/drupal/coder/coder_sniffer,$VENDOR_DIR/wimg/php-compatibility
 
 script:
-  - if [[ $RELEASE = dev ]]; then composer --verbose require --no-update drupal/core:8.1.x-dev; fi;
-  - if [[ $RELEASE = dev ]]; then composer --verbose update; fi;
-  - cd $TRAVIS_BUILD_DIR/web
-  - ./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite
-  - ./../vendor/bin/drush runserver http://127.0.0.1:8080 &
-  - sleep 3
-  # Skip core/tests/Drupal/Tests/ComposerIntegrationTest.php because web/ has no composer.json
-  # Ignore PageCache group temporarily, @see https://www.drupal.org/node/2770673
-  - ./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,DependencyInjection,PageCache
-  - ./../vendor/bin/drush
-  - ./../vendor/bin/drupal
+  - $VENDOR_DIR/bin/parallel-lint -e $DRUPAL_FILE_EXTENSIONS $CUSTOM_MODULES_DIR
+  - $VENDOR_DIR/bin/parallel-lint -e $DRUPAL_FILE_EXTENSIONS $CUSTOM_THEMES_DIR
+  - $VENDOR_DIR/bin/phpcs $CUSTOM_MODULES_DIR --standard=$TRAVIS_BUILD_DIR/phpcs.xml
+  - $VENDOR_DIR/bin/phpcs $CUSTOM_THEMES_DIR --standard=$TRAVIS_BUILD_DIR/phpcs.xml

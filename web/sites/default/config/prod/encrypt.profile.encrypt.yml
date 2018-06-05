@@ -1,0 +1,13 @@
+uuid: a18a971a-b360-4f63-b97a-a5724eabf03a
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.encrypt
+  module:
+    - real_aes
+id: encrypt
+label: Encrypt
+encryption_method: real_aes
+encryption_key: encrypt
+encryption_method_configuration: {  }

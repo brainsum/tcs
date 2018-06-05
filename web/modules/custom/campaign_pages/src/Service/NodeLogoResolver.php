@@ -4,6 +4,7 @@ namespace Drupal\campaign_pages\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Image\ImageFactory;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\NodeInterface;
 
 /**
@@ -14,6 +15,8 @@ use Drupal\node\NodeInterface;
  * @package Drupal\campaign_pages\Service
  */
 class NodeLogoResolver {
+
+  use StringTranslationTrait;
 
   /**
    * The entity type manager.
@@ -84,7 +87,7 @@ class NodeLogoResolver {
 
       return [
         'logo_path' => $style->buildUrl($imageUri),
-        'alt' => isset($logo['alt']) ? $logo['alt'] : t('Tieto'),
+        'alt' => isset($logo['alt']) ? $logo['alt'] : $this->t('Tieto'),
         'href' => '//www.tieto.com',
         'dimensions' => [
           'width' => 98,
@@ -106,7 +109,7 @@ class NodeLogoResolver {
   protected function defaultLogo() {
     return [
       'logo_path' => '/' . drupal_get_path('theme', 'tieto_admin') . '/images/tietologo.svg?v2',
-      'alt' => t('Tieto'),
+      'alt' => $this->t('Tieto'),
       'href' => '//www.tieto.com',
       'dimensions' => [
         'width' => 98,

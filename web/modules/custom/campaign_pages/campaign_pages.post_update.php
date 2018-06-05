@@ -36,7 +36,7 @@ function campaign_pages_post_update_8002() {
     'field_background' => 'parade_background',
     'field_boxes_per_row' => 'parade_boxes_per_row',
     'field_call_to_action' => 'parade_call_to_action',
-    //    'field_color_scheme' => 'parade_color_scheme',
+    // 'field_color_scheme' => 'parade_color_scheme',.
     'field_enable_confirm_message' => 'parade_enable_confirm_message',
     'field_enable_linkedin_autofill' => 'parade_enable_linkedin_autofill',
     'field_enable_parallax' => 'parade_enable_parallax',
@@ -44,7 +44,7 @@ function campaign_pages_post_update_8002() {
     'field_image' => 'parade_image',
     'field_images' => 'parade_images',
     'field_input_label' => 'parade_input_label',
-    //    'field_layout' => 'parade_layout',
+    // 'field_layout' => 'parade_layout',.
     'field_lead_text' => 'parade_lead_text',
     'field_location' => 'parade_location',
     'field_marketo_form' => 'parade_marketo_form',
@@ -204,15 +204,6 @@ function campaign_pages_post_update_8002() {
     ],
   ];
 
-  /** @var \Drupal\file\FileUsage\FileUsageInterface $fileUsage */
-  $fileUsage = \Drupal::service('file.usage');
-  $fileStorage = \Drupal::entityTypeManager()->getStorage('file');
-  $fileFields = [
-    'field_background',
-    'parade_image',
-    'parade_images',
-  ];
-
   $paragraphStorage = \Drupal::entityTypeManager()->getStorage('paragraph');
   $typeStorage = \Drupal::entityTypeManager()->getStorage('paragraphs_type');
   // Load the paragraph types.
@@ -226,14 +217,12 @@ function campaign_pages_post_update_8002() {
     $results = [];
     // Load every paragraph active revisions for each type separately.
     if ($type->id() === 'text_box') {
-      // @todo - re-save only active revisions.
-
       if (Database::getConnection()->schema()->tableExists('paragraph_revision__field_paragraphs')) {
         $results = Database::getConnection()
           ->query("SELECT DISTINCT field_paragraphs_target_revision_id FROM {paragraph_revision__field_paragraphs}");
       }
       else {
-        drupal_set_message('paragraph_revision__field_paragraphs does not exists. If this is not a new migration, this warning can be ignored.', 'warning');
+        drupal_set_message(t('paragraph_revision__field_paragraphs does not exists. If this is not a new migration, this warning can be ignored.'), 'warning');
       }
     }
     else {
@@ -280,7 +269,7 @@ function campaign_pages_post_update_8002() {
         }
         // Color scheme field.
         // @see: https://brainsum.atlassian.net/browse/TCS-307,
-        // 'text_box old colors can be ignored'
+        // 'text_box old colors can be ignored'.
         if ('text_box' !== $entityType && isset(
             $colors[$entityType],
             $entity->field_color_scheme,
@@ -660,7 +649,6 @@ function campaign_pages_post_update_8406() {
     ->query($query, [
       ':type_id' => 'chart_boxes',
     ]);
-
 
   $handler = new ColorUpdateHandler();
   $handler->handle(

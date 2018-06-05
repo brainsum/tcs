@@ -5,5 +5,5 @@ core: 8.x
 package: Custom
 
 dependencies:
-  - drupal:campaign_pages
+  - campaign_pages:campaign_pages
   - drupal:toolbar

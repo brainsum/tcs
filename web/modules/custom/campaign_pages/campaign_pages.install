@@ -93,7 +93,7 @@ function campaign_pages_update_8005() {
 
   foreach ($modules_to_delete as $module_name) {
     if (!file_exists('./modules/contrib/' . $module_name)) {
-      $query = \Drupal::database()->delete('key_value')
+      \Drupal::database()->delete('key_value')
         ->condition('collection', 'system.schema')
         ->condition('name', $module_name)
         ->execute();
@@ -142,13 +142,6 @@ function _campaign_pages_import_parade_fields() {
   $configStorage = \Drupal::service('config.storage');
 
   $configs = [
-//    'field.storage.node.parade_machine_name',
-//    'field.storage.node.parade_onepage_sections',
-//
-//    'field.field.node.campaign.parade_machine_name',
-//    'field.field.node.campaign.parade_onepage_sections',
-
-
     'field.storage.paragraph.parade_anchor',
     'field.storage.paragraph.parade_background',
     'field.storage.paragraph.parade_boxes_per_row',
@@ -358,10 +351,10 @@ function campaign_pages_update_8008() {
  * Truncate deleted fields data - leaded to data loss.
  */
 function campaign_pages_update_8009() {
-  $properties = array(
+  $properties = [
     'deleted' => TRUE,
     'include_deleted' => TRUE,
-  );
+  ];
   $fields = entity_load_multiple_by_properties('field_config', $properties);
 
   foreach ($fields as $field_definition) {
@@ -445,4 +438,57 @@ function campaign_pages_update_8401() {
 function campaign_pages_update_8402() {
   $modules = ['workbench_moderation'];
   \Drupal::service('module_installer')->install($modules, TRUE);
+}
+
+/**
+ * Enable, configure and run field encryption modules.
+ */
+function campaign_pages_update_8403() {
+
+  // Enable field encryption modules.
+  $modules = ['key', 'encrypt', 'field_encrypt', 'real_aes'];
+  \Drupal::service('module_installer')->install($modules, TRUE);
+
+  // Configure sensitive fields for encryption.
+  _campaign_pages_import_field_encryption_config();
+
+  // Run batch script for encrypting existing sensitive field data.
+  $fieldUpdateFormClass = 'Drupal\field_encrypt\Form\FieldEncryptUpdateForm';
+  $batch = [
+    'title' => t('Updating field encryption'),
+    'operations' => [
+      [[$fieldUpdateFormClass, 'processBatch'], []],
+    ],
+    'finished' => [$fieldUpdateFormClass, 'finishBatch'],
+  ];
+  batch_set($batch);
+}
+
+/**
+ * Import field encryption configuration from sync directory.
+ */
+function _campaign_pages_import_field_encryption_config() {
+  $projectConfigPath = config_get_config_directory(CONFIG_SYNC_DIRECTORY);
+  $source = new FileStorage($projectConfigPath);
+  $configStorage = \Drupal::service('config.storage');
+
+  $configs = [
+    'field_encrypt.settings',
+    'encrypt.settings',
+    'key.key.encrypt',
+    'encrypt.profile.encrypt',
+    'field.storage.paragraph.parade_title',
+    'field.storage.paragraph.parade_social_link',
+    'field.storage.paragraph.parade_secondary_title',
+    'field.storage.paragraph.parade_location',
+    'field.storage.paragraph.parade_lead_text',
+    'field.storage.paragraph.parade_call_to_action',
+    'field.storage.paragraph.parade_anchor',
+    'field.storage.paragraph.parade_text',
+    'field.storage.paragraph.parade_twitter_feed',
+  ];
+
+  foreach ($configs as $config) {
+    $configStorage->write($config, $source->read($config));
+  }
 }
