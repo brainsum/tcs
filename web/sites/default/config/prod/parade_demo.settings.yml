@@ -2,6 +2,6 @@ bundles:
   campaign:
     css_disabled: '1'
   parade_onepage:
-    css_disabled: 0
+    css_disabled: '0'
 _core:
   default_config_hash: y-YEKQgYBMuApfCwXCfQu13MBc2cCKW4pqLavrUFmW0
