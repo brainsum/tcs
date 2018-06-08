@@ -51,6 +51,19 @@ class TwitterFeed extends FieldItemBase {
           'type' => 'varchar',
           'length' => 72,
         ],
+        'do_not_track' => [
+          'description' => t('Opt-out option'),
+          'type' => 'int',
+          'size' => 'tiny',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 1,
+        ],
+        'collection_id' => [
+          'description' => t('The collection ID.'),
+          'type' => 'varchar',
+          'length' => 72,
+        ],
       ],
     ];
   }
@@ -59,7 +72,7 @@ class TwitterFeed extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function mainPropertyName() {
-    return 'username';
+    return 'type';
   }
 
   /**
@@ -83,8 +96,13 @@ class TwitterFeed extends FieldItemBase {
       ->setLabel(t('Height'));
     $properties['username'] = DataDefinition::create('string')
       ->setLabel(t('Username'));
+    $properties['do_not_track'] = DataDefinition::create('boolean')
+      ->setLabel(t('Opt-out of ad tailoring'))
+      ->setDescription(t('Allows opting out of ad tailoring.'));
     $properties['widget_id'] = DataDefinition::create('string')
       ->setLabel(t('Widget ID'));
+    $properties['collection_id'] = DataDefinition::create('string')
+      ->setLabel(t('Collection ID'));
 
     return $properties;
   }

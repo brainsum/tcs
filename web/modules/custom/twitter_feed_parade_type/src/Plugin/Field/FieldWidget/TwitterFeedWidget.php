@@ -23,7 +23,28 @@ use Drupal\Core\Url;
 class TwitterFeedWidget extends WidgetBase {
 
   const FEED_TYPE_USER = 0;
+
+  /**
+   * Widget constant.
+   *
+   * @deprecated
+   */
   const FEED_TYPE_WIDGET = 1;
+  const FEED_TYPE_GRID = 2;
+
+  const FEED_THEME_MAPPING = [
+    0 => 'light',
+    1 => 'dark',
+  ];
+
+  const FEED_COLOR_MAPPING = [
+    0 => ['name' => 'blue', 'hex' => '#2B7BB9'],
+    1 => ['name' => 'purple', 'hex' => '#981CEB'],
+    2 => ['name' => 'green', 'hex' => '#19CF86'],
+    3 => ['name' => 'yellow', 'hex' => '#FAB81E'],
+    4 => ['name' => 'orange', 'hex' => '#E95F28'],
+    5 => ['name' => 'red', 'hex' => '#E81C4F'],
+  ];
 
   /**
    * {@inheritdoc}
@@ -40,7 +61,8 @@ class TwitterFeedWidget extends WidgetBase {
       '#default_value' => $item->type,
       '#options' => [
         static::FEED_TYPE_USER => $this->t('User timeline'),
-        static::FEED_TYPE_WIDGET => $this->t('Widget'),
+        // static::FEED_TYPE_WIDGET => $this->t('Widget'),.
+        static::FEED_TYPE_GRID => $this->t('Grid'),
       ],
       '#maxlength' => 64,
       '#required' => TRUE,
@@ -70,17 +92,22 @@ class TwitterFeedWidget extends WidgetBase {
       '#default_value' => $item->username,
       '#maxlength' => 255,
     ];
+    $element['do_not_track'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Opt-out from advertisement tailoring'),
+      '#default_value' => $item->do_not_track ?? 1,
+    ];
 
-    $element['widget_id'] = [
+    $element['collection_id'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Widget ID'),
-      '#description' => $this->t('The numerical ID of a widget created at the @url, e.g. @example', [
-        '@url' => Link::fromTextAndUrl('twitter widget settings', Url::fromUri('https://twitter.com/settings/widgets', [
+      '#title' => $this->t('Collection ID'),
+      '#description' => $this->t('The numerical ID of a collection. E.g @example from @example_link.', [
+        '@example_link' => Link::fromTextAndUrl('https://twitter.com/TwitterDev/timelines/539487832448843776', Url::fromUri('https://twitter.com/TwitterDev/timelines/539487832448843776', [
           'attributes' => ['target' => '_blank', 'rel' => 'noopener'],
         ]))->toString(),
-        '@example' => '012345678901234567',
+        '@example' => '539487832448843776',
       ]),
-      '#default_value' => $item->widget_id,
+      '#default_value' => $item->collection_id,
       '#maxlength' => 24,
     ];
 
@@ -94,17 +121,15 @@ class TwitterFeedWidget extends WidgetBase {
     // Hide+optional/Show+required the username and widget_id fields
     // based on the type field value.
     $usernameOn = [':input[name="' . $element[0]['type']['#name'] . '"]' => ['value' => static::FEED_TYPE_USER]];
-    $widgetOn = [':input[name="' . $element[0]['type']['#name'] . '"]' => ['value' => static::FEED_TYPE_WIDGET]];
+    $gridOn = [':input[name="' . $element[0]['type']['#name'] . '"]' => ['value' => static::FEED_TYPE_GRID]];
     $element[0]['username']['#states'] = [
       'visible' => $usernameOn,
       'required' => $usernameOn,
-      'invisible' => $widgetOn,
-      'optional' => $widgetOn,
     ];
 
-    $element[0]['widget_id']['#states'] = [
-      'visible' => $widgetOn,
-      'required' => $widgetOn,
+    $element[0]['collection_id']['#states'] = [
+      'visible' => $gridOn,
+      'required' => $gridOn,
       'invisible' => $usernameOn,
       'optional' => $usernameOn,
     ];

@@ -44,7 +44,7 @@ function twitter_feed_parade_type_page_attachments(array &$attachments) {
   $twitterScript = [
     '#tag' => 'script',
     // Use Markup::create(), so the code won't get escaped.
-    '#value' => Markup::create(file_get_contents(drupal_get_path('module', 'twitter_feed_parade_type') . '/js/twitter_embed.js')),
+    '#value' => Markup::create(\file_get_contents(\drupal_get_path('module', 'twitter_feed_parade_type') . '/js/twitter_embed.js')),
     '#attributes' => [
       'type' => 'application/javascript',
     ],

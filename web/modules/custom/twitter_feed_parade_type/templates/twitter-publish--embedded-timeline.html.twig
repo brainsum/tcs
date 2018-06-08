@@ -1,0 +1,9 @@
+<a class="twitter-timeline"
+   {% if do_not_track %}data-dnt="true" {% endif %}
+   {% if tweet_limit %}data-tweet-limit="{{ tweet_limit }}" {% endif %}
+   data-height="{{ height }}"
+   data-width="{{ width }}"
+   data-theme="{{ feed_theme }}"
+   data-link-color="{{ link_color }}"
+   href="https://twitter.com/{{ username }}"
+>Tweets by @{{ username }}</a>

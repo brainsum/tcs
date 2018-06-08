@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Update routines for twitter feeds.
+ */
+
+/**
+ * Add new columns to paragraphs twitter feeds.
+ */
+function twitter_feed_parade_type_update_8501() {
+  $newFields = [
+    'parade_twitter_feed_do_not_track' => [
+      'description' => t('Opt-out option'),
+      'type' => 'int',
+      'size' => 'tiny',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+      'default' => 1,
+    ],
+    'parade_twitter_feed_collection_id' => [
+      'description' => t('The collection ID.'),
+      'type' => 'varchar',
+      'length' => 72,
+    ],
+  ];
+
+  $tables = [
+    'paragraph__parade_twitter_feed',
+    'paragraph_revision__parade_twitter_feed',
+  ];
+
+  $schema = \Drupal::database()->schema();
+  foreach ($tables as $table) {
+    foreach ($newFields as $name => $spec) {
+      $schema->addField($table, $name, $spec);
+    }
+  }
+}

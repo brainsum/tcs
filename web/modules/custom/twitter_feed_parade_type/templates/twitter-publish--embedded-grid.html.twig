@@ -1,0 +1,9 @@
+<a class="twitter-grid"
+   {% if do_not_track %}data-dnt="true" {% endif %}
+   {% if data_limit %}data-limit="{{ data_limit }}" {% endif %}
+   data-height="{{ height }}"
+   data-width="{{ width }}"
+   data-theme="{{ feed_theme }}"
+   data-link-color="{{ link_color }}"
+   href="https://twitter.com/{{ username }}/timelines/{{ collection_id }}"
+>{{ title }}</a>
