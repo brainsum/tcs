@@ -8,7 +8,6 @@
 
   Drupal.behaviors.flyingCTA = {
     attach: function (context, settings) {
-      var latestKnownScrollY = 0;
       var ticking = false;
       var $cta = $('.paragraph--type--header .field--name-parade-call-to-action .button').first().once('flying-cta');
       var $fixed = null;
@@ -25,8 +24,10 @@
         var shouldBeFixed = boundingClientRect.top < $('.logo').position().top + 10;
         var isMobile = window.innerWidth < 768;
 
-        // Create fixed element if it hasnt been created yet.
+        // Create fixed element if it hasn't been created yet and remove if it
+        // exist (ie from previous AJAX or page load).
         if (shouldBeFixed && !$fixed) {
+          $("body > div.fly").remove();
           createFixed();
         }
 
@@ -68,7 +69,7 @@
               right: 'auto',
               left: boundingClientRect.left,
               transform: 'translateX(' + (fixedBoundingClientRect.left - boundingClientRect.left) + 'px) translateY(' + (fixedBoundingClientRect.top - boundingClientRect.top) + 'px)'
-            })
+            });
 
           setTimeout(function() {
             $fixed
@@ -101,7 +102,7 @@
               'padding-right': $cta.css('padding-right'),
               'padding-bottom': $cta.css('padding-bottom'),
               'padding-left': $cta.css('padding-left'),
-            })
+            });
 
         $cta.css('transition', 'none');
         $cta.css('visibility', 'hidden');
@@ -116,11 +117,6 @@
         return $fixed[0].getBoundingClientRect();
       }
 
-      function onScroll() {
-        latestKnownScrollY = window.scrollY; //No IE8
-        requestTick();
-      }
-
       function requestTick() {
         if (!ticking && $cta.length > 0) {
           window.requestAnimationFrame(update);
@@ -128,7 +124,12 @@
         ticking = true;
       }
 
-      window.addEventListener('scroll', onScroll, false);
+      window.addEventListener('scroll', requestTick, false);
+      $(document).ready(function () {
+        if ($cta.length > 0) {
+          update();
+        }
+      });
     }
   };
 
