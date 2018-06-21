@@ -30,7 +30,7 @@ class CampaignPagesPrivacyPolicyBlock extends BlockBase {
       'privacy_policy' => [
         '#type' => 'link',
         '#url' => Url::fromUri('https://corners.intra.tieto.com/Inside-Tieto/Tieto-Basics/privacy/privacy-governance'),
-        '#title' => t('Privacy Policy'),
+        '#title' => $this->t('Privacy Policy'),
       ],
     ];
 
