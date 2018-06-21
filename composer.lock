@@ -485,16 +485,16 @@
         },
         {
             "name": "cweagans/composer-patches",
-            "version": "1.6.4",
+            "version": "1.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cweagans/composer-patches.git",
-                "reference": "462e65061606dc6149349535d4322241515d1b16"
+                "reference": "2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/462e65061606dc6149349535d4322241515d1b16",
-                "reference": "462e65061606dc6149349535d4322241515d1b16",
+                "url": "https://api.github.com/repos/cweagans/composer-patches/zipball/2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3",
+                "reference": "2ec4f00ff5fb64de584c8c4aea53bf9053ecb0b3",
                 "shasum": ""
             },
             "require": {
@@ -516,7 +516,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-2-Clause"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -525,7 +525,7 @@
                 }
             ],
             "description": "Provides a way to patch Composer packages.",
-            "time": "2017-12-07T16:16:31+00:00"
+            "time": "2018-05-11T18:00:16+00:00"
         },
         {
             "name": "defuse/php-encryption",
@@ -1024,16 +1024,16 @@
         },
         {
             "name": "drupal-composer/drupal-scaffold",
-            "version": "2.5.0",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-scaffold.git",
-                "reference": "76342f9cd22a673b0b87b5e8774613f8ee287fbc"
+                "reference": "80c7d2794d7d1b347c6f718feaa8ec9b02e43f4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/76342f9cd22a673b0b87b5e8774613f8ee287fbc",
-                "reference": "76342f9cd22a673b0b87b5e8774613f8ee287fbc",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/80c7d2794d7d1b347c6f718feaa8ec9b02e43f4f",
+                "reference": "80c7d2794d7d1b347c6f718feaa8ec9b02e43f4f",
                 "shasum": ""
             },
             "require": {
@@ -1043,7 +1043,9 @@
             },
             "require-dev": {
                 "composer/composer": "dev-master",
-                "phpunit/phpunit": "^4.4.0"
+                "g1a/composer-test-scenarios": "^2.1.0",
+                "phpunit/phpunit": "^6",
+                "squizlabs/php_codesniffer": "^2.8"
             },
             "type": "composer-plugin",
             "extra": {
@@ -1062,7 +1064,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
-            "time": "2018-04-18T16:14:55+00:00"
+            "time": "2018-06-14T17:48:21+00:00"
         },
         {
             "name": "drupal-composer/drupal-security-advisories",
@@ -1070,12 +1072,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-security-advisories.git",
-                "reference": "6c46478251750ae595ed7fb2c5737807bbbbe832"
+                "reference": "21e476054af58bd03c53f978293dbe438d29bdac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-security-advisories/zipball/6c46478251750ae595ed7fb2c5737807bbbbe832",
-                "reference": "6c46478251750ae595ed7fb2c5737807bbbbe832",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-security-advisories/zipball/21e476054af58bd03c53f978293dbe438d29bdac",
+                "reference": "21e476054af58bd03c53f978293dbe438d29bdac",
                 "shasum": ""
             },
             "conflict": {
@@ -1095,6 +1097,7 @@
                 "drupal/dynamic_entity_reference": "<1.0-beta2",
                 "drupal/echo": "<1.7",
                 "drupal/editor_file": "<1.2",
+                "drupal/entity_delete": "<1.4",
                 "drupal/entity_ref_tab_formatter": "<1.3",
                 "drupal/exif": "<1.1",
                 "drupal/google_analytics": "<2.1",
@@ -1113,6 +1116,7 @@
                 "drupal/permissions_by_term": "<1.11,<1.35",
                 "drupal/piwik": "<1.1",
                 "drupal/prlp": "<1.3",
+                "drupal/protected_pages": "<1.1",
                 "drupal/require_login": "<1.8",
                 "drupal/search_api": "<1.0-alpha14",
                 "drupal/smtp": "<1.0-beta3",
@@ -1127,7 +1131,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities",
-            "time": "2018-05-09T21:06:09+00:00"
+            "time": "2018-06-13T16:06:25+00:00"
         },
         {
             "name": "drupal/abjs",
@@ -2311,17 +2315,17 @@
         },
         {
             "name": "drupal/entity",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity",
-                "reference": "8.x-1.0-beta3"
+                "reference": "8.x-1.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity-8.x-1.0-beta3.zip",
-                "reference": "8.x-1.0-beta3",
-                "shasum": "5d74dbef7bff0db099517b2c7aad14312eb02afa"
+                "url": "https://ftp.drupal.org/files/projects/entity-8.x-1.0-beta4.zip",
+                "reference": "8.x-1.0-beta4",
+                "shasum": "00c1ae1fd4942285564af4325c0c98f895dac754"
             },
             "require": {
                 "drupal/core": "~8.5"
@@ -2332,8 +2336,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta3",
-                    "datestamp": "1520958485",
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1528452184",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -2788,22 +2792,22 @@
         },
         {
             "name": "drupal/gdpr",
-            "version": "1.0.0-alpha12",
+            "version": "1.0.0-alpha14",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/gdpr",
-                "reference": "8.x-1.0-alpha12"
+                "reference": "8.x-1.0-alpha14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/gdpr-8.x-1.0-alpha12.zip",
-                "reference": "8.x-1.0-alpha12",
-                "shasum": "d7400f91a2533351adb555b4b05234141a06b58b"
+                "url": "https://ftp.drupal.org/files/projects/gdpr-8.x-1.0-alpha14.zip",
+                "reference": "8.x-1.0-alpha14",
+                "shasum": "3026039f8e4731d26b7e3c973d661d383242b184"
             },
             "require": {
                 "cweagans/composer-patches": "~1.0",
                 "drupal/checklistapi": "^1.0",
-                "drupal/core": "~8",
+                "drupal/core": "~8.0",
                 "drupal/ctools": "^3.0",
                 "drupal/entity": "^1.0",
                 "drupal/entity_reference_revisions": "^1.4",
@@ -2827,8 +2831,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha12",
-                    "datestamp": "1527610080",
+                    "version": "8.x-1.0-alpha14",
+                    "datestamp": "1529056725",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3691,17 +3695,17 @@
         },
         {
             "name": "drupal/maxlength",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/maxlength",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/maxlength-8.x-1.0-beta1.zip",
-                "reference": "8.x-1.0-beta1",
-                "shasum": "e51e7e738394ea1f66cc7121bd47e6ede0bbe3a0"
+                "url": "https://ftp.drupal.org/files/projects/maxlength-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "27f7374e55ebdcc696d22d98be8cf4cf9bf58204"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -3712,13 +3716,17 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1471873139"
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1527856384",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -9169,7 +9177,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/examples",
-                "reference": "000c39f711f94ed68002e2ee32a613b27c4ef345"
+                "reference": "34d1f69bd8c508cd9ac3ae787376a7912f4429cb"
             },
             "require": {
                 "drupal/core": "*"
@@ -9185,7 +9193,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1527630784",
+                    "datestamp": "1529038724",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -9268,8 +9276,7 @@
                 "source": "http://cgit.drupalcode.org/examples",
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
-            },
-            "time": "2018-05-29T22:53:16+00:00"
+            }
         },
         {
             "name": "drupal/toolbar_anti_flicker",
