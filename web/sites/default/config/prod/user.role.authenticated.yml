@@ -23,6 +23,7 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'view gdpr data summary'
   - 'view gdpr tasks'
   - 'view own unpublished content'
   - 'view paragraph content campaign_header'
