@@ -10,7 +10,7 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: tieto_admin_local_actions
 theme: tieto_admin
-region: pre_content
+region: content
 weight: -5
 provider: null
 plugin: local_actions_block
@@ -22,6 +22,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /node/1
-    negate: true
+    pages: '/user/*'
+    negate: false
     context_mapping: {  }
