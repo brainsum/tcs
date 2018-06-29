@@ -1,15 +1,15 @@
 # Tieto theme for Drupal 8
 
 ## Build
-You need [Node.js](https://nodejs.org/en/) for theme development. After you have `node` and `npm` in your Terminal:
+You need [Node.js](https://nodejs.org/en/) for theme development. After you have `node`, `npm` and `yarn` in your Terminal:
 
-1. Run `npm install`
-2. Run `gulp` for single compile of assets.
-3. Run `gulp --production` for preparing assets for production (minification, bundling, etc.)
-4. Run `gulp watch` for watching on file changes, i.e. when developing stuff.
+1. Run `yarn install`
+2. Run `gulp --production` for preparing assets for production (minification, bundling, etc.)
+3. Run `gulp` for watching on file changes, i.e. when developing stuff.
+4. Run `gulp sass` for single css translate or `gulp js` for single js translate.
 
 ## Styleguide
-See: https://drive.google.com/file/d/0B8W_7QR5lW39MXJfWWsyTUdPSms/view?ts=57c5882b
+See: https://drive.google.com/file/d/0B21BAGrnZPEEVHZLcXNXd21oYTg/view?usp=sharing
 
 ## Templates / TWIG
 Templates can be found in the [`templates`](templates) folder, separated into multiple directories.
