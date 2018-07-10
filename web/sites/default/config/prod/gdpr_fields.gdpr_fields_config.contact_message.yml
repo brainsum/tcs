@@ -6,34 +6,34 @@ id: contact_message
 bundles:
   personal:
     mail:
-      enabled: true
-      rta: inc
-      rtf: anonymize
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
       anonymizer: email_anonymizer
       notes: ''
       bundle: personal
       name: mail
     name:
-      enabled: true
-      rta: inc
-      rtf: anonymize
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
       anonymizer: username_anonymizer
       notes: ''
       bundle: personal
       name: name
   support_form:
     mail:
-      enabled: true
-      rta: inc
-      rtf: anonymize
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
       anonymizer: email_anonymizer
       notes: ''
       bundle: support_form
       name: mail
     name:
-      enabled: true
-      rta: inc
-      rtf: anonymize
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
       anonymizer: username_anonymizer
       notes: ''
       bundle: support_form
