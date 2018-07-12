@@ -2,7 +2,6 @@ name: Tieto Admin
 type: theme
 base theme: classy
 description: 'Tieto Admin theme based on Seven.'
-version: VERSION
 core: 8.x
 
 libraries:

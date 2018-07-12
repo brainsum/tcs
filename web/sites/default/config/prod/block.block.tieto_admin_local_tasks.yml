@@ -10,7 +10,7 @@ _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: tieto_admin_local_tasks
 theme: tieto_admin
-region: pre_content
+region: content
 weight: -6
 provider: null
 plugin: local_tasks_block
@@ -24,6 +24,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /node/1
-    negate: true
+    pages: '/user/*'
+    negate: false
     context_mapping: {  }

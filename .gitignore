@@ -17,6 +17,7 @@ web/sites/*/files
 # Ignore paths that contain generated content.
 files/
 web/sites/*/private
+private_files
 
 # Ignore configuration files that may contain sensitive information.
 web/sites/*/*settings*.php

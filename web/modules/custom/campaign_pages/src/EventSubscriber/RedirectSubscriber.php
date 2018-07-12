@@ -17,14 +17,14 @@ class RedirectSubscriber implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    $events[KernelEvents::REQUEST][] = array('checkForRedirection');
+    $events[KernelEvents::REQUEST][] = ['checkForRedirection'];
     return $events;
   }
 
   /**
    * This is called whenever the KernelEvents::REQUEST event is dispatched.
    *
-   * @param GetResponseEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
    *   The event.
    */
   public function checkForRedirection(GetResponseEvent $event) {

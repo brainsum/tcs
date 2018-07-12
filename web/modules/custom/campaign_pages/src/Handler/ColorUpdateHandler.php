@@ -13,6 +13,8 @@ use Drupal\Core\Entity\EntityStorageInterface;
 class ColorUpdateHandler {
 
   /**
+   * The paragraph storage.
+   *
    * @var \Drupal\Core\Entity\EntityStorageInterface
    */
   protected $storage;
@@ -21,19 +23,28 @@ class ColorUpdateHandler {
   protected $colorSchemeField = 'parade_color_scheme';
   protected $layoutField = 'parade_layout';
 
+  /**
+   * Constructor for ColorUpdateHandler.
+   */
   public function __construct() {
     $this->storage = \Drupal::entityTypeManager()->getStorage('paragraph');
   }
 
   /**
+   * Target ID setter.
+   *
    * @param string $targetIdField
+   *   The ID field name.
    */
   public function setTargetIdField($targetIdField) {
     $this->targetIdField = $targetIdField;
   }
 
   /**
+   * Storage setter.
+   *
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
+   *   The storage.
    */
   public function setStorage(EntityStorageInterface $storage) {
     $this->storage = $storage;
@@ -57,6 +68,8 @@ class ColorUpdateHandler {
    *   FALSE to disable the check, or
    *   NULL for the 'None' layout, or
    *   The layout machine name.
+   *
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function handle(
     StatementInterface $results,

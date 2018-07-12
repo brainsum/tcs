@@ -1,0 +1,20 @@
+uuid: 7f7e6241-474c-4000-9a39-d8dab8f5fb56
+langcode: de
+status: true
+dependencies:
+  module:
+    - campaign_pages
+  theme:
+    - seven
+id: campaignpagesprivacypolicy
+theme: seven
+region: content
+weight: 0
+provider: null
+plugin: campaign_pages_privacy_policy_block
+settings:
+  id: campaign_pages_privacy_policy_block
+  label: 'Campaign Pages Privacy Policy'
+  provider: campaign_pages
+  label_display: '0'
+visibility: {  }

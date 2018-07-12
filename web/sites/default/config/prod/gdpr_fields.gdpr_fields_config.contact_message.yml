@@ -1,0 +1,40 @@
+uuid: bbcf0e57-d6d4-42a6-bf95-97e80da2ec9a
+langcode: en
+status: true
+dependencies: {  }
+id: contact_message
+bundles:
+  personal:
+    mail:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: email_anonymizer
+      notes: ''
+      bundle: personal
+      name: mail
+    name:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: username_anonymizer
+      notes: ''
+      bundle: personal
+      name: name
+  support_form:
+    mail:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: email_anonymizer
+      notes: ''
+      bundle: support_form
+      name: mail
+    name:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: username_anonymizer
+      notes: ''
+      bundle: support_form
+      name: name

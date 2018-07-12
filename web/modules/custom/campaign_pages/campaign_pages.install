@@ -93,7 +93,7 @@ function campaign_pages_update_8005() {
 
   foreach ($modules_to_delete as $module_name) {
     if (!file_exists('./modules/contrib/' . $module_name)) {
-      $query = \Drupal::database()->delete('key_value')
+      \Drupal::database()->delete('key_value')
         ->condition('collection', 'system.schema')
         ->condition('name', $module_name)
         ->execute();
@@ -142,13 +142,6 @@ function _campaign_pages_import_parade_fields() {
   $configStorage = \Drupal::service('config.storage');
 
   $configs = [
-//    'field.storage.node.parade_machine_name',
-//    'field.storage.node.parade_onepage_sections',
-//
-//    'field.field.node.campaign.parade_machine_name',
-//    'field.field.node.campaign.parade_onepage_sections',
-
-
     'field.storage.paragraph.parade_anchor',
     'field.storage.paragraph.parade_background',
     'field.storage.paragraph.parade_boxes_per_row',
@@ -358,10 +351,10 @@ function campaign_pages_update_8008() {
  * Truncate deleted fields data - leaded to data loss.
  */
 function campaign_pages_update_8009() {
-  $properties = array(
+  $properties = [
     'deleted' => TRUE,
     'include_deleted' => TRUE,
-  );
+  ];
   $fields = entity_load_multiple_by_properties('field_config', $properties);
 
   foreach ($fields as $field_definition) {
@@ -448,8 +441,7 @@ function campaign_pages_update_8402() {
 }
 
 /**
- * Enable field encryption modules, configure them and run field encrypt update
- * script for existing field data.
+ * Enable, configure and run field encryption modules.
  */
 function campaign_pages_update_8403() {
 
