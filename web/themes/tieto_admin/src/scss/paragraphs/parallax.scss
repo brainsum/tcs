@@ -5,7 +5,9 @@
   display: table;
   width: 100%;
   position: relative;
-
+  @include breakpoint-max(md) {
+    min-height: initial;
+  }
   .paragraph-inner {
     display: table-cell;
     vertical-align: middle;
