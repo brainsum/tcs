@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: tml_media_image
 label: Image
-apiUrl: 'http://tml.brainsum.com/jsonapi/media/image'
+apiUrl: 'https://dam.tieto.com/jsonapi/media/image'
 params: "fields[media--image]|name,field_image\r\ninclude|field_image,field_category\r\nfields[file--file]|url,thumbnail_url\r\nfilter[statusFilter][condition][path]|status\r\nfilter[statusFilter][condition][operator]|=\r\nfilter[statusFilter][condition][value]|1"
 urlAttributePath: data->relationships->field_image->included->attributes->url
 thumbnailUrlAttributePath: data->relationships->field_image->included->attributes->thumbnail_url
