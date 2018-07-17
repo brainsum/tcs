@@ -1,4 +1,4 @@
-.paragraph--type--parallax.paragraph--view-mode--default {
+.paragraph.paragraph--type--parallax.paragraph--view-mode--default {
   text-align: center;
   color: white;
   min-height: 340px;
@@ -7,16 +7,24 @@
   position: relative;
   @include breakpoint-max(md) {
     min-height: initial;
+    padding: 25px;
   }
   .paragraph-inner {
     display: table-cell;
     vertical-align: middle;
     width: 60%;
+    @include breakpoint-max(md) {
+      width: 100%;
+    }
   }
 
   .bg-image {
     // Fallback for when the background image is not available.
     background-color: $text-color-strong;
+    @include breakpoint-max(md) {
+      max-height: initial;
+      background-size: cover !important;
+    }
   }
 
   .field--name-parade-title {
