@@ -3247,7 +3247,7 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.too
     transition: transform .5s, -webkit-transform .5s; }
     @media (max-width: 766px) {
       .fly.out {
-        box-shadow: 0 0 0 10px transparent;
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
         transition: box-shadow .5s, -webkit-transform .5s;
         transition: transform .5s, box-shadow .5s;
         transition: transform .5s, box-shadow .5s, -webkit-transform .5s; } }
@@ -3375,20 +3375,31 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.too
     .paragraph--type--simple.paragraph--view-mode--default.layout--two-column-title-1st-inverse .field--name-parade-call-to-action {
       width: 50%; } }
 
-.paragraph--type--parallax.paragraph--view-mode--default {
+.paragraph.paragraph--type--parallax.paragraph--view-mode--default {
   text-align: center;
   color: white;
   min-height: 340px;
   display: table;
   width: 100%;
   position: relative; }
-  .paragraph--type--parallax.paragraph--view-mode--default .paragraph-inner {
+  @media (max-width: 766px) {
+    .paragraph.paragraph--type--parallax.paragraph--view-mode--default {
+      min-height: initial;
+      padding: 25px; } }
+  .paragraph.paragraph--type--parallax.paragraph--view-mode--default .paragraph-inner {
     display: table-cell;
     vertical-align: middle;
     width: 60%; }
-  .paragraph--type--parallax.paragraph--view-mode--default .bg-image {
+    @media (max-width: 766px) {
+      .paragraph.paragraph--type--parallax.paragraph--view-mode--default .paragraph-inner {
+        width: 100%; } }
+  .paragraph.paragraph--type--parallax.paragraph--view-mode--default .bg-image {
     background-color: #333; }
-  .paragraph--type--parallax.paragraph--view-mode--default .field--name-parade-title {
+    @media (max-width: 766px) {
+      .paragraph.paragraph--type--parallax.paragraph--view-mode--default .bg-image {
+        max-height: initial;
+        background-size: cover !important; } }
+  .paragraph.paragraph--type--parallax.paragraph--view-mode--default .field--name-parade-title {
     margin-bottom: 1em;
     font-weight: 800;
     letter-spacing: -1px;
@@ -3397,10 +3408,10 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.parade-edit-latest.too
     word-break: break-word;
     margin-bottom: .5em; }
     @media (min-width: 767px) {
-      .paragraph--type--parallax.paragraph--view-mode--default .field--name-parade-title {
+      .paragraph.paragraph--type--parallax.paragraph--view-mode--default .field--name-parade-title {
         line-height: 1;
         font-size: 48px; } }
-  .paragraph--type--parallax.paragraph--view-mode--default .field--name-parade-text {
+  .paragraph.paragraph--type--parallax.paragraph--view-mode--default .field--name-parade-text {
     font-size: 1.2em; }
 
 .paragraph--type--text-boxes.paragraph--view-mode--inverse .field--name-parade-title,

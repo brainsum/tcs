@@ -1,0 +1,39 @@
+uuid: c44b3743-f12a-4768-b3df-0755b7b4d107
+langcode: en
+status: true
+dependencies: {  }
+id: user
+bundles:
+  user:
+    init:
+      enabled: true
+      rta: inc
+      rtf: anonymize
+      anonymizer: email_anonymizer
+      notes: ''
+      bundle: user
+      name: init
+    mail:
+      enabled: true
+      rta: inc
+      rtf: anonymize
+      anonymizer: email_anonymizer
+      notes: ''
+      bundle: user
+      name: mail
+    name:
+      enabled: true
+      rta: inc
+      rtf: anonymize
+      anonymizer: username_anonymizer
+      notes: ''
+      bundle: user
+      name: name
+    field_biography:
+      enabled: true
+      rta: inc
+      rtf: anonymize
+      anonymizer: long_text_anonymizer
+      notes: ''
+      bundle: user
+      name: field_biography
