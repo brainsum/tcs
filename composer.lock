@@ -1470,7 +1470,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta1",
-                    "datestamp": "1477459140"
+                    "datestamp": "1477459140",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 },
                 "patches_applied": {
                     "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/2018-05-12/choose_and_order-2830403-27.patch"
@@ -3421,7 +3425,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/imagemagick-8.x-1.0-alpha6.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha6",
                 "shasum": "9631b407762076b2f5d9bf3b50b40c28976ddbb7"
             },
             "require": {
@@ -4149,12 +4153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "a66b56b82b669b8bb21a7b83eee401a6c90f27ef"
+                "reference": "a2b53fa5356ca39c4c152fde8fdde567718fc98d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/a66b56b82b669b8bb21a7b83eee401a6c90f27ef",
-                "reference": "a66b56b82b669b8bb21a7b83eee401a6c90f27ef",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/a2b53fa5356ca39c4c152fde8fdde567718fc98d",
+                "reference": "a2b53fa5356ca39c4c152fde8fdde567718fc98d",
                 "shasum": ""
             },
             "require": {
@@ -4177,7 +4181,7 @@
             "support": {
                 "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-06-29T12:33:10+00:00"
+            "time": "2018-07-27T11:40:50+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
@@ -9472,16 +9476,12 @@
                 },
                 "drupal": {
                     "version": "8.x-2.6",
-                    "datestamp": "1488932283",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
+                    "datestamp": "1488932283"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
