@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "412f0766824e4bc81c437c7b7966048e",
+    "content-hash": "e0a6862021a8c1c1441448c7df03740f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1069,17 +1069,6 @@
         {
             "name": "drupal-composer/drupal-security-advisories",
             "version": "8.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal-composer/drupal-security-advisories.git",
-                "reference": "21e476054af58bd03c53f978293dbe438d29bdac"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-security-advisories/zipball/21e476054af58bd03c53f978293dbe438d29bdac",
-                "reference": "21e476054af58bd03c53f978293dbe438d29bdac",
-                "shasum": ""
-            },
             "conflict": {
                 "drupal/acquia_contenthub": "<1.0,<1.4",
                 "drupal/alinks": "<1.1",
@@ -3029,7 +3018,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1484303583"
+                    "datestamp": "1484303583",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 },
                 "patches_applied": {
                     "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
@@ -3425,7 +3418,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/imagemagick-8.x-1.0-alpha6.zip",
-                "reference": "8.x-1.0-alpha6",
+                "reference": null,
                 "shasum": "9631b407762076b2f5d9bf3b50b40c28976ddbb7"
             },
             "require": {
@@ -4076,7 +4069,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477009139"
+                    "datestamp": "1477009139",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
                 },
                 "patches_applied": {
                     "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
@@ -4149,16 +4146,16 @@
         },
         {
             "name": "drupal/parade",
-            "version": "dev-8.x-2.x-testing",
+            "version": "dev-TCS-592",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "a2b53fa5356ca39c4c152fde8fdde567718fc98d"
+                "reference": "a97615248a1c6f9cc12ca268229d114ec86fd531"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/a2b53fa5356ca39c4c152fde8fdde567718fc98d",
-                "reference": "a2b53fa5356ca39c4c152fde8fdde567718fc98d",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/a97615248a1c6f9cc12ca268229d114ec86fd531",
+                "reference": "a97615248a1c6f9cc12ca268229d114ec86fd531",
                 "shasum": ""
             },
             "require": {
@@ -4179,9 +4176,9 @@
             ],
             "description": "Provides the parade module",
             "support": {
-                "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
+                "source": "https://github.com/brainsum/parade/tree/TCS-592"
             },
-            "time": "2018-07-27T11:40:50+00:00"
+            "time": "2018-08-07T08:54:11+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
@@ -4810,7 +4807,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.1",
-                    "datestamp": "1527112080",
+                    "datestamp": "1513810384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9476,12 +9473,16 @@
                 },
                 "drupal": {
                     "version": "8.x-2.6",
-                    "datestamp": "1488932283"
+                    "datestamp": "1488932283",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
