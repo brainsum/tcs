@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0a6862021a8c1c1441448c7df03740f",
+    "content-hash": "412f0766824e4bc81c437c7b7966048e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3018,11 +3018,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1484303583",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
+                    "datestamp": "1484303583"
                 },
                 "patches_applied": {
                     "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
@@ -3418,7 +3414,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/imagemagick-8.x-1.0-alpha6.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha6",
                 "shasum": "9631b407762076b2f5d9bf3b50b40c28976ddbb7"
             },
             "require": {
@@ -4069,11 +4065,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477009139",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
+                    "datestamp": "1477009139"
                 },
                 "patches_applied": {
                     "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
@@ -4146,16 +4138,16 @@
         },
         {
             "name": "drupal/parade",
-            "version": "dev-TCS-592",
+            "version": "dev-8.x-2.x-testing",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "143c3c2f0d2d7b175a02dd6867153d9c5d05d1f6"
+                "reference": "a2b53fa5356ca39c4c152fde8fdde567718fc98d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/143c3c2f0d2d7b175a02dd6867153d9c5d05d1f6",
-                "reference": "143c3c2f0d2d7b175a02dd6867153d9c5d05d1f6",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/a2b53fa5356ca39c4c152fde8fdde567718fc98d",
+                "reference": "a2b53fa5356ca39c4c152fde8fdde567718fc98d",
                 "shasum": ""
             },
             "require": {
@@ -4176,9 +4168,9 @@
             ],
             "description": "Provides the parade module",
             "support": {
-                "source": "https://github.com/brainsum/parade/tree/TCS-592"
+                "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-08-08T10:00:37+00:00"
+            "time": "2018-07-27T11:40:50+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
@@ -4807,7 +4799,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.1",
-                    "datestamp": "1513810384",
+                    "datestamp": "1527112080",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9473,16 +9465,12 @@
                 },
                 "drupal": {
                     "version": "8.x-2.6",
-                    "datestamp": "1488932283",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
+                    "datestamp": "1488932283"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {

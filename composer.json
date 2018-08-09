@@ -67,7 +67,7 @@
         "drupal/redirect": "^1.0",
         "drupal/maxlength": "^1.0",
         "drupal/abtestui": "^1.0",
-        "drupal/parade": "dev-TCS-592",
+        "drupal/parade": "dev-8.x-2.x-testing",
         "drupal/allowed_formats": "^1.1",
         "drupal/public_preview": "^1.0",
         "drupal-composer/drupal-security-advisories": "8.x-dev",
