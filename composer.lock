@@ -4142,12 +4142,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "a2b53fa5356ca39c4c152fde8fdde567718fc98d"
+                "reference": "e65777538127e2ae896480a39500a15c3c1cde7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/a2b53fa5356ca39c4c152fde8fdde567718fc98d",
-                "reference": "a2b53fa5356ca39c4c152fde8fdde567718fc98d",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/e65777538127e2ae896480a39500a15c3c1cde7a",
+                "reference": "e65777538127e2ae896480a39500a15c3c1cde7a",
                 "shasum": ""
             },
             "require": {
@@ -4170,7 +4170,7 @@
             "support": {
                 "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-07-27T11:40:50+00:00"
+            "time": "2018-08-10T15:05:26+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
