@@ -3018,7 +3018,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0",
-                    "datestamp": "1484303583"
+                    "datestamp": "1484303583",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 },
                 "patches_applied": {
                     "Add missing schema.": "https://www.drupal.org/files/issues/missing-schema-2858115-2.patch"
@@ -3414,7 +3418,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/imagemagick-8.x-1.0-alpha6.zip",
-                "reference": "8.x-1.0-alpha6",
+                "reference": null,
                 "shasum": "9631b407762076b2f5d9bf3b50b40c28976ddbb7"
             },
             "require": {
@@ -4065,7 +4069,11 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1477009139"
+                    "datestamp": "1477009139",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
                 },
                 "patches_applied": {
                     "Use tab instead of action link for cloning.": "https://www.drupal.org/files/issues/use_a_tab_instead_of-2824227-2.patch"
@@ -4142,12 +4150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/brainsum/parade.git",
-                "reference": "f43ed9a04924037e5a1aec93c24e6872b1edafba"
+                "reference": "c505c2bb10116e17d9d3c64393ceedc62176fa22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brainsum/parade/zipball/f43ed9a04924037e5a1aec93c24e6872b1edafba",
-                "reference": "f43ed9a04924037e5a1aec93c24e6872b1edafba",
+                "url": "https://api.github.com/repos/brainsum/parade/zipball/c505c2bb10116e17d9d3c64393ceedc62176fa22",
+                "reference": "c505c2bb10116e17d9d3c64393ceedc62176fa22",
                 "shasum": ""
             },
             "require": {
@@ -4170,7 +4178,7 @@
             "support": {
                 "source": "https://github.com/brainsum/parade/tree/8.x-2.x-testing"
             },
-            "time": "2018-08-13T08:00:09+00:00"
+            "time": "2018-08-24T09:50:14+00:00"
         },
         {
             "name": "drupal/parade_content_lister",
@@ -4799,7 +4807,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.1",
-                    "datestamp": "1527112080",
+                    "datestamp": "1513810384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -9465,12 +9473,16 @@
                 },
                 "drupal": {
                     "version": "8.x-2.6",
-                    "datestamp": "1488932283"
+                    "datestamp": "1488932283",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
