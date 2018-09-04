@@ -264,7 +264,7 @@ function campaign_pages_entity_type_alter(array &$entity_types) {
     $entity_types['scheduled_update']->setListBuilderClass(ScheduledUpdateListBuilder::class);
   }
   // Disable non-translatable fields constraint added in 8.5.0.
-  foreach (['node', 'paragrap'] as $type) {
+  foreach (['node', 'paragraph'] as $type) {
     $constraints = $entity_types[$type]->getConstraints();
     unset($constraints['EntityUntranslatableFields']);
     $entity_types[$type]->setConstraints($constraints);
