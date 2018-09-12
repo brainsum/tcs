@@ -160,9 +160,9 @@ function campaign_pages_element_after_build($element, FormStateInterface $form_s
   if (isset($element['subform'], $element['top']['paragraph_type_title'])) {
     // Add paragraphs bundle machine name to wrapper as class.
     $elementEntity = $form_state->getStorage()['field_storage']['#parents']['#fields']['parade_onepage_sections']['paragraphs'][$element['#weight']]['entity'];
-    if (!empty($elementEntity) && method_exists($elementEntity, 'getType')) {
+    if (!empty($elementEntity) && \method_exists($elementEntity, 'getType')) {
       $bundle = $elementEntity->getType();
-      $element['#prefix'] = str_replace('<div ', '<div class="paragraphs-wrapper-bundle-' . $bundle . '" ', $element['#prefix']);
+      $element['#prefix'] = \str_replace('<div ', '<div class="paragraphs-wrapper-bundle-' . $bundle . '" ', $element['#prefix']);
     }
   }
   return $element;
@@ -403,19 +403,19 @@ function campaign_pages_imagemagick_arguments_alter(ImagemagickToolkit $toolkit,
 function campaign_pages_preprocess_html(&$variables) {
   // Add custom class to body for node add/edit page.
   // @todo css refactor needed - custom class instead of node type class.
-  $route_name = Drupal::request()->attributes->get('_route');
+  $route_name = \Drupal::request()->attributes->get('_route');
   $route_match = \Drupal::routeMatch();
   $type = NULL;
   if ('node_clone.prepopulate_node' === $route_name) {
     $type = $route_match->getParameter('node')->getType();
   }
   if ($type) {
-    $bundles = array_keys(\Drupal::config('parade_demo.settings')->get('bundles'));
-    if (in_array($type, $bundles)) {
+    $bundles = \array_keys(\Drupal::config('parade_demo.settings')->get('bundles'));
+    if (\in_array($type, $bundles)) {
       $variables['attributes']['class'][] = 'page-node-type-parade-onepage';
 
-      $path_args = explode('/', Drupal::request()->getPathInfo());
-      if ($suggestions = theme_get_suggestions($path_args, 'page', '-')) {
+      $path_args = \explode('/', Drupal::request()->getPathInfo());
+      if ($suggestions = \theme_get_suggestions($path_args, 'page', '-')) {
         foreach ($suggestions as $suggestion) {
           if ($suggestion === 'page--node-clone-prepopulate') {
             $variables['attributes']['class'][] = 'layout-container';
@@ -423,5 +423,16 @@ function campaign_pages_preprocess_html(&$variables) {
         }
       }
     }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function campaign_pages_form_node_campaign_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $routeName = \Drupal::request()->attributes->get('_route');
+  if ('node_clone.prepopulate_node' === $routeName) {
+    $userStorage = \Drupal::entityTypeManager()->getStorage('user');
+    $form['uid']['widget']['0']['target_id']['#default_value'] = $userStorage->load(\Drupal::currentUser()->id());
   }
 }
