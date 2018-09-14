@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3f58888d1d48f6233eff665e6bce323",
+    "content-hash": "1090363aa2b942971b5e12b1ab1c231c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2700,6 +2700,9 @@
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Auto upload stop working after enable filefield Sources": "https://www.drupal.org/files/issues/2829526-auto-upload.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

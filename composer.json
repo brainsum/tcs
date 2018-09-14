@@ -164,6 +164,9 @@
             },
             "drupal/dbee": {
                 "Email addresses not encrypted after install from cli": "https://www.drupal.org/files/issues/2018-05-23/email-addresses-not-encrypted-from-cli-2974819-2-D8.patch"
+            },
+            "drupal/filefield_sources": {
+                "Auto upload stop working after enable filefield Sources": "https://www.drupal.org/files/issues/2829526-auto-upload.patch"
             }
         }
     },
