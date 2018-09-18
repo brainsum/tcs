@@ -40,7 +40,7 @@
 
   /**
    * Applying the animation to all anchors, which have
-   * <a href="#my-anchor"> format.
+   * <a href="#my-anchor"> format and not <a href="http*">
    */
   var smoothScroll = function (e) {
     e.preventDefault()

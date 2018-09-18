@@ -47,7 +47,7 @@ paragraphs:
 
 # Smooth Scroll
 smooth-scroll:
-  version: VERSION
+  version: 1.0
   js:
     js/smooth-scroll.js: {}
   dependencies:
