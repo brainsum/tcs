@@ -71,6 +71,6 @@
     }
   }
 
-  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"]):not([href*="/#/"])').on('click', smoothScroll)
+  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"]):not([href*="/#/"]):not([href^="http"])').on('click', smoothScroll)
 
 })(jQuery)
