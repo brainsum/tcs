@@ -2730,17 +2730,17 @@
         },
         {
             "name": "drupal/filefield_sources_jsonapi",
-            "version": "1.0.0-beta2",
+            "version": "1.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/filefield_sources_jsonapi",
-                "reference": "8.x-1.0-beta2"
+                "reference": "8.x-1.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/filefield_sources_jsonapi-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "df8342d30bff8cf01de2f0cf085434d5917b1437"
+                "url": "https://ftp.drupal.org/files/projects/filefield_sources_jsonapi-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "847d6543b58f0c37f005749720533de06e7b12ce"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -2752,8 +2752,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1537265280",
+                    "version": "8.x-1.0-beta3",
+                    "datestamp": "1537372981",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
