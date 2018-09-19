@@ -25,6 +25,8 @@ libraries-override:
         assets/vendor/jquery.ui/themes/base/dialog.css: false
 
   classy/dialog: tieto_admin/tieto_admin.drupal.dialog
+  # @todo - remove it after parade module update.
+  parade_demo/smooth-scroll: tieto_admin/smooth-scroll
 
 libraries-extend:
 
