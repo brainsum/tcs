@@ -10,7 +10,7 @@
    *
    * @type {Number}
    */
-  const scrollSpeed = 300
+  var scrollSpeed = 300;
 
   /**
    * Additional offset in pixels.
@@ -22,7 +22,7 @@
    *
    * @type {Number}
    */
-  const offset = 72
+  var offset = 72;
 
   /**
    * Update the hash in the URL without jumping to the element.
@@ -30,47 +30,49 @@
    * @param  {String} hash
    * @return {void}
    */
-  var updateHash = (hash) => {
-    if (history.pushState) history.pushState(null, null, hash)
-    else window.location.hash = hash
+  var updateHash = function (hash) {
+    if (history.pushState) { history.pushState(null, null, hash); }
+    else { window.location.hash = hash; }
     // @fixme temp
     // $('.campaign-menu-link > a.active').removeClass('active')
     // $('a[href="' + hash + '"]').addClass('active')
-  }
+  };
 
   /**
    * Applying the animation to all anchors, which have
-   * <a href="#my-anchor"> format and not <a href="http*">
+   * <a href="#my-anchor"> format and not <a href="http*">.
    */
   var smoothScroll = function (e) {
-    e.preventDefault()
-    updateHash(this.hash)
+    e.preventDefault();
+    updateHash(this.hash);
 
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 
       // Calculate admin toolbar height.
       // Both Toolbar and its Tray are 39px in default Drupal theme.
-      var headerHeight = 0
-      if ($('body').hasClass('toolbar-horizontal')) {
-        headerHeight = 39
-        if ($('body').hasClass('toolbar-tray-open')) {
-          headerHeight += 39
+      var headerHeight = 0;
+      var body = $('body');
+      if (body.hasClass('toolbar-horizontal')) {
+        headerHeight = 39;
+        if (body.hasClass('toolbar-tray-open')) {
+          headerHeight += 39;
         }
       }
 
-      var target = $(this.hash)
+      var target = $(this.hash);
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top - headerHeight - offset
-        }, scrollSpeed)
-        if ($(window).width() < 768 && $('#hamburger').hasClass('is-active')) {
-          $('#hamburger').removeClass('is-active')
+        }, scrollSpeed);
+        var hamburger = $('#hamburger');
+        if ($(window).width() < 768 && hamburger.hasClass('is-active')) {
+          hamburger.removeClass('is-active');
         }
         return false
       }
     }
-  }
+  };
 
-  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"]):not([href*="/#/"]):not([href^="http"])').on('click', smoothScroll)
+  $('a[href*="#"]:not([href="#"]):not([href^="#tab-"]):not([href*="/#/"]):not([href^="http"])').on('click', smoothScroll);
 
-})(jQuery)
+})(jQuery);
