@@ -85,7 +85,9 @@
         "drupal/field_encrypt": "^2.0@alpha",
         "drupal/gdpr": "^1.0@alpha",
         "drupal/token": "1.1.0",
-        "drupal/dbee": "2.x-dev"
+        "drupal/dbee": "2.x-dev",
+        "drupal/imageapi_optimize_binaries": "^1.0@alpha",
+        "drupal/imageapi_optimize_resmushit": "^1.0@beta"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -164,6 +166,9 @@
             },
             "drupal/filefield_sources": {
                 "Auto upload stop working after enable filefield Sources": "https://www.drupal.org/files/issues/2018-09-20/auto-upload-2829526-13.patch"
+            },
+            "drupal/dbee": {
+                "Email addresses not encrypted after install from cli": "https://www.drupal.org/files/issues/2018-05-23/email-addresses-not-encrypted-from-cli-2974819-2-D8.patch"
             }
         }
     },
