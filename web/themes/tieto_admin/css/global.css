@@ -3633,6 +3633,10 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
       min-height: inherit !important; }
     .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoButtonRow {
       margin-top: 8px !important; }
+    .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoCheckboxList input[type=checkbox] {
+      width: auto !important; }
+    .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoCheckboxList label {
+      margin-bottom: 1em; }
     .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoButtonWrap {
       margin-left: 0 !important; }
       .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoButtonWrap .mktoButton {
