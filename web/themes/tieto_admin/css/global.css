@@ -3641,6 +3641,8 @@ body.page-node-type-campaign.user-logged-in.toolbar-fixed.toolbar-horizontal.too
       margin-left: 0 !important; }
       .paragraph--type--marketo-form.paragraph--view-mode--default .mktoForm .mktoButtonWrap .mktoButton {
         height: 36px;
+        width: initial;
+        min-width: 100px;
         line-height: 35px;
         padding: 0 20px;
         font-size: 14px;
