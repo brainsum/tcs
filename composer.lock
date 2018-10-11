@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f62dd499e4a415686a9e0be8a4adedb",
+    "content-hash": "e6593dd0a34e6b544281e280e6380de7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2042,14 +2042,20 @@
         },
         {
             "name": "drupal/dbee",
-            "version": "dev-2.x",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/dbee",
-                "reference": "272e05988b40a77d1489a23b3ade6bba6d3dca82"
+                "reference": "8.x-2.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/dbee-8.x-2.0-beta2.zip",
+                "reference": "8.x-2.0-beta2",
+                "shasum": "0a7827de5e4a561d2817212f388e7918e39325a8"
             },
             "require": {
-                "drupal/core": "*",
+                "drupal/core": "^8.5.0",
                 "drupal/encrypt": "*",
                 "drupal/real_aes": "*"
             },
@@ -2059,15 +2065,12 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.x-dev",
-                    "datestamp": "1524778985",
+                    "version": "8.x-2.0-beta2",
+                    "datestamp": "1536874680",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": {
-                    "Email addresses not encrypted after install from cli": "https://www.drupal.org/files/issues/2018-05-23/email-addresses-not-encrypted-from-cli-2974819-2-D8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2092,8 +2095,7 @@
             "homepage": "https://www.drupal.org/project/dbee",
             "support": {
                 "source": "http://cgit.drupalcode.org/dbee"
-            },
-            "time": "2018-04-27T09:24:55+00:00"
+            }
         },
         {
             "name": "drupal/diff",
@@ -10942,7 +10944,6 @@
         "drupal/encrypt": 15,
         "drupal/field_encrypt": 15,
         "drupal/gdpr": 15,
-        "drupal/dbee": 20,
         "drupal/imageapi_optimize_binaries": 15,
         "drupal/imageapi_optimize_resmushit": 10,
         "drupal/examples": 20
