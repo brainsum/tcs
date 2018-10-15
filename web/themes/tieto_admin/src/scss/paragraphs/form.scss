@@ -81,10 +81,20 @@
     .mktoButtonRow {
       margin-top: 8px !important;
     }
+    .mktoCheckboxList {
+      input[type=checkbox] {
+        width: auto !important;
+      }
+      label {
+        margin-bottom: 1em;
+      }
+    }
     .mktoButtonWrap {
       margin-left: 0 !important;
       .mktoButton {
         height: 36px;
+        width: initial;
+        min-width: 100px;
         line-height: 35px;
         padding: 0 20px;
         font-size: 14px;
