@@ -51,12 +51,12 @@ window['adrum-start-time'] = new Date().getTime();
 if ('https:' === document.location.protocol) {
     document.write(unescape('%3Cscript')
  + " src='https://cdn.appdynamics.com/adrum/adrum-4.3.3.0.js' "
- + " type='text/javascript' charset='UTF-8'" 
+ + " type='text/javascript' charset='UTF-8'"
  + unescape('%3E%3C/script%3E'));
 } else {
     document.write(unescape('%3Cscript')
  + " src='http://cdn.appdynamics.com/adrum/adrum-4.3.3.0.js' "
- + " type='text/javascript' charset='UTF-8'" 
+ + " type='text/javascript' charset='UTF-8'"
  + unescape('%3E%3C/script%3E'));
 }
 </script>
@@ -91,7 +91,7 @@ if ('https:' === document.location.protocol) {
     <js-placeholder token="{{ placeholder_token|raw }}">
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
-      window.cookieconsent_options = {"message":"Cookies help us deliver our services. By using our services, you agree to our use of cookies.","dismiss":"OK","learnMore":"Learn more","link":"//www.tieto.com/privacy-notice","theme":"light-bottom"};
+      window.cookieconsent_options = {"message":"Cookies help us deliver our services. By using our services, you agree to our use of cookies.","dismiss":"OK","learnMore":"Learn more","link":"//www.tieto.com/en/privacy-notice/","theme":"light-bottom"};
     </script>
     <!-- Start Visual Website Optimizer Asynchronous Code -->
     <script type='text/javascript'>
@@ -150,7 +150,7 @@ if ('https:' === document.location.protocol) {
           if(typeof window.MktoForms2 != 'undefined') {
               getForms(addEvents);
           }
-          
+
           function getForms(callback) {
               MktoForms2.whenReady(function(){
                   var forms = MktoForms2.allForms();
@@ -159,9 +159,9 @@ if ('https:' === document.location.protocol) {
                   }
               });
           }
-          
+
           function addEvents(forms) {
-          
+
               forms.forEach(function(form){
                   form.onSubmit(function(e){
                       dataLayer.push({
@@ -172,7 +172,7 @@ if ('https:' === document.location.protocol) {
                           'eventValue': form.getId()
                       });
                   });
-          
+
                   form.onSuccess(function(e){
                       dataLayer.push({
                           'event': 'TCSCustomEvent',
@@ -182,7 +182,7 @@ if ('https:' === document.location.protocol) {
                           'eventValue': form.getId()
                       });
                   });
-          
+
                   form.onValidate(function(e){
                       dataLayer.push({
                           'event': 'TCSCustomEvent',
