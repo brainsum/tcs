@@ -89,6 +89,16 @@
         margin-bottom: 1em;
       }
     }
+    .mktoRadioList {
+      input[type=radio] {
+        width: auto !important;
+        position: relative;
+        top: 2px;
+      }
+      label {
+        margin-bottom: 1em;
+      }
+    }
     .mktoButtonWrap {
       margin-left: 0 !important;
       .mktoButton {
