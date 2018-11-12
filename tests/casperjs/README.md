@@ -26,10 +26,9 @@ npm install -g nightwatch
 
 ## Configuration
 
-cd configs
-cp user.config.default.js user.config.js
-
-In the files: user.config.js and site.config.js - replace the value(s) for your environment.
+1. ```$ cd configs```
+2. ```$ cp user.config.default.js user.config.js```
+3. In the files: ```user.config.js``` and ```site.config.js``` replace the value(s) for your environment.
 
 ## Run
 
@@ -38,4 +37,3 @@ local-test.sh
 ## Debug
 
 The tests are taking screenshots, the screenshots for the last run are stored in the screenshots folder.
-
