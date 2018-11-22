@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a080391fb0dbeb7d5a5e78cbfb95b25b",
+    "content-hash": "ba28212e533558c7008832941ed8d49b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1069,6 +1069,11 @@
         {
             "name": "drupal-composer/drupal-security-advisories",
             "version": "8.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal-composer/drupal-security-advisories.git",
+                "reference": "fbfcf3499c18873405dd72751a567bf208943eb4"
+            },
             "conflict": {
                 "drupal/acquia_contenthub": "<1.0,<1.4",
                 "drupal/alinks": "<1.1",
@@ -5039,17 +5044,17 @@
         },
         {
             "name": "drupal/workbench_moderation",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/workbench_moderation",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/workbench_moderation-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "4d832ac2678e680f75ce7df6c4a4b0b177b53117"
+                "url": "https://ftp.drupal.org/files/projects/workbench_moderation-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "34ee7f7021088be29e4d2c323185d6ea10088d29"
             },
             "require": {
                 "drupal/core": "*"
@@ -5060,7 +5065,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.3",
+                    "version": "8.x-1.4",
                     "datestamp": "1539816922",
                     "security-coverage": {
                         "status": "covered",
