@@ -1120,7 +1120,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities",
-            "time": "2018-06-13T16:06:25+00:00"
+            "time": "2018-11-14T17:07:40+00:00"
         },
         {
             "name": "drupal/abjs",
@@ -3133,6 +3133,61 @@
             }
         },
         {
+            "name": "drupal/geophp",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/geophp",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/geophp-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "c8bc85f4d646ff83591f10092d8ebf5390ac0ff3"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1507629244",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Brandonian",
+                    "homepage": "https://www.drupal.org/user/77766"
+                },
+                {
+                    "name": "phayes",
+                    "homepage": "https://www.drupal.org/user/47098"
+                },
+                {
+                    "name": "plopesc",
+                    "homepage": "https://www.drupal.org/user/282415"
+                }
+            ],
+            "description": "Wraps the geoPHP library: advanced geometry operations in PHP.",
+            "homepage": "https://www.drupal.org/project/geophp",
+            "support": {
+                "source": "http://cgit.drupalcode.org/geophp"
+            }
+        },
+        {
             "name": "drupal/google_analytics",
             "version": "2.2.0",
             "source": {
@@ -4129,9 +4184,10 @@
                 "drupal/geocoder": "~2.0",
                 "drupal/geocoder_autocomplete": "~1.0",
                 "drupal/geofield": "~1.0",
+                "drupal/geophp": "~1.0",
                 "drupal/leaflet": "~1.0",
                 "drupal/machine_name": "~1.0",
-                "drupal/paragraphs": "~1.0",
+                "drupal/paragraphs": "~1.5",
                 "drupal/view_mode_selector": "~1.0"
             },
             "type": "drupal-module",
@@ -4242,17 +4298,17 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "1.3.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/paragraphs",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "24c6d2153127f9d783a03c05baf3b9beb219113f"
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "85ba97dd1c602d33fc5904b6e1df5973312afa94"
             },
             "require": {
                 "drupal/core": "~8",
@@ -4280,8 +4336,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1527502684",
+                    "version": "8.x-1.5",
+                    "datestamp": "1541009695",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5005,7 +5061,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.3",
-                    "datestamp": "1516322885",
+                    "datestamp": "1539816922",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
