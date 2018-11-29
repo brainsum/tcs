@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba28212e533558c7008832941ed8d49b",
+    "content-hash": "2ddf731a36cc3d9c965a029d9f03f58a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5073,7 +5073,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Do not force the creation of new revisions": "https://www.drupal.org/files/issues/do_not_force_new_revisions-2768977-6.patch"
+                    "Do not force the creation of new revisions": "https://www.drupal.org/files/issues/do_not_force_new_revisions-2768977-6.patch",
+                    "Declaration of EditTab::getTitle() incompatible with LocalTaskDefault::getTitle()": "https://www.drupal.org/files/issues/2018-04-16/workbench_moderation_incompatible-declaration_2952717_4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
