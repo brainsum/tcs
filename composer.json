@@ -44,7 +44,7 @@
         "composer/installers": "^1.2",
         "drupal-composer/drupal-scaffold": "^2.2",
         "cweagans/composer-patches": "^1.6",
-        "drupal/core": "^8.5",
+        "drupal/core": "8.5.*",
         "drush/drush": "~8.1",
         "aws/aws-sdk-php": "~3.0",
         "drupal/cloudfront_purger": "~1.1",
@@ -78,7 +78,7 @@
         "drupal/view_unpublished": "dev-1.x",
         "drupal/client_support": "dev-master",
         "drupal/parade_content_lister": "dev-master",
-        "drupal/workbench_moderation": "^1.2",
+        "drupal/workbench_moderation": "^1.4",
         "drupal/scheduled_updates": "1.x-dev",
         "drupal/encrypt": "^3.0@alpha",
         "drupal/real_aes": "^2.1",
@@ -162,7 +162,8 @@
                 "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
             },
             "drupal/workbench_moderation": {
-                "Do not force the creation of new revisions": "https://www.drupal.org/files/issues/do_not_force_new_revisions-2768977-6.patch"
+                "Do not force the creation of new revisions": "https://www.drupal.org/files/issues/do_not_force_new_revisions-2768977-6.patch",
+                "Declaration of EditTab::getTitle() incompatible with LocalTaskDefault::getTitle()": "https://www.drupal.org/files/issues/2018-04-16/workbench_moderation_incompatible-declaration_2952717_4.patch"
             },
             "drupal/filefield_sources": {
                 "Auto upload stop working after enable filefield Sources": "https://www.drupal.org/files/issues/2018-09-20/auto-upload-2829526-13.patch"

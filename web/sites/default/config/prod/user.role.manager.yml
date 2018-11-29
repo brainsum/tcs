@@ -15,6 +15,7 @@ permissions:
   - 'access tour'
   - 'administer ab tests'
   - 'administer gdpr settings'
+  - 'administer redirect settings'
   - 'administer redirects'
   - 'administer task entities'
   - 'administer users'
