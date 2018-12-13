@@ -19,7 +19,7 @@ env:
     # Ignore deprecation warnings.
     - SYMFONY_DEPRECATIONS_HELPER=weak
     - VENDOR_DIR="${TRAVIS_BUILD_DIR}/vendor"
-    - GLOBAL_VENDOR_DIR="${HOME}/.config/composer/vendor"
+    - GLOBAL_VENDOR_DIR="${HOME}/.composer/vendor"
     - PATH="${GLOBAL_VENDOR_DIR}/bin:${VENDOR_DIR}/bin:${PATH}"
     - CUSTOM_MODULES_DIR="${TRAVIS_BUILD_DIR}/web/modules/custom"
     - CUSTOM_THEMES_DIR="${TRAVIS_BUILD_DIR}/web/themes/tieto_admin"
