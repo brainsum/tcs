@@ -1,49 +1,57 @@
 const gulp = require('gulp');
-const path = require('path');
-const exec = require('child_process').exec;
 const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
-const each = require('gulp-each');
-const changed = require('gulp-changed');
-const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
- 
+const sourcemaps = require('gulp-sourcemaps');
+const Parcel = require('parcel-bundler');
 
-gulp.task('default', function() {
-  gulp.watch('src/js/*.js', ['js']);
-  gulp.watch('src/scss/*.scss', ['sass'])
-  gulp.watch('src/img/*', ['img'])
-});
+const paths = {
+    scripts: {
+        src: 'src/js/*.js',
+        dest: 'js',
+    },
+    styles: {
+        src: 'src/scss/*.scss',
+        dest: 'css',
+    },
+    images: {
+        src: 'src/img/*',
+        dest: 'images',
+    }
+}
 
-gulp.task('js', function(done) {
+async function scripts() {
+    const parcel = new Parcel(paths.scripts.src, {watch: true, minify: true, outDir: './js', publicUrl: './'});
 
-  return gulp.src('src/js/*.js')
-    .pipe(changed('js'))
-    .pipe(each(function(content, file, callback) {
-      let fileName = 'src/js/' + path.basename(file.path);
-      exec(`parcel build ${fileName} --out-dir js`, {}, function(error, stdout, stderr) {
-        console.log(stdout);
-      });
-      // the first argument is an error,
-      // second is modified file
-      callback(null, null);
-    }));
-});
+    parcel.on('buildEnd', () => {
+        console.log('Scripts bundled.')
+    });
 
-gulp.task('sass', function (done) {
-  return gulp.src('src/scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('css'));
-});
+    return await parcel.bundle();
+}
 
-gulp.task('img', function (done) {
-    return gulp.src('src/img/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('images'))
-});
+function styles () {
+    return gulp.src(paths.styles.src, { sourcemaps: true })
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: 'expanded', linefeed: 'lf' }).on('error', sass.logError))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(paths.styles.dest));
+}
 
-gulp.task('sync', function() {
-  browserSync.init({
-      proxy: "project.localhost"
-  });
-});
+function images() {
+    return gulp.src(paths.images.src)
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.images.dest))
+}
+
+function watch() {
+    scripts();
+    gulp.watch(paths.styles.src, styles);
+    gulp.watch(paths.images.src, images);
+}
+
+exports.styles = styles;
+exports.scripts = scripts;
+exports.images = images;
+exports.watch = watch;
+
+exports.default = watch;
