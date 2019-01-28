@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22c807c4ddd61787e8ae325e29a55bad",
+    "content-hash": "96dca5e580f496401e78d81250fe7ea9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1129,6 +1129,11 @@
         {
             "name": "drupal-composer/drupal-security-advisories",
             "version": "8.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal-composer/drupal-security-advisories.git",
+                "reference": "221e69ab2cb3dec23f68166897dc2be5489cf783"
+            },
             "conflict": {
                 "drupal/acquia_contenthub": "<1.0,<1.4",
                 "drupal/alinks": "<1.1",
@@ -1192,7 +1197,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities",
-            "time": "2018-12-05T20:07:51+00:00"
+            "time": "2018-11-14T17:07:40+00:00"
         },
         {
             "name": "drupal/abjs",
@@ -1989,7 +1994,6 @@
                 },
                 "patches_applied": {
                     "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
-                    "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch",
                     "Link to Entity get invalid language link in views": "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch"
                 }
             },
@@ -8899,7 +8903,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.25",
-                    "datestamp": "1542915180",
+                    "datestamp": "1542915384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8981,7 +8985,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.8",
-                    "datestamp": "1533653580",
+                    "datestamp": "1548270780",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
