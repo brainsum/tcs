@@ -147,54 +147,54 @@ if ('https:' === document.location.protocol) {
     <script>
       (function(){
 
-          if(typeof window.MktoForms2 != 'undefined') {
-              getForms(addEvents);
-          }
+        if(typeof window.MktoForms2 != 'undefined') {
+          getForms(addEvents);
+        }
 
-          function getForms(callback) {
-              MktoForms2.whenReady(function(){
-                  var forms = MktoForms2.allForms();
-                  if(forms) {
-                      callback(forms);
-                  }
+        function getForms(callback) {
+          MktoForms2.whenReady(function(){
+            var forms = MktoForms2.allForms();
+            if(forms) {
+                callback(forms);
+            }
+          });
+        }
+
+        function addEvents(forms) {
+
+          forms.forEach(function(form) {
+            form.onSubmit(function(e) {
+              dataLayer.push({
+                'event': 'TCSCustomEvent',
+                'eventCategory': 'form',
+                'eventAction': 'submit',
+                'eventLabel': drupalSettings.path.currentPath,
+                'eventValue': form.getId()
               });
-          }
+            });
 
-          function addEvents(forms) {
-
-              forms.forEach(function(form){
-                  form.onSubmit(function(e){
-                      dataLayer.push({
-                          'event': 'TCSCustomEvent',
-                          'eventCategory': 'form',
-                          'eventAction': 'submit',
-                          'eventLabel': drupalSettings.path.currentPath,
-                          'eventValue': form.getId()
-                      });
-                  });
-
-                  form.onSuccess(function(e){
-                      dataLayer.push({
-                          'event': 'TCSCustomEvent',
-                          'eventCategory': 'form',
-                          'eventAction': 'send-success',
-                          'eventLabel': drupalSettings.path.currentPath,
-                          'eventValue': form.getId()
-                      });
-                  });
-
-                  form.onValidate(function(e){
-                      dataLayer.push({
-                          'event': 'TCSCustomEvent',
-                          'eventCategory': 'form',
-                          'eventAction': 'validation-error',
-                          'eventLabel': drupalSettings.path.currentPath,
-                          'eventValue': form.getId()
-                      });
-                  });
+            form.onSuccess(function(e) {
+              dataLayer.push({
+                'event': 'TCSCustomEvent',
+                'eventCategory': 'form',
+                'eventAction': 'send-success',
+                'eventLabel': drupalSettings.path.currentPath,
+                'eventValue': form.getId()
               });
-          }
+            });
 
+            form.onValidate(function(e) {
+              if (e) return;
+              dataLayer.push({
+                'event': 'TCSCustomEvent',
+                'eventCategory': 'form',
+                'eventAction': 'validation-error',
+                'eventLabel': drupalSettings.path.currentPath,
+                'eventValue': form.getId()
+              });
+            });
+          });
+        }
       })();
     </script>
   </body>
