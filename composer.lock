@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae345eeb13579fa778bf31afc9aee3a6",
+    "content-hash": "b329f2cbaba5a65af2d35c2e4b191bb1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5033,6 +5033,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Misalignment fix": "https://www.drupal.org/files/issues/2019-02-20/iss-3032687-misaligned-fix_0.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
