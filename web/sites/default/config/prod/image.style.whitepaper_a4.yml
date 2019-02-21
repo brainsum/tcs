@@ -17,4 +17,5 @@ effects:
     data:
       width: 300
       height: 425
+      anchor: center-center
 pipeline: __default__
