@@ -40,12 +40,12 @@
         }
     },
     "require": {
-        "php": "~7.0",
+        "php": "~7.2",
         "composer/installers": "^1.2",
         "drupal-composer/drupal-scaffold": "^2.2",
         "cweagans/composer-patches": "^1.6",
-        "drupal/core": "8.5.*",
-        "drush/drush": "~8.1",
+        "drupal/core": "8.6.*",
+        "drush/drush": "^9.0",
         "aws/aws-sdk-php": "~3.0",
         "drupal/cloudfront_purger": "~1.1",
         "drupal/metatag": "^1.0",
@@ -155,7 +155,6 @@
             },
             "drupal/core": {
                 "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
-                "Multilingual fieldset title fix.": "https://www.drupal.org/files/issues/title_for_details_form-2652850-30.patch",
                 "Link to Entity get invalid language link in views": "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch"
             },
             "drupal/classy_paragraphs": {
@@ -167,6 +166,9 @@
             },
             "drupal/filefield_sources": {
                 "Auto upload stop working after enable filefield Sources": "https://www.drupal.org/files/issues/2018-09-20/auto-upload-2829526-13.patch"
+            },
+            "drupal/parade": {
+                "Misalignment fix": "https://www.drupal.org/files/issues/2019-02-20/iss-3032687-misaligned-fix_0.patch"
             }
         }
     },

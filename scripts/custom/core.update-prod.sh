@@ -8,11 +8,11 @@ composer install --no-dev -o \
     && drush cr \
     && drush cim sync -y \
     && drush cr \
-    && drush entity-updates -y \
+    && drush entup -y \
     || exit -1
 
-CIMTESTRET=$( { drush cim -n; } 2>&1 )
-if [[ ${CIMTESTRET} == "There are no changes to import"* ]]; then
+CIMTESTRET=$( { drush cim sync -n; } 2>&1 )
+if [[ ${CIMTESTRET} == *"There are no changes to import"* ]]; then
   echo "Config import successful.";
 else
   echo "Config import was not completely successful.";

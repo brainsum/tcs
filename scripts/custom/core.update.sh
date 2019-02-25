@@ -8,5 +8,5 @@ composer install \
     && drush cr \
     && drush cim sync -y \
     && drush cr \
-    && drush entity-updates -y \
+    && drush entup -y \
     && echo "Successfully updated."
