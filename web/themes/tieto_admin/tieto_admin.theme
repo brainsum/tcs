@@ -285,11 +285,17 @@ function tieto_admin_preprocess_paragraph__header(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function tieto_admin_preprocess_details(&$variables) {
-  if (isset($variables['title']['#markup'])) {
-    $variables['title'] = strip_tags($variables['title']['#markup']);
+  if (is_array($variables['title'])) {
+    if (isset($variables['title']['#markup'])) {
+      $variables['title'] = strip_tags($variables['title']['#markup']);
+    }
+    else {
+      $variables['title'] = strip_tags($variables['title']->toString());
+    }
   }
   else {
-    $variables['title'] = strip_tags($variables['title']);
+    // \Drupal\Core\StringTranslation\TranslationManager
+    $variables['title'] = strip_tags($variables['title']->__toString());
   }
 }
 
