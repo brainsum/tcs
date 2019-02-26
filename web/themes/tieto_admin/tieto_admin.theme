@@ -294,7 +294,7 @@ function tieto_admin_preprocess_details(&$variables) {
     }
   }
   else {
-    // \Drupal\Core\StringTranslation\TranslationManager
+    // \Drupal\Core\StringTranslation\TranslationManager.
     $variables['title'] = strip_tags($variables['title']->__toString());
   }
 }
