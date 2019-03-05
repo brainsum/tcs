@@ -19,7 +19,9 @@ module:
   client_support_contact_form: 0
   cloudfront_purger: 0
   config: 0
+  config_filter: 0
   config_readonly: 0
+  config_split: 0
   contact: 0
   content_entity_language_switcher: 0
   content_translation: 0
@@ -40,7 +42,6 @@ module:
   field_encrypt: 0
   field_group: 0
   field_layout: 0
-  field_ui: 0
   file: 0
   filefield_sources_jsonapi: 0
   filter: 0
@@ -94,7 +95,6 @@ module:
   purge_queuer_coretags: 0
   purge_queuer_url: 0
   purge_tokens: 0
-  purge_ui: 0
   rdf: 0
   real_aes: 0
   redirect: 0
@@ -114,7 +114,6 @@ module:
   video_embed_wysiwyg: 0
   view_mode_selector: 0
   view_unpublished: 0
-  views_ui: 0
   workbench_moderation: 0
   campaign_pages: 1
   filefield_sources: 1
