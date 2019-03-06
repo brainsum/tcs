@@ -3382,7 +3382,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Replace 'administrator' role with 'maintainer'.": "patches/exception-mailer-role-update.patch"
+                    "Replace 'administrator' role with 'maintainer'.": "patches/exception-mailer-role-update.patch",
+                    "Removed setting a response for the event.": "patches/exception-mailer-removed-response-setting.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
