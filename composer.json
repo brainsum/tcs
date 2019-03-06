@@ -170,6 +170,9 @@
             },
             "drupal/parade": {
                 "Misalignment fix": "https://www.drupal.org/files/issues/2019-02-20/iss-3032687-misaligned-fix_0.patch"
+            },
+            "drupal/exception_mailer": {
+                "Replace 'administrator' role with 'maintainer'.": "patches/exception-mailer-role-update.patch"
             }
         }
     },
