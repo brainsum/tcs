@@ -1,0 +1,9 @@
+uuid: 15568c65-ce9d-4ac3-8a6e-0201e1a7c8b1
+langcode: en
+status: true
+dependencies: {  }
+id: maintainer
+label: Maintainer
+weight: 6
+is_admin: null
+permissions: {  }
