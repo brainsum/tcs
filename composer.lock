@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b329f2cbaba5a65af2d35c2e4b191bb1",
+    "content-hash": "153907b4ba6ade4f6a25e5895fccb111",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2514,7 +2514,7 @@
             "version": "dev-8.x-1.x",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/sandbox/mhavelant/2831414.git",
+                "url": "https://git.drupalcode.org/sandbox/mhavelant-2831414.git",
                 "reference": "58f326b86f62f793e3980eeb2ff8ebf6677cdd80"
             },
             "type": "drupal-module",
@@ -9934,7 +9934,7 @@
             "version": "1.25.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/admin_toolbar",
+                "url": "https://git.drupalcode.org/project/admin_toolbar.git",
                 "reference": "8.x-1.25"
             },
             "dist": {
@@ -10015,7 +10015,7 @@
             "version": "1.8.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/adminimal_admin_toolbar",
+                "url": "https://git.drupalcode.org/project/adminimal_admin_toolbar.git",
                 "reference": "8.x-1.8"
             },
             "dist": {
@@ -10320,7 +10320,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/devel",
+                "url": "https://git.drupalcode.org/project/devel.git",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -10402,7 +10402,7 @@
             "version": "dev-1.x",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/examples",
+                "url": "https://git.drupalcode.org/project/examples.git",
                 "reference": "0be75808520a7c921ad7c87ac1cc87d716f5dc51"
             },
             "require": {
@@ -10512,7 +10512,7 @@
             "version": "2.7.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/toolbar_anti_flicker",
+                "url": "https://git.drupalcode.org/project/toolbar_anti_flicker.git",
                 "reference": "8.x-2.7"
             },
             "dist": {
@@ -10723,12 +10723,12 @@
             "version": "v1.6.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mikey179/vfsStream.git",
+                "url": "https://github.com/bovigo/vfsStream.git",
                 "reference": "d5fec95f541d4d71c4823bb5e30cf9b9e5b96145"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikey179/vfsStream/zipball/d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
+                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
                 "reference": "d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
                 "shasum": ""
             },
