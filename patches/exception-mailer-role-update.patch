@@ -1,0 +1,24 @@
+diff --git a/src/Subscribers/ExceptionEventSubscriber.php b/src/Subscribers/ExceptionEventSubscriber.php
+index b4e149f..ed7770d 100644
+--- a/src/Subscribers/ExceptionEventSubscriber.php
++++ b/src/Subscribers/ExceptionEventSubscriber.php
+@@ -52,15 +52,17 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
+   /**
+    * Event handler.
+    *
+-   * @param Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
++   * @param \Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
+    *   The exception event.
++   *
++   * @throws \Drupal\Component\Plugin\Exception\PluginException
+    */
+   public function onException(GetResponseForExceptionEvent $event) {
+     $exception = $event->getException();
+     $queue = $this->queueFactory->get('manual_exception_email', TRUE);
+     $queue_worker = $this->queueManager->createInstance('manual_exception_email');
+     if (!$exception instanceof FormAjaxException && !$exception instanceof NotFoundHttpException) {
+-      foreach (UserRepository::getUserEmails("administrator") as $admin) {
++      foreach (UserRepository::getUserEmails('maintainer') as $admin) {
+         $data['email'] = $admin;
+         $data['exception'] = get_class($exception);
+         $data['message'] = $exception->getMessage();

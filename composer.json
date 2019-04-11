@@ -28,7 +28,7 @@
         },
         "lang_switcher": {
             "type": "vcs",
-            "url": "https://git.drupal.org/sandbox/mhavelant/2831414.git"
+            "url": "https://git.drupalcode.org/sandbox/mhavelant-2831414.git"
         },
         "drupal/client_support": {
             "type": "vcs",
@@ -87,7 +87,8 @@
         "drupal/token": "1.1.0",
         "drupal/dbee": "^2.0",
         "drupal/imageapi_optimize_binaries": "^1.0@alpha",
-        "drupal/imageapi_optimize_resmushit": "^1.0@beta"
+        "drupal/imageapi_optimize_resmushit": "^1.0@beta",
+        "drupal/exception_mailer": "3.x-dev"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -169,6 +170,11 @@
             },
             "drupal/parade": {
                 "Misalignment fix": "https://www.drupal.org/files/issues/2019-02-20/iss-3032687-misaligned-fix_0.patch"
+            },
+            "drupal/exception_mailer": {
+                "Replace 'administrator' role with 'maintainer'.": "patches/exception-mailer-role-update.patch",
+                "Removed setting a response for the event.": "patches/exception-mailer-removed-response-setting.patch",
+                "Added more information to mail.": "patches/exception-mailer-more-information-in-mail.patch"
             }
         }
     },

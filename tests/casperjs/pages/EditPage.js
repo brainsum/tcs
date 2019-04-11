@@ -71,7 +71,7 @@ function EditPage() {
             casper.test.assertSelectorHasText('#edit-author', 'Author');
             // casper.test.assertSelectorHasText('#edit-revision-log-wrapper', 'Revision log message');
             casper.test.assertSelectorHasText('#edit-field-meta-tags-0', 'Meta tags');
-            casper.test.assertSelectorHasText('#edit-path-settings', 'URL path settings');
+            casper.test.assertSelectorHasText('#edit-path-0', 'URL alias');
         });
     };
 
