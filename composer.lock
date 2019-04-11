@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8ff4a7f8a358ff738b84bacfed2c0fc",
+    "content-hash": "07e88c9554cca493b26e0023698146d2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3383,7 +3383,8 @@
                 },
                 "patches_applied": {
                     "Replace 'administrator' role with 'maintainer'.": "patches/exception-mailer-role-update.patch",
-                    "Removed setting a response for the event.": "patches/exception-mailer-removed-response-setting.patch"
+                    "Removed setting a response for the event.": "patches/exception-mailer-removed-response-setting.patch",
+                    "Added more information to mail.": "patches/exception-mailer-more-information-in-mail.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

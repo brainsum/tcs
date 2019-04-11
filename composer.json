@@ -173,7 +173,8 @@
             },
             "drupal/exception_mailer": {
                 "Replace 'administrator' role with 'maintainer'.": "patches/exception-mailer-role-update.patch",
-                "Removed setting a response for the event.": "patches/exception-mailer-removed-response-setting.patch"
+                "Removed setting a response for the event.": "patches/exception-mailer-removed-response-setting.patch",
+                "Added more information to mail.": "patches/exception-mailer-more-information-in-mail.patch"
             }
         }
     },
