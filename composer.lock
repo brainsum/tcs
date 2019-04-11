@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "153907b4ba6ade4f6a25e5895fccb111",
+    "content-hash": "a8ff4a7f8a358ff738b84bacfed2c0fc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3362,7 +3362,7 @@
             "version": "dev-3.x",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/exception_mailer",
+                "url": "https://git.drupalcode.org/project/exception_mailer.git",
                 "reference": "31379083fbcbea903734751f560c700ee382166e"
             },
             "require": {
@@ -3399,7 +3399,7 @@
             "description": "A basic module to email administrators when an exception occurs.",
             "homepage": "https://www.drupal.org/project/exception_mailer",
             "support": {
-                "source": "http://cgit.drupalcode.org/exception_mailer"
+                "source": "https://git.drupalcode.org/project/exception_mailer"
             },
             "time": "2017-11-08T21:19:46+00:00"
         },
