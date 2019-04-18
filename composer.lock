@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07e88c9554cca493b26e0023698146d2",
+    "content-hash": "304f75664961b8d1977e41b955243d20",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -12143,21 +12143,21 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/content_entity_language_switcher": 20,
-        "drupal/node_clone": 20,
-        "drupal/parade": 20,
         "drupal-composer/drupal-security-advisories": 20,
-        "drupal/imageapi_optimize": 15,
-        "drupal/view_unpublished": 20,
         "drupal/client_support": 20,
-        "drupal/parade_content_lister": 20,
-        "drupal/scheduled_updates": 20,
+        "drupal/content_entity_language_switcher": 20,
         "drupal/encrypt": 15,
+        "drupal/exception_mailer": 20,
         "drupal/field_encrypt": 15,
         "drupal/gdpr": 15,
+        "drupal/imageapi_optimize": 15,
         "drupal/imageapi_optimize_binaries": 15,
         "drupal/imageapi_optimize_resmushit": 10,
-        "drupal/exception_mailer": 20,
+        "drupal/node_clone": 20,
+        "drupal/parade": 20,
+        "drupal/parade_content_lister": 20,
+        "drupal/scheduled_updates": 20,
+        "drupal/view_unpublished": 20,
         "drupal/examples": 20
     },
     "prefer-stable": true,
