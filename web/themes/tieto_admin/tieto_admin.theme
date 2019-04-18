@@ -5,6 +5,7 @@
  * Functions to support theming in the tieto_admin theme.
  */
 
+use Drupal\Component\Render\MarkupInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
@@ -220,7 +221,7 @@ function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state
   $form['#attached']['library'][] = 'tieto_admin/node-form';
 
   $form['advanced']['#type'] = 'container';
-  $is_new = !$node->isNew() ? \Drupal::service('date.formatter')->format($node->getChangedTime(), 'short') : t('Not saved yet');
+  $is_new = !$node->isNew() ? Drupal::service('date.formatter')->format($node->getChangedTime(), 'short') : t('Not saved yet');
   $form['meta'] = [
     '#attributes' => ['class' => ['entity-meta__header']],
     '#type' => 'container',
@@ -255,7 +256,7 @@ function tieto_admin_form_node_form_alter(&$form, FormStateInterface $form_state
  */
 function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   // @todo @fixme
-  if (\in_array('page__node__campaign', $suggestions)) {
+  if (in_array('page__node__campaign', $suggestions)) {
     $suggestions[] = 'page__node__campaign__revisions';
   }
 
@@ -266,7 +267,7 @@ function tieto_admin_theme_suggestions_page_alter(array &$suggestions, array $va
     'system.404' => 'page__system__404',
   ];
 
-  $route_name = \Drupal::routeMatch()->getRouteName();
+  $route_name = Drupal::routeMatch()->getRouteName();
   if (isset($http_error_suggestions[$route_name])) {
     $suggestions[] = $http_error_suggestions[$route_name];
   }
@@ -285,11 +286,19 @@ function tieto_admin_preprocess_paragraph__header(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function tieto_admin_preprocess_details(&$variables) {
-  if (isset($variables['title']['#markup'])) {
-    $variables['title'] = strip_tags($variables['title']['#markup']);
-  }
-  else {
-    $variables['title'] = strip_tags($variables['title']);
+  if (isset($variables['title'])) {
+    if (
+      $variables['title'] instanceof MarkupInterface
+      || is_string($variables['title'])
+    ) {
+      $variables['title'] = strip_tags($variables['title']);
+    }
+    elseif (
+      is_array($variables['title'])
+      && isset($variables['title']['#markup'])
+    ) {
+      $variables['title'] = strip_tags($variables['title']['#markup']);
+    }
   }
 }
 
