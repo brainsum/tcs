@@ -49,10 +49,10 @@ index 33b337a..0b4567c 100644
      tags:
        - { name: event_subscriber }
 diff --git a/src/Subscribers/ExceptionEventSubscriber.php b/src/Subscribers/ExceptionEventSubscriber.php
-index b4e149f..f934405 100644
+index b4e149f..3a3b563 100644
 --- a/src/Subscribers/ExceptionEventSubscriber.php
 +++ b/src/Subscribers/ExceptionEventSubscriber.php
-@@ -13,6 +13,10 @@ use Symfony\Component\HttpFoundation\Response;
+@@ -13,6 +13,11 @@ use Symfony\Component\HttpFoundation\Response;
  use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
  use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  use Symfony\Component\HttpKernel\KernelEvents;
@@ -60,12 +60,13 @@ index b4e149f..f934405 100644
 +use Drupal\Core\Session\AccountInterface;
 +use Drupal\Core\Datetime\DateFormatterInterface;
 +use Drupal\Component\Datetime\TimeInterface;
-
++use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+ 
  /**
   * Subscribe to thrown exceptions to send emails to admin users.
-@@ -41,12 +45,67 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
+@@ -41,29 +46,95 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
    protected $queueManager;
-
+ 
    /**
 +   * The configuration factory.
 +   *
@@ -130,10 +131,15 @@ index b4e149f..f934405 100644
 +    $this->dateFormatter = $dateFormatter;
 +    $this->time = $time;
    }
-
+ 
    /**
-@@ -56,6 +115,9 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
+    * Event handler.
+    *
+-   * @param Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
++   * @param \Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
     *   The exception event.
++   *
++   * @throws \Drupal\Component\Plugin\Exception\PluginException
     */
    public function onException(GetResponseForExceptionEvent $event) {
 +    $request = $event->getRequest();
@@ -142,8 +148,10 @@ index b4e149f..f934405 100644
      $exception = $event->getException();
      $queue = $this->queueFactory->get('manual_exception_email', TRUE);
      $queue_worker = $this->queueManager->createInstance('manual_exception_email');
-@@ -63,7 +125,13 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
-       foreach (UserRepository::getUserEmails("administrator") as $admin) {
+-    if (!$exception instanceof FormAjaxException && !$exception instanceof NotFoundHttpException) {
+-      foreach (UserRepository::getUserEmails("administrator") as $admin) {
++    if (!$exception instanceof FormAjaxException && !$exception instanceof NotFoundHttpException && !$exception instanceof AccessDeniedHttpException) {
++      foreach (UserRepository::getUserEmails('maintainer') as $admin) {
          $data['email'] = $admin;
          $data['exception'] = get_class($exception);
 -        $data['message'] = $exception->getMessage();
