@@ -1,8 +1,16 @@
 diff --git a/src/Subscribers/ExceptionEventSubscriber.php b/src/Subscribers/ExceptionEventSubscriber.php
-index b4e149f..f292d7f 100644
+index b4e149f..d72c79d 100644
 --- a/src/Subscribers/ExceptionEventSubscriber.php
 +++ b/src/Subscribers/ExceptionEventSubscriber.php
-@@ -80,8 +80,6 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
+@@ -9,7 +9,6 @@ use Drupal\Core\Queue\QueueWorkerManagerInterface;
+ use Drupal\Core\Queue\SuspendQueueException;
+ use Drupal\exception_mailer\Utility\UserRepository;
+ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+-use Symfony\Component\HttpFoundation\Response;
+ use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
+ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+ use Symfony\Component\HttpKernel\KernelEvents;
+@@ -80,8 +79,6 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
          }
        }
        $this->logger->get('php')->error($exception->getMessage());
