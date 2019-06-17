@@ -18,6 +18,7 @@ use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\imagemagick\Plugin\ImageToolkit\ImagemagickToolkit;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Site\Settings;
 
 /**
  * Implements hook_help().
@@ -434,5 +435,54 @@ function campaign_pages_form_node_campaign_form_alter(&$form, FormStateInterface
   if ('node_clone.prepopulate_node' === $routeName) {
     $userStorage = \Drupal::entityTypeManager()->getStorage('user');
     $form['uid']['widget']['0']['target_id']['#default_value'] = $userStorage->load(\Drupal::currentUser()->id());
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Attach path specific js to page based on config.
+ *
+ * Add config to settings.php
+ * $config['campaign_pages']['path_specific_js'] = [
+ *   '/node/157' => [
+ *     '/sites/default/files/my_custom_js_for_node_157.js',
+ *     'http://example.com/my_custom_external_additional_js_for_node_157.js'
+ *   ],
+ *   '/node/243' => [
+ *     '/private_files/my_custom_js_for_node_243.js'
+ *   ],
+ * ];
+ */
+function campaign_pages_page_attachments(array &$attachments) {
+  $config = Drupal::config('campaign_pages')->get('path_specific_js', []);
+  if (!$config) {
+    return;
+  }
+
+  $request = Drupal::requestStack()->getCurrentRequest();
+  // Compare the lowercase path alias (if any) and internal path.
+  $currentPath = Drupal::service('path.current')->getPath($request);
+  // Do not trim a trailing slash if that is the complete path.
+  $currentPath = $currentPath === '/' ? $currentPath : rtrim($currentPath, '/');
+  $currentPathAlias = mb_strtolower(Drupal::service('path.alias_manager')->getAliasByPath($currentPath));
+
+  $pathMatcher = Drupal::service('path.matcher');
+
+  foreach ($config as $path => $scripts) {
+    $path = mb_strtolower($path);
+    if ($pathMatcher->matchPath($currentPathAlias, $path) || ($currentPath !== $currentPathAlias && $pathMatcher->matchPath($currentPath, $path))) {
+      foreach ($scripts as $id => $script) {
+        $attachments['#attached']['html_head'][] = [
+          [
+            '#tag' => 'script',
+            '#attributes' => [
+              'src' => $script,
+            ],
+          ],
+          'path_specific_js_' . $id,
+        ];
+      }
+    }
   }
 }
