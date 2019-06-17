@@ -18,7 +18,6 @@ use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\imagemagick\Plugin\ImageToolkit\ImagemagickToolkit;
 use Drupal\node\NodeInterface;
-use Drupal\Core\Site\Settings;
 
 /**
  * Implements hook_help().
