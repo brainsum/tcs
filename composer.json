@@ -171,9 +171,8 @@
                 "Misalignment fix": "https://www.drupal.org/files/issues/2019-02-20/iss-3032687-misaligned-fix_0.patch"
             },
             "drupal/exception_mailer": {
-                "Replace 'administrator' role with 'maintainer'.": "patches/exception-mailer-role-update.patch",
                 "Removed setting a response for the event.": "patches/exception-mailer-removed-response-setting.patch",
-                "Added more information to mail.": "patches/exception-mailer-more-information-in-mail.patch"
+                "Replace 'administrator' role with 'maintainer, more info in email, left out access denied errors'.": "patches/exception-mailer-role-update-more-information-leave-out-access-denied-errors.patch"
             }
         }
     },
