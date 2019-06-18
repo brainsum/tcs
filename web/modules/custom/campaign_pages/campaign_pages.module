@@ -466,8 +466,12 @@ function campaign_pages_page_attachments(array &$attachments) {
   $currentPath = $currentPath === '/' ? $currentPath : rtrim($currentPath, '/');
   $currentPathAlias = mb_strtolower(Drupal::service('path.alias_manager')->getAliasByPath($currentPath));
 
-  $pathMatcher = Drupal::service('path.matcher');
+  if ($prefixes = \Drupal::config('language.negotiation')->get('url.prefixes')) {
+    $currentLangcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $currentPathAlias = $prefixes[$currentLangcode] ? '/' . $prefixes[$currentLangcode] . $currentPathAlias : $currentPathAlias;
+  }
 
+  $pathMatcher = Drupal::service('path.matcher');
   foreach ($config as $path => $scripts) {
     $path = mb_strtolower($path);
     if ($pathMatcher->matchPath($currentPathAlias, $path) || ($currentPath !== $currentPathAlias && $pathMatcher->matchPath($currentPath, $path))) {
