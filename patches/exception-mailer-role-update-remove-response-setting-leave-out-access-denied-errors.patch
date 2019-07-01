@@ -1,0 +1,45 @@
+diff --git a/src/Logger/ErrorLog.php b/src/Logger/ErrorLog.php
+index e58263b..88a6dfb 100644
+--- a/src/Logger/ErrorLog.php
++++ b/src/Logger/ErrorLog.php
+@@ -134,7 +134,7 @@ class ErrorLog implements LoggerInterface {
+     $queue_worker = $this->queueManager->createInstance('manual_exception_email');
+ 
+     if (\in_array($level, array_values($levels), TRUE)) {
+-      foreach (UserRepository::getUserEmails('administrator') as $admin) {
++      foreach (UserRepository::getUserEmails('maintainer') as $admin) {
+         $data['email'] = $admin;
+         $data['exception'] = '';
+         $data['message'] = t(Xss::filterAdmin($message), $message_placeholders);
+diff --git a/src/Subscribers/ExceptionEventSubscriber.php b/src/Subscribers/ExceptionEventSubscriber.php
+index 27f3736..b30f181 100644
+--- a/src/Subscribers/ExceptionEventSubscriber.php
++++ b/src/Subscribers/ExceptionEventSubscriber.php
+@@ -9,7 +9,6 @@ use Drupal\Core\Queue\QueueWorkerManagerInterface;
+ use Drupal\Core\Queue\SuspendQueueException;
+ use Drupal\exception_mailer\Utility\UserRepository;
+ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+-use Symfony\Component\HttpFoundation\Response;
+ use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
+ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+ use Symfony\Component\HttpKernel\KernelEvents;
+@@ -118,8 +117,8 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
+     $exception = $event->getException();
+     $queue = $this->queueFactory->get('manual_exception_email', TRUE);
+     $queue_worker = $this->queueManager->createInstance('manual_exception_email');
+-    if (!$exception instanceof FormAjaxException && !$exception instanceof NotFoundHttpException) {
+-      foreach (UserRepository::getUserEmails('administrator') as $admin) {
++    if (!$exception instanceof FormAjaxException && !$exception instanceof NotFoundHttpException && !$exception instanceof AccessDeniedHttpException) {
++      foreach (UserRepository::getUserEmails('maintainer') as $admin) {
+         $data['email'] = $admin;
+         $data['exception'] = get_class($exception);
+         $data['message'] = $exception->getMessage() . "\n" . $exception->getTraceAsString();
+@@ -145,8 +144,6 @@ class ExceptionEventSubscriber implements EventSubscriberInterface {
+         }
+       }
+       $this->logger->get('php')->error($exception->getMessage());
+-      $response = new Response($exception->getMessage(), 500);
+-      $event->setResponse($response);
+     }
+   }
+ 
