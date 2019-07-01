@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96c2bc1864c24f3868e9d4a7b351b654",
+    "content-hash": "e496d3b471aa7e5accbb63ccb455c7e6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3382,8 +3382,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Removed setting a response for the event.": "patches/exception-mailer-removed-response-setting.patch",
-                    "Replace 'administrator' role with 'maintainer, more info in email, left out access denied errors'.": "patches/exception-mailer-role-update-more-information-leave-out-access-denied-errors.patch"
+                    "Extending module to sending emails on errors too.": "https://www.drupal.org/files/issues/2019-07-01/3050402-extending-module-to-sending-emails-on-errors-too-7.patch",
+                    "Replace 'administrator' role with 'maintainer, removed response setting, left out access denied errors'.": "patches/exception-mailer-role-update-remove-response-setting-leave-out-access-denied-errors.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
