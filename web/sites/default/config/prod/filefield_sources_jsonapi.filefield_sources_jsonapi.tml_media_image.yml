@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: tml_media_image
 label: Image
-apiUrl: 'http://dam.dd:8083/jsonapi/media/image'
+apiUrl: 'https://dam.tieto.com/jsonapi/media/image'
 params: "fields[media--image]|name,field_image\r\ninclude|field_image,field_category\r\nfields[file--file]|uri,thumbnail_url\r\nfilter[status]|1"
 urlAttributePath: data->relationships->field_image->included->attributes->uri->url
 thumbnailUrlAttributePath: data->relationships->field_image->included->attributes->thumbnail_url

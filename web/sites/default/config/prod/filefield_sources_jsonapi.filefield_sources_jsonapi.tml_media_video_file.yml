@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: tml_media_video_file
 label: Video
-apiUrl: 'http://dam.tieto.com/jsonapi/media/video_file'
+apiUrl: 'https://dam.tieto.com/jsonapi/media/video_file'
 params: "fields[media--video-file]|name\r\ninclude|thumbnail,field_video_file,field_category\r\nfields[file--file]|uri,thumbnail_url\r\nfilter[status]|1\r\nfilter[mimeFilter][condition][path]|field_video_file.filemime\r\nfilter[mimeFilter][condition][operator]|IN\r\nfilter[mimeFilter][condition][value][]|video/mp4\r\nfilter[mimeFilter][condition][value][]|video/ogg\r\nfilter[mimeFilter][condition][value][]|video/webm"
 urlAttributePath: data->relationships->field_video_file->included->attributes->uri->url
 thumbnailUrlAttributePath: data->relationships->thumbnail->included->attributes->uri->url
