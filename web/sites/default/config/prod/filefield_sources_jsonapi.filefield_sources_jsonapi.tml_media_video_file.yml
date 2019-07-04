@@ -4,10 +4,10 @@ status: true
 dependencies: {  }
 id: tml_media_video_file
 label: Video
-apiUrl: 'https://dam.tieto.com/jsonapi/media/video_file'
-params: "fields[media--video-file]|name\r\ninclude|thumbnail,field_video_file,field_category\r\nfields[file--file]|url,thumbnail_url\r\nfilter[statusFilter][condition][path]|status\r\nfilter[statusFilter][condition][operator]|=\r\nfilter[statusFilter][condition][value]|1\r\nfilter[mimeFilter][condition][path]|field_video_file.filemime\r\nfilter[mimeFilter][condition][operator]|IN\r\nfilter[mimeFilter][condition][value][]|video/mp4\r\nfilter[mimeFilter][condition][value][]|video/ogg\r\nfilter[mimeFilter][condition][value][]|video/webm"
-urlAttributePath: data->relationships->field_video_file->included->attributes->url
-thumbnailUrlAttributePath: data->relationships->thumbnail->included->attributes->thumbnail_url
+apiUrl: 'http://dam.tieto.com/jsonapi/media/video_file'
+params: "fields[media--video-file]|name\r\ninclude|thumbnail,field_video_file,field_category\r\nfields[file--file]|uri,thumbnail_url\r\nfilter[status]|1\r\nfilter[mimeFilter][condition][path]|field_video_file.filemime\r\nfilter[mimeFilter][condition][operator]|IN\r\nfilter[mimeFilter][condition][value][]|video/mp4\r\nfilter[mimeFilter][condition][value][]|video/ogg\r\nfilter[mimeFilter][condition][value][]|video/webm"
+urlAttributePath: data->relationships->field_video_file->included->attributes->uri->url
+thumbnailUrlAttributePath: data->relationships->thumbnail->included->attributes->uri->url
 titleAttributePath: data->attributes->name
 altAttributePath: ''
 sortOptionList: "-created|Newest first\r\nname|By name"
