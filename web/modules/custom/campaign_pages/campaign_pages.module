@@ -279,7 +279,7 @@ function campaign_pages_entity_type_alter(array &$entity_types) {
 function campaign_pages_entity_delete($entity) {
   if ($entity->getEntityTypeId() === 'paragraph') {
     \Drupal::logger('campaign_pages')->info('Deleted paragraph ID: ' . $entity->id());
-    \Drupal::logger('campaign_pages')->debug('Deleted paragraph backtrace: ' . Error::formatBacktrace(debug_backtrace()));
+    \Drupal::logger('campaign_pages')->debug('Deleted paragraph backtrace: ' . Error::formatBacktrace(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS)));
   }
 }
 

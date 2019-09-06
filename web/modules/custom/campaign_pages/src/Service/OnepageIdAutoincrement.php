@@ -12,6 +12,11 @@ use Drupal\node\NodeInterface;
  */
 class OnepageIdAutoincrement {
 
+  /**
+   * The database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
   protected $database;
 
   /**

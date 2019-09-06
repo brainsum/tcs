@@ -19,8 +19,25 @@ class ColorUpdateHandler {
    */
   protected $storage;
 
+  /**
+   * The target field machine name.
+   *
+   * @var string
+   */
   protected $targetIdField = 'parade_onepage_sections_target_revision_id';
+
+  /**
+   * The color scheme field machine name.
+   *
+   * @var string
+   */
   protected $colorSchemeField = 'parade_color_scheme';
+
+  /**
+   * The layout field machine name.
+   *
+   * @var string
+   */
   protected $layoutField = 'parade_layout';
 
   /**
