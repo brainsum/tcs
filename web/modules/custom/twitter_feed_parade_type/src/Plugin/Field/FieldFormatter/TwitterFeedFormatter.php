@@ -22,6 +22,11 @@ use Drupal\twitter_feed_parade_type\Plugin\Field\FieldWidget\TwitterFeedWidget;
  */
 class TwitterFeedFormatter extends FormatterBase {
 
+  /**
+   * Path to the module.
+   *
+   * @var string
+   */
   protected $modulePath;
 
   /**
