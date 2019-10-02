@@ -78,6 +78,12 @@ AddEncoding gzip svgz
   RewriteCond %{HTTP_HOST} ^marketing.tieto.com [NC]
   RewriteRule (.*)$ https://campaigns.tieto.com/node/301 [R=301,L]
 
+  # TCS-695 - we were unable to set up these 2 redirects on the ui:
+  RewriteCond %{REQUEST_URI} ^/Public-360-terms$
+  RewriteRule (.*)$ https://campaigns.tieto.com/360-terms [R=301,L]
+  RewriteCond %{REQUEST_URI} ^/nb/Public-360-vilkar$
+  RewriteRule (.*)$ https://campaigns.tieto.com/nb/360-vilkar [R=301,L]
+
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
   # if you enable "www." stripping or enforcement, in order to ensure that
   # you don't bounce between http and https.
