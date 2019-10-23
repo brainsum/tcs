@@ -156,7 +156,8 @@
             "drupal/core": {
                 "remove X-Frame-Options header from core": "patches/remove-x-frame-options-header-from-core.patch",
                 "Link to Entity get invalid language link in views": "https://www.drupal.org/files/issues/reroll_patch_for_issue_2862511.patch",
-                "Entity Links fields does not have translation support": "https://www.drupal.org/files/issues/2018-03-23/2877994-22.patch"
+                "Entity Links fields does not have translation support": "https://www.drupal.org/files/issues/2018-03-23/2877994-22.patch",
+                "\\Drupal\\views\\Plugin\\views\\query\\Sql::getCacheTags and getCacheMaxAge don't take into account that some entities can be NULL": "https://www.drupal.org/files/issues/2019-01-30/2738051-19.patch"
             },
             "drupal/classy_paragraphs": {
                 "Enable chose and order for the classy paragraphs": "https://www.drupal.org/files/issues/choose_and_order-2830403-11.patch"
