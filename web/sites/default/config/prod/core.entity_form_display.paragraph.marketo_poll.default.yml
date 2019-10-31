@@ -16,7 +16,6 @@ dependencies:
     - field_layout
     - layout_discovery
     - marketo_poll
-    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol
