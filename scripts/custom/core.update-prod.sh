@@ -8,7 +8,6 @@ composer install --no-dev -o \
     && drush cr \
     && drush cim sync -y \
     && drush cr \
-    && drush entup -y \
     || exit -1
 
 CIMTESTRET=$( { drush cim sync -n; } 2>&1 )
