@@ -10,4 +10,4 @@ processors:
     id: resmushit
     weight: 1
     data:
-      quality: ''
+      quality: null
