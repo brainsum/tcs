@@ -18,6 +18,10 @@ use Drupal\file\Entity\File;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\imagemagick\Plugin\ImageToolkit\ImagemagickToolkit;
 use Drupal\node\NodeInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Views;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_help().
@@ -481,6 +485,123 @@ function campaign_pages_page_attachments(array &$attachments) {
           ],
           'path_specific_js_' . $id,
         ];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function campaign_pages_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  // TCS-697 - Alter the view joins to get the Last edited by user from
+  // revisions which are not drafts.
+  if ($view->id() === 'content' &&  $view->current_display === 'page_1') {
+
+    // LEFT JOIN (
+    //   SELECT nfr.nid, MAX(nfr.vid) AS vid, nfr.langcode
+    //   FROM node_field_revision nfr
+    //   WHERE nfr.revision_translation_affected = 1
+    //   AND nfr.moderation_state != 'draft'
+    //   GROUP BY nfr.langcode, nfr.nid
+    //   ) max_rev ON nfd.nid = max_rev.nid AND nfd.langcode = max_rev.langcode.
+    $subQuery = \Drupal::database()->select('node_field_revision', 'nfr');
+    $subQuery->fields('nfr', ['nid', 'langcode']);
+    $subQuery->addExpression('MAX(nfr.vid)', 'vid');
+    $subQuery->condition('nfr.revision_translation_affected', 1, '=');
+    $subQuery->condition('nfr.moderation_state', 'draft', '!=');
+    $subQuery->groupBy('nfr.nid');
+    $subQuery->groupBy('nfr.langcode');
+
+    $configuration = [
+      'type' => 'LEFT',
+      'table' => $subQuery,
+      'field' => 'nid',
+      'left_table' => 'node_field_data',
+      'left_field' => 'nid',
+      'operator' => '=',
+      'extra' => [
+        0 => [
+          'left_field' => 'langcode',
+          'field' => 'langcode',
+        ],
+      ],
+    ];
+    $join = Views::pluginManager('join')->createInstance('standard', $configuration);
+
+    // Do the actual join.
+    $queryTables = &$query->getTableQueue();
+    $queryTables['max_rev'] = [
+      'alias' => 'max_rev',
+      'table' => $subQuery,
+      'relationship' => 'node_field_data',
+      'join' => $join,
+    ];
+
+    // LEFT JOIN node_revision nr ON max_rev.nid = nr.nid
+    // AND max_rev.vid = nr.vid.
+    $configuration = [
+      'type' => 'LEFT',
+      'table' => 'node_revision',
+      'field' => 'nid',
+      'left_table' => 'max_rev',
+      'left_field' => 'nid',
+      'operator' => '=',
+      'extra' => [
+        0 => [
+          'left_field' => 'vid',
+          'field' => 'vid',
+        ],
+      ],
+    ];
+    $join = Views::pluginManager('join')->createInstance('standard', $configuration);
+
+    // Do the actual join.
+    $queryTables['node_revision'] = [
+      'alias' => 'node_revision',
+      'table' => $subQuery,
+      'relationship' => 'max_review',
+      'join' => $join,
+    ];
+
+    // LEFT JOIN users_field_data ufd1 ON nr.revision_uid = ufd1.uid.
+    $configuration = [
+      'type' => 'LEFT',
+      'table' => 'users_field_data',
+      'field' => 'uid',
+      'left_table' => 'node_revision',
+      'left_field' => 'revision_uid',
+      'operator' => '=',
+    ];
+    $join = Views::pluginManager('join')->createInstance('standard', $configuration);
+
+    // Do the actual join.
+    $queryTables['users_field_data'] = [
+      'alias' => 'users_field_data',
+      'table' => 'node_revision',
+      'relationship' => 'node_revision',
+      'join' => $join,
+    ];
+
+    $query->addField('users_field_data', 'name', 'revision_user');
+    $query->addField('users_field_data', 'uid', 'revision_uid');
+  }
+}
+
+/**
+ * Implements hook__views_post_execute().
+ */
+function campaign_pages_views_post_execute(ViewExecutable $view) {
+  if ($view->id() === 'content' &&  $view->current_display === 'page_1') {
+
+    // TCS-697 - Replace the Last edited by field values to the revision user.
+    foreach ($view->result as $key => $value) {
+      if ($value->revision_uid) {
+        $user = User::load($value->revision_uid);
+        $view->result[$key]->_relationship_entities['uid'] = $user;
+      }
+      else {
+        $view->result[$key]->_relationship_entities['uid'] = NULL;
       }
     }
   }
