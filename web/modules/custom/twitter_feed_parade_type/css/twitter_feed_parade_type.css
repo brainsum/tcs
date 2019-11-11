@@ -1,10 +1,1 @@
-.paragraphs-type-twitter_feed {
-  background-image: url("../images/twitter-feed.png?v2");
-}
-.paragraphs-dropbutton-wrapper .button.parade-button-twitter-feed {
-  background-image: url("../images/twitter-feed.png?v2");
-  font-size: .85em;
-  line-height: 1.62;
-}
-
-/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInR3aXR0ZXJfZmVlZF9wYXJhZGVfdHlwZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVJO0VBQ0Usb0RBQW1EO0VBQ25ELGlCQUFnQjtFQUNoQixrQkFBaUI7Q0FDbEIiLCJmaWxlIjoidHdpdHRlcl9mZWVkX3BhcmFkZV90eXBlLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idXR0b24ge1xuICAmLnBhcmFkZS1idXR0b24tdHdpdHRlci1mZWVkIHtcbiAgICAucGFyYWdyYXBocy1kcm9wYnV0dG9uLXdyYXBwZXIgJiB7XG4gICAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uL2ltYWdlcy90d2l0dGVyLWZlZWQucG5nJyk7XG4gICAgICBmb250LXNpemU6IC44NWVtO1xuICAgICAgbGluZS1oZWlnaHQ6IDEuNjI7XG4gICAgfVxuICB9XG59XG4iXX0= */
+.paragraphs-dropbutton-wrapper .button.parade-button-twitter-feed { background-image: url("../images/twitter-feed.png"); font-size: .85em; line-height: 1.62; }
