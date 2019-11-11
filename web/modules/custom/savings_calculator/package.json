@@ -1,18 +1,17 @@
 {
   "name": "savings_calculator",
-  "version": "1.0.0",
-  "main": "index.js",
+  "author": "Krisztian Pinter <kpinter@brainsum.com>",
+  "version": "1.1.0",
   "license": "MIT",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-notify": "^3.0.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sass-glob": "^1.0.8",
-    "gulp-shell": "^0.6.3",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^3.0.0"
+  "scripts": {
+    "start": "gulp",
+    "prod": "gulp prod"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
   }
 }
