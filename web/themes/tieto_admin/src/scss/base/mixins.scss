@@ -1,7 +1,6 @@
 // Mixins
 
 // Breakpoints
-
 @mixin breakpoint($class) {
   @if $class == sm {
     @media (min-width: 322px) {
