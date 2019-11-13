@@ -1,11 +1,13 @@
+const autoprefixer      = require('autoprefixer');
 const browserSync       = require('browser-sync').create();
 const gulp              = require('gulp');
-const autoprefixer      = require('autoprefixer');
 const postcss           = require('gulp-postcss');
 const sass              = require('gulp-sass');
 const imagemin          = require('gulp-imagemin');
+const named             = require('vinyl-named');
 const sourcemaps        = require('gulp-sourcemaps');
-const Parcel            = require('parcel-bundler');
+const webpack           = require('webpack-stream');
+
 
 // Define settings
 const config = {
@@ -67,20 +69,31 @@ function stylesProd(done) {
   done();
 }
 
-// Scripts (Parcel) Task
-async function scripts() {
-  const parcel = new Parcel(config.paths.scripts.src, {
-    watch: true,
-    minify: true,
-    outDir: './js',
-    publicUrl: './'
-  });
-
-  parcel.on('buildEnd', () => {
-    console.log('Scripts bundled.')
-  });
-
-  return await parcel.bundle();
+function scripts(done) {
+  gulp
+    .src(config.paths.scripts.src)
+    .pipe(named())
+    .pipe(webpack({
+      devtool: 'source-map',
+      mode: 'production',
+      module: {
+        rules: [
+          {
+            test: /\.m?js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env']
+              }
+            }
+          }
+        ]
+      }
+    }))
+    .pipe(gulp.dest(config.paths.scripts.dest))
+    .pipe(browserSync.stream());
+  done();
 }
 
 // Image Optimization Task
@@ -117,3 +130,4 @@ const compileProd = gulp.parallel(stylesProd, scripts, images);
 // export tasks
 exports.default = gulp.series(compileDev, browserSyncWatch);
 exports.prod = compileProd;
+exports.js = scripts;

@@ -5,12 +5,12 @@
 
 import 'responsive-tabs'
 
-($ => {
+(function drupalJquery($) {
 
-	$('.r-tabs-container').responsiveTabs({
-	  startCollapsed: false,
-	  animation: 'slide',
-	  duration: 200
-	})
+  $('.r-tabs-container').responsiveTabs({
+    startCollapsed: false,
+    animation: 'slide',
+    duration: 200
+  })
 
-})(jQuery)
+})(jQuery);

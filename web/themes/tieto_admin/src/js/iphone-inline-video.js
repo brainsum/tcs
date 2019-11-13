@@ -7,8 +7,8 @@
 
 (function () {
 
-	const makeVideoPlayableInline = require('iphone-inline-video');
-	var video = document.querySelector('.background-video');
-	makeVideoPlayableInline(video, !video.hasAttribute('muted'));
+  const makeVideoPlayableInline = require('iphone-inline-video');
+  var video = document.querySelector('.background-video');
+  makeVideoPlayableInline(video, !video.hasAttribute('muted'));
 
-})()
+})();
