@@ -68,7 +68,7 @@
               right: 'auto',
               left: boundingClientRect.left,
               transform: 'translateX(' + (fixedBoundingClientRect.left - boundingClientRect.left) + 'px) translateY(' + (fixedBoundingClientRect.top - boundingClientRect.top) + 'px)'
-            })
+            });
 
           setTimeout(function() {
             $fixed
@@ -101,7 +101,7 @@
               'padding-right': $cta.css('padding-right'),
               'padding-bottom': $cta.css('padding-bottom'),
               'padding-left': $cta.css('padding-left'),
-            })
+            });
 
         $cta.css('transition', 'none');
         $cta.css('visibility', 'hidden');

@@ -35,7 +35,8 @@
 
   /**
    * Override Drupal's default constructor
-   * We call the original, and replace the dragStart handler if it's the paragraph list
+   * We call the original, and replace the dragStart handler if it's the
+   * paragraph list
    */
   Drupal.tableDrag = function (table, tableSettings, base) {
     var tableDrag = new TableDrag(table, tableSettings);
@@ -48,10 +49,10 @@
   };
 
   /**
-   * The modified dragStart handler, which prevents dragging if services are open
-   * otherwise call the original handler
+   * The modified dragStart handler, which prevents dragging if services are
+   * open otherwise call the original handler
    */
-	var dragStart = function() {
+  var dragStart = function () {
     var numberOfOpenSections = this.$table.find('.paragraphs-subform').length;
 
     if (numberOfOpenSections) {
@@ -59,5 +60,5 @@
     }
 
     _dragStart.apply(this, arguments);
-	};
+  };
 })(jQuery, Drupal);
