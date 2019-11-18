@@ -1,49 +1,133 @@
-const gulp = require('gulp');
-const path = require('path');
-const exec = require('child_process').exec;
-const sass = require('gulp-sass');
-const imagemin = require('gulp-imagemin');
-const each = require('gulp-each');
-const changed = require('gulp-changed');
-const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
- 
+const autoprefixer      = require('autoprefixer');
+const browserSync       = require('browser-sync').create();
+const gulp              = require('gulp');
+const postcss           = require('gulp-postcss');
+const sass              = require('gulp-sass');
+const imagemin          = require('gulp-imagemin');
+const named             = require('vinyl-named');
+const sourcemaps        = require('gulp-sourcemaps');
+const webpack           = require('webpack-stream');
 
-gulp.task('default', function() {
-  gulp.watch('src/js/*.js', ['js']);
-  gulp.watch('src/scss/*.scss', ['sass'])
-  gulp.watch('src/img/*', ['img'])
-});
 
-gulp.task('js', function(done) {
+// Define settings
+const config = {
+  paths: {
+    scripts: {
+      src: 'src/js/*.js',
+      dest: 'js',
+    },
+    styles: {
+      src: './src/scss/*.scss',
+      dest: 'css',
+    },
+    images: {
+      src: 'src/img/*',
+      dest: 'images',
+    }
+  },
+  browserSync: {
+    proxy: 'https://tcs.test',
+    autoOpen: false,
+    browsers: [
+      'Google Chrome',
+    ],
+  }
+};
 
-  return gulp.src('src/js/*.js')
-    .pipe(changed('js'))
-    .pipe(each(function(content, file, callback) {
-      let fileName = 'src/js/' + path.basename(file.path);
-      exec(`parcel build ${fileName} --out-dir js`, {}, function(error, stdout, stderr) {
-        console.log(stdout);
-      });
-      // the first argument is an error,
-      // second is modified file
-      callback(null, null);
-    }));
-});
+// Styles Task - Dev version
+function stylesDev(done) {
+  gulp
+    .src(config.paths.styles.src)
+    .pipe(sourcemaps.init({ largeFile: true }))
+    .pipe(sass({
+      outputStyle: 'expanded',
+      precision: 10,
+      linefeed: 'lf'
+    }))
+    .on('error', sass.logError)
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write({ includeContent: false }))
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(config.paths.styles.dest))
+    .pipe(browserSync.stream());
+  done();
+}
 
-gulp.task('sass', function (done) {
-  return gulp.src('src/scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('css'));
-});
+// Styles Task - Prod version
+function stylesProd(done) {
+  gulp
+    .src(config.paths.styles.src)
+    .pipe(sass({
+      outputStyle: 'compact',
+      precision: 10,
+      linefeed: 'lf'
+    }))
+    .on('error', sass.logError)
+    .pipe(postcss([autoprefixer()]))
+    .pipe(gulp.dest(config.paths.styles.dest));
+  done();
+}
 
-gulp.task('img', function (done) {
-    return gulp.src('src/img/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('images'))
-});
+function scripts(done) {
+  gulp
+    .src(config.paths.scripts.src)
+    .pipe(named())
+    .pipe(webpack({
+      devtool: 'source-map',
+      mode: 'production',
+      module: {
+        rules: [
+          {
+            test: /\.m?js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env']
+              }
+            }
+          }
+        ]
+      }
+    }))
+    .pipe(gulp.dest(config.paths.scripts.dest))
+    .pipe(browserSync.stream());
+  done();
+}
 
-gulp.task('sync', function() {
+// Image Optimization Task
+function images(done) {
+ gulp
+   .src(config.paths.images.src)
+   .pipe(imagemin())
+   .pipe(gulp.dest(config.paths.images.dest));
+ done();
+}
+
+// BrowserSync Task
+function browserSyncWatch(done) {
   browserSync.init({
-      proxy: "project.localhost"
+    proxy: config.browserSync.proxy,
+    open: config.browserSync.autoOpen,
+    browser: config.browserSync.browsers,
   });
-});
+  gulp.watch(config.paths.styles.src, stylesDev);
+  gulp.watch(config.paths.scripts.src, scripts);
+  done();
+}
+
+// BrowserSync Reload Task
+function browserSyncReload(done) {
+  browserSync.reload();
+  done();
+}
+
+// Define complex tasks
+const compileDev = gulp.parallel(stylesDev, scripts, images);
+const compileProd = gulp.parallel(stylesProd, scripts, images);
+
+// export tasks
+exports.default = gulp.series(compileDev, browserSyncWatch);
+exports.prod = compileProd;
+exports.js = scripts;

@@ -1,31 +1,34 @@
 {
   "name": "tieto-theme",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "Drupal 8 Theme",
   "author": "Gergely Pap <gpap@brainsum.com>",
   "homepage": "https://www.brainsum.com/",
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp",
-    "watch": "gulp watch"
+    "start": "gulp",
+    "prod": "gulp prod"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.24.5",
-    "gulp": "^3.9.1",
-    "gulp-changed": "^3.2.0",
-    "gulp-each": "^0.5.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-imagemin": "^4.1.0"
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "autoprefixer": "^9.7.1",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "node-sass": "^4.12.0",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^5.2.1"
   },
   "dependencies": {
     "iphone-inline-video": "^2.2.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "menuspy": "^1.3.0",
-    "parcel-bundler": "^1.9.7",
     "rellax": "^0.1.0",
-    "responsive-tabs": "^1.6.1"
+    "responsive-tabs": "^1.6.3"
   }
 }

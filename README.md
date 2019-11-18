@@ -2,11 +2,12 @@
 
 [![Build Status](https://travis-ci.org/brainsum/tcs.svg?branch=master)](https://travis-ci.org/brainsum/tcs)
 
-## Encryption
-### Re-use
+## Setup
+### Encryption
+#### Re-use
 If you want to use the DB dump from an existing, encrypted instance, you need that specific key.
 
-### Create
+#### Create
 - Create a ```private_files``` folder in the root directory
 - Update settings.php so it's set:
     - ```$settings['file_private_path'] = '../private_files';```
@@ -15,6 +16,14 @@ If you want to use the DB dump from an existing, encrypted instance, you need th
 - Generate an encrypt.key file there
     - cd private_files/keys
     - ```dd bs=1 count=32 if=/dev/urandom | openssl base64 > encrypt.key```
+
+## Development
+
+### Front-end
+1. Navigate to folder "/web/themes/tieto_admin"
+2. Install dependencies (Optional): ```npm install```
+2. To start compiling files: ```npm start```
+3. Edit files in "/web/themes/tieto_admin/src" folder
 
 ## Drupal composer project
 

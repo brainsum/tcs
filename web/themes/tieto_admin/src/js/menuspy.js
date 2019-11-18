@@ -21,6 +21,5 @@ $menu.find('>li>a').on('click', function(e) {
 
   $lis.removeClass('active');
 
-  $this.parent().addClass('active'); 
+  $this.parent().addClass('active');
 });
-

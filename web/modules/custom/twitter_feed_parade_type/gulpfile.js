@@ -1,44 +1,63 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var $ = require('gulp-load-plugins')();
-var sourcemaps = require('gulp-sourcemaps');
+'use strict';
 
-var src = {
-  scss: 'scss/**/*.scss',
-  css: 'css/'
+const gulp              = require('gulp');
+const autoprefixer      = require('autoprefixer');
+const postcss           = require('gulp-postcss');
+const sass              = require('gulp-sass');
+const sourcemaps        = require('gulp-sourcemaps');
+
+const config = {
+  paths: {
+    sass: './scss/*.scss',
+    css: './css/',
+    img: './images/',
+  }
 };
 
-var reportError = function(error) {
-  $.notify({
-    title: 'Gulp Task Error',
-    message: 'Check the console.'
-  }).write(error);
-  console.log(error.toString());
-  this.emit('end');
-};
-
-gulp.task('sass', function() {
-  return gulp.src('scss/**/*.scss')
-    .pipe($.sourcemaps.init())
-    // Convert sass into css
-    .pipe($.sass({
-      outputStyle: 'expanded', // libsass doesn't support expanded yet
-      precision: 3
+/**
+ * SASS:Development Task
+ *
+ * Sass task for development with live injecting into all browsers
+ * @return {object} Autoprefixed CSS files with expanded style and sourcemaps.
+ */
+function sassDevTask(done) {
+  gulp
+    .src(config.paths.sass)
+    .pipe(sourcemaps.init({ largeFile: true }))
+    .pipe(sass({
+      outputStyle: 'expanded',
+      precision: 10
     }))
-    // Show errors
-    .on('error', reportError)
-    // Autoprefix properties
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions', 'ie 9']
+    .on('error', sass.logError)
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write({ includeContent: false }))
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(config.paths.css));
+  done();
+}
+
+/**
+ * SASS:Production Task
+ *
+ * Sass task for production with linting, to be stored in Git (run before
+ * commit)
+ * @return {object} Autoprefixed, minified, ordered and linted* CSS files without
+ * sourcemaps.
+ */
+function sassProdTask(done) {
+  gulp
+    .src(config.paths.sass)
+    .pipe(sass({
+      outputStyle: 'compact',
+      precision: 10
     }))
-    // Write sourcemaps
-    .pipe($.sourcemaps.write())
-    // Save css
-    .pipe(gulp.dest('css'));
-});
+    .on('error', sass.logError)
+    .pipe(postcss([autoprefixer()]))
+    .pipe(gulp.dest(config.paths.css));
+  done();
+}
 
-gulp.task('default', ['sass'], function () {
-  // Run sass tasks hen a .scss file changes.
-  gulp.watch('scss/**/*.scss', ['sass']);
-});
-
+// export tasks
+exports.default = sassDevTask;
+exports.prod = sassProdTask;
