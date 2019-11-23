@@ -3642,17 +3642,17 @@
         },
         {
             "name": "drupal/filefield_sources_jsonapi",
-            "version": "1.0.0-beta6",
+            "version": "1.0.0-beta7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/filefield_sources_jsonapi.git",
-                "reference": "8.x-1.0-beta6"
+                "reference": "8.x-1.0-beta7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/filefield_sources_jsonapi-8.x-1.0-beta6.zip",
-                "reference": "8.x-1.0-beta6",
-                "shasum": "f8024a18444ccfe613160604083fc3e0cf7a843a"
+                "url": "https://ftp.drupal.org/files/projects/filefield_sources_jsonapi-8.x-1.0-beta7.zip",
+                "reference": "8.x-1.0-beta7",
+                "shasum": "0f48de47a45fac7c21d4fb25caca71bceef95efa"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -3664,8 +3664,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta6",
-                    "datestamp": "1544535784",
+                    "version": "8.x-1.0-beta7",
+                    "datestamp": "1562232185",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3697,7 +3697,7 @@
             "description": "JSON API remote file field source.",
             "homepage": "https://www.drupal.org/project/filefield_sources_jsonapi",
             "support": {
-                "source": "http://cgit.drupalcode.org/filefield_sources_jsonapi"
+                "source": "https://git.drupalcode.org/project/filefield_sources_jsonapi"
             }
         },
         {
@@ -10412,7 +10412,7 @@
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/devel.git",
+                "url": "https://git.drupal.org/project/devel",
                 "reference": "8.x-1.2"
             },
             "dist": {
@@ -10815,12 +10815,12 @@
             "version": "v1.6.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bovigo/vfsStream.git",
+                "url": "https://github.com/mikey179/vfsStream.git",
                 "reference": "d5fec95f541d4d71c4823bb5e30cf9b9e5b96145"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
+                "url": "https://api.github.com/repos/mikey179/vfsStream/zipball/d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
                 "reference": "d5fec95f541d4d71c4823bb5e30cf9b9e5b96145",
                 "shasum": ""
             },
@@ -11500,7 +11500,6 @@
                 "mock",
                 "xunit"
             ],
-            "abandoned": true,
             "time": "2015-10-02T06:51:40+00:00"
         },
         {
