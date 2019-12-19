@@ -1931,50 +1931,79 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-security-advisories.git",
-                "reference": "ce37bfe83d9a1c6a9b513c59c8fabee545326cb3"
+                "reference": "9984b80953f50ead63aaf90368f60556a8c9534f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-security-advisories/zipball/9984b80953f50ead63aaf90368f60556a8c9534f",
+                "reference": "9984b80953f50ead63aaf90368f60556a8c9534f",
+                "shasum": ""
             },
             "conflict": {
+                "drupal/acquia_connector": "<1.16",
                 "drupal/acquia_contenthub": "<1.0,<1.4",
+                "drupal/addtoany": "<1.11",
                 "drupal/alinks": "<1.1",
                 "drupal/auto_login_url": "<1.2",
+                "drupal/bat": "<1.2",
                 "drupal/bootstrap": "<3.5,<3.14",
                 "drupal/ckeditor_uploadimage": "<1.5",
+                "drupal/cleantalk": "<2.7",
                 "drupal/commerce": "<2.9",
-                "drupal/config_perms": "<1.1",
+                "drupal/config_perms": "<1.1,<1.2",
                 "drupal/config_update": "<1.5",
-                "drupal/core": "<8.0.0-beta2,<8.0.4,<8.1.3,<8.1.7,<8.1.10,<8.2.3,<8.2.7,<8.2.8,<8.3.1,<8.3.4,<8.3.7,<8.3.9,<8.4.6,<8.4.7,<8.4.8,<8.5.1,<8.5.2,<8.5.3,<8.5.6,<8.5.8,<8.6.2",
+                "drupal/core": "<8.0.0-beta2,<8.0.4,<8.1.3,<8.1.7,<8.1.10,<8.2.3,<8.2.7,<8.2.8,<8.3.1,<8.3.4,<8.3.7,<8.3.9,<8.4.6,<8.4.7,<8.4.8,<8.5.1,<8.5.2,<8.5.3,<8.5.6,<8.5.8,<8.5.9,<8.5.11,<8.5.14,<8.5.15,<8.6.2,<8.6.6,<8.6.10,<8.6.13,<8.6.15,<8.6.16,<8.7.0-rc1,<8.7.1,<8.7.5,<8.7.11,<8.8.1",
+                "drupal/create_user_permission": "<1.2",
                 "drupal/cshs": "<1.0-beta2",
                 "drupal/decoupled_router": "<1.2",
                 "drupal/drd": "<3.2,<3.14",
                 "drupal/drd_agent": "<3.1,<3.7",
-                "drupal/drupal": "<8.0.0-beta2,<8.0.4,<8.1.3,<8.1.7,<8.1.10,<8.2.3,<8.2.7,<8.2.8,<8.3.1,<8.3.4,<8.3.7,<8.3.9,<8.4.6,<8.4.7,<8.4.8,<8.5.1,<8.5.2,<8.5.3,<8.5.6,<8.5.8,<8.6.2",
+                "drupal/drupal": "<8.0.0-beta2,<8.0.4,<8.1.3,<8.1.7,<8.1.10,<8.2.3,<8.2.7,<8.2.8,<8.3.1,<8.3.4,<8.3.7,<8.3.9,<8.4.6,<8.4.7,<8.4.8,<8.5.1,<8.5.2,<8.5.3,<8.5.6,<8.5.8,<8.5.9,<8.5.11,<8.5.14,<8.5.15,<8.6.2,<8.6.6,<8.6.10,<8.6.13,<8.6.15,<8.6.16,<8.7.0-rc1,<8.7.1,<8.7.5,<8.7.11,<8.8.1",
                 "drupal/ds": "<2.7,<3.0",
                 "drupal/dynamic_entity_reference": "<1.0-beta2",
                 "drupal/echo": "<1.7",
                 "drupal/editor_file": "<1.2",
+                "drupal/elf": "<1.2",
                 "drupal/entity_delete": "<1.4",
                 "drupal/entity_ref_tab_formatter": "<1.3",
-                "drupal/eu_cookie_compliance": "<1.1",
+                "drupal/eu_cookie_compliance": "<1.1,<1.3",
                 "drupal/exif": "<1.1",
+                "drupal/existing_values_autocomplete_widget": "<1.2",
+                "drupal/expand_collapse_formatter": "<1.1",
+                "drupal/facets": "<1.3",
+                "drupal/fontawesome": "<2.12",
+                "drupal/forms_steps": "<1.2",
                 "drupal/fraction": "<1.2",
                 "drupal/google_analytics": "<2.1",
+                "drupal/gutenberg": "<1.7,<1.8",
                 "drupal/hotjar": "<1.0",
                 "drupal/htmlmail": "<3.0-alpha2",
+                "drupal/imagecache_external": "<1.1",
+                "drupal/img_annotator": "<1.2",
                 "drupal/instagram_block": "<2.0-alpha2",
-                "drupal/jsonapi": "<1.9,<1.10,<1.14,<1.16",
+                "drupal/jsonapi": "<1.9,<1.10,<1.14,<1.16,<1.24,<1.25,<2.0-rc4,<2.3",
                 "drupal/ldap": "<3.0-alpha1,<3.0-beta2",
                 "drupal/like_dislike": "<1.1",
                 "drupal/linkit": "<4.3",
+                "drupal/login_alert": "<1.3",
                 "drupal/menu_export": "<1.2",
+                "drupal/menu_item_extras": "<2.5",
+                "drupal/metatag": "<1.8,<1.9",
+                "drupal/modal_page": "<2.5",
+                "drupal/multiple_registration": "<2.8",
                 "drupal/node_view_permissions": "<1.1",
+                "drupal/nodeaccess": "<1.0-beta3",
                 "drupal/nodejs": "<1.0",
                 "drupal/oauth": "<2.1",
+                "drupal/opigno_forum": "<1.2",
+                "drupal/opigno_learning_path": "<1.4",
                 "drupal/panels": "<3.0-beta5",
                 "drupal/panopoly": "<2.0-alpha7",
-                "drupal/paragraphs": "<1.5",
-                "drupal/permissions_by_term": "<1.11,<1.35",
+                "drupal/paragraphs": "<1.5,<1.6",
+                "drupal/permissions_by_term": "<1.09,<1.11,<1.35,<2.0,<2.11",
                 "drupal/phpconfig": "<1.1",
                 "drupal/piwik": "<1.1",
+                "drupal/preview_link": "<1.1",
                 "drupal/prlp": "<1.3",
                 "drupal/protected_pages": "<1.1",
                 "drupal/readonlymode": "<1.0",
@@ -1982,11 +2011,19 @@
                 "drupal/salesforce": "<3.1",
                 "drupal/search_api": "<1.0-alpha14",
                 "drupal/session_limit": "<1.0-beta3",
+                "drupal/simple_amp": "<1.16",
+                "drupal/smart_trim": "<1.2",
                 "drupal/smtp": "<1.0-beta3",
+                "drupal/social": "<6.5,<7.1",
                 "drupal/stacks": "<1.1",
+                "drupal/super_login": "<1.3",
                 "drupal/svg_formatter": "<1.06",
                 "drupal/swiftmailer": "<1.0-beta1",
+                "drupal/tablefield": "<2.1",
+                "drupal/taxonomy_access_fix": "<2.7",
                 "drupal/tft": "<1.0-beta2",
+                "drupal/tmgmt": "<1.7",
+                "drupal/video": "<1.4",
                 "drupal/workbench_moderation": "<1.4",
                 "drupal/xmlsitemap": "<1.0-alpha2"
             },
@@ -1996,7 +2033,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities",
-            "time": "2018-06-13T16:06:25+00:00"
+            "time": "2019-12-18T20:08:45+00:00"
         },
         {
             "name": "drupal/abjs",
@@ -3683,10 +3720,13 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/filefield_sources.git",
-                "reference": "b19c6a839804f47587828d4a50e29e0720fa4c08"
+                "reference": "9b3bd4e8bc3a40bb610dca4fcc5faf5eaca1e906"
             },
             "require": {
                 "drupal/core": "*"
+            },
+            "require-dev": {
+                "drupal/imce": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -3694,8 +3734,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1487711283",
+                    "version": "8.x-1.0-alpha1+14-dev",
+                    "datestamp": "1575164585",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3707,24 +3747,33 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
-                    "name": "profak",
-                    "homepage": "https://www.drupal.org/user/782534"
+                    "name": "Nate Lampton (quicksketch)",
+                    "homepage": "https://www.drupal.org/u/quicksketch",
+                    "role": "Maintainer"
                 },
                 {
-                    "name": "quicksketch",
-                    "homepage": "https://www.drupal.org/user/35821"
+                    "name": "Andrey Khromyshev (profak)",
+                    "homepage": "https://www.drupal.org/u/profak",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "David Valdez (gnuget)",
+                    "homepage": "https://www.drupal.org/u/gnuget",
+                    "role": "Maintainer"
                 }
             ],
             "description": "Extends File fields to allow referencing of existing files, remote files, and server files.",
             "homepage": "https://www.drupal.org/project/filefield_sources",
             "support": {
-                "source": "http://cgit.drupalcode.org/filefield_sources"
+                "source": "https://git.drupalcode.org/project/filefield_sources",
+                "issues": "https://www.drupal.org/project/issues/filefield_sources",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2017-02-21T21:07:00+00:00"
+            "time": "2019-12-01T01:42:11+00:00"
         },
         {
             "name": "drupal/filefield_sources_jsonapi",
@@ -5778,7 +5827,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/scheduled_updates.git",
-                "reference": "e692a82707ba6f230ee8722b6b73f9d38e9fad97"
+                "reference": "9d8e074bbc239da48b7a42903f530f01c6e04152"
             },
             "require": {
                 "drupal/core": "*",
@@ -5790,8 +5839,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha5+14-dev",
-                    "datestamp": "1482247383",
+                    "version": "8.x-1.0-alpha6+2-dev",
+                    "datestamp": "1524483484",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -5804,7 +5853,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -5815,9 +5864,9 @@
             "description": "Create scheduled updates to field values on entities such content, users, and terms.",
             "homepage": "https://www.drupal.org/project/scheduled_updates",
             "support": {
-                "source": "http://cgit.drupalcode.org/scheduled_updates"
+                "source": "https://git.drupalcode.org/project/scheduled_updates"
             },
-            "time": "2017-11-22T17:35:46+00:00"
+            "time": "2018-04-23T11:34:02+00:00"
         },
         {
             "name": "drupal/seckit",
@@ -6012,7 +6061,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/view_mode_selector.git",
-                "reference": "11c9ad2148d5b9c3bd552883da54b401736d0b31"
+                "reference": "93d105f77d073ac9eb5253024058991aa3b10cf8"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -6024,7 +6073,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1493198644",
+                    "datestamp": "1542124980",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -6048,9 +6097,9 @@
             "description": "Provides a new field type for changing the view mode of an entity.",
             "homepage": "https://www.drupal.org/project/view_mode_selector",
             "support": {
-                "source": "http://cgit.drupalcode.org/view_mode_selector"
+                "source": "https://git.drupalcode.org/project/view_mode_selector"
             },
-            "time": "2018-02-12T12:03:58+00:00"
+            "time": "2018-11-13T16:00:21+00:00"
         },
         {
             "name": "drupal/view_unpublished",
@@ -8540,16 +8589,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.4.32",
+            "version": "v3.4.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "233f40cbebd595ffd91ddf291355f8a930a13777"
+                "reference": "d2d0cfe8e319d9df44c4cca570710fcf221d4593"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/233f40cbebd595ffd91ddf291355f8a930a13777",
-                "reference": "233f40cbebd595ffd91ddf291355f8a930a13777",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/d2d0cfe8e319d9df44c4cca570710fcf221d4593",
+                "reference": "d2d0cfe8e319d9df44c4cca570710fcf221d4593",
                 "shasum": ""
             },
             "require": {
@@ -8590,7 +8639,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-02T16:15:21+00:00"
+            "time": "2019-11-28T12:52:59+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -8800,16 +8849,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.12.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
+                "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
-                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7b4aab9743c30be783b73de055d24a39cf4b954f",
+                "reference": "7b4aab9743c30be783b73de055d24a39cf4b954f",
                 "shasum": ""
             },
             "require": {
@@ -8821,7 +8870,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12-dev"
+                    "dev-master": "1.13-dev"
                 }
             },
             "autoload": {
@@ -8855,20 +8904,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-08-06T08:03:45+00:00"
+            "time": "2019-11-27T14:18:11+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
-            "version": "v1.12.0",
+            "version": "v1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php70.git",
-                "reference": "54b4c428a0054e254223797d2713c31e08610831"
+                "reference": "af23c7bb26a73b850840823662dda371484926c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/54b4c428a0054e254223797d2713c31e08610831",
-                "reference": "54b4c428a0054e254223797d2713c31e08610831",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/af23c7bb26a73b850840823662dda371484926c4",
+                "reference": "af23c7bb26a73b850840823662dda371484926c4",
                 "shasum": ""
             },
             "require": {
@@ -8878,7 +8927,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12-dev"
+                    "dev-master": "1.13-dev"
                 }
             },
             "autoload": {
@@ -8914,7 +8963,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-08-06T08:03:45+00:00"
+            "time": "2019-11-27T13:56:44+00:00"
         },
         {
             "name": "symfony/process",
@@ -10869,7 +10918,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/examples.git",
-                "reference": "0be75808520a7c921ad7c87ac1cc87d716f5dc51"
+                "reference": "56eebb7e2796bd8da2a2e1d22c1796ad734a5c46"
             },
             "require": {
                 "drupal/core": "*"
@@ -10886,11 +10935,11 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1536200285",
+                    "version": "8.x-1.0+8-dev",
+                    "datestamp": "1572527286",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -10960,6 +11009,10 @@
                     "homepage": "https://www.drupal.org/user/65793"
                 },
                 {
+                    "name": "valthebald",
+                    "homepage": "https://www.drupal.org/user/239562"
+                },
+                {
                     "name": "yched",
                     "homepage": "https://www.drupal.org/user/39567"
                 }
@@ -10970,8 +11023,7 @@
                 "source": "http://cgit.drupalcode.org/examples",
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
-            },
-            "time": "2018-09-10T23:01:03+00:00"
+            }
         },
         {
             "name": "drupal/toolbar_anti_flicker",
