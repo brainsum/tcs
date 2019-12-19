@@ -19,7 +19,6 @@ dependencies:
     - filefield_sources
     - layout_discovery
     - link
-    - workbench_moderation
 third_party_settings:
   field_layout:
     id: layout_onecol
