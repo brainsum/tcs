@@ -54,7 +54,7 @@
         "drupal/config_readonly": "^1.0",
         "drupal/contact_block": "~1.2",
         "drupal/content_entity_language_switcher": "dev-8.x-1.x",
-        "drupal/core": "^8.7.8",
+        "drupal/core": "^8.7.11",
         "drupal/dbee": "^2.0",
         "drupal/diff": "^1.0",
         "drupal/encrypt": "^3.0@alpha",
@@ -87,6 +87,7 @@
         "drupal/view_unpublished": "dev-1.x",
         "drupal/workbench_moderation": "^1.4",
         "drush/drush": "^9.0",
+        "pear/archive_tar": "^1.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },
