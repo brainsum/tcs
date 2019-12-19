@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8ab6200698a5ff4ffbd9ff7f52cf0a1",
+    "content-hash": "6d6d6958606a4cc811df550c757a9a68",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1023,6 +1023,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
