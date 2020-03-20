@@ -54,7 +54,7 @@
         "drupal/config_readonly": "^1.0",
         "drupal/contact_block": "~1.2",
         "drupal/content_entity_language_switcher": "dev-8.x-1.x",
-        "drupal/core": "^8.7.11",
+        "drupal/core": "~8.7.11",
         "drupal/dbee": "^2.0",
         "drupal/diff": "^1.0",
         "drupal/encrypt": "^3.0@alpha",
