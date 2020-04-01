@@ -51,6 +51,7 @@
         "drupal/allowed_formats": "^1.1",
         "drupal/client_support": "dev-master",
         "drupal/cloudfront_purger": "~1.1",
+        "drupal/config_ignore": "^2.2",
         "drupal/config_readonly": "^1.0",
         "drupal/contact_block": "~1.2",
         "drupal/content_entity_language_switcher": "dev-8.x-1.x",
