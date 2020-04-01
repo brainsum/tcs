@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_domain_admin
   module:
     - field_layout
     - layout_discovery
@@ -26,4 +27,5 @@ content:
     third_party_settings: {  }
 hidden:
   dbee: true
+  field_domain_admin: true
   langcode: true

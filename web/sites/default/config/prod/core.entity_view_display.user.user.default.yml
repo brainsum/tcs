@@ -2,6 +2,8 @@ uuid: 90eed014-58f2-4b0e-a179-8a20e1335c59
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_domain_admin
   module:
     - field_layout
     - layout_discovery
@@ -24,4 +26,5 @@ content:
     third_party_settings: {  }
 hidden:
   dbee: true
+  field_domain_admin: true
   langcode: true

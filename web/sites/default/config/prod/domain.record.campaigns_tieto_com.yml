@@ -1,0 +1,11 @@
+uuid: 57204465-c42e-4f35-81d7-329bfb748f0c
+langcode: en
+status: true
+dependencies: {  }
+id: campaigns_tieto_com
+domain_id: 11042181
+hostname: campaigns.tieto.com
+name: 'Tieto Campaign Sites'
+scheme: https
+weight: 0
+is_default: true
