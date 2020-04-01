@@ -19,6 +19,15 @@ If you want to use the DB dump from an existing, encrypted instance, you need th
 
 ## Development
 
+### Domain setup
+The default domain is the live site domain. For local/dev sites domain need's
+to be override in the settings.php:
+```
+// Domain settings
+$settings['domain.record.campaigns_tieto_com']['hostname'] = 'tcs.docker.localhost:8000';
+$settings['domain.record.campaigns_tieto_com']['scheme'] = 'http';
+```
+
 ### Front-end
 1. Navigate to folder "/web/themes/tieto_admin"
 2. Install dependencies (Optional): ```npm install```
