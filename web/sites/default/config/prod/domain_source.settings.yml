@@ -1,3 +1,15 @@
-exclude_routes: {  }
+exclude_routes:
+  delete_form: delete_form
+  delete_multiple_form: delete_multiple_form
+  edit_form: edit_form
+  version_history: version_history
+  revision: revision
+  create: create
+  latest_version: latest_version
+  content_translation_overview: content_translation_overview
+  content_translation_add: content_translation_add
+  content_translation_edit: content_translation_edit
+  content_translation_delete: content_translation_delete
+  canonical: '0'
 _core:
   default_config_hash: mqVsLCNF_WfM-XDhZ0nuTWd7bjvrqR5a6K_-vd0bwjU
