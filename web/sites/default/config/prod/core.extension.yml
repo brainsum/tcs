@@ -33,6 +33,7 @@ module:
   domain: 0
   domain_config: 0
   domain_site_settings: 0
+  domain_source: 0
   dynamic_page_cache: 0
   editor: 0
   embed: 0
