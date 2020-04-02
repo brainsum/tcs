@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9c03cc462e3e5ef97b15cda2f0dc267",
+    "content-hash": "bdb2564873a71a75070e1fc2d0a27f87",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3334,6 +3334,66 @@
             "homepage": "https://www.drupal.org/project/domain",
             "support": {
                 "source": "https://git.drupalcode.org/project/domain"
+            }
+        },
+        {
+            "name": "drupal/domain_path",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/domain_path.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/domain_path-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "5b703be9d5fef93b590a498a9e241aba9c153479"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/domain": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1526042884",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "grndlvl",
+                    "homepage": "https://www.drupal.org/user/103553"
+                },
+                {
+                    "name": "skrasulevskiy",
+                    "homepage": "https://www.drupal.org/user/2440780"
+                },
+                {
+                    "name": "tonystar",
+                    "homepage": "https://www.drupal.org/user/787240"
+                }
+            ],
+            "description": "Allows separate path aliases per domain.",
+            "homepage": "https://www.drupal.org/project/domain_path",
+            "support": {
+                "source": "https://git.drupalcode.org/project/domain_path"
             }
         },
         {
@@ -13049,6 +13109,7 @@
         "drupal/client_support": 20,
         "drupal/content_entity_language_switcher": 20,
         "drupal/domain": 15,
+        "drupal/domain_path": 10,
         "drupal/encrypt": 15,
         "drupal/exception_mailer": 20,
         "drupal/field_encrypt": 15,

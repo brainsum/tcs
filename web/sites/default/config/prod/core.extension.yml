@@ -32,6 +32,7 @@ module:
   diff: 0
   domain: 0
   domain_config: 0
+  domain_path: 0
   domain_site_settings: 0
   domain_source: 0
   dynamic_page_cache: 0
