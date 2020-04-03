@@ -15,7 +15,8 @@ dependencies:
 third_party_settings:
   field_layout:
     id: layout_onecol
-    settings: {  }
+    settings:
+      label: ''
 _core:
   default_config_hash: cDxKUg0Aut3UShpQpAxIrtISJpOrFeFmY1yjXTkXXkQ
 id: contact_message.support_form.default
