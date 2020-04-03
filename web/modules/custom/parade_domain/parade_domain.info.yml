@@ -1,0 +1,10 @@
+name: Parade Domain access
+type: module
+description: Campaign pages domain functionality
+core: 8.x
+package: Parade
+
+dependencies:
+  - domain:domain_source
+  - domain_path:domain_path
+  - domain_site_settings:domain_site_settings

@@ -93,6 +93,7 @@ module:
   parade_conditional_field: 0
   parade_content_lister: 0
   parade_demo: 0
+  parade_domain: 0
   paragraphs_type_permissions: 0
   path: 0
   path_alias: 0
