@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Code for campaign_pages module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\domain_path\Entity\DomainPath;
+
+/**
+ * Implements hook_help().
+ */
+function parade_domain_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the campain_pages module.
+    case 'help.page.parade_domain':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Campaign page domain access functionality') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ *
+ * Set front page for selected domain, if '/' path alias was added for domain.
+ */
+function parade_domain_domain_path_insert(DomainPath $domain_path) {
+  _parade_domain_update_domain_site_frontpage($domain_path);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ *
+ * Set front page for selected domain, if '/' path alias was added for domain.
+ */
+function parade_domain_domain_path_update(DomainPath $domain_path) {
+  _parade_domain_update_domain_site_frontpage($domain_path);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ *
+ * Remove domain specific front page if '/' domain alias was deleted.
+ */
+function parade_domain_domain_path_delete(DomainPath $domain_path) {
+  if (preg_match('/node\/(\d+)/', $domain_path->getSource())) {
+    /** @var \Drupal\campaign_pages\Service\OnepageIdAutoincrement $onepageIdService */
+    \Drupal::service('parade_domain.helper')->removeDomainSiteFrontpage($domain_path);
+  }
+}
+
+/**
+ * @param \Drupal\domain_path\Entity\DomainPath $domain_path
+ */
+function _parade_domain_update_domain_site_frontpage(DomainPath $domain_path) {
+  // Set front page per domain: domain_site_settings.
+  if (preg_match('/node\/(\d+)/', $domain_path->getSource(), $matches)) {
+    /** @var \Drupal\campaign_pages\Service\OnepageIdAutoincrement $onepageIdService */
+    \Drupal::service('parade_domain.helper')->updateDomainSiteFrontpage($domain_path, $matches[1]);
+  }
+}

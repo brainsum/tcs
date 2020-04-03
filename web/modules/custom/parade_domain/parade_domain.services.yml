@@ -1,0 +1,4 @@
+services:
+  parade_domain.helper:
+    class: Drupal\parade_domain\ParadeDomainHelper
+    arguments: ['@config.factory', '@entity_type.manager']
