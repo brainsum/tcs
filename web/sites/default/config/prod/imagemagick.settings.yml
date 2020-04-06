@@ -54,3 +54,4 @@ image_formats:
     enabled: false
 _core:
   default_config_hash: BcgWSGd8Ax_rsWPUuZ0J9X4l-N0TBXFIIj3kOIoyCpA
+prepend_pre_source: false
