@@ -378,28 +378,6 @@ function campaign_pages_preprocess_paragraph(&$variables) {
 }
 
 /**
- * Implements hook_imagemagick_arguments_alter().
- *
- * Removes quality argument if it's NULL.
- * It's necessary to avoid errors when quality is empty in the config.
- */
-function campaign_pages_imagemagick_arguments_alter(ImagemagickToolkit $toolkit, $command) {
-  // @todo: Check if this has been patched in imagemagick.
-  if ($command === 'convert' || $command === 'gm') {
-    $index = $toolkit->findArgument('-quality');
-
-    if ($index !== FALSE) {
-      $quality = $toolkit->getArguments()[$index];
-
-      // Space at the and because NULL casts to an empty string.
-      if ($quality === '-quality ') {
-        $toolkit->removeArgument($index);
-      }
-    }
-  }
-}
-
-/**
  * Implements hook_preprocess_HOOK().
  *
  * Set classes for node clone form.
