@@ -1,4 +1,4 @@
-quality: null
+quality: 75
 binaries: imagemagick
 path_to_binaries: ''
 prepend: ''
