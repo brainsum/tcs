@@ -7,6 +7,10 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\domain_path\Entity\DomainPath;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Implements hook_help().
@@ -52,6 +56,66 @@ function parade_domain_domain_path_delete(DomainPath $domain_path) {
     /** @var \Drupal\campaign_pages\Service\OnepageIdAutoincrement $onepageIdService */
     \Drupal::service('parade_domain.helper')->removeDomainSiteFrontpage($domain_path);
   }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function parade_domain_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'node_campaign_edit_form') {
+
+    if (isset($form['field_domain_source'])) {
+      $domains = \Drupal::entityTypeManager()->getStorage('domain')->loadMultiple();
+      foreach ($form['field_domain_source']['widget']['#options'] as $key => $label) {
+        // @todo - get the host name with overrides.
+        $form['field_domain_source']['widget']['#options'][$key] = $domains[$key]->getScheme(TRUE) . $domains[$key]->getHostname();
+      }
+      // Add input for domain path alias.
+      $domain = reset($form['field_domain_source']['widget']['#default_value']);
+      $default_value = $form['path']['domain_path'][$domain]['#default_value'];
+
+      if (!$default_value) {
+        $default_value = $form['path']['widget'][0]['alias']['#default_value'];
+      }
+
+      $form['field_domain_source']['parade_domain_path_alias'] = [
+        '#type' => 'textfield',
+        '#title' => 'Domain URL alias',
+        '#description' => "Add alias starting with '/'. For front page just enter '/'.",
+        '#default_value' => $default_value,
+        '#size' => 35,
+        '#weight' => $form['field_domain_source']['#weight'] + 0.1,
+      ];
+
+      // Hide URL alis, domain alias fields, we manage domain alias from js.
+      $form['path']["#acecss"] = FALSE;
+      $form['path']['#attributes']['class'][] = 'visually-hidden';
+      $form['path']['widget']['#attributes']['class'][] = 'visually-hidden';
+      // Add custom css, js.
+      $form['#attached']['library'][] = 'parade_domain/domain.path_alias';
+    }
+
+    // Set custom redirection callback to stay on the node edit form after submit.
+    if (isset($form['actions']['submit'])) {
+      $form['actions']['submit']['#submit'][] = '_parade_domain_form_submit';
+    }
+  }
+}
+
+/**
+ * Custom redirect for Campaign node submit.
+ *
+ * @todo - do it in _campaign_pages_disable_form_redirect().
+ *
+ * @param array $form
+ *   The form build array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state interface.
+ */
+function _parade_domain_form_submit(array &$form, FormStateInterface $form_state) {
+  $nid = $form_state->getValue('nid');
+  $url = Url::fromRoute('entity.node.edit_form', ['node' => $nid])->toString();
+  $form_state->setResponse( new RedirectResponse($url, Response::HTTP_SEE_OTHER));
 }
 
 /**
