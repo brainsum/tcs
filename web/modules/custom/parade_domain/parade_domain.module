@@ -77,6 +77,9 @@ function parade_domain_form_alter(&$form, FormStateInterface $form_state, $form_
       if (!$default_value) {
         $default_value = $form['path']['widget'][0]['alias']['#default_value'];
       }
+      // Empty URL alias to avoid 'Domain path matches the default path alias.'
+      // validation error.
+      $form['path']['widget'][0]['alias']['#default_value'] = '';
 
       $form['field_domain_source']['parade_domain_path_alias'] = [
         '#type' => 'textfield',
