@@ -44,7 +44,7 @@ class ParadeDomainHelper implements ParadeDomainHelperInterface {
   public function updateDomainSiteFrontpage(DomainPath $domain_path, int $nid) {
     $original = $domain_path->original;
 
-    if (!($domain_path->getAlias() === '/' || $original->getAlias() === '/')) {
+    if (!($domain_path->getAlias() === '/' || ($original && $original->getAlias() === '/'))) {
       return;
     }
 
