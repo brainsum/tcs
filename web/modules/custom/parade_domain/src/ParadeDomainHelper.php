@@ -56,13 +56,14 @@ class ParadeDomainHelper implements ParadeDomainHelperInterface {
     // Front page should be set to the node.
     if ($domain_path->getAlias() === '/') {
       $data['site_frontpage'] = '/node/' . $nid;
+      $config->set($domainId, $data);
     }
     // Front page should be removed - the default will be added.
     elseif ($original && $original->getAlias() === '/') {
       $data['site_frontpage'] = $defaultSiteData['site_frontpage'];
+      $config->set($original->getDomainId(), $data);
     }
 
-    $config->set($domainId, $data);
     $config->save(TRUE);
   }
 
@@ -78,38 +79,25 @@ class ParadeDomainHelper implements ParadeDomainHelperInterface {
     $domainId = $domain_path->getDomainId();
     $defaultSiteData = $this->getDefaultSiteData();
 
-    $data = $config->get($domainId) ?? $defaultSiteData;
-    $data['site_frontpage'] = $defaultSiteData['site_frontpage'];
-    $config->set($domainId, $data);
+    $config->set($domainId, $defaultSiteData);
     $config->save(TRUE);
   }
 
   /**
-   * @return array|mixed|null
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @return array
    */
   private function getDefaultSiteData() {
-    $config = $this->configFactory->getEditable('domain_site_settings.domainconfigsettings');
-    $defaultDomainId = $this->entityTypeManager->getStorage('domain')->loadDefaultId();
-    $defaultSiteData = $config->get($defaultDomainId);
+    $siteConfig = $this->configFactory->get('system.site');
+    $siteConfigPage = $siteConfig->getOriginal('page', FALSE);
 
-    if (!$defaultSiteData) {
-      $siteConfig = $this->configFactory->get('system.site');
-      $siteConfigPage = $siteConfig->get('page');
-      $defaultSiteData = [
+    return [
         'site_name' => $siteConfig->get('name'),
         'site_slogan' => $siteConfig->get('slogan'),
         'site_mail' => $siteConfig->get('mail'),
         'site_frontpage' => $siteConfigPage['front'],
         'site_403' => $siteConfigPage['403'],
         'site_404' => $siteConfigPage['404'],
-      ];
-      $config->set($defaultDomainId, $defaultSiteData);
-      $config->save(TRUE);
-    }
-
-    return $defaultSiteData;
+    ];
   }
 
 }
