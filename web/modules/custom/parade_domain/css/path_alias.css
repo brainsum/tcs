@@ -1,0 +1,15 @@
+.field--name-field-domain-source {
+  display: flex;
+}
+
+.field--name-field-domain-source .form-item-field-domain-source {
+  margin-right: 20px;
+}
+
+.form-item-parade-domain-path-alias input.form-text[name=parade_domain_path_alias] {
+  padding: 2px;
+}
+
+details.path-form {
+  display: none;
+}
