@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.campaign.field_computed_image
+    - field.field.node.campaign.field_domain_source
     - field.field.node.campaign.field_file
     - field.field.node.campaign.field_meta_tags
     - field.field.node.campaign.field_thumbnail
@@ -70,6 +71,7 @@ content:
 hidden:
   addtoany: true
   field_computed_image: true
+  field_domain_source: true
   field_file: true
   field_thumbnail: true
   langcode: true

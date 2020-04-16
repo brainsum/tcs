@@ -19,6 +19,8 @@ module:
   client_support_contact_form: 0
   cloudfront_purger: 0
   config: 0
+  config_filter: 0
+  config_ignore: 0
   config_readonly: 0
   contact: 0
   content_entity_language_switcher: 0
@@ -28,6 +30,11 @@ module:
   datetime: 0
   dblog: 0
   diff: 0
+  domain: 0
+  domain_config: 0
+  domain_path: 0
+  domain_site_settings: 0
+  domain_source: 0
   dynamic_page_cache: 0
   editor: 0
   embed: 0
@@ -85,6 +92,7 @@ module:
   parade_conditional_field: 0
   parade_content_lister: 0
   parade_demo: 0
+  parade_domain: 0
   paragraphs_type_permissions: 0
   path: 0
   public_preview: 0

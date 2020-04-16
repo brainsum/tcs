@@ -1,0 +1,137 @@
+<?php
+
+/**
+ * @file
+ * Code for campaign_pages module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\domain_path\Entity\DomainPath;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * Implements hook_help().
+ */
+function parade_domain_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the campain_pages module.
+    case 'help.page.parade_domain':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Campaign page domain access functionality') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ *
+ * Set front page for selected domain, if '/' path alias was added for domain.
+ */
+function parade_domain_domain_path_insert(DomainPath $domain_path) {
+  _parade_domain_update_domain_site_frontpage($domain_path);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ *
+ * Set front page for selected domain, if '/' path alias was added for domain.
+ */
+function parade_domain_domain_path_update(DomainPath $domain_path) {
+  _parade_domain_update_domain_site_frontpage($domain_path);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ *
+ * Remove domain specific front page if '/' domain alias was deleted.
+ */
+function parade_domain_domain_path_delete(DomainPath $domain_path) {
+  if (preg_match('/node\/(\d+)/', $domain_path->getSource())) {
+    /** @var \Drupal\campaign_pages\Service\OnepageIdAutoincrement $onepageIdService */
+    \Drupal::service('parade_domain.helper')->removeDomainSiteFrontpage($domain_path);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function parade_domain_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['parade_onepage_sections'])) {
+
+    if (isset($form['field_domain_source'])) {
+      $domains = \Drupal::entityTypeManager()->getStorage('domain')->loadMultiple();
+      foreach ($form['field_domain_source']['widget']['#options'] as $key => $label) {
+        /** @var \Drupal\domain\DomainInterface $domain */
+        // @todo - get the host name with overrides.
+        if (isset($domains[$key]) && $domain = $domains[$key]) {
+          $form['field_domain_source']['widget']['#options'][$key] = $domain->getScheme(TRUE) . $domain->getHostname();
+        }
+      }
+      // Add input for domain path alias.
+      if ($domain = reset($form['field_domain_source']['widget']['#default_value'])) {
+        $default_value = $form['path']['domain_path'][$domain]['#default_value'];
+      }
+
+      if (!isset($default_value)) {
+        $default_value = $form['path']['widget'][0]['alias']['#default_value'];
+      }
+      // Empty URL alias to avoid 'Domain path matches the default path alias.'
+      // validation error.
+      $form['path']['widget'][0]['alias']['#default_value'] = '';
+
+      $form['field_domain_source']['parade_domain_path_alias'] = [
+        '#type' => 'textfield',
+        '#title' => 'Domain URL alias',
+        '#description' => "Add alias starting with '/'. For front page just enter '/'.",
+        '#default_value' => $default_value,
+        '#size' => 35,
+        '#weight' => $form['field_domain_source']['#weight'] + 0.1,
+      ];
+
+      // Hide URL alis, domain alias fields, we manage domain alias from js.
+      $form['path']["#acecss"] = FALSE;
+      $form['path']['#attributes']['class'][] = 'visually-hidden';
+      $form['path']['widget']['#attributes']['class'][] = 'visually-hidden';
+      // Add custom css, js.
+      $form['#attached']['library'][] = 'parade_domain/domain.path_alias';
+    }
+
+    // Set custom redirection callback to stay on the node edit form after submit.
+    if (isset($form['actions']['submit'])) {
+      $form['actions']['submit']['#submit'][] = '_parade_domain_form_submit';
+    }
+  }
+}
+
+/**
+ * Custom redirect for Campaign node submit.
+ *
+ * @todo - do it in _campaign_pages_disable_form_redirect().
+ *
+ * @param array $form
+ *   The form build array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state interface.
+ */
+function _parade_domain_form_submit(array &$form, FormStateInterface $form_state) {
+  $nid = $form_state->getValue('nid');
+  $url = Url::fromRoute('entity.node.edit_form', ['node' => $nid])->toString();
+  $form_state->setResponse( new RedirectResponse($url, Response::HTTP_SEE_OTHER));
+}
+
+/**
+ * @param \Drupal\domain_path\Entity\DomainPath $domain_path
+ */
+function _parade_domain_update_domain_site_frontpage(DomainPath $domain_path) {
+  // Set front page per domain: domain_site_settings.
+  if (preg_match('/node\/(\d+)/', $domain_path->getSource(), $matches)) {
+    /** @var \Drupal\campaign_pages\Service\OnepageIdAutoincrement $onepageIdService */
+    \Drupal::service('parade_domain.helper')->updateDomainSiteFrontpage($domain_path, $matches[1]);
+  }
+}
