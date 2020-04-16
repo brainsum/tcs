@@ -62,19 +62,23 @@ function parade_domain_domain_path_delete(DomainPath $domain_path) {
  * Implements hook_form_alter().
  */
 function parade_domain_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id === 'node_campaign_edit_form') {
+  if (isset($form['parade_onepage_sections'])) {
 
     if (isset($form['field_domain_source'])) {
       $domains = \Drupal::entityTypeManager()->getStorage('domain')->loadMultiple();
       foreach ($form['field_domain_source']['widget']['#options'] as $key => $label) {
+        /** @var \Drupal\domain\DomainInterface $domain */
         // @todo - get the host name with overrides.
-        $form['field_domain_source']['widget']['#options'][$key] = $domains[$key]->getScheme(TRUE) . $domains[$key]->getHostname();
+        if (isset($domains[$key]) && $domain = $domains[$key]) {
+          $form['field_domain_source']['widget']['#options'][$key] = $domain->getScheme(TRUE) . $domain->getHostname();
+        }
       }
       // Add input for domain path alias.
-      $domain = reset($form['field_domain_source']['widget']['#default_value']);
-      $default_value = $form['path']['domain_path'][$domain]['#default_value'];
+      if ($domain = reset($form['field_domain_source']['widget']['#default_value'])) {
+        $default_value = $form['path']['domain_path'][$domain]['#default_value'];
+      }
 
-      if (!$default_value) {
+      if (!isset($default_value)) {
         $default_value = $form['path']['widget'][0]['alias']['#default_value'];
       }
       // Empty URL alias to avoid 'Domain path matches the default path alias.'
