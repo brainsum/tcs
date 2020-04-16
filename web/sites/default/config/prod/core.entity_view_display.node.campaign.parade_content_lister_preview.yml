@@ -24,7 +24,8 @@ dependencies:
 third_party_settings:
   field_layout:
     id: layout_onecol
-    settings: {  }
+    settings:
+      label: ''
 id: node.campaign.parade_content_lister_preview
 targetEntityType: node
 bundle: campaign
