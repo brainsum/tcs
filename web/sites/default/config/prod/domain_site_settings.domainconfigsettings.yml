@@ -1,0 +1,10 @@
+domain_site_settings: null
+_core:
+  default_config_hash: tkmglv8nLQzpf1cBcgSWFvPzgDJEfiz6bifpEQYXq84
+campaigns_tieto_com:
+  site_name: 'Tieto Campaign Sites'
+  site_slogan: ''
+  site_mail: dev+tcs@brainsum.com
+  site_frontpage: /node/2
+  site_403: /system/403
+  site_404: /system/404

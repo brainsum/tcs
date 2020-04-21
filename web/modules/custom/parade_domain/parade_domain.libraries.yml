@@ -1,0 +1,10 @@
+domain.path_alias:
+  version: 1.0
+  css:
+    component:
+      css/path_alias.css: {}
+  js:
+    js/path_alias.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

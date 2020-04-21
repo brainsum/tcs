@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_domain_admin
   module:
     - field_layout
     - layout_discovery
@@ -11,7 +12,8 @@ dependencies:
 third_party_settings:
   field_layout:
     id: layout_onecol
-    settings: {  }
+    settings:
+      label: ''
 _core:
   default_config_hash: C3k_McOy8bL8rTnIjspy5OfFdgqV1z6OdGZaI-tO5eM
 id: user.user.compact
@@ -26,4 +28,5 @@ content:
     third_party_settings: {  }
 hidden:
   dbee: true
+  field_domain_admin: true
   langcode: true

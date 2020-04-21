@@ -2,6 +2,8 @@ uuid: 94b3a509-f118-48e6-8524-a1639ffb4999
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_domain_admin
   module:
     - field_layout
     - layout_discovery
@@ -9,7 +11,8 @@ dependencies:
 third_party_settings:
   field_layout:
     id: layout_onecol
-    settings: {  }
+    settings:
+      label: ''
 _core:
   default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
 id: user.user.default
@@ -20,8 +23,18 @@ content:
   account:
     weight: -10
     region: content
+    settings: {  }
+    third_party_settings: {  }
   contact:
     weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_domain_admin:
+    type: options_buttons
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
     region: content
   google_analytics:
     weight: 3
@@ -29,8 +42,12 @@ content:
   language:
     weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

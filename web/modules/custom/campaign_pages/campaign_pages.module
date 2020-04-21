@@ -143,6 +143,15 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
       unset($item);
     }
   }
+
+  // Set the default domain for Domain Source field if it's empty.
+  if ($form_id === 'node_campaign_edit_form') {
+    if (isset($form['field_domain_source']) && empty($form['field_domain_source']['widget']['#default_value'])) {
+      $domain_storage = \Drupal::entityTypeManager()->getStorage('domain');
+      $form['field_domain_source']['widget']['#default_value'] = [$domain_storage->loadDefaultId()];
+    }
+  }
+
 }
 
 /**
@@ -372,28 +381,6 @@ function campaign_pages_preprocess_paragraph(&$variables) {
         }
 
         $variables['parade']['background']['url'] = $style->buildUrl($file_uri);
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_imagemagick_arguments_alter().
- *
- * Removes quality argument if it's NULL.
- * It's necessary to avoid errors when quality is empty in the config.
- */
-function campaign_pages_imagemagick_arguments_alter(ImagemagickToolkit $toolkit, $command) {
-  // @todo: Check if this has been patched in imagemagick.
-  if ($command === 'convert' || $command === 'gm') {
-    $index = $toolkit->findArgument('-quality');
-
-    if ($index !== FALSE) {
-      $quality = $toolkit->getArguments()[$index];
-
-      // Space at the and because NULL casts to an empty string.
-      if ($quality === '-quality ') {
-        $toolkit->removeArgument($index);
       }
     }
   }

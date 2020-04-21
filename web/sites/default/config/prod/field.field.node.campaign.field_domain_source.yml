@@ -1,0 +1,28 @@
+uuid: 7289587f-6f2e-4070-9b29-c84afe8c9a2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.campaigns_tieto_com
+    - field.storage.node.field_domain_source
+    - node.type.campaign
+id: node.campaign.field_domain_source
+field_name: field_domain_source
+entity_type: node
+bundle: campaign
+label: 'Domain Source'
+description: 'Select the canonical domain for this content.'
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 57204465-c42e-4f35-81d7-329bfb748f0c
+default_value_callback: ''
+settings:
+  handler: 'default:domain'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: weight
+      direction: ASC
+field_type: entity_reference
