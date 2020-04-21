@@ -143,6 +143,15 @@ function campaign_pages_form_alter(&$form, FormStateInterface $form_state, $form
       unset($item);
     }
   }
+
+  // Set the default domain for Domain Source field if it's empty.
+  if ($form_id === 'node_campaign_edit_form') {
+    if (isset($form['field_domain_source']) && empty($form['field_domain_source']['widget']['#default_value'])) {
+      $domain_storage = \Drupal::entityTypeManager()->getStorage('domain');
+      $form['field_domain_source']['widget']['#default_value'] = [$domain_storage->loadDefaultId()];
+    }
+  }
+
 }
 
 /**
