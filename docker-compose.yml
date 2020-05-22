@@ -2,7 +2,7 @@ version: "2"
 
 services:
   mariadb:
-    image: wodby/mariadb:10.3-3.3.0
+    image: wodby/mariadb:10.4-3.8.4
     container_name: "tcs_mariadb"
     stop_grace_period: 30s
     environment:
@@ -15,7 +15,7 @@ services:
 #      - /path/to/mariadb/data/on/host:/var/lib/mysql # I want to manage volumes manually.
 
   php:
-    image: wodby/drupal-php:7.2-dev-4.12.8
+    image: wodby/drupal-php:7.3-dev-4.15.9
     container_name: "tcs_php"
     environment:
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
