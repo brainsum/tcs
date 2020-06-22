@@ -57,25 +57,22 @@ services:
 #      - codebase:/var/www/html:cached # User-guided caching
 #      - docker-sync:/var/www/html # Docker-sync
     labels:
-      - 'traefik.backend=nginx'
-      - 'traefik.port=80'
-      - 'traefik.frontend.rule=Host:tcs.docker.localhost'
+      - "traefik.http.routers.tcs_nginx.rule=Host(`tcs.docker.localhost`)"
 
   mailhog:
     image: mailhog/mailhog
     container_name: "tcs_mailhog"
     labels:
-      - 'traefik.backend=mailhog'
-      - 'traefik.port=8025'
-      - 'traefik.frontend.rule=Host:mailhog.tcs.docker.localhost'
+      - "traefik.http.services.tcs_mailhog.loadbalancer.server.port=8025"
+      - "traefik.http.routers.tcs_mailhog.rule=Host(`mailhog.tcs.docker.localhost`)"
 
   traefik:
-    image: traefik
+    image: traefik:v2.0
     container_name: "tcs_traefik"
-    command: -c /dev/null --web --docker --logLevel=INFO
+    command: --api.insecure=true --providers.docker
     ports:
       - '8000:80'
-#      - '8080:8080' # Dashboard
+    #      - '8080:8080' # Dashboard
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
