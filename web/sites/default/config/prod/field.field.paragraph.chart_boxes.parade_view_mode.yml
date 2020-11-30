@@ -27,4 +27,8 @@ settings:
       enable: 1
       hide_title: 0
       icon: {  }
+    preview:
+      enable: 0
+      hide_title: 0
+      icon: {  }
 field_type: view_mode_selector

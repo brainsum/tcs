@@ -11,7 +11,8 @@ id: paragraph.parade_geofield
 field_name: parade_geofield
 entity_type: paragraph
 type: geofield
-settings: {  }
+settings:
+  backend: geofield_backend_default
 module: geofield
 locked: false
 cardinality: -1
