@@ -7,7 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.chart_boxes
   module:
     - allowed_formats
-    - geocoder_field
     - text
 third_party_settings:
   allowed_formats:
@@ -15,16 +14,6 @@ third_party_settings:
     basic_html: '0'
     restricted_html: '0'
     full_html: '0'
-  geocoder_field:
-    method: none
-    field: parent_id
-    plugins: {  }
-    dumper: wkt
-    delta_handling: default
-    failure:
-      handling: preserve
-      status_message: true
-      log: true
 _core:
   default_config_hash: M2R9fdLpTd_4ugnQLCSaYpRpDPjqQVsGbEdDa2Yrsdo
 id: paragraph.chart_boxes.parade_text

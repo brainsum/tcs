@@ -21,3 +21,204 @@ bundles:
       notes: ''
       bundle: locations
       name: parade_geofield
+  header:
+    parade_anchor:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: header
+      name: parade_anchor
+    parade_background:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: header
+      name: parade_background
+    parade_call_to_action:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: header
+      name: parade_call_to_action
+    parade_color_scheme:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: header
+      name: parade_color_scheme
+    parade_enable_parallax:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: header
+      name: parade_enable_parallax
+    parade_lead_text:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: header
+      name: parade_lead_text
+    parade_secondary_title:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: header
+      name: parade_secondary_title
+    parade_title:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: header
+      name: parade_title
+  chart_boxes:
+    parade_boxes_per_row:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: chart_boxes
+      name: parade_boxes_per_row
+    parade_layout:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: chart_boxes
+      name: parade_layout
+    parade_paragraphs:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: chart_boxes
+      name: parade_paragraphs
+    parade_text:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: chart_boxes
+      name: parade_text
+    parade_view_mode:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: chart_boxes
+      name: parade_view_mode
+  marketo_form:
+    parade_enable_confirm_message:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: marketo_form
+      name: parade_enable_confirm_message
+    parade_enable_linkedin_autofill:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: marketo_form
+      name: parade_enable_linkedin_autofill
+    parade_image:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: marketo_form
+      name: parade_image
+    parade_marketo_form:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: marketo_form
+      name: parade_marketo_form
+  images:
+    parade_images:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: images
+      name: parade_images
+  savings_calculator:
+    parade_input_label:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: savings_calculator
+      name: parade_input_label
+    parade_result_label:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: savings_calculator
+      name: parade_result_label
+  marketo_poll:
+    parade_marketo_poll:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: marketo_poll
+      name: parade_marketo_poll
+  social_links:
+    parade_social_link:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: social_links
+      name: parade_social_link
+  chart_box:
+    parade_value:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: chart_box
+      name: parade_value
+  parallax:
+    parade_minimum_height:
+      enabled: false
+      rta: 'no'
+      rtf: 'no'
+      anonymizer: ''
+      notes: ''
+      bundle: parallax
+      name: parade_minimum_height

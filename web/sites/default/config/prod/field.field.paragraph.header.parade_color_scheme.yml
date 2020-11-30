@@ -42,6 +42,7 @@ settings:
         layout_doughnut_and_text_chart: 0
         layout_doughnut_chart: 0
         layout_download: 0
+        layout_equal_titles: 0
         layout_image_1st: 0
         layout_lot_of_infos: 0
         layout_none: 0

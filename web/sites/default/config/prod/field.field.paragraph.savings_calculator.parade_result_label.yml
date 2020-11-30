@@ -5,19 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.parade_result_label
     - paragraphs.paragraphs_type.savings_calculator
-  module:
-    - geocoder_field
-third_party_settings:
-  geocoder_field:
-    method: none
-    field: parent_id
-    plugins: {  }
-    dumper: wkt
-    delta_handling: default
-    failure:
-      handling: preserve
-      status_message: true
-      log: true
 _core:
   default_config_hash: mwlaBvt97f3St-qrtL5icK4fe6svhfxb9rWFlvd4QYo
 id: paragraph.savings_calculator.parade_result_label
