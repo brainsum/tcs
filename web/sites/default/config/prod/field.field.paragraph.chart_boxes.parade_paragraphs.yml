@@ -23,6 +23,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       chart_box: chart_box
     target_bundles_drag_drop:
